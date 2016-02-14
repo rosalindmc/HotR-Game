@@ -16,7 +16,7 @@ if distance_to_point(movex,movey) < movement and movestep != path_get_number(my_
 //Movement
 is_moving = false
 
-if distance_to_point(movex,movey) > 5
+if distance_to_point(movex,movey) > movement
 {
     //Apply Acceleration
     hspd = sign(movex-x)*min(abs(hspd+lengthdir_x(movement*.1,point_direction(x,y,movex,movey))),abs(lengthdir_x(movement,point_direction(x,y,movex,movey))))
