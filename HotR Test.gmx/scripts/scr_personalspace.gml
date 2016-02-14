@@ -10,8 +10,8 @@ if collision_point(x+lengthdir_x(i,ii),y+lengthdir_y(i,ii),obj_solid,false,true)
     {
     hspd = hspd+lengthdir_x(movement*.1,ii+180)
     vspd = vspd+lengthdir_y(movement*.1,ii+180)
-    movex += lengthdir_x(movement*.2,ii+180)
-    movey += lengthdir_x(movement*.2,ii+180)
+    movex += lengthdir_x(movement*.5,ii+180)
+    movey += lengthdir_y(movement*.5,ii+180)
     }
 }
 ii += 30
