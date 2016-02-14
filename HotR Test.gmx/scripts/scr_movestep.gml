@@ -6,8 +6,8 @@ if distance_to_point(movex,movey) < movement and movestep != path_get_number(my_
     {
         if !collision_line(x,y,path_get_point_x(my_path,ii),path_get_point_y(my_path,ii),obj_terrain,false,true) 
         {
-        movex = path_get_point_x(my_path,ii)
-        movey = path_get_point_y(my_path,ii)
+            movex = path_get_point_x(my_path,ii)
+            movey = path_get_point_y(my_path,ii)
         }
     ii += 1
     }
@@ -25,9 +25,9 @@ if distance_to_point(movex,movey) > 5
     
     //Temporary Facing
     if hspd > 0
-    {facing = 1}
+        facing = 1
     else
-    {facing = -1}
+        facing = -1
 }
 else
 {
