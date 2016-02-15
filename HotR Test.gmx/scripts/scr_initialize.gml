@@ -25,7 +25,7 @@ targety = y
 controlled = false
 my_path = path_add()
 path_add_point(my_path,x,y,0)
-player = 1
+player = true
 size = 4
 height = 28
 movestep = 0
