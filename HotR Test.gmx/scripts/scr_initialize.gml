@@ -11,6 +11,11 @@ fric = .4
 alarm[0] = 15
 
 //AI Core
+might = 0
+toughness = 0
+will = 0
+intellect = 0
+fellowship = 0
 movex = x
 movey = y
 xoff = 0

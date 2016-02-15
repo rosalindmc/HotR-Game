@@ -20,8 +20,13 @@
       <script>scripts\scr_control.gml</script>
       <script>scripts\scr_personalspace.gml</script>
       <script>scripts\scr_personalspace_draw.gml</script>
+      <script>scripts\scr_statDisplay.gml</script>
+      <script>scripts\scr_charactergenerator.gml</script>
     </scripts>
   </scripts>
+  <fonts name="fonts">
+    <font>fonts\fnt_statDisplay</font>
+  </fonts>
   <objects name="objects">
     <object>objects\obj_character</object>
     <object>objects\obj_terrain</object>

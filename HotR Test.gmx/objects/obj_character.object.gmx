@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>scr_initialize()
+scr_charactergenerator()
 </string>
           </argument>
         </arguments>
@@ -126,6 +127,7 @@ draw_circle(round(x-1),round(y),6,true)
 draw_path(my_path,x,y,true)
 draw_text(x,y+15,ii)
 scr_personalspace_draw()
+scr_statDisplay()
 }
 
 draw_sprite_ext(spr_robot,-1,round(x),round(y),facing,1,0,c_white,1)
