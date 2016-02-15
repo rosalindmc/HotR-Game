@@ -1,3 +1,6 @@
+//Generates new random seed
+randomize()
+
 //Graphics
 facing = 1
 
@@ -11,11 +14,11 @@ fric = .4
 alarm[0] = 15
 
 //AI Core
-might = 0
-toughness = 0
-will = 0
-intellect = 0
-fellowship = 0
+might = 5
+toughness = 5
+will = 5
+intellect = 5
+fellowship = 5
 movex = x
 movey = y
 xoff = 0

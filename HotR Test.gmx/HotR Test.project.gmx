@@ -36,6 +36,7 @@
     </scripts>
   </scripts>
   <fonts name="fonts">
+    <font>fonts\font1</font>
     <font>fonts\fnt_statDisplay</font>
   </fonts>
   <objects name="objects">
