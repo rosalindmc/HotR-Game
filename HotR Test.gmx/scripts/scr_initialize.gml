@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 //Initialize character script
 //scr_initialize()
+=======
+//Generates new random seed
+randomize()
+>>>>>>> origin/master
 
 //Graphics
 facing = 1
@@ -14,12 +19,20 @@ fric = .4
 alarm[0] = 15
 
 //AI Core
+<<<<<<< HEAD
 might = 0
 toughness = 0
 will = 0
 intellect = 0
 fellowship = 0
 
+=======
+might = 5
+toughness = 5
+will = 5
+intellect = 5
+fellowship = 5
+>>>>>>> origin/master
 movex = x
 movey = y
 xoff = 0
