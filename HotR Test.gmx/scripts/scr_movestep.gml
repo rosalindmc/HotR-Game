@@ -3,11 +3,19 @@ if distance_to_point(movex,movey) < movement and movestep != path_get_number(my_
 {
     ii = 0
     repeat(path_get_number(my_path))
-    {
+    {   
+        //First Collision Line
         if !collision_line(x,y,path_get_point_x(my_path,ii),path_get_point_y(my_path,ii),obj_terrain,false,true) 
-        {
+        {   
+            //Thick Collision Line
+            if !collision_line(x+size,y,path_get_point_x(my_path,ii)+size,path_get_point_y(my_path,ii),obj_terrain,false,true) 
+            if !collision_line(x-size,y,path_get_point_x(my_path,ii)-size,path_get_point_y(my_path,ii),obj_terrain,false,true) 
+            if !collision_line(x,y+size,path_get_point_x(my_path,ii),path_get_point_y(my_path,ii)+size,obj_terrain,false,true) 
+            if !collision_line(x,y-size,path_get_point_x(my_path,ii),path_get_point_y(my_path,ii)-size,obj_terrain,false,true) 
+            {
             movex = path_get_point_x(my_path,ii)
             movey = path_get_point_y(my_path,ii)
+            }
         }
     ii += 1
     }
@@ -23,11 +31,17 @@ if distance_to_point(movex,movey) > movement
     vspd = sign(movey-y)*min(abs(vspd+lengthdir_y(movement*.1,point_direction(x,y,movex,movey))),abs(lengthdir_y(movement,point_direction(x,y,movex,movey))))
     is_moving = true
     
-    //Temporary Facing
+    //Temporary Horizontal Facing
     if hspd > 0
         facing = 1
     else
         facing = -1
+        
+    //Temporary Vertical Facing
+    if vspd > 0
+        image_index = 0
+    else
+        image_index = 1
 }
 else
 {
@@ -39,11 +53,11 @@ else
 //Horizontal Collision
 if place_meeting(x+hspd,y,obj_solid)
 {
-while !place_meeting(x+sign(hspd),y,obj_solid)
-{
-x += sign(hspd)
-}
-hspd = 0
+    while !place_meeting(x+sign(hspd),y,obj_solid)
+    {
+        x += sign(hspd)
+    }
+    hspd = 0
 }
 
 x += hspd
@@ -51,11 +65,11 @@ x += hspd
 //Vertical Collision
 if place_meeting(x,y+vspd,obj_solid)
 {
-while !place_meeting(x,y+sign(vspd),obj_solid)
-{
-y += sign(vspd)
-}
-vspd = 0
+    while !place_meeting(x,y+sign(vspd),obj_solid)
+    {
+        y += sign(vspd)
+    }
+    vspd = 0
 }
 
 y += vspd

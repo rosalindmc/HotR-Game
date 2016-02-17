@@ -27,12 +27,22 @@
             <kind>1</kind>
             <string>alarm[0] = 2
 
-i = 1
+var i = 1
+var ii
+
 repeat(25)
 {
-ii = instance_create(x,y+(20*i),obj_character)
-control[i] = ii
-i += 1
+    ii = instance_create(x,y+(20*i),obj_character)
+    control[i] = ii
+    
+    //Temp Testing Size
+    if i = 1
+    {
+        ii.size = 6
+        ii.mask_index = spr_largemask
+    }
+    
+    i += 1
 }
 </string>
           </argument>
@@ -60,7 +70,7 @@ i += 1
 global.grid = mp_grid_create(10,10,room_width/20,room_height/20,20,20)
 with(obj_terrain)
 {
-mp_grid_add_rectangle(global.grid,x,y,x,y)
+    mp_grid_add_rectangle(global.grid,x,y,x,y)
 }
 </string>
           </argument>
@@ -92,24 +102,24 @@ key[4] = keyboard_check_pressed(ord('4'))
 
 if key_lftclicked = true
 {
-instance_create(mouse_x,mouse_y,obj_selector)
+    instance_create(mouse_x,mouse_y,obj_selector)
 }
 
 i = 1
 repeat(4)
 {
-if key[i] = true
-{
-if !keyboard_check(vk_shift)
-{
-with(obj_character)
-{
-controlled = false
-}
-}
-control[i].controlled = true
-}
-i +=1
+    if key[i] = true
+    {
+        if !keyboard_check(vk_shift)
+        {
+            with(obj_character)
+            {
+            controlled = false
+            }
+        }
+        control[i].controlled = true
+    }
+    i +=1
 }
 </string>
           </argument>

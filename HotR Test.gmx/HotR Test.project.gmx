@@ -8,20 +8,31 @@
   <sprites name="sprites">
     <sprite>sprites\spr_robot</sprite>
     <sprite>sprites\spr_wall</sprite>
+    <sprite>sprites\spr_char</sprite>
+    <sprite>sprites\spr_mask</sprite>
+    <sprite>sprites\spr_largemask</sprite>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
   <scripts name="scripts">
-    <scripts name="Initialize">
-      <script>scripts\scr_initialize.gml</script>
-    </scripts>
-    <scripts name="Core">
-      <script>scripts\scr_movestep.gml</script>
-      <script>scripts\scr_control.gml</script>
-      <script>scripts\scr_personalspace.gml</script>
-      <script>scripts\scr_personalspace_draw.gml</script>
-      <script>scripts\scr_statDisplay.gml</script>
-      <script>scripts\scr_charactergenerator.gml</script>
+    <scripts name="Combat">
+      <scripts name="Initialize">
+        <script>scripts\scr_initialize.gml</script>
+      </scripts>
+      <scripts name="Core">
+        <script>scripts\scr_control.gml</script>
+        <script>scripts\scr_personalspace.gml</script>
+        <script>scripts\scr_charactergenerator.gml</script>
+        <scripts name="Movement">
+          <script>scripts\scr_movestep.gml</script>
+        </scripts>
+      </scripts>
+      <scripts name="Draw">
+        <script>scripts\scr_personalspace_draw.gml</script>
+      </scripts>
+      <scripts name="UI">
+        <script>scripts\scr_statDisplay.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -36,7 +47,7 @@
     <object>objects\obj_camera</object>
   </objects>
   <rooms name="rooms">
-    <room>rooms\room0</room>
+    <room>rooms\rom_dungeon</room>
   </rooms>
   <help>
     <rtf>help.rtf</rtf>
