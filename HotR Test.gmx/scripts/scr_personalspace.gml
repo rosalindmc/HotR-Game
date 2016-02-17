@@ -1,4 +1,6 @@
 //Personal space script
+//scr_personalspace()
+
 var ii = 0
 var i = size*1.5
 var collideOther = -4

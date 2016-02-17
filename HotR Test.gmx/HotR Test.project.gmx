@@ -6,11 +6,26 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_robot</sprite>
-    <sprite>sprites\spr_wall</sprite>
-    <sprite>sprites\spr_char</sprite>
-    <sprite>sprites\spr_mask</sprite>
-    <sprite>sprites\spr_largemask</sprite>
+    <sprites name="Masks">
+      <sprite>sprites\spr_mask</sprite>
+      <sprite>sprites\spr_largemask</sprite>
+    </sprites>
+    <sprites name="Environment">
+      <sprite>sprites\spr_wall</sprite>
+    </sprites>
+    <sprites name="Characters">
+      <sprite>sprites\spr_robot</sprite>
+      <sprite>sprites\spr_char</sprite>
+      <sprites name="Core">
+        <sprite>sprites\spr_hair1</sprite>
+        <sprite>sprites\spr_humanhead</sprite>
+        <sprite>sprites\spr_hips</sprite>
+        <sprite>sprites\spr_leg</sprite>
+        <sprite>sprites\spr_none</sprite>
+        <sprite>sprites\spr_body</sprite>
+        <sprite>sprites\spr_chest</sprite>
+      </sprites>
+    </sprites>
   </sprites>
   <backgrounds name="background"/>
   <paths name="paths"/>
@@ -22,17 +37,22 @@
       <scripts name="Core">
         <script>scripts\scr_control.gml</script>
         <script>scripts\scr_personalspace.gml</script>
-        <script>scripts\scr_charactergenerator.gml</script>
         <scripts name="Movement">
           <script>scripts\scr_movestep.gml</script>
         </scripts>
       </scripts>
       <scripts name="Draw">
         <script>scripts\scr_personalspace_draw.gml</script>
+        <script>scripts\scr_humanoid_ref.gml</script>
+        <script>scripts\scr_humanoid.gml</script>
+        <script>scripts\scr_humanoid_walk_ref.gml</script>
       </scripts>
       <scripts name="UI">
         <script>scripts\scr_statDisplay.gml</script>
       </scripts>
+    </scripts>
+    <scripts name="Overworld">
+      <script>scripts\scr_charactergenerator.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">
@@ -49,6 +69,12 @@
   <rooms name="rooms">
     <room>rooms\rom_dungeon</room>
   </rooms>
+  <constants number="4">
+    <constant name="sex_female">0</constant>
+    <constant name="sex_male">1</constant>
+    <constant name="skin_fair">make_color_rgb(255,220,178)</constant>
+    <constant name="hair_darkred">make_color_rgb(128,0,0)</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>

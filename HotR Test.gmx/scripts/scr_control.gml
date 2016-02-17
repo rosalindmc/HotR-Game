@@ -1,3 +1,6 @@
+//Player control script
+//scr_control()
+
 key_lftclicked = mouse_check_button_pressed(mb_left)
 key_rgtclicked = mouse_check_button_pressed(mb_right)
 

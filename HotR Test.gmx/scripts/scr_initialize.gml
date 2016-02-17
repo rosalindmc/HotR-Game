@@ -1,3 +1,6 @@
+//Initialize character script
+//scr_initialize()
+
 //Graphics
 facing = 1
 
@@ -16,6 +19,7 @@ toughness = 0
 will = 0
 intellect = 0
 fellowship = 0
+
 movex = x
 movey = y
 xoff = 0
