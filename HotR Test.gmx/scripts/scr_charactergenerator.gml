@@ -1,6 +1,10 @@
-//generates random character stats
+//Character stat creation script
+//scr_charactergenerator()
+//Generates random character stats
+
 var i = 1
 var banana = 13 + irandom(2) + irandom(2)
+
 while (i <= banana) 
 {
     switch (irandom(4))
@@ -16,28 +20,33 @@ while (i <= banana)
         case 4: fellowship++
         break
     }
-i++
+    i++
 }
 
 var ii = 0
 
-if (might>10){
+if (might > 10)
+{
     ii += might-10
     might = 10
 }
-if (toughness>10){
+if (toughness > 10)
+{
     ii += toughness-10
     toughness = 10
 }
-if (will>10){
+if (will > 10)
+{
     ii += will-10
     will = 10
 }
-if (intellect>10){
+if (intellect > 10)
+{
     ii += intellect-10
     intellect = 10
 }
-if (fellowship>10){
+if (fellowship > 10)
+{
     ii += fellowship-10
     fellowship = 10
 }
@@ -58,7 +67,7 @@ while (i <= ii)
         case 4: fellowship++
         break
     }
-i++
+    i++
 }
 
 

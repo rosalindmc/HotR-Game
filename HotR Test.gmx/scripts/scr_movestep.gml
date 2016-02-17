@@ -1,20 +1,21 @@
 //Progress
-if distance_to_point(movex,movey) < movement and movestep != path_get_number(my_path)
+if distance_to_point(moveX,moveY) < movement and moveStep != path_get_number(myPath)
 {
-    ii = 0
-    repeat(path_get_number(my_path))
+    var ii = 0
+
+    repeat(path_get_number(myPath))
     {   
         //First Collision Line
-        if !collision_line(x,y,path_get_point_x(my_path,ii),path_get_point_y(my_path,ii),obj_terrain,false,true) 
+        if !collision_line(x,y,path_get_point_x(myPath,ii),path_get_point_y(myPath,ii),obj_terrain,false,true) 
         {   
             //Thick Collision Line
-            if !collision_line(x+size,y,path_get_point_x(my_path,ii)+size,path_get_point_y(my_path,ii),obj_terrain,false,true) 
-            if !collision_line(x-size,y,path_get_point_x(my_path,ii)-size,path_get_point_y(my_path,ii),obj_terrain,false,true) 
-            if !collision_line(x,y+size,path_get_point_x(my_path,ii),path_get_point_y(my_path,ii)+size,obj_terrain,false,true) 
-            if !collision_line(x,y-size,path_get_point_x(my_path,ii),path_get_point_y(my_path,ii)-size,obj_terrain,false,true) 
+            if !collision_line(x+size,y,path_get_point_x(myPath,ii)+size,path_get_point_y(myPath,ii),obj_terrain,false,true) 
+            if !collision_line(x-size,y,path_get_point_x(myPath,ii)-size,path_get_point_y(myPath,ii),obj_terrain,false,true) 
+            if !collision_line(x,y+size,path_get_point_x(myPath,ii),path_get_point_y(myPath,ii)+size,obj_terrain,false,true) 
+            if !collision_line(x,y-size,path_get_point_x(myPath,ii),path_get_point_y(myPath,ii)-size,obj_terrain,false,true) 
             {
-            movex = path_get_point_x(my_path,ii)
-            movey = path_get_point_y(my_path,ii)
+            moveX = path_get_point_x(myPath,ii)
+            moveY = path_get_point_y(myPath,ii)
             }
         }
     ii += 1
@@ -22,26 +23,26 @@ if distance_to_point(movex,movey) < movement and movestep != path_get_number(my_
 }
 
 //Movement
-is_moving = false
+isMoving = false
 
-if distance_to_point(movex,movey) > movement
+if distance_to_point(moveX,moveY) > movement
 {
     //Apply Acceleration
-    hspd = sign(movex-x)*min(abs(hspd+lengthdir_x(movement*.1,point_direction(x,y,movex,movey))),abs(lengthdir_x(movement,point_direction(x,y,movex,movey))))
-    vspd = sign(movey-y)*min(abs(vspd+lengthdir_y(movement*.1,point_direction(x,y,movex,movey))),abs(lengthdir_y(movement,point_direction(x,y,movex,movey))))
-    is_moving = true
+    hspd = sign(moveX-x)*min(abs(hspd+lengthdir_x(movement*.1,point_direction(x,y,moveX,moveY))),abs(lengthdir_x(movement,point_direction(x,y,moveX,moveY))))
+    vspd = sign(moveY-y)*min(abs(vspd+lengthdir_y(movement*.1,point_direction(x,y,moveX,moveY))),abs(lengthdir_y(movement,point_direction(x,y,moveX,moveY))))
+    isMoving = true
     
-    //Temporary Horizontal Facing
+    //Horizontal Facing
     if hspd > 0
-        facing = 1
+        hFacing = 1
     else
-        facing = -1
+        hFacing = -1
         
-    //Temporary Vertical Facing
+    //Vertical Facing
     if vspd > 0
-        image_index = 0
+        vFacing = 0
     else
-        image_index = 1
+        vFacing = 1
 }
 else
 {

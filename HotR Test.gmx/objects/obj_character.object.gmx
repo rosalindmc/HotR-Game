@@ -53,27 +53,28 @@ image_speed = 0
           <argument>
             <kind>1</kind>
             <string>//TEMP
-//Reattempt pathfinding ot fix any errors or adjust to changes
+//Reattempt pathfinding to fix any errors or adjust to changes
 
 //Make a path
-movex = path_get_point_x(my_path,path_get_number(my_path))
-movey = path_get_point_y(my_path,path_get_number(my_path))
+moveX = path_get_point_x(myPath,path_get_number(myPath))
+moveY = path_get_point_y(myPath,path_get_number(myPath))
 
-mp_grid_path(global.grid,my_path,x,y,movex,movey,true)
+//Make a path
+mp_grid_path(global.grid,myPath,x,y,moveX,moveY,true)
 
-ii = 0
-    repeat(path_get_number(my_path))
+//Set destination to last visible area on path
+var ii = 0
+repeat(path_get_number(myPath))
+{
+    if !collision_line(x,y,path_get_point_x(myPath,ii),path_get_point_y(myPath,ii),obj_terrain,false,true) 
     {
-        if !collision_line(x,y,path_get_point_x(my_path,ii),path_get_point_y(my_path,ii),obj_terrain,false,true) 
-        {
-        movex = path_get_point_x(my_path,ii)
-        movey = path_get_point_y(my_path,ii)
-        movestep = ii
-        }
-    ii += 1
+    moveX = path_get_point_x(myPath,ii)
+    moveY = path_get_point_y(myPath,ii)
+    moveStep = ii
     }
-
-alarm[0] = 15
+ii += 1
+}
+alarm[0] = 50
 
 </string>
           </argument>
@@ -127,16 +128,17 @@ depth = -y
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//if controlled = true
-//{
+            <string>//Temp
+if controlled = true
+{
     draw_circle(round(x-1),round(y),size,true)
-    draw_line(x,y,movex,movey)
-    //draw_path(my_path,x,y,true)
-    scr_personalspace_draw()
-//}
+    //draw_line(x,y,moveX,moveY)
+    //draw_path(myPath,x,y,true)
+    //scr_personalspace_draw()
+}
 
-draw_sprite_ext(spr_char,-1,round(x),round(y),facing,1,0,c_white,1)
-
+//Draw Self
+script_execute(animType,1)
 </string>
           </argument>
         </arguments>

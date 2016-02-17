@@ -25,56 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if distance_to_point(mouse_x,mouse_y) &gt; 5
-{
-global.i = 0
-global.x = 0
-global.y = 0
-
-with(obj_character)
-{
-if player = 1
-{
-i = min(mouse_x,obj_selector.x)
-ii = max(mouse_x,obj_selector.x)
-vi = min(mouse_y,obj_selector.y)
-vii = max(mouse_y,obj_selector.y)
-
-if x &gt;= i and x &lt;= ii and y &gt;= vi and y &lt;= vii
-{
-global.control = id
-controlled = true
-global.x += x
-global.y += y
-global.i += 1
-}
-else
-{
-if !keyboard_check(vk_shift)
-{
-controlled = false
-}
-}
-}
-}
-
-if global.i &gt; 0
-{
-global.x = global.x/global.i
-global.y = global.y/global.i
-}
-with(obj_character)
-{
-if controlled = true
-{
-xoff = x - global.x
-yoff = y - global.y
-}
-}
-}
-
-instance_destroy()
-
+            <string>scr_selection()
 </string>
           </argument>
         </arguments>

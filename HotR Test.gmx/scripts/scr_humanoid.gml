@@ -7,6 +7,7 @@ var a0 = argument0
 switch(a0)
 {
 case 0:  //Initialize variables
+animType = scr_humanoid
 gender = choose(sex_female,sex_male)
 raceHead = spr_humanhead
 skinTone = skin_fair
@@ -53,6 +54,8 @@ bounce = 0
 break
 
 case 1:  //Draw self
+//Temp
+draw_sprite_ext(spr_char,vFacing,x,y,hFacing,1,0,c_white,1)
 
 /*
 hips_x = round(x)+(hips_thrust*facingh)

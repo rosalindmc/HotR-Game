@@ -1,51 +1,40 @@
-<<<<<<< HEAD
 //Initialize character script
 //scr_initialize()
-=======
-//Generates new random seed
-randomize()
->>>>>>> origin/master
 
 //Graphics
-facing = 1
+hFacing = 1
+vFacing = 0
+
+//Temp snimType
+scr_humanoid(0)
 
 //Move
 movement = 2
-can_move = true
-is_moving = false
+canMove = true
+isMoving = false
 hspd = 0
 vspd = 0
 fric = .4
 alarm[0] = 15
 
-//AI Core
-<<<<<<< HEAD
-might = 0
-toughness = 0
-will = 0
-intellect = 0
-fellowship = 0
-
-=======
+//Attributes
 might = 5
 toughness = 5
 will = 5
 intellect = 5
 fellowship = 5
->>>>>>> origin/master
-movex = x
-movey = y
-xoff = 0
-yoff = 0
-targetx = x
-targety = y
+
+//AI Core
+moveX = x
+moveY = y
+xOff = 0
+yOff = 0
+targetX = x
+targetY = y
 controlled = false
-my_path = path_add()
-path_add_point(my_path,x,y,0)
+myPath = path_add()
+path_add_point(myPath,x,y,0)
 player = true
 size = 4
 height = 28
-movestep = 0
-
-//Temp
-ii = 0
+moveStep = 0

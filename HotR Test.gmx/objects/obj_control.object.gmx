@@ -25,10 +25,15 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>alarm[0] = 2
-
-var i = 1
+            <string>var i = 1
 var ii
+
+//Generates new random seed
+randomize()
+
+alarm[0] = 2
+
+
 
 repeat(25)
 {
@@ -67,7 +72,8 @@ repeat(25)
           <argument>
             <kind>1</kind>
             <string>//Grid
-global.grid = mp_grid_create(10,10,room_width/20,room_height/20,20,20)
+global.grid = mp_grid_create(areaSize/2,areaSize/2,(room_width/areaSize)+1,(room_height/areaSize)+1,areaSize,areaSize)
+
 with(obj_terrain)
 {
     mp_grid_add_rectangle(global.grid,x,y,x,y)
@@ -94,33 +100,8 @@ with(obj_terrain)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>key_lftclicked = mouse_check_button_pressed(mb_left)
-key[1] = keyboard_check_pressed(ord('1'))
-key[2] = keyboard_check_pressed(ord('2'))
-key[3] = keyboard_check_pressed(ord('3'))
-key[4] = keyboard_check_pressed(ord('4'))
-
-if key_lftclicked = true
-{
-    instance_create(mouse_x,mouse_y,obj_selector)
-}
-
-i = 1
-repeat(4)
-{
-    if key[i] = true
-    {
-        if !keyboard_check(vk_shift)
-        {
-            with(obj_character)
-            {
-            controlled = false
-            }
-        }
-        control[i].controlled = true
-    }
-    i +=1
-}
+            <string>//Selection
+scr_selection_control()
 </string>
           </argument>
         </arguments>
