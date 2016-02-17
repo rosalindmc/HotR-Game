@@ -73,8 +73,8 @@
     <room>rooms\rom_dungeon</room>
   </rooms>
   <constants number="5">
-    <constant name="sex_female">0</constant>
-    <constant name="sex_male">1</constant>
+    <constant name="gndr_female">0</constant>
+    <constant name="gndr_male">1</constant>
     <constant name="skin_fair">make_color_rgb(255,220,178)</constant>
     <constant name="hair_darkred">make_color_rgb(128,0,0)</constant>
     <constant name="areaSize">20</constant>
