@@ -11,7 +11,18 @@
       <sprite>sprites\spr_largemask</sprite>
     </sprites>
     <sprites name="Environment">
+      <sprite>sprites\spr_lightshaft</sprite>
       <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_wallback</sprite>
+      <sprite>sprites\spr_temp</sprite>
+      <sprite>sprites\spr_altar</sprite>
+      <sprite>sprites\spr_crypt</sprite>
+      <sprite>sprites\spr_fresco2</sprite>
+      <sprite>sprites\spr_fresco3</sprite>
+      <sprite>sprites\spr_fresco4</sprite>
+      <sprite>sprites\spr_fresco5</sprite>
+      <sprite>sprites\spr_fresco</sprite>
+      <sprite>sprites\spr_shrine</sprite>
     </sprites>
     <sprites name="Characters">
       <sprite>sprites\spr_robot</sprite>
@@ -27,7 +38,9 @@
       </sprites>
     </sprites>
   </sprites>
-  <backgrounds name="background"/>
+  <backgrounds name="background">
+    <background>background\bck_frostdungeon</background>
+  </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="Combat">
@@ -48,6 +61,7 @@
         <script>scripts\scr_humanoid_ref.gml</script>
         <script>scripts\scr_humanoid.gml</script>
         <script>scripts\scr_humanoid_walk_ref.gml</script>
+        <script>scripts\scr_humanoidtemp.gml</script>
       </scripts>
       <scripts name="UI">
         <script>scripts\scr_statDisplay.gml</script>
@@ -64,10 +78,20 @@
   <objects name="objects">
     <object>objects\obj_character</object>
     <object>objects\obj_terrain</object>
+    <object>objects\obj_wallback</object>
     <object>objects\obj_solid</object>
     <object>objects\obj_control</object>
     <object>objects\obj_selector</object>
     <object>objects\obj_camera</object>
+    <object>objects\obj_fresco</object>
+    <object>objects\obj_fresco2</object>
+    <object>objects\obj_fresco3</object>
+    <object>objects\obj_fresco4</object>
+    <object>objects\obj_fresco5</object>
+    <object>objects\obj_altar</object>
+    <object>objects\obj_crypt</object>
+    <object>objects\obj_light</object>
+    <object>objects\obj_shrine</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rom_dungeon</room>

@@ -5,8 +5,8 @@
 hFacing = 1
 vFacing = 0
 
-//Temp snimType
-scr_humanoid(0)
+//Temp animType
+scr_humanoidtemp(0)
 
 //Move
 movement = 2
@@ -35,6 +35,6 @@ controlled = false
 myPath = path_add()
 path_add_point(myPath,x,y,0)
 player = true
-size = 4
+size = 6
 height = 28
 moveStep = 0
