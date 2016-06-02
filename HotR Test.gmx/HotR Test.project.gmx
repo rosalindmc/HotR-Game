@@ -7,11 +7,23 @@
   <sounds name="sound"/>
   <sprites name="sprites">
     <sprites name="Equipment">
-      <sprite>sprites\spr_chainTabard</sprite>
-      <sprite>sprites\spr_belt</sprite>
-      <sprite>sprites\spr_chainmail</sprite>
-      <sprite>sprites\spr_chain2</sprite>
-      <sprite>sprites\spr_axe</sprite>
+      <sprites name="Clothing">
+        <sprite>sprites\spr_dressSkirt</sprite>
+        <sprite>sprites\spr_dressTop</sprite>
+        <sprite>sprites\spr_belt</sprite>
+      </sprites>
+      <sprites name="Heavy Armour">
+        <sprite>sprites\spr_plateMail</sprite>
+      </sprites>
+      <sprites name="Weapons">
+        <sprite>sprites\spr_axe</sprite>
+        <sprite>sprites\spr_greatSword</sprite>
+      </sprites>
+      <sprites name="Light Armour">
+        <sprite>sprites\spr_chainMail</sprite>
+        <sprite>sprites\spr_chainTabard</sprite>
+        <sprite>sprites\spr_chainLeather</sprite>
+      </sprites>
     </sprites>
     <sprites name="Masks">
       <sprite>sprites\spr_mask</sprite>
@@ -55,7 +67,6 @@
         <sprite>sprites\spr_hips</sprite>
         <sprite>sprites\spr_downHair</sprite>
         <sprite>sprites\spr_arms</sprite>
-        <sprite>sprites\spr_arms2</sprite>
         <sprite>sprites\spr_leg</sprite>
         <sprite>sprites\spr_shortLeg</sprite>
         <sprite>sprites\spr_hand</sprite>
@@ -93,6 +104,7 @@
           <script>scripts\scr_humanoidtemp.gml</script>
           <script>scripts\scr_humanoid_ref.gml</script>
           <script>scripts\scr_humanoidRandomize.gml</script>
+          <script>scripts\scr_tempArmourRandomize.gml</script>
         </scripts>
         <scripts name="Floor">
           <script>scripts\scr_floor_draw.gml</script>

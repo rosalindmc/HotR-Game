@@ -287,11 +287,19 @@ arm += keyboard_check_pressed(ord('H'))-keyboard_check_pressed(ord('J'))
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Temp
+            <string>//UI
 if controlled = true
 {
     draw_set_colour(c_green)
     draw_circle(round(x-1),round(y-fh),size,true)
+}
+
+//Draw Self
+script_execute(animType,1)
+
+//Temp UI
+if controlled = true
+{
     draw_medHealthbar()
     //draw_text(x,y-60,vFacing)
     //draw_text(x,y-70,hFacing)
@@ -307,8 +315,6 @@ if controlled = true
     //draw_arrow(x,y,x+lengthdir_x(10,bodyFacing),y+lengthdir_y(10,bodyFacing),5)
     //draw_path(myPath,x,y,true)
 
-//Draw Self
-script_execute(animType,1)
 </string>
           </argument>
         </arguments>

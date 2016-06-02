@@ -8,7 +8,7 @@
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
   <bbox_left>0</bbox_left>
-  <bbox_right>11</bbox_right>
+  <bbox_right>10</bbox_right>
   <bbox_top>1</bbox_top>
   <bbox_bottom>18</bbox_bottom>
   <HTile>0</HTile>
@@ -20,65 +20,65 @@
   <width>12</width>
   <height>24</height>
   <frames>
-    <frame index="0">images\spr_chainmail_0.png</frame>
-    <frame index="1">images\spr_chainmail_1.png</frame>
-    <frame index="2">images\spr_chainmail_2.png</frame>
-    <frame index="3">images\spr_chainmail_3.png</frame>
-    <frame index="4">images\spr_chainmail_4.png</frame>
-    <frame index="5">images\spr_chainmail_5.png</frame>
-    <frame index="6">images\spr_chainmail_6.png</frame>
-    <frame index="7">images\spr_chainmail_7.png</frame>
-    <frame index="8">images\spr_chainmail_8.png</frame>
-    <frame index="9">images\spr_chainmail_9.png</frame>
-    <frame index="10">images\spr_chainmail_10.png</frame>
-    <frame index="11">images\spr_chainmail_11.png</frame>
-    <frame index="12">images\spr_chainmail_12.png</frame>
-    <frame index="13">images\spr_chainmail_13.png</frame>
-    <frame index="14">images\spr_chainmail_14.png</frame>
-    <frame index="15">images\spr_chainmail_15.png</frame>
-    <frame index="16">images\spr_chainmail_16.png</frame>
-    <frame index="17">images\spr_chainmail_17.png</frame>
-    <frame index="18">images\spr_chainmail_18.png</frame>
-    <frame index="19">images\spr_chainmail_19.png</frame>
-    <frame index="20">images\spr_chainmail_20.png</frame>
-    <frame index="21">images\spr_chainmail_21.png</frame>
-    <frame index="22">images\spr_chainmail_22.png</frame>
-    <frame index="23">images\spr_chainmail_23.png</frame>
-    <frame index="24">images\spr_chainmail_24.png</frame>
-    <frame index="25">images\spr_chainmail_25.png</frame>
-    <frame index="26">images\spr_chainmail_26.png</frame>
-    <frame index="27">images\spr_chainmail_27.png</frame>
-    <frame index="28">images\spr_chainmail_28.png</frame>
-    <frame index="29">images\spr_chainmail_29.png</frame>
-    <frame index="30">images\spr_chainmail_30.png</frame>
-    <frame index="31">images\spr_chainmail_31.png</frame>
-    <frame index="32">images\spr_chainmail_32.png</frame>
-    <frame index="33">images\spr_chainmail_33.png</frame>
-    <frame index="34">images\spr_chainmail_34.png</frame>
-    <frame index="35">images\spr_chainmail_35.png</frame>
-    <frame index="36">images\spr_chainmail_36.png</frame>
-    <frame index="37">images\spr_chainmail_37.png</frame>
-    <frame index="38">images\spr_chainmail_38.png</frame>
-    <frame index="39">images\spr_chainmail_39.png</frame>
-    <frame index="40">images\spr_chainmail_40.png</frame>
-    <frame index="41">images\spr_chainmail_41.png</frame>
-    <frame index="42">images\spr_chainmail_42.png</frame>
-    <frame index="43">images\spr_chainmail_43.png</frame>
-    <frame index="44">images\spr_chainmail_44.png</frame>
-    <frame index="45">images\spr_chainmail_45.png</frame>
-    <frame index="46">images\spr_chainmail_46.png</frame>
-    <frame index="47">images\spr_chainmail_47.png</frame>
-    <frame index="48">images\spr_chainmail_48.png</frame>
-    <frame index="49">images\spr_chainmail_49.png</frame>
-    <frame index="50">images\spr_chainmail_50.png</frame>
-    <frame index="51">images\spr_chainmail_51.png</frame>
-    <frame index="52">images\spr_chainmail_52.png</frame>
-    <frame index="53">images\spr_chainmail_53.png</frame>
-    <frame index="54">images\spr_chainmail_54.png</frame>
-    <frame index="55">images\spr_chainmail_55.png</frame>
-    <frame index="56">images\spr_chainmail_56.png</frame>
-    <frame index="57">images\spr_chainmail_57.png</frame>
-    <frame index="58">images\spr_chainmail_58.png</frame>
-    <frame index="59">images\spr_chainmail_59.png</frame>
+    <frame index="0">images\spr_chainMail_0.png</frame>
+    <frame index="1">images\spr_chainMail_1.png</frame>
+    <frame index="2">images\spr_chainMail_2.png</frame>
+    <frame index="3">images\spr_chainMail_3.png</frame>
+    <frame index="4">images\spr_chainMail_4.png</frame>
+    <frame index="5">images\spr_chainMail_5.png</frame>
+    <frame index="6">images\spr_chainMail_6.png</frame>
+    <frame index="7">images\spr_chainMail_7.png</frame>
+    <frame index="8">images\spr_chainMail_8.png</frame>
+    <frame index="9">images\spr_chainMail_9.png</frame>
+    <frame index="10">images\spr_chainMail_10.png</frame>
+    <frame index="11">images\spr_chainMail_11.png</frame>
+    <frame index="12">images\spr_chainMail_12.png</frame>
+    <frame index="13">images\spr_chainMail_13.png</frame>
+    <frame index="14">images\spr_chainMail_14.png</frame>
+    <frame index="15">images\spr_chainMail_15.png</frame>
+    <frame index="16">images\spr_chainMail_16.png</frame>
+    <frame index="17">images\spr_chainMail_17.png</frame>
+    <frame index="18">images\spr_chainMail_18.png</frame>
+    <frame index="19">images\spr_chainMail_19.png</frame>
+    <frame index="20">images\spr_chainMail_20.png</frame>
+    <frame index="21">images\spr_chainMail_21.png</frame>
+    <frame index="22">images\spr_chainMail_22.png</frame>
+    <frame index="23">images\spr_chainMail_23.png</frame>
+    <frame index="24">images\spr_chainMail_24.png</frame>
+    <frame index="25">images\spr_chainMail_25.png</frame>
+    <frame index="26">images\spr_chainMail_26.png</frame>
+    <frame index="27">images\spr_chainMail_27.png</frame>
+    <frame index="28">images\spr_chainMail_28.png</frame>
+    <frame index="29">images\spr_chainMail_29.png</frame>
+    <frame index="30">images\spr_chainMail_30.png</frame>
+    <frame index="31">images\spr_chainMail_31.png</frame>
+    <frame index="32">images\spr_chainMail_32.png</frame>
+    <frame index="33">images\spr_chainMail_33.png</frame>
+    <frame index="34">images\spr_chainMail_34.png</frame>
+    <frame index="35">images\spr_chainMail_35.png</frame>
+    <frame index="36">images\spr_chainMail_36.png</frame>
+    <frame index="37">images\spr_chainMail_37.png</frame>
+    <frame index="38">images\spr_chainMail_38.png</frame>
+    <frame index="39">images\spr_chainMail_39.png</frame>
+    <frame index="40">images\spr_chainMail_40.png</frame>
+    <frame index="41">images\spr_chainMail_41.png</frame>
+    <frame index="42">images\spr_chainMail_42.png</frame>
+    <frame index="43">images\spr_chainMail_43.png</frame>
+    <frame index="44">images\spr_chainMail_44.png</frame>
+    <frame index="45">images\spr_chainMail_45.png</frame>
+    <frame index="46">images\spr_chainMail_46.png</frame>
+    <frame index="47">images\spr_chainMail_47.png</frame>
+    <frame index="48">images\spr_chainMail_48.png</frame>
+    <frame index="49">images\spr_chainMail_49.png</frame>
+    <frame index="50">images\spr_chainMail_50.png</frame>
+    <frame index="51">images\spr_chainMail_51.png</frame>
+    <frame index="52">images\spr_chainMail_52.png</frame>
+    <frame index="53">images\spr_chainMail_53.png</frame>
+    <frame index="54">images\spr_chainMail_54.png</frame>
+    <frame index="55">images\spr_chainMail_55.png</frame>
+    <frame index="56">images\spr_chainMail_56.png</frame>
+    <frame index="57">images\spr_chainMail_57.png</frame>
+    <frame index="58">images\spr_chainMail_58.png</frame>
+    <frame index="59">images\spr_chainMail_59.png</frame>
   </frames>
 </sprite>

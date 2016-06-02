@@ -27,5 +27,12 @@
     <frame index="4">images\spr_arms_4.png</frame>
     <frame index="5">images\spr_arms_5.png</frame>
     <frame index="6">images\spr_arms_6.png</frame>
+    <frame index="7">images\spr_arms_7.png</frame>
+    <frame index="8">images\spr_arms_8.png</frame>
+    <frame index="9">images\spr_arms_9.png</frame>
+    <frame index="10">images\spr_arms_10.png</frame>
+    <frame index="11">images\spr_arms_11.png</frame>
+    <frame index="12">images\spr_arms_12.png</frame>
+    <frame index="13">images\spr_arms_13.png</frame>
   </frames>
 </sprite>

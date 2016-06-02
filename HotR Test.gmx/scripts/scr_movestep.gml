@@ -140,7 +140,7 @@ if h <= fh
 if canMove = true and isMoving != false
 {
     animIndex[0] = anim_humanoidWalk
-    bodyFacing = round(point_direction(xprevious,yprevious,x,y)/15)*15
+    bodyFacing = round(point_direction(xprevious,yprevious,x,y)/30)*30
 }
 else
 {
