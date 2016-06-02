@@ -8,41 +8,54 @@ if controlled = 1
 {
     if key_rgtclicked = 1
     {
-        moveX = mouse_x+xOff
-        moveY = mouse_y+yOff
-        moveStep = 0
+        //Check if attacking a character     
+        global.id = -4
+        global.team = team
         
-        //Make a path
-        mp_grid_path(global.grid,myPath,x,y,moveX,moveY,true)
-        
-        //Set destination to last visible area on path
-        var ii = 0
-            repeat(path_get_number(myPath))
-            {
-                if !collision_line(x,y,path_get_point_x(myPath,ii),path_get_point_y(myPath,ii),obj_terrain,false,true) 
-                {
-                moveX = path_get_point_x(myPath,ii)
-                moveY = path_get_point_y(myPath,ii)
-                moveStep = ii
-                }
-            ii += 1
-            }
-    }
-}
-    
-if key_lftclicked = 1
-{
-    if point_in_rectangle(mouse_x,mouse_y,x-size,y-height,x+size,y+size)
-    {
-        if !keyboard_check(vk_shift)
+        with(obj_character)
         {
-            with(obj_character)
+            if team != global.team
             {
-            controlled = false
+                if active = true
+                {
+                    if point_in_rectangle(mouse_x,mouse_y,x-size,y-height-h,x+size,y+size-h)
+                    {
+                        if global.id = -4
+                        {
+                            global.id = id
+                        }
+                        else if global.id.depth > depth
+                        {
+                            global.id = id
+                        }
+                    }
+                }     
             }
         }
-    xOff = 0
-    yOff = 0
-    controlled = true
+        
+        //If attacking a character
+        if global.id != -4
+        {
+        targetId = global.id
+            if global.rightMouse > 0
+            {
+                script_execute(act_charge,1)
+            }
+            else
+            {
+                script_execute(act_attack,1)
+            }   
+        }
+        else
+        {
+            if global.rightMouse > 0
+            {
+                script_execute(act_sprint,1)
+            }
+            else
+            {
+                script_execute(act_run,1)
+            }   
+        }    
     }
 }

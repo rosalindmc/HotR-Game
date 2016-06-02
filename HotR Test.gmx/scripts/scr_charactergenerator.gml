@@ -11,7 +11,7 @@ while (i <= banana)
     {
         case 0: might++
         break
-        case 1: toughness++
+        case 1: grace++
         break
         case 2: intellect++
         break
@@ -30,10 +30,10 @@ if (might > 10)
     ii += might-10
     might = 10
 }
-if (toughness > 10)
+if (grace > 10)
 {
-    ii += toughness-10
-    toughness = 10
+    ii += grace-10
+    grace = 10
 }
 if (will > 10)
 {
@@ -58,7 +58,7 @@ while (i <= ii)
     {
         case 0: might++
         break
-        case 1: toughness++
+        case 1: grace++
         break
         case 2: intellect++
         break

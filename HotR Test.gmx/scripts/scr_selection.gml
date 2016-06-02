@@ -17,7 +17,7 @@ if distance_to_point(mouse_x,mouse_y) > 5
         var vi = min(mouse_y,obj_selector.y)
         var vii = max(mouse_y,obj_selector.y)
         
-            if x >= i and x <= ii and y >= vi and y <= vii
+            if x >= i and x <= ii and y-h >= vi and y-h <= vii
             {
                 global.control = id
                 controlled = true

@@ -63,7 +63,7 @@ break
 
 case 1:  //Draw self
 
-draw_sprite_ext(spr_char,vFacing,x,y,hFacing,1,0,c_white,1)
+draw_sprite_ext(spr_char,vFacing,x,y-h,hFacing,1,0,c_white,1)
 break
 
 }

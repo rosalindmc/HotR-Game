@@ -26,10 +26,81 @@
           <argument>
             <kind>1</kind>
             <string>scr_initialize()
-scr_charactergenerator()
 
 //Temp
 image_speed = 0
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="7">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Off Arm Animation Continue
+script_execute(animIndex[2],animStep[2])
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="6">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Main Arm Animation Continue
+script_execute(animIndex[1],animStep[1])
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="5">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Leg Animation Continue
+script_execute(animIndex[0],animStep[0])
 </string>
           </argument>
         </arguments>
@@ -52,7 +123,9 @@ image_speed = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//TEMP
+            <string>//Upkeep
+
+//TEMP
 //Reattempt pathfinding to fix any errors or adjust to changes
 
 //Make a path
@@ -74,7 +147,7 @@ repeat(path_get_number(myPath))
     }
 ii += 1
 }
-alarm[0] = 50
+alarm[0] = global.fspd
 
 </string>
           </argument>
@@ -98,14 +171,100 @@ alarm[0] = 50
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Movmeent and Control
-scr_control()
+            <string>//Movement and Control
+script_execute(controlScript)
 scr_personalspace()
 scr_movestep()
+script_execute(action,0)
+
+//Animation
 
 
 //Depth
 depth = -y
+
+//Visualize life changes
+lifeVis += (life-lifeVis)/(global.fspd/5)
+
+//Regenerate life
+regenTime += lifeRegen/(global.fspd*5)
+
+if regenTime &gt;= 1
+{
+    if life &lt; lifeMax
+    {
+    life += 1
+    }
+    regenTime -= 1
+}
+
+//Attack
+atkTime += atkHaste/(global.fspd)
+
+//Life
+if life &gt; lifeMax
+{
+    life = lifeMax
+    active = true
+}
+else if life &lt; 0
+{
+    life = 0
+    active = false
+}
+
+
+
+//Temp
+if keyboard_check_pressed(vk_right)-keyboard_check_pressed(vk_left) != 0 and controlled = true
+{
+    i = choose(1,1,1,2,2)
+    life += i*(keyboard_check_pressed(vk_right)-keyboard_check_pressed(vk_left))
+
+    ii = instance_create(x,y-h-height,obj_descriptor)
+    ii.text = i
+    ii.font = fnt_tiny
+    
+    if keyboard_check_pressed(vk_right)-keyboard_check_pressed(vk_left) &gt; 0
+    {
+    ii.colour1 = c_green
+    ii.colour2 = c_white  
+    }
+    else
+    {
+    ii.colour1 = dkRed
+    ii.colour2 = c_red  
+    }
+}
+
+if keyboard_check_pressed(vk_up)-keyboard_check_pressed(vk_down) != 0 and controlled = true
+{
+    i = choose(3,4,5,6,7,8,9,10)
+    life += i*(keyboard_check_pressed(vk_up)-keyboard_check_pressed(vk_down))
+    
+    ii = instance_create(x,y-h-height,obj_descriptor)
+    ii.text = i
+    
+    if keyboard_check_pressed(vk_up)-keyboard_check_pressed(vk_down) &gt; 0
+    {
+    ii.colour1 = c_green
+    ii.colour2 = c_white  
+    }  
+}
+
+if controlled = true
+{
+    lifeMax += 4*(keyboard_check_pressed(ord('Q'))-keyboard_check_pressed(ord('E')))
+    vit += 1*(keyboard_check_pressed(ord('R'))-keyboard_check_pressed(ord('T')))
+    stm += 1*(keyboard_check_pressed(ord('F'))-keyboard_check_pressed(ord('G')))
+    mor += 1*(keyboard_check_pressed(ord('V'))-keyboard_check_pressed(ord('B')))
+}
+
+
+//Arm Adjust Temp
+armMax += keyboard_check_pressed(ord('Y'))-keyboard_check_pressed(ord('U'))
+arm += keyboard_check_pressed(ord('Y'))-keyboard_check_pressed(ord('U'))
+arm += keyboard_check_pressed(ord('H'))-keyboard_check_pressed(ord('J'))
 </string>
           </argument>
         </arguments>
@@ -131,11 +290,22 @@ depth = -y
             <string>//Temp
 if controlled = true
 {
-    draw_circle(round(x-1),round(y),size,true)
-    //draw_line(x,y,moveX,moveY)
-    //draw_path(myPath,x,y,true)
+    draw_set_colour(c_green)
+    draw_circle(round(x-1),round(y-fh),size,true)
+    draw_medHealthbar()
+    //draw_text(x,y-60,vFacing)
+    //draw_text(x,y-70,hFacing)
+    //draw_text(x,y-80,shldrSwap)
+    
+    //draw_bossHealthbar()
+    //draw_text(x,y-90,"Vitality: "+string(vit)+" / "+string(vitMax))
+    //draw_text(x,y-80,"Stamina: "+string(stm)+" / "+string(stmMax))
+    //draw_text(x,y-70,"Morale: "+string(mor)+" / "+string(morMax))
     //scr_personalspace_draw()
 }
+    //bodyFacing = 15*round(point_direction(x,y,mouse_x,mouse_y)/15)
+    //draw_arrow(x,y,x+lengthdir_x(10,bodyFacing),y+lengthdir_y(10,bodyFacing),5)
+    //draw_path(myPath,x,y,true)
 
 //Draw Self
 script_execute(animType,1)

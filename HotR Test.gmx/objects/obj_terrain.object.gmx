@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_solid</parentName>
+  <parentName>obj_pathingBlock</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,12 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>depth = -y
+            <string>instance_create(x,y,obj_solid)
+
+depth = -y
 image_index = random(10)
 image_speed = 0
 
 size = 10000
-is_moving = 0
+isMoving = 0
 </string>
           </argument>
         </arguments>

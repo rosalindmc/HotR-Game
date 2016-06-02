@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-100000</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -33,19 +33,60 @@ randomize()
 
 alarm[0] = 2
 
-
 //Create Camera
 instance_create(x,y,obj_camera)
+global.mouseHAdj = 0
 
-//Create Characters
-repeat(1)
+//Double click buttons
+global.leftMouse = 0
+global.rightMouse = 0
+
+//Framerate (Temp)
+global.fspd = 60
+room_speed = global.fspd
+
+//Create Characters (Temp)
+repeat(7)
 {
-    ii = instance_create(x,y+(20*i),obj_character)
+    ii = instance_create(x+20+(20*i),y,obj_character)
+    if i &lt; 6
+    {
     control[i] = ii
-       
+    } 
+      
+    iii = instance_create(x+20+(20*i),y+20,obj_character)
+    with(iii)
+    {
+        scr_enemy()
+    }
+    
     i += 1
 }
 </string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>801</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_set_cursor</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>5</kind>
+            <sprite>-1</sprite>
+          </argument>
+          <argument>
+            <kind>4</kind>
+            <string>0</string>
           </argument>
         </arguments>
       </action>
@@ -70,7 +111,15 @@ repeat(1)
             <string>//Grid
 global.grid = mp_grid_create(areaSize/2,areaSize/2,(room_width/areaSize)+1,(room_height/areaSize)+1,areaSize,areaSize)
 
+mp_grid_add_instances(global.grid,obj_terrain,true)
+
+/*
 with(obj_terrain)
+{
+   
+}
+
+with(obj_invisiblewall)
 {
     mp_grid_add_rectangle(global.grid,x,y,x,y)
 }
@@ -96,8 +145,33 @@ with(obj_terrain)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Selection
-scr_selection_control()
+            <string>//Double Click
+if mouse_check_button_pressed(mb_left)
+{
+    global.leftMouse = .25
+}
+else
+{
+    global.leftMouse = max(global.leftMouse-(1/global.fspd),0)
+}
+
+if mouse_check_button_pressed(mb_right)
+{
+    global.rightMouse = .25
+}
+else
+{
+    global.rightMouse = max(global.rightMouse-(1/global.fspd),0)
+}
+
+//Selection
+scr_mouseAdj()
+scr_selectionControl()
+  
+    x = mouse_x
+    y = mouse_y
+
+
 </string>
           </argument>
         </arguments>
@@ -120,9 +194,11 @@ scr_selection_control()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Temp FPS
-//draw_text(50,50,fps)
+            <string>//UI Players
+scr_playerPortrait(5)
 
+//Cursor
+draw_sprite(spr_mouse,0,round(mouse_x),round(mouse_y))
 </string>
           </argument>
         </arguments>
