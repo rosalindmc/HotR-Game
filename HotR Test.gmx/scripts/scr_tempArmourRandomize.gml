@@ -1,6 +1,6 @@
-switch(min((choose(1,2,3,4)+gender),4))
+switch(min(5,choose(2,3,4,5)+(gender)))
 {
-case 1:     //Dress
+case 2:     //Dress
 bodyItem[1] = spr_dressTop
 hipsItem[1] = spr_dressTop
 skrtItem[1] = spr_dressSkirt
@@ -8,7 +8,15 @@ armsItem[1] = spr_dressTop
 legsItem[1] = spr_chainLeather
 break
 
-case 2:     //Chainmail
+case 1:     //Dress
+if gender = gndr_female
+{
+bodyItem[1] = spr_underClothes
+}
+hipsItem[1] = spr_underClothes
+break
+
+case 3:     //Chainmail
 bodyItem[1] = spr_chainMail
 hipsItem[1] = spr_chainMail
 skrtItem[1] = spr_chainTabard
@@ -17,9 +25,7 @@ legsItem[1] = spr_chainMail
 armsItem[1] = spr_chainMail
 break
 
-
-
-case 3:     //ChainLeather
+case 4:     //ChainLeather
 bodyItem[1] = spr_chainLeather
 hipsItem[1] = spr_chainLeather
 skrtItem[1] = spr_chainTabard
@@ -28,7 +34,7 @@ armsItem[1] = spr_chainLeather
 legsItem[1] = spr_chainLeather
 break
 
-case 4:     //Platemail
+case 5:     //Platemail
 bodyItem[1] = spr_chainMail
 hipsItem[1] = spr_chainMail
 skrtItem[1] = spr_chainTabard

@@ -1,12 +1,9 @@
 //Holding animation for melee weapons
 //anim_meleeHold(hand,animStep)
 
-alarm[5+argument0] = global.fspd*.1
-animStep[argument0] += 1
+handHeight[argument0] = 18
+handRot[argument0] = 45
+handDist[argument0] = 6
+handDir[argument0] = 0
 
-switch(argument1)
-{
-case 0:
-
-break
-}
+animPriority[argument0] = 0

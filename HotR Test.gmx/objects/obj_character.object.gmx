@@ -52,7 +52,7 @@ image_speed = 0
           <argument>
             <kind>1</kind>
             <string>//Off Arm Animation Continue
-script_execute(animIndex[2],animStep[2])
+script_execute(animIndex[2],2,animStep[2])
 </string>
           </argument>
         </arguments>
@@ -76,7 +76,7 @@ script_execute(animIndex[2],animStep[2])
           <argument>
             <kind>1</kind>
             <string>//Main Arm Animation Continue
-script_execute(animIndex[1],animStep[1])
+script_execute(animIndex[1],1,animStep[1])
 </string>
           </argument>
         </arguments>
@@ -177,9 +177,6 @@ scr_personalspace()
 scr_movestep()
 script_execute(action,0)
 
-//Animation
-
-
 //Depth
 depth = -y
 
@@ -216,6 +213,11 @@ else if life &lt; 0
 
 
 //Temp
+if keyboard_check_pressed(ord('V')) and controlled = true
+{
+    anim_start(1,choose(anim_downSwing,anim_crossSwing))
+}
+
 if keyboard_check_pressed(vk_right)-keyboard_check_pressed(vk_left) != 0 and controlled = true
 {
     i = choose(1,1,1,2,2)
@@ -301,9 +303,9 @@ script_execute(animType,1)
 if controlled = true
 {
     draw_medHealthbar()
-    //draw_text(x,y-60,vFacing)
-    //draw_text(x,y-70,hFacing)
-    //draw_text(x,y-80,shldrSwap)
+    //draw_text(x,y-60,string(animStep[0])+" "+string(alarm[5]))
+    //draw_text(x,y-70,string(bodyHFacing)+" "+string(hFacing))
+    //draw_text(x,y-80,hFacing)
     
     //draw_bossHealthbar()
     //draw_text(x,y-90,"Vitality: "+string(vit)+" / "+string(vitMax))

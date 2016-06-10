@@ -12,6 +12,7 @@ legRot[2] = 0
 legAnim[2] = 6
 hipsRot = 0
 hipsThrust = 1
+hipsBounce = 0
 bounce = 0
 skrtAnim = 0
 headThrust = 0

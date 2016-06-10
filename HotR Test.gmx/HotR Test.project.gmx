@@ -10,6 +10,7 @@
       <sprites name="Clothing">
         <sprite>sprites\spr_dressSkirt</sprite>
         <sprite>sprites\spr_dressTop</sprite>
+        <sprite>sprites\spr_underClothes</sprite>
         <sprite>sprites\spr_belt</sprite>
       </sprites>
       <sprites name="Heavy Armour">
@@ -17,6 +18,7 @@
       </sprites>
       <sprites name="Weapons">
         <sprite>sprites\spr_axe</sprite>
+        <sprite>sprites\spr_spear</sprite>
         <sprite>sprites\spr_greatSword</sprite>
       </sprites>
       <sprites name="Light Armour">
@@ -58,6 +60,7 @@
       <sprite>sprites\spr_portrait</sprite>
       <sprites name="Core">
         <sprite>sprites\spr_shortHair</sprite>
+        <sprite>sprites\spr_horns</sprite>
         <sprite>sprites\spr_upHair</sprite>
         <sprite>sprites\spr_none</sprite>
         <sprite>sprites\spr_humanHead</sprite>
@@ -105,6 +108,7 @@
           <script>scripts\scr_humanoid_ref.gml</script>
           <script>scripts\scr_humanoidRandomize.gml</script>
           <script>scripts\scr_tempArmourRandomize.gml</script>
+          <script>scripts\scr_twist.gml</script>
         </scripts>
         <scripts name="Floor">
           <script>scripts\scr_floor_draw.gml</script>
@@ -163,6 +167,9 @@
         </scripts>
         <scripts name="Attack Animation">
           <script>scripts\anim_meleeHold.gml</script>
+          <script>scripts\anim_downSwing.gml</script>
+          <script>scripts\anim_crossSwing.gml</script>
+          <script>scripts\anim_start.gml</script>
         </scripts>
       </scripts>
     </scripts>

@@ -60,6 +60,18 @@ repeat(7)
         scr_enemy()
     }
     
+    iii = instance_create(x+20+(20*i),y+40,obj_character)
+    with(iii)
+    {
+        scr_enemy()
+    }
+    
+    iii = instance_create(x+20+(20*i),y+60,obj_character)
+    with(iii)
+    {
+        scr_enemy()
+    }
+    
     i += 1
 }
 </string>

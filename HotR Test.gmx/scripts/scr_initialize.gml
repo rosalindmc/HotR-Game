@@ -4,6 +4,7 @@
 //Graphics
 hFacing = 1
 vFacing = 0
+facing = 0
 
 //Animation
 scr_humanoid(0)
@@ -54,6 +55,5 @@ targetId = -4
 controlled = false
 myPath = path_add()
 path_add_point(myPath,x,y,0)
-height = 28
 moveStep = 0
 canMove = true
