@@ -40,6 +40,7 @@ global.abilityKey[10] = ini_read_real("Controls", "ability10", ord('P'))
 global.attackKey = ini_read_real("Controls", "attack", ord('A'))
 global.switchKey = ini_read_real("Controls", "switch", ord('S'))
 global.healKey = ini_read_real("Controls", "heal", ord('D'))
+global.commandKey = ini_read_real("Controls", "commandToggle", false)
 
 //Gameplay
 global.fspd = ini_read_real("Gameplay", "fps", 60)

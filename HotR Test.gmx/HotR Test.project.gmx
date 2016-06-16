@@ -209,6 +209,7 @@
       <script>scripts\scr_menuToggle.gml</script>
       <script>scripts\scr_keyCode.gml</script>
       <script>scripts\scr_keyRebindButton.gml</script>
+      <script>scripts\scr_keybindCreate.gml</script>
     </scripts>
   </scripts>
   <fonts name="fonts">

@@ -22,7 +22,11 @@ case 7: room_goto_next() break
 //Settings Menus
 case 8: scr_menuClear() scr_menuCreate(4) break
 case 9: scr_menuClear() scr_menuCreate(5) break
-case 10: break
+case 10: scr_menuClear() scr_menuCreate(6) break
+
+case 12: scr_menuClear() scr_menuCreate(7) break
+case 13: scr_menuClear() scr_menuCreate(8) break
+
 
 //Return from settings
 case 11: scr_menuClear() scr_saveSettings() scr_menuCreate(0) break

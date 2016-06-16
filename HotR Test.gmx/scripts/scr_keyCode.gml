@@ -12,7 +12,11 @@ var map, name;
 map = true;
 
 //Switch the last keyboard key
-if (argument0 >= 65 && argument0 <= 90)
+if (argument0 >= 49 && argument0 <= 59)
+{
+  name = argument0-48;
+}
+else if (argument0 >= 65 && argument0 <= 90)
 {
   name = chr(argument0);
 }
@@ -21,14 +25,16 @@ else
   switch (argument0)
   {
     case vk_control: name="Ctrl"; break;
+    case vk_lshift: name="L Shft"; break;
+    case vk_rshift: name="R Shft"; break;
     case vk_tab: name="Tab"; break;
     case vk_space: name="Space"; break;
 
     //ARROW KEYS
-    case vk_left: name="Arrow#Left"; break;
-    case vk_right: name="Arrow#Right"; break;
-    case vk_up: name="Arrow#Up"; break;
-    case vk_down: name="Arrow#Down"; break;
+    case vk_left: name="Left"; break;
+    case vk_right: name="Right"; break;
+    case vk_up: name="Up"; break;
+    case vk_down: name="Down"; break;
 
     //NUMPAD
     case vk_numpad0: name="Num0"; break;

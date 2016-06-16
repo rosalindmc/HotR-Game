@@ -102,7 +102,7 @@ i = instance_create(32,60,obj_menuButton)
 i.text = 'Audio' i.number = 8
 
 i = instance_create(32,90,obj_menuButton)
-i.text = 'Gameplay' i.number = 9
+i.text = 'Gameplay' i.number = 20
 
 i = instance_create(40,120,obj_sliderControl)
 i.text = 'Frame Rate' i.number = 4
@@ -112,6 +112,93 @@ i.text = 'Command Mode' i.number = 0 i.descriptor = 'Allows you to use a key (de
 
 i = instance_create(32,170,obj_menuButton)
 i.text = 'Keybindings' i.number = 10
+
+i = instance_create(544,320,obj_menuButton)
+i.text = 'Return' i.number = 11
+break
+
+case 6:     //Keybind Menu
+i = instance_create(50,30,obj_menuTitle)
+i.text = 'Settings - Keybindings - Selection'
+
+i = instance_create(32,60,obj_menuButton)
+i.text = 'Audio' i.number = 8
+
+i = instance_create(32,90,obj_menuButton)
+i.text = 'Gameplay' i.number = 9
+
+i = instance_create(32,120,obj_menuButton)
+i.text = 'Keybindings' i.number = 20
+
+i = instance_create(40,150,obj_menuButton)
+i.text = 'Selection' i.number = 20 i.font = fnt_smlMenu
+
+i = instance_create(40,170,obj_menuButton)
+i.text = 'Abilities' i.number = 12 i.font = fnt_smlMenu
+
+i = instance_create(40,190,obj_menuButton)
+i.text = 'Other' i.number = 13 i.font = fnt_smlMenu
+
+scr_keybindCreate(1)
+
+
+i = instance_create(544,320,obj_menuButton)
+i.text = 'Return' i.number = 11
+break
+
+case 7:     //Keybind Menu
+i = instance_create(50,30,obj_menuTitle)
+i.text = 'Settings - Keybindings - Abilities'
+
+i = instance_create(32,60,obj_menuButton)
+i.text = 'Audio' i.number = 8
+
+i = instance_create(32,90,obj_menuButton)
+i.text = 'Gameplay' i.number = 9
+
+i = instance_create(32,120,obj_menuButton)
+i.text = 'Keybindings' i.number = 20
+
+i = instance_create(40,150,obj_menuButton)
+i.text = 'Selection' i.number = 10 i.font = fnt_smlMenu
+
+i = instance_create(40,170,obj_menuButton)
+i.text = 'Abilities' i.number = 20 i.font = fnt_smlMenu
+
+i = instance_create(40,190,obj_menuButton)
+i.text = 'Other' i.number = 13 i.font = fnt_smlMenu
+
+scr_keybindCreate(2)
+
+
+i = instance_create(544,320,obj_menuButton)
+i.text = 'Return' i.number = 11
+break
+
+case 8:     //Keybind Menu
+i = instance_create(50,30,obj_menuTitle)
+i.text = 'Settings - Keybindings - Other'
+
+i = instance_create(32,60,obj_menuButton)
+i.text = 'Audio' i.number = 8
+
+i = instance_create(32,90,obj_menuButton)
+i.text = 'Gameplay' i.number = 9
+
+i = instance_create(32,120,obj_menuButton)
+i.text = 'Keybindings' i.number = 20
+
+i = instance_create(40,150,obj_menuButton)
+i.text = 'Selection' i.number = 10 i.font = fnt_smlMenu
+
+i = instance_create(40,170,obj_menuButton)
+i.text = 'Abilities' i.number = 12 i.font = fnt_smlMenu
+
+i = instance_create(40,190,obj_menuButton)
+i.text = 'Other' i.number = 20 i.font = fnt_smlMenu
+
+scr_keybindCreate(3)
+
 
 i = instance_create(544,320,obj_menuButton)
 i.text = 'Return' i.number = 11

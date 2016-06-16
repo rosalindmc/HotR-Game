@@ -26,7 +26,6 @@ ini_write_real("Controls","down", global.downScroll)
 ini_write_real("Controls","left", global.leftScroll)
 ini_write_real("Controls","right", global.rightScroll)
 
-
 //Action Keybindings
 ini_write_real("Controls","ability1", global.abilityKey[1])
 ini_write_real("Controls","ability2", global.abilityKey[2])
@@ -42,6 +41,7 @@ ini_write_real("Controls","ability10", global.abilityKey[10])
 ini_write_real("Controls","attack", global.attackKey)
 ini_write_real("Controls","switch", global.switchKey)
 ini_write_real("Controls","heal", global.healKey)
+ini_write_real("Controls","commandToggle", global.commandKey)
 
 //Gameplay
 ini_write_real("Gameplay","fps", global.fspd)
