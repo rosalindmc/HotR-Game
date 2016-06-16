@@ -6,7 +6,7 @@ switch(argument0)
 {
 case 0:
 //Update Foe Location
-if distance_to_object(targetId) > engageRange*areaSize
+if distance_to_object(targetId) > engageRange*metre
 {
     moveX = targetId.x
     moveY = targetId.y

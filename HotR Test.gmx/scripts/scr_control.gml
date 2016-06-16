@@ -37,6 +37,7 @@ if controlled = 1
         if global.id != -4
         {
         targetId = global.id
+            //Double Click
             if global.rightMouse > 0
             {
                 script_execute(act_charge,1)
@@ -48,6 +49,7 @@ if controlled = 1
         }
         else
         {
+            //Double Click
             if global.rightMouse > 0
             {
                 script_execute(act_sprint,1)

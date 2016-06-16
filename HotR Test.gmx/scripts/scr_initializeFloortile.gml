@@ -1,5 +1,6 @@
 //Initialize floor tiles script
 //scr_initializeFloortile()
+//Used in the create event of all floor tiles
 
 //Visual
 h = 0

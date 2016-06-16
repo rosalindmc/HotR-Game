@@ -50,8 +50,8 @@
             <kind>1</kind>
             <string>if distance_to_point(mouse_x,mouse_y) &gt; 5
 {
-draw_set_color(c_green)
-draw_rectangle(x,y,mouse_x,mouse_y,true)
+    draw_set_color(c_green)
+    draw_rectangle(x,y,mouse_x,mouse_y,true)
 }
 </string>
           </argument>

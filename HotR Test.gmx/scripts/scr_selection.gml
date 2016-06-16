@@ -46,8 +46,8 @@ if distance_to_point(mouse_x,mouse_y) > 5
         if controlled = true
         {
             //Set the characters offset from group
-            xOff = sign(x - global.x)*min(abs(x - global.x), areaSize*2)
-            yOff = sign(y - global.y)*min(abs(y - global.y), areaSize*2)
+            xOff = sign(x - global.x)*min(abs(x - global.x), metre*2)
+            yOff = sign(y - global.y)*min(abs(y - global.y), metre*2)
         }
     }
 }

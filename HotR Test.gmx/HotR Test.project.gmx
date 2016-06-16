@@ -8,8 +8,12 @@
   <sprites name="sprites">
     <sprites name="Equipment">
       <sprites name="Clothing">
-        <sprite>sprites\spr_dressSkirt</sprite>
-        <sprite>sprites\spr_dressTop</sprite>
+        <sprite>sprites\spr_sorcererDress</sprite>
+        <sprite>sprites\spr_pinkSlitSkirt</sprite>
+        <sprite>sprites\spr_witchDress</sprite>
+        <sprite>sprites\spr_purpleSlitSkirt</sprite>
+        <sprite>sprites\spr_royalSkirt</sprite>
+        <sprite>sprites\spr_royalDress</sprite>
         <sprite>sprites\spr_underClothes</sprite>
         <sprite>sprites\spr_belt</sprite>
       </sprites>
@@ -23,7 +27,9 @@
       </sprites>
       <sprites name="Light Armour">
         <sprite>sprites\spr_chainMail</sprite>
+        <sprite>sprites\spr_underChains</sprite>
         <sprite>sprites\spr_chainTabard</sprite>
+        <sprite>sprites\spr_chainLoin</sprite>
         <sprite>sprites\spr_chainLeather</sprite>
       </sprites>
     </sprites>
@@ -82,6 +88,8 @@
       <sprite>sprites\spr_stmIcon</sprite>
       <sprite>sprites\spr_morIcon</sprite>
       <sprite>sprites\spr_mouse</sprite>
+      <sprite>sprites\spr_buttonMask</sprite>
+      <sprite>sprites\spr_slider</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -91,31 +99,28 @@
   <scripts name="scripts">
     <scripts name="Combat">
       <scripts name="Initialize">
-        <script>scripts\scr_initialize.gml</script>
-        <script>scripts\scr_initializeFloortile.gml</script>
-        <script>scripts\scr_initializeCharStats.gml</script>
-        <script>scripts\scr_initializeWeapon.gml</script>
-        <scripts name="Char Types">
-          <script>scripts\scr_pc.gml</script>
-          <script>scripts\scr_enemy.gml</script>
+        <scripts name="Characters">
+          <script>scripts\scr_initializeCharStats.gml</script>
+          <script>scripts\scr_initializeWeapon.gml</script>
+          <script>scripts\scr_initialize.gml</script>
+          <scripts name="Char Types">
+            <script>scripts\scr_pc.gml</script>
+            <script>scripts\scr_enemy.gml</script>
+          </scripts>
+        </scripts>
+        <scripts name="Non Characters">
+          <script>scripts\scr_initializeTerrain.gml</script>
         </scripts>
       </scripts>
       <scripts name="Draw">
         <scripts name="Humanoid">
           <script>scripts\scr_humanoid.gml</script>
           <script>scripts\scr_humanoidWalk.gml</script>
-          <script>scripts\scr_humanoidtemp.gml</script>
-          <script>scripts\scr_humanoid_ref.gml</script>
           <script>scripts\scr_humanoidRandomize.gml</script>
           <script>scripts\scr_tempArmourRandomize.gml</script>
-          <script>scripts\scr_twist.gml</script>
         </scripts>
-        <scripts name="Floor">
-          <script>scripts\scr_floor_draw.gml</script>
-          <script>scripts\scr_horizontal_ramp.gml</script>
-          <script>scripts\scr_vertical_ramp.gml</script>
-          <script>scripts\scr_adjup_ramp.gml</script>
-          <script>scripts\scr_adjdwn_ramp.gml</script>
+        <scripts name="Character Draw Control">
+          <script>scripts\scr_characterDrawControl.gml</script>
         </scripts>
       </scripts>
       <scripts name="UI">
@@ -137,7 +142,12 @@
       </scripts>
       <scripts name="Core">
         <scripts name="Movement">
-          <script>scripts\scr_movestep.gml</script>
+          <script>scripts\scr_moveStep.gml</script>
+          <script>scripts\scr_translateStep.gml</script>
+          <script>scripts\scr_groundStep.gml</script>
+          <script>scripts\scr_pathUpdate.gml</script>
+          <script>scripts\scr_depthCheck.gml</script>
+          <script>scripts\scr_personalSpace.gml</script>
         </scripts>
         <scripts name="Action">
           <scripts name="Core Actions">
@@ -153,12 +163,15 @@
             <script>scripts\scr_meleeDamage.gml</script>
           </scripts>
         </scripts>
-        <script>scripts\scr_controlAI.gml</script>
-        <script>scripts\scr_control.gml</script>
-        <script>scripts\scr_personalspace.gml</script>
-        <script>scripts\scr_selectionControl.gml</script>
-        <script>scripts\scr_selection.gml</script>
-        <script>scripts\scr_mouseAdj.gml</script>
+        <scripts name="Upkeep">
+          <script>scripts\scr_upkeep.gml</script>
+        </scripts>
+        <scripts name="Control">
+          <script>scripts\scr_control.gml</script>
+          <script>scripts\scr_selection.gml</script>
+          <script>scripts\scr_selectionControl.gml</script>
+          <script>scripts\scr_controlAI.gml</script>
+        </scripts>
       </scripts>
       <scripts name="Animation">
         <scripts name="Movement Animation">
@@ -170,14 +183,38 @@
           <script>scripts\anim_downSwing.gml</script>
           <script>scripts\anim_crossSwing.gml</script>
           <script>scripts\anim_start.gml</script>
+          <script>scripts\scr_twist.gml</script>
         </scripts>
+      </scripts>
+      <scripts name="Floor">
+        <script>scripts\scr_floor_draw.gml</script>
+        <script>scripts\scr_horizontal_ramp.gml</script>
+        <script>scripts\scr_vertical_ramp.gml</script>
+        <script>scripts\scr_mouseAdj.gml</script>
+        <script>scripts\scr_adjup_ramp.gml</script>
+        <script>scripts\scr_adjdwn_ramp.gml</script>
+        <script>scripts\scr_initializeFloortile.gml</script>
       </scripts>
     </scripts>
     <scripts name="Overworld">
       <script>scripts\scr_charactergenerator.gml</script>
     </scripts>
+    <scripts name="Menu">
+      <script>scripts\scr_menuCreate.gml</script>
+      <script>scripts\scr_menuButton.gml</script>
+      <script>scripts\scr_menuClear.gml</script>
+      <script>scripts\scr_establishSettings.gml</script>
+      <script>scripts\scr_sliderScript.gml</script>
+      <script>scripts\scr_saveSettings.gml</script>
+      <script>scripts\scr_menuToggle.gml</script>
+      <script>scripts\scr_keyCode.gml</script>
+      <script>scripts\scr_keyRebindButton.gml</script>
+    </scripts>
   </scripts>
   <fonts name="fonts">
+    <font>fonts\fnt_menu</font>
+    <font>fonts\fnt_lrgMenu</font>
+    <font>fonts\fnt_smlMenu</font>
     <font>fonts\fnt_main</font>
     <font>fonts\fnt_small</font>
     <font>fonts\fnt_tiny</font>
@@ -188,39 +225,39 @@
       <object>objects\obj_character</object>
     </objects>
     <objects name="Core">
-      <object>objects\obj_terrain</object>
       <object>objects\obj_camera</object>
-      <object>objects\obj_solid</object>
       <object>objects\obj_control</object>
       <object>objects\obj_selector</object>
+      <object>objects\obj_descriptor</object>
+      <object>objects\obj_solid</object>
+    </objects>
+    <objects name="Menu">
+      <object>objects\obj_menuButton</object>
+      <object>objects\obj_menuToggle</object>
+      <object>objects\obj_menuKey</object>
+      <object>objects\obj_menuTitle</object>
+      <object>objects\obj_menuController</object>
+      <object>objects\obj_menuItems</object>
+      <object>objects\obj_sliderControl</object>
+      <object>objects\obj_slider</object>
+    </objects>
+    <objects name="Terrain">
       <object>objects\obj_floor</object>
-      <object>objects\obj_ramp</object>
       <object>objects\obj_rampup</object>
       <object>objects\obj_rampdwn</object>
-      <object>objects\obj_invisiblewall</object>
-      <object>objects\obj_descriptor</object>
-      <object>objects\obj_hAdjmap</object>
       <object>objects\obj_pathingBlock</object>
-    </objects>
-    <objects name="Environment">
-      <object>objects\obj_crypt</object>
-      <object>objects\obj_fresco4</object>
-      <object>objects\obj_wallback</object>
-      <object>objects\obj_fresco</object>
-      <object>objects\obj_fresco3</object>
-      <object>objects\obj_fresco2</object>
-      <object>objects\obj_fresco5</object>
-      <object>objects\obj_light</object>
-      <object>objects\obj_shrine</object>
-      <object>objects\obj_altar</object>
-      <object>objects\obj_shadow</object>
+      <object>objects\obj_invisiblewall</object>
+      <object>objects\obj_hAdjmap</object>
+      <object>objects\obj_ramp</object>
+      <object>objects\obj_terrain</object>
     </objects>
   </objects>
   <rooms name="rooms">
+    <room>rooms\rom_landingMenu</room>
     <room>rooms\rom_test</room>
     <room>rooms\rom_dungeon</room>
   </rooms>
-  <constants number="14">
+  <constants number="17">
     <constant name="gndr_female">0</constant>
     <constant name="gndr_male">1</constant>
     <constant name="beige">make_color_rgb(205,165,117)</constant>
@@ -234,7 +271,10 @@
     <constant name="black">make_color_rgb(0,11,40)</constant>
     <constant name="dkBrown">make_color_rgb(102,51,0)</constant>
     <constant name="dkRed">make_color_rgb(128,0,0)</constant>
-    <constant name="areaSize">20</constant>
+    <constant name="dkGrey">make_color_rgb(20,20,20)</constant>
+    <constant name="ltGrey">make_color_rgb(200,200,200)</constant>
+    <constant name="metre">20</constant>
+    <constant name="grav">9.8</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

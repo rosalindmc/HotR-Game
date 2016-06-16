@@ -25,14 +25,11 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_create(x,y,obj_solid)
+            <string>scr_initializeTerrain()
 
-depth = -y
-image_index = random(10)
-image_speed = 0
 
-size = 10000
-isMoving = 0
+
+
 </string>
           </argument>
         </arguments>

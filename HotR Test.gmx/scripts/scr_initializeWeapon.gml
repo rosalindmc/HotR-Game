@@ -1,5 +1,6 @@
 //Weapon base variables script
 //scr_initializeWeapon(hand)
+//Used in the create event of all game actors who use weapons
 
 wepType[argument0] = scr_melee
 

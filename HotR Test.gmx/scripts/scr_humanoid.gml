@@ -238,14 +238,14 @@ i = 0 repeat(array_length_1d(legsItem)-1){i++ draw_sprite_ext(legsItem[i],20+vFa
 
 //Hips
 draw_sprite_ext(spr_hips,hipsImage+vFacing,hipsX,hipsY,hFacing,1,hipsRot,skinTone,1)
+draw_sprite_ext(spr_downHair,hipsImage+vFacing,hipsX,hipsY,hFacing,1,hipsRot,hairColour,1)
 i = 0 repeat(array_length_1d(hipsItem)-1){i++ draw_sprite_ext(hipsItem[i],12+hipsImage+vFacing,hipsX,hipsY,hFacing,1,hipsRot,c_white,1)}
-if array_length_1d(hipsItem) = 1
-{draw_sprite_ext(spr_downHair,hipsImage+vFacing,hipsX,hipsY,hFacing,1,hipsRot,hairColour,1)}
 
 //Skirt
 i = 0 repeat(array_length_1d(skrtItem)-1){i++ draw_sprite_ext(skrtItem[i],skrtAnim+(legSpriteMod*6)+vFacing,hipsX,hipsY,hFacing,1,hipsRot,c_white,1)}
-i = 0 repeat(array_length_1d(beltItem)-1){i++ draw_sprite_ext(beltItem[i],hipsImage+vFacing,hipsX,hipsY,hFacing,1,hipsRot,c_white,1)}
 
+//Belt
+i = 0 repeat(array_length_1d(beltItem)-1){i++ draw_sprite_ext(beltItem[i],hipsImage+vFacing,hipsX,hipsY,hFacing,1,hipsRot,c_white,1)}
 
 if vFacing = 0
 {

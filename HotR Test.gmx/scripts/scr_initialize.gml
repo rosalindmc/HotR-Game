@@ -1,13 +1,12 @@
 //Initialize character script
 //scr_initialize()
+//Used in the create event of all game actors
 
-//Graphics
-hFacing = 1
-vFacing = 0
-facing = 0
-
-//Animation
+//Animation and Drawing
 scr_humanoid(0)
+
+//Game Attributes
+scr_initializeCharStats()
 
 //Move
 canMove = true
@@ -19,15 +18,17 @@ vspd = 0
 fric = .4
 alarm[0] = 15
 
+//Facing
+hFacing = 1
+vFacing = 0
+facing = 0
+
 //Height Map
 h = 0
 zspd = 0
 fid = -4
 fh = 0
 grounded = true
-
-//Game Attributes
-scr_initializeCharStats()
 
 //Lifebar
 lifeVis = life
@@ -44,11 +45,11 @@ active = true
 dualwielding = false
 atkHand = 1
 atkTime = 0
-moveX = x
-moveY = y
 engageRange = 1 //In metres
 xOff = 0
 yOff = 0
+moveX = x
+moveY = y
 targetX = x
 targetY = y
 targetId = -4

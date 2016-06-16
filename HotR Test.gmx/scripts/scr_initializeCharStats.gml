@@ -1,5 +1,6 @@
 //Initialize game stats for actors script
 //scr_initializeCharStats()
+//Used in the create event of all game actors
 
 //Attributes
 might = 8
@@ -8,7 +9,7 @@ intellect = 8
 will = 8
 fellowship = 8
 
-//Temp
+//Temp randomizer
 scr_charactergenerator()
 
 //Size and Movement
@@ -57,6 +58,6 @@ stm = stmMax
 morMax = 10+((will-8)*2)
 mor = morMax
 
-//Temp
+//Temp initialize of weapons for weapon users
 scr_initializeWeapon(1)
 scr_initializeWeapon(2)

@@ -1,11 +1,15 @@
+//Adjust the speed of the actor towards their destination
+//scr_moveStep()
+//Called in step event of a voluntarily moving actor
+
 //Establish Movespeed
-var moveT = (movement*areaSize)/global.fspd
+var moveT = (movement*metre)/global.fspd
 legAngleX = .66
 
 //Running?
 if action = act_sprint or action = act_charge
 {
-moveT += (movementBonus*areaSize)/global.fspd
+moveT += (movementBonus*metre)/global.fspd
 legAngleX = 1
 }
 
@@ -68,81 +72,4 @@ if canMove = true and grounded = true
         hspd = sign(hspd)*max(abs(hspd)-abs(lengthdir_x(fric,point_direction(x,y,x+hspd,y+vspd))),0)
         vspd = sign(vspd)*max(abs(vspd)-abs(lengthdir_y(fric,point_direction(x,y,x+hspd,y+vspd))),0)
     }
-}
-
-//Horizontal Collision
-if place_meeting(x+hspd,y,obj_solid)
-{
-    while !place_meeting(x+sign(hspd),y,obj_solid)
-    {
-        x += sign(hspd)
-    }
-    hspd = 0
-}
-
-x += hspd
-
-//Vertical Collision
-if place_meeting(x,y+vspd,obj_solid)
-{
-    while !place_meeting(x,y+sign(vspd),obj_solid)
-    {
-        y += sign(vspd)
-    }
-    vspd = 0
-}
-
-y += vspd
-
-//Floor Finder
-fid = instance_position(x,y,obj_floor)
-if fid != -4
-{
-    if fid.difficult = true
-    {
-    dTerrain = true
-    }
-    else
-    {
-    dTerrain = false
-    }
-
-    if fid.ramp = false
-    {
-        fh = fid.h
-    }
-    else
-    {
-        script_execute(fid.ramp)
-    }      
-}
-else
-{
-    fh = -1000
-    dTerrain = false
-}
-
-//Apply Gravity
-if h > fh
-{
-    grounded = false
-    zspd += .4
-    h -= zspd
-}
-if h <= fh
-{
-    grounded = true
-    h = fh
-    zspd = 0
-}
-
-//Animation Temp
-if canMove = true and isMoving != false
-{
-    animIndex[0] = anim_humanoidWalk
-    facing = round(point_direction(xprevious,yprevious,x,y)/30)*30
-}
-else
-{
-    animIndex[0] = anim_idle   
 }

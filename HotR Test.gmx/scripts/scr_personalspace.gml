@@ -1,5 +1,5 @@
 //Personal space script
-//scr_personalspace()
+//scr_personalSpace()
 
 var ii = 0
 var i = size*1.5
