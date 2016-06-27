@@ -91,6 +91,17 @@
       <sprite>sprites\spr_buttonMask</sprite>
       <sprite>sprites\spr_slider</sprite>
     </sprites>
+    <sprites name="Overworld">
+      <sprite>sprites\spr_water</sprite>
+      <sprite>sprites\spr_shallows</sprite>
+      <sprite>sprites\spr_hgGrass</sprite>
+      <sprite>sprites\spr_cliffTrim</sprite>
+      <sprite>sprites\spr_dirtCliff</sprite>
+      <sprite>sprites\spr_hgGrassTrim</sprite>
+      <sprite>sprites\spr_hgHillGrass</sprite>
+      <sprite>sprites\spr_qfGrass</sprite>
+      <sprite>sprites\spr_cftGrass</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_frostdungeon</background>
@@ -198,6 +209,14 @@
     </scripts>
     <scripts name="Overworld">
       <script>scripts\scr_charactergenerator.gml</script>
+      <scripts name="Draw Environment">
+        <script>scripts\scr_drawTile.gml</script>
+        <script>scripts\scr_initializeWorldTile.gml</script>
+        <script>scripts\scr_initializeSeaTile.gml</script>
+        <script>scripts\scr_detectCliffs.gml</script>
+        <script>scripts\scr_detectCliffsWater.gml</script>
+        <script>scripts\scr_drawWater.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Menu">
       <script>scripts\scr_menuCreate.gml</script>
@@ -212,6 +231,9 @@
       <script>scripts\scr_keybindCreate.gml</script>
     </scripts>
   </scripts>
+  <shaders name="shaders">
+    <shader type="GLSLES">shaders\shd_greyscale.shader</shader>
+  </shaders>
   <fonts name="fonts">
     <font>fonts\fnt_menu</font>
     <font>fonts\fnt_lrgMenu</font>
@@ -252,13 +274,20 @@
       <object>objects\obj_ramp</object>
       <object>objects\obj_terrain</object>
     </objects>
+    <objects name="Overworld">
+      <object>objects\obj_worldControl</object>
+      <object>objects\obj_groundTile</object>
+      <object>objects\obj_seaTile</object>
+      <object>objects\obj_worldTile</object>
+    </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rom_landingMenu</room>
+    <room>rooms\rom_overworld</room>
     <room>rooms\rom_test</room>
     <room>rooms\rom_dungeon</room>
   </rooms>
-  <constants number="17">
+  <constants number="19">
     <constant name="gndr_female">0</constant>
     <constant name="gndr_male">1</constant>
     <constant name="beige">make_color_rgb(205,165,117)</constant>
@@ -269,11 +298,13 @@
     <constant name="orcBrown">make_color_rgb(80,90,40)</constant>
     <constant name="orcGreen">make_color_rgb(77,110,56)</constant>
     <constant name="green">make_color_rgb(0,204,0)</constant>
+    <constant name="ltBlue">make_color_rgb(67,117,141)</constant>
     <constant name="black">make_color_rgb(0,11,40)</constant>
     <constant name="dkBrown">make_color_rgb(102,51,0)</constant>
     <constant name="dkRed">make_color_rgb(128,0,0)</constant>
     <constant name="dkGrey">make_color_rgb(20,20,20)</constant>
     <constant name="ltGrey">make_color_rgb(200,200,200)</constant>
+    <constant name="km">20</constant>
     <constant name="metre">20</constant>
     <constant name="grav">9.8</constant>
   </constants>
