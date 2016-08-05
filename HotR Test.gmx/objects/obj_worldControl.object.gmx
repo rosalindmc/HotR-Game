@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-1000000</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_overworldVital</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -33,22 +33,48 @@ global.mouseHAdj = 0
 global.leftMouse = 0
 global.rightMouse = 0
 
-//TEMP place tiles
-iy = km/2
+//Set world to false, world is checked to see if world gen is done
+world = false
 
-repeat(room_height/km)
+//scr_worldGen()
+scr_worldControlInitialize()
+
+//Map Information
+global.mapHeight = 5//room_height/km
+global.mapWidth = 5//room_width/km
+for (ix = 0; ix &lt; global.mapWidth; ix += 1)
 {
-ix = km/2
-
-    repeat(room_width/km)
+    for (iy = 0; iy &lt; global.mapHeight; iy += 1)
     {
-    instance_create(ix,iy,obj_worldTile)
-    
-    ix += km
+    global.map[ix,iy] = instance_create((km/2)+ix*km,(km/2)+iy*km,obj_gridTile)
     }
-    
-iy += km
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Make Grand Grid
+
+
+world = true
 </string>
           </argument>
         </arguments>
@@ -71,7 +97,45 @@ iy += km
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Double Click
+            <string>//Temp
+if mouse_check_button_pressed(mb_left)
+{
+    instance_create(mouse_x,mouse_y,obj_party)
+}
+
+if mouse_check_button_pressed(mb_right)
+{
+    if collision_point(mouse_x,mouse_y,obj_party,false,false)
+    {
+        with(collision_point(mouse_x,mouse_y,obj_party,false,false))
+        {
+        instance_destroy()
+        }
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if world = true
+{
+//Double Click
 if mouse_check_button_pressed(mb_left)
 {
     global.leftMouse = .25
@@ -88,6 +152,12 @@ if mouse_check_button_pressed(mb_right)
 else
 {
     global.rightMouse = max(global.rightMouse-(1/global.fspd),0)
+}
+
+if obj_camera.x != obj_camera.xprevious or obj_camera.y != obj_camera.yprevious
+{
+    scr_updateMapVis()
+}
 }
 </string>
           </argument>
@@ -115,6 +185,31 @@ else
 draw_sprite(spr_mouse,0,round(mouse_x),round(mouse_y))
 
 draw_text(mouse_x,mouse_y+10,fps)
+
+scr_tempActorListDraw()
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="9" enumb="82">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>room_restart()
 </string>
           </argument>
         </arguments>

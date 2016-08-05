@@ -38,36 +38,39 @@
       <sprite>sprites\spr_largemask</sprite>
     </sprites>
     <sprites name="Environment">
-      <sprite>sprites\spr_lightshaft</sprite>
-      <sprite>sprites\spr_wall</sprite>
-      <sprite>sprites\spr_invisiblewall</sprite>
-      <sprite>sprites\spr_wallback</sprite>
-      <sprite>sprites\spr_temp</sprite>
-      <sprite>sprites\spr_altar</sprite>
-      <sprite>sprites\spr_crypt</sprite>
-      <sprite>sprites\spr_fresco2</sprite>
-      <sprite>sprites\spr_fresco3</sprite>
-      <sprite>sprites\spr_fresco4</sprite>
-      <sprite>sprites\spr_fresco5</sprite>
-      <sprite>sprites\spr_fresco</sprite>
-      <sprite>sprites\spr_shrine</sprite>
+      <sprites name="Old">
+        <sprite>sprites\spr_floortile</sprite>
+        <sprite>sprites\spr_wallold</sprite>
+        <sprite>sprites\spr_lightshaft</sprite>
+        <sprite>sprites\spr_altar</sprite>
+        <sprite>sprites\spr_invisiblewall</sprite>
+        <sprite>sprites\spr_fresco2</sprite>
+        <sprite>sprites\spr_wallback</sprite>
+        <sprite>sprites\spr_temp</sprite>
+        <sprite>sprites\spr_crypt</sprite>
+        <sprite>sprites\spr_fresco3</sprite>
+        <sprite>sprites\spr_fresco5</sprite>
+        <sprite>sprites\spr_fresco4</sprite>
+        <sprite>sprites\spr_fresco</sprite>
+        <sprite>sprites\spr_shrine</sprite>
+        <sprite>sprites\spr_stairsV2HAdjMap</sprite>
+        <sprite>sprites\spr_stairsOld</sprite>
+        <sprite>sprites\spr_stairsHAdjMap</sprite>
+        <sprite>sprites\spr_stairsVHAdjMap</sprite>
+        <sprite>sprites\spr_stairsup</sprite>
+        <sprite>sprites\spr_shadow</sprite>
+        <sprite>sprites\spr_stairsdown</sprite>
+      </sprites>
       <sprite>sprites\spr_stairs</sprite>
-      <sprite>sprites\spr_stairsHAdjMap</sprite>
-      <sprite>sprites\spr_stairsVHAdjMap</sprite>
-      <sprite>sprites\spr_stairsV2HAdjMap</sprite>
-      <sprite>sprites\spr_stairsup</sprite>
-      <sprite>sprites\spr_stairsdown</sprite>
-      <sprite>sprites\spr_floortile</sprite>
-      <sprite>sprites\spr_shadow</sprite>
+      <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_tile</sprite>
     </sprites>
     <sprites name="Characters">
       <sprite>sprites\spr_robot</sprite>
       <sprite>sprites\spr_char</sprite>
       <sprite>sprites\spr_portrait</sprite>
       <sprites name="Core">
-        <sprite>sprites\spr_shortHair</sprite>
         <sprite>sprites\spr_horns</sprite>
-        <sprite>sprites\spr_upHair</sprite>
         <sprite>sprites\spr_none</sprite>
         <sprite>sprites\spr_humanHead</sprite>
         <sprite>sprites\spr_elfHead</sprite>
@@ -79,6 +82,10 @@
         <sprite>sprites\spr_leg</sprite>
         <sprite>sprites\spr_shortLeg</sprite>
         <sprite>sprites\spr_hand</sprite>
+        <sprites name="Hair Styles">
+          <sprite>sprites\spr_upHair</sprite>
+          <sprite>sprites\spr_shortHair</sprite>
+        </sprites>
       </sprites>
     </sprites>
     <sprites name="UI">
@@ -90,21 +97,37 @@
       <sprite>sprites\spr_mouse</sprite>
       <sprite>sprites\spr_buttonMask</sprite>
       <sprite>sprites\spr_slider</sprite>
+      <sprite>sprites\spr_selection</sprite>
     </sprites>
     <sprites name="Overworld">
       <sprite>sprites\spr_water</sprite>
+      <sprite>sprites\spr_ocean</sprite>
+      <sprite>sprites\spr_shimmer</sprite>
       <sprite>sprites\spr_shallows</sprite>
-      <sprite>sprites\spr_hgGrass</sprite>
       <sprite>sprites\spr_cliffTrim</sprite>
+      <sprite>sprites\spr_coastTrim</sprite>
       <sprite>sprites\spr_dirtCliff</sprite>
+      <sprite>sprites\spr_coldStoneCliff</sprite>
+      <sprite>sprites\spr_iceCliff</sprite>
+      <sprite>sprites\spr_stoneCliff</sprite>
+      <sprite>sprites\spr_agCliff</sprite>
+      <sprite>sprites\spr_agStone</sprite>
+      <sprite>sprites\spr_agStoneTrim</sprite>
       <sprite>sprites\spr_hgGrassTrim</sprite>
-      <sprite>sprites\spr_hgHillGrass</sprite>
+      <sprite>sprites\spr_hgGrass</sprite>
+      <sprite>sprites\spr_qfGrassTrim</sprite>
       <sprite>sprites\spr_qfGrass</sprite>
+      <sprite>sprites\spr_cftGrassTrim</sprite>
       <sprite>sprites\spr_cftGrass</sprite>
+      <sprite>sprites\spr_stSnowTrim</sprite>
+      <sprite>sprites\spr_stSnow</sprite>
+      <sprite>sprites\spr_cloud</sprite>
+      <sprite>sprites\spr_shimmerSpark</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_frostdungeon</background>
+    <background>background\bg_test</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
@@ -210,12 +233,33 @@
     <scripts name="Overworld">
       <script>scripts\scr_charactergenerator.gml</script>
       <scripts name="Draw Environment">
-        <script>scripts\scr_drawTile.gml</script>
         <script>scripts\scr_initializeWorldTile.gml</script>
         <script>scripts\scr_initializeSeaTile.gml</script>
         <script>scripts\scr_detectCliffs.gml</script>
         <script>scripts\scr_detectCliffsWater.gml</script>
+        <script>scripts\scr_drawTile.gml</script>
         <script>scripts\scr_drawWater.gml</script>
+        <script>scripts\scr_updateMapVis.gml</script>
+      </scripts>
+      <scripts name="Biomes">
+        <script>scripts\scr_hearthgrove.gml</script>
+        <script>scripts\scr_highmount.gml</script>
+        <script>scripts\scr_avangard.gml</script>
+        <script>scripts\scr_elderSwamp.gml</script>
+        <script>scripts\scr_queensField.gml</script>
+        <script>scripts\scr_coldfistTaiga.gml</script>
+        <script>scripts\scr_savageTundra.gml</script>
+      </scripts>
+      <scripts name="World Generation">
+        <script>scripts\scr_worldGen.gml</script>
+        <script>scripts\scr_worldCreatorStep.gml</script>
+      </scripts>
+      <scripts name="Actors and Control">
+        <script>scripts\scr_tempActorListDraw.gml</script>
+        <script>scripts\scr_partyInitialize.gml</script>
+        <script>scripts\scr_worldControlInitialize.gml</script>
+        <script>scripts\scr_addActor.gml</script>
+        <script>scripts\scr_removeActor.gml</script>
       </scripts>
     </scripts>
     <scripts name="Menu">
@@ -265,6 +309,9 @@
       <object>objects\obj_slider</object>
     </objects>
     <objects name="Terrain">
+      <object>objects\obj_tile</object>
+      <object>objects\obj_stairs</object>
+      <object>objects\obj_wall</object>
       <object>objects\obj_floor</object>
       <object>objects\obj_rampup</object>
       <object>objects\obj_rampdwn</object>
@@ -276,18 +323,28 @@
     </objects>
     <objects name="Overworld">
       <object>objects\obj_worldControl</object>
-      <object>objects\obj_groundTile</object>
+      <object>objects\obj_parentTile</object>
       <object>objects\obj_seaTile</object>
+      <object>objects\obj_oceanTile</object>
       <object>objects\obj_worldTile</object>
+      <object>objects\obj_cloud</object>
+      <object>objects\obj_shimmerSpark</object>
+      <object>objects\obj_worldCreator</object>
+      <objects name="Actors">
+        <object>objects\obj_party</object>
+      </objects>
+      <object>objects\obj_overworldVital</object>
+      <object>objects\obj_gridTile</object>
     </objects>
   </objects>
   <rooms name="rooms">
     <room>rooms\rom_landingMenu</room>
-    <room>rooms\rom_overworld</room>
     <room>rooms\rom_test</room>
+    <room>rooms\rom_isotest</room>
+    <room>rooms\rom_overworld</room>
     <room>rooms\rom_dungeon</room>
   </rooms>
-  <constants number="19">
+  <constants number="21">
     <constant name="gndr_female">0</constant>
     <constant name="gndr_male">1</constant>
     <constant name="beige">make_color_rgb(205,165,117)</constant>
@@ -297,7 +354,9 @@
     <constant name="demonRed">make_color_rgb(170,71,71)</constant>
     <constant name="orcBrown">make_color_rgb(80,90,40)</constant>
     <constant name="orcGreen">make_color_rgb(77,110,56)</constant>
+    <constant name="hearthgroveGreen">make_color_rgb(45,134,59)</constant>
     <constant name="green">make_color_rgb(0,204,0)</constant>
+    <constant name="iceBlue">make_color_rgb(80,210,230)</constant>
     <constant name="ltBlue">make_color_rgb(67,117,141)</constant>
     <constant name="black">make_color_rgb(0,11,40)</constant>
     <constant name="dkBrown">make_color_rgb(102,51,0)</constant>

@@ -29,6 +29,7 @@
 global.descriptor = ''
 
 scr_menuCreate(0)
+randomize()
 </string>
           </argument>
         </arguments>

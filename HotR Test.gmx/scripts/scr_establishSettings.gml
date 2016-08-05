@@ -48,3 +48,6 @@ global.commandMode = ini_read_real("Gameplay", "commandMode", false)
 
 //Close the ini file
 ini_close()
+
+//Not a NewGame
+global.newGame = false

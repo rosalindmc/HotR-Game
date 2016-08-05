@@ -15,9 +15,9 @@ case 3: game_end() break
 //Landing Menu
 case 4: scr_menuClear() scr_menuCreate(0) break
 //Campaign Starts
-case 5: room_goto_next() break
-case 6: room_goto_next() break
-case 7: room_goto_next() break
+case 5: global.newGame = true room_goto_next() break
+case 6: global.newGame = true room_goto_next() break
+case 7: global.newGame = true room_goto_next() break
 
 //Settings Menus
 case 8: scr_menuClear() scr_menuCreate(4) break

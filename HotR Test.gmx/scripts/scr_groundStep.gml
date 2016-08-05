@@ -26,7 +26,7 @@ if fid != -4
 }
 else
 {
-    fh = -1000
+    fh = 0
     dTerrain = false
 }
 
