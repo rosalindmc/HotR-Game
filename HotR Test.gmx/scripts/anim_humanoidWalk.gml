@@ -2,7 +2,7 @@
 //anim_humanoidWalk(animationstage)
 
 //Alarm
-alarm[5] = (global.fspd*.2)/isMoving
+alarm[5] = (global.fspd*.2)//isMoving
 animStep[0] += 1
 bodyTwist = 0
 

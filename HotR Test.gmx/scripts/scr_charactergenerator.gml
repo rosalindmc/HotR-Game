@@ -3,9 +3,78 @@
 //Generates random character stats
 
 var i = 1
-var banana = 13 + irandom(2) + irandom(2)
+var randDice = 13 + irandom(2) + irandom(2)
+var mgtCap = 10 
+var grcCap = 10
+var intCap = 10 
+var wilCap = 10
+var felCap = 10
 
-while (i <= banana) 
+//Race Adjust
+switch(race)
+{
+    case "High Elf":
+    randDice += 2
+    break
+    
+    case "Irunian Human":
+    randDice += 1
+    intellect += 1
+    
+    intCap = 11
+    break
+    
+    case "Northern Human":
+    will += 2
+    
+    wilCap = 12
+    break
+    
+    case "Dwarf":
+    might += 3
+    will += 3
+    grace -= 2
+    
+    mgtCap = 13
+    grcCap = 8
+    wilCap = 13
+    
+    movement -= 1
+    break
+    
+    case "Halfling":
+    grace += 2
+    intellect += 1
+    will += 1
+    fellowship += 1
+    might -= 2
+    
+    mgtCap = 8
+    grcCap = 12
+    intCap = 11
+    wilCap = 11
+    felCap = 11
+    
+    movement -= .5
+    break
+    
+    case "Orc":
+    might += 4
+    grace -= 1
+    intellect -= 1
+    will -= 1
+    fellowship -= 1
+    
+    mgtCap = 14
+    break
+    
+    case "Tiefling":
+    randDice += 2
+    break
+}
+
+//Randomize Stats
+while (i <= randDice) 
 {
     switch (irandom(4))
     {
@@ -25,30 +94,30 @@ while (i <= banana)
 
 var ii = 0
 
-if (might > 10)
+if (might > mgtCap)
 {
-    ii += might-10
-    might = 10
+    ii += might-mgtCap
+    might = mgtCap
 }
-if (grace > 10)
+if (grace > grcCap)
 {
-    ii += grace-10
-    grace = 10
+    ii += grace-grcCap
+    grace = grcCap
 }
-if (will > 10)
+if (will > wilCap)
 {
-    ii += will-10
-    will = 10
+    ii += will-wilCap
+    will = wilCap
 }
-if (intellect > 10)
+if (intellect > intCap)
 {
-    ii += intellect-10
-    intellect = 10
+    ii += intellect-intCap
+    intellect = intCap
 }
-if (fellowship > 10)
+if (fellowship > felCap)
 {
-    ii += fellowship-10
-    fellowship = 10
+    ii += fellowship-felCap
+    fellowship = felCap
 }
 
 i = 1
@@ -69,5 +138,3 @@ while (i <= ii)
     }
     i++
 }
-
-

@@ -7,6 +7,8 @@ switch(choose(1,2,3,4))
     bodyItem[1] = spr_underChains
     hipsItem[1] = spr_underChains
     skrtItem[1] = spr_chainLoin
+    
+    class = "Barbarian"
     break
     
     case 2:     //Witch
@@ -15,6 +17,8 @@ switch(choose(1,2,3,4))
     skrtItem[1] = spr_purpleSlitSkirt
     armsItem[1] = spr_witchDress
     legsItem[1] = spr_witchDress
+    
+    class = "Warlock"
     break
     
     case 3:     //Royal
@@ -23,6 +27,8 @@ switch(choose(1,2,3,4))
     skrtItem[1] = spr_royalSkirt
     armsItem[1] = spr_royalDress
     legsItem[1] = spr_royalDress
+    
+    class = "Captain"
     break
     
     case 4:     //Sorcerer
@@ -31,6 +37,8 @@ switch(choose(1,2,3,4))
     skrtItem[1] = spr_pinkSlitSkirt
     armsItem[1] = spr_sorcererDress
     legsItem[1] = spr_witchDress
+    
+    class = "Warlock"
     break
 }
 
@@ -51,6 +59,8 @@ skrtItem[1] = spr_chainTabard
 beltItem[1] = spr_belt
 legsItem[1] = spr_chainMail
 armsItem[1] = spr_chainMail
+
+class = "Warrior"
 break
 
 case 4:     //ChainLeather
@@ -60,6 +70,8 @@ skrtItem[1] = spr_chainTabard
 beltItem[1] = spr_belt
 armsItem[1] = spr_chainLeather
 legsItem[1] = spr_chainLeather
+
+class = "Thief"
 break
 
 case 5:     //Platemail
@@ -74,5 +86,7 @@ bodyItem[2] = spr_plateMail
 hipsItem[2] = spr_plateMail
 legsItem[2] = spr_plateMail
 armsItem[2] = spr_plateMail
+
+class = "Warrior"
 break
 }

@@ -2,8 +2,7 @@
 gender = choose(gndr_female,gndr_female,gndr_male)
 var s = min(choose(1,1,2,2,3,3,4)+gender,4)
 var i = choose(-1,0,1,2)
-var r = choose(1,1,1,1,1,2,2,2,3,3,4,4,5,6)
-
+var r = choose(1,1,1,1,1,2,2,2,3,3,4,4,5,6,7)
 
 switch(r)
 {
@@ -23,8 +22,8 @@ switch(r)
     
     case 2: //Human
     raceHead = spr_humanHead
-    race = "Human"
-    skinTone = choose(dark,dark,dark,beige,beige,beige,beige,pale)
+    race = "Irunian Human"
+    skinTone = choose(dark,dark,beige,beige,beige)
     i = choose(-1,-1,0,0,1,2)
     s = min(choose(1,1,2,2,3,3,4)+gender,4)
     
@@ -32,7 +31,6 @@ switch(r)
         legSpriteMod = 0 
         hipsOffset = 11+i
         height = 28+i
-    
     break
     
     case 3: //Dwarf
@@ -94,6 +92,20 @@ switch(r)
         height = 28+i
       
     headItem[1] = spr_horns    
+    break
+        
+    case 7: //Northern Human
+    raceHead = spr_humanHead
+    race = "Northern Human"
+    skinTone = choose(pale,pale,fair)
+    i = choose(-1,0,0,1,2,2)
+    s = min(choose(1,2,2,3,3,4)+gender,4)
+    
+        legSprite = spr_leg
+        legSpriteMod = 0 
+        hipsOffset = 11+i
+        height = 28+i
+    
     break
 }
 
@@ -190,6 +202,7 @@ switch(bodyImage)
     chstImage = 3
     chstAdjust = 1
     headOffset += 1
+    headAdjust -= 1
     break
 }
 
@@ -199,6 +212,6 @@ if gender = gndr_male
     chstImage = 0
 }
 
-//Establish height
+//Establish Hand height
 handHeight[1] += height-28
 handHeight[2] += height-28

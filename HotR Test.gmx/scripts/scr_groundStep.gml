@@ -2,6 +2,8 @@
 //scr_groundStep()
 //Called in step event of an object that obeys gravity
 
+/*TEMPORARILY DISABLED
+
 //Floor Finder
 fid = instance_position(x,y,obj_floor)
 if fid != -4

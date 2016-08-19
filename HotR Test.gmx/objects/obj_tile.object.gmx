@@ -28,10 +28,31 @@
             <string>//Adjacency
 adjacent = ds_list_create()
 
+//Movement
+pathable = true
+ground = true
+cost = 1
+
+//Details
+occupant = noone
+
+//Pathing
+overlay = 0
+onPath = false
+g = 0
+h = 0
+move = false
+pathParent = noone
+
+//Coordinates
+isoX = 0
+isoY = 0
+isoZ = 0
+
 //Visuals
 image_index = random(16)
 image_speed = 0
-depth = -y
+depth = -y+10
 </string>
           </argument>
         </arguments>
@@ -54,8 +75,12 @@ depth = -y
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_self()
-draw_text(x,y,string(ds_list_size(adjacent)))
+            <string>draw_sprite(sprite_index,image_index,x,y-((isoZ-global.zLevel)*30))
+
+if global.zLevel = isoZ || onPath = 3
+{
+    draw_sprite(spr_tilePathing,max(overlay,onPath),x,y)
+}
 </string>
           </argument>
         </arguments>

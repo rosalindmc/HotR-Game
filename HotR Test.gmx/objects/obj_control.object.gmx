@@ -30,10 +30,17 @@ var ii, ix, iy
 
 //Generates new random seed
 randomize()
-alarm[0] = 2
+
+//Initiative
+mapTime = 0
+mapTimeOn = true
 
 //Visuals
 image_speed = .3
+
+//Selection
+global.control = noone
+global.nextChar = noone
 
 //Create Camera
 instance_create(x,y,obj_camera)
@@ -49,11 +56,14 @@ room_speed = global.fspd
 //Cursor
 cIsoX = 0
 cIsoY = 0
+cIsoZ = 0
 cHover = noone
+global.zLevel = 0
 
-/*Tile Creation Test
+//Tile Creation
 mapHeight = 50
 mapWidth = 50
+mapDepth = 3
 
 ix = 0
 repeat(mapWidth)
@@ -61,98 +71,132 @@ repeat(mapWidth)
     iy = 0
     repeat(mapHeight)
     {
-        map[ix,iy] = instance_create((room_width/2)+(ix*20)-(iy*20),10+(ix*10)+(iy*10),obj_tile)
+        iz = 0
+        repeat(mapDepth)
+        {
+            map[ix+(mapWidth*iz),iy] = instance_create((room_width/2)+(ix*20)-(iy*20),10+(ix*10)+(iy*10),obj_tile)
+            map[ix+(mapWidth*iz),iy].isoX = ix
+            map[ix+(mapWidth*iz),iy].isoY = iy
+            map[ix+(mapWidth*iz),iy].isoZ = iz
+            if iz != 0
+            {
+                map[ix+(mapWidth*iz),iy].sprite_index = spr_none
+                map[ix+(mapWidth*iz),iy].ground = false
+            }            
+            iz += 1
+        }   
         iy += 1
     }
     ix += 1
 }
 
-//Temp Establish Adjacency
+//Establish Adjacency
 ix = 0
 repeat(mapWidth)
 {
     iy = 0
     repeat(mapHeight)
     {
-        tile = map[ix,iy]
+        iz = 0
+        repeat(mapDepth)
+        {
+        tile = map[ix+(mapWidth*iz),iy]
         
-        //East Adjacency
-        if ix &gt; 0
-        ds_list_add(tile.adjacent, map[ix-1,iy])
         //West Adjacency
+        if ix &gt; 0
+        ds_list_add(tile.adjacent, map[ix-1+(mapWidth*iz),iy])
+        //East Adjacency
         if ix &lt; mapWidth-1
-        ds_list_add(tile.adjacent, map[ix+1,iy])
+        ds_list_add(tile.adjacent, map[ix+1+(mapWidth*iz),iy])
         //North Adjacency
         if iy &gt; 0
-        ds_list_add(tile.adjacent, map[ix,iy-1])
+        ds_list_add(tile.adjacent, map[ix+(mapWidth*iz),iy-1])
         //South Adjacency
         if iy &lt; mapHeight-1
-        ds_list_add(tile.adjacent, map[ix,iy+1])        
-        //North-East Adjacency
-        if ix &gt; 0 &amp;&amp; iy &gt; 0
-        ds_list_add(tile.adjacent, map[ix-1,iy-1])     
+        ds_list_add(tile.adjacent, map[ix+(mapWidth*iz),iy+1])
+          
         //North-West Adjacency
+        if ix &gt; 0 &amp;&amp; iy &gt; 0
+        ds_list_add(tile.adjacent, map[ix-1+(mapWidth*iz),iy-1])     
+        //North-East Adjacency
         if ix &lt; mapWidth-1 &amp;&amp; iy &gt; 0
-        ds_list_add(tile.adjacent, map[ix+1,iy-1])
-        //South-East Adjacency
-        if ix &gt; 0 &amp;&amp; iy &lt; mapHeight-1
-        ds_list_add(tile.adjacent, map[ix-1,iy+1])
+        ds_list_add(tile.adjacent, map[ix+1+(mapWidth*iz),iy-1])
         //South-West Adjacency
+        if ix &gt; 0 &amp;&amp; iy &lt; mapHeight-1
+        ds_list_add(tile.adjacent, map[ix-1+(mapWidth*iz),iy+1])
+        //South-East Adjacency
         if ix &lt; mapWidth-1 &amp;&amp; iy &lt; mapHeight-1
-        ds_list_add(tile.adjacent, map[ix+1,iy+1])
-                       
+        ds_list_add(tile.adjacent, map[ix+1+(mapWidth*iz),iy+1])
+        
+        //Down-West Adjacency
+        if ix &gt; 0 &amp;&amp; iz &gt; 0
+        ds_list_add(tile.adjacent, map[ix-1+(mapWidth*(iz-1)),iy])
+        //Down-East Adjacency
+        if ix &lt; mapWidth-1 &amp;&amp; iz &gt; 0
+        ds_list_add(tile.adjacent, map[ix+1+(mapWidth*(iz-1)),iy])
+        //Down-North Adjacency
+        if iy &gt; 0 &amp;&amp; iz &gt; 0
+        ds_list_add(tile.adjacent, map[ix+(mapWidth*(iz-1)),iy-1])
+        //Down-South Adjacency
+        if iy &lt; mapHeight-1 &amp;&amp; iz &gt; 0
+        ds_list_add(tile.adjacent, map[ix+(mapWidth*(iz-1)),iy+1])
+        //Down Adjacency
+        if iz &gt; 0
+        ds_list_add(tile.adjacent, map[ix+(mapWidth*(iz-1)),iy])
+        
+        //Up-West Adjacency
+        if ix &gt; 0 &amp;&amp; iz &lt; mapDepth-1
+        ds_list_add(tile.adjacent, map[ix-1+(mapWidth*(iz+1)),iy])
+        //Up-East Adjacency
+        if ix &lt; mapWidth-1 &amp;&amp; iz &lt; mapDepth-1
+        ds_list_add(tile.adjacent, map[ix+1+(mapWidth*(iz+1)),iy])
+        //Up-North Adjacency
+        if iy &gt; 0 &amp;&amp; iz &lt; mapDepth-1
+        ds_list_add(tile.adjacent, map[ix+(mapWidth*(iz+1)),iy-1])
+        //Up-South Adjacency
+        if iy &lt; mapHeight-1 &amp;&amp; iz &lt; mapDepth-1
+        ds_list_add(tile.adjacent, map[ix+(mapWidth*(iz+1)),iy+1])
+        //Up Adjacency
+        if iz &lt; mapDepth-1
+        ds_list_add(tile.adjacent, map[ix+(mapWidth*(iz+1)),iy])
+        
+        iz += 1
+        }                              
         iy += 1
     }
     ix += 1
 }
 
 //Create Characters (Temp)
-*/
-repeat(7)
+repeat(14)
 {
-    ii = instance_create(x+20+(20*i),y,obj_character)
-    if i &lt; 6
+    ii = instance_create((room_width/2)+(i*20)-(i*20),10+(i*10)+(i*10),obj_character)
+    ii.isoX = i
+    ii.isoY = i
+    ii.isoZ = 0
+    ii.isoTile = map[i,i]
+    map[i,i].occupant = ii
+    
+    if i &lt; 7
     {
-    control[i] = ii
+        control[i] = ii
+        ii.team = 1
     }   
+    else
+    {
+        ii.team = 2
+    }
     i += 1
 }
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//Grid
-global.grid = mp_grid_create(metre/2,metre/2,(room_width/metre)+1,(room_height/metre)+1,metre,metre)
 
-mp_grid_add_instances(global.grid,obj_terrain,true)
-
-/*
-with(obj_terrain)
+//Clear Up Grid
+//tiles are only ever referenced directly, so if they have nothing to draw there is no reason for them to be active
+with(obj_tile)
 {
-   
-}
-
-with(obj_invisiblewall)
-{
-    mp_grid_add_rectangle(global.grid,x,y,x,y)
+    if sprite_index = spr_none
+    {
+        instance_deactivate_object(id)
+    }
 }
 </string>
           </argument>
@@ -176,7 +220,7 @@ with(obj_invisiblewall)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Double Click
+            <string>/*Double Click
 if mouse_check_button_pressed(mb_left)
 {
     global.leftMouse = .25
@@ -194,26 +238,207 @@ else
 {
     global.rightMouse = max(global.rightMouse-(1/global.fspd),0)
 }
+*/
 
-//Selection
-scr_mouseAdj()
-scr_selectionControl()
-  
-    x = mouse_x
-    y = mouse_y
+//Timer
+if mapTimeOn = true and global.nextChar != noone
+{
+    ii = min(1/global.fspd,global.nextChar.delay)
+    mapTime += ii
+    
+    with(obj_initiativeSlot)
+    {
+        delay -= other.ii
+        if delay &lt;= 0
+        {
+            if owner.team = 1
+            {
+            global.control = owner
+            owner.controlled = true
+            other.mapTimeOn = false
+            scr_movementRange(global.control.isoTile, global.control.movement, global.control.movementBonus)
+            }
+            else    //Temporary skip enemy turns
+            {
+            global.nextChar.delay = 4.0
+            scr_initiativeSlotReset()
+            other.mapTimeOn = true
+            }
+        }
+    }
+}
 
-/*Mouse
+
+//Mouse
+x = mouse_x
+y = mouse_y
+    
 cIsoX = floor((x/40)+(y/20))-25
 cIsoY = floor((y/20)-(x/40))+25
+depth = 9-(1+cIsoX+cIsoY)*10
 
 if cIsoX &gt;= 0 and cIsoX &lt; mapWidth and cIsoY &gt;= 0 and cIsoY &lt; mapHeight
 {
-cHover = map[cIsoX,cIsoY]
+    cHover = map[cIsoX+(cIsoZ*mapWidth),cIsoY]
 }
 else
 {
-cHover = noone
+    cHover = noone
 }
+
+//zLevel Scrolling
+if mouse_wheel_up()
+{
+    cIsoZ = min(cIsoZ+1,mapDepth-1)
+    global.zLevel = cIsoZ
+}
+
+if mouse_wheel_down()
+{
+    cIsoZ = max(cIsoZ-1,0)
+    global.zLevel = cIsoZ
+}
+
+//Obsolete Selection
+//Selection will be required again when I implement groups
+/*
+if mouse_check_button_pressed(mb_left)
+{
+    //Temp
+    scr_wipeTiles()
+    obj_character.controlled = false
+    global.control = noone
+    
+    if cHover != noone
+    {
+        if cHover.occupant != noone
+        {
+            global.control = cHover.occupant
+            cHover.occupant.controlled = true
+            scr_movementRange(cHover, global.control.movement, global.control.movementBonus)
+        }
+    }
+}
+*/
+
+//Right Click Movement
+if mouse_check_button_pressed(mb_right)
+{
+    if cHover != noone
+    {
+        i = global.control
+        
+        if i != noone
+        {
+            if cHover.move
+            {
+                //Set Path Data
+                current = cHover
+                
+                //Create Priority Que
+                path = ds_priority_create()
+                
+                ds_priority_add(path, current, current.g)
+                ii = 1
+                
+                while(current.pathParent != noone)
+                {
+                    ds_priority_add(path, current, current.g)
+                    current = current.pathParent
+                }
+                
+                //Form Path from que
+                do
+                {
+                    current = ds_priority_delete_min(path)
+                    i.pathArray[ii] = current
+                    ii++
+                }
+                until(ds_priority_empty(path))
+                
+                //Clean Up que
+                ds_priority_destroy(path)
+                
+                //Move and Update Grid
+                map[i.isoX+(i.isoZ*mapWidth),i.isoY].occupant = noone
+                i.isoX = cHover.isoX
+                i.isoY = cHover.isoY
+                i.isoZ = cHover.isoZ
+                i.isoTile = cHover
+                i.pathLength = ii
+                cHover.occupant = i
+                
+                //Update Control and Timer
+                global.control.controlled = false
+                global.control = noone
+                global.nextChar.delay = 4.0/global.nextChar.owner.haste
+                scr_initiativeSlotReset()
+                mapTimeOn = true
+                
+                //Start the path running
+                with(i)
+                {
+                    act_move(1)
+                }
+                
+                scr_wipeTiles()
+            }
+        }
+    }
+}
+
+//Pathdrawing
+if global.control != noone
+{
+    obj_tile.onPath = false
+    if cHover != noone
+    {
+        if cHover.move
+        {
+            i = cHover
+            while(i.pathParent != noone)
+            {
+                i.onPath = 3
+                i = i.pathParent
+            }
+        }
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="73">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Cursor
+draw_sprite(spr_mouse,0,round(mouse_x),round(mouse_y))
+
+draw_set_colour(c_white)
+if cHover != noone
+{
+    if cHover.occupant != noone
+    {
+        //draw_text(view_xview+10,view_yview+10,cHover.occupant.name)
+    }
+}
+//draw_text(view_xview+10,view_yview+30,fps)
+//draw_set_colour(c_black)
 </string>
           </argument>
         </arguments>
@@ -237,18 +462,14 @@ cHover = noone
           <argument>
             <kind>1</kind>
             <string>//UI Players
-scr_playerPortrait(5)
+//scr_playerPortrait(5)
 
-//Cursor
-draw_sprite(spr_mouse,0,round(mouse_x),round(mouse_y))
-
-draw_set_colour(c_white)
-draw_set_colour(c_black)
-
+//Highlighted Area
 if cHover != noone
 {
-draw_sprite(spr_selection,image_index,cHover.x,cHover.y)   
+    draw_sprite(spr_selection,image_index,cHover.x,cHover.y)  
 }
+
 </string>
           </argument>
         </arguments>

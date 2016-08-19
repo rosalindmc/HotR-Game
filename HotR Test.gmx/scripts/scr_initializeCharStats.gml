@@ -2,20 +2,27 @@
 //scr_initializeCharStats()
 //Used in the create event of all game actors
 
+//Bio
+
+//Temp Name
+name = choose("Gae","Mop","Quar","She","Be")+choose("ah","or","gash","ivik","k","alia","rae")+" "+choose("Frost","Strong","Kind","Green","Free","Swift","Blue")+choose("blade","storm","heart","hilt","foot","man","tree")
+
 //Attributes
-might = 8
-grace = 8
-intellect = 8
-will = 8
-fellowship = 8
+might = 5
+grace = 5
+intellect = 5
+will = 5
+fellowship = 5
 
 //Temp randomizer
+movement = 0
 scr_charactergenerator()
 
 //Size and Movement
-size = 6
-movement = 4+((grace-8)*.12)        //metres per second
-movementBonus = 2+((grace-8)*.25)   //running bonus
+size = 1
+movement += 4+((grace-8)*.2)    //metres to a move action
+movementBonus = 3+((grace-8)*.3)   //running bonus
+haste = 1+((grace-8)*.03) 
 
 //Skill
 mSkill = 1+((grace-8)*.1)+((intellect-8)*.2)
@@ -23,16 +30,13 @@ rSkill = 1+((grace-8)*.1)+((intellect-8)*.2)
 cSkill = 1+((grace-8)*.1)+((intellect-8)*.2)
 
 //Offense
-attack = (grace-8)
 lethality = 0
 atkDPS = (might-8)*.25
 atkForce = 1+((might-8)*.05)
 atkHaste = 1+((grace-8)*.03)
 
 //Defence
-defence = (grace-8)
 dodge = 20
-dodgeTime = 5
 armMax = 4      //Armour is measured in quarters
 arm = 4
 prot = 0

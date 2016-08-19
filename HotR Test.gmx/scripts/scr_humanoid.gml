@@ -115,7 +115,7 @@ headX = 0
 headY = 0
 headRot = 0
 headOffset = 6
-headAdjust = 0
+headAdjust = 1
 headThrust = 0
 
 //Animations
@@ -136,7 +136,7 @@ case 1: //Draw self
 scr_twist(bodyTwist)
 
 hipsX = round(x)+(hipsThrust*hFacing)
-hipsY = round(y)-hipsOffset-hipsBounce-h
+hipsY = round(y)-hipsOffset-hipsBounce-h-((isoZ-global.zLevel)*30)
 
 legX[1] = round(hipsX+lengthdir_x(legOffset[1]*hFacing, hipsRot)+lengthdir_x(legAdjust[1], hipsRot-90))
 legY[1] = round(hipsY+lengthdir_y(legOffset[1]*hFacing, hipsRot)+lengthdir_y(legAdjust[1], hipsRot-90))
@@ -160,10 +160,10 @@ shldrX[2] = round(bodyX+lengthdir_x(shldrOffset[2]*bodyHFacing, bodyRot-180)+len
 shldrY[2] = round(bodyY+lengthdir_y(shldrOffset[2]*bodyHFacing, bodyRot-180)+lengthdir_y(shldrAdjust, bodyRot+90))
 
 handX[1] = round(x+lengthdir_x(handDist[1], facing+(bodyHFacing*handDir[1])))
-handY[1] = round(y+lengthdir_y(handDist[1], facing+(bodyHFacing*handDir[1]))-handHeight[1]-h)
+handY[1] = round(y+lengthdir_y(handDist[1], facing+(bodyHFacing*handDir[1]))-handHeight[1]-h)-((isoZ-global.zLevel)*30)
 
 handX[2] = round(x+lengthdir_x(handDist[2], facing+(bodyHFacing*handDir[2])))
-handY[2] = round(y+lengthdir_y(handDist[2], facing+(bodyHFacing*handDir[2]))-handHeight[2]-h)
+handY[2] = round(y+lengthdir_y(handDist[2], facing+(bodyHFacing*handDir[2]))-handHeight[2]-h)-((isoZ-global.zLevel)*30)
 
 //Correct Shoulder Rotation
 shldrSwap = 0

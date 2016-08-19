@@ -21,6 +21,7 @@
         <sprite>sprites\spr_plateMail</sprite>
       </sprites>
       <sprites name="Weapons">
+        <sprite>sprites\spr_bow</sprite>
         <sprite>sprites\spr_axe</sprite>
         <sprite>sprites\spr_spear</sprite>
         <sprite>sprites\spr_greatSword</sprite>
@@ -38,36 +39,11 @@
       <sprite>sprites\spr_largemask</sprite>
     </sprites>
     <sprites name="Environment">
-      <sprites name="Old">
-        <sprite>sprites\spr_floortile</sprite>
-        <sprite>sprites\spr_wallold</sprite>
-        <sprite>sprites\spr_lightshaft</sprite>
-        <sprite>sprites\spr_altar</sprite>
-        <sprite>sprites\spr_invisiblewall</sprite>
-        <sprite>sprites\spr_fresco2</sprite>
-        <sprite>sprites\spr_wallback</sprite>
-        <sprite>sprites\spr_temp</sprite>
-        <sprite>sprites\spr_crypt</sprite>
-        <sprite>sprites\spr_fresco3</sprite>
-        <sprite>sprites\spr_fresco5</sprite>
-        <sprite>sprites\spr_fresco4</sprite>
-        <sprite>sprites\spr_fresco</sprite>
-        <sprite>sprites\spr_shrine</sprite>
-        <sprite>sprites\spr_stairsV2HAdjMap</sprite>
-        <sprite>sprites\spr_stairsOld</sprite>
-        <sprite>sprites\spr_stairsHAdjMap</sprite>
-        <sprite>sprites\spr_stairsVHAdjMap</sprite>
-        <sprite>sprites\spr_stairsup</sprite>
-        <sprite>sprites\spr_shadow</sprite>
-        <sprite>sprites\spr_stairsdown</sprite>
-      </sprites>
       <sprite>sprites\spr_stairs</sprite>
       <sprite>sprites\spr_wall</sprite>
       <sprite>sprites\spr_tile</sprite>
     </sprites>
     <sprites name="Characters">
-      <sprite>sprites\spr_robot</sprite>
-      <sprite>sprites\spr_char</sprite>
       <sprite>sprites\spr_portrait</sprite>
       <sprites name="Core">
         <sprite>sprites\spr_horns</sprite>
@@ -98,6 +74,8 @@
       <sprite>sprites\spr_buttonMask</sprite>
       <sprite>sprites\spr_slider</sprite>
       <sprite>sprites\spr_selection</sprite>
+      <sprite>sprites\spr_enemyselect</sprite>
+      <sprite>sprites\spr_tilePathing</sprite>
     </sprites>
     <sprites name="Overworld">
       <sprite>sprites\spr_water</sprite>
@@ -137,13 +115,6 @@
           <script>scripts\scr_initializeCharStats.gml</script>
           <script>scripts\scr_initializeWeapon.gml</script>
           <script>scripts\scr_initialize.gml</script>
-          <scripts name="Char Types">
-            <script>scripts\scr_pc.gml</script>
-            <script>scripts\scr_enemy.gml</script>
-          </scripts>
-        </scripts>
-        <scripts name="Non Characters">
-          <script>scripts\scr_initializeTerrain.gml</script>
         </scripts>
       </scripts>
       <scripts name="Draw">
@@ -176,20 +147,28 @@
       </scripts>
       <scripts name="Core">
         <scripts name="Movement">
-          <script>scripts\scr_moveStep.gml</script>
-          <script>scripts\scr_translateStep.gml</script>
-          <script>scripts\scr_groundStep.gml</script>
-          <script>scripts\scr_pathUpdate.gml</script>
+          <script>scripts\scr_wipeTiles.gml</script>
+          <script>scripts\scr_movementRange.gml</script>
+          <script>scripts\scr_colourTiles.gml</script>
           <script>scripts\scr_depthCheck.gml</script>
-          <script>scripts\scr_personalSpace.gml</script>
+          <scripts name="Old Scripts">
+            <script>scripts\scr_personalSpace.gml</script>
+            <script>scripts\scr_translateStep.gml</script>
+            <script>scripts\scr_pathUpdate.gml</script>
+            <script>scripts\scr_groundStep.gml</script>
+            <script>scripts\scr_moveStep.gml</script>
+          </scripts>
         </scripts>
         <scripts name="Action">
           <scripts name="Core Actions">
             <script>scripts\act_idle.gml</script>
-            <script>scripts\act_run.gml</script>
-            <script>scripts\act_sprint.gml</script>
-            <script>scripts\act_attack.gml</script>
-            <script>scripts\act_charge.gml</script>
+            <script>scripts\act_move.gml</script>
+            <scripts name="old">
+              <script>scripts\act_run.gml</script>
+              <script>scripts\act_sprint.gml</script>
+              <script>scripts\act_charge.gml</script>
+              <script>scripts\act_attack.gml</script>
+            </scripts>
           </scripts>
           <scripts name="Attacks">
             <script>scripts\scr_attackStep.gml</script>
@@ -205,6 +184,7 @@
           <script>scripts\scr_selection.gml</script>
           <script>scripts\scr_selectionControl.gml</script>
           <script>scripts\scr_controlAI.gml</script>
+          <script>scripts\scr_initiativeSlotReset.gml</script>
         </scripts>
       </scripts>
       <scripts name="Animation">
@@ -220,15 +200,6 @@
           <script>scripts\scr_twist.gml</script>
         </scripts>
       </scripts>
-      <scripts name="Floor">
-        <script>scripts\scr_floor_draw.gml</script>
-        <script>scripts\scr_horizontal_ramp.gml</script>
-        <script>scripts\scr_vertical_ramp.gml</script>
-        <script>scripts\scr_mouseAdj.gml</script>
-        <script>scripts\scr_adjup_ramp.gml</script>
-        <script>scripts\scr_adjdwn_ramp.gml</script>
-        <script>scripts\scr_initializeFloortile.gml</script>
-      </scripts>
     </scripts>
     <scripts name="Overworld">
       <script>scripts\scr_charactergenerator.gml</script>
@@ -241,18 +212,18 @@
         <script>scripts\scr_drawWater.gml</script>
         <script>scripts\scr_updateMapVis.gml</script>
       </scripts>
-      <scripts name="Biomes">
-        <script>scripts\scr_hearthgrove.gml</script>
-        <script>scripts\scr_highmount.gml</script>
-        <script>scripts\scr_avangard.gml</script>
-        <script>scripts\scr_elderSwamp.gml</script>
-        <script>scripts\scr_queensField.gml</script>
-        <script>scripts\scr_coldfistTaiga.gml</script>
-        <script>scripts\scr_savageTundra.gml</script>
-      </scripts>
       <scripts name="World Generation">
         <script>scripts\scr_worldGen.gml</script>
         <script>scripts\scr_worldCreatorStep.gml</script>
+        <scripts name="Biomes">
+          <script>scripts\scr_hearthgrove.gml</script>
+          <script>scripts\scr_highmount.gml</script>
+          <script>scripts\scr_avangard.gml</script>
+          <script>scripts\scr_elderSwamp.gml</script>
+          <script>scripts\scr_queensField.gml</script>
+          <script>scripts\scr_coldfistTaiga.gml</script>
+          <script>scripts\scr_savageTundra.gml</script>
+        </scripts>
       </scripts>
       <scripts name="Actors and Control">
         <script>scripts\scr_tempActorListDraw.gml</script>
@@ -263,40 +234,52 @@
       </scripts>
     </scripts>
     <scripts name="Menu">
-      <script>scripts\scr_menuCreate.gml</script>
-      <script>scripts\scr_menuButton.gml</script>
-      <script>scripts\scr_menuClear.gml</script>
-      <script>scripts\scr_establishSettings.gml</script>
-      <script>scripts\scr_sliderScript.gml</script>
-      <script>scripts\scr_saveSettings.gml</script>
-      <script>scripts\scr_menuToggle.gml</script>
-      <script>scripts\scr_keyCode.gml</script>
-      <script>scripts\scr_keyRebindButton.gml</script>
-      <script>scripts\scr_keybindCreate.gml</script>
+      <scripts name="Landing Menu">
+        <script>scripts\scr_menuToggle.gml</script>
+        <script>scripts\scr_menuClear.gml</script>
+        <script>scripts\scr_establishSettings.gml</script>
+        <script>scripts\scr_menuCreate.gml</script>
+        <script>scripts\scr_sliderScript.gml</script>
+        <script>scripts\scr_saveSettings.gml</script>
+        <script>scripts\scr_keybindCreate.gml</script>
+        <script>scripts\scr_keyCode.gml</script>
+        <script>scripts\scr_keyRebindButton.gml</script>
+        <script>scripts\scr_menuButton.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <shaders name="shaders">
-    <shader type="GLSLES">shaders\shd_greyscale.shader</shader>
+    <shaders name="Combat">
+      <shader type="GLSLES">shaders\shd_greyscale.shader</shader>
+    </shaders>
   </shaders>
   <fonts name="fonts">
-    <font>fonts\fnt_menu</font>
-    <font>fonts\fnt_lrgMenu</font>
-    <font>fonts\fnt_smlMenu</font>
-    <font>fonts\fnt_main</font>
-    <font>fonts\fnt_small</font>
-    <font>fonts\fnt_tiny</font>
-    <font>fonts\fnt_statDisplay</font>
+    <fonts name="Battle">
+      <font>fonts\fnt_main</font>
+      <font>fonts\fnt_tiny</font>
+      <font>fonts\fnt_small</font>
+    </fonts>
+    <fonts name="Menu">
+      <font>fonts\fnt_lrgMenu</font>
+      <font>fonts\fnt_smlMenu</font>
+      <font>fonts\fnt_menu</font>
+    </fonts>
   </fonts>
   <objects name="objects">
     <objects name="Actors">
       <object>objects\obj_character</object>
+      <object>objects\obj_carriedWeapon</object>
     </objects>
     <objects name="Core">
       <object>objects\obj_camera</object>
       <object>objects\obj_control</object>
-      <object>objects\obj_selector</object>
       <object>objects\obj_descriptor</object>
+      <object>objects\obj_tile</object>
       <object>objects\obj_solid</object>
+      <objects name="Combat HUD">
+        <object>objects\obj_initiativeSlot</object>
+        <object>objects\obj_combatHUD</object>
+      </objects>
     </objects>
     <objects name="Menu">
       <object>objects\obj_menuButton</object>
@@ -307,19 +290,6 @@
       <object>objects\obj_menuItems</object>
       <object>objects\obj_sliderControl</object>
       <object>objects\obj_slider</object>
-    </objects>
-    <objects name="Terrain">
-      <object>objects\obj_tile</object>
-      <object>objects\obj_stairs</object>
-      <object>objects\obj_wall</object>
-      <object>objects\obj_floor</object>
-      <object>objects\obj_rampup</object>
-      <object>objects\obj_rampdwn</object>
-      <object>objects\obj_pathingBlock</object>
-      <object>objects\obj_invisiblewall</object>
-      <object>objects\obj_hAdjmap</object>
-      <object>objects\obj_ramp</object>
-      <object>objects\obj_terrain</object>
     </objects>
     <objects name="Overworld">
       <object>objects\obj_worldControl</object>
@@ -339,10 +309,8 @@
   </objects>
   <rooms name="rooms">
     <room>rooms\rom_landingMenu</room>
-    <room>rooms\rom_test</room>
-    <room>rooms\rom_isotest</room>
+    <room>rooms\rom_battle</room>
     <room>rooms\rom_overworld</room>
-    <room>rooms\rom_dungeon</room>
   </rooms>
   <constants number="21">
     <constant name="gndr_female">0</constant>
