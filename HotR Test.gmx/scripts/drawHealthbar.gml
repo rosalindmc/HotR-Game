@@ -1,5 +1,5 @@
-//Healthbar visualizer script for Medium characters to appear above char
-//draw_medHealthbar()
+//Healthbar visualizer script actors
+//drawHealthbar()
 
 //Healthbar draw poistion
 var tx = round(x)

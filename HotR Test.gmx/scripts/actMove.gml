@@ -8,6 +8,7 @@ case 0:
 //Facing
 moveX = pathArray[moveStep].x
 moveY = pathArray[moveStep].y
+moveZ = pathArray[moveStep].h
 
 //Horizontal Facing
 if moveX > x
@@ -44,7 +45,10 @@ else
     else
     {
         //Clear path when done moving
-        act_idle(1)
+        actIdle(1)
+        x = moveX
+        y = moveY
+        h = moveZ
     }
 }
 break
@@ -55,9 +59,9 @@ moveStep = 1
 moveDur = (global.fspd*(point_distance(pathArray[moveStep].x,pathArray[moveStep].y,x,y)))/(movement*metre*1.5)
 
 //Temp establish animation
-anim_start(0,anim_humanoidWalk)
+startAnimation(0,animHumanoidWalk)
 
 actionString = "Moving"
-action = act_move
+action = actMove
 break
 }

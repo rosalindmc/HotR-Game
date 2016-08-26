@@ -1,4 +1,5 @@
-//scr_colourTiles
+//colourTiles()
+//Sets the colour of tiles if they are in walk or run range
 
 var tile, move
 

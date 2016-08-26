@@ -1,5 +1,5 @@
 //Holding animation for melee weapons
-//anim_meleeHold(hand,animStep)
+//animMeleeHold(hand,animStep)
 
 handHeight[argument0] = 18
 handRot[argument0] = 45

@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-100000</depth>
   <persistent>0</persistent>
   <parentName>obj_combatHUD</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -87,20 +87,21 @@ if order != 0
     draw_set_font(fnt_tiny)
     draw_set_halign(fa_middle)
     draw_set_valign(fa_middle)
-    scr_drawText(c_black,c_white,ix,iy+20,string_format(delay,2,1))
+    drawText(c_black,c_white,ix,iy+20,string_format(delay,2,1))
 }
 else
 {
     draw_set_font(fnt_small)
     draw_set_halign(fa_left)
     draw_set_valign(fa_middle)
-    scr_drawText(c_black,c_white,ix-20,iy+30,owner.name)
+    drawText(c_black,c_white,ix-20,iy+30,owner.name)
     draw_set_font(fnt_tiny)
-    scr_drawText(c_black,c_white,ix-20,iy+42,string(owner.race)+" "+string(owner.class))
+    drawText(c_black,c_white,ix-20,iy+42,string(owner.race)+" "+string(owner.class))
+    
+    drawText(c_black,c_white,ix-20,iy+54,"Vitality - "+string(floor(owner.vit))+" / "+string(owner.vitMax))
+    drawText(c_black,c_white,ix-20,iy+66,"Stamina - "+string(floor(owner.stm))+" / "+string(owner.stmMax))
+    drawText(c_black,c_white,ix-20,iy+78,"Morale - "+string(floor(owner.mor))+" / "+string(owner.morMax))
     /*Temp
-    scr_drawText(c_black,c_white,ix-20,iy+54,"Might "+string(owner.might))
-    scr_drawText(c_black,c_white,ix-20,iy+66,"Grace "+string(owner.grace))
-    scr_drawText(c_black,c_white,ix-20,iy+78,"Intellect "+string(owner.intellect))
     scr_drawText(c_black,c_white,ix-20,iy+90,"Will "+string(owner.will))
     scr_drawText(c_black,c_white,ix-20,iy+102,"Fellowship "+string(owner.fellowship))
 

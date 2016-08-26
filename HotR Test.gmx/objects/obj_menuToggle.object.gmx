@@ -83,12 +83,12 @@ scr_menuToggle(2,number)
 
 if point_in_rectangle(mouse_x,mouse_y,x,y-8,x+150,y+8)
 {
-    scr_drawText(colour1,c_white,x,y,text)
+    drawText(colour1,c_white,x,y,text)
     global.descriptor = descriptor
 }
 else
 {
-    scr_drawText(colour1,colour2,x,y,text)
+    drawText(colour1,colour2,x,y,text)
 }
 </string>
           </argument>

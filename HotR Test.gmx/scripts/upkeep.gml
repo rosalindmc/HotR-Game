@@ -1,51 +1,38 @@
-//Regenerate Vitals, advance attack clock and other vital frame by frame operations
-//scr_upkeep()
+//Regenerate vitals and adjust vital frame by frame operations
+//upkeep()
 //Run in the step event of any actor
 
 //Regenerate life (Life regen measured in life per 5 seconds)
+if obj_control.mapTimeOn = true
+{
 regenTime += lifeRegen/(global.fspd*5)
-
-if regenTime >= 1
-{
-    if life < lifeMax
+stm = min(stm+(stmRegen/(global.fspd*60)),stmMax)
+mor = min(mor+(morRegen/(global.fspd*60)),morMax)
+    if regenTime >= 1
     {
-    life += 1
+        if life < lifeMax
+        {
+        life += 1
+        }
+        regenTime -= 1
     }
-    regenTime -= 1
-}
-
-//Attack clock advance
-atkTime += atkHaste/(global.fspd)
-
-//Life cap (inactive characters return to being active when they reach full health, active characters deactivate when reduced to 0 life)
-if life >= lifeMax
-{
-    life = lifeMax
-    active = true
-}
-else if life < 0
-{
-    life = 0
-    active = false
-    
-    //Insert a defeat script here later
 }
 
 //Visualize life changes for healthbar
 lifeVis += (life-lifeVis)/(global.fspd/5)
 
 //Below are scripts occasionally used to test functionality in the upkeep of characters
-/*Temp
+//Temp
 if keyboard_check_pressed(ord('V')) and controlled = true
 {
-    anim_start(1,choose(anim_downSwing,anim_crossSwing))
+    startAnimation(1,choose(animDownSwing,animCrossSwing))
 }
 
 if keyboard_check_pressed(vk_right)-keyboard_check_pressed(vk_left) != 0 and controlled = true
 {
     i = choose(1,1,1,2,2)
-    life += i*(keyboard_check_pressed(vk_right)-keyboard_check_pressed(vk_left))
-
+    life = min(lifeMax,life+(i*(keyboard_check_pressed(vk_up)-keyboard_check_pressed(vk_down))))
+   
     ii = instance_create(x,y-h-height,obj_descriptor)
     ii.text = i
     ii.font = fnt_tiny
@@ -65,7 +52,7 @@ if keyboard_check_pressed(vk_right)-keyboard_check_pressed(vk_left) != 0 and con
 if keyboard_check_pressed(vk_up)-keyboard_check_pressed(vk_down) != 0 and controlled = true
 {
     i = choose(3,4,5,6,7,8,9,10)
-    life += i*(keyboard_check_pressed(vk_up)-keyboard_check_pressed(vk_down))
+    life = min(lifeMax,life+(i*(keyboard_check_pressed(vk_up)-keyboard_check_pressed(vk_down))))
     
     ii = instance_create(x,y-h-height,obj_descriptor)
     ii.text = i

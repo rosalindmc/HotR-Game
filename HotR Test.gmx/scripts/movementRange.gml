@@ -1,9 +1,9 @@
-#define scr_movementRange
-//scr_movementRange(Start Tile, Move, Move Bonus)
+#define movementRange
+//movementRange(Start Tile, Move, Move Bonus)
 //Pathfinding script for movement
 
 //Clear pathing data just in case
-scr_wipeTiles()
+wipeTiles()
 
 //Variables
 var open, closed
@@ -27,19 +27,18 @@ while(ds_priority_size(open) > 0)
     ds_list_add(closed, current)
     
     //Step through all neighbours
-    for(ii = 0; ii < ds_list_size(current.adjacent); ii++)
+    for(ii = 0; ii < ds_list_size(current.walk); ii++)
     {
-        adjacent = ds_list_find_value(current.adjacent, ii)
+        adjacent = ds_list_find_value(current.walk, ii)
         
         //Add adjacent tile if it is reachable
-        
         if (ds_list_find_index(closed, adjacent) < 0 && adjacent.pathable && adjacent.occupant = noone && adjacent.cost+current.g <= range && adjacent.ground = true) 
         {
             if ds_priority_find_priority(open, adjacent) = 0 || ds_priority_find_priority(open, adjacent) = undefined
             {
                 
                 adjacent.pathParent = current                
-                costMod = scr_diagonalCheck(adjacent, current)
+                costMod = diagonalCheck(adjacent, current)
                 instance_activate_object(adjacent)
                 
                 //Calculate g score
@@ -49,8 +48,8 @@ while(ds_priority_size(open) > 0)
             }
             else
             {
-                //Attempt to reach an already caluclated tile faster?
-                costMod = scr_diagonalCheck(adjacent, current)
+                //Attempt to reach an already calculated tile faster?
+                costMod = diagonalCheck(adjacent, current)
                 tempG = current.g + (adjacent.cost * costMod)
                 
                 //Check if g is lower
@@ -79,7 +78,7 @@ for(ii = 0; ii < ds_list_size(closed); ii ++)
     current = ds_list_find_value(closed, ii)
     current.move = true
     
-    scr_colourTiles(current, argument1)
+    colourTiles(current, argument1)
 }
 ds_list_destroy(closed)
 
@@ -87,7 +86,7 @@ ds_list_destroy(closed)
 start.move = false
 start.overlay = 0
 
-#define scr_diagonalCheck
+#define diagonalCheck
 var adjacent = argument0
 var current = argument1
 var costMod
@@ -103,3 +102,34 @@ else
 {costMod = 1}
 
 return(costMod)
+#define adjacency
+//Clear old info to Reupdate
+ds_list_clear(walk)
+
+//Check Adjacency
+for(ii = 0; ii < ds_list_size(adjacent); ii++)
+{
+    i = ds_list_find_value(adjacent, ii)
+    
+    //Same Level
+    if i.isoZ = isoZ
+    {
+        //North Wall Check
+        if (wall[0] = noone and i.wall[2] = noone) or (i.isoY >= isoY)
+        {
+        //East Wall Check
+        if (wall[1] = noone and i.wall[3] = noone)  or (i.isoX <= isoX)
+        {
+        //South Wall Check
+        if (wall[2] = noone and i.wall[0] = noone)  or (i.isoY <= isoY)
+        {
+        //West Wall Check
+        if (wall[3] = noone and i.wall[1] = noone)  or (i.isoX >= isoX)
+        {
+            ds_list_add(walk, i)
+        }
+        }
+        }
+        }
+    }
+}

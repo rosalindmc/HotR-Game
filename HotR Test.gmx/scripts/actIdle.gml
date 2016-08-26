@@ -1,5 +1,5 @@
 //Idle Script
-//act_idle(howtouse)
+//actIdle(howtouse)
 //0 = By Frame, 1 = Start
 
 switch(argument0)
@@ -10,9 +10,9 @@ break
 
 case 1:
 actionString = "Idle"
-action = act_idle
+action = actIdle
 
 //Temp establish animation
-anim_start(0,anim_idle)
+startAnimation(0,animIdle)
 break
 }

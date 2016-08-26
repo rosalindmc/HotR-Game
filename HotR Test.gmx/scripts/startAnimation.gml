@@ -1,5 +1,5 @@
-//Holding animation for melee weapons
-//anim_start(animtrack,animStep)
+//Begins an Animation from the beginning
+//startAnimation(animtrack,animStep)
 
 animStep[argument0] = 0
 alarm[5+argument0] = 1

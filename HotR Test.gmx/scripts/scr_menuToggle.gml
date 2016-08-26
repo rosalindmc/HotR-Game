@@ -13,8 +13,8 @@ break
 case 2:     //Draw
     switch(argument1)
     {
-        case 0: if global.commandMode = 1 scr_drawText(c_gray,c_white,x+220,y,'On')
-        else scr_drawText(c_gray,c_white,x+220,y,'Off') break
+        case 0: if global.commandMode = 1 drawText(c_gray,c_white,x+220,y,'On')
+        else drawText(c_gray,c_white,x+220,y,'Off') break
     }
 break
 }

@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_solid</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>spr_largemask</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_initialize()
+            <string>initializeActor()
 </string>
           </argument>
         </arguments>
@@ -123,23 +123,44 @@ script_execute(animIndex[0],animStep[0])
             <string>//Movement and Control
 //script_execute(controlScript)
 
-//Give the actor personal space (Needs improvement)
-//scr_personalSpace()
-
-//Move the character towards objective
-
-//Abide by Physics
-//scr_translateStep()
-//scr_moveStep()
-scr_depthCheck()
-//scr_groundStep()
+//Upkeep
+upkeep()
 
 //Perform currently assigned action
 script_execute(action,0)
+depthCheck(-5)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="73">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Draw Healthbar
+if (controlled = true or team = 1) and vis = true
+{
+    drawHealthbar()
 
-//Upkeep
-//scr_upkeep()
-
+    //Put temporary testing scripts here
+    //draw_text(x,y-80,stm)
+    //draw_text(x,y-90,actionString)
+    //If you want to know the value of a variable, find out what is breaking, etc.  
+}
 </string>
           </argument>
         </arguments>
@@ -163,7 +184,10 @@ script_execute(action,0)
           <argument>
             <kind>1</kind>
             <string>//Draw the character and corresponding UI
-scr_characterDrawControl()
+if vis = true
+{
+    drawActor()
+}
 </string>
           </argument>
         </arguments>

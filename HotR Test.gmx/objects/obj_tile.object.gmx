@@ -5,8 +5,8 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
-  <maskName>&lt;undefined&gt;</maskName>
+  <parentName>obj_terrain</parentName>
+  <maskName>spr_metremask</maskName>
   <events>
     <event eventtype="0" enumb="0">
       <action>
@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>//Adjacency
 adjacent = ds_list_create()
+walk = ds_list_create()
 
 //Movement
 pathable = true
@@ -42,6 +43,7 @@ onPath = false
 g = 0
 h = 0
 move = false
+attack = false
 pathParent = noone
 
 //Coordinates
@@ -49,10 +51,77 @@ isoX = 0
 isoY = 0
 isoZ = 0
 
+//Walls (NESW)
+wall[0] = noone
+wall[1] = noone
+wall[2] = noone
+wall[3] = noone
+
 //Visuals
 image_index = random(16)
 image_speed = 0
-depth = -y+10
+vis = false
+
+//Temp
+alarm[0] = 2
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>depthCheck(10)
+
+if ground = true
+{
+if irandom(100) &gt; 85
+{    
+    i = instance_create(x+10,y-6,obj_thinwall)
+    i.owner = id
+    i.h = h
+    i.facing = 1
+    wall[0] = i
+    if isoY &gt; 0
+    {
+        obj_control.map[isoX+(isoZ*obj_control.mapWidth),isoY-1].wall[2] = i
+    }
+}
+
+if irandom(100) &gt; 85
+{    
+    i = instance_create(x-10,y-6,obj_thinwall)
+    i.owner = id
+    i.h = h
+    i.facing = -1
+    wall[3] = i
+    if isoX &gt; 0
+    {
+        obj_control.map[isoX-1+(isoZ*obj_control.mapWidth),isoY].wall[1] = i
+    }
+}
+}
+else
+{
+    //Clear Up Grid
+    instance_deactivate_object(id)
+}
+adjacency()
 </string>
           </argument>
         </arguments>
@@ -75,11 +144,28 @@ depth = -y+10
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(sprite_index,image_index,x,y-((isoZ-global.zLevel)*30))
-
-if global.zLevel = isoZ || onPath = 3
+            <string>if isoZ &lt;= global.zLevel
 {
-    draw_sprite(spr_tilePathing,max(overlay,onPath),x,y)
+    if vis != false
+    {
+    
+        if vis = 2
+        {
+            shader_set(shd_greyscale)
+            //draw_sprite_ext(sprite_index,image_index,x,y+(global.zLevel*30)-h,1,1,0,c_dkgray,1)
+        }
+        draw_sprite(sprite_index,image_index,x,y+(global.zLevel*30)-h)
+        shader_reset()
+        
+        if (global.zLevel = isoZ and overlay != 0) || onPath = 4
+        {
+            draw_sprite(spr_tilePathing,max(overlay,onPath),x,y+(global.zLevel*30)-h)
+        }
+    }
+    else
+    {
+    draw_sprite_ext(sprite_index,image_index,x,y+(global.zLevel*30)-h,1,1,0,c_black,1)
+    }
 }
 </string>
           </argument>

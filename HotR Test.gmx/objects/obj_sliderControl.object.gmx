@@ -83,7 +83,7 @@ alarm[0] = 2
             <string>draw_set_halign(fa_left)
 draw_set_valign(fa_middle)
 draw_set_font(fnt_smlMenu)
-scr_drawText(colour1,colour2,x,y,text)
+drawText(colour1,colour2,x,y,text)
 scr_sliderScript(3,number)
 
 if point_in_rectangle(mouse_x,mouse_y,x,y-8,x+150,y+8)

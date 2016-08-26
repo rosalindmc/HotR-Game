@@ -1,5 +1,5 @@
 //Set the depth to reflect an updated position
-//scr_depthCheck()
+//depthCheck(adjust)
 //Called in the step event of any object that is drawn isometrically
 
-depth = -y
+depth = -y-(h/2)+argument0

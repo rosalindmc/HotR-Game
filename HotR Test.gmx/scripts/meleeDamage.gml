@@ -1,5 +1,5 @@
 //Damage script for melee attacks
-//scr_meleeDamage(Bonus Damage, Damage Mult)
+//meleeDamage(Bonus Damage, Damage Mult)
 
 //Find Attack Speed
 s = (2+(dualwielding*.5))/((wepSpeed[atkHand]))
@@ -9,7 +9,7 @@ p = wepPow[atkHand]+((wepStrMult[atkHand]*atkDPS)/s)+argument0
 
 //Roll Attack Strength
 p *= argument1 
-p *= (1-wepPowRng[atkHand]+(wepPowRng[atkHand]*2))
+p *= (1-wepPowRng[atkHand]+random(wepPowRng[atkHand]*2))
 
 //Check Parry
 //Check Block

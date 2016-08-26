@@ -1,5 +1,5 @@
 //Idle Animation
-//anim_idle(animStep)
+//animIdle(animStep)
 
 //Alarm
 alarm[5] = global.fspd*.1

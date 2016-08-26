@@ -156,13 +156,13 @@ else
 
 if point_in_rectangle(mouse_x,mouse_y,x,y-8,x+150,y+8)
 {
-    scr_drawText(colour1,c_white,x,y,text)
-    scr_drawText(colour1,c_white,x+150,y,keyText)
+    drawText(colour1,c_white,x,y,text)
+    drawText(colour1,c_white,x+150,y,keyText)
 }
 else
 {
-    scr_drawText(colour1,colour2,x,y,text)
-    scr_drawText(colour1,colour2,x+150,y,keyText)
+    drawText(colour1,colour2,x,y,text)
+    drawText(colour1,colour2,x+150,y,keyText)
 }
 </string>
           </argument>

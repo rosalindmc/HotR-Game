@@ -29,20 +29,20 @@ break
 case 3:     //Draw
     switch(argument1)
     {
-    case 0: if global.effectVolume = 0 scr_drawText(c_gray,c_white,x+220,y,'Muted')
-    else scr_drawText(c_gray,c_white,x+220,y,string(round(100*global.effectVolume))+'%') break
-    case 1: if global.voiceVolume = 0 scr_drawText(c_gray,c_white,x+220,y,'Muted')
-    else scr_drawText(c_gray,c_white,x+220,y,string(round(100*global.voiceVolume))+'%') break
-    case 2: if global.musicVolume = 0 scr_drawText(c_gray,c_white,x+220,y,'Muted')
-    else scr_drawText(c_gray,c_white,x+220,y,string(round(100*global.musicVolume))+'%') break
-    case 3: if global.ambienceVolume = 0 scr_drawText(c_gray,c_white,x+220,y,'Muted')
-    else scr_drawText(c_gray,c_white,x+220,y,string(round(100*global.ambienceVolume))+'%') break
+    case 0: if global.effectVolume = 0 drawText(c_gray,c_white,x+220,y,'Muted')
+    else drawText(c_gray,c_white,x+220,y,string(round(100*global.effectVolume))+'%') break
+    case 1: if global.voiceVolume = 0 drawText(c_gray,c_white,x+220,y,'Muted')
+    else drawText(c_gray,c_white,x+220,y,string(round(100*global.voiceVolume))+'%') break
+    case 2: if global.musicVolume = 0 drawText(c_gray,c_white,x+220,y,'Muted')
+    else drawText(c_gray,c_white,x+220,y,string(round(100*global.musicVolume))+'%') break
+    case 3: if global.ambienceVolume = 0 drawText(c_gray,c_white,x+220,y,'Muted')
+    else drawText(c_gray,c_white,x+220,y,string(round(100*global.ambienceVolume))+'%') break
     
     case 4: 
     if global.fspd = 30
-        scr_drawText(c_gray,c_white,x+220,y,'Console Peasant') 
+        drawText(c_gray,c_white,x+220,y,'Console Peasant') 
     else
-        scr_drawText(c_gray,c_white,x+220,y,string(global.fspd)+' FPS') 
+        drawText(c_gray,c_white,x+220,y,string(global.fspd)+' FPS') 
     break
     }
 break

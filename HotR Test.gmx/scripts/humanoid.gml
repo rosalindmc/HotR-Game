@@ -1,29 +1,41 @@
-//Humanoid animation type script
-//scr_humanoid(Howtouse)
+#define humanoid
+//Humanoid master script
+//humanoid(Howtouse)
 //0 = Initialize a humanoid, 1 = Draw a humanoid
 
 switch(argument0)
 {
 case 0:  //Initialize variables
-animType = scr_humanoid
+initializeHumanoid()
+break
+
+case 1: //Draw self
+drawHumanoid()
+break
+}
+
+#define initializeHumanoid
+//Initialize a humanoid
+
+animType = humanoid
 gender = 0
 height = 28
-raceHead = choose(spr_humanHead,spr_elfHead)
-skinTone = choose(fair,dark,beige,pale)
-hairStyle = choose(spr_upHair,spr_shortHair)
+raceHead = spr_humanHead
+skinTone = fair
+hairStyle = spr_upHair
 hairColour = black
 hairVisible = true
 
 //Animation
 animStep[0] = 0
 animPriority[0] = 0
-animIndex[0] = anim_idle
+animIndex[0] = animIdle
 animStep[1] = 0
 animPriority[1] = 0
-animIndex[1] = anim_idle
+animIndex[1] = animIdle
 animStep[2] = 0
 animPriority[2] = 0
-animIndex[2] = anim_idle
+animIndex[2] = animIdle
 
 alarm[5] = 5
 
@@ -42,10 +54,6 @@ beltItem[0] = spr_belt
 headItem[0] = spr_chainMail
 legsItem[0] = spr_chainMail
 armsItem[0] = spr_chainMail
-
-//Weapon Sprites
-weaponSprite[1] = choose(spr_axe,spr_greatSword,spr_spear)
-weaponSprite[2] = spr_none
 
 //Hands (Height = height from ground, Rot = rotation of hand, Dist = distance hand from body, Dir = direction from body)
 handHeight[1] = 18
@@ -126,17 +134,19 @@ legCross = 0
 legAngleX = 1 //Multiplier of leg movement
 
 //Randomizer
-scr_humanoidRandomize()
-scr_tempArmourRandomize()
-break
+randomizeHumanoid()
+tempArmourRandomize()
 
-case 1: //Draw self
+#define drawHumanoid
+//Draw a humanoid
 
+    //Adjust Bones
+    
 //Body Facing and Direction
-scr_twist(bodyTwist)
+twist(bodyTwist)
 
 hipsX = round(x)+(hipsThrust*hFacing)
-hipsY = round(y)-hipsOffset-hipsBounce-h-((isoZ-global.zLevel)*30)
+hipsY = round(y)-hipsOffset-hipsBounce-h+(global.zLevel*30)
 
 legX[1] = round(hipsX+lengthdir_x(legOffset[1]*hFacing, hipsRot)+lengthdir_x(legAdjust[1], hipsRot-90))
 legY[1] = round(hipsY+lengthdir_y(legOffset[1]*hFacing, hipsRot)+lengthdir_y(legAdjust[1], hipsRot-90))
@@ -160,10 +170,10 @@ shldrX[2] = round(bodyX+lengthdir_x(shldrOffset[2]*bodyHFacing, bodyRot-180)+len
 shldrY[2] = round(bodyY+lengthdir_y(shldrOffset[2]*bodyHFacing, bodyRot-180)+lengthdir_y(shldrAdjust, bodyRot+90))
 
 handX[1] = round(x+lengthdir_x(handDist[1], facing+(bodyHFacing*handDir[1])))
-handY[1] = round(y+lengthdir_y(handDist[1], facing+(bodyHFacing*handDir[1]))-handHeight[1]-h)-((isoZ-global.zLevel)*30)
+handY[1] = round(y+lengthdir_y(handDist[1], facing+(bodyHFacing*handDir[1]))-handHeight[1]-h)+(global.zLevel*30)
 
 handX[2] = round(x+lengthdir_x(handDist[2], facing+(bodyHFacing*handDir[2])))
-handY[2] = round(y+lengthdir_y(handDist[2], facing+(bodyHFacing*handDir[2]))-handHeight[2]-h)-((isoZ-global.zLevel)*30)
+handY[2] = round(y+lengthdir_y(handDist[2], facing+(bodyHFacing*handDir[2]))-handHeight[2]-h)+(global.zLevel*30)
 
 //Correct Shoulder Rotation
 shldrSwap = 0
@@ -193,12 +203,9 @@ if bodyHFacing*handPoint[2] < -90
 {armHFacing[2] = bodyHFacing*-1} 
 else
 {armHFacing[2] = bodyHFacing}
-
        
-        //
         //Char Draw
-        //
-        
+                
 //Arms Behind Body
 if bodyVFacing = 1 and handY[1] < handY[2]
 {
@@ -312,5 +319,222 @@ if bodyVFacing = 0 and handY[1] >= handY[2]
     draw_sprite_ext(spr_hand,0,handX[1],handY[1],bodyHFacing,1,handRot[1]+facing,skinTone,1)
 }
 
-break
+
+#define randomizeHumanoid
+//Gender and Size
+gender = choose(gndr_female,gndr_female,gndr_male)
+var s = min(choose(1,1,2,2,3,3,4)+gender,4)
+var i = choose(-1,0,1,2)
+var r = choose(1,1,1,1,1,2,2,2,3,3,4,4,5,6,7)
+
+switch(r)
+{
+    case 1: //High Elf
+    raceHead = spr_elfHead
+    race = "High Elf"
+    skinTone = choose(fair,fair,fair,dark,beige,beige,pale,pale)
+    i = choose(-1,0,0,0,1,1,1,2)
+    s = min(choose(1,1,1,2,2,3,3,4)+gender,4)
+    
+        legSprite = spr_leg
+        legSpriteMod = 0 
+        hipsOffset = 11+i
+        height = 28+i
+    
+    break
+    
+    case 2: //Human
+    raceHead = spr_humanHead
+    race = "Irunian Human"
+    skinTone = choose(dark,dark,beige,beige,beige)
+    i = choose(-1,-1,0,0,1,2)
+    s = min(choose(1,1,2,2,3,3,4)+gender,4)
+    
+        legSprite = spr_leg
+        legSpriteMod = 0 
+        hipsOffset = 11+i
+        height = 28+i
+    break
+    
+    case 3: //Dwarf
+    raceHead = spr_humanHead
+    skinTone = choose(fair,pale)
+    race = "Dwarf"
+    i = choose(-1,-1,0,0,1,1)
+    s = 4   //min(choose(3,3,4)+gender,4)
+    
+        legSprite = spr_shortLeg
+        legSpriteMod = 1
+        hipsOffset = 8+i
+        height = 25+i
+    
+    break
+    
+    case 4: //Halfling
+    raceHead = choose(spr_humanHead,spr_elfHead)
+    skinTone = choose(fair,fair,fair,dark,beige,beige,pale,pale)
+    race = "Halfling"
+    i = choose(-2,-2,-1,-1,0,0)
+    s = choose(1,1,1,2,3)
+    
+        legSprite = spr_shortLeg
+        legSpriteMod = 1
+        hipsOffset = 8+i
+        height = 25+i
+        
+    bodyOffset -= 1
+    height -= 1    
+    break
+    
+    case 5: //Orc
+    raceHead = spr_humanHead
+    skinTone = choose(orcBrown,orcGreen)
+    race = "Orc"
+    i = choose(-1,0,1,1,1,2,2)
+    s = min(choose(2,2,3,3,4)+gender,4)
+    
+        legSprite = spr_leg
+        legSpriteMod = 0 
+        hipsOffset = 11+i
+        height = 28+i
+        
+    height += 1    
+        
+    break
+    
+    case 6: //Tiefling
+    raceHead = spr_elfHead
+    skinTone = choose(fair,demonRed)
+    race = "Tiefling"
+    i = choose(-2,-1,0,1,1,2)
+    s = min(choose(1,1,1,2,2,3,3)+(gender*2),4)
+    
+        legSprite = spr_leg
+        legSpriteMod = 0 
+        hipsOffset = 11+i
+        height = 28+i
+      
+    headItem[1] = spr_horns    
+    break
+        
+    case 7: //Northern Human
+    raceHead = spr_humanHead
+    race = "Northern Human"
+    skinTone = choose(pale,pale,fair)
+    i = choose(-1,0,0,1,2,2)
+    s = min(choose(1,2,2,3,3,4)+gender,4)
+    
+        legSprite = spr_leg
+        legSpriteMod = 0 
+        hipsOffset = 11+i
+        height = 28+i
+    
+    break
 }
+
+if skinTone = fair or skinTone = pale
+{
+    hairColour = choose(black,dkBrown,dkRed,c_yellow)
+}
+
+if skinTone = beige
+{
+    hairColour = choose(black,dkBrown)
+}
+
+legAdjust[1] = i
+legAdjust[2] = i
+
+//Faces
+if gender = gndr_male
+{
+    faceImage = choose(0,2)
+}
+
+//Randomizing heights
+if bodyOffset > 4
+{
+    i = choose(-1,0,0,0,1)
+    bodyOffset -= i
+    height -= i
+}
+
+i = choose(0,0,0,1)
+headOffset -= i
+height -= i
+
+switch(s)
+{
+    //Small characters
+    case 1:
+    hipsImage = 0
+    bodyImage = 0
+    bodyAdjust = choose(0,-1)
+    break
+    
+    //Medium characters
+    case 2:
+    hipsImage = 2
+    bodyImage = choose(0,2,4)
+    bodyAdjust = -1
+    break
+    
+    //Medium characters
+    case 3:
+    hipsImage = 4
+    bodyImage = choose(2,4)
+    bodyAdjust = -1
+    break
+    
+    //Large characters
+    case 4:
+    hipsImage = 6
+    bodyImage = choose(2,4)
+    legOffset[2] = 4
+    bodyAdjust = -1
+    break
+}
+
+switch(bodyImage)
+{
+    case 0: //Small Body
+    shldrOffset[1] = 4
+    shldrOffset[2] = 3
+    shldrAdjust = 0
+    chstImage = choose(1,2)
+    
+    if chstImage = 1
+    {
+        chstAdjust = 1
+    }
+    break
+    
+    case 2: //Medium Body
+    shldrOffset[1] = 5
+    shldrOffset[2] = 4
+    shldrAdjust = 1
+    chstImage = choose(2,3)
+    chstAdjust = 1
+    headOffset += 1
+    break
+    
+    case 4: //Big Body
+    shldrOffset[1] = 5
+    shldrOffset[2] = 5
+    shldrAdjust = 1
+    chstImage = 3
+    chstAdjust = 1
+    headOffset += 1
+    headAdjust -= 1
+    break
+}
+
+//Male chest exception
+if gender = gndr_male
+{
+    chstImage = 0
+}
+
+//Establish Hand height
+handHeight[1] += height-28
+handHeight[2] += height-28

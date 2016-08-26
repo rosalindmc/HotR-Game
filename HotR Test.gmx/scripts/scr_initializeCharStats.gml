@@ -1,9 +1,8 @@
-//Initialize game stats for actors script
+//Initialize game stats for actors
 //scr_initializeCharStats()
 //Used in the create event of all game actors
 
 //Bio
-
 //Temp Name
 name = choose("Gae","Mop","Quar","She","Be")+choose("ah","or","gash","ivik","k","alia","rae")+" "+choose("Frost","Strong","Kind","Green","Free","Swift","Blue")+choose("blade","storm","heart","hilt","foot","man","tree")
 

@@ -1,5 +1,5 @@
-//Downward swing animation for melee weapons
-//anim_downSwing(hand,animStep)
+//Side swing animation for melee weapons
+//animCrossSwing(hand,animStep)
 
 alarm[5+argument0] = global.fspd*.1
 animStep[argument0] += 1
@@ -11,17 +11,12 @@ switch(argument1)
 //Preparing
 case 0:
 handHeight[argument0] = 24
-handRot[argument0] = 120
+handRot[argument0] = 45
 handDist[argument0] = 5
-handDir[argument0] = -30
+handDir[argument0] = 45
+bodyTwist = 1
 
-if animPriority[3-argument0] = 0
-{
-    handHeight[argument0] = 24
-    handRot[argument0] = 120
-    handDist[argument0] = 5
-    handDir[argument0] = -30
-}
+hipsThrust = 0
 
 alarm[5+argument0] = global.fspd*.5
 break
@@ -29,9 +24,12 @@ break
 //Mid Swing
 case 1:
 handHeight[argument0] = 16
-handRot[argument0] = 45
+handRot[argument0] = 15
 handDist[argument0] = 7
-handDir[argument0] = -15
+handDir[argument0] = 15
+bodyTwist = 0
+
+hipsThrust = 1
 
 alarm[5+argument0] = global.fspd*.05
 break
@@ -39,16 +37,20 @@ break
 //Hit
 case 2:
 handHeight[argument0] = 14
-handRot[argument0] = -15
+handRot[argument0] = 0
 handDist[argument0] = 8
-handDir[argument0] = 0
+handDir[argument0] = -15
+
+hipsThrust = 1
 
 alarm[5+argument0] = global.fspd*.3
 break
 
 case 3:
+hipsThrust = 0
+
 //End Animation
 animStep[argument0] = 0
-animIndex[argument0] = anim_meleeHold
+animIndex[argument0] = animMeleeHold
 break
 }

@@ -1,8 +1,8 @@
 //Humanoid Walk Animation
-//anim_humanoidWalk(animationstage)
+//humanoidWalk(animationstage)
 
 //Alarm
-alarm[5] = (global.fspd*.2)//isMoving
+alarm[5] = (global.fspd*.2)
 animStep[0] += 1
 bodyTwist = 0
 
@@ -12,7 +12,7 @@ switch(argument0)
     case 0:
     animStep[0] = 4
     legCross = 1-legCross
-    anim_humanoidWalk(4)
+    animHumanoidWalk(4)
     break
 
     case 1:
@@ -88,7 +88,7 @@ switch(argument0)
     case 6:
     animStep[0] = 1
     legCross = 1-legCross
-    anim_humanoidWalk(1)
+    animHumanoidWalk(1)
     break
     
     case 10:
