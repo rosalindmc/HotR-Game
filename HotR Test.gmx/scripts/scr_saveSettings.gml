@@ -11,7 +11,7 @@ ini_write_real("Sound","effectVolume", global.effectVolume)
 ini_write_real("Sound","musicVolume", global.musicVolume)
 ini_write_real("Sound","voiceVolume", global.voiceVolume)
 
-//Selection Keybindings
+//Selection Keybindings (No Longer Relevant)
 ini_write_real("Controls","select1", global.selectKey[1])
 ini_write_real("Controls","select2", global.selectKey[2])
 ini_write_real("Controls","select3", global.selectKey[3])
@@ -41,11 +41,10 @@ ini_write_real("Controls","ability10", global.abilityKey[10])
 ini_write_real("Controls","attack", global.attackKey)
 ini_write_real("Controls","switch", global.switchKey)
 ini_write_real("Controls","heal", global.healKey)
-ini_write_real("Controls","commandToggle", global.commandKey)
+ini_write_real("Controls","meleeToggle", global.meleeToggle)
 
 //Gameplay
 ini_write_real("Gameplay","fps", global.fspd)
-ini_write_real("Gameplay","commandMode", global.commandMode)
 
 //Close the ini file
 ini_close()

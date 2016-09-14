@@ -43,7 +43,8 @@ onPath = false
 g = 0
 h = 0
 move = false
-attack = false
+rangedAttack = false
+meleeAttack = false
 pathParent = noone
 
 //Coordinates
@@ -61,6 +62,7 @@ wall[3] = noone
 image_index = random(16)
 image_speed = 0
 vis = false
+scrollVis = false
 
 //Temp
 alarm[0] = 2
@@ -90,38 +92,47 @@ alarm[0] = 2
 
 if ground = true
 {
-if irandom(100) &gt; 85
-{    
-    i = instance_create(x+10,y-6,obj_thinwall)
-    i.owner = id
-    i.h = h
-    i.facing = 1
-    wall[0] = i
-    if isoY &gt; 0
-    {
-        obj_control.map[isoX+(isoZ*obj_control.mapWidth),isoY-1].wall[2] = i
+    if irandom(100) &gt; 90
+    {    
+        i = instance_create(x,y,obj_step)
+        i.owner = id
+        i.h = h
     }
-}
-
-if irandom(100) &gt; 85
-{    
-    i = instance_create(x-10,y-6,obj_thinwall)
-    i.owner = id
-    i.h = h
-    i.facing = -1
-    wall[3] = i
-    if isoX &gt; 0
+    else
     {
-        obj_control.map[isoX-1+(isoZ*obj_control.mapWidth),isoY].wall[1] = i
+        if irandom(100) &gt; 85 and isoX != isoY
+        {    
+            i = instance_create(x+10,y-6,obj_thinwall)
+            i.owner = id
+            i.h = h
+            i.facing = 1
+            wall[0] = i
+            if isoY &gt; 0
+            {
+                obj_control.map[isoX+(isoZ*obj_control.mapWidth),isoY-1].wall[2] = i
+            }
+        }
+        
+        if irandom(100) &gt; 85 and isoX != isoY
+        {    
+            i = instance_create(x-10,y-6,obj_thinwall)
+            i.owner = id
+            i.h = h
+            i.facing = -1
+            wall[3] = i
+            if isoX &gt; 0
+            {
+                obj_control.map[isoX-1+(isoZ*obj_control.mapWidth),isoY].wall[1] = i
+            }
+        }
     }
-}
 }
 else
 {
     //Clear Up Grid
     instance_deactivate_object(id)
 }
-adjacency()
+//adjacency()
 </string>
           </argument>
         </arguments>
@@ -144,27 +155,26 @@ adjacency()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if isoZ &lt;= global.zLevel
+            <string>if isoZ &lt;= global.zLevel or global.zViewToggle = true
 {
-    if vis != false
+    if vis != false and scrollVis != false
     {
-    
         if vis = 2
         {
             shader_set(shd_greyscale)
-            //draw_sprite_ext(sprite_index,image_index,x,y+(global.zLevel*30)-h,1,1,0,c_dkgray,1)
+            //draw_sprite_ext(sprite_index,image_index,x,y-h,1,1,0,c_dkgray,1)
         }
-        draw_sprite(sprite_index,image_index,x,y+(global.zLevel*30)-h)
+        draw_sprite(sprite_index,image_index,x,y-h+(global.zLevel*30))
         shader_reset()
         
-        if (global.zLevel = isoZ and overlay != 0) || onPath = 4
+        if (global.zLevel = isoZ and overlay != 0) || onPath &gt;= 4
         {
-            draw_sprite(spr_tilePathing,max(overlay,onPath),x,y+(global.zLevel*30)-h)
+            draw_sprite(spr_tilePathing,max(overlay,onPath),x,y-h+(global.zLevel*30))
         }
     }
     else
     {
-    draw_sprite_ext(sprite_index,image_index,x,y+(global.zLevel*30)-h,1,1,0,c_black,1)
+        draw_sprite_ext(sprite_index,image_index,x,y-h+(global.zLevel*30),1,1,0,c_black,1)
     }
 }
 </string>

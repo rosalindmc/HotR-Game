@@ -38,6 +38,7 @@ break
 
 //Hit
 case 2:
+meleeDamage(0,1)
 handHeight[argument0] = 14
 handRot[argument0] = -15
 handDist[argument0] = 8

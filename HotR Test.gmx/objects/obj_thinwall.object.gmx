@@ -33,8 +33,10 @@ isoX = 0
 isoY = 0
 isoZ = 0
 h = 0
+height = 30
 owner = -4
 vis = true
+scrollVis = false
 facing = 1
 
 alarm[0] = 2
@@ -73,10 +75,10 @@ alarm[0] = 2
     mask_index = m
     image_xscale = facing
     
-    depth = owner.depth-10
+    depth = owner.depth-7
     
     
-    if isoZ &lt; obj_control.mapDepth-1
+    if (isoZ &lt; obj_control.mapDepth-1)
     {
         i = obj_control.map[isoX+((isoZ+1)*obj_control.mapWidth),isoY]
         instance_activate_object(i)

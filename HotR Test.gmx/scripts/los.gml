@@ -9,7 +9,7 @@ var i, ix, iy, tx, ty, isX, isY, isZ
 
 sight = true
 
-if point_distance(0,0,argument2.x-argument1.x,(argument2.y-argument1.y)*2) < argument0*metre
+if point_distance(0,0,argument2.x-argument1.x,(argument2.y-argument1.y)*2) < argument0*metre*1.5
 {
     i = 0   
     repeat(abs(zDif)+1)

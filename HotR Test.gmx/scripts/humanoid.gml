@@ -47,13 +47,20 @@ legSprite = spr_leg
 legSpriteMod = 0        //Set to 0 for regular legs, 1 for short legs
 
 //Armour 
-bodyItem[0] = spr_chainMail
-hipsItem[0] = spr_chainMail
-skrtItem[0] = spr_chainTabard
-beltItem[0] = spr_belt
-headItem[0] = spr_chainMail
-legsItem[0] = spr_chainMail
-armsItem[0] = spr_chainMail
+bodyItem[0] = spr_none
+hipsItem[0] = spr_none
+skrtItem[0] = spr_none
+beltItem[0] = spr_none
+headItem[0] = spr_none
+legsItem[0,1] = spr_none
+legsItem[0,2] = spr_none
+armsItem[0,1] = spr_none
+armsItem[0,2] = spr_none
+
+legsItem[1,1] = spr_none
+legsItem[1,2] = spr_none
+armsItem[1,1] = spr_none
+armsItem[1,2] = spr_none
 
 //Hands (Height = height from ground, Rot = rotation of hand, Dist = distance hand from body, Dir = direction from body)
 handHeight[1] = 18
@@ -182,9 +189,12 @@ if bodyVFacing = 0
     shldrSwap = 1
 }
 
-//Temp
-handX[2] = round(handX[1]+lengthdir_x(2, facing+(hFacing*handRot[1])))
-handY[2] = round(handY[1]+lengthdir_y(2, facing+(hFacing*handRot[1])))
+//If using a great weapon, move second hand
+if greatWeapon = true
+{
+    handX[2] = round(handX[1]+lengthdir_x(2, facing+(hFacing*handRot[1])))
+    handY[2] = round(handY[1]+lengthdir_y(2, facing+(hFacing*handRot[1])))
+}
 
 //Arm Directions
 handPoint[1] = point_direction(shldrX[1+shldrSwap],shldrY[1+shldrSwap],handX[1],handY[1])
@@ -211,7 +221,7 @@ if bodyVFacing = 1 and handY[1] < handY[2]
 {
     //Draw Hand1
     draw_sprite_ext(spr_arms,7-(7*max(armHFacing[1],0))+min(round(point_distance(handX[1],handY[1],shldrX[1+shldrSwap],shldrY[1+shldrSwap])),6),shldrX[1+shldrSwap],shldrY[1+shldrSwap],bodyHFacing*armHFacing[1],armStretch[1],handPoint[1]+90,skinTone,1)
-    i = 0 repeat(array_length_1d(armsItem)-1){i++ draw_sprite_ext(armsItem[i],20-(20*max(armHFacing[2],0))+32+armLength[1],shldrX[1+shldrSwap],shldrY[1+shldrSwap],bodyHFacing*armHFacing[1],armStretch[1],handPoint[1]+90,c_white,1)}
+    i = 0 repeat(array_height_2d(armsItem)-1){i++ draw_sprite_ext(armsItem[i,1+vFacing],20-(20*max(armHFacing[2],0))+32+armLength[1],shldrX[1+shldrSwap],shldrY[1+shldrSwap],bodyHFacing*armHFacing[1],armStretch[1],handPoint[1]+90,c_white,1)}
     draw_sprite_ext(weaponSprite[1],0,handX[1],handY[1],1,bodyHFacing,facing+(bodyHFacing*handRot[1]),c_white,1)
     draw_sprite_ext(spr_hand,0,handX[1],handY[1],bodyHFacing,1,handRot[1]+facing,skinTone,1)
 }
@@ -219,7 +229,7 @@ if abs(angle_difference(270,facing+(hFacing*handDir[2]))) > 90
 {
     //Draw Hand2
     draw_sprite_ext(spr_arms,(7*max(armHFacing[2],0))+min(round(point_distance(handX[2],handY[2],shldrX[2-shldrSwap],shldrY[2-shldrSwap])),6),shldrX[2-shldrSwap],shldrY[2-shldrSwap],bodyHFacing*armHFacing[2],armStretch[2],handPoint[2]+90,skinTone,1)
-    i = 0 repeat(array_length_1d(armsItem)-1){i++ draw_sprite_ext(armsItem[i],(20*max(armHFacing[2],0))+32+armLength[2],shldrX[2-shldrSwap],shldrY[2-shldrSwap],bodyHFacing*armHFacing[2],armStretch[2],handPoint[2]+90,c_white,1)}
+    i = 0 repeat(array_height_2d(armsItem)-1){i++ draw_sprite_ext(armsItem[i,2-vFacing],(20*max(armHFacing[2],0))+32+armLength[2],shldrX[2-shldrSwap],shldrY[2-shldrSwap],bodyHFacing*armHFacing[2],armStretch[2],handPoint[2]+90,c_white,1)}
     draw_sprite_ext(weaponSprite[2],0,handX[2],handY[2],1,bodyHFacing,facing+(bodyHFacing*handRot[2]),c_white,1)
     draw_sprite_ext(spr_hand,0,handX[2],handY[2],bodyHFacing,1,handRot[2]+facing,skinTone,1)
 }
@@ -227,7 +237,7 @@ if bodyVFacing = 1 and handY[1] >= handY[2]
 {
     //Draw Hand1
     draw_sprite_ext(spr_arms,7-(7*max(armHFacing[1],0))+min(round(point_distance(handX[1],handY[1],shldrX[1+shldrSwap],shldrY[1+shldrSwap])),6),shldrX[1+shldrSwap],shldrY[1+shldrSwap],bodyHFacing*armHFacing[1],armStretch[1],handPoint[1]+90,skinTone,1)
-    i = 0 repeat(array_length_1d(armsItem)-1){i++ draw_sprite_ext(armsItem[i],20-(20*max(armHFacing[2],0))+32+armLength[1],shldrX[1+shldrSwap],shldrY[1+shldrSwap],bodyHFacing*armHFacing[1],armStretch[1],handPoint[1]+90,c_white,1)}
+    i = 0 repeat(array_height_2d(armsItem)-1){i++ draw_sprite_ext(armsItem[i,1+vFacing],20-(20*max(armHFacing[2],0))+32+armLength[1],shldrX[1+shldrSwap],shldrY[1+shldrSwap],bodyHFacing*armHFacing[1],armStretch[1],handPoint[1]+90,c_white,1)}
     draw_sprite_ext(weaponSprite[1],0,handX[1],handY[1],1,bodyHFacing,facing+(bodyHFacing*handRot[1]),c_white,1)
     draw_sprite_ext(spr_hand,0,handX[1],handY[1],bodyHFacing,1,handRot[1]+facing,skinTone,1)
 }
@@ -237,11 +247,11 @@ i = 0 repeat(array_length_1d(skrtItem)-1){i++ draw_sprite_ext(skrtItem[i],skrtAn
 
 //Foreleg
 draw_sprite_ext(legSprite,legAnim[1]+vFacing,legX[1],legY[1],hFacing,1,legRot[1],skinTone,1)
-i = 0 repeat(array_length_1d(legsItem)-1){i++ draw_sprite_ext(legsItem[i],20+vFacing+(legSpriteMod*20)+legAnim[1],legX[1],legY[1],hFacing,1,legRot[1],c_white,1)}
+i = 0 repeat(array_height_2d(legsItem)-1){i++ draw_sprite_ext(legsItem[i,1+vFacing],20+vFacing+(legSpriteMod*20)+legAnim[1],legX[1],legY[1],hFacing,1,legRot[1],c_white,1)}
 
 //Rear Leg
 draw_sprite_ext(legSprite,legAnim[2]+vFacing,legX[2],legY[2],hFacing,1,legRot[2],skinTone,1)
-i = 0 repeat(array_length_1d(legsItem)-1){i++ draw_sprite_ext(legsItem[i],20+vFacing+(legSpriteMod*20)+legAnim[2],legX[2],legY[2],hFacing,1,legRot[2],c_white,1)}
+i = 0 repeat(array_height_2d(legsItem)-1){i++ draw_sprite_ext(legsItem[i,2-vFacing],20+vFacing+(legSpriteMod*20)+legAnim[2],legX[2],legY[2],hFacing,1,legRot[2],c_white,1)}
 
 //Hips
 draw_sprite_ext(spr_hips,hipsImage+vFacing,hipsX,hipsY,hFacing,1,hipsRot,skinTone,1)
@@ -250,9 +260,6 @@ i = 0 repeat(array_length_1d(hipsItem)-1){i++ draw_sprite_ext(hipsItem[i],12+hip
 
 //Skirt
 i = 0 repeat(array_length_1d(skrtItem)-1){i++ draw_sprite_ext(skrtItem[i],skrtAnim+(legSpriteMod*6)+vFacing,hipsX,hipsY,hFacing,1,hipsRot,c_white,1)}
-
-//Belt
-i = 0 repeat(array_length_1d(beltItem)-1){i++ draw_sprite_ext(beltItem[i],hipsImage+vFacing,hipsX,hipsY,hFacing,1,hipsRot,c_white,1)}
 
 if vFacing = 0
 {
@@ -266,6 +273,9 @@ if bodyVFacing = 0
     draw_sprite_ext(spr_body,bodyImage+vFacing,bodyX,bodyY,bodyHFacing,1,bodyRot,skinTone,1)
     i = 0 repeat(array_length_1d(bodyItem)-1){i++ draw_sprite_ext(bodyItem[i],2+bodyImage+bodyVFacing,bodyX,bodyY,bodyHFacing,1,bodyRot,c_white,1)}
 
+    //Belt
+    i = 0 repeat(array_length_1d(beltItem)-1){i++ draw_sprite_ext(beltItem[i],12+hipsImage+vFacing,hipsX,hipsY,hFacing,1,hipsRot,c_white,1)}
+    
     //Chest
     draw_sprite_ext(spr_chest,chstImage,chstX,chstY,bodyHFacing,1,bodyRot,skinTone,1)
     i = 0 repeat(array_length_1d(bodyItem)-1){i++ draw_sprite_ext(bodyItem[i],8+chstImage,chstX,chstY,bodyHFacing,1,bodyRot,c_white,1)}
@@ -285,6 +295,9 @@ if bodyVFacing = 1
     //Upper Body
     draw_sprite_ext(spr_body,bodyImage+vFacing,bodyX,bodyY,bodyHFacing,1,bodyRot,skinTone,1)
     i = 0 repeat(array_length_1d(bodyItem)-1){i++ draw_sprite_ext(bodyItem[i],2+bodyImage+bodyVFacing,bodyX,bodyY,bodyHFacing,1,bodyRot,c_white,1)}
+
+    //Belt
+    i = 0 repeat(array_length_1d(beltItem)-1){i++ draw_sprite_ext(beltItem[i],12+hipsImage+vFacing,hipsX,hipsY,hFacing,1,hipsRot,c_white,1)}
 }
 
 if vFacing = 1
@@ -292,6 +305,13 @@ if vFacing = 1
     //Hair (Back)
     draw_sprite_ext(hairStyle,4+bounce,headX,headY,hFacing,1,headRot+(hipsRot*2),hairColour,hairVisible)
 }
+
+/* Height Line
+draw_set_colour(c_purple)
+draw_line(x-10,y+1,x-10,y-height+1)
+draw_line(x-10,y+1,x-12,y+1)
+draw_line(x-10,y-height+1,x-12,y-height+1)
+*/
 
 //Arms Infront of Body
 if bodyVFacing = 0 and handY[1] < handY[2]
@@ -322,9 +342,9 @@ if bodyVFacing = 0 and handY[1] >= handY[2]
 
 #define randomizeHumanoid
 //Gender and Size
-gender = choose(gndr_female,gndr_female,gndr_male)
+gender = choose(gndr_female)//,gndr_female,gndr_male)
 var s = min(choose(1,1,2,2,3,3,4)+gender,4)
-var i = choose(-1,0,1,2)
+var i
 var r = choose(1,1,1,1,1,2,2,2,3,3,4,4,5,6,7)
 
 switch(r)
@@ -333,7 +353,7 @@ switch(r)
     raceHead = spr_elfHead
     race = "High Elf"
     skinTone = choose(fair,fair,fair,dark,beige,beige,pale,pale)
-    i = choose(-1,0,0,0,1,1,1,2)
+    i = choose(0,0,0,1,1,1,2)
     s = min(choose(1,1,1,2,2,3,3,4)+gender,4)
     
         legSprite = spr_leg
@@ -347,7 +367,7 @@ switch(r)
     raceHead = spr_humanHead
     race = "Irunian Human"
     skinTone = choose(dark,dark,beige,beige,beige)
-    i = choose(-1,-1,0,0,1,2)
+    i = choose(0,0,1,2)
     s = min(choose(1,1,2,2,3,3,4)+gender,4)
     
         legSprite = spr_leg
@@ -360,13 +380,14 @@ switch(r)
     raceHead = spr_humanHead
     skinTone = choose(fair,pale)
     race = "Dwarf"
-    i = choose(-1,-1,0,0,1,1)
+    i = choose(0,0,0,1,1)
     s = 4   //min(choose(3,3,4)+gender,4)
     
         legSprite = spr_shortLeg
         legSpriteMod = 1
         hipsOffset = 8+i
-        height = 25+i
+        height = 24+i
+        headOffset -= 1
     
     break
     
@@ -374,39 +395,37 @@ switch(r)
     raceHead = choose(spr_humanHead,spr_elfHead)
     skinTone = choose(fair,fair,fair,dark,beige,beige,pale,pale)
     race = "Halfling"
-    i = choose(-2,-2,-1,-1,0,0)
+    i = 0
     s = choose(1,1,1,2,3)
     
         legSprite = spr_shortLeg
         legSpriteMod = 1
         hipsOffset = 8+i
-        height = 25+i
+        height = 24+i
         
-    bodyOffset -= 1
-    height -= 1    
+    bodyOffset -= 1    
     break
     
     case 5: //Orc
     raceHead = spr_humanHead
     skinTone = choose(orcBrown,orcGreen)
     race = "Orc"
-    i = choose(-1,0,1,1,1,2,2)
+    i = choose(0,1,1,1,2,2)
     s = min(choose(2,2,3,3,4)+gender,4)
     
         legSprite = spr_leg
         legSpriteMod = 0 
         hipsOffset = 11+i
-        height = 28+i
-        
-    height += 1    
-        
+        height = 28+i+i
+    
+    bodyOffset += i            
     break
     
     case 6: //Tiefling
     raceHead = spr_elfHead
     skinTone = choose(fair,demonRed)
     race = "Tiefling"
-    i = choose(-2,-1,0,1,1,2)
+    i = choose(0,1,1,2)
     s = min(choose(1,1,1,2,2,3,3)+(gender*2),4)
     
         legSprite = spr_leg
@@ -421,7 +440,7 @@ switch(r)
     raceHead = spr_humanHead
     race = "Northern Human"
     skinTone = choose(pale,pale,fair)
-    i = choose(-1,0,0,1,2,2)
+    i = choose(0,0,1,2,2)
     s = min(choose(1,2,2,3,3,4)+gender,4)
     
         legSprite = spr_leg
@@ -451,17 +470,17 @@ if gender = gndr_male
     faceImage = choose(0,2)
 }
 
-//Randomizing heights
+/*Randomizing heights
 if bodyOffset > 4
 {
     i = choose(-1,0,0,0,1)
     bodyOffset -= i
     height -= i
 }
+*/
 
-i = choose(0,0,0,1)
-headOffset -= i
-height -= i
+//size test
+//s = 1
 
 switch(s)
 {
@@ -470,13 +489,16 @@ switch(s)
     hipsImage = 0
     bodyImage = 0
     bodyAdjust = choose(0,-1)
+    chstAdjust = 0
     break
     
     //Medium characters
     case 2:
     hipsImage = 2
-    bodyImage = choose(0,2,4)
+    bodyImage = choose(0,2)
     bodyAdjust = -1
+    if bodyImage = 0 {bodyAdjust = 0}
+    chstAdjust = 1
     break
     
     //Medium characters
@@ -502,20 +524,21 @@ switch(bodyImage)
     shldrOffset[2] = 3
     shldrAdjust = 0
     chstImage = choose(1,2)
-    
-    if chstImage = 1
-    {
-        chstAdjust = 1
-    }
+    if chstImage = 2 {bodyAdjust = -1}
+    chstAdjust += 1+bodyAdjust
+    if chstImage = 1 {chstAdjust = 1}
+    headAdjust = 1
     break
     
     case 2: //Medium Body
     shldrOffset[1] = 5
     shldrOffset[2] = 4
     shldrAdjust = 1
-    chstImage = choose(2,3)
+    chstImage = 3
     chstAdjust = 1
-    headOffset += 1
+    headOffset += 1 
+    height += 1
+    headAdjust = 1   
     break
     
     case 4: //Big Body
@@ -525,7 +548,8 @@ switch(bodyImage)
     chstImage = 3
     chstAdjust = 1
     headOffset += 1
-    headAdjust -= 1
+    height += 1
+    headAdjust = 0
     break
 }
 
@@ -538,3 +562,6 @@ if gender = gndr_male
 //Establish Hand height
 handHeight[1] += height-28
 handHeight[2] += height-28
+
+//Old Characters headOff -1, headAdj +1
+//Upright Characters headAdj -1

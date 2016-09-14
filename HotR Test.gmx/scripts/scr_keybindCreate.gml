@@ -1,8 +1,8 @@
 switch(argument0)
 {
 case 1:
-i = instance_create(160,60,obj_menuKey)
-i.text = 'Select Hero1' i.number = 0
+/*i = instance_create(160,60,obj_menuKey)
+i.text = 'Select Hero1' i.number = 0/\
 
 i = instance_create(160,80,obj_menuKey)
 i.text = 'Select Hero2' i.number = 1
@@ -16,8 +16,9 @@ i.text = 'Select Hero4' i.number = 3
 i = instance_create(160,140,obj_menuKey)
 i.text = 'Select Hero5' i.number = 4
 
-i = instance_create(160,160,obj_menuKey)
-i.text = 'Multi Select' i.number = 5
+//i = instance_create(160,160,obj_menuKey)
+//i.text = 'Multi Select' i.number = 5
+*/
 break
 
 case 2:
@@ -51,8 +52,8 @@ i.text = 'Use Ability9' i.number = 19
 i = instance_create(160,240,obj_menuKey)
 i.text = 'Use Ability10' i.number = 20
 
-i = instance_create(160,260,obj_menuKey)
-i.text = 'Attack Move' i.number = 21
+//i = instance_create(160,260,obj_menuKey)
+//i.text = 'Attack Move' i.number = 21
 
 i = instance_create(160,280,obj_menuKey)
 i.text = 'Switch Weapon' i.number = 22
@@ -75,7 +76,7 @@ i = instance_create(160,120,obj_menuKey)
 i.text = 'Pan Map Down' i.number = 9
 
 i = instance_create(160,140,obj_menuKey)
-i.text = 'Command Mode' i.number = 10
+i.text = 'Melee Toggle' i.number = 10
 break
 
 }

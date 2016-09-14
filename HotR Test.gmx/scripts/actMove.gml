@@ -1,5 +1,5 @@
 //Move Script
-//act_move(howtouse)
+//actMove(howtouse)
 //0 = By Frame, 1 = Start
 
 switch(argument0)

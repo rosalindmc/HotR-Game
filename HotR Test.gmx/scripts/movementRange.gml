@@ -77,6 +77,7 @@ for(ii = 0; ii < ds_list_size(closed); ii ++)
 {
     current = ds_list_find_value(closed, ii)
     current.move = true
+    ds_list_add(global.moveTile, current)
     
     colourTiles(current, argument1)
 }
@@ -112,7 +113,7 @@ for(ii = 0; ii < ds_list_size(adjacent); ii++)
     i = ds_list_find_value(adjacent, ii)
     
     //Same Level
-    if i.isoZ = isoZ
+    if (i.h >= h - 15) and (i.h <= h + 15)
     {
         //North Wall Check
         if (wall[0] = noone and i.wall[2] = noone) or (i.isoY >= isoY)

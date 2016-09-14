@@ -6,7 +6,7 @@ var i = 1
 var randDice = 13 + irandom(2) + irandom(2)
 var mgtCap = 10 
 var grcCap = 10
-var intCap = 10 
+var cunCap = 10 
 var wilCap = 10
 var felCap = 10
 
@@ -19,9 +19,9 @@ switch(race)
     
     case "Irunian Human":
     randDice += 1
-    intellect += 1
+    cunning += 1
     
-    intCap = 11
+    cunCap = 11
     break
     
     case "Northern Human":
@@ -44,14 +44,14 @@ switch(race)
     
     case "Halfling":
     grace += 2
-    intellect += 1
+    cunning += 1
     will += 1
     fellowship += 1
     might -= 2
     
     mgtCap = 8
     grcCap = 12
-    intCap = 11
+    cunCap = 11
     wilCap = 11
     felCap = 11
     
@@ -61,7 +61,7 @@ switch(race)
     case "Orc":
     might += 4
     grace -= 1
-    intellect -= 1
+    cunning -= 1
     will -= 1
     fellowship -= 1
     
@@ -82,7 +82,7 @@ while (i <= randDice)
         break
         case 1: grace++
         break
-        case 2: intellect++
+        case 2: cunning++
         break
         case 3: will++
         break
@@ -109,10 +109,10 @@ if (will > wilCap)
     ii += will-wilCap
     will = wilCap
 }
-if (intellect > intCap)
+if (cunning > cunCap)
 {
-    ii += intellect-intCap
-    intellect = intCap
+    ii += cunning-cunCap
+    cunning = cunCap
 }
 if (fellowship > felCap)
 {
@@ -129,7 +129,7 @@ while (i <= ii)
         break
         case 1: grace++
         break
-        case 2: intellect++
+        case 2: cunning++
         break
         case 3: will++
         break

@@ -22,7 +22,7 @@ mor = min(mor+(morRegen/(global.fspd*60)),morMax)
 lifeVis += (life-lifeVis)/(global.fspd/5)
 
 //Below are scripts occasionally used to test functionality in the upkeep of characters
-//Temp
+/*Temp
 if keyboard_check_pressed(ord('V')) and controlled = true
 {
     startAnimation(1,choose(animDownSwing,animCrossSwing))

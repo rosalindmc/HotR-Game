@@ -63,23 +63,40 @@ else
 }
 draw_rectangle(ix-(size*6),iy-(size*6),ix+(size*6),iy+(size*6),false)
 
-with(owner)
+if owner.vis = true
 {
-    //Hair
-    draw_sprite_ext(hairStyle,4,other.ix,other.iy,other.size,other.size,0,hairColour,hairVisible)
-
-    //Upper Body
-    draw_sprite_general(spr_body,bodyImage,0,0,12,12-headOffset,other.ix-(6*other.size)+(headAdjust*-other.size),other.iy-(6*other.size)+(headOffset*other.size),other.size,other.size,0,skinTone,skinTone,skinTone,skinTone,1)
+    with(owner)
+    {
+        //Hair
+        draw_sprite_ext(hairStyle,4,other.ix,other.iy,other.size,other.size,0,hairColour,hairVisible)
     
-    i = 0 repeat(array_length_1d(bodyItem)-1){i++ draw_sprite_general(bodyItem[i],2+bodyImage,0,0,12,12-headOffset,other.ix-(6*other.size)+(headAdjust*-other.size),other.iy-(6*other.size)+(headOffset*other.size),other.size,other.size,0,c_white,c_white,c_white,c_white,1)}
-
-    //Head and Hair
-    draw_sprite_ext(raceHead,faceImage,other.ix,other.iy,other.size,other.size,0,skinTone,1)
-    draw_sprite_ext(hairStyle,bounce,other.ix,other.iy,other.size,other.size,0,hairColour,hairVisible)
-    i = 0 repeat(array_length_1d(headItem)-1){i++ draw_sprite_ext(headItem[i],faceImage,other.ix,other.iy,other.size,other.size,0,c_white,1)}
+        //Upper Body
+        draw_sprite_general(spr_body,bodyImage,0,0,12,12-headOffset,other.ix-(6*other.size)+(headAdjust*-other.size),other.iy-(6*other.size)+(headOffset*other.size),other.size,other.size,0,skinTone,skinTone,skinTone,skinTone,1)
+        
+        i = 0 repeat(array_length_1d(bodyItem)-1){i++ draw_sprite_general(bodyItem[i],2+bodyImage,0,0,12,12-headOffset,other.ix-(6*other.size)+(headAdjust*-other.size),other.iy-(6*other.size)+(headOffset*other.size),other.size,other.size,0,c_white,c_white,c_white,c_white,1)}
+    
+        //Head and Hair
+        draw_sprite_ext(raceHead,faceImage,other.ix,other.iy,other.size,other.size,0,skinTone,1)
+        draw_sprite_ext(hairStyle,bounce,other.ix,other.iy,other.size,other.size,0,hairColour,hairVisible)
+        i = 0 repeat(array_length_1d(headItem)-1){i++ draw_sprite_ext(headItem[i],faceImage,other.ix,other.iy,other.size,other.size,0,c_white,1)}
+    }
+}
+else
+{
+    draw_set_font(fnt_small)
+    draw_set_halign(fa_middle)
+    draw_set_valign(fa_middle)
+    drawText(c_black,c_yellow,ix,iy,'?')
 }
 
 draw_set_colour(c_black)
+if instance_exists(obj_control.cHover)
+{
+    if obj_control.cHover.occupant = owner and obj_control.cHover.occupant.vis = true
+    {
+        draw_set_colour(c_yellow)
+    }
+}
 draw_rectangle(ix-(size*6),iy-(size*6),ix+(size*6),iy+(size*6),true)
 
 if order != 0
@@ -101,6 +118,10 @@ else
     drawText(c_black,c_white,ix-20,iy+54,"Vitality - "+string(floor(owner.vit))+" / "+string(owner.vitMax))
     drawText(c_black,c_white,ix-20,iy+66,"Stamina - "+string(floor(owner.stm))+" / "+string(owner.stmMax))
     drawText(c_black,c_white,ix-20,iy+78,"Morale - "+string(floor(owner.mor))+" / "+string(owner.morMax))
+    drawText(c_black,c_white,ix-20,iy+90,"Ranged Skill - "+string_format(owner.rSkill,2,1))
+    drawText(c_black,c_white,ix-20,iy+102,"Inaccuracy - "+string_format(10-(owner.rSkill*.4),2,1)+"°")
+
+    
     /*Temp
     scr_drawText(c_black,c_white,ix-20,iy+90,"Will "+string(owner.will))
     scr_drawText(c_black,c_white,ix-20,iy+102,"Fellowship "+string(owner.fellowship))

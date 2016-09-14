@@ -42,13 +42,15 @@ team = 1
 actionString = "Idle"
 action = actIdle
 active = true
-
+target = noone
 controlled = false
 
-//Control
+//Attack Qualifiers
 rangeAttack = true
-greatWeapon = false
+greatWeapon = true
 dualWield = false
+reach = 1.5
+atkHand = 1
 
 //Pathing
 pathArray[0] = isoTile
@@ -63,7 +65,7 @@ moveZ = 0
 h = 0
 image_speed = 15/global.fspd
 vis = false
-
+scrollVis = false
 //(Presently Obsolete)
 //zspd = 0
 //fid = -4
@@ -94,7 +96,7 @@ name = choose("Gae","Mop","Quar","She","Be")+choose("ah","or","gash","ivik","k",
 //Attributes
 might = 5
 grace = 5
-intellect = 5
+cunning = 5
 will = 5
 fellowship = 5
 
@@ -109,9 +111,9 @@ movementBonus = 3+((grace-8)*.3)    //running bonus
 haste = 1+((grace-8)*.03) 
 
 //Skill
-mSkill = 1+((grace-8)*.1)+((intellect-8)*.2)
-rSkill = 1+((grace-8)*.1)+((intellect-8)*.2)
-cSkill = 1+((grace-8)*.1)+((intellect-8)*.2)
+mSkill = 1+((grace-8)*.1)+((cunning-8)*.2)
+rSkill = 1+((grace-8)*.1)+((cunning-8)*.2)+(choose(0,1,2)) //Temp
+cSkill = 1+((grace-8)*.1)+((cunning-8)*.2)
 
 //Offense
 lethality = 0
@@ -121,8 +123,8 @@ atkHaste = 1+((grace-8)*.03)
 
 //Defence
 dodge = 20
-armMax = 4      //Armour is measured in quarters
-arm = 4
+armMax = choose(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16)      //Armour is measured in quarters
+arm = armMax
 prot = 0
 enc = 0
 
@@ -131,7 +133,7 @@ fResistMax = 25+(grace-8)+(might-8)
 fResist = fResistMax
 pResistMax = 25+(will-8)+(might-8)
 pResist = pResistMax
-mResistMax = 25+(intellect-8)+(will-8)
+mResistMax = 25+(cunning-8)+(will-8)
 mResist = mResistMax
 
 //Vitals
@@ -150,7 +152,7 @@ morMax = 10+((will-8)*2)
 mor = morMax
 morRegen = 5+(morMax*.1)
 
-//Temp initialize of weapons for weapon users
+//Initialize of weapons for weapon users
 initializeWeapon(1)
 initializeWeapon(2)
 
@@ -160,24 +162,26 @@ initializeWeapon(2)
 //Used in the create event of all game actors who use weapons
 
 wepType[argument0] = melee
+wepAnimType[argument0] = typeAxe
 
 wepPow[argument0] = 4
+wepType[argument0] = 'Rending'
 wepPowRng[argument0] = .3
 wepStrMult[argument0] = 1
-wepPen[argument0] = 1
+wepPen[argument0] = 0
 wepSpeed[argument0] = 1.3
-wepRange[argument0] = 15
+wepRange[argument0] = 1
 
 //Weapon Sprites (Temp)
-weaponSprite[1] = choose(spr_axe,spr_greatSword,spr_spear,spr_bow)
+weaponSprite[1] = spr_greatSword
 weaponSprite[2] = spr_none 
 
 /*Temp
-i = choose(1)
-switch(i)
+switch(weaponSprite[1])
 {
 case 1:
-dualwielding = false
+weaponSprite[1] = spr_greatSword
+greatWeapon = true
 wepPow[1] = 4
 wepPowRng[1] = .3
 wepStrMult[1] = 1
@@ -188,7 +192,9 @@ wepRange[1] = 1
 break
 
 case 2:
-dualwielding = true
+weaponSprite[1] = spr_axe
+weaponSprite[2] = spr_axe
+dualWield = true
 
 wepPow[1] = 4
 wepPowRng[1] = .3
@@ -209,13 +215,15 @@ wepRange[2] = 1
 break
 
 case 3:
-dualwielding = false
+wepType[1] = ranged
+weaponSprite[1] = spr_bow
+rangeAttack = true
 wepPow[1] = 7.5
 wepPowRng[1] = .3
 wepStrMult[1] = 1.2
 wepPen[1] = 2
 wepForce[1] = 1
 wepSpeed[1] = .85
-wepRange[1] = 1
+wepRange[1] = 100
 break
 }

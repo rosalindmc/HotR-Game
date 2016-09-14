@@ -21,8 +21,8 @@ case 8:if argument1 key = global.leftScroll
 else global.leftScroll = key break
 case 9:if argument1 key = global.rightScroll
 else global.rightScroll = key break
-case 10:if argument1 key = global.commandMode
-else global.commandMode = key break
+case 10:if argument1 key = global.meleeToggle
+else global.meleeToggle = key break
 
 case 11:if argument1 key = global.abilityKey[1] 
 else global.abilityKey[1] = key break

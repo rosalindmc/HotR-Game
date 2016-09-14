@@ -32,14 +32,14 @@ with(obj_initiativeSlot)
 {
     if order = 0
     {
-    x = 30
-    y = 26
-    size = 3
+        x = 30
+        y = 26
+        size = 3
     }
     else
     {
-    x = 36+(24*order)
-    y = 20
-    size = 2
+        x = 36+(25*order)
+        y = 20
+        size = 2
     }
 }

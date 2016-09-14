@@ -107,9 +107,6 @@ i.text = 'Gameplay' i.number = 20
 i = instance_create(40,120,obj_sliderControl)
 i.text = 'Frame Rate' i.number = 4
 
-i = instance_create(40,140,obj_menuToggle)
-i.text = 'Command Mode' i.number = 0 i.descriptor = 'Allows you to use a key (default space) to toggle command mode, while in command mode the game speed is halved.  Command mode is intended for players unfamiliar with RTS controls or who are unable to input commands in a timely manner.'
-
 i = instance_create(32,170,obj_menuButton)
 i.text = 'Keybindings' i.number = 10
 

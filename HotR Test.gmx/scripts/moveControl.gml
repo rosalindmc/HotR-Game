@@ -1,3 +1,4 @@
+#define moveControl
 //Move Action controller script
 //moveControl(HowtoUse)
 
@@ -20,12 +21,13 @@ switch(argument0)
             {
                 if los(40, i.isoTile, isoTile)
                 {
-                    isoTile.attack = true
+                    isoTile.rangedAttack = true
                     isoTile.overlay = 3
                 }
             }
         }
-    }    
+    }
+    meleeAttackRange(i)
     break
     
     //Run 1 to execute
@@ -33,67 +35,57 @@ switch(argument0)
     //Movement
     if cHover.move and cHover.vis != false
     {
-        //Set Path Data
-        current = cHover
-        
-        //Create Priority Que
-        path = ds_priority_create()
-        
-        ds_priority_add(path, current, current.g)
-        ii = 1
-        
-        while(current.pathParent != noone)
-        {
-            ds_priority_add(path, current, current.g)
-            current = current.pathParent
-        }
-        
-        //Form Path from que
-        do
-        {
-            current = ds_priority_delete_min(path)
-            i.pathArray[ii] = current
-            ii++
-        }
-        until(ds_priority_empty(path))
-        
-        //Clean Up que
-        ds_priority_destroy(path)
-        
         //Move and Update Grid
-        map[i.isoX+(i.isoZ*mapWidth),i.isoY].occupant = noone
-        i.isoX = cHover.isoX
-        i.isoY = cHover.isoY
-        i.isoZ = cHover.isoZ
-        i.isoTile = cHover
+        makeMovePath(cHover)
         i.pathLength = ii
         i.stm -= cHover.g*.1
         if cHover.overlay = 2{i.stm -= cHover.g*.1}
-        cHover.occupant = i
+        gridUpdate(i, cHover)
         
-        //Vision
-        updateVision()
+        //End Turn
+        endTurn(3.0/i.haste)
         
-        //Update Control and Timer
-        global.control.controlled = false
-        global.control = noone
-        global.nextChar.delay = 4.0/global.nextChar.owner.haste
-        initiativeSlotReset()
-        mapTimeOn = true
-        
-        //Start the path running
-        with(i)
-        {
-            actMove(1)
-        }
-        
+        //Start the Action
+        with(i){actMove(1)}
         wipeTiles()
     }
     
-    //Attack
-    if cHover.attack
+    //Ranged Attack
+    if cHover.rangedAttack = true and (key_meleeToggle = false or cHover.meleeAttack = false)
     {
-        //Attack
+        fireProjectile(obj_projectile,15)
+        //End Turn
+        endTurn(3.0/i.haste)//Temp, turn will end after attack resolves when done
+    }
+    //Melee Attack
+    if cHover.meleeAttack = true and (key_meleeToggle = true or cHover.rangedAttack = false) and global.attackFromTile != noone
+    {
+        //Set Target
+        i.target = cHover.occupant
+        
+        //Charge or Attack?
+        if global.attackFromTile.occupant != i
+        {   
+            //Move and Update Grid
+            makeMovePath(global.attackFromTile)
+            i.pathLength = ii
+            i.stm -= global.attackFromTile.g*.1
+            if global.attackFromTile.overlay = 2{i.stm -= global.attackFromTile.g*.1}
+            gridUpdate(i, global.attackFromTile)
+            
+            //Start the Action
+            with(i){actCharge(1)}
+        }
+        else
+        {
+            //Start the Action
+            with(i){actAttack(1)}
+        }
+        
+        //End Turn
+        endTurn(3.0/i.haste)//Temp, turn will end after attack resolves when done
+        
+        wipeTiles()
     }
     
     break
@@ -103,3 +95,58 @@ switch(argument0)
     
     break
 }
+
+#define gridUpdate
+//Update a grid to reflect a moved actor
+//gridUpdate(actor, destination)
+
+act = argument0
+dest = argument1
+
+//Clear Previous Tile (Update for large)
+map[act.isoX+(act.isoZ*mapWidth),act.isoY].occupant = noone
+
+//Update Coordinates
+act.isoX = dest.isoX
+act.isoY = dest.isoY
+act.isoZ = dest.isoZ
+act.isoTile = dest
+
+//Tell the new tile its occupant (Update for large)
+dest.occupant = act
+
+//Update Vision to new position (add player qualifier in a moment)
+updateVision()
+
+#define makeMovePath
+//Make the path a moving actor follows.
+//will be important for other control scrips and may need editing
+//makeMovePath()
+
+//Set Path Data
+current = argument0
+
+//Create Priority Que
+path = ds_priority_create()
+
+ds_priority_add(path, current, current.g)
+ii = 1
+
+while(current.pathParent != noone)
+{
+    ds_priority_add(path, current, current.g)
+    current = current.pathParent
+}
+
+//Form Path from que
+do
+{
+    current = ds_priority_delete_min(path)
+    global.control.pathArray[ii] = current
+    ii++
+}
+until(ds_priority_empty(path))
+
+//Clean Up que
+ds_priority_destroy(path)
+        

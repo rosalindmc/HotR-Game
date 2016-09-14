@@ -33,7 +33,9 @@ isoX = 0
 isoY = 0
 isoZ = 0
 h = 0
+height = 15
 owner = -4
+scrollVis = false
 
 alarm[0] = 2
 </string>
@@ -60,14 +62,18 @@ alarm[0] = 2
             <kind>1</kind>
             <string>if instance_exists(owner)
 {
-    depthCheck(1)
+    depthCheck(0)
     isoX = owner.isoX
     isoY = owner.isoY
     isoZ = owner.isoZ
     with(owner)
     {
         h += 15
-        depthCheck(0)
+        depthCheck(10)
+        if occupant != noone
+        {
+            occupant.h += 15
+        }
     }
 }
 </string>
@@ -94,20 +100,22 @@ alarm[0] = 2
             <kind>1</kind>
             <string>if instance_exists(owner)
 {
-    if owner.vis != false and isoZ &lt;= global.zLevel
+    if (isoZ &lt;= global.zLevel or global.zViewToggle = true)
     {
-        if owner.vis = 2
+        if owner.vis != false and scrollVis != false
         {
-            //shader_set(shd_greyscale)
-            draw_sprite_ext(sprite_index,image_index,x,y+(global.zLevel*30)-h,1,1,0,c_dkgray,1)
+            if owner.vis = 2
+            {
+                shader_set(shd_greyscale)
+                //draw_sprite_ext(sprite_index,image_index,x,y+(global.zLevel*30)-h,1,1,0,c_dkgray,1)
+            }
+            draw_sprite(sprite_index,image_index,x,y+(global.zLevel*30)-h)
+            shader_reset()
         }
         else
         {
-            draw_sprite(sprite_index,image_index,x,y+(global.zLevel*30)-h)
+            draw_sprite_ext(sprite_index,image_index,x,y-h+(global.zLevel*30),1,1,0,c_black,1)
         }
-    
-        draw_set_colour(c_white)
-        //shader_reset()
     }
 }
 </string>

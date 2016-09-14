@@ -37,18 +37,19 @@ mapTimeOn = true
 
 //Visuals
 image_speed = .3
+tDir = 0
+tID = noone
 
 //Selection
 global.control = noone
 global.nextChar = noone
+actNum = 0 //Variable for number of actions
+
+//Other variables
+global.zViewToggle = false
 
 //Create Camera
 instance_create(x,y,obj_camera)
-global.mouseHAdj = 0
-
-//Double click buttons
-global.leftMouse = 0
-global.rightMouse = 0
 
 //Framerate
 room_speed = global.fspd
@@ -59,6 +60,7 @@ cIsoY = 0
 cIsoZ = 0
 cHover = noone
 global.zLevel = 0
+global.attackFromTile = -4
 
 //Action Control
 action = moveControl
@@ -173,7 +175,7 @@ repeat(mapWidth)
 }
 
 //Create Characters
-repeat(8)
+repeat(20)
 {
     ii = instance_create((room_width/2)+(i*20)-(i*20),10+(i*10)+(i*10),obj_character)
     ii.isoX = i
@@ -184,7 +186,7 @@ repeat(8)
     ii.y = map[i,i].y
     map[i,i].occupant = ii
     
-    if i &lt; 2
+    if i &lt; 7
     {
         control[i] = ii
         ii.team = 1
@@ -225,13 +227,13 @@ instance_activate_object(obj_tile)
 
 with(obj_tile)
 {
-adjacency()
-
-//Clear Up Grid
-if ground = false
-{
-instance_deactivate_object(id)
-}
+    adjacency()
+    
+    //Clear Up Grid
+    if ground = false
+    {
+        instance_deactivate_object(id)
+    }
 }
 </string>
           </argument>
@@ -255,7 +257,10 @@ instance_deactivate_object(id)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Timer 
+            <string>//Controls
+key_meleeToggle = keyboard_check(global.meleeToggle)
+
+//Timer 
 if mapTimeOn = true and global.nextChar != noone
 {
     //Advance the Timer
@@ -276,22 +281,24 @@ if mapTimeOn = true and global.nextChar != noone
                 global.control = owner
                 owner.controlled = true
                 other.mapTimeOn = false
-                //Vision
-                updateVision()
+                global.moveTile = ds_list_create()
                 
                 //Create the Action Bar 
+                createActionBar()
                 
                 //Run Move Control
                 moveControl(0)
             }
             else    //TEMP skip AI turns
             {
+                global.control = owner
+                owner.controlled = true
+                global.moveTile = ds_list_create()
                 endTurn(4.0)
             }
         }
     }
 }
-
 
 //Mouse
 x = mouse_x
@@ -300,7 +307,11 @@ y = mouse_y
 cIsoX = floor(((x-100)/40)+((y-100)/20))-25
 cIsoY = floor(((y-100)/20)-((x-100)/40))+25
 
-if cIsoX &gt;= 0 and cIsoX &lt; mapWidth and cIsoY &gt;= 0 and cIsoY &lt; mapHeight
+if point_in_rectangle(mouse_x,mouse_y,view_xview+110,view_yview+view_hview-20,view_xview+110+(actNum*20),view_yview+view_hview)
+{
+
+}
+else if cIsoX &gt;= 0 and cIsoX &lt; mapWidth and cIsoY &gt;= 0 and cIsoY &lt; mapHeight
 {
     cHover = map[cIsoX+(cIsoZ*mapWidth),cIsoY]
     depth = cHover.depth-1
@@ -308,70 +319,130 @@ if cIsoX &gt;= 0 and cIsoX &lt; mapWidth and cIsoY &gt;= 0 and cIsoY &lt; mapHei
 else
 {
     cHover = noone
+    global.attackFromTile = noone  
 }
 
 //zLevel Scrolling
-if mouse_wheel_up()
+if mouse_wheel_up() and global.zLevel &lt; mapDepth-1
 {
-    cIsoZ = min(cIsoZ+1,mapDepth-1)
+    cIsoZ = cIsoZ+1
     global.zLevel = cIsoZ
+    updateScrollVis()
 }
 
-if mouse_wheel_down()
+if mouse_wheel_down() and global.zLevel &gt; 0
 {
-    cIsoZ = max(cIsoZ-1,0)
+    cIsoZ = cIsoZ-1
     global.zLevel = cIsoZ
+    updateScrollVis()
 }
-
-//Obsolete Selection
-//Selection will be required again when I implement groups
-/*
-if mouse_check_button_pressed(mb_left)
+if mouse_check_button_pressed(mb_middle)
 {
-    //Temp
-    scr_wipeTiles()
-    obj_character.controlled = false
-    global.control = noone
-    
-    if cHover != noone
+    if global.zViewToggle = false
     {
-        if cHover.occupant != noone
-        {
-            global.control = cHover.occupant
-            cHover.occupant.controlled = true
-            scr_movementRange(cHover, global.control.movement, global.control.movementBonus)
-        }
+        global.zViewToggle = true
+        updateScrollVis()
+    }
+    else
+    {
+        global.zViewToggle = false
+        updateScrollVis()
     }
 }
-*/
 
 //Execute current action
 if mouse_check_button_pressed(mb_right)
 {
-    if cHover != noone and global.control != noone
+    if global.control != noone
     {
-        script_execute(action,1)
-    }
-}
-
-//Pathdrawing
-if global.control != noone and action = moveControl
-{
-    obj_tile.onPath = false
-    
-    if cHover != noone
-    {
-        if cHover.move
+        if cHover != noone
         {
-            i = cHover
-            while(i.pathParent != noone)
-            {
-                i.onPath = 4
-                i = i.pathParent
-            }
+            script_execute(action,1)
         }
     }
 }
+
+//
+//Extra Drawing Stuff
+//
+
+//Mouse Sprite
+global.mouseSprite = 0
+
+if global.control != noone
+{
+    if cHover != noone
+    {
+    
+        //Ranged Attack Icon
+        if cHover.rangedAttack = true and (key_meleeToggle = false or cHover.meleeAttack = false)
+        {
+            global.mouseSprite = 2
+        }
+        
+        //Melee Attack Icon
+        if cHover.meleeAttack = true and (key_meleeToggle = true or cHover.rangedAttack = false)
+        {
+            global.mouseSprite = 1
+            
+            tDir = 360
+            
+            for(ii = 0; ii &lt; ds_list_size(cHover.walk); ii ++)
+            {
+                current = ds_list_find_value(cHover.walk, ii)
+                
+                if current.move = true or current.occupant = global.control
+                {
+                    if abs(angle_difference(point_direction(mouse_x,mouse_y,cHover.x,cHover.y),point_direction(current.x,current.y,cHover.x,cHover.y))) &lt; tDir
+                    {
+                        tDir = abs(angle_difference(point_direction(mouse_x,mouse_y,cHover.x,cHover.y),point_direction(current.x,current.y,cHover.x,cHover.y)))
+                        tID = current
+                    }
+                }
+            }
+            global.attackFromTile = tID
+        }
+        
+        //Pathdrawing
+        if action = moveControl
+        {
+            obj_tile.onPath = false
+            
+            if global.mouseSprite = 1 and instance_exists(global.attackFromTile)
+            {
+                i = global.attackFromTile
+            }
+            else
+            {
+                i = cHover
+            }
+            
+            if i.move or (i.occupant = global.control and global.mouseSprite = 1)
+            {
+                i.onPath = 5
+                if i.pathParent != noone
+                {
+                    i = i.pathParent
+                    
+                    while(i.pathParent != noone)
+                    {
+                        i.onPath = 4
+                        i = i.pathParent
+                    }
+                }
+            }
+        }      
+    }
+}
+
+//Update Visible Tiles
+if obj_camera.x != obj_camera.xprevious or obj_camera.y != obj_camera.yprevious
+{
+    updateScrollVis()
+}
+
+
+
 </string>
           </argument>
         </arguments>
@@ -394,21 +465,10 @@ if global.control != noone and action = moveControl
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Cursor
-draw_sprite(spr_mouse,0,round(mouse_x),round(mouse_y))
-draw_set_colour(c_white)
-/*
-if cHover != noone
-{
-    if cHover.occupant != noone
-    {
-        //draw_text(view_xview+10,view_yview+10,cHover.occupant.name)
-    }
-}
-*/
-draw_set_font(fnt_small)
+            <string>draw_set_font(fnt_small)
 draw_set_halign(fa_right)
-drawText(c_black,c_white,view_xview+view_wview-10,view_yview+30,fps)
+drawText(c_black,c_white,view_xview+view_wview-10,view_yview+60,fps)
+
 //draw_set_colour(c_black)
 </string>
           </argument>
@@ -438,7 +498,14 @@ drawText(c_black,c_white,view_xview+view_wview-10,view_yview+30,fps)
 //Highlighted Area
 if cHover != noone
 {
-    draw_sprite(spr_selection,image_index,cHover.x,cHover.y+(global.zLevel*30)-cHover.h)  
+    if global.mouseSprite = 0
+    {
+        draw_sprite(spr_selection,image_index,cHover.x,cHover.y-cHover.h+(global.zLevel*30))  
+    }
+    else
+    {
+        draw_sprite(spr_enemyselect,image_index,cHover.x,cHover.y-cHover.h+(global.zLevel*30))  
+    }
 }
 
 </string>

@@ -1,6 +1,16 @@
 //End Turn script
 //endTurn(delay)
+with(obj_actionButton)
+{
+instance_destroy()
+}
+actNum = 0
+ds_list_destroy(global.moveTile)
 
-global.nextChar.delay = argument0
+global.control.controlled = false
+global.control = noone
+global.nextChar.delay += argument0
+global.attackFromTile = noone
+
 initiativeSlotReset()
-other.mapTimeOn = true
+mapTimeOn = true

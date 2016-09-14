@@ -508,7 +508,7 @@
     <option_winUAP_certificate_location>WinUWPRunner_TemporaryKey.pfx</option_winUAP_certificate_location>
     <option_winUAP_display_name>HotR Test</option_winUAP_display_name>
     <option_winUAP_internet_capable>0</option_winUAP_internet_capable>
-    <option_winUAP_interpolate>-1</option_winUAP_interpolate>
+    <option_winUAP_interpolate>0</option_winUAP_interpolate>
     <option_winUAP_landscape_allowed>-1</option_winUAP_landscape_allowed>
     <option_winUAP_landscape_flipped_allowed>-1</option_winUAP_landscape_flipped_allowed>
     <option_winUAP_large_logo>Configs\Default\WindowsUAP\logos\LargeLogo.scale-100.png</option_winUAP_large_logo>

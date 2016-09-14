@@ -25,20 +25,20 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if isoZ &lt;= global.zLevel
+            <string>if isoZ &lt;= global.zLevel or global.zViewToggle = true
 {
-    if owner.vis != false
+    if owner.vis != false and scrollVis != false
     {
         if owner.vis = 2
         {
             shader_set(shd_greyscale)
         }
-        draw_sprite_ext(sprite_index,image_index,x,y+(global.zLevel*30)-h,facing,1,0,c_white,1)
+        draw_sprite_ext(sprite_index,image_index,x,y-h+(global.zLevel*30),facing,1,0,c_white,1)
         shader_reset()
     }
     else
     {
-        draw_sprite_ext(sprite_index,image_index,x,y+(global.zLevel*30)-h,facing,1,0,c_black,1)
+        draw_sprite_ext(sprite_index,image_index,x,y-h+(global.zLevel*30),facing,1,0,c_black,1)
     }
 }
 </string>

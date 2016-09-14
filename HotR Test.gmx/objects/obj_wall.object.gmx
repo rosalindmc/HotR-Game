@@ -33,6 +33,7 @@ isoX = 0
 isoY = 0
 isoZ = 0
 h = 0
+height = 30
 owner = -4
 vis = true
 

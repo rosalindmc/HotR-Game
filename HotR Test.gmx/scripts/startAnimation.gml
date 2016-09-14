@@ -1,5 +1,5 @@
 //Begins an Animation from the beginning
-//startAnimation(animtrack,animStep)
+//startAnimation(animtrack,animation)
 
 animStep[argument0] = 0
 alarm[5+argument0] = 1
