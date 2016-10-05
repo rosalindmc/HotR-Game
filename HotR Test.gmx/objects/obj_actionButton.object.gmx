@@ -5,9 +5,33 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_combatHUD</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>action = moveControl
+selected = false
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -25,7 +49,54 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string></string>
+            <string>if keyboard_check_pressed(global.abilityKey[number])
+{
+    global.action = action
+
+    with(obj_control)
+    {
+    wipeTiles()
+    script_execute(global.action, 0)
+    }
+}
+if point_in_rectangle(mouse_x,mouse_y,xstart+view_xview-10,ystart+view_yview-10,xstart+view_xview+9,ystart+view_yview+10)
+{
+    selected = true
+}
+else
+{
+    selected = false
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="6" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.action = action
+
+with(obj_control)
+{
+wipeTiles()
+script_execute(global.action, 0)
+}
+</string>
           </argument>
         </arguments>
       </action>
@@ -50,8 +121,22 @@
             <string>x = xstart+view_xview
 y = ystart+view_yview
 
-draw_sprite(spr_iconBorder,1,x,y)
+
 draw_sprite(sprite_index,0,x,y)
+
+if selected = false
+{
+    draw_sprite(spr_iconBorder,0,x,y)
+}
+else
+{
+    draw_sprite(spr_iconBorder,1,x,y)
+}
+
+draw_set_font(fnt_tinyText)
+draw_set_halign(fa_middle)
+draw_set_valign(fa_middle)
+drawText(c_black,c_white,x,y+20,scr_keyCode(global.abilityKey[number]))
 </string>
           </argument>
         </arguments>

@@ -57,9 +57,6 @@ i.text = 'Use Ability10' i.number = 20
 
 i = instance_create(160,280,obj_menuKey)
 i.text = 'Switch Weapon' i.number = 22
-
-i = instance_create(160,300,obj_menuKey)
-i.text = 'Healing Draught' i.number = 23
 break
 
 case 3:
@@ -77,6 +74,9 @@ i.text = 'Pan Map Down' i.number = 9
 
 i = instance_create(160,140,obj_menuKey)
 i.text = 'Melee Toggle' i.number = 10
+
+i = instance_create(160,160,obj_menuKey)
+i.text = 'Center Map' i.number = 23
 break
 
 }

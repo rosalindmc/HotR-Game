@@ -40,7 +40,7 @@ ini_write_real("Controls","ability10", global.abilityKey[10])
 
 ini_write_real("Controls","attack", global.attackKey)
 ini_write_real("Controls","switch", global.switchKey)
-ini_write_real("Controls","heal", global.healKey)
+ini_write_real("Controls","heal", global.centerKey)
 ini_write_real("Controls","meleeToggle", global.meleeToggle)
 
 //Gameplay

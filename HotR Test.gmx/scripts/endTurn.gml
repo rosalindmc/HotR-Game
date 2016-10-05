@@ -6,6 +6,7 @@ instance_destroy()
 }
 actNum = 0
 ds_list_destroy(global.moveTile)
+wipeTiles()
 
 global.control.controlled = false
 global.control = noone

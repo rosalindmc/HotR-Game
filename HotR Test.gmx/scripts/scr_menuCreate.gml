@@ -6,7 +6,7 @@ switch(argument0)
 {
 case 0:     //Landing Menu
 i = instance_create(50,30,obj_menuTitle)
-i.text = 'Heroes of the Realm'
+i.text = 'Heroes of the Commonwealth'
 
 i = instance_create(32,60,obj_menuButton)
 i.text = 'New Campaign' i.number = 0 i.descriptor = 'Start a new campaign of Heroes of the Realm'

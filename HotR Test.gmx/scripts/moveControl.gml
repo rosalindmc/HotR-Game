@@ -53,6 +53,7 @@ switch(argument0)
     //Ranged Attack
     if cHover.rangedAttack = true and (key_meleeToggle = false or cHover.meleeAttack = false)
     {
+        //Temp Fire Projectile (Later add animation)
         fireProjectile(obj_projectile,15)
         //End Turn
         endTurn(3.0/i.haste)//Temp, turn will end after attack resolves when done

@@ -115,6 +115,9 @@ else if key_down-key_up = -1
             <string>//Cursor
 draw_sprite(spr_mouse,global.mouseSprite,round(mouse_x),round(mouse_y))
 draw_set_colour(c_white)
+
+drawText(c_black,c_white,view_xview+view_wview-10,view_yview+90,instance_count)
+
 </string>
           </argument>
         </arguments>

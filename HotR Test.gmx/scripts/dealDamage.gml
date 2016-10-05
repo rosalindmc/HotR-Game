@@ -48,9 +48,6 @@ p = max(p-a,0)
 //Randomize decimal damage (.1 = 10% to do +1)
 p = floor(p+random(.99))
 
-//Damage
-target.life -= p
-
 //Descriptor
 ii = instance_create(target.x,target.y-target.h-target.height,obj_descriptor)
 ii.text = string(p)+' '+string(wepType[atkHand])
@@ -67,3 +64,7 @@ else if ia > 0
     ii.font = fnt_tiny
     ii.alarm[0] = global.fspd/2
 }
+
+//Damage
+target.life -= p
+actorDie(target)

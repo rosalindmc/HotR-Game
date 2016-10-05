@@ -66,8 +66,8 @@ global.attackFromTile = -4
 action = moveControl
 
 //Tile Creation
-mapHeight = 50
-mapWidth = 50
+mapHeight = 10
+mapWidth = 10
 mapDepth = 3
 
 ix = 0
@@ -87,7 +87,7 @@ repeat(mapWidth)
             
             if iz != 0
             {
-                map[ix+(mapWidth*iz),iy].sprite_index = spr_none
+                //map[ix+(mapWidth*iz),iy].sprite_index = spr_none
                 map[ix+(mapWidth*iz),iy].ground = false 
             }            
             iz += 1
@@ -174,8 +174,8 @@ repeat(mapWidth)
     ix += 1
 }
 
-//Create Characters
-repeat(20)
+//Create Characters TEMP
+repeat(9)
 {
     ii = instance_create((room_width/2)+(i*20)-(i*20),10+(i*10)+(i*10),obj_character)
     ii.isoX = i
@@ -199,7 +199,7 @@ repeat(20)
 }
 
 //Adjacency After Map Build
-obj_control.alarm[0] = 10
+alarm[0] = 10
 </string>
           </argument>
         </arguments>
@@ -283,6 +283,10 @@ if mapTimeOn = true and global.nextChar != noone
                 other.mapTimeOn = false
                 global.moveTile = ds_list_create()
                 
+                obj_camera.x = global.control.x
+                obj_camera.y = global.control.y
+                global.zLevel = global.control.isoZ
+                
                 //Create the Action Bar 
                 createActionBar()
                 
@@ -306,10 +310,12 @@ y = mouse_y
     
 cIsoX = floor(((x-100)/40)+((y-100)/20))-25
 cIsoY = floor(((y-100)/20)-((x-100)/40))+25
+cIsoZ = global.zLevel 
 
-if point_in_rectangle(mouse_x,mouse_y,view_xview+110,view_yview+view_hview-20,view_xview+110+(actNum*20),view_yview+view_hview)
+if point_in_rectangle(mouse_x,mouse_y,view_xview+110,view_yview+view_hview-40,view_xview+110+(actNum*20),view_yview+view_hview-20)
 {
-
+    cHover = noone
+    global.attackFromTile = noone  
 }
 else if cIsoX &gt;= 0 and cIsoX &lt; mapWidth and cIsoY &gt;= 0 and cIsoY &lt; mapHeight
 {
@@ -336,6 +342,7 @@ if mouse_wheel_down() and global.zLevel &gt; 0
     global.zLevel = cIsoZ
     updateScrollVis()
 }
+
 if mouse_check_button_pressed(mb_middle)
 {
     if global.zViewToggle = false
@@ -371,9 +378,16 @@ global.mouseSprite = 0
 
 if global.control != noone
 {
-    if cHover != noone
+    //Center Camera
+    if keyboard_check_pressed(global.centerKey)
     {
-    
+        obj_camera.x = global.control.x
+        obj_camera.y = global.control.y
+    }
+
+    //Mouse Sprite
+    if cHover != noone
+    {    
         //Ranged Attack Icon
         if cHover.rangedAttack = true and (key_meleeToggle = false or cHover.meleeAttack = false)
         {
@@ -442,7 +456,6 @@ if obj_camera.x != obj_camera.xprevious or obj_camera.y != obj_camera.yprevious
 }
 
 
-
 </string>
           </argument>
         </arguments>
@@ -468,6 +481,9 @@ if obj_camera.x != obj_camera.xprevious or obj_camera.y != obj_camera.yprevious
             <string>draw_set_font(fnt_small)
 draw_set_halign(fa_right)
 drawText(c_black,c_white,view_xview+view_wview-10,view_yview+60,fps)
+drawText(c_black,c_white,view_xview+view_wview-10,view_yview+80,cIsoZ)
+drawText(c_black,c_white,view_xview+view_wview-10,view_yview+100,global.zLevel)
+
 
 //draw_set_colour(c_black)
 </string>

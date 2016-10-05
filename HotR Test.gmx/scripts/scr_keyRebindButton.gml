@@ -49,6 +49,6 @@ case 21:if argument1 key = global.attackKey
 else global.attackKey = key break
 case 22:if argument1 key = global.switchKey
 else global.switchKey = key break
-case 23:if argument1 key = global.healKey
-else global.healKey = key break
+case 23:if argument1 key = global.centerKey
+else global.centerKey = key break
 }

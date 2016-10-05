@@ -122,17 +122,6 @@ script_execute(animIndex[0],animStep[0])
           <argument>
             <kind>1</kind>
             <string>updateVision()
-repeat(2)
-{
-    if obj_control.map[isoX+(obj_control.mapWidth*(isoZ+1)),isoY].ground = true
-    {
-        obj_control.map[isoX+(obj_control.mapWidth*(isoZ)),isoY].occupant = noone        
-        isoZ += 1
-        obj_control.map[isoX+(obj_control.mapWidth*(isoZ)),isoY].occupant = id
-        isoTile = obj_control.map[isoX+(obj_control.mapWidth*(isoZ)),isoY]
-        h += 30
-    }
-}
 </string>
           </argument>
         </arguments>
@@ -229,6 +218,10 @@ if vis = true
     drawActor()
 }
 
+if obj_control.cHover = isoTile
+{
+    draw_text(x,y-150,depth)
+}
 </string>
           </argument>
         </arguments>

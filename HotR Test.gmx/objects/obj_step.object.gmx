@@ -118,6 +118,11 @@ alarm[0] = 2
         }
     }
 }
+
+if obj_control.cHover = owner
+{
+    draw_text(x,y-100,depth)
+}
 </string>
           </argument>
         </arguments>
