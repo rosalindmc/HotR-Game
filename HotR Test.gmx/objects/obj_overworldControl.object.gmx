@@ -3,9 +3,9 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-10</depth>
+  <depth>-9</depth>
   <persistent>0</persistent>
-  <parentName>obj_overworldParent</parentName>
+  <parentName>obj_overworldVital</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -28,6 +28,18 @@
             <string>//Create Mouse
 instance_create(x,y,obj_camera)
 
+//Create HUD Buttons
+global.inMenu = false
+global.subTab = -4
+global.menuSheet = -4
+
+i = instance_create(40,-10,obj_topButton)
+i.image_index = 0
+//i = instance_create(80,-10,obj_topButton)
+//i.image_index = 1
+//i = instance_create(120,-10,obj_topButton)
+//i.image_index = 2
+
 //World Control
 scr_worldControlInitialize()
 
@@ -36,20 +48,7 @@ mapWidth = room_width/100
 mapHeight = room_height/100
 hover = noone
 
-ix = 0
-repeat(mapWidth-1)
-{
-    ix += 1
-    iy = 0
-    repeat(mapHeight-1)
-    {
-        iy += 1
-        if random(100) &lt; 90
-        {
-            instance_create((ix*100)-25+random(50),(iy*100)-25+random(50),obj_travelNode)        
-        }
-    }
-}
+worldGen()
 
 alarm[1] = 100
 
@@ -77,12 +76,20 @@ global.activeActor = noone
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>with(obj_travelNode)
+            <string>//Temp Populate
+with(obj_worldTile)
 {
-    if random(100) &lt; 5 and image_index = 0
+    if random(100) &lt; 5 &amp;&amp; sprite_index != spr_deeps &amp;&amp; sprite_index != spr_water &amp;&amp; overlay != spr_mountain
     {
-        i = instance_create(x,y,obj_party)
-        i.node = id
+        ii = instance_create(x,y,obj_travelNode)
+        ii.tile = id
+        
+        if random(100) &lt; 20
+        {
+            i = instance_create(x,y,obj_party)
+            i.node = ii
+            i.depth = ii.depth-1
+        }
     }
 }
 </string>
@@ -90,7 +97,7 @@ global.activeActor = noone
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="1">
+    <event eventtype="3" enumb="2">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -107,20 +114,50 @@ global.activeActor = noone
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if collision_point(mouse_x,mouse_y,obj_travelNode,false,false) != noone
+            <string>//Update Visible Tiles
+if obj_camera.x != obj_camera.xprevious or obj_camera.y != obj_camera.yprevious
 {
-    hover = collision_point(mouse_x,mouse_y,obj_travelNode,false,false)
+    worldScrollVis()
 }
-else
-{
-    hover = noone
-}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Temp Hover
+hover = instance_nearest(mouse_x,mouse_y,obj_worldTile)
 
 if keyboard_check_pressed(global.centerKey)
 {
     obj_camera.x = global.activeActor.x
     obj_camera.y = global.activeActor.y
+    view_xview = median(obj_camera.x-(view_wview/2),0,room_width-view_wview)
+    view_yview = median(obj_camera.y-(view_hview/2),0,room_height-view_hview)
 }
+
+if keyboard_check_pressed(vk_escape)
+{
+    scr_inGameMenu()
+}
+
+
 </string>
           </argument>
         </arguments>
@@ -143,30 +180,17 @@ if keyboard_check_pressed(global.centerKey)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if hover != noone
+            <string>if instance_exists(hover)
 {
     with(hover)
     {
-        ii = 0
-        repeat(ds_list_size(adjacent))
-        {
-            i = ds_list_find_value(adjacent, ii)
-            draw_set_colour(c_black)
-            draw_line_width(x,y,i.x,i.y,6)
-            draw_set_colour(c_white)
-            draw_line_width(x,y,i.x,i.y,2)
-            ii += 1
-        }
+        draw_text(x,y+20,string(mapX)+', '+string(mapY))
+        //draw_text(x,y+100,string(hX)+' hX') 
+        //draw_text(x,y+120,string(hY)+' hY') 
+        draw_text(x,y+40,string_format(height-10,2,0)+' Metres above Sealevel') 
+        draw_text(x,y+60,string_format(humidity,2,0)+' Metres Rainfall')
+        draw_text(x,y+80,string_format(temprature,2,0)+' Celsius')
     }
-}
-
-with(obj_travelNode)
-{
-    draw_self()
-    draw_set_halign(fa_center)
-    draw_set_font(fnt_tiny)
-    //drawText(c_black,c_white,x,y-20,spread)
-    //drawText(c_black,c_white,x,y-30,string_format(height,2,1))
 }
 </string>
           </argument>

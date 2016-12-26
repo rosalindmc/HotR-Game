@@ -27,5 +27,5 @@ with(obj_tile)
 room_height = 3000
 room_width = 4000
 
-//instance_activate_object(obj_overworldParent)
+
 

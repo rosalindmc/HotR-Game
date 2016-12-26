@@ -11,7 +11,7 @@ case 1:     //Initialize
     case 1: bar.x += global.voiceVolume*90 break
     case 2: bar.x += global.musicVolume*90 break
     case 3: bar.x += global.ambienceVolume*90 break
-    case 4: bar.x += global.fspd-30 bar.snap = 10 sections = 9 break
+    case 4: bar.x += (global.fspd-30)*3 bar.snap = 90/6 sections = 6 break
     }
 break
 
@@ -22,7 +22,7 @@ case 2:     //Update
     case 1: global.voiceVolume = (bar.x-bar.minX)/90 break
     case 2: global.musicVolume = (bar.x-bar.minX)/90 break
     case 3: global.ambienceVolume = (bar.x-bar.minX)/90 break
-    case 4: global.fspd = 30+(bar.x-bar.minX) break
+    case 4: global.fspd = 30+((bar.x-bar.minX)/3) break
     }
 break
 
@@ -39,11 +39,7 @@ case 3:     //Draw
     else drawText(c_gray,c_white,x+220,y,string(round(100*global.ambienceVolume))+'%') break
     
     case 4: 
-    if global.fspd = 30
-        drawText(c_gray,c_white,x+220,y,'Console Peasant') 
-    else
-        drawText(c_gray,c_white,x+220,y,string(global.fspd)+' FPS') 
-    break
+    drawText(c_gray,c_white,x+220,y,string(global.fspd)+' FPS') 
     }
 break
 }

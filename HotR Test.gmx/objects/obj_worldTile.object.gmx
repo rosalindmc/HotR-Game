@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>0</depth>
   <persistent>0</persistent>
-  <parentName>obj_parentTile</parentName>
+  <parentName>obj_overworldParent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,7 +25,34 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_initializeWorldTile()
+            <string>sprite_index = spr_deeps
+image_index = irandom(23)
+image_speed = 0
+
+depth = 10000-y
+
+
+hX = (min(abs(x-room_width/2),x,abs(x-room_width))/(room_width/8))-1
+if y-(room_height/3) &lt; 0
+{
+hY = (abs(y-(room_height/3))/(room_height/6))-1
+}
+else
+{
+hY = (abs(y-(room_height/3))/(room_height/3))-1
+}
+
+height = random(200)-100+(hX*50)+(hY*-25)
+
+humidity = random(65)-30
+
+tY = (min(y,abs(y-room_height))/(room_height/4))-1
+temprature = random(50)-25+(tY*30)
+
+adjacent = ds_list_create()
+overlay = -4
+overlayImg = irandom(5)
+vis = true
 </string>
           </argument>
         </arguments>
@@ -48,32 +75,20 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Adjust
-cliffHeight = level-2
-h = (level-2)*3
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>scr_detectCliffs()
+            <string>if height &gt; 30
+{
+    sprite_index = spr_hgGrass
+    overlay = spr_forest
+}
+else if height &gt; 10
+{
+    sprite_index = spr_hgGrass
+}
+else if height &gt; -10
+{
+    sprite_index = spr_water
+}
+
 </string>
           </argument>
         </arguments>
@@ -98,7 +113,11 @@ h = (level-2)*3
             <kind>1</kind>
             <string>if vis = true
 {
-    scr_drawTile()
+    draw_self()
+    if overlay != -4
+    {
+        draw_sprite(overlay,overlayImg,x,y)
+    }
 }
 </string>
           </argument>

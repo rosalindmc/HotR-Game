@@ -4,12 +4,14 @@
 
 switch(argument0)
 {
-case 0:     //Landing Menu
+case 0:     //Landing/MidGame Menu
+if global.menu = true
+{
 i = instance_create(50,30,obj_menuTitle)
 i.text = 'Heroes of the Commonwealth'
 
 i = instance_create(32,60,obj_menuButton)
-i.text = 'New Campaign' i.number = 0 i.descriptor = 'Start a new campaign of Heroes of the Realm'
+i.text = 'New Campaign' i.number = 0 i.descriptor = 'Start a new campaign of Heroes of the Commonwealth'
 
 i = instance_create(32,90,obj_menuButton)
 i.text = 'Load Campaign' i.number = 1 i.descriptor = 'Continue a campaign'
@@ -19,6 +21,21 @@ i.text = 'Settings' i.number = 2
 
 i = instance_create(32,150,obj_menuButton)
 i.text = 'Exit' i.number = 3
+}
+else
+{
+i = instance_create(32,60,obj_menuButton)
+i.text = 'Exit to Menu' i.number = 15
+
+i = instance_create(32,90,obj_menuButton)
+i.text = 'Exit Game' i.number = 16
+
+i = instance_create(32,120,obj_menuButton)
+i.text = 'Settings' i.number = 2
+
+i = instance_create(32,150,obj_menuButton)
+i.text = 'Return to Game' i.number = 14
+}
 break
 
 case 1:     //New Campaign Menu
@@ -28,11 +45,11 @@ i.text = 'Difficulty'
 i = instance_create(32,60,obj_menuButton)
 i.text = 'Normal' i.number = 5 i.descriptor = 'Suggested difficulty for all first time players'
 
-i = instance_create(32,90,obj_menuButton)
-i.text = 'Heroic' i.number = 6 i.descriptor = 'Ideal for players who have mastered the core mechanics'
+//i = instance_create(32,90,obj_menuButton)
+//i.text = 'Heroic' i.number = 6 i.descriptor = 'Ideal for players who have mastered the core mechanics'
 
-i = instance_create(32,120,obj_menuButton)
-i.text = 'Nightmare' i.number = 7 i.descriptor = 'For players who found the other two difficulties too easy'
+//i = instance_create(32,120,obj_menuButton)
+//i.text = 'Nightmare' i.number = 7 i.descriptor = 'For players who found the other two difficulties too easy'
 
 i = instance_create(544,320,obj_menuButton)
 i.text = 'Return' i.number = 4
@@ -128,13 +145,10 @@ i = instance_create(32,120,obj_menuButton)
 i.text = 'Keybindings' i.number = 20
 
 i = instance_create(40,150,obj_menuButton)
-i.text = 'Selection' i.number = 20 i.font = fnt_smlMenu
-
-i = instance_create(40,170,obj_menuButton)
 i.text = 'Abilities' i.number = 12 i.font = fnt_smlMenu
 
-i = instance_create(40,190,obj_menuButton)
-i.text = 'Other' i.number = 13 i.font = fnt_smlMenu
+i = instance_create(40,170,obj_menuButton)
+i.text = 'Camera' i.number = 13 i.font = fnt_smlMenu
 
 scr_keybindCreate(1)
 
@@ -157,16 +171,12 @@ i = instance_create(32,120,obj_menuButton)
 i.text = 'Keybindings' i.number = 20
 
 i = instance_create(40,150,obj_menuButton)
-i.text = 'Selection' i.number = 10 i.font = fnt_smlMenu
-
-i = instance_create(40,170,obj_menuButton)
 i.text = 'Abilities' i.number = 20 i.font = fnt_smlMenu
 
-i = instance_create(40,190,obj_menuButton)
-i.text = 'Other' i.number = 13 i.font = fnt_smlMenu
+i = instance_create(40,170,obj_menuButton)
+i.text = 'Camera' i.number = 13 i.font = fnt_smlMenu
 
 scr_keybindCreate(2)
-
 
 i = instance_create(544,320,obj_menuButton)
 i.text = 'Return' i.number = 11
@@ -174,7 +184,7 @@ break
 
 case 8:     //Keybind Menu
 i = instance_create(50,30,obj_menuTitle)
-i.text = 'Settings - Keybindings - Other'
+i.text = 'Settings - Keybindings - Camera'
 
 i = instance_create(32,60,obj_menuButton)
 i.text = 'Audio' i.number = 8
@@ -186,13 +196,10 @@ i = instance_create(32,120,obj_menuButton)
 i.text = 'Keybindings' i.number = 20
 
 i = instance_create(40,150,obj_menuButton)
-i.text = 'Selection' i.number = 10 i.font = fnt_smlMenu
-
-i = instance_create(40,170,obj_menuButton)
 i.text = 'Abilities' i.number = 12 i.font = fnt_smlMenu
 
-i = instance_create(40,190,obj_menuButton)
-i.text = 'Other' i.number = 20 i.font = fnt_smlMenu
+i = instance_create(40,170,obj_menuButton)
+i.text = 'Camera' i.number = 20 i.font = fnt_smlMenu
 
 scr_keybindCreate(3)
 

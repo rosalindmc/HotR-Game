@@ -34,6 +34,8 @@ randomize()
 //Initiative
 mapTime = 0
 mapTimeOn = true
+global.timeDelay = 1
+global.target = -4
 
 //Visuals
 image_speed = .3
@@ -87,7 +89,6 @@ repeat(mapWidth)
             
             if iz != 0
             {
-                //map[ix+(mapWidth*iz),iy].sprite_index = spr_none
                 map[ix+(mapWidth*iz),iy].ground = false 
             }            
             iz += 1
@@ -174,30 +175,6 @@ repeat(mapWidth)
     ix += 1
 }
 
-//Create Characters TEMP
-repeat(9)
-{
-    ii = instance_create((room_width/2)+(i*20)-(i*20),10+(i*10)+(i*10),obj_character)
-    ii.isoX = i
-    ii.isoY = i
-    ii.isoZ = 0
-    ii.isoTile = map[i,i]
-    ii.x = map[i,i].x
-    ii.y = map[i,i].y
-    map[i,i].occupant = ii
-    
-    if i &lt; 7
-    {
-        control[i] = ii
-        ii.team = 1
-    }
-    else
-    {
-        ii.team = 2
-    }
-    i += 1
-}
-
 //Adjacency After Map Build
 alarm[0] = 10
 </string>
@@ -261,10 +238,10 @@ with(obj_tile)
 key_meleeToggle = keyboard_check(global.meleeToggle)
 
 //Timer 
-if mapTimeOn = true and global.nextChar != noone
+if mapTimeOn = true and global.nextChar != noone and global.timeDelay = 0
 {
     //Advance the Timer
-    ii = min(1/global.fspd,global.nextChar.delay)
+    ii = max(min(1/global.fspd,global.nextChar.delay),0)
     mapTime += ii
     
     //Reduce all intiative timers
@@ -273,8 +250,12 @@ if mapTimeOn = true and global.nextChar != noone
         delay -= other.ii
         
         //Select
-        if delay &lt;= 0
+        if delay &lt;= 0 and id = global.nextChar
         {
+            ii = instance_create(owner.x,owner.y-owner.h-owner.height,obj_descriptor)   
+            ii.text = 'READY'
+            ii.font = fnt_tiny
+        
             //TEMP player turns
             if owner.team = 1
             {
@@ -292,16 +273,25 @@ if mapTimeOn = true and global.nextChar != noone
                 
                 //Run Move Control
                 moveControl(0)
+                updateScrollVis()
             }
             else    //TEMP skip AI turns
             {
                 global.control = owner
                 owner.controlled = true
+                other.mapTimeOn = false
                 global.moveTile = ds_list_create()
-                endTurn(4.0)
+                
+                moveControl(0)
+                controlAI()
             }
         }
     }
+}
+else
+{
+    ii = min(1/global.fspd,global.timeDelay)
+    global.timeDelay -= ii
 }
 
 //Mouse
@@ -480,9 +470,9 @@ if obj_camera.x != obj_camera.xprevious or obj_camera.y != obj_camera.yprevious
             <kind>1</kind>
             <string>draw_set_font(fnt_small)
 draw_set_halign(fa_right)
-drawText(c_black,c_white,view_xview+view_wview-10,view_yview+60,fps)
-drawText(c_black,c_white,view_xview+view_wview-10,view_yview+80,cIsoZ)
-drawText(c_black,c_white,view_xview+view_wview-10,view_yview+100,global.zLevel)
+drawText(c_black,c_white,view_xview+view_wview-10,view_yview+60,mapTime)
+//drawText(c_black,c_white,view_xview+view_wview-10,view_yview+80,cIsoZ)
+//drawText(c_black,c_white,view_xview+view_wview-10,view_yview+100,global.zLevel)
 
 
 //draw_set_colour(c_black)

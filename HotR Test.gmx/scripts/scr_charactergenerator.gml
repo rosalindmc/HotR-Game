@@ -10,11 +10,19 @@ var cunCap = 10
 var wilCap = 10
 var felCap = 10
 
+might = 5 
+grace = 5
+cunning = 5 
+will = 5
+fellowship = 5
+raceMove = 0
+
 //Race Adjust
 switch(race)
 {
     case "High Elf":
     randDice += 2
+    raceMove = 0
     break
     
     case "Irunian Human":
@@ -22,12 +30,14 @@ switch(race)
     cunning += 1
     
     cunCap = 11
+    raceMove = 0
     break
     
     case "Northern Human":
     will += 2
     
     wilCap = 12
+    raceMove = 0
     break
     
     case "Dwarf":
@@ -39,7 +49,7 @@ switch(race)
     grcCap = 8
     wilCap = 13
     
-    movement -= 1
+    raceMove = -1
     break
     
     case "Halfling":
@@ -55,7 +65,7 @@ switch(race)
     wilCap = 11
     felCap = 11
     
-    movement -= .5
+    raceMove = -.5
     break
     
     case "Orc":
@@ -66,10 +76,14 @@ switch(race)
     fellowship -= 1
     
     mgtCap = 14
+    
+    raceMove = 0
     break
     
     case "Tiefling":
     randDice += 2
+    
+    raceMove = 0
     break
 }
 

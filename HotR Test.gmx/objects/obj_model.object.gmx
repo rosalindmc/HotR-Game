@@ -3,9 +3,9 @@
   <spriteName>spr_selection</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-102</depth>
   <persistent>0</persistent>
-  <parentName>&lt;undefined&gt;</parentName>
+  <parentName>obj_hudParent</parentName>
   <maskName>spr_largemask</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -65,7 +65,7 @@ active = true
 controlled = false
 
 //Control
-rangeAttack = true
+rangeAttack = false
 greatWeapon = true
 dualWield = false
 reach = 1.5
@@ -83,8 +83,12 @@ moveZ = 0
 h = 0
 vis = false
 
+//Test
+legMult = 1
+legSprt = 0
+sX = 2
+
 global.zLevel = 0
-global.fspd = 40
 </string>
           </argument>
         </arguments>
@@ -179,96 +183,9 @@ script_execute(animIndex[0],animStep[0])
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check_pressed(ord('R'))
-{headItem[1] = spr_none  
-armsItem[1,1] = spr_none 
-armsItem[1,2] = spr_none 
-legsItem[1,1] = spr_none 
-legsItem[1,2] = spr_none 
-armsItem[2,1] = spr_none 
-armsItem[2,2] = spr_none 
-legsItem[2,1] = spr_none 
-legsItem[2,2] = spr_none 
-hipsItem[1] = spr_none 
-skrtItem[1] = spr_none 
-beltItem[1] = spr_none 
-bodyItem[1] = spr_none 
-hipsItem[2] = spr_none 
-bodyItem[2] = spr_none 
-initializeHumanoid()}
+            <string>//Facing
+facing = 0
 
-//Facing
-moveX = mouse_x
-moveY = mouse_y
-moveZ = 0
-
-//Horizontal Facing
-if moveX &gt; x
-    hFacing = 1
-if moveX &lt; x
-    hFacing = -1
-    
-//Vertical Facing
-if moveY &gt; y
-    vFacing = 0
-if moveY &lt; y
-    vFacing = 1
-    
-//Facing
-facing = round(point_direction(x,y,moveX,moveY)/45)*45
-
-//Mode
-if keyboard_check_pressed(ord('1'))
-{mode = 1}
-if keyboard_check_pressed(ord('2'))
-{mode = 2}
-if keyboard_check_pressed(ord('3'))
-{mode = 3}
-if keyboard_check_pressed(ord('4'))
-{mode = 4}
-if keyboard_check_pressed(ord('5'))
-{mode = 5}
-
-//Adjustments
-if keyboard_check_pressed(vk_left)
-{
-    switch(mode)
-    {
-    case 1: headAdjust -= 1 break
-    case 2: chstAdjust -= 1 break
-    case 3: bodyAdjust -= 1 break
-    }
-}
-
-if keyboard_check_pressed(vk_right)
-{
-    switch(mode)
-    {
-    case 1: headAdjust += 1 break
-    case 2: chstAdjust += 1 break
-    case 3: bodyAdjust += 1 break
-    }
-}
-
-if keyboard_check_pressed(vk_up)
-{
-    switch(mode)
-    {
-    case 1: headOffset += 1 break
-    case 3: bodyOffset += 1 break
-    case 4: hipsOffset += 1 legAdjust[1] += 1 legAdjust[2] += 1  break
-    }
-}
-
-if keyboard_check_pressed(vk_down)
-{
-    switch(mode)
-    {
-    case 1: headOffset -= 1 break
-    case 3: bodyOffset -= 1 break
-    case 4: hipsOffset -= 1 legAdjust[1] -= 1 legAdjust[2] -= 1 break
-    }
-}
 </string>
           </argument>
         </arguments>
@@ -292,40 +209,61 @@ if keyboard_check_pressed(vk_down)
           <argument>
             <kind>1</kind>
             <string>//Draw Self
-script_execute(animType,1)
-
-//Draw UI
-draw_set_font(fnt_dev)
-draw_set_halign(fa_left)
-draw_set_valign(fa_middle)
-draw_set_colour(c_white)
-draw_text(72,8,"R: "+string(race))
-draw_text(72,16,"GW: "+string(greatWeapon))
-draw_text(72,24,"H: "+string(height)+"px - "+string(height*6)+"cm")
-switch(mode)
+if global.charTab = tab
 {
-    case 1:
-    draw_text(72,32,"Head Off: "+string(headOffset))
-    draw_text(72,40,"Head Adj: "+string(headAdjust))
-    draw_text(72,48,"Body: "+string(bodyImage))
-    break
+    x = xstart+view_xview[]
+    y = ystart+view_yview[]
+    script_execute(animType,1)
+    draw_set_halign(fa_center)
+    draw_set_font(fnt_main)
+    draw_text(x,y-120,string(global.charSelect.firstName)+' '+string(global.charSelect.lastName))
+    draw_set_font(fnt_small)
+    draw_text(x,y-100,'Level 1 '+string(race)+' '+string(class))
+
+    draw_set_font(fnt_tinyText)
+    draw_set_halign(fa_left)
+    draw_text(x-80,y+20,"Might")
+    draw_text(x-80,y+32,"Grace")
+    draw_text(x-80,y+44,"Cunning")    
+    draw_text(x-80,y+56,"Will")
+    draw_text(x-80,y+68,"Fellowship")
     
-    case 2:
-    draw_text(72,32,"Chest Adj: "+string(chstAdjust))
-    draw_text(72,40,"Chest: "+string(chstImage))
-    break
+    draw_set_halign(fa_center)
+    draw_text(x-20,y+20,might)
+    draw_text(x-20,y+32,grace)
+    draw_text(x-20,y+44,cunning)   
+    draw_text(x-20,y+56,will)
+    draw_text(x-20,y+68,fellowship)
+
+    s1 = (2+(dualWield*.5))/((wepSpeed[1]))
+    p1 = wepPow[1]+(wepStrMult[1]*atkDPS/s1)
+    s2 = (2+(dualWield*.5))/((wepSpeed[2]))
+    p2 = wepPow[2]+(wepStrMult[2]*atkDPS/s2)
     
-    case 3:
-    draw_text(72,32,"Body Off: "+string(bodyOffset))
-    draw_text(72,40,"Body Adj: "+string(bodyAdjust))
-    draw_text(72,48,"Body: "+string(bodyImage))
-    draw_text(72,56,"Hips: "+string(hipsImage))
-    draw_text(72,64,"Chest: "+string(chstImage))
-    break
+    //Weapon and Armour
+    draw_set_halign(fa_left)
+    draw_text(x+20,y+20,"POW")
+    draw_text(x+20,y+32,"PEN")
+    draw_text(x+20,y+44,"RAT")
     
-    case 4:
-    draw_text(72,32,"Leg Adj: "+string(legAdjust[1]))
-    draw_text(72,40,"Hips: "+string(hipsImage))
+    if dualWield = true
+    {
+    draw_text(x+20,y+68,"POW")
+    draw_text(x+20,y+80,"PEN")
+    draw_text(x+20,y+92,"RAT")
+    }
+    
+    draw_set_halign(fa_center)
+    draw_text(x+80,y+20,string(floor(p1*(1-wepPowRng[1])))+' - '+string(ceil(p1*(1+wepPowRng[1]))))
+    draw_text(x+80,y+32,string_format(wepPen[1],2,2))
+    draw_text(x+80,y+44,string_format(s1/haste,2,2))  
+    
+    if dualWield = true
+    {
+    draw_text(x+80,y+68,string(floor(p2*(1-wepPowRng[2])))+' - '+string(ceil(p2*(1+wepPowRng[2]))))
+    draw_text(x+80,y+80,string_format(wepPen[2],2,2))
+    draw_text(x+80,y+92,string_format(s2/haste,2,2))    
+    }
 }
 </string>
           </argument>

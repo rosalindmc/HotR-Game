@@ -83,9 +83,6 @@ switch(argument0)
             with(i){actAttack(1)}
         }
         
-        //End Turn
-        endTurn(3.0/i.haste)//Temp, turn will end after attack resolves when done
-        
         wipeTiles()
     }
     

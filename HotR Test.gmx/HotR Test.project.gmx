@@ -6,8 +6,107 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
+    <sprites name="Icons">
+      <sprites name="Equipment Icons">
+        <sprites name="WepIcons">
+          <sprite>sprites\ico_lgtMace</sprite>
+          <sprite>sprites\ico_mace</sprite>
+          <sprite>sprites\ico_maul</sprite>
+          <sprite>sprites\ico_hammer</sprite>
+          <sprite>sprites\ico_grtHammer</sprite>
+          <sprite>sprites\ico_armSword</sprite>
+          <sprite>sprites\ico_sabre</sprite>
+          <sprite>sprites\ico_grtSword</sprite>
+          <sprite>sprites\ico_shtSword</sprite>
+          <sprite>sprites\ico_bstSword</sprite>
+          <sprite>sprites\ico_handAxe</sprite>
+          <sprite>sprites\ico_battleAxe</sprite>
+          <sprite>sprites\ico_greatAxe</sprite>
+          <sprite>sprites\ico_doubleAxe</sprite>
+          <sprite>sprites\ico_greatDoubleAxe</sprite>
+          <sprite>sprites\ico_shortSpear</sprite>
+          <sprite>sprites\ico_spear</sprite>
+          <sprite>sprites\ico_pike</sprite>
+          <sprite>sprites\ico_staff</sprite>
+          <sprite>sprites\ico_halberd</sprite>
+          <sprite>sprites\ico_knife</sprite>
+          <sprite>sprites\ico_dagger</sprite>
+        </sprites>
+        <sprites name="TrinkIcons">
+          <sprite>sprites\ico_ring1</sprite>
+          <sprite>sprites\ico_ring2</sprite>
+          <sprite>sprites\ico_ring3</sprite>
+          <sprite>sprites\ico_amulet</sprite>
+          <sprite>sprites\ico_belt</sprite>
+          <sprite>sprites\ico_helm1</sprite>
+          <sprite>sprites\ico_helm2</sprite>
+          <sprite>sprites\ico_helm3</sprite>
+          <sprite>sprites\ico_helm4</sprite>
+          <sprite>sprites\ico_crown</sprite>
+          <sprite>sprites\ico_scroll1</sprite>
+          <sprite>sprites\ico_scroll2</sprite>
+          <sprite>sprites\ico_seal</sprite>
+          <sprite>sprites\ico_book</sprite>
+          <sprite>sprites\ico_fireOrb</sprite>
+          <sprite>sprites\ico_powerOrb</sprite>
+          <sprite>sprites\ico_coin</sprite>
+          <sprite>sprites\ico_candle</sprite>
+          <sprite>sprites\ico_gem</sprite>
+          <sprite>sprites\ico_arrowHead</sprite>
+          <sprite>sprites\ico_eye</sprite>
+          <sprite>sprites\ico_chalice</sprite>
+          <sprite>sprites\ico_bone</sprite>
+          <sprite>sprites\ico_skull</sprite>
+        </sprites>
+        <sprites name="ArmourIcons">
+          <sprite>sprites\ico_cloth</sprite>
+          <sprite>sprites\ico_coat</sprite>
+          <sprite>sprites\ico_attire</sprite>
+          <sprite>sprites\ico_jacket</sprite>
+          <sprite>sprites\ico_robe</sprite>
+          <sprite>sprites\ico_chainShirt</sprite>
+          <sprite>sprites\ico_lightLeather</sprite>
+          <sprite>sprites\ico_hide</sprite>
+          <sprite>sprites\ico_breastPlate</sprite>
+          <sprite>sprites\ico_heavyLeather</sprite>
+          <sprite>sprites\ico_chainmail</sprite>
+          <sprite>sprites\ico_platemail1</sprite>
+          <sprite>sprites\ico_platemail2</sprite>
+          <sprite>sprites\ico_platemail3</sprite>
+          <sprite>sprites\ico_platemail4</sprite>
+        </sprites>
+        <sprites name="RangedIcons">
+          <sprite>sprites\ico_shortBow</sprite>
+          <sprite>sprites\ico_longBow</sprite>
+          <sprite>sprites\ico_crossBow</sprite>
+          <sprite>sprites\ico_automatic</sprite>
+          <sprite>sprites\ico_revolver</sprite>
+          <sprite>sprites\ico_handCannon</sprite>
+          <sprite>sprites\ico_longRifle</sprite>
+          <sprite>sprites\ico_carbine</sprite>
+          <sprite>sprites\ico_repeater</sprite>
+          <sprite>sprites\ico_recoiless</sprite>
+        </sprites>
+        <sprites name="ShieldIcons">
+          <sprite>sprites\ico_roundShield</sprite>
+          <sprite>sprites\ico_squardShield</sprite>
+          <sprite>sprites\ico_heaterShield</sprite>
+        </sprites>
+      </sprites>
+      <sprites name="Ability Icons">
+        <sprite>sprites\spr_iconBorder</sprite>
+        <sprite>sprites\spr_iconWait</sprite>
+        <sprite>sprites\spr_iconMove</sprite>
+        <sprite>sprites\spr_iconAttack</sprite>
+      </sprites>
+    </sprites>
     <sprites name="Equipment">
       <sprites name="Clothing">
+        <sprite>sprites\spr_robe1</sprite>
+        <sprite>sprites\spr_robe2</sprite>
+        <sprite>sprites\spr_robe3</sprite>
+        <sprite>sprites\spr_robe4</sprite>
+        <sprite>sprites\spr_robeSkirt1</sprite>
         <sprite>sprites\spr_sorcererDress</sprite>
         <sprite>sprites\spr_pinkSlitSkirt</sprite>
         <sprite>sprites\spr_witchDress</sprite>
@@ -16,15 +115,19 @@
         <sprite>sprites\spr_royalDress</sprite>
         <sprite>sprites\spr_underClothes</sprite>
         <sprite>sprites\spr_belt</sprite>
+        <sprite>sprites\spr_belt2</sprite>
       </sprites>
       <sprites name="Heavy Armour">
         <sprite>sprites\spr_plateMail</sprite>
       </sprites>
       <sprites name="Weapons">
-        <sprite>sprites\spr_bow</sprite>
-        <sprite>sprites\spr_axe</sprite>
+        <sprite>sprites\spr_longBow</sprite>
+        <sprite>sprites\spr_battleAxe</sprite>
         <sprite>sprites\spr_spear</sprite>
         <sprite>sprites\spr_greatSword</sprite>
+        <sprite>sprites\spr_armSword</sprite>
+        <sprite>sprites\spr_sabre</sprite>
+        <sprite>sprites\spr_shortSword</sprite>
       </sprites>
       <sprites name="Light Armour">
         <sprite>sprites\spr_chainMail</sprite>
@@ -35,6 +138,12 @@
       </sprites>
       <sprites name="Projectiles">
         <sprite>sprites\spr_arrow</sprite>
+      </sprites>
+      <sprites name="Details">
+        <sprite>sprites\spr_fashion1</sprite>
+        <sprite>sprites\spr_fashion2</sprite>
+        <sprite>sprites\spr_vest</sprite>
+        <sprite>sprites\spr_coat</sprite>
       </sprites>
     </sprites>
     <sprites name="Masks">
@@ -56,6 +165,7 @@
         <sprite>sprites\spr_horns</sprite>
         <sprite>sprites\spr_none</sprite>
         <sprite>sprites\spr_humanHead</sprite>
+        <sprite>sprites\spr_eyes</sprite>
         <sprite>sprites\spr_elfHead</sprite>
         <sprite>sprites\spr_body</sprite>
         <sprite>sprites\spr_chest</sprite>
@@ -83,13 +193,11 @@
       <sprite>sprites\spr_selection</sprite>
       <sprite>sprites\spr_enemyselect</sprite>
       <sprite>sprites\spr_tilePathing</sprite>
-      <sprites name="Icons">
-        <sprite>sprites\spr_iconMove</sprite>
-        <sprite>sprites\spr_iconAttack</sprite>
-        <sprite>sprites\spr_iconWait</sprite>
-        <sprite>sprites\spr_iconBorder</sprite>
-      </sprites>
       <sprite>sprites\spr_bannerIcons</sprite>
+      <sprite>sprites\spr_smallBanner</sprite>
+      <sprite>sprites\spr_backdrop</sprite>
+      <sprite>sprites\ico_invSlot</sprite>
+      <sprite>sprites\spr_menuSheet</sprite>
     </sprites>
     <sprites name="Overworld">
       <sprites name="Outdated">
@@ -97,7 +205,6 @@
         <sprite>sprites\spr_cliffTrim</sprite>
         <sprite>sprites\spr_coastTrim</sprite>
         <sprite>sprites\spr_shimmer</sprite>
-        <sprite>sprites\spr_water</sprite>
         <sprite>sprites\spr_ocean</sprite>
         <sprite>sprites\spr_iceCliff</sprite>
         <sprite>sprites\spr_shallows</sprite>
@@ -107,7 +214,8 @@
         <sprite>sprites\spr_agCliff</sprite>
         <sprite>sprites\spr_qfGrassTrim</sprite>
         <sprite>sprites\spr_agStoneTrim</sprite>
-        <sprite>sprites\spr_hgGrass</sprite>
+        <sprite>sprites\spr_hexGrid</sprite>
+        <sprite>sprites\spr_hextest2</sprite>
         <sprite>sprites\spr_shimmerSpark</sprite>
         <sprite>sprites\spr_cftGrassTrim</sprite>
         <sprite>sprites\spr_qfGrass</sprite>
@@ -118,6 +226,16 @@
         <sprite>sprites\spr_hgGrassTrim</sprite>
       </sprites>
       <sprite>sprites\spr_location</sprite>
+      <sprite>sprites\spr_forest</sprite>
+      <sprite>sprites\spr_mountain</sprite>
+      <sprite>sprites\spr_hgGrass</sprite>
+      <sprite>sprites\spr_swamp</sprite>
+      <sprite>sprites\spr_water</sprite>
+      <sprite>sprites\spr_desert</sprite>
+      <sprite>sprites\spr_snow</sprite>
+      <sprite>sprites\spr_deeps</sprite>
+      <sprite>sprites\spr_orangeGrass</sprite>
+      <sprite>sprites\spr_TEMP</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
@@ -144,9 +262,11 @@
           <scripts name="Movement Animation">
             <script>scripts\animHumanoidWalk.gml</script>
             <script>scripts\animIdle.gml</script>
+            <script>scripts\animAttack.gml</script>
           </scripts>
           <scripts name="Attack Animation">
             <script>scripts\animMeleeHold.gml</script>
+            <script>scripts\animPresentArms.gml</script>
             <script>scripts\animDownSwing.gml</script>
             <script>scripts\animCrossSwing.gml</script>
           </scripts>
@@ -201,12 +321,17 @@
     <scripts name="Overworld">
       <scripts name="Actors and Control">
         <script>scripts\scr_tempActorListDraw.gml</script>
-        <script>scripts\scr_partyInitialize.gml</script>
         <script>scripts\scr_worldControlInitialize.gml</script>
         <script>scripts\scr_addActor.gml</script>
         <script>scripts\scr_removeActor.gml</script>
         <scripts name="Party Scripts">
-          <script>scripts\scr_charactergenerator.gml</script>
+          <script>scripts\characterInitialize.gml</script>
+          <script>scripts\partyInitialize.gml</script>
+          <scripts name="Character Creation">
+            <script>scripts\raceList.gml</script>
+            <script>scripts\scr_charactergenerator.gml</script>
+            <script>scripts\createCharacter.gml</script>
+          </scripts>
         </scripts>
       </scripts>
       <scripts name="Outdated">
@@ -222,6 +347,7 @@
             <script>scripts\scr_coldfistTaiga.gml</script>
             <script>scripts\scr_savageTundra.gml</script>
           </scripts>
+          <script>scripts\scr_nodeGen.gml</script>
         </scripts>
         <scripts name="Draw Environment">
           <script>scripts\scr_initializeWorldTile.gml</script>
@@ -236,13 +362,19 @@
       <scripts name="Setup and Teardown">
         <script>scripts\battleSetup.gml</script>
         <script>scripts\battleTeardown.gml</script>
+        <script>scripts\importCharacter.gml</script>
       </scripts>
       <scripts name="HUD">
         <script>scripts\owHudButton.gml</script>
       </scripts>
+      <scripts name="World Generation">
+        <script>scripts\worldGen.gml</script>
+        <script>scripts\worldScrollVis.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Menu">
       <scripts name="Landing Menu">
+        <script>scripts\scr_inGameMenu.gml</script>
         <script>scripts\scr_menuToggle.gml</script>
         <script>scripts\scr_menuClear.gml</script>
         <script>scripts\scr_establishSettings.gml</script>
@@ -258,6 +390,24 @@
     <scripts name="Universal">
       <script>scripts\drawText.gml</script>
       <script>scripts\depthCheck.gml</script>
+    </scripts>
+    <scripts name="Items">
+      <script>scripts\dragEquip.gml</script>
+      <scripts name="Tooltips">
+        <script>scripts\itemTypeWeapon.gml</script>
+      </scripts>
+      <script>scripts\createInventory.gml</script>
+      <script>scripts\destroyInventory.gml</script>
+      <scripts name="Items">
+        <script>scripts\itemScript.gml</script>
+        <script>scripts\axes.gml</script>
+        <script>scripts\swords.gml</script>
+        <script>scripts\bows.gml</script>
+        <script>scripts\armour.gml</script>
+      </scripts>
+      <scripts name="Mutators">
+        <script>scripts\mutators.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <shaders name="shaders">
@@ -275,11 +425,13 @@
       <font>fonts\fnt_lrgMenu</font>
       <font>fonts\fnt_smlMenu</font>
       <font>fonts\fnt_tinyText</font>
+      <font>fonts\fnt_charSheet</font>
       <font>fonts\fnt_menu</font>
     </fonts>
     <font>fonts\fnt_dev</font>
   </fonts>
   <objects name="objects">
+    <object>objects\obj_camera</object>
     <objects name="Menu">
       <object>objects\obj_menuButton</object>
       <object>objects\obj_menuToggle</object>
@@ -289,34 +441,45 @@
       <object>objects\obj_menuItems</object>
       <object>objects\obj_sliderControl</object>
       <object>objects\obj_slider</object>
+      <object>objects\obj_beginGame</object>
+      <object>objects\obj_modelDev</object>
     </objects>
     <objects name="Overworld">
       <object>objects\obj_overworldParent</object>
       <object>objects\obj_overworldControl</object>
-      <object>objects\obj_travelNode</object>
+      <object>objects\obj_overworldVital</object>
       <objects name="Actors">
         <object>objects\obj_party</object>
+        <object>objects\obj_characterSheet</object>
       </objects>
       <objects name="Outdated">
         <object>objects\obj_parentTile</object>
+        <object>objects\obj_travelNode</object>
+        <object>objects\obj_hexTest</object>
         <object>objects\obj_seaTile</object>
-        <object>objects\obj_oceanTile</object>
-        <object>objects\obj_worldTile</object>
-        <object>objects\obj_overworldVital</object>
         <object>objects\obj_gridTile</object>
         <object>objects\obj_cloud</object>
         <object>objects\obj_shimmerSpark</object>
-        <object>objects\obj_worldCreator</object>
-        <object>objects\obj_worldControlOld</object>
       </objects>
       <objects name="HUD">
+        <object>objects\obj_item</object>
+        <object>objects\obj_invHud</object>
+        <object>objects\obj_inventorySlot</object>
+        <object>objects\obj_backDrop</object>
         <object>objects\obj_hudParent</object>
-        <object>objects\object45</object>
+        <object>objects\obj_topButton</object>
+        <object>objects\obj_charTab</object>
+        <object>objects\obj_model</object>
+        <object>objects\obj_menuSheet</object>
+        <object>objects\obj_menuSubTab</object>
+      </objects>
+      <objects name="Tiles">
+        <object>objects\obj_worldCreator</object>
+        <object>objects\obj_worldTile</object>
       </objects>
     </objects>
     <objects name="Combat">
       <objects name="Core">
-        <object>objects\obj_camera</object>
         <object>objects\obj_combatHUD</object>
         <object>objects\obj_tile</object>
         <object>objects\obj_wall</object>
@@ -336,7 +499,6 @@
       </objects>
       <objects name="Actors">
         <object>objects\obj_character</object>
-        <object>objects\obj_model</object>
       </objects>
       <objects name="Combat HUD">
         <object>objects\obj_initiativeSlot</object>
@@ -352,12 +514,12 @@
   <rooms name="rooms">
     <room>rooms\rom_landingMenu</room>
     <room>rooms\rom_overworld</room>
-    <room>rooms\rom_battle</room>
     <room>rooms\rom_charSprite</room>
+    <room>rooms\rom_battle</room>
   </rooms>
-  <constants number="21">
-    <constant name="gndr_female">0</constant>
-    <constant name="gndr_male">1</constant>
+  <constants number="37">
+    <constant name="femme">0</constant>
+    <constant name="masc">1</constant>
     <constant name="beige">make_color_rgb(205,165,117)</constant>
     <constant name="dark">make_color_rgb(112,83,33)</constant>
     <constant name="pale">make_color_rgb(245,218,184)</constant>
@@ -366,6 +528,13 @@
     <constant name="orcBrown">make_color_rgb(80,90,40)</constant>
     <constant name="orcGreen">make_color_rgb(77,110,56)</constant>
     <constant name="hearthgroveGreen">make_color_rgb(45,134,59)</constant>
+    <constant name="eyeViolet">make_color_rgb(137,93,148)</constant>
+    <constant name="eyeBlue">make_color_rgb(87,125,156)</constant>
+    <constant name="eyeBrown">make_color_rgb(161,116,55)</constant>
+    <constant name="eyeGreen">make_color_rgb(41,89,11)</constant>
+    <constant name="clothBlue">make_color_rgb(97,107,176)</constant>
+    <constant name="clothGreen">make_color_rgb(105,176,97)</constant>
+    <constant name="clothRed">make_color_rgb(176,97,97)</constant>
     <constant name="green">make_color_rgb(0,204,0)</constant>
     <constant name="iceBlue">make_color_rgb(80,210,230)</constant>
     <constant name="ltBlue">make_color_rgb(67,117,141)</constant>
@@ -374,8 +543,17 @@
     <constant name="dkRed">make_color_rgb(128,0,0)</constant>
     <constant name="dkGrey">make_color_rgb(20,20,20)</constant>
     <constant name="ltGrey">make_color_rgb(200,200,200)</constant>
-    <constant name="km">30</constant>
+    <constant name="km">20</constant>
     <constant name="metre">20</constant>
+    <constant name="shieldProficiency">9</constant>
+    <constant name="helmetProficiency">8</constant>
+    <constant name="throwingProficiency">7</constant>
+    <constant name="heavyRangedProficiency">6</constant>
+    <constant name="pistolProficiency">5</constant>
+    <constant name="basicRangedProficiency">4</constant>
+    <constant name="heavyWeaponProficiency">3</constant>
+    <constant name="mediumWeaponProficiency">2</constant>
+    <constant name="lightWeaponProficiency">1</constant>
     <constant name="grav">.8</constant>
   </constants>
   <help>

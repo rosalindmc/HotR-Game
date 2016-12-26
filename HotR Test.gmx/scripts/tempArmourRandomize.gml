@@ -1,4 +1,4 @@
-switch(min(choose(2,3,4)+(gender),5))
+switch(min(choose(3,4,5)-(gender),5))
 {
 case 2:     //Dress
 switch(choose(2,3,4))
@@ -51,7 +51,7 @@ switch(choose(2,3,4))
 break
 
 case 1:     //Dress
-if gender = gndr_female
+if gender = femme
 {
     bodyItem[1] = spr_underClothes
 }
@@ -77,7 +77,7 @@ skrtItem[1] = spr_chainTabard
 armsItem[1,1] = spr_chainLeather
 armsItem[1,2] = spr_chainLeather
 legsItem[1,1] = spr_chainLeather
-armsItem[1,2] = spr_chainLeather
+legsItem[1,2] = spr_chainLeather
 
 class = "Thief"
 break

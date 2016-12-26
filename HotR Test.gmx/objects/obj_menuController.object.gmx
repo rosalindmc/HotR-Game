@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-1000</depth>
+  <depth>-999</depth>
   <persistent>0</persistent>
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_establishSettings()
-global.descriptor = ''
+            <string>global.descriptor = ''
 
 scr_menuCreate(0)
 randomize()
@@ -59,6 +58,30 @@ randomize()
         </arguments>
       </action>
     </event>
+    <event eventtype="8" enumb="73">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Cursor
+draw_sprite(spr_mouse,0,round(mouse_x),round(mouse_y))
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -76,14 +99,15 @@ randomize()
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Draw Tooltip
+            <string>//Draw Backdrop
+draw_set_colour(c_black)
+draw_rectangle(0,0,view_wview[],view_hview[],false)
+
+//Draw Tooltip
 draw_set_colour(c_gray)
 draw_set_font(fnt_smlMenu)
 draw_set_valign(fa_top)
 draw_text_ext(350,100,global.descriptor,15,250)
-
-//Cursor
-draw_sprite(spr_mouse,0,round(mouse_x),round(mouse_y))
 </string>
           </argument>
         </arguments>

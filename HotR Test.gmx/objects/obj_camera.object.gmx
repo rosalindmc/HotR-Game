@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-10000000</depth>
   <persistent>0</persistent>
-  <parentName>obj_overworldVital</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -48,7 +48,10 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Keyboard scrolling
+            <string>if global.inMenu != 2
+{
+
+//Keyboard scrolling
 key_left = keyboard_check(global.leftScroll)
 key_right = keyboard_check(global.rightScroll)
 key_up = keyboard_check(global.upScroll)
@@ -57,38 +60,39 @@ key_down = keyboard_check(global.downScroll)
 //Mouse scrolling
 if mouse_x &lt;= view_xview[0]+10
 {
-    key_left += 1
+    key_left = 1
 }
 if mouse_x &gt;= view_xview[0]+view_wview[0]-10
 {
-    key_right += 1
+    key_right = 1
 }
 if mouse_y &lt;= view_yview[0]+10
 {
-    key_up += 1
+    key_up = 1
 }
 if mouse_y &gt;= view_yview[0]+view_hview[0]-10
 {
-    key_down += 1
+    key_down = 1
 }
 
 
 if key_right-key_left = 1
 {
-    x = max(x+(500/global.fspd),view_xview[0]+(view_wview[0]*.5))
+    x = max(x+(1000/global.fspd),view_xview[0]+(view_wview[0]*.5))
 }
 else if key_right-key_left = -1
 {
-    x = min(x-(500/global.fspd),view_xview[0]+(view_wview[0]*.5))
+    x = min(x-(1000/global.fspd),view_xview[0]+(view_wview[0]*.5))
 }
 
 if key_down-key_up = 1
 {
-    y = max(y+(500/global.fspd),view_yview[0]+(view_hview[0]*.5))
+    y = max(y+(1000/global.fspd),view_yview[0]+(view_hview[0]*.5))
 }
 else if key_down-key_up = -1
 {
-    y = min(y-(500/global.fspd),view_yview[0]+(view_hview[0]*.5))
+    y = min(y-(1000/global.fspd),view_yview[0]+(view_hview[0]*.5))
+}
 }
 </string>
           </argument>
@@ -116,7 +120,7 @@ else if key_down-key_up = -1
 draw_sprite(spr_mouse,global.mouseSprite,round(mouse_x),round(mouse_y))
 draw_set_colour(c_white)
 
-drawText(c_black,c_white,view_xview+view_wview-10,view_yview+90,instance_count)
+//drawText(c_black,c_white,view_xview+view_wview-10,view_yview+90,instance_count)
 
 </string>
           </argument>

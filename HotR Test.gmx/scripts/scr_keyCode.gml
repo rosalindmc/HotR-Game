@@ -12,7 +12,7 @@ var map, name;
 map = true;
 
 //Switch the last keyboard key
-if (argument0 >= 49 && argument0 <= 59)
+if (argument0 >= 48 && argument0 <= 59)
 {
   name = argument0-48;
 }
@@ -24,7 +24,10 @@ else
 {
   switch (argument0)
   {
-    case vk_control: name="Ctrl"; break;
+    case vk_lcontrol: name="L Ctrl"; break;
+    case vk_rcontrol: name="R Ctrl"; break;
+    case vk_lalt: name="L Alt"; break;
+    case vk_ralt: name="R Alt"; break;
     case vk_lshift: name="L Shft"; break;
     case vk_rshift: name="R Shft"; break;
     case vk_tab: name="Tab"; break;
@@ -47,7 +50,7 @@ else
     case vk_numpad7: name="Num7"; break;
     case vk_numpad8: name="Num8"; break;
     case vk_numpad9: name="Num9"; break;
-
+    
     //UNCHARTED KEY
     default: map=false; break;
   }

@@ -42,10 +42,6 @@
     }
 }
 
-if obj_control.cHover = owner
-{
-    draw_text(x,y,depth)
-}
 </string>
           </argument>
         </arguments>

@@ -13,7 +13,7 @@ initializeCharStats()
 initSlot = instance_create(20,20,obj_initiativeSlot)
 initSlot.owner = id
 initSlot.order = 0
-initSlot.delay = 1+random(4)
+initSlot.delay = 1+random(1)
 initiativeSlotReset()
 
 //Grid
@@ -37,7 +37,7 @@ lifeVis = life
 regenTime = 0
 
 //AI Core
-player = true
+player = false
 team = 1
 actionString = "Idle"
 action = actIdle
@@ -66,6 +66,8 @@ h = 0
 image_speed = 15/global.fspd
 vis = false
 scrollVis = false
+sX = 1
+
 //(Presently Obsolete)
 //zspd = 0
 //fid = -4
@@ -112,32 +114,28 @@ haste = 1+((grace-8)*.03)
 
 //Skill
 mSkill = 1+((grace-8)*.1)+((cunning-8)*.2)
-rSkill = 1+((grace-8)*.1)+((cunning-8)*.2)+(choose(0,1,2)) //Temp
+rSkill = 1+((grace-8)*.1)+((cunning-8)*.2)
 cSkill = 1+((grace-8)*.1)+((cunning-8)*.2)
 
 //Offense
 lethality = 0
-atkDPS = (might-8)*.25
-atkForce = 1+((might-8)*.05)
+atkDPS = (might-8)
 atkHaste = 1+((grace-8)*.03)
 
 //Defence
 dodge = 20
-armMax = choose(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16)      //Armour is measured in quarters
+armMax = 0      //Armour is measured in quarters
 arm = armMax
 prot = 0
 enc = 0
 
 //Resistance
-fResistMax = 25+(grace-8)+(might-8)
-fResist = fResistMax
-pResistMax = 25+(will-8)+(might-8)
-pResist = pResistMax
-mResistMax = 25+(cunning-8)+(will-8)
-mResist = mResistMax
+fResist = 25+(grace-8)+(might-8)
+pResist = 25+(will-8)+(might-8)
+mResist = 25+(cunning-8)+(will-8)
 
 //Vitals
-lifeMax = 10+(will-8)+choose(0,2,4,6,8) //Temp
+lifeMax = 10+(will-8)
 life = lifeMax
 lifeRegen = 2+((will-8)*.2)
 
@@ -164,17 +162,16 @@ initializeWeapon(2)
 wepType[argument0] = melee
 wepAnimType[argument0] = typeAxe
 
-wepPow[argument0] = 4
-wepType[argument0] = 'Rending'
+wepPow[argument0] = 2
+wepType[argument0] = 'Impact'
 wepPowRng[argument0] = .3
 wepStrMult[argument0] = 1
 wepPen[argument0] = 0
-wepSpeed[argument0] = 1.3
+wepSpeed[argument0] = 2
 wepRange[argument0] = 1
 
-//Weapon Sprites (Temp)
-weaponSprite[1] = spr_greatSword
-weaponSprite[2] = spr_none 
+//Weapon Sprites
+weaponSprite[argument0] = spr_none
 
 /*Temp
 switch(weaponSprite[1])

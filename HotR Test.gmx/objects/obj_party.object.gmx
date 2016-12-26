@@ -3,7 +3,7 @@
   <spriteName>spr_portrait</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-100</depth>
+  <depth>-10</depth>
   <persistent>0</persistent>
   <parentName>obj_overworldParent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -25,10 +25,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_partyInitialize()
+            <string>partyInitialize()
 
 //Temp
 global.activeActor = id
+vis = false
+vis = false
+alarm[1] = 10
+
 </string>
           </argument>
         </arguments>
@@ -57,6 +61,59 @@ global.activeActor = id
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>owner = party[0]
+    
+humanoid(0)
+importCharacter(owner)
+vis = true
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Character Gen Scripts
+
+//Make Inactive
+//instance_deactivate_object(id)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="0">
       <action>
         <libid>1</libid>
@@ -74,7 +131,10 @@ global.activeActor = id
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite(spr_portrait,actorNumber,x,y-5)
+            <string>if vis = true and node.vis = true
+{
+    humanoidPortrait(id,x,y-6,1)
+}
 </string>
           </argument>
         </arguments>

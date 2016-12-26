@@ -3,7 +3,7 @@
   <spriteName>spr_slider</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>0</depth>
+  <depth>-1000</depth>
   <persistent>0</persistent>
   <parentName>obj_menuItems</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -70,7 +70,7 @@ if mouse_check_button_released(mb_left)
 if dragged
 {
     x = max(min(mouse_x,maxX),minX)
-    x = round(x/snap)*snap
+    x = minX+(round((x-minX)/snap)*snap)
     with(host)
     {
         scr_sliderScript(2,number)

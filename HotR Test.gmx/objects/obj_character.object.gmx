@@ -178,7 +178,7 @@ depthCheck(-2)
             <string>//Draw Healthbar
 if isoZ &lt;= global.zLevel
 {
-    if (controlled = true or obj_control.cHover = isoTile) and vis = true
+    if (obj_control.cHover = isoTile) and vis = true
     {
         drawHealthbar()    
     }
@@ -216,11 +216,6 @@ if isoZ &lt;= global.zLevel
 if vis = true
 {
     drawActor()
-}
-
-if obj_control.cHover = isoTile
-{
-    draw_text(x,y-150,depth)
 }
 </string>
           </argument>

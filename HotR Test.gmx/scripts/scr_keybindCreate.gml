@@ -52,11 +52,11 @@ i.text = 'Use Ability9' i.number = 19
 i = instance_create(160,240,obj_menuKey)
 i.text = 'Use Ability10' i.number = 20
 
-//i = instance_create(160,260,obj_menuKey)
-//i.text = 'Attack Move' i.number = 21
-
 i = instance_create(160,280,obj_menuKey)
-i.text = 'Switch Weapon' i.number = 22
+i.text = 'Melee Toggle' i.number = 10
+
+//i = instance_create(160,280,obj_menuKey)
+//i.text = 'Switch Weapon' i.number = 22
 break
 
 case 3:
@@ -71,9 +71,6 @@ i.text = 'Pan Map Right' i.number = 8
 
 i = instance_create(160,120,obj_menuKey)
 i.text = 'Pan Map Down' i.number = 9
-
-i = instance_create(160,140,obj_menuKey)
-i.text = 'Melee Toggle' i.number = 10
 
 i = instance_create(160,160,obj_menuKey)
 i.text = 'Center Map' i.number = 23
