@@ -1,6 +1,6 @@
 #define worldGen
-mapHeight = 69
-mapWidth = 139
+mapHeight = 99
+mapWidth = 199
 room_width = 20+(mapWidth*20)
 room_height = 22+(mapHeight*20)
 
@@ -74,6 +74,9 @@ repeat(mapWidth)
 heightGen()
 humidityGen()
 tempratureGen()
+populate()
+
+worldScrollVis()
 
 #define heightGen
 repeat(2)
@@ -101,6 +104,7 @@ with(obj_worldTile)
     {
         sprite_index = spr_hgGrass
         overlay = spr_mountain
+        humidity += 10
     }
     else if height > 10
     {
@@ -109,7 +113,10 @@ with(obj_worldTile)
     else if height > -10
     {
         sprite_index = spr_water
-        humidity += 25
+    }
+    else
+    {
+        humidity += 50
     }
 }
 
@@ -170,11 +177,11 @@ with(obj_worldTile)
             sprite_index = spr_orangeGrass
             }
         }
-        else if humidity > 15
+        else if humidity > 15 and height < 15
         {
             sprite_index = spr_swamp
         }
-        else if humidity > 13
+        else if humidity > 8
         {
             if temprature > 0
             {
@@ -187,7 +194,7 @@ with(obj_worldTile)
             overlay = spr_forest
             }
         }
-        else if humidity > 1
+        else if humidity >= -50 //Temp Remove desert
         {
             if temprature > 0
             {
@@ -209,4 +216,67 @@ with(obj_worldTile)
     }
     }
     humidity = max(humidity,0)
+}
+
+#define populate
+//Node Populate
+//Dont Know if I'll Keep?
+ix = 3
+iy = 3
+
+repeat(floor(mapWidth/4))
+{
+    repeat(floor(mapHeight/4))
+    {
+        i = global.worldMap[ix+choose(-1,0),iy+choose(-1,0)]
+
+        if random(100) < 75 and i.overlay != spr_mountain
+        {      
+            ii = instance_create(i.x,i.y,obj_travelNode)
+            ii.tile = i
+            
+            switch(i.sprite_index)
+            {
+                case spr_deeps: 
+                //if ii.tile.mapX/2 = round(ii.tile.mapX/2) or ii.tile.mapY/2 = round(ii.tile.mapY/2) {ii.image_index = 3} 
+                //else {
+                with(ii){instance_destroy()}//} 
+                break
+                case spr_water: 
+                //if ii.tile.mapX/2 = round(ii.tile.mapX/2) or ii.tile.mapY/2 = round(ii.tile.mapY/2) {ii.image_index = 2}
+                //else {
+                with(ii){instance_destroy()}//} 
+                break
+            }
+            
+            //Temp Create Parties
+            if random(100) < 3 and instance_exists(ii)
+            {
+                iii = instance_create(ii.x,ii.y,obj_party)
+                iii.node = ii
+                iii.depth = ii.depth-1
+            }
+        }
+        
+        iy += 4
+    }
+    ix += 4
+    iy = 3
+}
+
+//Tags
+with(obj_travelNode)
+{
+}
+
+//Adjacencies
+with(obj_travelNode)
+{
+    with(obj_travelNode)
+    {
+        if distance_to_point(other.x,other.y) < 150
+        {
+            ds_list_add(adjacent,other)
+        }
+    }
 }

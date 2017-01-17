@@ -13,7 +13,7 @@
           <sprite>sprites\ico_mace</sprite>
           <sprite>sprites\ico_maul</sprite>
           <sprite>sprites\ico_hammer</sprite>
-          <sprite>sprites\ico_grtHammer</sprite>
+          <sprite>sprites\ico_warhammer</sprite>
           <sprite>sprites\ico_armSword</sprite>
           <sprite>sprites\ico_sabre</sprite>
           <sprite>sprites\ico_grtSword</sprite>
@@ -98,6 +98,7 @@
         <sprite>sprites\spr_iconWait</sprite>
         <sprite>sprites\spr_iconMove</sprite>
         <sprite>sprites\spr_iconAttack</sprite>
+        <sprite>sprites\spr_iconSwitch</sprite>
       </sprites>
     </sprites>
     <sprites name="Equipment">
@@ -122,11 +123,24 @@
       </sprites>
       <sprites name="Weapons">
         <sprite>sprites\spr_longBow</sprite>
+        <sprite>sprites\spr_shortBow</sprite>
+        <sprite>sprites\spr_handAxe</sprite>
         <sprite>sprites\spr_battleAxe</sprite>
+        <sprite>sprites\spr_hammer</sprite>
+        <sprite>sprites\spr_warhammer</sprite>
+        <sprite>sprites\spr_lightMace</sprite>
+        <sprite>sprites\spr_mace</sprite>
+        <sprite>sprites\spr_maul</sprite>
+        <sprite>sprites\spr_halberd</sprite>
+        <sprite>sprites\spr_pike</sprite>
         <sprite>sprites\spr_spear</sprite>
+        <sprite>sprites\spr_shortSpear</sprite>
+        <sprite>sprites\spr_greatAxe</sprite>
         <sprite>sprites\spr_greatSword</sprite>
         <sprite>sprites\spr_armSword</sprite>
         <sprite>sprites\spr_sabre</sprite>
+        <sprite>sprites\spr_dagger</sprite>
+        <sprite>sprites\spr_knife</sprite>
         <sprite>sprites\spr_shortSword</sprite>
       </sprites>
       <sprites name="Light Armour">
@@ -276,6 +290,7 @@
       </scripts>
       <scripts name="Control">
         <script>scripts\controlAI.gml</script>
+        <script>scripts\controlPlayer.gml</script>
         <script>scripts\initiativeSlotReset.gml</script>
         <scripts name="Movement">
           <script>scripts\wipeTiles.gml</script>
@@ -302,6 +317,7 @@
             <script>scripts\endTurn.gml</script>
             <script>scripts\moveControl.gml</script>
             <script>scripts\wait.gml</script>
+            <script>scripts\weaponSwitch.gml</script>
             <script>scripts\createActionBar.gml</script>
           </scripts>
         </scripts>
@@ -321,9 +337,9 @@
     <scripts name="Overworld">
       <scripts name="Actors and Control">
         <script>scripts\scr_tempActorListDraw.gml</script>
-        <script>scripts\scr_worldControlInitialize.gml</script>
-        <script>scripts\scr_addActor.gml</script>
-        <script>scripts\scr_removeActor.gml</script>
+        <script>scripts\worldControlInitialize.gml</script>
+        <script>scripts\addActor.gml</script>
+        <script>scripts\removeActor.gml</script>
         <scripts name="Party Scripts">
           <script>scripts\characterInitialize.gml</script>
           <script>scripts\partyInitialize.gml</script>
@@ -332,6 +348,9 @@
             <script>scripts\scr_charactergenerator.gml</script>
             <script>scripts\createCharacter.gml</script>
           </scripts>
+        </scripts>
+        <scripts name="Movement and Control">
+          <script>scripts\owMovementRange.gml</script>
         </scripts>
       </scripts>
       <scripts name="Outdated">
@@ -393,15 +412,17 @@
     </scripts>
     <scripts name="Items">
       <script>scripts\dragEquip.gml</script>
+      <script>scripts\createInventory.gml</script>
+      <script>scripts\destroyInventory.gml</script>
       <scripts name="Tooltips">
         <script>scripts\itemTypeWeapon.gml</script>
       </scripts>
-      <script>scripts\createInventory.gml</script>
-      <script>scripts\destroyInventory.gml</script>
       <scripts name="Items">
         <script>scripts\itemScript.gml</script>
         <script>scripts\axes.gml</script>
         <script>scripts\swords.gml</script>
+        <script>scripts\bludgeons.gml</script>
+        <script>scripts\polearms.gml</script>
         <script>scripts\bows.gml</script>
         <script>scripts\armour.gml</script>
       </scripts>
@@ -413,6 +434,11 @@
   <shaders name="shaders">
     <shaders name="Combat">
       <shader type="GLSLES">shaders\shd_greyscale.shader</shader>
+    </shaders>
+    <shaders name="TimeofDay">
+      <shader type="GLSLES">shaders\shd_evening.shader</shader>
+      <shader type="GLSLES">shaders\shd_day.shader</shader>
+      <shader type="GLSLES">shaders\shd_night.shader</shader>
     </shaders>
   </shaders>
   <fonts name="fonts">
@@ -454,7 +480,6 @@
       </objects>
       <objects name="Outdated">
         <object>objects\obj_parentTile</object>
-        <object>objects\obj_travelNode</object>
         <object>objects\obj_hexTest</object>
         <object>objects\obj_seaTile</object>
         <object>objects\obj_gridTile</object>
@@ -476,6 +501,7 @@
       <objects name="Tiles">
         <object>objects\obj_worldCreator</object>
         <object>objects\obj_worldTile</object>
+        <object>objects\obj_travelNode</object>
       </objects>
     </objects>
     <objects name="Combat">

@@ -63,7 +63,7 @@ model = -4
         }
         
         global.charTab = tab
-        global.charSelect = global.activeActor.party[tab]
+        global.charSelect = ds_list_find_value(global.activeActor.party,tab)
         
         if global.subTab = 0
         {

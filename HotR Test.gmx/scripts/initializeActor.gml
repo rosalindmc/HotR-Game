@@ -9,6 +9,9 @@ humanoid(0)
 //Game Attributes
 initializeCharStats()
 
+//Core
+important = false
+
 //Initiative
 initSlot = instance_create(20,20,obj_initiativeSlot)
 initSlot.owner = id
@@ -41,6 +44,9 @@ player = false
 team = 1
 actionString = "Idle"
 action = actIdle
+controlScript = controlAI
+readiedAction = false
+readiedTarget = noone
 active = true
 target = noone
 controlled = false
@@ -68,23 +74,7 @@ vis = false
 scrollVis = false
 sX = 1
 
-//(Presently Obsolete)
-//zspd = 0
-//fid = -4
-//fh = 0
-//grounded = true
-//atkHand = 1
-//atkTime = 0
-//engageRange = 1 //In metres
-//xOff = 0
-//yOff = 0
-//targetX = x
-//targetY = y
-//targetId = -4
-//myPath = path_add()
-//path_set_kind(myPath, 1)
-//path_set_closed(myPath, false)
-//path_add_point(myPath,x,y,1)
+
 
 #define initializeCharStats
 //Initialize game stats for actors
@@ -139,16 +129,9 @@ lifeMax = 10+(will-8)
 life = lifeMax
 lifeRegen = 2+((will-8)*.2)
 
-vitMax = 20+((might-8)*2)
-vit = vitMax
-
-stmMax = 10+(will-8)+(grace-8)
+stmMax = 8+(will-8)+(grace-8)
 stm = stmMax
 stmRegen = 5+(stmMax*.1)
-
-morMax = 10+((will-8)*2)
-mor = morMax
-morRegen = 5+(morMax*.1)
 
 //Initialize of weapons for weapon users
 initializeWeapon(1)
@@ -172,55 +155,3 @@ wepRange[argument0] = 1
 
 //Weapon Sprites
 weaponSprite[argument0] = spr_none
-
-/*Temp
-switch(weaponSprite[1])
-{
-case 1:
-weaponSprite[1] = spr_greatSword
-greatWeapon = true
-wepPow[1] = 4
-wepPowRng[1] = .3
-wepStrMult[1] = 1
-wepPen[1] = 1
-wepForce[1] = 1
-wepSpeed[1] = 1.3
-wepRange[1] = 1
-break
-
-case 2:
-weaponSprite[1] = spr_axe
-weaponSprite[2] = spr_axe
-dualWield = true
-
-wepPow[1] = 4
-wepPowRng[1] = .3
-wepStrMult[1] = 1
-wepPen[1] = 1
-wepForce[1] = 1
-wepSpeed[1] = 1.3
-wepRange[1] = 1
-
-wepPow[2] = 2
-wepPowRng[2] = .3
-wepStrMult[2] = .8
-wepPen[2] = 1
-wepForce[2] = 1
-wepSpeed[2] = 2
-wepRange[2] = 1
-
-break
-
-case 3:
-wepType[1] = ranged
-weaponSprite[1] = spr_bow
-rangeAttack = true
-wepPow[1] = 7.5
-wepPowRng[1] = .3
-wepStrMult[1] = 1.2
-wepPen[1] = 2
-wepForce[1] = 1
-wepSpeed[1] = .85
-wepRange[1] = 100
-break
-}

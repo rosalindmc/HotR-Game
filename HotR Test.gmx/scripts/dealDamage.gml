@@ -26,7 +26,7 @@ dealDamage()
 //meleeDamage(Bonus Damage, Damage Mult)
 
 //Find Attack Speed
-s = (2+(dualWield*.5))/((wepSpeed[atkHand]))
+s = (3-(dualWield*.5))/((wepSpeed[atkHand]))
 
 //Find Base Attack Strength
 p = wepPow[atkHand]+((wepStrMult[atkHand]*atkDPS)/s)+argument0
@@ -35,7 +35,6 @@ p = wepPow[atkHand]+((wepStrMult[atkHand]*atkDPS)/s)+argument0
 p *= argument1
 p *= (1-wepPowRng[atkHand]+random(wepPowRng[atkHand]*2))
 
-//Check Parry
 //Check Block
 
 //Armour and Penetration
@@ -47,9 +46,6 @@ p = max(p-a,0)
 
 //Randomize decimal damage (.1 = 10% to do +1)
 p = floor(p+random(.99))
-
-//Temp
-p *= 2
 
 //Descriptor
 ii = instance_create(target.x,target.y-target.h-target.height,obj_descriptor)

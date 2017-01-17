@@ -118,6 +118,9 @@ switch(argument0)
 {
 case 1:
 i = 1
+
+invSwitch = 1
+
 script_execute(o.invSlot[1,0],2)
 script_execute(o.invSlot[1,2],2)
 script_execute(o.invSlot[1,3],2)
@@ -136,6 +139,9 @@ break
 
 case 2:
 i = 1
+
+invSwitch = 2
+
 script_execute(o.invSlot[3,0],2)
 script_execute(o.invSlot[3,2],2)
 script_execute(o.invSlot[3,3],2)
@@ -155,7 +161,7 @@ postArmourCustom()
 
 //Movement
 movement = 4+((grace-8)*.2)+o.raceMove      //metres to a move action
-movementBonus = 3+((grace-8)*.3)    //running bonus
+movementBonus = 3+((grace-8)*.3)            //running bonus
 haste = 1+((grace-8)*.03) 
 
 //Skill
@@ -178,16 +184,9 @@ lifeMax = 10+(will-8)+o.classLife
 life = lifeMax
 lifeRegen = 2+((will-8)*.2)
 
-vitMax = 20+((might-8)*2)
-vit = vitMax
-
 stmMax = 10+(will-8)+(grace-8)
 stm = stmMax
 stmRegen = 5+(stmMax*.1)
-
-morMax = 10+((will-8)*2)
-mor = morMax
-morRegen = 5+(morMax*.1)
 
 #define clearArmour
 bodyItems = 0

@@ -10,6 +10,7 @@ with(obj_tile)
     meleeAttack = false
     pathParent = noone
     onPath = 0
+    zoneControl = false
     
     if ground = false
     {

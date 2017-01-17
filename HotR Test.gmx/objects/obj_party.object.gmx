@@ -28,10 +28,14 @@
             <string>partyInitialize()
 
 //Temp
-global.activeActor = id
+with(obj_party)
+{
+    playerControl = false
+}
+playerControl = true
+
 vis = false
-vis = false
-alarm[1] = 10
+alarm[1] = 2
 
 </string>
           </argument>
@@ -55,7 +59,7 @@ alarm[1] = 10
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>scr_removeActor()
+            <string>removeActor()
 </string>
           </argument>
         </arguments>
@@ -78,7 +82,7 @@ alarm[1] = 10
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>owner = party[0]
+            <string>owner = ds_list_find_value(party,0)
     
 humanoid(0)
 importCharacter(owner)
@@ -133,6 +137,7 @@ vis = true
             <kind>1</kind>
             <string>if vis = true and node.vis = true
 {
+    //draw_sprite(spr_location,0,x,y)
     humanoidPortrait(id,x,y-6,1)
 }
 </string>

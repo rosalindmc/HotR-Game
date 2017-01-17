@@ -4,6 +4,7 @@
 
 //Clear pathing data just in case
 wipeTiles()
+zoneOfControl()
 
 //Variables
 var open, closed
@@ -32,7 +33,7 @@ while(ds_priority_size(open) > 0)
         adjacent = ds_list_find_value(current.walk, ii)
         
         //Add adjacent tile if it is reachable
-        if (ds_list_find_index(closed, adjacent) < 0 && adjacent.pathable && adjacent.occupant = noone && adjacent.cost+current.g <= range && adjacent.ground = true) 
+        if (ds_list_find_index(closed, adjacent) < 0 && adjacent.pathable && adjacent.occupant = noone && adjacent.cost+current.g <= range && adjacent.ground = true && current.zoneControl = false) 
         {
             if ds_priority_find_priority(open, adjacent) = 0 || ds_priority_find_priority(open, adjacent) = undefined
             {
@@ -86,6 +87,7 @@ ds_list_destroy(closed)
 //Make current tile unavailable
 start.move = false
 start.overlay = 0
+start.zoneControl = false
 
 #define diagonalCheck
 var adjacent = argument0
@@ -131,6 +133,29 @@ for(ii = 0; ii < ds_list_size(adjacent); ii++)
         }
         }
         }
+        }
+    }
+}
+#define zoneOfControl
+//zoneOfControl()
+//All Enemies make tiles in their zone of control flagged as zoneControl
+
+with(obj_character)
+{
+    if team != global.control.team
+    {
+        i = 0
+        
+        repeat(ds_list_size(isoTile.adjacent))
+        {
+            with(ds_list_find_value(isoTile.adjacent,i))
+            {
+                if abs(angle_difference(other.facing, point_direction(other.x,other.y,x,y))) <= 90
+                {
+                    zoneControl = true
+                }
+            }
+            i += 1
         }
     }
 }

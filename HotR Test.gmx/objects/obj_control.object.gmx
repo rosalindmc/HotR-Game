@@ -240,6 +240,8 @@ key_meleeToggle = keyboard_check(global.meleeToggle)
 //Timer 
 if mapTimeOn = true and global.nextChar != noone and global.timeDelay = 0
 {
+    global.newturn = false
+
     //Advance the Timer
     ii = max(min(1/global.fspd,global.nextChar.delay),0)
     mapTime += ii
@@ -252,38 +254,30 @@ if mapTimeOn = true and global.nextChar != noone and global.timeDelay = 0
         //Select
         if delay &lt;= 0 and id = global.nextChar
         {
-            ii = instance_create(owner.x,owner.y-owner.h-owner.height,obj_descriptor)   
+            global.control = owner
+            global.newturn = true
+        }
+    }
+    
+    if global.newturn = true
+    {
+        with(global.control)
+        {
+            ii = instance_create(x,y-h-height,obj_descriptor)   
             ii.text = 'READY'
             ii.font = fnt_tiny
-        
+            
+            other.mapTimeOn = false
+            controlled = true
+            
             //TEMP player turns
-            if owner.team = 1
+            if readiedAction = false
             {
-                global.control = owner
-                owner.controlled = true
-                other.mapTimeOn = false
-                global.moveTile = ds_list_create()
-                
-                obj_camera.x = global.control.x
-                obj_camera.y = global.control.y
-                global.zLevel = global.control.isoZ
-                
-                //Create the Action Bar 
-                createActionBar()
-                
-                //Run Move Control
-                moveControl(0)
-                updateScrollVis()
+                script_execute(controlScript)
             }
-            else    //TEMP skip AI turns
+            else    //TEMP AI turns
             {
-                global.control = owner
-                owner.controlled = true
-                other.mapTimeOn = false
-                global.moveTile = ds_list_create()
-                
-                moveControl(0)
-                controlAI()
+                script_execute(readiedAction)
             }
         }
     }

@@ -99,6 +99,8 @@ else
     drawText(c_black,c_white,ix-20,iy+30,owner.name)
     draw_set_font(fnt_tiny)
     drawText(c_black,c_white,ix-20,iy+42,string(owner.race)+" "+string(owner.class))
+    drawText(c_black,c_white,ix-20,iy+54,string(owner.rangeAttack))
+
     /*Temp    
     drawText(c_black,c_white,ix-20,iy+54,"Might - "+string(owner.might))
     drawText(c_black,c_white,ix-20,iy+66,"Grace - "+string(owner.grace))

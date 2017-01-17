@@ -166,6 +166,9 @@ randomizeHumanoid()
 #define drawHumanoid
 //Draw a humanoid
 
+//Shader
+shader_set(global.shader)
+
     //Adjust Bones
     
 //Body Facing and Direction
@@ -262,7 +265,7 @@ if bodyVFacing = 1 and handY[1] >= handY[2]
 }
 
 //Skirt Back
-i = 0 repeat(skrtItems){i++ draw_sprite_ext(skrtItem[i],skrtAnim+floor(hipsImage/6)+(1-vFacing),hipsX,hipsY,hFacing*sX,sX,hipsRot,skrtColour[i],1)}
+i = 0 repeat(skrtItems){i++ draw_sprite_ext(skrtItem[i],skrtAnim+(6*floor(hipsImage/6))+(1-vFacing),hipsX,hipsY,hFacing*sX,sX,hipsRot,skrtColour[i],1)}
 
 //Foreleg
 draw_sprite_ext(legSprite,legAnim[1]+vFacing,legX[1],legY[1],hFacing*sX,sX,legRot[1],skinTone,1)
@@ -278,7 +281,7 @@ draw_sprite_ext(spr_downHair,hipsImage+vFacing,hipsX,hipsY,hFacing*sX,sX,hipsRot
 i = 0 repeat(underHipsNum){i++ draw_sprite_ext(hipsItem[i],12+hipsImage+vFacing,hipsX,hipsY,hFacing*sX,sX,hipsRot,hipsColour[i],1)}
 
 //Skirt
-i = 0 repeat(skrtItems){i++ draw_sprite_ext(skrtItem[i],skrtAnim+floor(hipsImage/6)+vFacing,hipsX,hipsY,hFacing*sX,sX,hipsRot,skrtColour[i],1)}
+i = 0 repeat(skrtItems){i++ draw_sprite_ext(skrtItem[i],skrtAnim+(6*floor(hipsImage/6))+vFacing,hipsX,hipsY,hFacing*sX,sX,hipsRot,skrtColour[i],1)}
 
 //More Hip Items
 i = underHipsNum repeat(hipsItems-underHipsNum){i++ draw_sprite_ext(hipsItem[i],12+hipsImage+vFacing,hipsX,hipsY,hFacing*sX,sX,hipsRot,hipsColour[i],1)}
@@ -355,6 +358,8 @@ if bodyVFacing = 0 and handY[1] >= handY[2]
     draw_sprite_ext(spr_hand,0,handX[1],handY[1],bodyHFacing*sX,sX,handRot[1]+facing,skinTone,1)
 }
 
+//Shader
+shader_reset()
 
 #define randomizeHumanoid
 //TEMP
@@ -588,6 +593,8 @@ handHeight[2] += height-28
 #define humanoidPortrait
 with(argument0)
 {
+    shader_set(global.shader)
+    
     //Hair
     draw_sprite_ext(hairStyle,4,argument1,argument2,argument3,argument3,0,hairColour,hairVisible)
 
@@ -600,4 +607,6 @@ with(argument0)
     draw_sprite_ext(spr_eyes,faceImage,argument1,argument2,argument3,argument3,0,eyeColour,1)
     draw_sprite_ext(hairStyle,bounce,argument1,argument2,argument3,argument3,0,hairColour,hairVisible)
     i = 0 repeat(headItems){i++ draw_sprite_ext(headItem[i],0,argument1,argument2,argument3,argument3,0,headColour[i],1)}
+    
+    shader_reset()
 }

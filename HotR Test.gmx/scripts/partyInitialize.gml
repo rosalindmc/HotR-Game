@@ -1,17 +1,24 @@
 //Add to the List
-scr_addActor()
+addActor()
 
 player = 0
 node = noone
 
 active = false
+party = ds_list_create()
 
 ii = 0
 repeat(choose(40))
 {
 
-    inventory[ii,0] = choose(armingSword,greatSword,shortSword,sabre,robe,chainmail,battleAxe)
-    inventory[ii,1] = choose(0,0,0,1,1,1,1,1,1,1,1,1,2,2,2,3,3,4)
+    inventory[ii,0] = choose(
+    choose(knife,dagger,armingSword,greatSword,shortSword,sabre),
+    choose(handAxe,battleAxe,greatAxe),
+    choose(halberd,shortSpear,spear,pike),
+    choose(robe,chainmail),
+    choose(maul,lightMace,mace,hammer,warhammer),
+    choose(shortbow,longBow))
+    inventory[ii,1] = choose(0,0,0,1,1,1,1,1,1,1,1,1)
     inventory[ii,2] = 0
     inventory[ii,3] = 0
     inventory[ii,4] = 0
@@ -20,11 +27,9 @@ repeat(choose(40))
 }
 
 //Temp
-ii = 0
 repeat(choose(5,6,7))
 {
     i = instance_create(x,y,obj_characterSheet)
     i.party = id
-    party[ii] = i
-    ii += 1
+    ds_list_add(party,i)
 }

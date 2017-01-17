@@ -1,5 +1,14 @@
+#define controlAI
+moveControl(0)
+
+//Temp AI
+attackRandom()
+
+#define attackRandom
 //Script for AI self control, manages the AI array
 //controlAI()
+
+//Temporary (Attack a random foe )
 
 var i = global.control
 

@@ -53,6 +53,15 @@ adjacent = ds_list_create()
 overlay = -4
 overlayImg = irandom(5)
 vis = true
+
+/*Vital
+movOverlay = 0
+g = 0
+move = false
+pathParent = noone
+onPath = 0
+pathable = true
+cost = 1
 </string>
           </argument>
         </arguments>
@@ -113,11 +122,13 @@ else if height &gt; -10
             <kind>1</kind>
             <string>if vis = true
 {
+    shader_set(global.shader)
     draw_self()
     if overlay != -4
     {
         draw_sprite(overlay,overlayImg,x,y)
     }
+    shader_reset()
 }
 </string>
           </argument>

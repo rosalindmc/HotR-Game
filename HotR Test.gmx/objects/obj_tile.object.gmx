@@ -46,6 +46,7 @@ move = false
 rangedAttack = false
 meleeAttack = false
 pathParent = noone
+zoneControl = false
 
 //Coordinates
 isoX = 0
@@ -117,7 +118,7 @@ ds_list_destroy(walk)
 //Temp Random Walling
 if ground = true
 {
-    if irandom(100) &lt; 20
+    if irandom(100) &lt; 0//20
     {    
         i = instance_create(x,y,obj_step)
         i.owner = id
@@ -125,7 +126,7 @@ if ground = true
     }
     else
     {
-        if irandom(100) &lt; 10 and (isoX != 0 or isoX != obj_control.mapWidth or isoY != 0 or isoY != obj_control.mapHeight)
+        if irandom(100) &lt; 0//10 and (isoX != 0 or isoX != obj_control.mapWidth or isoY != 0 or isoY != obj_control.mapHeight)
         {    
             i = instance_create(x+10,y-6,obj_thinwall)
             i.owner = id
@@ -138,7 +139,7 @@ if ground = true
             }
         }
         
-        if irandom(100) &lt; 10 and (isoX != 0 or isoX != obj_control.mapWidth or isoY != 0 or isoY != obj_control.mapHeight)
+        if irandom(100) &lt; 0//10 and (isoX != 0 or isoX != obj_control.mapWidth or isoY != 0 or isoY != obj_control.mapHeight)
         {    
             i = instance_create(x-10,y-6,obj_thinwall)
             i.owner = id
@@ -184,10 +185,10 @@ else
 {
     if vis != false and scrollVis != false
     {
+        shader_set(global.shader)
         if vis = 2
         {
             shader_set(shd_greyscale)
-            //draw_sprite_ext(sprite_index,image_index,x,y-h,1,1,0,c_dkgray,1)
         }
         draw_sprite(sprite_index,image_index,x,y-h+(global.zLevel*30))
         shader_reset()

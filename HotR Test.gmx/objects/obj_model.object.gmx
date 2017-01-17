@@ -235,9 +235,9 @@ if global.charTab = tab
     draw_text(x-20,y+56,will)
     draw_text(x-20,y+68,fellowship)
 
-    s1 = (2+(dualWield*.5))/((wepSpeed[1]))
+    s1 = (3-(dualWield*.5))/((wepSpeed[1]))
     p1 = wepPow[1]+(wepStrMult[1]*atkDPS/s1)
-    s2 = (2+(dualWield*.5))/((wepSpeed[2]))
+    s2 = (3-(dualWield*.5))/((wepSpeed[2]))
     p2 = wepPow[2]+(wepStrMult[2]*atkDPS/s2)
     
     //Weapon and Armour

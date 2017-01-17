@@ -14,7 +14,7 @@ instance_create(0,0,obj_control)
 //Create Characters TEMP
 i = 0
 
-repeat(array_length_1d(attacker.party))
+repeat(ds_list_size(attacker.party))
 {
     ii = instance_create((room_width/2)+(i*20)-(i*20),10+(i*10)+(i*10),obj_character)
     ii.isoX = i
@@ -25,9 +25,11 @@ repeat(array_length_1d(attacker.party))
     ii.y = obj_control.map[i,0].y
     obj_control.map[i,0].occupant = ii
     
+    ii.important = true
     ii.team = 1
+    ii.controlScript = controlPlayer
     ii.player = true
-    ii.owner = attacker.party[i]
+    ii.owner = ds_list_find_value(attacker.party,i)
     with(ii)
     {
         importCharacter(owner)
@@ -38,7 +40,7 @@ repeat(array_length_1d(attacker.party))
 
 i = 0
 
-repeat(array_length_1d(defender.party))
+repeat(ds_list_size(defender.party))
 {
     ii = instance_create((room_width/2)+(i*20)-(i*20),10+(i*10)+(i*10),obj_character)
     ii.isoX = i
@@ -50,7 +52,8 @@ repeat(array_length_1d(defender.party))
     obj_control.map[i,obj_control.mapWidth-1].occupant = ii
     
     ii.team = 2
-    ii.owner = defender.party[i]
+    ii.important = true
+    ii.owner = ds_list_find_value(defender.party,i)
     with(ii)
     {
         importCharacter(owner)

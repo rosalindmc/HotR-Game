@@ -30,10 +30,10 @@
 global.charTab = 0
 
 i = 0
-repeat(array_length_1d(global.activeActor.party))
+repeat(ds_list_size(global.activeActor.party))
 {
     iii = instance_create(210,200,obj_model)
-    iii.owner = global.activeActor.party[i]
+    iii.owner = ds_list_find_value(global.activeActor.party,i)
     iii.tab = i
     
     with(iii)
@@ -43,13 +43,13 @@ repeat(array_length_1d(global.activeActor.party))
     
     ii = instance_create(88,66+(i*40),obj_charTab)
     ii.model = iii
-    ii.owner = global.activeActor.party[i]
+    ii.owner = ds_list_find_value(global.activeActor.party,i)
     ii.tab = i
     i += 1
 }
 
 //Currently Selected Character
-global.charSelect = global.activeActor.party[global.charTab]
+global.charSelect = ds_list_find_value(global.activeActor.party,global.charTab)
 
 
 global.subTab = 0

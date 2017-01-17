@@ -26,11 +26,15 @@
           <argument>
             <kind>1</kind>
             <string>//Visuals
-image_index = choose(0,0,0,1,2,3)
+image_index = 0
 depth = -image_index
 image_speed = 0
 
 vis = true
+adjacent = ds_list_create()
+
+//Tags
+
 </string>
           </argument>
         </arguments>
@@ -79,17 +83,22 @@ vis = true
             <string>//Temporary Movement and Battle
 if global.inMenu = false
 {
-    with(obj_party)
+    if image_index = 0
     {
-        if node = other.id and id != global.activeActor
+        with(obj_party)
         {
-            battleSetup(global.activeActor,id)
+            if node = other.id and id != global.activeActor
+            {
+                battleSetup(global.activeActor,id)
+            }
         }
+        
+        global.activeActor.x = x
+        global.activeActor.y = y
+        global.activeActor.node = id
+        
+        nextTurn()
     }
-    
-    global.activeActor.x = x
-    global.activeActor.y = y
-    global.activeActor.node = id
 }
 </string>
           </argument>

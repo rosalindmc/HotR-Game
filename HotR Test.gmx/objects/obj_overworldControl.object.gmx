@@ -41,57 +41,14 @@ i.image_index = 0
 //i.image_index = 2
 
 //World Control
-scr_worldControlInitialize()
+worldControlInitialize()
 
-//Create the Nodes
-mapWidth = room_width/100
-mapHeight = room_height/100
 hover = noone
-
 worldGen()
 
-alarm[1] = 100
+nextTurn()
 
-global.activeActor = noone
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//Temp Populate
-with(obj_worldTile)
-{
-    if random(100) &lt; 5 &amp;&amp; sprite_index != spr_deeps &amp;&amp; sprite_index != spr_water &amp;&amp; overlay != spr_mountain
-    {
-        ii = instance_create(x,y,obj_travelNode)
-        ii.tile = id
-        
-        if random(100) &lt; 20
-        {
-            i = instance_create(x,y,obj_party)
-            i.node = ii
-            i.depth = ii.depth-1
-        }
-    }
-}
+global.shader = shd_day
 </string>
           </argument>
         </arguments>
@@ -142,7 +99,7 @@ if obj_camera.x != obj_camera.xprevious or obj_camera.y != obj_camera.yprevious
           <argument>
             <kind>1</kind>
             <string>//Temp Hover
-hover = instance_nearest(mouse_x,mouse_y,obj_worldTile)
+hover = instance_nearest(mouse_x,mouse_y,obj_travelNode)
 
 if keyboard_check_pressed(global.centerKey)
 {
@@ -184,13 +141,21 @@ if keyboard_check_pressed(vk_escape)
 {
     with(hover)
     {
-        draw_text(x,y+20,string(mapX)+', '+string(mapY))
+        //draw_text(x,y+20,string(mapX)+', '+string(mapY))
         //draw_text(x,y+100,string(hX)+' hX') 
         //draw_text(x,y+120,string(hY)+' hY') 
-        draw_text(x,y+40,string_format(height-10,2,0)+' Metres above Sealevel') 
-        draw_text(x,y+60,string_format(humidity,2,0)+' Metres Rainfall')
-        draw_text(x,y+80,string_format(temprature,2,0)+' Celsius')
+        //draw_text(x,y+40,string_format(height-10,2,0)+' Metres above Sealevel') 
+        //draw_text(x,y+60,string_format(humidity,2,0)+' Metres Rainfall')
+        //draw_text(x,y+80,string_format(temprature,2,0)+' Celsius')
     }
+    //draw_text(view_xview,view_yview+view_hview-120,'Year: '+string(global.year))    
+    //draw_text(view_xview,view_yview+view_hview-100,'Current Actor: '+string(global.activeActorNum))    
+    //draw_text(view_xview,view_yview+view_hview-80,'Actors: '+string(global.actorCount))
+    
+    //draw_text(view_xview,view_yview+view_hview-60,'Year: '+string(global.year))    
+    //draw_text(view_xview,view_yview+view_hview-40,'Month: '+string(global.month))    
+    //draw_text(view_xview,view_yview+view_hview-20,'Week: '+string(global.week))
+    //draw_text(view_xview,view_yview+view_hview-20,'Objects: '+string(instance_count))
 }
 </string>
           </argument>

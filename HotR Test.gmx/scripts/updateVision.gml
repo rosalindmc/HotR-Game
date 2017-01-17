@@ -3,7 +3,7 @@ with(obj_tile)
 {
     if vis = true
     {
-    vis = 2
+        vis = 2
     }
 }
 

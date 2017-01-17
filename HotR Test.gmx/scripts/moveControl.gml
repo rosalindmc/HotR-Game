@@ -8,8 +8,7 @@ switch(argument0)
 {
     //Run 0 when a player selects the move/attack command 
     case 0:
-    action = moveControl
-    
+    global.moveTile = ds_list_create()
     movementRange(i.isoTile, i.movement, i.movementBonus)
     
     //Check Line of Sight to all enemies
