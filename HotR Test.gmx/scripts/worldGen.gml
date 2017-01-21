@@ -250,7 +250,7 @@ repeat(floor(mapWidth/4))
             }
             
             //Temp Create Parties
-            if random(100) < 3 and instance_exists(ii)
+            if random(100) < 10 and instance_exists(ii)
             {
                 iii = instance_create(ii.x,ii.y,obj_party)
                 iii.node = ii

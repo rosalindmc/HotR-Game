@@ -84,22 +84,20 @@ with(obj_character)
                 //Adjust for Size
                 if abs(isoX-i.isoX) <= 1
                 {
-                if abs(isoY-i.isoY) <= 1
-                {
-                if collision_point(i.x,i.y,id,true,false)
-                {
-                    i.collision = id
-                    i.move = -100
-                    exit
-                }
-                }
+                    if abs(isoY-i.isoY) <= 1
+                    {
+                        if collision_point(i.x,i.y,id,true,false)
+                        {
+                            i.collision = id
+                            i.move = -100
+                            exit
+                        }
+                    }
                 }
             }
         }
     }
 }
-
-
 
 with(ii)
 {
@@ -109,14 +107,14 @@ with(ii)
         {
             if abs(isoX-i.isoX) <= 1
             {
-            if abs(isoY-i.isoY) <= 1
-            {
-            if collision_point(i.x,i.y,id,true,false)
-            {
-                i.move = -100
-                exit
-            }
-            }
+                if abs(isoY-i.isoY) <= 1
+                {
+                    if collision_point(i.x,i.y,id,true,false)
+                    {
+                        i.move = -100
+                        exit
+                    }
+                }
             }
         }
     }
@@ -124,48 +122,48 @@ with(ii)
 
 if i.isoZ < obj_control.mapDepth
 {
-with(obj_control.map[i.isoX+(obj_control.mapWidth*i.isoZ),i.isoY])
-{
-    if ground = true
+    with(obj_control.map[i.isoX+(obj_control.mapWidth*i.isoZ),i.isoY])
     {
-    if isoZ != 0
-    {
-        if h >= min(i.z,i.zprevious)
+        if ground = true
         {
-            if h <= max(i.z,i.zprevious)
+            if isoZ != 0
             {
-                if collision_point(i.x,i.y,id,true,false)
+                if h >= min(i.z,i.zprevious)
                 {
-                    i.move = -100
-                    exit
+                    if h <= max(i.z,i.zprevious)
+                    {
+                        if collision_point(i.x,i.y,id,true,false)
+                        {
+                            i.move = -100
+                            exit
+                        }
+                    }
                 }
             }
         }
     }
-    }
-}
-
-if i.isoZ < obj_control.mapDepth-1
-{
-with(obj_control.map[i.isoX+(obj_control.mapWidth*(i.isoZ+1)),i.isoY])
-{
-    if ground = true
+    
+    if i.isoZ < obj_control.mapDepth-1
     {
-    if isoZ != 0
-    {
-        if h >= min(i.z,i.zprevious)
+        with(obj_control.map[i.isoX+(obj_control.mapWidth*(i.isoZ+1)),i.isoY])
         {
-            if h <= max(i.z,i.zprevious)
+            if ground = true
             {
-                if collision_point(i.x,i.y,id,true,false)
+                if isoZ != 0
                 {
-                    i.move = -100
-                    exit
+                    if h >= min(i.z,i.zprevious)
+                    {
+                        if h <= max(i.z,i.zprevious)
+                        {
+                            if collision_point(i.x,i.y,id,true,false)
+                            {
+                                i.move = -100
+                                exit
+                            }
+                        }
+                    }
                 }
             }
         }
     }
-    }
-}
-}
 }

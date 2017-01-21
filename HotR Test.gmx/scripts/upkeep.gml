@@ -5,8 +5,10 @@
 //Regenerate life (Life regen measured in life per 5 seconds)
 if obj_control.mapTimeOn = true
 {
+//Life and Stamina Regeneration
 regenTime += lifeRegen/(global.fspd*5)
 stm = min(stm+(stmRegen/(global.fspd*60)),stmMax)
+
     if regenTime >= 1
     {
         if life < lifeMax
@@ -15,10 +17,20 @@ stm = min(stm+(stmRegen/(global.fspd*60)),stmMax)
         }
         regenTime -= 1
     }
+
+//Block Generation
+blocks = min(blocks+(blockGen/(global.fspd)),blockMax)
+
+//Boldness
+if suppression = 0
+{
+    bold = min(bold+(.2/(global.fspd)),1)
+}
+else
+{
+    bold = 0
+}
 }
 
 //Visualize life changes for healthbar
 lifeVis += (life-lifeVis)/(global.fspd/5)
-
-
-

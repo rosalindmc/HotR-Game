@@ -6,9 +6,16 @@ o = argument0
 iCVis()
 iCStats()
 iCWear()
-iCEquip(1)
 iCSubStats()
+iCEquip(1)
 
+life = lifeMax
+stm = stmMax
+
+if hasShield = true
+{
+    blocks = blockMax
+}
 
 #define iCVis
 //Import Character visuals
@@ -103,6 +110,7 @@ i += 1
 
 greatWeapon = false
 dualWield = false
+hasShield = false
 rangeAttack = false
 dodge = 25
 armMax = 0
@@ -133,7 +141,15 @@ if o.invSlot[2,0] != emptySlot
     script_execute(o.invSlot[2,2],2)
     script_execute(o.invSlot[2,3],2)
     script_execute(o.invSlot[2,4],2)
-    dualWield = true
+    
+    if wepAnimType[2] = typeShield
+    {
+        hasShield = true
+    }
+    else
+    {
+        dualWield = true
+    }
 }
 break
 
@@ -165,9 +181,9 @@ movementBonus = 3+((grace-8)*.3)            //running bonus
 haste = 1+((grace-8)*.03) 
 
 //Skill
-mSkill = 1+((grace-8)*.1)+((cunning-8)*.2)+o.classSkill
-rSkill = 1+((grace-8)*.1)+((cunning-8)*.2)+o.classSkill
-cSkill = 1+((grace-8)*.1)+((cunning-8)*.2)+o.classSkill
+mSkill = max(((grace-8)*.1)+((cunning-8)*.2)+o.mSkill,0)
+rSkill = max(((grace-8)*.1)+((cunning-8)*.2)+o.rSkill,0)
+cSkill = max(((grace-8)*.1)+((cunning-8)*.2)+o.cSkill,0)
 
 //Offense
 lethality = 0
@@ -178,15 +194,21 @@ atkHaste = 1+((grace-8)*.03)
 fResist = 25+(grace-8)+(might-8)
 pResist = 25+(will-8)+(might-8)
 mResist = 25+(cunning-8)+(will-8)
+sResist = 1
+
+//Blocking
+blockMax = 1
+blockGen = 0
+blockStr = might
 
 //Vitals
-lifeMax = 10+(will-8)+o.classLife
-life = lifeMax
+lifeMax = floor(8+(will-8)+((might-8)/2)+o.classLife)
 lifeRegen = 2+((will-8)*.2)
 
-stmMax = 10+(will-8)+(grace-8)
-stm = stmMax
+stmMax = floor(8+(will-8)+((grace-8)/2)+o.classStamina)
 stmRegen = 5+(stmMax*.1)
+
+
 
 #define clearArmour
 bodyItems = 0

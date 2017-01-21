@@ -74,7 +74,7 @@ vis = false
 scrollVis = false
 sX = 1
 
-
+boldGlow()
 
 #define initializeCharStats
 //Initialize game stats for actors
@@ -123,6 +123,13 @@ enc = 0
 fResist = 25+(grace-8)+(might-8)
 pResist = 25+(will-8)+(might-8)
 mResist = 25+(cunning-8)+(will-8)
+sResist = 1
+
+//Blocking
+blocks = 0
+blockMax = 1
+blockGen = 0
+blockStr = might
 
 //Vitals
 lifeMax = 10+(will-8)
@@ -132,6 +139,9 @@ lifeRegen = 2+((will-8)*.2)
 stmMax = 8+(will-8)+(grace-8)
 stm = stmMax
 stmRegen = 5+(stmMax*.1)
+
+suppression = 0
+bold = 0
 
 //Initialize of weapons for weapon users
 initializeWeapon(1)
@@ -155,3 +165,20 @@ wepRange[argument0] = 1
 
 //Weapon Sprites
 weaponSprite[argument0] = spr_none
+#define boldGlow
+ps1 = part_system_create()
+
+p1 = part_type_create()
+part_type_shape(p1,pt_shape_smoke)
+part_type_size(p1,0.05,0.15,0,0)
+part_type_scale(p1,1,1)
+part_type_color1(p1,c_teal)
+part_type_alpha2(p1,1,0)
+part_type_speed(p1,120/global.fspd,240/global.fspd,0,0)
+part_type_direction(p1,90,90,0,10)
+part_type_gravity(p1,0,270)
+part_type_orientation(p1,0,0,20,20,1)
+part_type_blend(p1,1)
+part_type_life(p1,global.fspd*.05,global.fspd*.15)
+
+em1 = part_emitter_create(ps1)

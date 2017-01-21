@@ -263,9 +263,9 @@ if mapTimeOn = true and global.nextChar != noone and global.timeDelay = 0
     {
         with(global.control)
         {
-            ii = instance_create(x,y-h-height,obj_descriptor)   
-            ii.text = 'READY'
-            ii.font = fnt_tiny
+            //ii = instance_create(x,y-h-height,obj_descriptor)   
+            //ii.text = 'READY'
+            //ii.font = fnt_tiny
             
             other.mapTimeOn = false
             controlled = true

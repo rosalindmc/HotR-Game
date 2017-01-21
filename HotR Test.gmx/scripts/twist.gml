@@ -1,5 +1,23 @@
 var i = 0
 
+if abs(angle_difference(facing,0)) < 85
+{
+    hFacing = 1    
+}
+else if abs(angle_difference(facing,180)) < 85
+{
+    hFacing = -1
+}
+if abs(angle_difference(facing,90)) < 85
+{
+    vFacing = 1
+}
+else if abs(angle_difference(facing,270)) < 85
+{
+    vFacing = 0
+}
+
+//Twist
 if vFacing = 1 and hFacing = 1
 {
 i = 1

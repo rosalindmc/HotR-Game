@@ -20,7 +20,7 @@ draw_text(ix,iy,string_format(dmg,2,1)+' '+string(dmgType))
 iy += 12
 draw_text(ix,iy,'RAT: '+string_format(rat,2,1))
 iy += 12
-draw_text(ix,iy,'PEN: '+string_format(pen,2,2))
+draw_text(ix,iy,'PEN: '+string_format(pen,2,0))
 iy += 12
 draw_text_ext(ix,iy,tooltip,12,66)
 
@@ -53,10 +53,6 @@ iy += 12
 draw_text(ix,iy,'PEN: ')
 iy += 12
 draw_text_ext(ix,iy,tooltip,12,66)
-iy += 12
-draw_text(ix,iy,'EQP: '+string(equipped))
-iy += 12
-draw_text(ix,iy,'INV: '+string(inInventory))
 
 draw_set_alpha(1)
 
@@ -79,17 +75,11 @@ iy = y-8
 
 draw_text(ix,iy,name)
 iy += 12
-draw_text(ix,iy,'POW: '+string_format(dmg,2,1))
+draw_text(ix,iy,'Block: '+string(blockStr))
 iy += 12
-draw_text(ix,iy,'RAT: '+string_format(rat,2,1))
-iy += 12
-draw_text(ix,iy,'PEN: ')
+draw_text(ix,iy,'Speed: '+string_format(1/blockGen,2,1))
 iy += 12
 draw_text_ext(ix,iy,tooltip,12,66)
-iy += 12
-draw_text(ix,iy,'EQP: '+string(equipped))
-iy += 12
-draw_text(ix,iy,'INV: '+string(inInventory))
 
 draw_set_alpha(1)
 
@@ -150,9 +140,6 @@ iy += 12
 draw_text(ix,iy,'PEN: ')
 iy += 12
 draw_text_ext(ix,iy,tooltip,12,66)
-iy += 12
-draw_text(ix,iy,'EQP: '+string(equipped))
-iy += 12
-draw_text(ix,iy,'INV: '+string(inInventory))
+
 
 draw_set_alpha(1)

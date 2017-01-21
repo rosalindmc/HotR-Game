@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>occupant = -4
+            <string>occupant = emptySlot
 equipSlot = false
 </string>
           </argument>

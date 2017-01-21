@@ -14,6 +14,16 @@ var barh = 1
 var ax = tx-barw+4
 var ay = ty-barh+5
 
+//Block Positions
+var bx = tx-barw+4
+
+//Draw Blocks
+repeat(floor(blocks))
+{
+    draw_sprite(spr_blockIcon,0,bx,ty-barh-5)
+    bx += 10
+}
+
 //Draw Healthbar
 draw_set_colour(c_black)
 draw_rectangle(tx-barw-1,ty-barh-1,tx+barw+1,ty+barh+2,false)
@@ -75,4 +85,12 @@ if armMax > 0
     {
         draw_sprite(spr_armIcon,4+arm-i,ax,ay)
     }
+}
+
+//Bold Glow
+if bold = 1
+{
+    part_system_depth(ps1,depth+1)
+    part_emitter_region(ps1,em1,tx-barw,tx+barw,ty,ty,ps_shape_rectangle,1)
+    part_emitter_burst(ps1,em1,p1,5)
 }

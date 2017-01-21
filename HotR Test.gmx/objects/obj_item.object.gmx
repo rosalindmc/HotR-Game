@@ -89,27 +89,30 @@ if mouse_check_button_released(mb_left)
         tt = 0
         
         slot = instance_nearest(mouse_x,mouse_y,obj_inventorySlot)
+        
         if distance_to_object(slot) &lt; 25
         {
-        if slot.equipSlot = false
-        {
-        if slot.occupant = -4
-        {
-            lockSlot.occupant = -4
-            lockx = slot.x-view_xview[]
-            locky = slot.y-view_yview[]
-            slot.occupant = id
-            inInventory = true
-            global.charSelect.invSlot[equipped,0] = emptySlot
-            equipped = 0
-            
-            resetModels()
-        }
-        }
-        else
-        {
-            dragEquip(slot,global.charTab)
-        }
+            if slot.equipSlot = false
+            {
+                if slot.occupant = emptySlot
+                {    
+                    lockSlot.occupant = emptySlot
+                    lockx = slot.x-view_xview[]
+                    locky = slot.y-view_yview[]
+                    slot.occupant = id
+                    inInventory = true
+                    global.charSelect.invSlot[equipped,0] = emptySlot
+                    equipped = 0
+                    
+                    weaponSlotFill()
+                    
+                    resetModels()
+                }
+            }
+            else
+            {
+                dragEquip(slot,global.charTab)
+            }
         }
     }
 }

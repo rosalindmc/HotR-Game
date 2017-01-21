@@ -150,7 +150,7 @@ with(obj_character)
         {
             with(ds_list_find_value(isoTile.adjacent,i))
             {
-                if abs(angle_difference(other.facing, point_direction(other.x,other.y,x,y))) <= 90
+                if abs(angle_difference(other.facing, point_direction(other.x,0,x,(other.y-y)/2))) <= 100
                 {
                     zoneControl = true
                 }

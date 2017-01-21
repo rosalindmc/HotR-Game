@@ -228,12 +228,20 @@ if global.charTab = tab
     draw_text(x-80,y+56,"Will")
     draw_text(x-80,y+68,"Fellowship")
     
+    draw_text(x-80,y+92,"Life")
+    draw_text(x-80,y+104,"Stamina")    
+    draw_text(x-80,y+116,"Skill")
+    
     draw_set_halign(fa_center)
     draw_text(x-20,y+20,might)
     draw_text(x-20,y+32,grace)
     draw_text(x-20,y+44,cunning)   
     draw_text(x-20,y+56,will)
     draw_text(x-20,y+68,fellowship)
+    
+    draw_text(x-20,y+92,lifeMax)
+    draw_text(x-20,y+104,stmMax)    
+    draw_text(x-20,y+116,string_format(mSkill,2,1)+" / "+string_format(rSkill,2,1)+" / "+string_format(cSkill,2,1))
 
     s1 = (3-(dualWield*.5))/((wepSpeed[1]))
     p1 = wepPow[1]+(wepStrMult[1]*atkDPS/s1)
@@ -248,9 +256,14 @@ if global.charTab = tab
     
     if dualWield = true
     {
-    draw_text(x+20,y+68,"POW")
-    draw_text(x+20,y+80,"PEN")
-    draw_text(x+20,y+92,"RAT")
+        draw_text(x+20,y+68,"POW")
+        draw_text(x+20,y+80,"PEN")
+        draw_text(x+20,y+92,"RAT")
+    }
+    else if hasShield = true
+    {
+        draw_text(x+20,y+68,"BLOCK")
+        draw_text(x+20,y+80,"SPEED")    
     }
     
     draw_set_halign(fa_center)
@@ -263,6 +276,11 @@ if global.charTab = tab
     draw_text(x+80,y+68,string(floor(p2*(1-wepPowRng[2])))+' - '+string(ceil(p2*(1+wepPowRng[2]))))
     draw_text(x+80,y+80,string_format(wepPen[2],2,2))
     draw_text(x+80,y+92,string_format(s2/haste,2,2))    
+    }
+    else if hasShield = true
+    {
+        draw_text(x+80,y+68,string_format(blockStr,2,1))
+        draw_text(x+80,y+80,string_format(1/blockGen,2,1)+' s')   
     }
 }
 </string>

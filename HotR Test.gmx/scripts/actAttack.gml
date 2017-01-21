@@ -60,6 +60,6 @@ if global.ii = true
 }
 else
 {
+    atkHand = 1
     script_execute(controlScript)
 }
-

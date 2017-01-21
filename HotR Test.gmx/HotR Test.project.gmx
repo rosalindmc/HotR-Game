@@ -159,6 +159,11 @@
         <sprite>sprites\spr_vest</sprite>
         <sprite>sprites\spr_coat</sprite>
       </sprites>
+      <sprites name="Shields">
+        <sprite>sprites\spr_heaterShield</sprite>
+        <sprite>sprites\spr_squareShield</sprite>
+        <sprite>sprites\spr_roundShield</sprite>
+      </sprites>
     </sprites>
     <sprites name="Masks">
       <sprite>sprites\spr_mask</sprite>
@@ -197,6 +202,7 @@
     </sprites>
     <sprites name="UI">
       <sprite>sprites\spr_armIcon</sprite>
+      <sprite>sprites\spr_blockIcon</sprite>
       <sprite>sprites\spr_bigArmIcon</sprite>
       <sprite>sprites\spr_vitIcon</sprite>
       <sprite>sprites\spr_stmIcon</sprite>
@@ -419,6 +425,7 @@
       </scripts>
       <scripts name="Items">
         <script>scripts\itemScript.gml</script>
+        <script>scripts\shields.gml</script>
         <script>scripts\axes.gml</script>
         <script>scripts\swords.gml</script>
         <script>scripts\bludgeons.gml</script>

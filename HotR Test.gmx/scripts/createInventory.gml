@@ -73,27 +73,32 @@ repeat(inventorySize)
 i = 1
 repeat(8)
 {
-    if i <= 4
+    if global.charSelect.invSlot[i,0] != emptySlot
     {
-        ii = instance_create(150,103+(i*22),obj_item)
-    }
-    else
-    {
-        ii = instance_create(270,15+(i*22),obj_item)
-    }
-    
-    ii.itemType = global.charSelect.invSlot[i,0]
-    ii.itemQuality = global.charSelect.invSlot[i,1]
-    ii.itemTrait[1] = global.charSelect.invSlot[i,2]
-    ii.itemTrait[2] = global.charSelect.invSlot[i,3]
-    ii.itemTrait[3] = global.charSelect.invSlot[i,4]
-    ii.inInventory = false
-    ii.equipped = i
-    global.equipSlot[i].occupant = ii
-    
-    with(ii)
-    {
-        script_execute(itemType,0)
+        if i <= 4
+        {
+            ii = instance_create(150,103+(i*22),obj_item)
+        }
+        else
+        {
+            ii = instance_create(270,15+(i*22),obj_item)
+        }
+        
+        ii.itemType = global.charSelect.invSlot[i,0]
+        ii.itemQuality = global.charSelect.invSlot[i,1]
+        ii.itemTrait[1] = global.charSelect.invSlot[i,2]
+        ii.itemTrait[2] = global.charSelect.invSlot[i,3]
+        ii.itemTrait[3] = global.charSelect.invSlot[i,4]
+        ii.inInventory = false
+        ii.equipped = i
+        
+        
+        global.equipSlot[i].occupant = ii
+        
+        with(ii)
+        {
+            script_execute(itemType,0)
+        }
     }
     i += 1
 }
