@@ -58,6 +58,16 @@ case 1:
 moveStep = 1
 moveDur = (global.fspd*(point_distance(pathArray[moveStep].x,pathArray[moveStep].y,x,y)))/(movement*metre*1.5)
 
+//Facing
+moveX = pathArray[moveStep].x
+moveY = pathArray[moveStep].y
+moveZ = pathArray[moveStep].h
+
+if pathLength > 3
+{cFacing =  round(point_direction(pathArray[pathLength-3].x,pathArray[pathLength-3].y,pathArray[pathLength-2].x,pathArray[pathLength-2].y)/45)*45}
+else
+{cFacing =  round(point_direction(x,y,pathArray[pathLength-2].x,pathArray[pathLength-2].y)/45)*45}
+  
 //Temp establish animation
 startAnimation(0,animHumanoidWalk)
 

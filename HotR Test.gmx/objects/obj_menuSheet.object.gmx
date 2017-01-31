@@ -121,7 +121,13 @@ draw_set_alpha(1)
 
 draw_self()
 
-
+if global.menuSheet = 0
+{
+    draw_set_font(fnt_tinyText)
+    draw_set_halign(fa_left)
+    draw_set_valign(fa_middle)
+    draw_text(x+110,y+140,'$ '+string_format(global.activeActor.money,2,2))
+}
 </string>
           </argument>
         </arguments>

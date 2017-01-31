@@ -20,6 +20,8 @@ repeat(ds_list_size(attacker.party))
     ii.isoX = i
     ii.isoY = 0
     ii.isoZ = 0
+    ii.cFacing = 180
+    ii.facing = 180
     ii.isoTile = obj_control.map[i,0]
     ii.x = obj_control.map[i,0].x
     ii.y = obj_control.map[i,0].y

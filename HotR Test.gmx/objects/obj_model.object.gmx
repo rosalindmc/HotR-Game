@@ -214,6 +214,7 @@ if global.charTab = tab
     x = xstart+view_xview[]
     y = ystart+view_yview[]
     script_execute(animType,1)
+    draw_set_valign(fa_middle)
     draw_set_halign(fa_center)
     draw_set_font(fnt_main)
     draw_text(x,y-120,string(global.charSelect.firstName)+' '+string(global.charSelect.lastName))

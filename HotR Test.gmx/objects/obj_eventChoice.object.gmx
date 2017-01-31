@@ -3,9 +3,9 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-9</depth>
+  <depth>-1001</depth>
   <persistent>0</persistent>
-  <parentName>obj_overworldVital</parentName>
+  <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -25,37 +25,18 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Create Mouse
-instance_create(x,y,obj_camera)
-
-//Create HUD Buttons
-global.inMenu = false
-global.subTab = -4
-global.menuSheet = -4
-global.eventActive = false
-
-i = instance_create(40,-10,obj_topButton)
-i.image_index = 0
-//i = instance_create(80,-10,obj_topButton)
-//i.image_index = 1
-//i = instance_create(120,-10,obj_topButton)
-//i.image_index = 2
-
-//World Control
-worldControlInitialize()
-
-hover = noone
-worldGen()
-
-nextTurn()
-
-global.shader = shd_day
+            <string>text = ''
+num = 1
+result = 0
+selected = false
+canClick = false
+alarm[0] = 5
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="3" enumb="2">
+    <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -72,11 +53,7 @@ global.shader = shd_day
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Update Visible Tiles
-if obj_camera.x != obj_camera.xprevious or obj_camera.y != obj_camera.yprevious
-{
-    worldScrollVis()
-}
+            <string>canClick = true
 </string>
           </argument>
         </arguments>
@@ -99,37 +76,20 @@ if obj_camera.x != obj_camera.xprevious or obj_camera.y != obj_camera.yprevious
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Temp Hover
-if global.eventActive = false
+            <string>if point_in_rectangle(mouse_x,mouse_y,x,y,x+540,y+16)
 {
-    hover = instance_nearest(mouse_x,mouse_y,obj_travelNode)
-
-
-    if keyboard_check_pressed(global.centerKey)
+    selected = true
+    if mouse_check_button_pressed(mb_left) and canClick = true
     {
-        obj_camera.x = global.activeActor.x
-        obj_camera.y = global.activeActor.y
-        view_xview = median(obj_camera.x-(view_wview/2),0,room_width-view_wview)
-        view_yview = median(obj_camera.y-(view_hview/2),0,room_height-view_hview)
-        worldScrollVis()
+        with(owner)
+        {
+            skipTo(other.result)
+        }
     }
-    
-    //Temporary
-    if keyboard_check_pressed(ord('B'))
-    {
-        ii = instance_create(0,260,obj_event)
-        eventStart(ii,event1)
-    }
-    
-    if keyboard_check_pressed(vk_escape)
-    {
-        scr_inGameMenu()
-    }
-
 }
 else
 {
-    hover = noone
+    selected = false
 }
 </string>
           </argument>
@@ -153,26 +113,22 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/*
-if instance_exists(hover)
+            <string>x = xstart+view_xview
+y = ystart+view_yview
+
+draw_set_halign(fa_left)
+draw_set_valign(fa_top)
+draw_set_font(fnt_textbox)
+
+
+if selected = false
 {
-    with(hover)
-    {
-        //draw_text(x,y+20,string(mapX)+', '+string(mapY))
-        //draw_text(x,y+100,string(hX)+' hX') 
-        //draw_text(x,y+120,string(hY)+' hY') 
-        //draw_text(x,y+40,string_format(height-10,2,0)+' Metres above Sealevel') 
-        //draw_text(x,y+60,string_format(humidity,2,0)+' Metres Rainfall')
-        //draw_text(x,y+80,string_format(temprature,2,0)+' Celsius')
-    }
-    //draw_text(view_xview,view_yview+view_hview-120,'Year: '+string(global.year))    
-    //draw_text(view_xview,view_yview+view_hview-100,'Current Actor: '+string(global.activeActorNum))    
-    //draw_text(view_xview,view_yview+view_hview-80,'Actors: '+string(global.actorCount))
-    
-    //draw_text(view_xview,view_yview+view_hview-60,'Year: '+string(global.year))    
-    //draw_text(view_xview,view_yview+view_hview-40,'Month: '+string(global.month))    
-    //draw_text(view_xview,view_yview+view_hview-20,'Week: '+string(global.week))
-    //draw_text(view_xview,view_yview+view_hview-20,'Objects: '+string(instance_count))
+    draw_set_colour(c_black)
+    draw_text(x,y,string(num)+': '+string(text))
+}
+else
+{
+    drawText(c_black,c_white,x,y,string(num)+': '+string(text))
 }
 </string>
           </argument>

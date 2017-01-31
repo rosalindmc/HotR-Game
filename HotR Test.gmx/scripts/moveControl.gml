@@ -41,11 +41,11 @@ switch(argument0)
         if cHover.overlay = 2{i.stm -= cHover.g*.1}
         gridUpdate(i, cHover)
         
-        //End Turn
-        endTurn(3.0/i.haste)
-        
         //Start the Action
         with(i){actMove(1)}
+                
+        //End Turn
+        endTurn(3.0/i.haste)
         wipeTiles()
     }
     

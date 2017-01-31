@@ -7,6 +7,10 @@ node = noone
 active = false
 party = ds_list_create()
 
+//Party Variables
+money = 10.00
+
+
 ii = 0
 repeat(choose(40))
 {

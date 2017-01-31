@@ -33,6 +33,7 @@ isMoving = false
 //Facing
 hFacing = 1
 vFacing = 0
+cFacing = 0
 facing = 0
 
 //Lifebar

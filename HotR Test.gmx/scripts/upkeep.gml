@@ -3,7 +3,7 @@
 //Run in the step event of any actor
 
 //Regenerate life (Life regen measured in life per 5 seconds)
-if obj_control.mapTimeOn = true
+if obj_control.mapTimeOn = true and global.timeDelay = 0
 {
 //Life and Stamina Regeneration
 regenTime += lifeRegen/(global.fspd*5)
@@ -13,7 +13,7 @@ stm = min(stm+(stmRegen/(global.fspd*60)),stmMax)
     {
         if life < lifeMax
         {
-        life += 1
+            life += 1
         }
         regenTime -= 1
     }
@@ -24,7 +24,7 @@ blocks = min(blocks+(blockGen/(global.fspd)),blockMax)
 //Boldness
 if suppression = 0
 {
-    bold = min(bold+(.2/(global.fspd)),1)
+    bold = min(bold+(1/(global.fspd*5)),1)
 }
 else
 {

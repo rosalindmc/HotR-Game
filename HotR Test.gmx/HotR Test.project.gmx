@@ -216,6 +216,8 @@
       <sprite>sprites\spr_bannerIcons</sprite>
       <sprite>sprites\spr_smallBanner</sprite>
       <sprite>sprites\spr_backdrop</sprite>
+      <sprite>sprites\spr_textBox</sprite>
+      <sprite>sprites\spr_notification</sprite>
       <sprite>sprites\ico_invSlot</sprite>
       <sprite>sprites\spr_menuSheet</sprite>
     </sprites>
@@ -296,6 +298,7 @@
       </scripts>
       <scripts name="Control">
         <script>scripts\controlAI.gml</script>
+        <script>scripts\endTurn.gml</script>
         <script>scripts\controlPlayer.gml</script>
         <script>scripts\initiativeSlotReset.gml</script>
         <scripts name="Movement">
@@ -320,7 +323,6 @@
             <script>scripts\actAttack.gml</script>
           </scripts>
           <scripts name="Action Control">
-            <script>scripts\endTurn.gml</script>
             <script>scripts\moveControl.gml</script>
             <script>scripts\wait.gml</script>
             <script>scripts\weaponSwitch.gml</script>
@@ -396,6 +398,13 @@
         <script>scripts\worldGen.gml</script>
         <script>scripts\worldScrollVis.gml</script>
       </scripts>
+      <scripts name="Events">
+        <script>scripts\eventStart.gml</script>
+        <script>scripts\campEvents.gml</script>
+        <script>scripts\createNotification.gml</script>
+        <script>scripts\eventActions.gml</script>
+        <script>scripts\eventChecks.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Menu">
       <scripts name="Landing Menu">
@@ -459,6 +468,7 @@
       <font>fonts\fnt_smlMenu</font>
       <font>fonts\fnt_tinyText</font>
       <font>fonts\fnt_charSheet</font>
+      <font>fonts\fnt_textbox</font>
       <font>fonts\fnt_menu</font>
     </fonts>
     <font>fonts\fnt_dev</font>
@@ -509,6 +519,11 @@
         <object>objects\obj_worldCreator</object>
         <object>objects\obj_worldTile</object>
         <object>objects\obj_travelNode</object>
+      </objects>
+      <objects name="Events">
+        <object>objects\obj_event</object>
+        <object>objects\obj_eventChoice</object>
+        <object>objects\obj_notification</object>
       </objects>
     </objects>
     <objects name="Combat">

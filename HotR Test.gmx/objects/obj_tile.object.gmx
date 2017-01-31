@@ -47,6 +47,7 @@ rangedAttack = false
 meleeAttack = false
 pathParent = noone
 zoneControl = false
+threatened = false
 
 //Coordinates
 isoX = 0

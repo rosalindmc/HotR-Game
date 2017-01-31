@@ -100,7 +100,10 @@ actorDie(target)
 #define suppress
 //supress(Supressed Character, Supression Value)
 
-argument0.initSlot.delay += (argument1/argument0.sResist)-argument0.suppression
-argument0.suppression += (argument1/argument0.sResist)-argument0.suppression
+if argument1 > argument0.suppression
+{
+    argument0.initSlot.delay += (argument1/argument0.sResist)-argument0.suppression
+    argument0.suppression += (argument1/argument0.sResist)-argument0.suppression
+}
 
 initiativeSlotReset()
