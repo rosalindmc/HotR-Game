@@ -5,6 +5,7 @@
 argument0.event = argument1
 argument0.eventStep = 0
 global.eventActive = true
+global.eventActor = global.activeActor
 
 with(argument0)
 {

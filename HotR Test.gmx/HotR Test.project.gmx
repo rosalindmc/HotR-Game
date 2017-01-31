@@ -100,6 +100,7 @@
         <sprite>sprites\spr_iconAttack</sprite>
         <sprite>sprites\spr_iconSwitch</sprite>
       </sprites>
+      <sprite>sprites\ico_money</sprite>
     </sprites>
     <sprites name="Equipment">
       <sprites name="Clothing">

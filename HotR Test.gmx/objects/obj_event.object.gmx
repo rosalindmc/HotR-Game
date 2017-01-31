@@ -85,7 +85,7 @@ clickStep = false
             <string>x = xstart+view_xview
 y = ystart+view_yview
 
-draw_self()
+draw_sprite(spr_textBox,0,x,y)
 
 draw_set_halign(fa_left)
 draw_set_valign(fa_top)
