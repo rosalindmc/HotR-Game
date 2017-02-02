@@ -97,9 +97,6 @@ if argument1 = 0
 else
 {
     //When an AI runs this script, it should just skip to the end results
-<<<<<<< HEAD
-}
-=======
 }
 
 #define ambush
@@ -123,4 +120,3 @@ if argument1 = 0{
                 
     }
 }
->>>>>>> origin/master
