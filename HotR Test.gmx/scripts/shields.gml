@@ -5,11 +5,11 @@ iSpr = spr_heaterShield
 iDmg = 3.0
 iDmgRng = .3
 iType = 'Impact'
-iStrMult = .25
+iStrMult = .3
 iPen = 1
 iSpd = 1
-iBlockGen = .2
-iBlockStr = 5
+iBlockGen = .3
+iBlockStr = 8
 
 switch(argument0)
 {
@@ -48,6 +48,7 @@ blockGen += iBlockGen
 weaponSprite[i] = iSpr
 break
 }
+
 #define roundShield
 iSpr = spr_roundShield
 iDmg = 2.0
@@ -55,9 +56,9 @@ iDmgRng = .3
 iType = 'Impact'
 iStrMult = .25
 iPen = 1
-iSpd = 1
-iBlockGen = .3
-iBlockStr = 1
+iSpd = 1.1
+iBlockGen = .35
+iBlockStr = 4
 
 switch(argument0)
 {
@@ -98,23 +99,23 @@ break
 }
 
 #define squareShield
-iSpr = spr_heaterShield
-iDmg = 3.0
+iSpr = spr_squareShield
+iDmg = 4.0
 iDmgRng = .3
 iType = 'Impact'
-iStrMult = .25
+iStrMult = .35
 iPen = 1
-iSpd = 1
-iBlockGen = .15
-iBlockStr = 10
+iSpd = 0.5
+iBlockGen = .25
+iBlockStr = 12
 
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
-sprite_index = ico_heaterShield
-name = 'Heater Shield'
+sprite_index = ico_squareShield
+name = 'Square Shield'
 ttType = itemTypeShield
-tooltip = "A metal shield."
+tooltip = "A large shield."
 blockGen = iBlockGen
 blockStr = iBlockStr
 

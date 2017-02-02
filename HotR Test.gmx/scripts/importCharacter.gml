@@ -90,6 +90,11 @@ cunning = o.cunning
 will = o.will
 fellowship = o.fellowship
 
+//Leveling
+level = o.level
+experience = o.experience
+expToLevel = o.expToLevel
+
 #define iCWear
 //Run "On Character Scripts"
 i = 1
@@ -202,10 +207,10 @@ blockGen = 0
 blockStr = might
 
 //Vitals
-lifeMax = floor(8+(will-8)+((might-8)/2)+o.classLife)
+lifeMax = floor(8+(will-8)+((might-8)/2)+o.life)
 lifeRegen = 2+((will-8)*.2)
 
-stmMax = floor(8+(will-8)+((grace-8)/2)+o.classStamina)
+stmMax = floor(8+(will-8)+((grace-8)/2)+o.stamina)
 stmRegen = 5+(stmMax*.1)
 
 

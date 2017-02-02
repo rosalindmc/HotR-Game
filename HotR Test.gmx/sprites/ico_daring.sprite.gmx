@@ -20,6 +20,9 @@
   <width>20</width>
   <height>20</height>
   <frames>
-    <frame index="0">images\spr_iconMove_0.png</frame>
+    <frame index="0">images\ico_daring_0.png</frame>
+    <frame index="1">images\ico_daring_1.png</frame>
+    <frame index="2">images\ico_daring_2.png</frame>
+    <frame index="3">images\ico_daring_3.png</frame>
   </frames>
 </sprite>

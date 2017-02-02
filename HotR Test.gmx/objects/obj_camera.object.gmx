@@ -48,7 +48,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.inMenu != 2
+            <string>if global.inMenu != 2 and global.eventActive = false
 {
 
 //Keyboard scrolling

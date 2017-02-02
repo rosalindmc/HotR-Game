@@ -19,6 +19,40 @@ cunning = -4
 will = -4
 fellowship = -4
 
+//Experience
+level = 1
+levelPending = 0
+experience = 0
+expToLevel = 5
+
+//Vital Stats
+life = 0
+stamina = 0
+
+//Leveling
+lastAttribute = 0
+attributePoint = .5
+combatTalentPoint = 0
+travelTalentPoint = 0
+lifePoint = 0
+staminaPoint = 0
+classLife = .3
+classStamina = .3
+classMSkill = .3
+classRSkill = .3
+classCSkill = .3
+
+//Talents
+for(var i = 0; i < 8; i++)
+{
+    talent[i,0] = emptyTalent
+    talent[i,1] = emptyBranch
+    talent[i,2] = emptyBranch
+    talent[i,3] = emptyBranch
+    talent[i,4] = emptyBranch
+    talent[i,5] = 0
+}
+
 //Appearance
 gender = -4
 skinTone = -4
@@ -26,7 +60,6 @@ eyeColour = -4
 headSprite = -4
 hairStyle = -4
 hairColour = -4
-bodyType = -4       //Must create an index of body types
 
 //Equipped Items
 i = 1

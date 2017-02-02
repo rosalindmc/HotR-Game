@@ -26,3 +26,19 @@ createNotification(name,sprite_index,argument1)
 global.eventActor.money += argument0
 
 createNotification('Gained $'+string_format(argument0,2,2),ico_money,0)
+#define loseMoney
+//loseMoney(money)
+
+//Add Item to active parties inventory
+ii = min(argument0,global.eventActor.money)
+global.eventActor.money -= ii
+
+createNotification('Lost $'+string_format(ii,2,2),ico_money,1)
+
+#define gainExperience
+//gainExperience(exp)
+
+//Add Item to active parties inventory
+global.eventCharacter.experience += argument0
+createNotification(string(global.eventCharacter.firstName)+' +'+string_format(argument0,2,0)+'xp',ico_experience,0)
+checkLevelUp(global.eventCharacter)

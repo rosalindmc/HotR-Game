@@ -26,6 +26,9 @@ else
     global.inMenu = false
     obj_camera.x = global.camX
     obj_camera.y = global.camY
+    view_xview = max(obj_camera.x-(view_wview/2),0)
+    view_yview = max(obj_camera.y-(view_hview/2),0)
+    worldScrollVis()
     
     with(obj_menuItems)
     {

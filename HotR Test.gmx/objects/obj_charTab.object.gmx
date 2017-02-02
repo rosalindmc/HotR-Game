@@ -51,7 +51,7 @@ model = -4
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if point_in_rectangle(mouse_x,mouse_y,xstart+view_xview[]-12,y-12,x+12,y+12)
+            <string>if point_in_rectangle(mouse_x,mouse_y,xstart+view_xview[]-12,y-12,x+12,y+12) and global.eventActive = false
 {
     dropDown = min(dropDown+(50/global.fspd),10)   
     
@@ -61,6 +61,10 @@ model = -4
         {
             destroyInventory()
         }
+        if global.subTab = 1
+        {
+            destroyTalents()
+        }
         
         global.charTab = tab
         global.charSelect = ds_list_find_value(global.activeActor.party,tab)
@@ -68,6 +72,10 @@ model = -4
         if global.subTab = 0
         {
             createInventory()
+        }
+        if global.subTab = 1
+        {
+            createTalents()
         }
     }
 }
@@ -99,11 +107,13 @@ else
             <kind>1</kind>
             <string>x = xstart+view_xview[]+dropDown
 y = ystart+view_yview[]
+
 ix = x
 iy = y
 size = 2
 
 draw_set_colour(c_green)
+draw_set_alpha(1)
 draw_rectangle(ix-(size*6),iy-(size*6),ix+(size*6),iy+(size*6),false)
 
 if instance_exists(model)

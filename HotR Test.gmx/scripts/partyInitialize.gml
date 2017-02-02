@@ -10,7 +10,6 @@ party = ds_list_create()
 //Party Variables
 money = 10.00
 
-
 ii = 0
 repeat(choose(40))
 {
@@ -21,7 +20,7 @@ repeat(choose(40))
     choose(halberd,shortSpear,spear,pike),
     choose(maul,lightMace,mace,hammer,warhammer),
     choose(robe,chainmail),
-    choose(heaterShield),
+    choose(heaterShield,squareShield,roundShield),
     choose(shortbow,longBow))
     inventory[ii,1] = choose(0,0,0,1,1,1,1,1,1,1,1,1)
     inventory[ii,2] = 0

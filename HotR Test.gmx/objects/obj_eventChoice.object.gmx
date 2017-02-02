@@ -30,6 +30,7 @@ num = 1
 result = 0
 selected = false
 canClick = false
+colour = c_black
 alarm[0] = 5
 </string>
           </argument>
@@ -76,10 +77,10 @@ alarm[0] = 5
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if point_in_rectangle(mouse_x,mouse_y,x,y,x+540,y+16)
+            <string>if point_in_rectangle(mouse_x,mouse_y,x,y,x+540,y+14) and canClick = true
 {
     selected = true
-    if mouse_check_button_pressed(mb_left) and canClick = true
+    if mouse_check_button_pressed(mb_left)
     {
         with(owner)
         {
@@ -90,6 +91,14 @@ alarm[0] = 5
 else
 {
     selected = false
+}
+
+if keyboard_check_pressed(global.abilityKey[num]) = true and canClick = true
+{
+    with(owner)
+    {
+        skipTo(other.result)
+    }    
 }
 </string>
           </argument>
@@ -120,11 +129,10 @@ draw_set_halign(fa_left)
 draw_set_valign(fa_top)
 draw_set_font(fnt_textbox)
 
-
 if selected = false
 {
-    draw_set_colour(c_black)
-    draw_text(x,y,string(num)+': '+string(text))
+    draw_set_colour(colour)
+    draw_text(x,y,string(scr_keyCode(global.abilityKey[num]))+': '+string(text))
 }
 else
 {

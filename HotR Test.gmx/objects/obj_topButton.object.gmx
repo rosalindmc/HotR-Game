@@ -50,7 +50,7 @@ dropDown = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if collision_point(mouse_x,mouse_y,id,false,false)
+            <string>if collision_point(mouse_x,mouse_y,id,false,false) and global.eventActive = false and global.inMenu = false
 {
     dropDown = min(dropDown+(50/global.fspd),10)   
     

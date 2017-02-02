@@ -6,6 +6,7 @@ argument0.event = argument1
 argument0.eventStep = 0
 global.eventActive = true
 global.eventActor = global.activeActor
+global.eventCharacter = ds_list_find_value(global.activeActor.party,0)
 
 with(argument0)
 {
@@ -45,11 +46,20 @@ text = argument0
 clickStep = true
 
 #define choice
-ii = instance_create(xstart+105,ystart+5+(i*16),obj_eventChoice)
+//Choice(text,skipTo,false?)
+
+ii = instance_create(xstart+105,ystart+5+(i*18),obj_eventChoice)
 
 ii.text = argument0
 ii.result = argument1
 ii.owner = id
 ii.num = i+1
+
+if argument2 = false
+{
+    ii.colour = c_gray
+    ii.alarm[0] = -1
+}
+
 
 i += 1

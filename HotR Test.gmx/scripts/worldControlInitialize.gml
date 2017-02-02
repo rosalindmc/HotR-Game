@@ -10,6 +10,14 @@ global.week = 1
 global.month = 1
 global.year = 615
 
+//Colour
+global.itemColour[0] = make_colour_rgb(161,126,53)
+global.itemColour[1] = c_white
+global.itemColour[2] = make_colour_rgb(95,235,80)
+global.itemColour[3] = make_colour_rgb(164,235,245)
+global.itemColour[4] = make_colour_rgb(245,164,230)
+
+
 #define nextTurn
 global.activeActorNum += 1
 

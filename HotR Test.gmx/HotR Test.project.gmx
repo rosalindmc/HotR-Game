@@ -89,18 +89,30 @@
         </sprites>
         <sprites name="ShieldIcons">
           <sprite>sprites\ico_roundShield</sprite>
-          <sprite>sprites\ico_squardShield</sprite>
+          <sprite>sprites\ico_squareShield</sprite>
           <sprite>sprites\ico_heaterShield</sprite>
         </sprites>
       </sprites>
-      <sprites name="Ability Icons">
+      <sprites name="Talent Icons">
+        <sprite>sprites\ico_strength</sprite>
+        <sprite>sprites\ico_toughness</sprite>
+        <sprite>sprites\ico_martial</sprite>
+        <sprite>sprites\ico_mobility</sprite>
+        <sprite>sprites\ico_subterfuge</sprite>
+        <sprite>sprites\ico_insight</sprite>
+        <sprite>sprites\ico_frenzy</sprite>
+        <sprite>sprites\ico_discipline</sprite>
+        <sprite>sprites\ico_daring</sprite>
+        <sprite>sprites\ico_leadership</sprite>
+      </sprites>
+      <sprites name="Core Icons">
         <sprite>sprites\spr_iconBorder</sprite>
-        <sprite>sprites\spr_iconWait</sprite>
-        <sprite>sprites\spr_iconMove</sprite>
-        <sprite>sprites\spr_iconAttack</sprite>
-        <sprite>sprites\spr_iconSwitch</sprite>
+        <sprite>sprites\ico_move</sprite>
+        <sprite>sprites\ico_wait</sprite>
+        <sprite>sprites\ico_switch</sprite>
       </sprites>
       <sprite>sprites\ico_money</sprite>
+      <sprite>sprites\ico_experience</sprite>
     </sprites>
     <sprites name="Equipment">
       <sprites name="Clothing">
@@ -221,6 +233,7 @@
       <sprite>sprites\spr_notification</sprite>
       <sprite>sprites\ico_invSlot</sprite>
       <sprite>sprites\spr_menuSheet</sprite>
+      <sprite>sprites\spr_levelSheet</sprite>
     </sprites>
     <sprites name="Overworld">
       <sprites name="Outdated">
@@ -268,6 +281,13 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <scripts name="Events">
+      <script>scripts\eventStart.gml</script>
+      <script>scripts\campEvents.gml</script>
+      <script>scripts\createNotification.gml</script>
+      <script>scripts\eventActions.gml</script>
+      <script>scripts\eventChecks.gml</script>
+    </scripts>
     <scripts name="Combat">
       <scripts name="Actors">
         <script>scripts\updateVision.gml</script>
@@ -349,6 +369,7 @@
         <script>scripts\worldControlInitialize.gml</script>
         <script>scripts\addActor.gml</script>
         <script>scripts\removeActor.gml</script>
+        <script>scripts\checkLevelUp.gml</script>
         <scripts name="Party Scripts">
           <script>scripts\characterInitialize.gml</script>
           <script>scripts\partyInitialize.gml</script>
@@ -399,13 +420,6 @@
         <script>scripts\worldGen.gml</script>
         <script>scripts\worldScrollVis.gml</script>
       </scripts>
-      <scripts name="Events">
-        <script>scripts\eventStart.gml</script>
-        <script>scripts\campEvents.gml</script>
-        <script>scripts\createNotification.gml</script>
-        <script>scripts\eventActions.gml</script>
-        <script>scripts\eventChecks.gml</script>
-      </scripts>
     </scripts>
     <scripts name="Menu">
       <scripts name="Landing Menu">
@@ -447,6 +461,13 @@
         <script>scripts\mutators.gml</script>
       </scripts>
     </scripts>
+    <scripts name="Talents">
+      <script>scripts\talents.gml</script>
+      <script>scripts\createTalents.gml</script>
+      <scripts name="Level Up">
+        <script>scripts\levelControl.gml</script>
+      </scripts>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shaders name="Combat">
@@ -468,8 +489,10 @@
       <font>fonts\fnt_lrgMenu</font>
       <font>fonts\fnt_smlMenu</font>
       <font>fonts\fnt_tinyText</font>
+      <font>fonts\fnt_smallText</font>
       <font>fonts\fnt_charSheet</font>
       <font>fonts\fnt_textbox</font>
+      <font>fonts\fnt_tooltip</font>
       <font>fonts\fnt_menu</font>
     </fonts>
     <font>fonts\fnt_dev</font>
@@ -505,8 +528,11 @@
         <object>objects\obj_shimmerSpark</object>
       </objects>
       <objects name="HUD">
+        <object>objects\obj_levelUpButton</object>
         <object>objects\obj_item</object>
         <object>objects\obj_invHud</object>
+        <object>objects\obj_talHud</object>
+        <object>objects\obj_talentSlot</object>
         <object>objects\obj_inventorySlot</object>
         <object>objects\obj_backDrop</object>
         <object>objects\obj_hudParent</object>
@@ -515,6 +541,7 @@
         <object>objects\obj_model</object>
         <object>objects\obj_menuSheet</object>
         <object>objects\obj_menuSubTab</object>
+        <object>objects\obj_levelUpScreen</object>
       </objects>
       <objects name="Tiles">
         <object>objects\obj_worldCreator</object>

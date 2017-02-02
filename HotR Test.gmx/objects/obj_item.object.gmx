@@ -56,7 +56,7 @@ itemScript(0)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if point_in_rectangle(mouse_x,mouse_y,x-10,y-10,x+10,y+10)
+            <string>if point_in_rectangle(mouse_x,mouse_y,x-10,y-10,x+10,y+10) and global.eventActive = false
 {
     depth = -201
 

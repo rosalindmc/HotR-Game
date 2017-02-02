@@ -21,5 +21,6 @@
   <height>20</height>
   <frames>
     <frame index="0">images\ico_money_0.png</frame>
+    <frame index="1">images\ico_money_1.png</frame>
   </frames>
 </sprite>

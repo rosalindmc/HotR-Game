@@ -38,6 +38,9 @@ with(obj_character)
 
 
 #define updateScrollVis
+view_xview = max(obj_camera.x-(view_wview/2),0)
+view_yview = max(obj_camera.y-(view_hview/2),0)
+
 with(obj_terrain)
 {
     scrollVis = false

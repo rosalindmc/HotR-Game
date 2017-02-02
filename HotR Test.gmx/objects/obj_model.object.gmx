@@ -217,11 +217,22 @@ if global.charTab = tab
     draw_set_valign(fa_middle)
     draw_set_halign(fa_center)
     draw_set_font(fnt_main)
-    draw_text(x,y-120,string(global.charSelect.firstName)+' '+string(global.charSelect.lastName))
+    draw_text(x,y-150,string(global.charSelect.firstName)+' '+string(global.charSelect.lastName))
     draw_set_font(fnt_small)
-    draw_text(x,y-100,'Level 1 '+string(race)+' '+string(class))
-
+    draw_text(x,y-130,'Level '+string(global.charSelect.level)+' '+string(global.charSelect.race)+' '+string(global.charSelect.class))
     draw_set_font(fnt_tinyText)
+    
+    draw_set_colour(make_colour_rgb(128,0,25))
+    draw_rectangle(x-50,y-120,x-50+(100*(global.charSelect.experience/global.charSelect.expToLevel)),y-115,false)
+
+    draw_set_colour(c_black)
+    draw_rectangle(x-50,y-120,x+50,y-115,true)
+    
+    if global.charSelect.levelPending != 0{draw_text(x+55,y-117,'+')}
+    
+    draw_text(x,y-105,string(global.charSelect.experience)+' / '+string(global.charSelect.expToLevel))
+
+        
     draw_set_halign(fa_left)
     draw_text(x-80,y+20,"Might")
     draw_text(x-80,y+32,"Grace")
@@ -269,18 +280,61 @@ if global.charTab = tab
     
     draw_set_halign(fa_center)
     draw_text(x+80,y+20,string(floor(p1*(1-wepPowRng[1])))+' - '+string(ceil(p1*(1+wepPowRng[1]))))
-    draw_text(x+80,y+32,string_format(wepPen[1],2,2))
+    
+    i = 0
+    ax = x+78-(3*(floor(wepPen[1]/4)-1))
+    repeat(floor(wepPen[1]/4))
+    {
+        draw_sprite(spr_bigArmIcon,0,ax,y+33)
+        draw_sprite(spr_bigArmIcon,4,ax,y+33)
+        ax += 7
+        i += 4
+    }
+    if wepPen[1] &gt; i
+    {
+        draw_sprite(spr_bigArmIcon,wepPen[1]-i,ax,y+33)
+        draw_sprite(spr_bigArmIcon,4+wepPen[1]-i,ax,y+33)
+    }
+    
     draw_text(x+80,y+44,string_format(s1/haste,2,2))  
     
     if dualWield = true
     {
-    draw_text(x+80,y+68,string(floor(p2*(1-wepPowRng[2])))+' - '+string(ceil(p2*(1+wepPowRng[2]))))
-    draw_text(x+80,y+80,string_format(wepPen[2],2,2))
-    draw_text(x+80,y+92,string_format(s2/haste,2,2))    
+        draw_text(x+80,y+68,string(floor(p2*(1-wepPowRng[2])))+' - '+string(ceil(p2*(1+wepPowRng[2]))))
+        
+        i = 0
+        ax = x+78-(3*(floor(wepPen[2]/4)-1))
+        repeat(floor(wepPen[2]/4))
+        {
+            draw_sprite(spr_bigArmIcon,0,ax,y+81)
+            draw_sprite(spr_bigArmIcon,4,ax,y+81)
+            ax += 7
+            i += 4
+        }
+        if wepPen[2] &gt; i
+        {
+            draw_sprite(spr_bigArmIcon,wepPen[2]-i,ax,y+81)
+            draw_sprite(spr_bigArmIcon,4+wepPen[2]-i,ax,y+81)
+        }
+        
+        draw_text(x+80,y+92,string_format(s2/haste,2,2))    
     }
     else if hasShield = true
     {
-        draw_text(x+80,y+68,string_format(blockStr,2,1))
+        i = 0
+        ax = x+78-(3*(floor(blockStr/4)-1))
+        repeat(floor(blockStr/4))
+        {
+            draw_sprite(spr_bigArmIcon,0,ax,y+69)
+            draw_sprite(spr_bigArmIcon,4,ax,y+69)
+            ax += 7
+            i += 4
+        }
+        if blockStr &gt; i
+        {
+            draw_sprite(spr_bigArmIcon,blockStr-i,ax,y+69)
+            draw_sprite(spr_bigArmIcon,4+blockStr-i,ax,y+69)
+        }
         draw_text(x+80,y+80,string_format(1/blockGen,2,1)+' s')   
     }
 }

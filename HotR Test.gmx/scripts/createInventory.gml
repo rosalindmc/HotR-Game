@@ -30,7 +30,7 @@ repeat(10)
 {
     repeat(8)
     {
-        instance_create(350+(ix*22),90+(iy*22),obj_inventorySlot)
+        instance_create(350+(ix*22),80+(iy*22),obj_inventorySlot)
         ix += 1
         
         if ix > 7
@@ -44,7 +44,7 @@ repeat(10)
 //Add Items from Inventory
 i = 0
 ix = 350
-iy = 90
+iy = 80
 
 repeat(inventorySize)
 {

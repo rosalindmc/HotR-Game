@@ -145,63 +145,123 @@ case 0:
 class = 'Wizard'
 invSlot[1,0] = armingSword
 invSlot[4,0] = robe
-classLife = 2
-classStamina = 6
+
+life = 2
+classLife = .25
+stamina = 6
+classStamina = .35
+
 mSkill = 1
 rSkill = 1
 cSkill = 3
+classMSkill = .3
+classRSkill = .3
+classCSkill = .5
+
 cunning += 1
 will += 1
 fellowship += 1
+
+//Talent
+talent[0,0] = choose(treeInsight,treeDiscipline,treeLeadership)
+talent[0,5] = 1
+
 break
 case 1: 
 class = 'Duelist'
 invSlot[1,0] = sabre
 invSlot[4,0] = robe
-classLife = 4
-classStamina = 4
+
+life = 4
+classLife = .3
+stamina = 4
+classStamina = .3
+
 mSkill = 3
 rSkill = 2
 cSkill = 1
+classMSkill = .5
+classRSkill = .4
+classCSkill = .3
+
 cunning += 1
 grace += 1
 fellowship += 1
+
+//Talent
+talent[0,0] = choose(treeMartial,treeInsight,treeDaring,treeMobility)
+talent[0,5] = 1
+
 break
 case 2: 
 class = 'Adventurer'
 invSlot[1,0] = greatSword
 invSlot[4,0] = robe
-classLife = 4
-classStamina = 8
+
+life = 4
+classLife = .3
+stamina = 8
+classStamina = .4
+
 mSkill = 2
 rSkill = 2
 cSkill = 1
+classMSkill = .4
+classRSkill = .4
+classCSkill = .3
+
 cunning += 1
 grace += 2
+
+//Talent
+talent[0,0] = choose(treeInsight,treeDaring,treeSubterfuge,treeMobility)
+talent[0,5] = 1
 break
 case 3: 
 class = 'Thief'
 invSlot[1,0] = shortSword
 invSlot[4,0] = robe
-classLife = 2
-classStamina = 6
+
+life = 2
+classLife = .25
+stamina = 6
+classStamina = .35
+
 mSkill = 1
 rSkill = 1
 cSkill = 1
+classMSkill = .3
+classRSkill = .3
+classCSkill = .3
+
 cunning += 2
 grace += 1
+//Talent
+talent[0,0] = choose(treeInsight,treeSubterfuge,treeMobility)
+talent[0,5] = 1
 break
 case 4: 
 class = 'Warrior'
 invSlot[1,0] = battleAxe
 invSlot[4,0] = chainmail
-classLife = 6
-classStamina = 4
+
+life = 6
+classLife = .35
+stamina = 4
+classStamina = .3
+
 mSkill = 3
 rSkill = 3
 cSkill = 1
+classMSkill = .5
+classRSkill = .5
+classCSkill = .3
+
 might += 2
 will += 1
+//Talent
+talent[0,0] = choose(treeStrength,treeDiscipline,treeToughness,treeMartial)
+talent[0,5] = 1
 break
 }
 

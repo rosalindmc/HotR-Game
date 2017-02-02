@@ -49,7 +49,7 @@ tabNum = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if mouse_check_button_pressed(mb_left)
+            <string>if mouse_check_button_pressed(mb_left) and global.eventActive = false
 {        
     if point_in_rectangle(mouse_x,mouse_y,x-35,y-11,x+35,y+11)
     {
@@ -57,12 +57,21 @@ tabNum = 0
         {
             destroyInventory()
         }
+        if global.subTab = 1 and global.menuSheet = 0
+        {
+            destroyTalents()
+        }
         
         global.subTab = tabNum
         
         if global.subTab = 0 and global.menuSheet = 0
         {
             createInventory()
+        }
+        
+        if global.subTab = 1 and global.menuSheet = 0
+        {
+            createTalents()
         }
     }
 }
