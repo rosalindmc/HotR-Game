@@ -72,6 +72,10 @@ mapHeight = 20
 mapWidth = 20
 mapDepth = 3
 
+runEvent = -4
+eventName = -4
+eventLine = -4
+
 ix = 0
 repeat(mapWidth)
 {

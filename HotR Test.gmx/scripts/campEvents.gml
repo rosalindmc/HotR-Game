@@ -19,6 +19,7 @@ if argument1 = 0
     choice('Gain Item', 3, true) 
     choice('Gain Money', 4, true)
     choice('Lose Money', 5, true)
+    choice('AMBUSH!',70,true)
     choice('Return', 1, true) 
     break
     
@@ -86,9 +87,36 @@ if argument1 = 0
     choice('[Subterfuge 1]', 42, checkTalent(treeSubterfuge,true,1))
     choice('[Insight 1]', 42, checkTalent(treeInsight,true,1))
     break
+    
+    case 70:
+       event = ambush
+       skipTo(0)
+    break
     }
 }
 else
 {
     //When an AI runs this script, it should just skip to the end results
+}
+
+#define ambush
+if argument1 = 0{
+    switch(argument0){
+        case 0:
+            speak ('Your camp has been ambushed by bandits!')
+            break
+        
+        case 1:
+            //speak ('Your camp has been ambushed by bandits!')
+            i = instance_create(x,y,obj_party)
+            i.node = global.activeActor.node
+            alarm[11] = 3
+            skipTo(2)
+            break
+        
+        case 2:
+            speak ('You have defeated the bandits.')
+            break
+                
+    }
 }

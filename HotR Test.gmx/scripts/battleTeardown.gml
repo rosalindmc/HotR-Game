@@ -6,6 +6,10 @@ instance_deactivate_object(obj_characterSheet)
 
 with(obj_control)
 {
+    if(runEvent == true){
+        eventStart(eventName,eventLine)
+    }
+    
     instance_destroy()
 }
 
@@ -36,3 +40,4 @@ with(obj_overworldControl)
 {
     worldScrollVis()
 }
+
