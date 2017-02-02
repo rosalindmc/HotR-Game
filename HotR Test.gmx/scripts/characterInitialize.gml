@@ -30,7 +30,7 @@ life = 0
 stamina = 0
 
 //Leveling
-lastAttribute = 0
+lastAttribute = 10
 attributePoint = .5
 combatTalentPoint = 0
 travelTalentPoint = 0

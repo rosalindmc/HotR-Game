@@ -543,6 +543,7 @@
         <object>objects\obj_menuSheet</object>
         <object>objects\obj_menuSubTab</object>
         <object>objects\obj_continueButton</object>
+        <object>objects\obj_levelUpChoice</object>
         <object>objects\obj_levelUpScreen</object>
       </objects>
       <objects name="Tiles">

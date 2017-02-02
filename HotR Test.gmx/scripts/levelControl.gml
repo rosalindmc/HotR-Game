@@ -2,6 +2,7 @@
 //Level Control(char)
 c = argument0
 i = instance_create(view_wview/2,view_hview/2,obj_levelUpScreen)
+i.char = c
 
 c.attributePoint += .5
 c.combatTalentPoint += 1
@@ -72,4 +73,25 @@ if c.staminaPoint >= 1
 #define talentChoices
 
 
-#define levelStats
+#define attributeChoices
+c[0] = irandom(4)
+while(c[0] = char.lastAttribute)
+{
+    c[0] = irandom(4)
+}
+
+c[1] = irandom(4)
+while(c[1] = char.lastAttribute or c[1] = c[0])
+{
+    c[0] = irandom(4)
+}
+
+iy = y-30
+i = instance_create(x-100,iy,obj_levelUpChoice)
+i.image_index = c[0]
+i.owner = id
+
+iy += 14
+i = instance_create(x-100,iy,obj_levelUpChoice)
+i.image_index = c[1]
+i.owner = id

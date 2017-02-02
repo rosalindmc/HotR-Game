@@ -82,6 +82,7 @@ alarm[0] = 5
     if mouse_check_button_pressed(mb_left)
     {
         owner.step += 1
+        owner.canClick = false
     }
 }
 else
