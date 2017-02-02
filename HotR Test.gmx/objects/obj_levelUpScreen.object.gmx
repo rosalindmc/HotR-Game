@@ -34,12 +34,18 @@ cSkill = 0
 attribute = 0
 combat = 0
 travel = 0
+
+step = 0
+
+button = instance_create(x+50,y+50,obj_continueButton)
+button.owner = id
+
 </string>
           </argument>
         </arguments>
       </action>
     </event>
-    <event eventtype="6" enumb="4">
+    <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -56,9 +62,31 @@ travel = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.eventActive = false
-instance_destroy()
+            <string>if step = 1 and attribute = 0
+{
+    step += 1
+}
 
+if step = 2 and combat = 0
+{
+    step += 1
+}
+
+if step = 3 and travel = 0
+{
+    step += 1
+}
+
+if step = 4
+{
+    global.eventActive = false
+    
+    with(button)
+    {
+        instance_destroy()
+    }
+    instance_destroy()
+}
 </string>
           </argument>
         </arguments>
@@ -92,12 +120,30 @@ draw_set_halign(fa_middle)
 draw_set_valign(fa_top)
 draw_text(x,y-45,'Level Up')
 
-draw_set_halign(fa_left)
-
 draw_set_font(fnt_smallText)
 draw_set_colour(c_black)
+
+if step = 1
+{
+    draw_text(x,y-30,'Gain an Attribute')
+}
+
+if step = 2
+{
+    draw_text(x,y-30,'Gain a Combat Talent')
+}
+
+if step = 3
+{
+    draw_text(x,y-30,'Gain a Travel Talent')
+}
+
+draw_set_halign(fa_left)
+
 iy = y-30
 
+if step = 0
+{
 if life = 1
 {
     draw_text(x-100,iy,'+1 Life')
@@ -122,10 +168,11 @@ if rSkill != 0
     iy += 16
 }
 
-if mSkill != 0
+if cSkill != 0
 {
     draw_text(x-100,iy,'+'+string_format(cSkill,2,1)+' Casting Skill')
     iy += 16
+}
 }
 
 </string>

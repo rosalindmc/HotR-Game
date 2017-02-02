@@ -107,6 +107,7 @@
       </sprites>
       <sprites name="Core Icons">
         <sprite>sprites\spr_iconBorder</sprite>
+        <sprite>sprites\ico_attributes</sprite>
         <sprite>sprites\ico_move</sprite>
         <sprite>sprites\ico_wait</sprite>
         <sprite>sprites\ico_switch</sprite>
@@ -541,6 +542,7 @@
         <object>objects\obj_model</object>
         <object>objects\obj_menuSheet</object>
         <object>objects\obj_menuSubTab</object>
+        <object>objects\obj_continueButton</object>
         <object>objects\obj_levelUpScreen</object>
       </objects>
       <objects name="Tiles">

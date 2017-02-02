@@ -28,6 +28,32 @@ if c.travelTalentPoint >= 1
 c.lifePoint += c.classLife
 c.staminaPoint += c.classStamina
 
+c.mSkill += c.classMSkill
+i.mSkill = c.classMSkill
+
+c.rSkill += c.classRSkill
+i.rSkill = c.classRSkill
+
+c.cSkill += c.classCSkill
+i.cSkill = c.classCSkill
+
+c.levelPending -= 1
+
+repeat(3)
+{
+    switch(irandom(4))
+    {
+    case 0: c.lifePoint += .1 break
+    case 1: c.staminaPoint += .1 break
+    case 2: c.mSkill += .1
+    i.mSkill += .1 break
+    case 3: c.rSkill += .1
+    i.rSkill += .1 break
+    case 4: c.cSkill += .1
+    i.cSkill += .1 break
+    }
+}
+
 if c.lifePoint >= 1
 {
     c.lifePoint -= 1
@@ -41,18 +67,6 @@ if c.staminaPoint >= 1
     c.stamina += 1
     i.stamina += 1
 }
-
-c.mSkill += c.classMSkill
-i.mSkill = c.classMSkill
-
-c.rSkill += c.classRSkill
-i.rSkill = c.classRSkill
-
-c.cSkill += c.classCSkill
-i.cSkill = c.classCSkill
-
-c.levelPending -= 1
-
 
 
 #define talentChoices

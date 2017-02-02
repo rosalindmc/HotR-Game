@@ -164,7 +164,7 @@ fellowship += 1
 
 //Talent
 talent[0,0] = choose(treeInsight,treeDiscipline,treeLeadership)
-talent[0,5] = 1
+talent[0,5] = 2
 
 break
 case 1: 
@@ -190,7 +190,7 @@ fellowship += 1
 
 //Talent
 talent[0,0] = choose(treeMartial,treeInsight,treeDaring,treeMobility)
-talent[0,5] = 1
+talent[0,5] = 2
 
 break
 case 2: 
@@ -215,7 +215,7 @@ grace += 2
 
 //Talent
 talent[0,0] = choose(treeInsight,treeDaring,treeSubterfuge,treeMobility)
-talent[0,5] = 1
+talent[0,5] = 2
 break
 case 3: 
 class = 'Thief'
@@ -238,7 +238,7 @@ cunning += 2
 grace += 1
 //Talent
 talent[0,0] = choose(treeInsight,treeSubterfuge,treeMobility)
-talent[0,5] = 1
+talent[0,5] = 2
 break
 case 4: 
 class = 'Warrior'
@@ -261,7 +261,7 @@ might += 2
 will += 1
 //Talent
 talent[0,0] = choose(treeStrength,treeDiscipline,treeToughness,treeMartial)
-talent[0,5] = 1
+talent[0,5] = 2
 break
 }
 
