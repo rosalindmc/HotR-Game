@@ -1,14 +1,15 @@
 #define eventStart
-//eventStart(id, event)
+//eventStart(event, line)
 //eventStart runs a new event
+ii = instance_create(0,260,obj_event)
 
-argument0.event = argument1
-argument0.eventStep = 0
+ii.event = argument0
+ii.eventStep = argument1
 global.eventActive = true
 global.eventActor = global.activeActor
 global.eventCharacter = ds_list_find_value(global.activeActor.party,0)
 
-with(argument0)
+with(ii)
 {
     script_execute(event,eventStep,0)
 }

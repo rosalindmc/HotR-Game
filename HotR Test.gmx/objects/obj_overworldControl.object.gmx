@@ -118,8 +118,7 @@ if global.eventActive = false
     //Temporary
     if keyboard_check_pressed(ord('B'))
     {
-        ii = instance_create(0,260,obj_event)
-        eventStart(ii,event1)
+        eventStart(event1,0)
     }
     
     if keyboard_check_pressed(vk_escape)
