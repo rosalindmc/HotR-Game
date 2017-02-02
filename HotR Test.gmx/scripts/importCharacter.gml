@@ -208,12 +208,10 @@ blockStr = might
 
 //Vitals
 lifeMax = floor(8+(will-8)+((might-8)/2)+o.life)
-lifeRegen = 2+((will-8)*.2)
+lifeRegen = 2+((will-8)*.25)
 
 stmMax = floor(8+(will-8)+((grace-8)/2)+o.stamina)
 stmRegen = 5+(stmMax*.1)
-
-
 
 #define clearArmour
 bodyItems = 0

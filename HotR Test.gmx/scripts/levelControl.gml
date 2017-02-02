@@ -69,6 +69,7 @@ if c.staminaPoint >= 1
     i.stamina += 1
 }
 
+global.talentChoice = 0
 
 #define talentChoices
 
@@ -86,7 +87,7 @@ while(c[1] = char.lastAttribute or c[1] = c[0])
     c[0] = irandom(4)
 }
 
-iy = y-30
+iy = y-25
 i = instance_create(x-100,iy,obj_levelUpChoice)
 i.image_index = c[0]
 i.owner = id
@@ -95,3 +96,20 @@ iy += 14
 i = instance_create(x-100,iy,obj_levelUpChoice)
 i.image_index = c[1]
 i.owner = id
+
+#define finalizeChoice
+if argument0 = 1
+{
+    switch(global.talentChoice.image_index)
+    {
+    case 0: char.might += 1 break
+    case 1: char.grace += 1 break
+    case 2: char.cunning += 1 break
+    case 3: char.will += 1 break
+    case 4: char.fellowship += 1 break
+    }
+}
+else
+{
+
+}

@@ -75,14 +75,18 @@ alarm[0] = 5
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if point_in_rectangle(mouse_x,mouse_y,x,y,x+40,y+14) and canClick = true
+            <string>if point_in_rectangle(mouse_x,mouse_y,x,y,x+80,y+14) and canClick = true and global.talentChoice != -4
 {
     selected = true
     
     if mouse_check_button_pressed(mb_left)
     {
         owner.step += 1
-        owner.canClick = false
+        global.talentChoice = -4
+        with(obj_levelUpChoice)
+        {
+            instance_destroy()
+        }
     }
 }
 else

@@ -25,11 +25,13 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>text = 'Might'
+            <string>name = 'Might'
 selected = false
 canClick = false
 colour = c_black
 
+tt = 0
+tooltip = ''
 script = -4
 
 
@@ -59,17 +61,40 @@ image_speed = 0
           <argument>
             <kind>1</kind>
             <string>canClick = true
-show_message('workin')
 
 if owner.step = 1
 {
     switch(image_index)
     {
-    case 0: text = 'Might' break
-    case 1: text = 'Grace' break
-    case 2: text = 'Cunning' break
-    case 3: text = 'Will' break
-    case 4: text = 'Fellowship' break
+    case 0: name = 'Might' 
+    tooltip = '+.25 Damage per Second
+    +1 Force Resist
+    +1 Physical Resist
+    +.25 Block Strength
+    +.50 Life' break
+    case 1: name = 'Grace' 
+    tooltip = '+Movement
+    +3% Action Speed
+    +1 Force Resist
+    +.10 Skill
+    +.50 Stamina' break
+    case 2: name = 'Cunning' 
+    tooltip = '+Ability Power
+    +3% Experience Gained
+    +1 Mental Resist
+    +.20 Skill' break
+    case 3: name = 'Will' 
+    tooltip = '+1 Physical Resist
+    +1 Mental Resist
+    +1 Life
+    +1 Stamina
+    +.25 Life Regeneration' break
+    case 4: name = 'Fellowship' 
+    tooltip = '+5% Suppression Resistance
+    +Heal Power
+    +Companion Power
+    +Bond Strength
+    +5% Action Speed while Bold' break
     }
 }
 </string>
@@ -94,9 +119,20 @@ if owner.step = 1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if selected != 2
+            <string>if point_in_rectangle(mouse_x,mouse_y,x-10,y-10,x+10,y+10)
 {
-    if point_in_rectangle(mouse_x,mouse_y,x,y,x+60,y+14) and canClick = true
+    tt = min(tt+(4/global.fspd),1)
+    depth = -1002
+}
+else
+{
+    tt = max(tt-(8/global.fspd),0)  
+    depth = -1001
+}
+
+if selected != 2
+{
+    if point_in_rectangle(mouse_x,mouse_y,x+10,y-5,x+70,y+5) and canClick = true
     {
         selected = true
     
@@ -106,7 +142,7 @@ if owner.step = 1
             {
                 selected = false
             }
-            owner.canClick = true
+            global.talentChoice = id
             selected = 2
         }
     }
@@ -142,7 +178,7 @@ y = ystart+view_yview
 
 if canClick = true
 {
-    draw_sprite(sprite_index,image_number,x,y)
+    draw_sprite(sprite_index,image_index,x,y)
     draw_set_halign(fa_left)
     draw_set_valign(fa_middle)
     draw_set_font(fnt_tiny)
@@ -150,16 +186,39 @@ if canClick = true
     if selected = false
     {
         draw_set_colour(colour)
-        draw_text(x+15,y,string(text))
+        draw_text(x+15,y,string(name))
     }
     else if selected = 1
     {
-        drawText(c_black,c_white,x+15,y,string(text))
+        drawText(c_black,c_white,x+15,y,string(name))
     }
     else if selected = 2
     {
-        drawText(c_black,c_red,x+15,y,string(text))
+        drawText(c_black,c_red,x+15,y,string(name))
     }
+}
+
+if tooltip != -4 and tt != 0
+{
+    draw_set_alpha(tt)
+    
+    draw_set_colour(c_dkgray)
+    draw_rectangle(x+10,y-10,x+130,y+84,false)
+    draw_set_colour(c_ltgray)
+    draw_rectangle(x+10,y-10,x+130,y+84,true)
+    
+    draw_set_colour(c_white)
+    draw_set_halign(fa_left)
+    draw_set_valign(fa_top)
+    
+    ix = x+15
+    iy = y-8
+    
+    draw_set_font(fnt_tiny)
+    draw_text_ext(ix,iy,name,16,110)
+    iy += 16
+    draw_set_font(fnt_tinyText)
+    draw_text_ext(ix,iy,tooltip,16,110)
 }
 </string>
           </argument>
