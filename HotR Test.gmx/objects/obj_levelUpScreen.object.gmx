@@ -106,14 +106,7 @@ if step = 4
     //Reset Talents and Stats
     destroyTalents()
     createTalents()
-    
-    with(obj_model)
-    {
-        if owner = other.char
-        {
-            importCharacter(other.char)
-        }
-    }
+    resetModels()
     
     instance_destroy()
 }

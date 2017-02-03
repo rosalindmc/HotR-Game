@@ -23,9 +23,9 @@ repeat(choose(40))
     choose(heaterShield,squareShield,roundShield),
     choose(shortbow,longBow))
     inventory[ii,1] = choose(0,0,0,1,1,1,1,1,1,1,1,1)
-    inventory[ii,2] = 0
-    inventory[ii,3] = 0
-    inventory[ii,4] = 0
+    inventory[ii,2] = emptyMutator
+    inventory[ii,3] = emptyMutator
+    inventory[ii,4] = emptyMutator
     ii += 1
     inventorySize = ii
 }
