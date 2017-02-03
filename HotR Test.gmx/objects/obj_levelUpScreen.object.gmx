@@ -82,7 +82,7 @@ if step = 2 and combat = 0
 if backStep != 2 and step = 2
 {
     backStep = 2
-    attributeChoices()
+    talentChoices()
 }
 
 if step = 3 and travel = 0
@@ -92,7 +92,7 @@ if step = 3 and travel = 0
 if backStep != 3 and step = 3
 {
     backStep = 3
-    attributeChoices()
+    talentChoices()
 }
 
 if step = 4
@@ -103,6 +103,18 @@ if step = 4
     {
         instance_destroy()
     }
+    //Reset Talents and Stats
+    destroyTalents()
+    createTalents()
+    
+    with(obj_model)
+    {
+        if owner = other.char
+        {
+            importCharacter(other.char)
+        }
+    }
+    
     instance_destroy()
 }
 </string>
@@ -140,22 +152,6 @@ draw_text(x,y-45,'Level Up')
 
 draw_set_font(fnt_smallText)
 draw_set_colour(c_black)
-
-if step = 1
-{
-//    draw_text(x,y-30,'Gain an Attribute')
-}
-
-if step = 2
-{
-//    draw_text(x,y-30,'Gain a Combat Talent')
-}
-
-if step = 3
-{
-//    draw_text(x,y-30,'Gain a Travel Talent')
-}
-
 draw_set_halign(fa_left)
 
 iy = y-30

@@ -44,6 +44,10 @@ case 4: name = 'Master Strength'
 tooltip = 'Attacks have a 50% chance to inflict more damage and DAZE' break
 }
 break
+
+case 2:
+return true
+break
 }
 
 #define treeToughness
@@ -68,6 +72,10 @@ tooltip = 'Gain +4 life and stamina' break
 case 4: name = 'Master Toughness'
 tooltip = 'Gain +5 life and stamina' break
 }
+break
+
+case 2:
+return true
 break
 }
 
@@ -94,6 +102,10 @@ case 4: name = 'Master Martial'
 tooltip = 'Gain +2.5 Melee and Ranged Skill' break
 }
 break
+
+case 2:
+return true
+break
 }
 
 #define treeMobility
@@ -118,6 +130,10 @@ tooltip = 'Gain +2.0 sprint speed and sprinting costs less stamina' break
 case 4: name = 'Master Mobility'
 tooltip = 'Gain +2.5 sprint speed and sprinting costs less stamina' break
 }
+break
+
+case 2:
+return true
 break
 }
 
@@ -144,6 +160,10 @@ case 4: name = 'Master Insight'
 tooltip = 'Increased detection range and increased damage to helpless foes' break
 }
 break
+
+case 2:
+return true
+break
 }
 
 #define treeSubterfuge
@@ -168,6 +188,10 @@ tooltip = 'Gain the Hide ability and inflict +4 sneak attack damage' break
 case 4: name = 'Master Subterfuge'
 tooltip = 'Gain the Hide ability and inflict +5 sneak attack damage' break
 }
+break
+
+case 2:
+return true
 break
 }
 
@@ -194,6 +218,10 @@ case 4: name = 'Master Frenzy'
 tooltip = 'Frenzy to gain combat advantages' break
 }
 break
+
+case 2:
+return true
+break
 }
 
 #define treeDiscipline
@@ -218,6 +246,10 @@ tooltip = 'Suffer 20% less damage and gain 40% suppression resistance' break
 case 4: name = 'Master Discipline'
 tooltip = 'Suffer 25% less damage and gain 50% suppression resistance' break
 }
+break
+
+case 2:
+return true
 break
 }
 
@@ -244,6 +276,10 @@ case 4: name = 'Master Leadership'
 tooltip = 'Increased life and stamina regeneration to all nearby allies' break
 }
 break
+
+case 2:
+return true
+break
 }
 
 #define treeDaring
@@ -268,5 +304,9 @@ tooltip = 'Combat benefits when surrounded' break
 case 4: name = 'Master Daring'
 tooltip = 'Combat benefits when surrounded' break
 }
+break
+
+case 2:
+return true
 break
 }

@@ -82,7 +82,17 @@ alarm[0] = 5
     if mouse_check_button_pressed(mb_left)
     {
         owner.step += 1
+        
+        if owner.backStep != 0
+        {
+            with(owner)
+            {
+                finalizeChoice(backStep)
+            }
+        }
+        
         global.talentChoice = -4
+        
         with(obj_levelUpChoice)
         {
             instance_destroy()

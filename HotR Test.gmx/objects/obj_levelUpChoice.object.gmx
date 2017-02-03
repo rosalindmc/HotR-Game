@@ -33,7 +33,7 @@ colour = c_black
 tt = 0
 tooltip = ''
 script = -4
-
+branch = false
 
 alarm[0] = 2
 
@@ -119,7 +119,7 @@ if owner.step = 1
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if point_in_rectangle(mouse_x,mouse_y,x-10,y-10,x+10,y+10)
+            <string>if point_in_rectangle(mouse_x,mouse_y,x-8,y-8,x+8,y+8)
 {
     tt = min(tt+(4/global.fspd),1)
     depth = -1002
@@ -178,6 +178,7 @@ y = ystart+view_yview
 
 if canClick = true
 {
+    draw_set_alpha(1)
     draw_sprite(sprite_index,image_index,x,y)
     draw_set_halign(fa_left)
     draw_set_valign(fa_middle)

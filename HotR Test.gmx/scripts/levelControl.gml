@@ -71,9 +71,6 @@ if c.staminaPoint >= 1
 
 global.talentChoice = 0
 
-#define talentChoices
-
-
 #define attributeChoices
 c[0] = irandom(4)
 while(c[0] = char.lastAttribute)
@@ -84,18 +81,60 @@ while(c[0] = char.lastAttribute)
 c[1] = irandom(4)
 while(c[1] = char.lastAttribute or c[1] = c[0])
 {
-    c[0] = irandom(4)
+    c[1] = irandom(4)
 }
 
-iy = y-25
-i = instance_create(x-100,iy,obj_levelUpChoice)
+c[2] = irandom(4)
+while(c[2] = char.lastAttribute or c[2] = c[0] or c[2] = c[1])
+{
+    c[2] = irandom(4)
+}
+
+iy = y-20
+i = instance_create(x-95,iy,obj_levelUpChoice)
 i.image_index = c[0]
 i.owner = id
 
-iy += 14
-i = instance_create(x-100,iy,obj_levelUpChoice)
+iy += 20
+i = instance_create(x-95,iy,obj_levelUpChoice)
 i.image_index = c[1]
 i.owner = id
+
+iy += 20
+i = instance_create(x-95,iy,obj_levelUpChoice)
+i.image_index = c[2]
+i.owner = id
+
+#define talentChoices
+//Create Weighted Legal talent list
+list = ds_list_create()
+combatTalentList()
+ds_list_shuffle(list)
+
+tc = min(4,ds_list_size(list))
+iy = y-20
+
+iii = 0
+for(i = 0; i < tc; i++)
+{
+    if checkList(ds_list_find_value(list,iii),i-1) 
+    {
+        pTalent[i] = ds_list_find_value(list,iii)
+        
+        ii = instance_create(x-95,iy,obj_levelUpChoice)
+        ii.owner = id
+        ii.script = pTalent[i]
+        
+        l = talentLevel(pTalent[i])
+        
+        with(ii)
+        {
+            script_execute(other.pTalent[other.i],1,other.l)
+        }
+        iy += 20
+    }
+    iii += 1
+}
 
 #define finalizeChoice
 if argument0 = 1
@@ -111,5 +150,128 @@ if argument0 = 1
 }
 else
 {
+    gainTalent(global.talentChoice.script,global.talentChoice.branch)
+}
 
+#define combatTalentList
+//Talent Trees
+talentPrereq(treeStrength,0)
+talentPrereq(treeToughness,0)
+talentPrereq(treeMartial,0)
+talentPrereq(treeMobility,0)
+talentPrereq(treeInsight,0)
+talentPrereq(treeSubterfuge,0)
+talentPrereq(treeFrenzy,0)
+talentPrereq(treeDiscipline,0)
+talentPrereq(treeLeadership,0)
+talentPrereq(treeDaring,0)
+
+
+
+
+
+#define checkList
+success = true
+for(p = 0; p < argument1; p++)
+{
+    if pTalent[p] = argument0
+    {
+        success = false
+    }
+}
+
+return success
+
+#define talentPrereq
+//talentPrereq(talenttoadd,branch?)
+
+if argument1 = false
+{
+    if script_execute(argument0,2)
+    {
+        not4 = false
+        openSlot = false
+        
+        for(t = 0; t < 8; t++)
+        {
+            if char.talent[t,0] = argument0
+            {
+                if char.talent[t,5] = !4
+                {
+                    not4 = true
+                }
+            }
+            if char.talent[t,0] = emptyTalent
+            {
+                openSlot = true
+            }
+        }
+        if not4 = true or openSlot = true
+        {
+            ds_list_add(list,argument0)
+        }   
+    }   
+}
+else
+{
+    if script_execute(argument0,2)
+    {
+        for(t = 0; t < 8; t++)
+        {
+            if char.talent[t,0] = argument0
+            {
+                for(tt = 1; tt <= 3; tt++)
+                {
+                    if char.talent[t,tt] = emptyBranch and char.talent[t,tt] != argument0
+                    {
+                        ds_list_add(list,argument0)
+                    }
+                }
+            }
+        }
+    }
+}
+
+#define talentLevel
+for(t = 0; t < 8; t++)
+{
+    if char.talent[t,0] = argument0
+    {
+        t = char.talent[t,5]+1
+        return t
+    }
+}
+return 1
+
+#define gainTalent
+switch(argument1)
+{
+    case 0: //Core Talent
+    for(t = 0; t < 8; t++)
+    {
+        if char.talent[t,0] = emptyTalent or char.talent[t,0] = argument0
+        {
+            char.talent[t,0] = argument0
+            char.talent[t,5] += 1
+            exit
+        }
+    }
+    break
+    
+    case 1: //Branch Talent
+    for(t = 0; t < 8; t++)
+    {
+        if char.talent[t,0] = argument0
+        {
+            for(tt = 1; tt <= 3; tt++)
+            {
+                if char.talent[t,tt] = emptyBranch
+                {
+                    char.talent[t,0] = argument0
+                    exit
+                }
+            }
+        }
+    }
+    break
 }
