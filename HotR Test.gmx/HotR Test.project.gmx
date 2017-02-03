@@ -96,14 +96,19 @@
       <sprites name="Talent Icons">
         <sprite>sprites\ico_strength</sprite>
         <sprite>sprites\ico_toughness</sprite>
+        <sprite>sprites\ico_breaker</sprite>
         <sprite>sprites\ico_martial</sprite>
         <sprite>sprites\ico_mobility</sprite>
+        <sprite>sprites\ico_evasion</sprite>
         <sprite>sprites\ico_subterfuge</sprite>
-        <sprite>sprites\ico_subterfuge</sprite>
+        <sprite>sprites\ico_insight</sprite>
+        <sprite>sprites\ico_subtlety</sprite>
         <sprite>sprites\ico_frenzy</sprite>
         <sprite>sprites\ico_discipline</sprite>
+        <sprite>sprites\ico_confidence</sprite>
         <sprite>sprites\ico_daring</sprite>
         <sprite>sprites\ico_leadership</sprite>
+        <sprite>sprites\ico_bravery</sprite>
       </sprites>
       <sprites name="Core Icons">
         <sprite>sprites\spr_iconBorder</sprite>
@@ -464,6 +469,7 @@
     </scripts>
     <scripts name="Talents">
       <script>scripts\talents.gml</script>
+      <script>scripts\treeStrength.gml</script>
       <script>scripts\createTalents.gml</script>
       <scripts name="Level Up">
         <script>scripts\levelControl.gml</script>
@@ -529,7 +535,6 @@
         <object>objects\obj_shimmerSpark</object>
       </objects>
       <objects name="HUD">
-        <object>objects\obj_levelUpButton</object>
         <object>objects\obj_item</object>
         <object>objects\obj_invHud</object>
         <object>objects\obj_talHud</object>
@@ -542,9 +547,12 @@
         <object>objects\obj_model</object>
         <object>objects\obj_menuSheet</object>
         <object>objects\obj_menuSubTab</object>
-        <object>objects\obj_continueButton</object>
-        <object>objects\obj_levelUpChoice</object>
-        <object>objects\obj_levelUpScreen</object>
+        <objects name="Leveling">
+          <object>objects\obj_levelUpButton</object>
+          <object>objects\obj_continueButton</object>
+          <object>objects\obj_levelUpChoice</object>
+          <object>objects\obj_levelUpScreen</object>
+        </objects>
       </objects>
       <objects name="Tiles">
         <object>objects\obj_worldCreator</object>

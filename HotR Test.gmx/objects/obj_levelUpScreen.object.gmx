@@ -40,7 +40,7 @@ backStep = 0
 
 canClick = true
 
-button = instance_create(x+40,y+55,obj_continueButton)
+button = instance_create(x+30,y+95,obj_continueButton)
 button.owner = id
 
 </string>

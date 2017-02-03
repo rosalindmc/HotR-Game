@@ -85,25 +85,28 @@ while(c[1] = char.lastAttribute or c[1] = c[0])
 }
 
 c[2] = irandom(4)
-while(c[2] = char.lastAttribute or c[2] = c[0] or c[2] = c[1])
+while(c[2] = char.lastAttribute or c[2] = c[0] or c[1] = c[2])
 {
     c[2] = irandom(4)
 }
 
-iy = y-20
-i = instance_create(x-95,iy,obj_levelUpChoice)
+iy = ystart-20
+i = instance_create(xstart-95,iy,obj_levelUpChoice)
 i.image_index = c[0]
 i.owner = id
 
 iy += 20
-i = instance_create(x-95,iy,obj_levelUpChoice)
+i = instance_create(xstart-95,iy,obj_levelUpChoice)
 i.image_index = c[1]
 i.owner = id
 
 iy += 20
-i = instance_create(x-95,iy,obj_levelUpChoice)
+i = instance_create(xstart-95,iy,obj_levelUpChoice)
 i.image_index = c[2]
 i.owner = id
+
+
+
 
 #define talentChoices
 //Create Weighted Legal talent list
@@ -111,8 +114,8 @@ list = ds_list_create()
 combatTalentList()
 ds_list_shuffle(list)
 
-tc = min(4,ds_list_size(list))
-iy = y-20
+tc = min(2+floor(char.cunning/4),ds_list_size(list))
+iy = ystart-20
 
 iii = 0
 for(i = 0; i < tc; i++)
@@ -121,7 +124,7 @@ for(i = 0; i < tc; i++)
     {
         pTalent[i] = ds_list_find_value(list,iii)
         
-        ii = instance_create(x-95,iy,obj_levelUpChoice)
+        ii = instance_create(xstart-95,iy,obj_levelUpChoice)
         ii.owner = id
         ii.script = pTalent[i]
         
@@ -141,11 +144,11 @@ if argument0 = 1
 {
     switch(global.talentChoice.image_index)
     {
-    case 0: char.might += 1 break
-    case 1: char.grace += 1 break
-    case 2: char.cunning += 1 break
-    case 3: char.will += 1 break
-    case 4: char.fellowship += 1 break
+    case 0: char.might += 1 char.lastAttribute = 0 break
+    case 1: char.grace += 1 char.lastAttribute = 1 break
+    case 2: char.cunning += 1 char.lastAttribute = 2 break
+    case 3: char.will += 1 char.lastAttribute = 3 break
+    case 4: char.fellowship += 1 char.lastAttribute = 4 break
     }
 }
 else
@@ -156,14 +159,32 @@ else
 #define combatTalentList
 //Talent Trees
 talentPrereq(treeStrength,0)
+talentPrereq(branchBreaker,treeStrength)
+talentPrereq(branchBreaker,treeStrength)
+talentPrereq(branchBreaker,treeStrength)
+talentPrereq(branchCrunch,treeStrength)
+talentPrereq(branchCrunch,treeStrength)
+talentPrereq(branchCrunch,treeStrength)
+talentPrereq(branchSmash,treeStrength)
+talentPrereq(branchSmash,treeStrength)
+talentPrereq(branchSmash,treeStrength)
+
 talentPrereq(treeToughness,0)
+
 talentPrereq(treeMartial,0)
+
 talentPrereq(treeMobility,0)
+
 talentPrereq(treeInsight,0)
+
 talentPrereq(treeSubterfuge,0)
+
 talentPrereq(treeFrenzy,0)
+
 talentPrereq(treeDiscipline,0)
+
 talentPrereq(treeLeadership,0)
+
 talentPrereq(treeDaring,0)
 
 
@@ -216,18 +237,30 @@ else
 {
     if script_execute(argument0,2)
     {
+        openSlot = false
+        noRepeat = true
+    
         for(t = 0; t < 8; t++)
         {
-            if char.talent[t,0] = argument0
+            if char.talent[t,0] = argument1
             {
                 for(tt = 1; tt <= 3; tt++)
                 {
-                    if char.talent[t,tt] = emptyBranch and char.talent[t,tt] != argument0
+                    if char.talent[t,tt] = emptyBranch
                     {
-                        ds_list_add(list,argument0)
+                        openSlot = true
+                    }
+                    if char.talent[t,tt] = argument0
+                    {
+                        noRepeat = false
                     }
                 }
             }
+        }
+        
+        if noRepeat = true and openSlot = true
+        {
+            ds_list_add(list,argument0)
         }
     }
 }
@@ -244,9 +277,8 @@ for(t = 0; t < 8; t++)
 return 1
 
 #define gainTalent
-switch(argument1)
+if argument1 = false
 {
-    case 0: //Core Talent
     for(t = 0; t < 8; t++)
     {
         if char.talent[t,0] = emptyTalent or char.talent[t,0] = argument0
@@ -256,22 +288,21 @@ switch(argument1)
             exit
         }
     }
-    break
-    
-    case 1: //Branch Talent
+}
+else
+{
     for(t = 0; t < 8; t++)
     {
-        if char.talent[t,0] = argument0
+        if char.talent[t,0] = argument1
         {
             for(tt = 1; tt <= 3; tt++)
             {
                 if char.talent[t,tt] = emptyBranch
                 {
-                    char.talent[t,0] = argument0
+                    char.talent[t,tt] = argument0
                     exit
                 }
             }
         }
     }
-    break
 }

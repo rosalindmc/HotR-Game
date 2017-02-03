@@ -67,34 +67,15 @@ if owner.step = 1
     switch(image_index)
     {
     case 0: name = 'Might' 
-    tooltip = '+.25 Damage per Second
-    +1 Force Resist
-    +1 Physical Resist
-    +.25 Block Strength
-    +.50 Life' break
+    tooltip = '+.25 Damage per Second#+1 Force Resist#+1 Physical Resist#+.25 Block Strength#+.50 Life' break
     case 1: name = 'Grace' 
-    tooltip = '+Movement
-    +3% Action Speed
-    +1 Force Resist
-    +.10 Skill
-    +.50 Stamina' break
+    tooltip = '+Movement#+3% Action Speed#+1 Force Resist#+.10 Skill#+.50 Stamina' break
     case 2: name = 'Cunning' 
-    tooltip = '+Ability Power
-    +3% Experience Gained
-    +1 Mental Resist
-    +.20 Skill' break
+    tooltip = '+Ability Power#+3% Experience Gained#+1 Mental Resist#+.20 Skill' break
     case 3: name = 'Will' 
-    tooltip = '+1 Physical Resist
-    +1 Mental Resist
-    +1 Life
-    +1 Stamina
-    +.25 Life Regeneration' break
+    tooltip = '+1 Physical Resist#+1 Mental Resist#+1 Life#+1 Stamina#+.25 Life Regeneration' break
     case 4: name = 'Fellowship' 
-    tooltip = '+5% Suppression Resistance
-    +Heal Power
-    +Companion Power
-    +Bond Strength
-    +5% Action Speed while Bold' break
+    tooltip = '+5% Suppression Resistance#+Heal Power#+Companion Power#+Bond Strength#+5% Action Speed while Bold' break
     }
 }
 </string>

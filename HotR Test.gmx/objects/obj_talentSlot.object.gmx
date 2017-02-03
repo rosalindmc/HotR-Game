@@ -95,9 +95,9 @@ if tooltip != -4 and tt != 0
     draw_set_alpha(tt)
     
     draw_set_colour(c_dkgray)
-    draw_rectangle(x+10,y-10,x+130,y+84,false)
+    draw_rectangle(x+10,y-10,x+130,y+90,false)
     draw_set_colour(c_ltgray)
-    draw_rectangle(x+10,y-10,x+130,y+84,true)
+    draw_rectangle(x+10,y-10,x+130,y+90,true)
     
     draw_set_colour(c_white)
     draw_set_halign(fa_left)
