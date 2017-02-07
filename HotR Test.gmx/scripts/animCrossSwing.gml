@@ -29,7 +29,7 @@ break
 
 //Mid Swing
 case 2:
-meleeDamage(0,1)
+attackDamage(false)
 handHeight[argument0] = 3
 handRot[argument0] = facing+(bodyHFacing*30)
 handDist[argument0] = 6

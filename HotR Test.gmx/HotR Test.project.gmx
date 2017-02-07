@@ -102,7 +102,7 @@
       </sprites>
       <sprite>sprites\ico_money</sprite>
       <sprite>sprites\ico_experience</sprite>
-      <sprites name="Talents">
+      <sprites name="Talent Icons">
         <sprites name="Combat Talents">
           <sprite>sprites\ico_strength</sprite>
           <sprite>sprites\ico_toughness</sprite>
@@ -299,6 +299,11 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
+    <scripts name="Setup and Teardown">
+      <script>scripts\battleSetup.gml</script>
+      <script>scripts\battleTeardown.gml</script>
+      <script>scripts\importCharacter.gml</script>
+    </scripts>
     <scripts name="Overworld">
       <scripts name="Actors and Control">
         <script>scripts\scr_tempActorListDraw.gml</script>
@@ -343,11 +348,6 @@
           <script>scripts\scr_drawWater.gml</script>
           <script>scripts\scr_updateMapVis.gml</script>
         </scripts>
-      </scripts>
-      <scripts name="Setup and Teardown">
-        <script>scripts\battleSetup.gml</script>
-        <script>scripts\battleTeardown.gml</script>
-        <script>scripts\importCharacter.gml</script>
       </scripts>
       <scripts name="HUD">
         <script>scripts\owHudButton.gml</script>
@@ -397,7 +397,7 @@
           <script>scripts\colourTiles.gml</script>
         </scripts>
         <scripts name="Attack and Damage">
-          <script>scripts\dealDamage.gml</script>
+          <script>scripts\attackDamage.gml</script>
           <script>scripts\melee.gml</script>
           <script>scripts\damageType.gml</script>
           <script>scripts\los.gml</script>
@@ -418,17 +418,6 @@
             <script>scripts\weaponSwitch.gml</script>
             <script>scripts\createActionBar.gml</script>
           </scripts>
-        </scripts>
-      </scripts>
-      <scripts name="Abilities">
-        <scripts name="Spells">
-          <script>scripts\flameLore.gml</script>
-        </scripts>
-        <scripts name="Blessings">
-          <script>scripts\oscoPrayer.gml</script>
-        </scripts>
-        <scripts name="Tactics">
-          <script>scripts\martialTactics.gml</script>
         </scripts>
       </scripts>
     </scripts>
@@ -503,9 +492,26 @@
         <script>scripts\treeMedicine.gml</script>
         <script>scripts\treePerform.gml</script>
       </scripts>
-      <script>scripts\createTalents.gml</script>
       <scripts name="Level Up">
         <script>scripts\levelControl.gml</script>
+        <script>scripts\createTalents.gml</script>
+      </scripts>
+      <scripts name="Triggers">
+        <script>scripts\trigger.gml</script>
+      </scripts>
+      <scripts name="Procs">
+        <script>scripts\mighty.gml</script>
+      </scripts>
+      <scripts name="Abilities">
+        <scripts name="Spells">
+          <script>scripts\flameLore.gml</script>
+        </scripts>
+        <scripts name="Blessings">
+          <script>scripts\oscoPrayer.gml</script>
+        </scripts>
+        <scripts name="Tactics">
+          <script>scripts\martialTactics.gml</script>
+        </scripts>
       </scripts>
     </scripts>
   </scripts>
@@ -629,6 +635,9 @@
         <object>objects\obj_descriptor</object>
       </objects>
       <object>objects\obj_control</object>
+      <objects name="Status Effects">
+        <object>objects\obj_status</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">

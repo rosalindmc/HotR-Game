@@ -83,8 +83,10 @@ alarm[1] = 2
           <argument>
             <kind>1</kind>
             <string>owner = ds_list_find_value(party,0)
-    
+
 humanoid(0)
+initializeTriggers()
+initializeTalents()
 importCharacter(owner)
 vis = true
 </string>

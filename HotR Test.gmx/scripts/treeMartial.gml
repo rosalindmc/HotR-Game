@@ -3,7 +3,17 @@
 switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
-
+switch(argument1)
+{
+case 1: mSkill += 1.0
+rSkill += 1.0 break
+case 2: mSkill += 1.5
+rSkill += 1.5 break
+case 3: mSkill += 2.0
+rSkill += 2.0 break
+case 4: mSkill += 2.5
+rSkill += 2.5 break
+}
 break
 
 case 1:     //Tooltip and icon
@@ -35,7 +45,7 @@ break
 switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
-
+aim += 1
 break
 
 case 1:     //Tooltip and icon
@@ -56,7 +66,8 @@ break
 switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
-
+atkStaminaMult *= .80
+atkHaste += .10
 break
 
 case 1:     //Tooltip and icon

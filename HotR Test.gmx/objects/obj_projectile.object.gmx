@@ -64,7 +64,7 @@ if instance_exists(collision)
     
     with(owner)
     {
-        meleeDamage(0,1)
+        attackDamage(true)
     }
 }
 

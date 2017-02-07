@@ -20,4 +20,3 @@ break
 #define emptyTalent
 
 #define emptyBranch
-

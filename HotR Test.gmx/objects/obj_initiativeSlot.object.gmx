@@ -99,10 +99,10 @@ else
     drawText(c_black,c_white,ix-20,iy+30,owner.name)
     draw_set_font(fnt_tiny)
     drawText(c_black,c_white,ix-20,iy+42,string(owner.race)+" "+string(owner.class))
+
     drawText(c_black,c_white,ix-20,iy+54,'Suppression: '+string(owner.suppression))
     drawText(c_black,c_white,ix-20,iy+66,'Stamina: '+string(owner.stm))
-    drawText(c_black,c_white,ix-20,iy+78,'Blocks: '+string(owner.blocks))
-    drawText(c_black,c_white,ix-20,iy+90,'Boldness: '+string(owner.bold))
+    drawText(c_black,c_white,ix-20,iy+78,'On Hit Procs: '+string(owner.onHitSize))
 
     /*Temp    
     drawText(c_black,c_white,ix-20,iy+54,"Might - "+string(owner.might))

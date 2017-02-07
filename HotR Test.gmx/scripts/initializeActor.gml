@@ -145,8 +145,46 @@ suppression = 0
 bold = 0
 
 //Initialize of weapons for weapon users
+initializeTriggers()
+initializeTalents()
 initializeWeapon(1)
 initializeWeapon(2)
+
+#define initializeTriggers
+for(i = 0; i < 6; i++)
+{
+onHit[0,i] = false
+onAttack[0,i] = false
+onWound[0,i] = false
+onDown[0,i] = false
+onBlock[0,i] = false
+areHit[0,i] = false
+areWounded[0,5] = false
+onStealth[0,5] = false
+onBackstab[0,5] = false
+onUpkeep[0,5] = false
+onSneakAttack[0,5] = false
+}
+
+onHitSize = 0
+onAttackSize = 0
+onWoundSize = 0
+onDownSize = 0
+onBlockSize = 0
+areHitSize = 0
+areWoundedSize = 0
+onStealthSize = 0
+onBackstabSize = 0
+onUpkeepSize = 0
+onSneakAttackSize = 0
+
+#define initializeTalents
+evasion = false
+aim = 1
+atkHaste = 0
+movHaste = 0
+atkStaminaMult = 1
+movStaminaMult = 1
 
 #define initializeWeapon
 //Initialize basic weapon variables to prevent errors
@@ -156,16 +194,17 @@ initializeWeapon(2)
 wepType[argument0] = melee
 wepAnimType[argument0] = typeAxe
 
-wepPow[argument0] = 2
+wepPow[argument0] = 1
 wepType[argument0] = 'Impact'
 wepPowRng[argument0] = .3
-wepStrMult[argument0] = 1
+wepStrMult[argument0] = .25
 wepPen[argument0] = 0
 wepSpeed[argument0] = 2
 wepRange[argument0] = 1
 
 //Weapon Sprites
 weaponSprite[argument0] = spr_none
+
 #define boldGlow
 ps1 = part_system_create()
 

@@ -5,7 +5,7 @@
 i = global.control
 
 ii = instance_create(i.x,i.y,argument0)
-ii.dir = point_direction(i.x,i.y,cHover.x,cHover.y)+((max(random(5-(i.rSkill*.2)),0))*choose(-1,1))
+ii.dir = point_direction(i.x,i.y,cHover.x,cHover.y)+((max(random(5/(i.rSkill*i.aim)),0))*choose(-1,1))
 ii.owner = i
 ii.image_angle = ii.dir
 ii.z = i.h+(i.height/2)
@@ -19,4 +19,4 @@ iSpd = (argument1*metre)*max(1,5-(point_distance(cHover.x,cHover.y,i.x,i.y)/(10*
 
 ii.spd = iSpd/global.fspd
 ii.zspd = (vDist/(dDist/iSpd))/global.fspd+((dDist/iSpd)*(grav*metre/2))
-ii.zspd *= (1+((max(random(.1-(i.rSkill*.01)),0))*choose(-1,1)))
+ii.zspd *= (1+((max(random(.1-(i.rSkill*i.aim*.01)),0))*choose(-1,1)))

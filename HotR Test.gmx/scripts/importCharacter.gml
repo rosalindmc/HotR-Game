@@ -213,6 +213,20 @@ lifeRegen = 2+((will-8)*.25)
 stmMax = floor(8+(will-8)+((grace-8)/2)+o.stamina)
 stmRegen = 5+(stmMax*.1)
 
+//Talents
+initializeTalents()
+
+for(i = 0; i < 8; i++)
+{
+    if o.talent[i,0] != emptyTalent
+    {
+        script_execute(o.talent[i,0],0,o.talent[i,5])
+        script_execute(o.talent[i,1],0,o.talent[i,5])
+        script_execute(o.talent[i,2],0,o.talent[i,5])
+        script_execute(o.talent[i,3],0,o.talent[i,5])
+    }
+}
+
 #define clearArmour
 bodyItems = 0
 chstItems = 0

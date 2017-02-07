@@ -3,6 +3,20 @@
 switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
+switch(argument1)
+{
+case 1: onHit[onHitSize,2] = 20 break
+case 2: onHit[onHitSize,2] = 30 break
+case 3: onHit[onHitSize,2] = 40 break
+case 4: onHit[onHitSize,2] = 50 break
+}
+
+onHit[onHitSize,0] = mighty
+onHit[onHitSize,1] = 'Mighty'
+onHit[onHitSize,3] = 1
+onHit[onHitSize,4] = false
+onHit[onHitSize,5] = false
+onHitSize += 1
 
 break
 

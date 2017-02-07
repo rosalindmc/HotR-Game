@@ -21,7 +21,7 @@ action = actAttack
         
 //End Turn
 s = (3-(dualWield*.5))/((wepSpeed[atkHand]))
-endTurn(s/haste)  //Temp, turn will end after attack resolves when done
+endTurn(s/(haste+atkHaste))  //Temp, turn will end after attack resolves when done
 
 if atkHand = 1 and dualWield = true
 {

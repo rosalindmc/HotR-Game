@@ -117,6 +117,9 @@ if argument1 = 0{
         case 2:
             speak ('You have defeated the bandits.')
             break
-                
+
+        case 3:
+            eventEnd()
+            break     
     }
 }

@@ -3,7 +3,17 @@
 switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
-
+switch(argument1)
+{
+case 1: lifeMax += 2
+stmMax += 2 break
+case 2: lifeMax += 3
+stmMax += 3 break
+case 3: lifeMax += 4
+stmMax += 4 break
+case 4: lifeMax += 5
+stmMax += 5 break
+}
 break
 
 case 1:     //Tooltip and icon

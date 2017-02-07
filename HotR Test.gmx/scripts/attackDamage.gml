@@ -1,29 +1,6 @@
-#define dealDamage
-//Deal Damage Script 
-//dealDamage()
-
-var target
-var i = 0
-
-
-
-#define weaponDamage
-//Weapon Damage Script
-/*weaponDamage()
-
-var s, p
-
-//Find Attack Speed
-s = (2+(dualwielding*.5))/((wepSpeed[atkHand]))
-
-//Find Base Attack Strength
-p = wepPow[atkHand]+((wepStrMult[atkHand]*atkDPS)/s)
-p *= (1-wepPowRng[atkHand]+random(wepPowRng[atkHand]*2))
-dealDamage()
-
-#define meleeDamage
+#define attackDamage
 //Damage script for melee attacks
-//meleeDamage(Bonus Damage, Damage Mult)
+//attackDamage(Ranged?)
 
 var backstab = false
 
@@ -49,24 +26,29 @@ else
 s = (3-(dualWield*.5))/((wepSpeed[atkHand]))
 
 //Find Base Attack Strength
-p = wepPow[atkHand]+((wepStrMult[atkHand]*atkDPS)/s)+argument0
+p = wepPow[atkHand]+(wepStrMult[atkHand]*atkDPS/s)
 
 //Roll Attack Strength
-p *= argument1
 p *= (1-wepPowRng[atkHand]+random(wepPowRng[atkHand]*2))
 
 a = target.arm
+
+//Play on Hit
+triggerOnHit()
 
 //Check Block
 if irandom(99)+1 < 100-(max(0,(mSkill-target.mSkill)*2)) and target.blocks > 0 and backstab = true
 {
     a += (p*.5)+target.blockStr
     
-    target.blocks -= 1
+    if argument0 = false
+    {
+        target.blocks -= 1
+    }
 }
 
 //Armour and Penetration
-a = max(0,a-wepPen[atkHand])*.25*(.5+random(.5))
+a = max(0,a-wepPen[atkHand])*.25*(.75+random(.25))
 
 //Calculate how much damage has been mitigated by armour
 ia = floor(p)-floor(p-a)
@@ -100,10 +82,14 @@ actorDie(target)
 #define suppress
 //supress(Supressed Character, Supression Value)
 
-if argument1 > argument0.suppression
+
+if argument1 > 1 or argument0.bold = false
 {
-    argument0.initSlot.delay += (argument1/argument0.sResist)-argument0.suppression
-    argument0.suppression += (argument1/argument0.sResist)-argument0.suppression
+    if argument1 > argument0.suppression
+    {
+        argument0.initSlot.delay += (argument1/argument0.sResist)-argument0.suppression
+        argument0.suppression += (argument1/argument0.sResist)-argument0.suppression
+    }
 }
 
 initiativeSlotReset()
