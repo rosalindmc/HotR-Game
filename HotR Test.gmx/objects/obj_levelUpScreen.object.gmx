@@ -38,9 +38,11 @@ travel = 0
 step = 0
 backStep = 0
 
+pTalent[5] = false
+
 canClick = true
 
-button = instance_create(x+30,y+95,obj_continueButton)
+button = instance_create(x+30,y+80,obj_continueButton)
 button.owner = id
 
 </string>
@@ -82,7 +84,7 @@ if step = 2 and combat = 0
 if backStep != 2 and step = 2
 {
     backStep = 2
-    talentChoices()
+    talentChoices(1)
 }
 
 if step = 3 and travel = 0
@@ -92,7 +94,7 @@ if step = 3 and travel = 0
 if backStep != 3 and step = 3
 {
     backStep = 3
-    talentChoices()
+    talentChoices(2)
 }
 
 if step = 4

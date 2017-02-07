@@ -1,4 +1,4 @@
-#define treeStrength
+#define treeStreetwise
 //tree(how to use, rank)
 switch(argument0)
 {
@@ -7,30 +7,27 @@ case 0:     //Run when the unit is initialized in battle
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_strength
+sprite_index = ico_streetwise
 image_index = argument1-1
 switch(argument1)
 {
-case 1: name = 'Basic Strength'
-tooltip = 'Attacks have a 20% chance to inflict more damage and DAZE' break
-case 2: name = 'Improved Strength'
-tooltip = 'Attacks have a 30% chance to inflict more damage and DAZE' break
-case 3: name = 'Expert Strength'
-tooltip = 'Attacks have a 40% chance to inflict more damage and DAZE' break
-case 4: name = 'Master Strength'
-tooltip = 'Attacks have a 50% chance to inflict more damage and DAZE' break
+case 1: name = 'Basic Streetwise'
+tooltip = 'City actions are safer. 10% better haggling' break
+case 2: name = 'Improved Streetwise'
+tooltip = 'City actions are safer. 15% better haggling' break
+case 3: name = 'Expert Streetwise'
+tooltip = 'City actions are safer. 20% better haggling' break
+case 4: name = 'Master Streetwise'
+tooltip = 'City actions are safer. 25% better haggling' break
 }
 break
 
 case 2:
-if char.might >= 8
 return true
-else
-return false
 break
 }
 
-#define branchBreaker
+#define script126
 //tree(how to use, rank)
 switch(argument0)
 {
@@ -51,7 +48,7 @@ return true
 break
 }
 
-#define branchCrunch
+#define script127
 //tree(how to use, rank)
 switch(argument0)
 {
@@ -72,7 +69,7 @@ return true
 break
 }
 
-#define branchSmash
+#define script128
 //tree(how to use, rank)
 switch(argument0)
 {

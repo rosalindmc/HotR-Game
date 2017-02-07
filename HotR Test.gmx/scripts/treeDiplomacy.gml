@@ -1,4 +1,4 @@
-#define treeStrength
+#define treeDiplomacy
 //tree(how to use, rank)
 switch(argument0)
 {
@@ -7,30 +7,27 @@ case 0:     //Run when the unit is initialized in battle
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_strength
+sprite_index = ico_diplomacy
 image_index = argument1-1
 switch(argument1)
 {
-case 1: name = 'Basic Strength'
-tooltip = 'Attacks have a 20% chance to inflict more damage and DAZE' break
-case 2: name = 'Improved Strength'
-tooltip = 'Attacks have a 30% chance to inflict more damage and DAZE' break
-case 3: name = 'Expert Strength'
-tooltip = 'Attacks have a 40% chance to inflict more damage and DAZE' break
-case 4: name = 'Master Strength'
-tooltip = 'Attacks have a 50% chance to inflict more damage and DAZE' break
+case 1: name = 'Basic Diplomacy'
+tooltip = 'Gain the Inspire ability.' break
+case 2: name = 'Improved Diplomacy'
+tooltip = 'Inspire is 10% stronger.' break
+case 3: name = 'Expert Diplomacy'
+tooltip = 'Inspire is 20% stronger.' break
+case 4: name = 'Master Diplomacy'
+tooltip = 'Inspire is 30% stronger.' break
 }
 break
 
 case 2:
-if char.might >= 8
 return true
-else
-return false
 break
 }
 
-#define branchBreaker
+#define script120
 //tree(how to use, rank)
 switch(argument0)
 {
@@ -51,7 +48,7 @@ return true
 break
 }
 
-#define branchCrunch
+#define script121
 //tree(how to use, rank)
 switch(argument0)
 {
@@ -72,7 +69,7 @@ return true
 break
 }
 
-#define branchSmash
+#define script122
 //tree(how to use, rank)
 switch(argument0)
 {

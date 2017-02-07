@@ -93,23 +93,6 @@
           <sprite>sprites\ico_heaterShield</sprite>
         </sprites>
       </sprites>
-      <sprites name="Talent Icons">
-        <sprite>sprites\ico_strength</sprite>
-        <sprite>sprites\ico_toughness</sprite>
-        <sprite>sprites\ico_breaker</sprite>
-        <sprite>sprites\ico_martial</sprite>
-        <sprite>sprites\ico_mobility</sprite>
-        <sprite>sprites\ico_evasion</sprite>
-        <sprite>sprites\ico_subterfuge</sprite>
-        <sprite>sprites\ico_insight</sprite>
-        <sprite>sprites\ico_subtlety</sprite>
-        <sprite>sprites\ico_frenzy</sprite>
-        <sprite>sprites\ico_discipline</sprite>
-        <sprite>sprites\ico_confidence</sprite>
-        <sprite>sprites\ico_daring</sprite>
-        <sprite>sprites\ico_leadership</sprite>
-        <sprite>sprites\ico_bravery</sprite>
-      </sprites>
       <sprites name="Core Icons">
         <sprite>sprites\spr_iconBorder</sprite>
         <sprite>sprites\ico_attributes</sprite>
@@ -119,6 +102,35 @@
       </sprites>
       <sprite>sprites\ico_money</sprite>
       <sprite>sprites\ico_experience</sprite>
+      <sprites name="Talents">
+        <sprites name="Combat Talents">
+          <sprite>sprites\ico_strength</sprite>
+          <sprite>sprites\ico_toughness</sprite>
+          <sprite>sprites\ico_breaker</sprite>
+          <sprite>sprites\ico_martial</sprite>
+          <sprite>sprites\ico_mobility</sprite>
+          <sprite>sprites\ico_evasion</sprite>
+          <sprite>sprites\ico_subterfuge</sprite>
+          <sprite>sprites\ico_insight</sprite>
+          <sprite>sprites\ico_subtlety</sprite>
+          <sprite>sprites\ico_frenzy</sprite>
+          <sprite>sprites\ico_discipline</sprite>
+          <sprite>sprites\ico_confidence</sprite>
+          <sprite>sprites\ico_daring</sprite>
+          <sprite>sprites\ico_leadership</sprite>
+          <sprite>sprites\ico_bravery</sprite>
+        </sprites>
+        <sprites name="Travel Talents">
+          <sprite>sprites\ico_thievery</sprite>
+          <sprite>sprites\ico_medicine</sprite>
+          <sprite>sprites\ico_diplomacy</sprite>
+          <sprite>sprites\ico_perform</sprite>
+          <sprite>sprites\ico_survival</sprite>
+          <sprite>sprites\ico_streetwise</sprite>
+          <sprite>sprites\ico_knowledge</sprite>
+          <sprite>sprites\ico_alchemy</sprite>
+        </sprites>
+      </sprites>
     </sprites>
     <sprites name="Equipment">
       <sprites name="Clothing">
@@ -287,12 +299,63 @@
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <scripts name="Events">
-      <script>scripts\eventStart.gml</script>
-      <script>scripts\campEvents.gml</script>
-      <script>scripts\createNotification.gml</script>
-      <script>scripts\eventActions.gml</script>
-      <script>scripts\eventChecks.gml</script>
+    <scripts name="Overworld">
+      <scripts name="Actors and Control">
+        <script>scripts\scr_tempActorListDraw.gml</script>
+        <script>scripts\worldControlInitialize.gml</script>
+        <script>scripts\addActor.gml</script>
+        <script>scripts\removeActor.gml</script>
+        <script>scripts\checkLevelUp.gml</script>
+        <scripts name="Party Scripts">
+          <script>scripts\characterInitialize.gml</script>
+          <script>scripts\partyInitialize.gml</script>
+          <scripts name="Character Creation">
+            <script>scripts\raceList.gml</script>
+            <script>scripts\scr_charactergenerator.gml</script>
+            <script>scripts\createCharacter.gml</script>
+          </scripts>
+        </scripts>
+        <scripts name="Movement and Control">
+          <script>scripts\owMovementRange.gml</script>
+        </scripts>
+      </scripts>
+      <scripts name="Outdated">
+        <scripts name="World Generation">
+          <script>scripts\scr_worldGen.gml</script>
+          <script>scripts\scr_worldCreatorStep.gml</script>
+          <scripts name="Biomes">
+            <script>scripts\scr_hearthgrove.gml</script>
+            <script>scripts\scr_highmount.gml</script>
+            <script>scripts\scr_avangard.gml</script>
+            <script>scripts\scr_elderSwamp.gml</script>
+            <script>scripts\scr_queensField.gml</script>
+            <script>scripts\scr_coldfistTaiga.gml</script>
+            <script>scripts\scr_savageTundra.gml</script>
+          </scripts>
+          <script>scripts\scr_nodeGen.gml</script>
+        </scripts>
+        <scripts name="Draw Environment">
+          <script>scripts\scr_initializeWorldTile.gml</script>
+          <script>scripts\scr_initializeSeaTile.gml</script>
+          <script>scripts\scr_detectCliffs.gml</script>
+          <script>scripts\scr_detectCliffsWater.gml</script>
+          <script>scripts\scr_drawTile.gml</script>
+          <script>scripts\scr_drawWater.gml</script>
+          <script>scripts\scr_updateMapVis.gml</script>
+        </scripts>
+      </scripts>
+      <scripts name="Setup and Teardown">
+        <script>scripts\battleSetup.gml</script>
+        <script>scripts\battleTeardown.gml</script>
+        <script>scripts\importCharacter.gml</script>
+      </scripts>
+      <scripts name="HUD">
+        <script>scripts\owHudButton.gml</script>
+      </scripts>
+      <scripts name="World Generation">
+        <script>scripts\worldGen.gml</script>
+        <script>scripts\worldScrollVis.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Combat">
       <scripts name="Actors">
@@ -369,63 +432,12 @@
         </scripts>
       </scripts>
     </scripts>
-    <scripts name="Overworld">
-      <scripts name="Actors and Control">
-        <script>scripts\scr_tempActorListDraw.gml</script>
-        <script>scripts\worldControlInitialize.gml</script>
-        <script>scripts\addActor.gml</script>
-        <script>scripts\removeActor.gml</script>
-        <script>scripts\checkLevelUp.gml</script>
-        <scripts name="Party Scripts">
-          <script>scripts\characterInitialize.gml</script>
-          <script>scripts\partyInitialize.gml</script>
-          <scripts name="Character Creation">
-            <script>scripts\raceList.gml</script>
-            <script>scripts\scr_charactergenerator.gml</script>
-            <script>scripts\createCharacter.gml</script>
-          </scripts>
-        </scripts>
-        <scripts name="Movement and Control">
-          <script>scripts\owMovementRange.gml</script>
-        </scripts>
-      </scripts>
-      <scripts name="Outdated">
-        <scripts name="World Generation">
-          <script>scripts\scr_worldGen.gml</script>
-          <script>scripts\scr_worldCreatorStep.gml</script>
-          <scripts name="Biomes">
-            <script>scripts\scr_hearthgrove.gml</script>
-            <script>scripts\scr_highmount.gml</script>
-            <script>scripts\scr_avangard.gml</script>
-            <script>scripts\scr_elderSwamp.gml</script>
-            <script>scripts\scr_queensField.gml</script>
-            <script>scripts\scr_coldfistTaiga.gml</script>
-            <script>scripts\scr_savageTundra.gml</script>
-          </scripts>
-          <script>scripts\scr_nodeGen.gml</script>
-        </scripts>
-        <scripts name="Draw Environment">
-          <script>scripts\scr_initializeWorldTile.gml</script>
-          <script>scripts\scr_initializeSeaTile.gml</script>
-          <script>scripts\scr_detectCliffs.gml</script>
-          <script>scripts\scr_detectCliffsWater.gml</script>
-          <script>scripts\scr_drawTile.gml</script>
-          <script>scripts\scr_drawWater.gml</script>
-          <script>scripts\scr_updateMapVis.gml</script>
-        </scripts>
-      </scripts>
-      <scripts name="Setup and Teardown">
-        <script>scripts\battleSetup.gml</script>
-        <script>scripts\battleTeardown.gml</script>
-        <script>scripts\importCharacter.gml</script>
-      </scripts>
-      <scripts name="HUD">
-        <script>scripts\owHudButton.gml</script>
-      </scripts>
-      <scripts name="World Generation">
-        <script>scripts\worldGen.gml</script>
-        <script>scripts\worldScrollVis.gml</script>
-      </scripts>
+    <scripts name="Events">
+      <script>scripts\eventStart.gml</script>
+      <script>scripts\campEvents.gml</script>
+      <script>scripts\createNotification.gml</script>
+      <script>scripts\eventActions.gml</script>
+      <script>scripts\eventChecks.gml</script>
     </scripts>
     <scripts name="Menu">
       <scripts name="Landing Menu">
@@ -468,8 +480,29 @@
       </scripts>
     </scripts>
     <scripts name="Talents">
-      <script>scripts\talents.gml</script>
-      <script>scripts\treeStrength.gml</script>
+      <scripts name="Combat Talents">
+        <script>scripts\treeStrength.gml</script>
+        <script>scripts\treeToughness.gml</script>
+        <script>scripts\treeMartial.gml</script>
+        <script>scripts\treeMobility.gml</script>
+        <script>scripts\treeInsight.gml</script>
+        <script>scripts\treeSubterfuge.gml</script>
+        <script>scripts\treeFrenzy.gml</script>
+        <script>scripts\treeDiscipline.gml</script>
+        <script>scripts\treeDaring.gml</script>
+        <script>scripts\treeLeadership.gml</script>
+        <script>scripts\talents.gml</script>
+      </scripts>
+      <scripts name="Travel Talents">
+        <script>scripts\treeThievery.gml</script>
+        <script>scripts\treeDiplomacy.gml</script>
+        <script>scripts\treeSurvival.gml</script>
+        <script>scripts\treeStreetwise.gml</script>
+        <script>scripts\treeKnowledge.gml</script>
+        <script>scripts\treeAlchemy.gml</script>
+        <script>scripts\treeMedicine.gml</script>
+        <script>scripts\treePerform.gml</script>
+      </scripts>
       <script>scripts\createTalents.gml</script>
       <scripts name="Level Up">
         <script>scripts\levelControl.gml</script>

@@ -75,9 +75,15 @@ if owner.step = 1
     case 3: name = 'Will' 
     tooltip = '+1 Physical Resist#+1 Mental Resist#+1 Life#+1 Stamina#+.25 Life Regeneration' break
     case 4: name = 'Fellowship' 
-    tooltip = '+5% Suppression Resistance#+Heal Power#+Companion Power#+Bond Strength#+5% Action Speed while Bold' break
+    tooltip = '+5% Suppression Resist#+Heal Power#+Bond Strength#+5% Action Speed while Bold' break
     }
 }
+
+if branch != false
+{
+    image_index = 0
+}
+
 </string>
           </argument>
         </arguments>
@@ -202,6 +208,8 @@ if tooltip != -4 and tt != 0
     draw_set_font(fnt_tinyText)
     draw_text_ext(ix,iy,tooltip,16,110)
 }
+
+draw_set_alpha(1)
 </string>
           </argument>
         </arguments>

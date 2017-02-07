@@ -1,4 +1,4 @@
-#define treeStrength
+#define treeToughness
 //tree(how to use, rank)
 switch(argument0)
 {
@@ -7,18 +7,18 @@ case 0:     //Run when the unit is initialized in battle
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_strength
+sprite_index = ico_toughness
 image_index = argument1-1
 switch(argument1)
 {
-case 1: name = 'Basic Strength'
-tooltip = 'Attacks have a 20% chance to inflict more damage and DAZE' break
-case 2: name = 'Improved Strength'
-tooltip = 'Attacks have a 30% chance to inflict more damage and DAZE' break
-case 3: name = 'Expert Strength'
-tooltip = 'Attacks have a 40% chance to inflict more damage and DAZE' break
-case 4: name = 'Master Strength'
-tooltip = 'Attacks have a 50% chance to inflict more damage and DAZE' break
+case 1: name = 'Basic Toughness'
+tooltip = 'Gain +2 life and stamina' break
+case 2: name = 'Improved Toughness'
+tooltip = 'Gain +3 life and stamina' break
+case 3: name = 'Expert Toughness'
+tooltip = 'Gain +4 life and stamina' break
+case 4: name = 'Master Toughness'
+tooltip = 'Gain +5 life and stamina' break
 }
 break
 
@@ -30,7 +30,7 @@ return false
 break
 }
 
-#define branchBreaker
+#define branchVigour
 //tree(how to use, rank)
 switch(argument0)
 {
@@ -41,9 +41,9 @@ break
 case 1:     //Tooltip and icon
 sprite_index = ico_breaker
 image_index = 1
-name = 'Breaker'
-tooltip = 'MIGHTY attacks SUNDER 1'
-branch = treeStrength
+name = 'Vigour'
+tooltip = 'Small chance to heal on attack.  Heal on downing a foe'
+branch = treeToughness
 break
 
 case 2:
@@ -51,7 +51,7 @@ return true
 break
 }
 
-#define branchCrunch
+#define branchMightyBlock
 //tree(how to use, rank)
 switch(argument0)
 {
@@ -62,9 +62,9 @@ break
 case 1:     //Tooltip and icon
 sprite_index = ico_breaker
 image_index = 1
-name = 'Crunch'
-tooltip = 'MIGHTY attacks inflict bonus damage to lower Might characters'
-branch = treeStrength
+name = 'Mighty Block'
+tooltip = 'Blocking can STUN or DAZE the attacker'
+branch = treeToughness
 break
 
 case 2:
@@ -72,7 +72,7 @@ return true
 break
 }
 
-#define branchSmash
+#define branchThickSkin
 //tree(how to use, rank)
 switch(argument0)
 {
@@ -83,9 +83,9 @@ break
 case 1:     //Tooltip and icon
 sprite_index = ico_breaker
 image_index = 1
-name = 'Smash'
-tooltip = 'Attacks inflict bonus damage to high health foes (70%+)'
-branch = treeStrength
+name = 'Thick Skin'
+tooltip = 'Suffer 30% less damage while below half life'
+branch = treeToughness
 break
 
 case 2:

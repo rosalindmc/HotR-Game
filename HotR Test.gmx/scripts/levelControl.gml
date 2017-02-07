@@ -111,16 +111,21 @@ i.owner = id
 #define talentChoices
 //Create Weighted Legal talent list
 list = ds_list_create()
-combatTalentList()
+
+if argument0 = 1
+{combatTalentList()}
+else if argument0 = 2
+{travelTalentList()}
+
 ds_list_shuffle(list)
 
 tc = min(2+floor(char.cunning/4),ds_list_size(list))
 iy = ystart-20
 
 iii = 0
-for(i = 0; i < tc; i++)
+for(i = 0; i < tc; iii++)
 {
-    if checkList(ds_list_find_value(list,iii),i-1) 
+    if checkList(ds_list_find_value(list,iii),i) 
     {
         pTalent[i] = ds_list_find_value(list,iii)
         
@@ -135,8 +140,8 @@ for(i = 0; i < tc; i++)
             script_execute(other.pTalent[other.i],1,other.l)
         }
         iy += 20
+        i += 1
     }
-    iii += 1
 }
 
 #define finalizeChoice
@@ -159,37 +164,96 @@ else
 #define combatTalentList
 //Talent Trees
 talentPrereq(treeStrength,0)
-talentPrereq(branchBreaker,treeStrength)
-talentPrereq(branchBreaker,treeStrength)
-talentPrereq(branchBreaker,treeStrength)
-talentPrereq(branchCrunch,treeStrength)
-talentPrereq(branchCrunch,treeStrength)
-talentPrereq(branchCrunch,treeStrength)
-talentPrereq(branchSmash,treeStrength)
-talentPrereq(branchSmash,treeStrength)
-talentPrereq(branchSmash,treeStrength)
-
 talentPrereq(treeToughness,0)
-
 talentPrereq(treeMartial,0)
-
 talentPrereq(treeMobility,0)
-
 talentPrereq(treeInsight,0)
-
 talentPrereq(treeSubterfuge,0)
-
 talentPrereq(treeFrenzy,0)
-
 talentPrereq(treeDiscipline,0)
-
 talentPrereq(treeLeadership,0)
-
 talentPrereq(treeDaring,0)
 
+repeat(3)
+{
+    talentPrereq(branchBreaker,treeStrength)
+    talentPrereq(branchCrunch,treeStrength)
+    talentPrereq(branchSmash,treeStrength)
+    
+    talentPrereq(branchVigour,treeToughness)
+    talentPrereq(branchMightyBlock,treeToughness)
+    talentPrereq(branchThickSkin,treeToughness)
+    
+    talentPrereq(branchAccuracy,treeMartial)
+    talentPrereq(branchCombatDrill,treeMartial)
+    talentPrereq(branchSlayer,treeMartial)
+    
+    talentPrereq(branchEvasion,treeMobility)
+    talentPrereq(branchLightningStrike,treeMobility)
+    talentPrereq(branchMarathon,treeMobility)
+    
+    talentPrereq(branchVigiliance,treeInsight)
+    talentPrereq(branchPassArmour,treeInsight)
+    talentPrereq(branchHeightAdvantage,treeInsight)
+    
+    talentPrereq(branchShadowStep,treeSubterfuge)
+    talentPrereq(branchAmbush,treeSubterfuge)
+    talentPrereq(branchIncognito,treeSubterfuge)
+    
+    talentPrereq(branchUnstoppable,treeFrenzy)
+    talentPrereq(branchBloodlust,treeFrenzy)
+    talentPrereq(branchWrath,treeFrenzy)
+    
+    talentPrereq(branchBlockTraining,treeDiscipline)
+    talentPrereq(branchConfidence,treeDiscipline)
+    talentPrereq(branchShakeItOff,treeDiscipline)
+    
+    talentPrereq(branchLeadByExample,treeLeadership)
+    talentPrereq(branchUnity,treeLeadership)
+    talentPrereq(branchRally,treeLeadership)
+    
+    talentPrereq(branchBravery,treeDaring)
+    talentPrereq(branchAgainstTheOdds,treeDaring)
+    talentPrereq(branchFlourish,treeDaring)
+    
+}
+
+for(ttt = 0; ttt < 8; ttt++)
+{
+    if char.talent[ttt,0] != emptyTalent
+    {
+        if ds_list_find_index(list,char.talent[ttt,0]) != -1
+        {
+            talentPrereq(char.talent[ttt,0],0)
+            talentPrereq(char.talent[ttt,0],0)
+        }
+    }
+}
 
 
 
+#define travelTalentList
+//Talent Trees
+talentPrereq(treeThievery,0)
+talentPrereq(treeDiplomacy,0)
+talentPrereq(treeSurvival,0)
+talentPrereq(treeStreetwise,0)
+talentPrereq(treeKnowledge,0)
+talentPrereq(treeAlchemy,0)
+talentPrereq(treeMedicine,0)
+talentPrereq(treePerform,0)
+
+for(ttt = 0; ttt < 8; ttt++)
+{
+    if char.talent[ttt,0] != emptyTalent
+    {
+        if ds_list_find_index(list,char.talent[ttt,0]) != -1
+        {
+            talentPrereq(char.talent[ttt,0],0)
+            talentPrereq(char.talent[ttt,0],0)
+        }
+    }
+}
 
 #define checkList
 success = true
@@ -206,28 +270,29 @@ return success
 #define talentPrereq
 //talentPrereq(talenttoadd,branch?)
 
-if argument1 = false
+if argument1 = 0
 {
     if script_execute(argument0,2)
     {
-        not4 = false
+        l4 = false
         openSlot = false
         
         for(t = 0; t < 8; t++)
         {
             if char.talent[t,0] = argument0
             {
-                if char.talent[t,5] = !4
+                if char.talent[t,5] = 4
                 {
-                    not4 = true
+                    l4 = true
                 }
             }
-            if char.talent[t,0] = emptyTalent
+            else if char.talent[t,0] = emptyTalent
             {
                 openSlot = true
             }
         }
-        if not4 = true or openSlot = true
+        
+        if l4 = false and openSlot = true
         {
             ds_list_add(list,argument0)
         }   

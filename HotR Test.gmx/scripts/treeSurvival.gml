@@ -1,4 +1,4 @@
-#define treeStrength
+#define treeSurvival
 //tree(how to use, rank)
 switch(argument0)
 {
@@ -7,30 +7,27 @@ case 0:     //Run when the unit is initialized in battle
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_strength
+sprite_index = ico_survival
 image_index = argument1-1
 switch(argument1)
 {
-case 1: name = 'Basic Strength'
-tooltip = 'Attacks have a 20% chance to inflict more damage and DAZE' break
-case 2: name = 'Improved Strength'
-tooltip = 'Attacks have a 30% chance to inflict more damage and DAZE' break
-case 3: name = 'Expert Strength'
-tooltip = 'Attacks have a 40% chance to inflict more damage and DAZE' break
-case 4: name = 'Master Strength'
-tooltip = 'Attacks have a 50% chance to inflict more damage and DAZE' break
+case 1: name = 'Basic Survival'
+tooltip = 'Foraging and Hunting yield better results. +1.0 skill when fighting animals' break
+case 2: name = 'Improved Survival'
+tooltip = 'Foraging and Hunting yield better results. +1.5 skill when fighting animals' break
+case 3: name = 'Expert Survival'
+tooltip = 'Foraging and Hunting yield better results. +2.0 skill when fighting animals' break
+case 4: name = 'Master Survival'
+tooltip = 'Foraging and Hunting yield better results. +2.5 skill when fighting animals' break
 }
 break
 
 case 2:
-if char.might >= 8
 return true
-else
-return false
 break
 }
 
-#define branchBreaker
+#define script123
 //tree(how to use, rank)
 switch(argument0)
 {
@@ -51,7 +48,7 @@ return true
 break
 }
 
-#define branchCrunch
+#define script124
 //tree(how to use, rank)
 switch(argument0)
 {
@@ -72,7 +69,7 @@ return true
 break
 }
 
-#define branchSmash
+#define script125
 //tree(how to use, rank)
 switch(argument0)
 {
