@@ -606,7 +606,6 @@
     </objects>
     <objects name="Combat">
       <objects name="Core">
-        <object>objects\obj_combatHUD</object>
         <object>objects\obj_tile</object>
         <object>objects\obj_wall</object>
         <object>objects\obj_thinwall</object>
@@ -627,6 +626,8 @@
         <object>objects\obj_character</object>
       </objects>
       <objects name="Combat HUD">
+        <object>objects\obj_charInfo</object>
+        <object>objects\obj_combatHUD</object>
         <object>objects\obj_initiativeSlot</object>
         <object>objects\obj_actionButton</object>
       </objects>

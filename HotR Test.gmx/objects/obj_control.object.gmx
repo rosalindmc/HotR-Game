@@ -50,8 +50,9 @@ actNum = 0 //Variable for number of actions
 //Other variables
 global.zViewToggle = false
 
-//Create Camera
-instance_create(x,y,obj_camera)
+//Create Combat HUD
+i = instance_create(0,view_hview-120,obj_charInfo)
+i.control = id
 
 //Framerate
 room_speed = global.fspd
@@ -300,17 +301,21 @@ cIsoX = floor(((x-100)/40)+((y-100)/20))-25
 cIsoY = floor(((y-100)/20)-((x-100)/40))+25
 cIsoZ = global.zLevel 
 
-if point_in_rectangle(mouse_x,mouse_y,view_xview+110,view_yview+view_hview-40,view_xview+110+(actNum*20),view_yview+view_hview-20)
-{
-    cHover = noone
-    global.attackFromTile = noone  
-}
-else if cIsoX &gt;= 0 and cIsoX &lt; mapWidth and cIsoY &gt;= 0 and cIsoY &lt; mapHeight
+
+if cIsoX &gt;= 0 and cIsoX &lt; mapWidth and cIsoY &gt;= 0 and cIsoY &lt; mapHeight
 {
     cHover = map[cIsoX+(cIsoZ*mapWidth),cIsoY]
     depth = cHover.depth-1
 }
 else
+{
+    cHover = noone
+    global.attackFromTile = noone  
+}
+
+//Mouse Canceling
+if point_in_rectangle(mouse_x,mouse_y,view_xview+130,view_yview+view_hview-40,view_xview+130+(actNum*20),view_yview+view_hview-20)
+or (global.nextChar.owner.player = true and point_in_rectangle(mouse_x,mouse_y,view_xview,view_yview+view_hview-120,view_xview+110,view_yview+view_hview))
 {
     cHover = noone
     global.attackFromTile = noone  
@@ -468,6 +473,7 @@ if obj_camera.x != obj_camera.xprevious or obj_camera.y != obj_camera.yprevious
             <kind>1</kind>
             <string>draw_set_font(fnt_small)
 draw_set_halign(fa_right)
+draw_set_valign(fa_middle)
 drawText(c_black,c_white,view_xview+view_wview-10,view_yview+60,mapTime)
 //drawText(c_black,c_white,view_xview+view_wview-10,view_yview+80,cIsoZ)
 //drawText(c_black,c_white,view_xview+view_wview-10,view_yview+100,global.zLevel)
