@@ -3,11 +3,8 @@
 
 o = argument0
 
-iCVis()
-iCStats()
-iCWear()
-iCSubStats()
-iCEquip(1)
+invSwitch = 1
+iC()
 
 life = lifeMax
 stm = stmMax
@@ -214,7 +211,7 @@ stmMax = floor(8+(will-8)+((grace-8)/2)+o.stamina)
 stmRegen = 5+(stmMax*.1)
 
 //Talents
-initializeTalents()
+initializeTraits()
 
 for(i = 0; i < 8; i++)
 {
@@ -224,6 +221,15 @@ for(i = 0; i < 8; i++)
         script_execute(o.talent[i,1],0,o.talent[i,5])
         script_execute(o.talent[i,2],0,o.talent[i,5])
         script_execute(o.talent[i,3],0,o.talent[i,5])
+    }
+}
+
+//Status Effects
+for(s = 0; s < ds_list_size(status); s++)
+{
+    with(ds_list_find_value(status,s))
+    {
+        script_execute(effect,1)
     }
 }
 
@@ -339,3 +345,9 @@ if o.invSlot[4,0] = emptySlot
     hipsItem[hipsItems] = spr_underClothes
     hipsColour[hipsItems] = c_white
 }
+#define iC
+iCVis()
+iCStats()
+iCWear()
+iCSubStats()
+iCEquip(invSwitch)

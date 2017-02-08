@@ -139,7 +139,7 @@ while (i <= ii)
 }
 
 #define classGen
-switch(4)//irandom(4))
+switch(irandom(4))
 {
 case 0: 
 class = 'Wizard'
@@ -260,8 +260,8 @@ classCSkill = .3
 might += 2
 will += 1
 //Talent
-talent[0,0] = treeStrength//choose(treeStrength,treeDiscipline,treeToughness,treeMartial)
-talent[0,5] = 2
+talent[0,0] = choose(treeStrength,treeDiscipline,treeToughness,treeMartial)
+talent[0,5] = 4
 break
 }
 

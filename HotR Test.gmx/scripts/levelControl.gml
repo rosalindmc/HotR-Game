@@ -179,10 +179,12 @@ repeat(3)
     talentPrereq(branchBreaker,treeStrength)
     talentPrereq(branchCrunch,treeStrength)
     talentPrereq(branchSmash,treeStrength)
-    
+    talentPrereq(branchReadyForMore,treeStrength)
+        
     talentPrereq(branchVigour,treeToughness)
     talentPrereq(branchMightyBlock,treeToughness)
     talentPrereq(branchThickSkin,treeToughness)
+    talentPrereq(branchMightyHealth,treeToughness)
     
     talentPrereq(branchAccuracy,treeMartial)
     talentPrereq(branchCombatDrill,treeMartial)

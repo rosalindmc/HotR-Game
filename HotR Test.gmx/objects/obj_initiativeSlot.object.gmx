@@ -50,10 +50,11 @@ iy = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if point_in_rectangle(mouse_x,mouse_y,ix-(size*6),iy-(size*6),ix+(size*6),iy+(size*6))
+            <string>//Select by hover
+if point_in_rectangle(mouse_x,mouse_y,ix-(size*6),iy-(size*6),ix+(size*6),iy+(size*6))
 {
     obj_control.cHover = owner.isoTile
-    obj_control.depth = cHover.depth-1
+    obj_control.depth = obj_control.cHover.depth-1
 }
 </string>
           </argument>

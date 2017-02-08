@@ -45,7 +45,21 @@ break
 switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
+onHit[onHitSize,0] = lifeGain
+onHit[onHitSize,1] = 'Vigour'
+onHit[onHitSize,2] = 20
+onHit[onHitSize,3] = 1
+onHit[onHitSize,4] = true
+onHit[onHitSize,5] = false
+onHitSize += 1
 
+onDown[onDownSize,0] = lifeGain
+onDown[onDownSize,1] = 'Vigour'
+onDown[onDownSize,2] = 100
+onDown[onDownSize,3] = 2
+onDown[onDownSize,4] = false
+onDown[onDownSize,5] = false
+onDownSize += 1
 break
 
 case 1:     //Tooltip and icon
@@ -66,7 +80,13 @@ break
 switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
-
+onBlock[onBlockSize,0] = statusGive
+onBlock[onBlockSize,1] = daze
+onBlock[onBlockSize,2] = 100
+onBlock[onBlockSize,3] = 50
+onBlock[onBlockSize,4] = 5
+onBlock[onBlockSize,5] = false
+onBlockSize += 1
 break
 
 case 1:     //Tooltip and icon
@@ -87,7 +107,13 @@ break
 switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
-
+areHit[areHitSize,0] = healthMit
+areHit[areHitSize,1] = 'Thick Skin'
+areHit[areHitSize,2] = 30
+areHit[areHitSize,3] = 50
+areHit[areHitSize,4] = false
+areHit[areHitSize,5] = false
+areHitSize += 1
 break
 
 case 1:     //Tooltip and icon
@@ -95,6 +121,27 @@ sprite_index = ico_breaker
 image_index = 1
 name = 'Thick Skin'
 tooltip = 'Suffer 30% less damage while below half life'
+branch = treeToughness
+break
+
+case 2:
+return true
+break
+}
+
+#define branchMightyHealth
+//tree(how to use, rank)
+switch(argument0)
+{
+case 0:     //Run when the unit is initialized in battle
+lifeRegen *= 1.5
+break
+
+case 1:     //Tooltip and icon
+sprite_index = ico_breaker
+image_index = 1
+name = 'Mighty Health'
+tooltip = 'Increase life regeneration by 50%'
 branch = treeToughness
 break
 

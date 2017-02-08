@@ -38,7 +38,13 @@ if argument1 = 0
 
     case 21: gainExperience(1) skipTo(20) break
     case 22: gainExperience(10) skipTo(20) break
-    case 23: gainExperience(100) skipTo(20) break
+    case 23: 
+    for(i = 0; i < ds_list_size(global.eventActor.party); i++)
+    {
+    global.eventCharacter = ds_list_find_value(global.eventActor.party,i)
+    gainExperience(100) 
+    }
+    skipTo(20) break
     case 24: gainExperience(1000) skipTo(20) break
     
     case 40:

@@ -100,8 +100,6 @@
         <sprite>sprites\ico_wait</sprite>
         <sprite>sprites\ico_switch</sprite>
       </sprites>
-      <sprite>sprites\ico_money</sprite>
-      <sprite>sprites\ico_experience</sprite>
       <sprites name="Talent Icons">
         <sprites name="Combat Talents">
           <sprite>sprites\ico_strength</sprite>
@@ -131,6 +129,11 @@
           <sprite>sprites\ico_alchemy</sprite>
         </sprites>
       </sprites>
+      <sprites name="Status Icons">
+        <sprite>sprites\ico_daze</sprite>
+      </sprites>
+      <sprite>sprites\ico_money</sprite>
+      <sprite>sprites\ico_experience</sprite>
     </sprites>
     <sprites name="Equipment">
       <sprites name="Clothing">
@@ -501,6 +504,7 @@
       </scripts>
       <scripts name="Procs">
         <script>scripts\mighty.gml</script>
+        <script>scripts\healthMit.gml</script>
       </scripts>
       <scripts name="Abilities">
         <scripts name="Spells">
@@ -513,6 +517,11 @@
           <script>scripts\martialTactics.gml</script>
         </scripts>
       </scripts>
+    </scripts>
+    <scripts name="Status Effects">
+      <script>scripts\daze.gml</script>
+      <script>scripts\strength.gml</script>
+      <script>scripts\applyStatusEffect.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">
@@ -635,10 +644,10 @@
         <object>objects\obj_carriedWeapon</object>
         <object>objects\obj_descriptor</object>
       </objects>
-      <object>objects\obj_control</object>
       <objects name="Status Effects">
         <object>objects\obj_status</object>
       </objects>
+      <object>objects\obj_control</object>
     </objects>
   </objects>
   <rooms name="rooms">

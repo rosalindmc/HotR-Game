@@ -37,15 +37,15 @@ switch(argument0)
         //Move and Update Grid
         makeMovePath(cHover)
         i.pathLength = ii
-        i.stm -= cHover.g*.1
-        if cHover.overlay = 2{i.stm -= cHover.g*.1}
+        i.stm -= cHover.g*.1*i.movStaminaMult
+        if cHover.overlay = 2{i.stm -= cHover.g*.1*i.movStaminaMult}
         gridUpdate(i, cHover)
         
         //Start the Action
         with(i){actMove(1)}
                 
         //End Turn
-        endTurn(3.0/i.haste)
+        endTurn(3.0/(i.haste+i.movHaste))
         wipeTiles()
     }
     
@@ -69,8 +69,8 @@ switch(argument0)
             //Move and Update Grid
             makeMovePath(global.attackFromTile)
             i.pathLength = ii
-            i.stm -= global.attackFromTile.g*.1
-            if global.attackFromTile.overlay = 2{i.stm -= global.attackFromTile.g*.1}
+            i.stm -= global.attackFromTile.g*.1*i.movStaminaMult
+            if global.attackFromTile.overlay = 2{i.stm -= global.attackFromTile.g*.1*i.movStaminaMult}
             gridUpdate(i, global.attackFromTile)
             
             //Start the Action

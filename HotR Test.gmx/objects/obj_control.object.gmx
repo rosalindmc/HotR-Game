@@ -69,8 +69,8 @@ global.attackFromTile = -4
 action = moveControl
 
 //Tile Creation
-mapHeight = 20
-mapWidth = 20
+mapHeight = 10
+mapWidth = 10
 mapDepth = 3
 
 runEvent = -4

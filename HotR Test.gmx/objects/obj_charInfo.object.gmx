@@ -29,29 +29,67 @@
 y = ystart+view_yview
 
 if global.timeDelay = 0 and global.nextChar.owner.player = true
-{
-h = noone
-if control.cHover != noone
-{
-if control.cHover.occupant != noone
-{
-    h = control.cHover.occupant
-}
-}
-if h = noone
-{
-    h = global.nextChar.owner
-}
-
+{   
+    iy = y
+    
+    h = noone
+    if control.cHover != noone
+    {
+        if control.cHover.occupant != noone
+        {
+            h = control.cHover.occupant
+        }
+    }
+    if h = noone
+    {
+        h = global.nextChar.owner
+    }
+    
+    //Status Effects
+    with(obj_status)
+    {
+        vis = false
+    }
+    
+    for(s = 0; s &lt; ds_list_size(h.status); s++)
+    {
+        with(ds_list_find_value(h.status,s))
+        {
+            other.iy -= 25
+            tx = other.x+15-view_xview
+            ty = other.iy-view_yview
+            vis = true
+        }
+    }
+    
+    
     draw_sprite(spr_levelSheet,0,x,y+50)
     
     draw_set_colour(c_black)
-    draw_set_halign(fa_left)
+    draw_set_halign(fa_center)
     draw_set_valign(fa_top)
     draw_set_font(fnt_tinyText)
     
-    draw_text(x+5,y+5,h.name)
-    draw_text(x+5,y+17,'Stamina: '+string(h.stm)+' / '+string(h.stmMax))
+    iy = y+5
+    draw_text(x+55,iy,h.name)
+    iy += 12
+    draw_text(x+55,iy,'Stamina')
+    iy += 12
+    
+    draw_set_colour(c_yellow)
+    draw_rectangle(x+5,iy,x+5+(100*(h.stm/h.stmMax)),iy+6,false)
+    draw_set_colour(c_black)
+    draw_rectangle(x+5,iy,x+105,iy+6,true)
+    iy += 12
+    
+    draw_text(x+55,iy,'Focus')
+    iy += 12
+    
+    draw_set_colour(make_colour_rgb(155,0,0))
+    draw_rectangle(x+5,iy,x+5+(100*h.bold),iy+6,false)
+    draw_set_colour(c_black)
+    draw_rectangle(x+5,iy,x+105,iy+6,true)
+    iy += 12
 }
 </string>
           </argument>

@@ -30,6 +30,9 @@
 //Animation and Drawing (Temp)
 humanoid(0)
 
+//Effects
+status = ds_list_create()
+
 //Game Attributes
 initializeCharStats()
 
@@ -256,9 +259,9 @@ if global.charTab = tab
     draw_text(x-20,y+116,string_format(mSkill,2,1)+" / "+string_format(rSkill,2,1)+" / "+string_format(cSkill,2,1))
 
     s1 = (3-(dualWield*.5))/((wepSpeed[1]))
-    p1 = wepPow[1]+(wepStrMult[1]*atkDPS/s1)
+    p1 = wepPow[1]+(wepStrMult[1]*atkDPS*s1)
     s2 = (3-(dualWield*.5))/((wepSpeed[2]))
-    p2 = wepPow[2]+(wepStrMult[2]*atkDPS/s2)
+    p2 = wepPow[2]+(wepStrMult[2]*atkDPS*s2)
     
     //Weapon and Armour
     draw_set_halign(fa_left)

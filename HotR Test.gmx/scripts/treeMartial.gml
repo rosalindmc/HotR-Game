@@ -88,14 +88,47 @@ break
 switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
-
+onHit[onHitSize,0] = healthFel
+onHit[onHitSize,1] = 'Slayer'
+onHit[onHitSize,2] = 50
+onHit[onHitSize,3] = 1.4
+onHit[onHitSize,4] = true
+onHit[onHitSize,5] = false
+onHitSize += 1
 break
 
 case 1:     //Tooltip and icon
 sprite_index = ico_evasion
 image_index = 1
 name = 'Slayer'
-tooltip = '+2 DPS against foes with less than 50% life'
+tooltip = '+1.4 DPS against foes with less than 50% life'
+branch = treeMartial
+break
+
+case 2:
+return true
+break
+}
+
+#define branchOpportunist
+//tree(how to use, rank)
+switch(argument0)
+{
+case 0:     //Run when the unit is initialized in battle
+onHit[onHitSize,0] = disableFel
+onHit[onHitSize,1] = 'Opportunism'
+onHit[onHitSize,2] = 1.4
+onHit[onHitSize,3] = false
+onHit[onHitSize,4] = false
+onHit[onHitSize,5] = false
+onHitSize += 1
+break
+
+case 1:     //Tooltip and icon
+sprite_index = ico_evasion
+image_index = 1
+name = 'Opportunist'
+tooltip = '+1.4 DPS against foes who are STUNNED, IMMOBILIZED, SLOWED, DAZED or BLINDED'
 branch = treeMartial
 break
 

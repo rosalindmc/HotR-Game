@@ -75,6 +75,9 @@ vis = false
 scrollVis = false
 sX = 1
 
+//Effects
+status = ds_list_create()
+
 boldGlow()
 
 #define initializeCharStats
@@ -146,7 +149,7 @@ bold = 0
 
 //Initialize of weapons for weapon users
 initializeTriggers()
-initializeTalents()
+initializeTraits()
 initializeWeapon(1)
 initializeWeapon(2)
 
@@ -164,6 +167,7 @@ onStealth[0,5] = false
 onBackstab[0,5] = false
 onUpkeep[0,5] = false
 onSneakAttack[0,5] = false
+onBlock[0,5] = false
 }
 
 onHitSize = 0
@@ -177,14 +181,22 @@ onStealthSize = 0
 onBackstabSize = 0
 onUpkeepSize = 0
 onSneakAttackSize = 0
+onBlockSize = 0
 
-#define initializeTalents
+#define initializeTraits
+//Talent Effects
 evasion = false
+breaker = false
+crunch = false
 aim = 1
+
+//Various Effects
 atkHaste = 0
 movHaste = 0
 atkStaminaMult = 1
 movStaminaMult = 1
+missChance = 0
+
 
 #define initializeWeapon
 //Initialize basic weapon variables to prevent errors

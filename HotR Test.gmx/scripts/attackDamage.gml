@@ -4,8 +4,8 @@
 
 var backstab = false
 
-//Suppress
-suppress(target,2.0)
+dge = target.dodge-(max(0,(mSkill-target.mSkill)*2))
+triggerOnAttack()
 
 //Facing
 if angle_difference(facing,point_direction(x,0,target.x,y-target.y)) < 80
@@ -13,27 +13,41 @@ if angle_difference(facing,point_direction(x,0,target.x,y-target.y)) < 80
     backstab = true    
 }
 
-//Check Dodge
-if irandom(99)+1 < target.dodge-(max(0,(mSkill-target.mSkill)*2)) and backstab = true
+//Check Miss/Dodge
+if irandom(99)+1 < missChance
+{
+    ii = instance_create(x,y-h-height,obj_descriptor)
+    ii.text = 'Miss'
+    ii.font = fnt_tiny
+}
+else if irandom(99)+1 < dge and backstab = true
 {
     ii = instance_create(target.x,target.y-target.h-target.height,obj_descriptor)
     ii.text = 'Dodge'
     ii.font = fnt_tiny
+    
+    //Suppress
+    if target.evasion != true
+    {
+        suppress(target,2.0)
+    }
 }
 else
 {
+//Suppress
+suppress(target,2.0)
+
 //Find Attack Speed
 s = (3-(dualWield*.5))/((wepSpeed[atkHand]))
 
 //Find Base Attack Strength
-p = wepPow[atkHand]+(wepStrMult[atkHand]*atkDPS/s)
+p = wepPow[atkHand]+(wepStrMult[atkHand]*atkDPS*s)
 
 //Roll Attack Strength
 p *= (1-wepPowRng[atkHand]+random(wepPowRng[atkHand]*2))
 
 a = target.arm
 
-//Play on Hit
 triggerOnHit()
 
 //Check Block
@@ -44,6 +58,7 @@ if irandom(99)+1 < 100-(max(0,(mSkill-target.mSkill)*2)) and target.blocks > 0 a
     if argument0 = false
     {
         target.blocks -= 1
+        triggerOnBlock()
     }
 }
 
@@ -76,7 +91,13 @@ else if ia > 0
 
 //Damage
 target.life -= p
-actorDie(target)
+
+if target.life <= 0
+{
+    triggerOnDown()
+    actorDie(target)
+}
+
 }
 
 #define suppress

@@ -41,7 +41,14 @@ break
 switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
-
+areAttacked[areAttackedSize,0] = boldDodge
+areAttacked[areAttackedSize,1] = 15
+areAttacked[areAttackedSize,2] = false
+areAttacked[areAttackedSize,3] = false
+areAttacked[areAttackedSize,4] = false
+areAttacked[areAttackedSize,5] = false
+areAttackedSize += 1
+evasion = true
 break
 
 case 1:     //Tooltip and icon
@@ -62,7 +69,13 @@ break
 switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
-
+onHit[onHitSize,0] = lightningStrike
+onHit[onHitSize,1] = 'Lightning Strike'
+onHit[onHitSize,2] = .2
+onHit[onHitSize,3] = false
+onHit[onHitSize,4] = false
+onHit[onHitSize,5] = false
+onHitSize += 1
 break
 
 case 1:     //Tooltip and icon
@@ -83,14 +96,15 @@ break
 switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
-
+movHaste = 0.1
+movStaminaMult *= .20
 break
 
 case 1:     //Tooltip and icon
 sprite_index = ico_evasion
 image_index = 1
 name = 'Marathon'
-tooltip = 'Reduce all stamina costs from moving by 80%'
+tooltip = '10% increased movement Rate. Reduce all stamina costs from moving by 80%'
 branch = treeMobility
 break
 
@@ -98,3 +112,7 @@ case 2:
 return true
 break
 }
+
+#define branchHardTarget
+
+#define branchMomentum

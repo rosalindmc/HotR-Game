@@ -85,8 +85,13 @@ alarm[1] = 2
             <string>owner = ds_list_find_value(party,0)
 
 humanoid(0)
+
+
+//Effects
+status = ds_list_create()
+
 initializeTriggers()
-initializeTalents()
+initializeTraits()
 importCharacter(owner)
 vis = true
 </string>
