@@ -5,7 +5,8 @@ icon = ico_dodgeBuff
 potency = 10
 upkp = 60.0
 duration = 5.0
-name = 'Dodge'
+name = 'Dodge '+string(potency)
+type = 'Focus'
 buff = true
 tooltip = '+'+string(potency)+' dodge'
 break
@@ -16,5 +17,12 @@ break
 
 case 2:     //Upkeep
 
+break
+
+case 3:     //Stacking
+potency = max(potency,ipot)
+duration = max(duration,idur)
+name = 'Dodge '+string(potency)
+tooltip = '+'+string(potency)+' dodge'
 break
 }

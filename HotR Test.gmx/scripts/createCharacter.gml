@@ -246,7 +246,7 @@ classCSkill = .3
 cunning += 2
 grace += 1
 //Talent
-talent[0,0] = choose(treeMobility,treeSubterfuge)
+talent[0,0] = choose(treeMobility)
 talent[0,5] = 1
 talent[1,0] = choose(treeThievery,treeStreetwise)
 talent[1,5] = 2

@@ -111,7 +111,7 @@ areHit[areHitSize,0] = healthMit
 areHit[areHitSize,1] = 'Thick Skin'
 areHit[areHitSize,2] = 30
 areHit[areHitSize,3] = 50
-areHit[areHitSize,4] = false
+areHit[areHitSize,4] = true
 areHit[areHitSize,5] = false
 areHitSize += 1
 break

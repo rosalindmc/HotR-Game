@@ -3,14 +3,16 @@
 //attackDamage(Ranged?)
 
 backstab = false
+mle = argument0
 
 dge = target.dodge-(max(0,(mSkill-target.mSkill)*2))
 triggerOnAttack()
 
 //Facing
-if angle_difference(facing,point_direction(x,0,target.x,y-target.y)) < 180-target.arc
+if abs(angle_difference(target.cFacing,point_direction(isoTile.x,0,target.isoTile.x,(target.isoTile.y-isoTile.y)*2))) < 180-target.arc
 {
     backstab = true    
+    createNotification('Backstab!',ico_subterfuge,0)
 }
 
 //Check Miss/Dodge
@@ -20,7 +22,7 @@ if irandom(99)+1 < missChance
     ii.text = 'Miss'
     ii.font = fnt_tiny
 }
-else if irandom(99)+1 < dge and backstab = true
+else if irandom(99)+1 < dge and backstab = false
 {
     ii = instance_create(target.x,target.y-target.h-target.height,obj_descriptor)
     ii.text = 'Dodge'
@@ -52,15 +54,19 @@ a = target.arm
 triggerOnHit()
 
 //Check Block
-if target.blocks > 0 and backstab = true
+if target.blocks > 0 and backstab = false
 {
     if irandom(99)+1 < 100-(max(0,(mSkill-target.mSkill)*2)) 
     {
         a += (p*.5)+target.blockStr
+        createNotification('Block!',ico_discipline,0)
         
-        if argument0 = false
+        if mle = false
         {   
-            triggerOnBlock()
+            with(target)
+            {
+                triggerOnBlock()
+            }
         }
     }
     target.blocks -= 1

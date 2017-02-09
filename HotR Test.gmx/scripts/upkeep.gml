@@ -24,7 +24,7 @@ if obj_control.mapTimeOn = true and global.timeDelay = 0
     //Boldness
     if suppression = 0
     {
-        bold = min(bold+(1/(global.fspd*5)),1)
+        bold = min(bold+(1/(global.fspd*10)),1)
     }
     else
     {

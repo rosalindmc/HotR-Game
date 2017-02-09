@@ -25,13 +25,13 @@ image_index = argument1-1
 switch(argument1)
 {
 case 1: name = 'Basic Insight'
-tooltip = 'Increased detection range and +1.0 DPS on backstab and against helpless foes' break
+tooltip = 'Increased detection range and +.6 POW on backstab and against helpless foes' break
 case 2: name = 'Improved Insight'
-tooltip = 'Increased detection range and +1.5 DPS on backstab and against helpless foes' break
+tooltip = 'Increased detection range and +.9 POW on backstab and against helpless foes' break
 case 3: name = 'Expert Insight'
-tooltip = 'Increased detection range and +2.0 DPS on backstab and against helpless foes' break
+tooltip = 'Increased detection range and +1.2 POW on backstab and against helpless foes' break
 case 4: name = 'Master Insight'
-tooltip = 'Increased detection range and +2.5 DPS on backstab and against helpless foes' break
+tooltip = 'Increased detection range and +1.5 POW on backstab and against helpless foes' break
 }
 break
 

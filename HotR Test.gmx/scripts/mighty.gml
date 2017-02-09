@@ -8,9 +8,6 @@ if wepStrMult[atkHand] != 0
     {
         if 1+irandom(99) <= argument1
         {
-            ii = instance_create(x,y-h-height+20,obj_descriptor)
-            ii.text = argument0
-            
             p += argument2*s
             createNotification('Mighty did '+string(argument2*s)+' Damage',ico_breaker,0) 
             
@@ -18,8 +15,9 @@ if wepStrMult[atkHand] != 0
             
             if breaker = true
             {
-                target.arm = max(0, target.arm-4) 
-                createNotification('Breaker Sundered 1',ico_breaker,0)                
+                iii = min(target.arm, floor(4+random(s*4)))
+                target.arm -= iii 
+                createNotification('Breaker Sundered '+string_format(iii/4,2,2),ico_breaker,0)                
             }
             
             if crunch = true
@@ -45,13 +43,13 @@ if argument5 = false    //On Proc
 {
     if (target.life/target.lifeMax)*100 >= argument1 and argument3 = false
     {
-        p += argument2*s
+        p += argument2*(s+1)
         
         createNotification('Smash did '+string(argument2*s)+' Damage',ico_breaker,0) 
     }
     if (target.life/target.lifeMax)*100 <= argument1 and argument3 = true
     {
-        p += argument2*s
+        p += argument2*(s+1)
                 
         createNotification('Slayer did '+string(argument2*s)+' Damage',ico_evasion,0) 
     }
@@ -70,7 +68,7 @@ if argument5 = false    //On Proc
 {
     if target.missChance != 0
     {
-        p += argument1*s
+        p += argument1*(s+1)
         
         createNotification('Opportunist did '+string(argument1*s)+' Damage',ico_breaker,0) 
     }
@@ -100,9 +98,9 @@ else                    //On Tooltip
 //Additional Conditioners
 if argument5 = false    //On Proc
 {
-    if bold = 1
+    if bold = 1 and mle = true
     {
-        p += argument1*s
+        p += argument1*(s+1)
         
         createNotification('Momentum did '+string(argument1*s)+' Damage',ico_evasion,0) 
     }
@@ -121,7 +119,7 @@ if argument5 = false    //On Proc
 {
     if target.missChance != 0 or backstab = true
     {
-        p += argument1*s
+        p += argument1*(s+1)
         
         createNotification('Insight did '+string(argument1*s)+' Damage',ico_breaker,0) 
     }

@@ -82,7 +82,7 @@ case 1:     //Tooltip and icon
 sprite_index = ico_evasion
 image_index = 1
 name = 'Lightning Strike'
-tooltip = 'Inflict increased damage to foes with lower dodge chance'
+tooltip = 'Inflict increased % damage to foes with lower dodge chance'
 branch = treeMobility
 break
 
@@ -147,7 +147,7 @@ switch(argument0)
 case 0:     //Run when the unit is initialized in battle
 onHit[onHitSize,0] = boldDamage
 onHit[onHitSize,1] = 'Momentum'
-onHit[onHitSize,2] = 2
+onHit[onHitSize,2] = 1
 onHit[onHitSize,3] = false
 onHit[onHitSize,4] = false
 onHit[onHitSize,5] = false
@@ -158,7 +158,7 @@ case 1:     //Tooltip and icon
 sprite_index = ico_evasion
 image_index = 1
 name = 'Momentum'
-tooltip = 'Inflict +2.0 DPS while BOLD'
+tooltip = 'Gain +1.0 POW to melee attacks while BOLD'
 branch = treeMobility
 break
 

@@ -5,7 +5,8 @@ icon = ico_strengthBuff
 potency = 2
 upkp = 60.0
 duration = 5.0
-name = 'Strength'
+name = 'Strength '+string(potency)
+type = 'Focus'
 buff = true
 tooltip = '+'+string(potency)+' DPS, Force Resistance and Block Strength'
 break
@@ -18,5 +19,12 @@ break
 
 case 2:     //Upkeep
 
+break
+
+case 3:     //Stacking
+potency = max(potency,ipot)
+duration = max(duration,idur)
+name = 'Strength '+string(potency)
+tooltip = '+'+string(potency)+' DPS, Force Resistance and Block Strength'
 break
 }

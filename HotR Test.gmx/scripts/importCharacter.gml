@@ -213,6 +213,7 @@ stmRegen = 5+(stmMax*.1)
 #define iCTraits
 //Talents
 initializeTraits()
+initializeTriggers()
 
 for(i = 0; i < 8; i++)
 {

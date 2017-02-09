@@ -198,6 +198,10 @@ else
         {
             draw_sprite(spr_tilePathing,max(overlay,onPath),x,y-h+(global.zLevel*30))
         }
+        if zoneControl = true 
+        {
+            draw_sprite(spr_enemyselect,0,x,y)
+        }
     }
     else
     {

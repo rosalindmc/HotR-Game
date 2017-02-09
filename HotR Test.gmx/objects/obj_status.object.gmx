@@ -144,7 +144,7 @@ else
     y = ty+view_yview
     
     draw_set_alpha(1)
-    draw_sprite(sprite_index,image_index,x,y)
+    draw_sprite(icon,image_index,x,y)
     draw_set_halign(fa_left)
     draw_set_valign(fa_middle)
     draw_set_font(fnt_tiny)

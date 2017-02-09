@@ -7,16 +7,10 @@ if argument5 = false    //On Proc
 {
     if (life/lifeMax)*100 >= argument1 and argument3 = false
     {
-        ii = instance_create(x,y-h-height+20,obj_descriptor)
-        ii.text = argument0
-
         other.p *= (100-argument2)/100
     }
     if (life/lifeMax)*100 <= argument1 and argument3 = true
     {
-        ii = instance_create(x,y-h-height+20,obj_descriptor)
-        ii.text = argument0
-
         other.p *= (100-argument2)/100
     }
 }
@@ -36,26 +30,36 @@ if argument5 = false    //On Proc
     {
         if 1+irandom(99) >= argument1*s
         {
-            ii = instance_create(x,y-h-height+20,obj_descriptor)
-            ii.text = argument0
-            ii.font = fnt_tiny
-            ii.colour1 = ltBlue
-            ii.colour2 = iceBlue
+            iii = min(lifeMax-life,argument2)
             
-            life = min(life+argument2,lifeMax)
+            if iii != 0
+            {
+                ii = instance_create(x,y-h-height+20,obj_descriptor)
+                ii.text = iii
+                ii.font = fnt_tiny
+                ii.colour1 = ltBlue
+                ii.colour2 = iceBlue
+                
+                life += iii
+            }
         }
     }
     else
     {
         if 1+irandom(99) >= argument1
         {
-            ii = instance_create(x,y-h-height+20,obj_descriptor)
-            ii.text = argument0
-            ii.font = fnt_tiny
-            ii.colour1 = ltBlue
-            ii.colour2 = iceBlue
+            iii = min(lifeMax-life,argument2)
             
-            life = min(life+argument2,lifeMax)
+            if iii != 0
+            {
+                ii = instance_create(x,y-h-height+20,obj_descriptor)
+                ii.text = iii
+                ii.font = fnt_tiny
+                ii.colour1 = ltBlue
+                ii.colour2 = iceBlue
+                
+                life += iii
+            }
         }
     }
 }
