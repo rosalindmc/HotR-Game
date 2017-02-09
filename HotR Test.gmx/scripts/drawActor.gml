@@ -10,5 +10,6 @@ if isoZ <= global.zLevel or global.zViewToggle = true
     
     //Draw Self
     script_execute(animType,1)
+    draw_arrow(x,y,x+lengthdir_x(10,facing),y+lengthdir_y(10,facing),5)
 }
 

@@ -131,6 +131,8 @@
       </sprites>
       <sprites name="Status Icons">
         <sprite>sprites\ico_daze</sprite>
+        <sprite>sprites\ico_strengthBuff</sprite>
+        <sprite>sprites\ico_dodgeBuff</sprite>
       </sprites>
       <sprite>sprites\ico_money</sprite>
       <sprite>sprites\ico_experience</sprite>

@@ -32,15 +32,31 @@ else                    //On Tooltip
 //Additional Conditioners
 if argument5 = false    //On Proc
 {
-    if 1+irandom(99) >= argument1*max(1,(argument3*s))
+    if argument3 = true
     {
-        ii = instance_create(x,y-h-height+20,argument2)
-        ii.text = argument0
-        ii.font = fnt_tiny
-        ii.colour1 = ltBlue
-        ii.colour2 = iceBlue
-        
-        life += argument2
+        if 1+irandom(99) >= argument1*s
+        {
+            ii = instance_create(x,y-h-height+20,obj_descriptor)
+            ii.text = argument0
+            ii.font = fnt_tiny
+            ii.colour1 = ltBlue
+            ii.colour2 = iceBlue
+            
+            life = min(life+argument2,lifeMax)
+        }
+    }
+    else
+    {
+        if 1+irandom(99) >= argument1
+        {
+            ii = instance_create(x,y-h-height+20,obj_descriptor)
+            ii.text = argument0
+            ii.font = fnt_tiny
+            ii.colour1 = ltBlue
+            ii.colour2 = iceBlue
+            
+            life = min(life+argument2,lifeMax)
+        }
     }
 }
 else                    //On Tooltip
@@ -82,9 +98,19 @@ else                    //On Tooltip
 //Additional Conditioners
 if argument5 = false    //On Proc
 {
-    if 1+irandom(99) >= argument1*max(1,(argument4*s))
+    if argument4 = true
     {
-        applyStatusEffect(argument0,target,argument2,argument3)
+        if 1+irandom(99) >= argument1*s
+        {
+            applyStatusEffect(argument0,target,argument2,argument3)
+        }
+    }
+    else
+    {
+        if 1+irandom(99) >= argument1
+        {
+            applyStatusEffect(argument0,target,argument2,argument3)
+        }
     }
 }
 else                    //On Tooltip

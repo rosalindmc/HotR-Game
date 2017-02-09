@@ -324,19 +324,27 @@ if global.charTab = tab
     }
     else if hasShield = true
     {
-        i = 0
-        ax = x+78-(3*(floor(blockStr/4)-1))
-        repeat(floor(blockStr/4))
+        if blockStr/4 &gt; 5
         {
-            draw_sprite(spr_bigArmIcon,0,ax,y+69)
-            draw_sprite(spr_bigArmIcon,4,ax,y+69)
-            ax += 7
-            i += 4
+            i = 0
+            ax = x+78-(3*(floor(blockStr/4)-1))
+            repeat(floor(blockStr/4))
+            {
+                draw_sprite(spr_bigArmIcon,0,ax,y+69)
+                draw_sprite(spr_bigArmIcon,4,ax,y+69)
+                ax += 7
+                i += 4
+            }
+            if blockStr &gt; i
+            {
+                draw_sprite(spr_bigArmIcon,blockStr-i,ax,y+69)
+                draw_sprite(spr_bigArmIcon,4+blockStr-i,ax,y+69)
+            }
         }
-        if blockStr &gt; i
+        else
         {
-            draw_sprite(spr_bigArmIcon,blockStr-i,ax,y+69)
-            draw_sprite(spr_bigArmIcon,4+blockStr-i,ax,y+69)
+            draw_text(x+80,y+68,string_format(blockStr/4,2,2))
+            draw_sprite(spr_bigArmIcon,0,100,y+68) 
         }
         draw_text(x+80,y+80,string_format(1/blockGen,2,1)+' s')   
     }

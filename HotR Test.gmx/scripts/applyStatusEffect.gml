@@ -1,6 +1,6 @@
 //applyStatusEffect(status,towhom,potency,duration)
 ss = instance_create(x,y-50,obj_status)
-ss.event = argument0
+ss.effect = argument0
 ss.owner = argument1
 ss.potency = argument2
 ss.duration = argument3

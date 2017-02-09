@@ -1,7 +1,7 @@
 switch(argument0)
 {
 case 0:     //Stats
-icon = ico_daze
+icon = ico_dodgeBuff
 potency = 10
 upkp = 60.0
 duration = 5.0

@@ -52,15 +52,18 @@ a = target.arm
 triggerOnHit()
 
 //Check Block
-if irandom(99)+1 < 100-(max(0,(mSkill-target.mSkill)*2)) and target.blocks > 0 and backstab = true
+if target.blocks > 0 and backstab = true
 {
-    a += (p*.5)+target.blockStr
-    
-    if argument0 = false
+    if irandom(99)+1 < 100-(max(0,(mSkill-target.mSkill)*2)) 
     {
-        target.blocks -= 1
-        triggerOnBlock()
+        a += (p*.5)+target.blockStr
+        
+        if argument0 = false
+        {   
+            triggerOnBlock()
+        }
     }
+    target.blocks -= 1
 }
 
 //Armour and Penetration
