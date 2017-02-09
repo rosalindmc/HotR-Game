@@ -2,16 +2,16 @@ switch(argument0)
 {
 case 0:     //Stats
 icon = ico_daze
-potency = 50
+potency = 10
 upkp = 60.0
-duration = 2.0
-name = 'Daze'
-buff = false
-tooltip = string(potency)+'% Miss chance'
+duration = 5.0
+name = 'Dodge'
+buff = true
+tooltip = '+'+string(potency)+' dodge'
 break
 
 case 1:     //Stats
-owner.missChance += potency
+owner.dodge += potency
 break
 
 case 2:     //Upkeep

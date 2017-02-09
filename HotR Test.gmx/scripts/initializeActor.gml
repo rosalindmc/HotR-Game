@@ -156,18 +156,19 @@ initializeWeapon(2)
 #define initializeTriggers
 for(i = 0; i < 6; i++)
 {
-onHit[0,i] = false
-onAttack[0,i] = false
-onWound[0,i] = false
-onDown[0,i] = false
-onBlock[0,i] = false
-areHit[0,i] = false
-areWounded[0,5] = false
-onStealth[0,5] = false
-onBackstab[0,5] = false
-onUpkeep[0,5] = false
-onSneakAttack[0,5] = false
-onBlock[0,5] = false
+    onHit[0,i] = false
+    onAttack[0,i] = false
+    onWound[0,i] = false
+    onDown[0,i] = false
+    onBlock[0,i] = false
+    areHit[0,i] = false
+    areWounded[0,i] = false
+    onStealth[0,i] = false
+    onUpkeep[0,i] = false
+    onSneakAttack[0,i] = false
+    onBlock[0,i] = false
+    onMove[0,i] = false
+    areAttacked[0,i] = false
 }
 
 onHitSize = 0
@@ -178,10 +179,11 @@ onBlockSize = 0
 areHitSize = 0
 areWoundedSize = 0
 onStealthSize = 0
-onBackstabSize = 0
 onUpkeepSize = 0
 onSneakAttackSize = 0
 onBlockSize = 0
+onMoveSize = 0
+areAttackedSize = 0
 
 #define initializeTraits
 //Talent Effects
@@ -191,11 +193,13 @@ crunch = false
 aim = 1
 
 //Various Effects
+arc = 100
 atkHaste = 0
 movHaste = 0
 atkStaminaMult = 1
 movStaminaMult = 1
 missChance = 0
+dmgMitigation = 0
 
 
 #define initializeWeapon

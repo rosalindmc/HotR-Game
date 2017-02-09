@@ -5,10 +5,10 @@ switch(argument0)
 case 0:     //Run when the unit is initialized in battle
 switch(argument1)
 {
-case 1: movementBonus += 1.0 break
-case 2: movementBonus += 1.5 break
-case 3: movementBonus += 2.0 break
-case 4: movementBonus += 2.5 break
+case 1: movementBonus += 1.0 movStaminaMult *= .90 break
+case 2: movementBonus += 1.5 movStaminaMult *= .85 break
+case 3: movementBonus += 2.0 movStaminaMult *= .80 break
+case 4: movementBonus += 2.5 movStaminaMult *= .75 break
 }
 break
 
@@ -114,5 +114,55 @@ break
 }
 
 #define branchHardTarget
+//tree(how to use, rank)
+switch(argument0)
+{
+case 0:     //Run when the unit is initialized in battle
+onMove[onMoveSize,0] = statusGain
+onMove[onMoveSize,1] = 'dodgeBuff'
+onMove[onMoveSize,2] = 10
+onMove[onMoveSize,3] = false
+onMove[onMoveSize,4] = false
+onMove[onMoveSize,5] = false
+onMoveSize += 1
+break
+
+case 1:     //Tooltip and icon
+sprite_index = ico_evasion
+image_index = 1
+name = 'Hard Target'
+tooltip = 'Gain +10% dodge chance when moving'
+branch = treeMobility
+break
+
+case 2:
+return true
+break
+}
 
 #define branchMomentum
+//tree(how to use, rank)
+switch(argument0)
+{
+case 0:     //Run when the unit is initialized in battle
+onHit[onHitSize,0] = boldDamage
+onHit[onHitSize,1] = 'Momentum'
+onHit[onHitSize,2] = 2
+onHit[onHitSize,3] = false
+onHit[onHitSize,4] = false
+onHit[onHitSize,5] = false
+onHitSize += 1
+break
+
+case 1:     //Tooltip and icon
+sprite_index = ico_evasion
+image_index = 1
+name = 'Momentum'
+tooltip = 'Inflict +2.0 DPS while BOLD'
+branch = treeMobility
+break
+
+case 2:
+return true
+break
+}

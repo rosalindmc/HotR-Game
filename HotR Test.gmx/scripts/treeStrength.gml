@@ -118,7 +118,7 @@ switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
 onDown[onDownSize,0] = statusGain
-onDown[onDownSize,1] = strength
+onDown[onDownSize,1] = strengthBuff
 onDown[onDownSize,2] = 100
 onDown[onDownSize,3] = 2
 onDown[onDownSize,4] = 10

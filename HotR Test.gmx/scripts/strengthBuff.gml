@@ -6,6 +6,7 @@ potency = 2
 upkp = 60.0
 duration = 5.0
 name = 'Strength'
+buff = true
 tooltip = '+'+string(potency)+' DPS, Force Resistance and Block Strength'
 break
 

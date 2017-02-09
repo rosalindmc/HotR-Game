@@ -3,7 +3,20 @@
 switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
+switch(argument1)
+{
+case 1: onHit[onHitSize,2] = 1.0 break
+case 2: onHit[onHitSize,2] = 1.5 break
+case 3: onHit[onHitSize,2] = 2.0 break
+case 4: onHit[onHitSize,2] = 2.5 break
+}
 
+onHit[onHitSize,0] = mighty
+onHit[onHitSize,1] = 'Insight'
+onHit[onHitSize,3] = false
+onHit[onHitSize,4] = false
+onHit[onHitSize,5] = false
+onHitSize += 1
 break
 
 case 1:     //Tooltip and icon
@@ -12,13 +25,13 @@ image_index = argument1-1
 switch(argument1)
 {
 case 1: name = 'Basic Insight'
-tooltip = 'Increased detection range and increased damage to helpless foes' break
+tooltip = 'Increased detection range and +1.0 DPS on backstab and against helpless foes' break
 case 2: name = 'Improved Insight'
-tooltip = 'Increased detection range and increased damage to helpless foes' break
+tooltip = 'Increased detection range and +1.5 DPS on backstab and against helpless foes' break
 case 3: name = 'Expert Insight'
-tooltip = 'Increased detection range and increased damage to helpless foes' break
+tooltip = 'Increased detection range and +2.0 DPS on backstab and against helpless foes' break
 case 4: name = 'Master Insight'
-tooltip = 'Increased detection range and increased damage to helpless foes' break
+tooltip = 'Increased detection range and +2.5 DPS on backstab and against helpless foes' break
 }
 break
 
@@ -35,7 +48,7 @@ break
 switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
-
+arc = 140
 break
 
 case 1:     //Tooltip and icon
@@ -56,7 +69,13 @@ break
 switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
-
+onHit[onHitSize,0] = advantageArmourPass
+onHit[onHitSize,1] = 'Armour Pass'
+onHit[onHitSize,2] = 50
+onHit[onHitSize,3] = 1
+onHit[onHitSize,4] = false
+onHit[onHitSize,5] = false
+onHitSize += 1
 break
 
 case 1:     //Tooltip and icon

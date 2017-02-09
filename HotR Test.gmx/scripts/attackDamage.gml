@@ -2,13 +2,13 @@
 //Damage script for melee attacks
 //attackDamage(Ranged?)
 
-var backstab = false
+backstab = false
 
 dge = target.dodge-(max(0,(mSkill-target.mSkill)*2))
 triggerOnAttack()
 
 //Facing
-if angle_difference(facing,point_direction(x,0,target.x,y-target.y)) < 80
+if angle_difference(facing,point_direction(x,0,target.x,y-target.y)) < 180-target.arc
 {
     backstab = true    
 }
@@ -45,6 +45,7 @@ p = wepPow[atkHand]+(wepStrMult[atkHand]*atkDPS*s)
 
 //Roll Attack Strength
 p *= (1-wepPowRng[atkHand]+random(wepPowRng[atkHand]*2))
+p /= (1+dmgMitigation)
 
 a = target.arm
 

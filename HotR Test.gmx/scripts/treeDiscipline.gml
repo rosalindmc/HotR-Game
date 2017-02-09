@@ -3,7 +3,17 @@
 switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
-
+switch(argument1)
+{
+case 1: dmgMitigation += .10
+sResist += 20 break
+case 2: dmgMitigation += .15
+sResist += 30 break
+case 3: dmgMitigation += .20
+sResist += 40 break
+case 4: dmgMitigation += .25
+sResist += 50 break
+}
 break
 
 case 1:     //Tooltip and icon
@@ -12,13 +22,13 @@ image_index = argument1-1
 switch(argument1)
 {
 case 1: name = 'Basic Discipline'
-tooltip = 'Suffer 10% less damage and gain 20% suppression resistance' break
+tooltip = 'Gain 10% damage mitigation and 20% suppression resistance' break
 case 2: name = 'Improved Discipline'
-tooltip = 'Suffer 15% less damage and gain 30% suppression resistance' break
+tooltip = 'Gain 15% damage mitigation and 30% suppression resistance' break
 case 3: name = 'Expert Discipline'
-tooltip = 'Suffer 20% less damage and gain 40% suppression resistance' break
+tooltip = 'Gain 20% damage mitigation and 40% suppression resistance' break
 case 4: name = 'Master Discipline'
-tooltip = 'Suffer 25% less damage and gain 50% suppression resistance' break
+tooltip = 'Gain 25% damage mitigation and 50% suppression resistance' break
 }
 break
 
@@ -35,14 +45,16 @@ break
 switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
-
+blockMax += 1
+blockGen *= 1.25
+blockStr = floor(blockStr*1.50)
 break
 
 case 1:     //Tooltip and icon
 sprite_index = ico_confidence
 image_index = 1
 name = 'Block Training'
-tooltip = 'Block 50% more damage and 25% more frequently'
+tooltip = '+1 Maximum Block, Block 50% more damage and 25% more frequently'
 branch = treeDiscipline
 break
 
@@ -56,7 +68,7 @@ break
 switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
-
+lifeMax += floor(armMax/4)
 break
 
 case 1:     //Tooltip and icon

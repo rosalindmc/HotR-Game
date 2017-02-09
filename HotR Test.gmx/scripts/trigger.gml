@@ -80,15 +80,6 @@ if areWoundedSize > 0
     }
 }
 
-#define triggerOnBackstab
-if onBackstabSize > 0
-{
-    for(t = 0; t < onBackstabSize; t++)
-    {
-        script_execute(onBackstab[t,0],onBackstab[t,1],onBackstab[t,2],onBackstab[t,3],onBackstab[t,4],onBackstab[t,5],false)
-    }
-}
-
 #define triggerOnUpkeep
 if onUpkeepSize > 0
 {
@@ -106,5 +97,14 @@ if onBlockSize > 0
     for(t = 0; t < onBlockSize; t++)
     {
         script_execute(onBlock[t,0],onBlock[t,1],onBlock[t,2],onBlock[t,3],onBlock[t,4],onBlock[t,5],false)
+    }
+}
+
+#define triggerOnMove
+if onMoveSize > 0
+{
+    for(t = 0; t < onMoveSize; t++)
+    {
+        script_execute(onMove[t,0],onMove[t,1],onMove[t,2],onMove[t,3],onMove[t,4],onMove[t,5],false)
     }
 }

@@ -143,7 +143,8 @@ switch(irandom(4))
 {
 case 0: 
 class = 'Wizard'
-invSlot[1,0] = armingSword
+invSlot[1,0] = choose(greatSword,armingSword,shortSword)
+invSlot[3,0] = choose(shortbow,longBow,emptySlot,emptySlot,emptySlot)
 invSlot[4,0] = robe
 
 life = 2
@@ -163,13 +164,15 @@ will += 1
 fellowship += 1
 
 //Talent
-talent[0,0] = choose(treeInsight,treeDiscipline,treeLeadership)
-talent[0,5] = 2
-
+talent[0,0] = choose(treeInsight,treeDiscipline)
+talent[0,5] = 1
+talent[1,0] = choose(treeMedicine,treePerform,treeDiplomacy,treeAlchemy,treeKnowledge)
+talent[1,5] = 1
 break
 case 1: 
 class = 'Duelist'
 invSlot[1,0] = sabre
+invSlot[2,0] = choose(dagger,roundShield,emptySlot,emptySlot,emptySlot)
 invSlot[4,0] = robe
 
 life = 4
@@ -189,13 +192,15 @@ grace += 1
 fellowship += 1
 
 //Talent
-talent[0,0] = choose(treeMartial,treeInsight,treeDaring,treeMobility)
+talent[0,0] = choose(treeMartial,treeInsight,treeMobility)
 talent[0,5] = 2
-
+talent[1,0] = choose(treeDiplomacy,treeStreetwise,treePerform)
+talent[1,5] = 1
 break
 case 2: 
 class = 'Adventurer'
-invSlot[1,0] = greatSword
+invSlot[1,0] = choose(greatSword,maul,greatAxe)
+invSlot[3,0] = choose(shortbow,longBow,emptySlot,emptySlot,emptySlot)
 invSlot[4,0] = robe
 
 life = 4
@@ -214,12 +219,16 @@ cunning += 1
 grace += 2
 
 //Talent
-talent[0,0] = choose(treeInsight,treeDaring,treeSubterfuge,treeMobility)
+talent[0,0] = choose(treeMartial,treeInsight,treeMobility)
 talent[0,5] = 2
+talent[1,0] = choose(treeDiplomacy,treeSurvival)
+talent[1,5] = 1
 break
 case 3: 
 class = 'Thief'
 invSlot[1,0] = shortSword
+invSlot[2,0] = choose(shortSword,dagger,knife,roundShield,emptySlot)
+invSlot[3,0] = choose(shortbow,emptySlot,emptySlot,emptySlot)
 invSlot[4,0] = robe
 
 life = 2
@@ -237,12 +246,16 @@ classCSkill = .3
 cunning += 2
 grace += 1
 //Talent
-talent[0,0] = choose(treeInsight,treeSubterfuge,treeMobility)
-talent[0,5] = 2
+talent[0,0] = choose(treeMobility,treeSubterfuge)
+talent[0,5] = 1
+talent[1,0] = choose(treeThievery,treeStreetwise)
+talent[1,5] = 2
 break
 case 4: 
 class = 'Warrior'
-invSlot[1,0] = battleAxe
+invSlot[1,0] = choose(battleAxe,spear,armingSword,mace)
+invSlot[2,0] = choose(shortSword,handAxe,roundShield,squareShield,heaterShield)
+invSlot[3,0] = choose(shortbow,longBow,emptySlot,emptySlot,emptySlot)
 invSlot[4,0] = chainmail
 
 life = 6
@@ -261,7 +274,7 @@ might += 2
 will += 1
 //Talent
 talent[0,0] = choose(treeStrength,treeDiscipline,treeToughness,treeMartial)
-talent[0,5] = 4
+talent[0,5] = 2
 break
 }
 

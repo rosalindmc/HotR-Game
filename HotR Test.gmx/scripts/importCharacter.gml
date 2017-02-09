@@ -8,6 +8,7 @@ iC()
 
 life = lifeMax
 stm = stmMax
+arm = armMax
 
 if hasShield = true
 {
@@ -116,7 +117,6 @@ hasShield = false
 rangeAttack = false
 dodge = 25
 armMax = 0
-arm = armMax
 prot = 0
 enc = 0
 initializeWeapon(1)
@@ -188,9 +188,8 @@ rSkill = max(((grace-8)*.1)+((cunning-8)*.2)+o.rSkill,0)
 cSkill = max(((grace-8)*.1)+((cunning-8)*.2)+o.cSkill,0)
 
 //Offense
-lethality = 0
 atkDPS = (might-8)
-atkHaste = 1+((grace-8)*.03)
+atkHaste = ((grace-8)*.03)
 
 //Resistance
 fResist = 25+(grace-8)+(might-8)
@@ -210,6 +209,8 @@ lifeRegen = 2+((will-8)*.25)
 stmMax = floor(8+(will-8)+((grace-8)/2)+o.stamina)
 stmRegen = 5+(stmMax*.1)
 
+
+#define iCTraits
 //Talents
 initializeTraits()
 
@@ -351,3 +352,5 @@ iCStats()
 iCWear()
 iCSubStats()
 iCEquip(invSwitch)
+iCTraits()
+

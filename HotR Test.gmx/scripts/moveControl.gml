@@ -40,6 +40,7 @@ switch(argument0)
         i.stm -= cHover.g*.1*i.movStaminaMult
         if cHover.overlay = 2{i.stm -= cHover.g*.1*i.movStaminaMult}
         gridUpdate(i, cHover)
+        with(i){triggerOnMove()}
         
         //Start the Action
         with(i){actMove(1)}
@@ -72,6 +73,7 @@ switch(argument0)
             i.stm -= global.attackFromTile.g*.1*i.movStaminaMult
             if global.attackFromTile.overlay = 2{i.stm -= global.attackFromTile.g*.1*i.movStaminaMult}
             gridUpdate(i, global.attackFromTile)
+            with(i){triggerOnMove()}
             
             //Start the Action
             with(i){actCharge(1)}

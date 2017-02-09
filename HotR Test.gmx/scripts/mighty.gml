@@ -62,7 +62,7 @@ else                    //On Tooltip
 }
 
 #define disableFel
-//healthFel(name,%,bonus,high/low,false,tooltip)
+//healthFel(name,bonus,false,false,false,tooltip)
 //Bonus Damage to High/Low Health foes
 
 //Additional Conditioners
@@ -70,9 +70,9 @@ if argument5 = false    //On Proc
 {
     if target.missChance != 0
     {
-        p += argument2*s
+        p += argument1*s
         
-        createNotification('Opportunist did '+string(argument2*s)+' Damage',ico_breaker,0) 
+        createNotification('Opportunist did '+string(argument1*s)+' Damage',ico_breaker,0) 
     }
 }
 else                    //On Tooltip
@@ -84,9 +84,67 @@ else                    //On Tooltip
 //Additional Conditioners
 if argument5 = false    //On Proc
 {
-    p += max(((movement+movementBonus)-(target.movement+target.movementBonus))*(argument1*s),0)
+    p *= 1+max((dodge-dge)*.01,0)
     
     createNotification('Lightning Strike did '+string(max(((movement+movementBonus)-(target.movement+target.movementBonus))*(argument1*s),0))+' Damage',ico_breaker,0) 
+}
+else                    //On Tooltip
+{
+
+}
+
+#define boldDamage
+//boldDamage(name,bonus,false,false,false,tooltip)
+//Bonus damage while bolded
+
+//Additional Conditioners
+if argument5 = false    //On Proc
+{
+    if bold = 1
+    {
+        p += argument1*s
+        
+        createNotification('Momentum did '+string(argument1*s)+' Damage',ico_evasion,0) 
+    }
+}
+else                    //On Tooltip
+{
+
+}
+
+#define advantageFel
+//advantageFel(name,bonus,false,false,false,tooltip)
+//Bonus Damage to High/Low Health foes
+
+//Additional Conditioners
+if argument5 = false    //On Proc
+{
+    if target.missChance != 0 or backstab = true
+    {
+        p += argument1*s
+        
+        createNotification('Insight did '+string(argument1*s)+' Damage',ico_breaker,0) 
+    }
+}
+else                    //On Tooltip
+{
+
+}
+
+#define advantageArmourPass
+//advantageFel(name,bonus,false,false,false,tooltip)
+//Bonus Damage to High/Low Health foes
+
+//Additional Conditioners
+if argument5 = false    //On Proc
+{
+    if target.missChance != 0 or backstab = true
+    {
+        if 1+irandom(99) >= argument1
+        {
+            a *= 1-argument2
+        }
+    }
 }
 else                    //On Tooltip
 {

@@ -123,7 +123,7 @@ tc = min(2+floor(char.cunning/4),ds_list_size(list))
 iy = ystart-20
 
 iii = 0
-for(i = 0; i < tc; iii++)
+for(i = 0; i < tc and iii < ds_list_size(list); iii++)
 {
     if checkList(ds_list_find_value(list,iii),i) 
     {
@@ -168,11 +168,11 @@ talentPrereq(treeToughness,0)
 talentPrereq(treeMartial,0)
 talentPrereq(treeMobility,0)
 talentPrereq(treeInsight,0)
-talentPrereq(treeSubterfuge,0)
-talentPrereq(treeFrenzy,0)
+//talentPrereq(treeSubterfuge,0)
+//talentPrereq(treeFrenzy,0)
 talentPrereq(treeDiscipline,0)
-talentPrereq(treeLeadership,0)
-talentPrereq(treeDaring,0)
+//talentPrereq(treeLeadership,0)
+//talentPrereq(treeDaring,0)
 
 repeat(3)
 {
@@ -189,10 +189,13 @@ repeat(3)
     talentPrereq(branchAccuracy,treeMartial)
     talentPrereq(branchCombatDrill,treeMartial)
     talentPrereq(branchSlayer,treeMartial)
-    
+    talentPrereq(branchOpportunist,treeMartial)
+        
     talentPrereq(branchEvasion,treeMobility)
     talentPrereq(branchLightningStrike,treeMobility)
     talentPrereq(branchMarathon,treeMobility)
+    talentPrereq(branchHardTarget,treeMobility)
+    talentPrereq(branchMomentum,treeMobility)
     
     talentPrereq(branchVigiliance,treeInsight)
     talentPrereq(branchPassArmour,treeInsight)
@@ -208,7 +211,7 @@ repeat(3)
     
     talentPrereq(branchBlockTraining,treeDiscipline)
     talentPrereq(branchConfidence,treeDiscipline)
-    talentPrereq(branchShakeItOff,treeDiscipline)
+    //talentPrereq(branchShakeItOff,treeDiscipline)
     
     talentPrereq(branchLeadByExample,treeLeadership)
     talentPrereq(branchUnity,treeLeadership)
@@ -285,7 +288,11 @@ if argument1 = 0
             {
                 if char.talent[t,5] = 4
                 {
-                    l4 = true
+                    l4 = 1
+                }
+                else
+                {
+                    l4 = 2
                 }
             }
             else if char.talent[t,0] = emptyTalent
@@ -294,7 +301,7 @@ if argument1 = 0
             }
         }
         
-        if l4 = false and openSlot = true
+        if (l4 = false and openSlot = true) or  l4 = 2
         {
             ds_list_add(list,argument0)
         }   
@@ -337,8 +344,7 @@ for(t = 0; t < 8; t++)
 {
     if char.talent[t,0] = argument0
     {
-        t = char.talent[t,5]+1
-        return t
+        return 1+char.talent[t,5]
     }
 }
 return 1

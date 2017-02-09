@@ -520,7 +520,8 @@
     </scripts>
     <scripts name="Status Effects">
       <script>scripts\daze.gml</script>
-      <script>scripts\strength.gml</script>
+      <script>scripts\strengthBuff.gml</script>
+      <script>scripts\dodgeBuff.gml</script>
       <script>scripts\applyStatusEffect.gml</script>
     </scripts>
   </scripts>

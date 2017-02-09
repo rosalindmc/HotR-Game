@@ -55,9 +55,19 @@ else                    //On Tooltip
 //Additional Conditioners
 if argument5 = false    //On Proc
 {
-    if 1+irandom(99) >= argument1*max(1,(argument4*s))
+    if argument4 = true
     {
-        applyStatusEffect(argument0,id,argument2,argument3)
+        if 1+irandom(99) >= argument1*s
+        {
+            applyStatusEffect(argument0,id,argument2,argument3)
+        }
+    }
+    else
+    {
+        if 1+irandom(99) >= argument1
+        {
+            applyStatusEffect(argument0,id,argument2,argument3)
+        }
     }
 }
 else                    //On Tooltip
