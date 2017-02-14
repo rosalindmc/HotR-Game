@@ -97,6 +97,8 @@
         <sprite>sprites\spr_iconBorder</sprite>
         <sprite>sprites\ico_attributes</sprite>
         <sprite>sprites\ico_move</sprite>
+        <sprite>sprites\ico_attackMove</sprite>
+        <sprite>sprites\ico_attack</sprite>
         <sprite>sprites\ico_wait</sprite>
         <sprite>sprites\ico_switch</sprite>
       </sprites>
