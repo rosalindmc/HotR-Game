@@ -15,13 +15,12 @@ else
 }
 
 dge = target.dodge-(max(0,(skill-target.mSkill)*2))
-triggerOnAttack()
+triggerOnAttack(false)
 
 //Facing
 if abs(angle_difference(target.cFacing,point_direction(isoTile.x,0,target.isoTile.x,(target.isoTile.y-isoTile.y)*2))) < 180-target.arc
 {
     backstab = true    
-    //createNotification('Backstab!',ico_subterfuge,0)
 }
 
 //Check Miss/Dodge
@@ -55,16 +54,15 @@ p /= (1+dmgMitigation)
 //Armour
 a = target.arm
 
-triggerOnHit()
+triggerOnHit(false)
 
 //Check Block
 if target.blocks > 0 and backstab = false
 {
     if irandom(99)+1 < 100-(max(0,(skill-target.mSkill)*2)) 
     {
-        a += (p*.5)+target.blockStr
+        a += p+target.blockStr
         target.stm -= p*.1
-        //createNotification('Block!',ico_discipline,0)
         
         if mle = true
         {  
@@ -72,7 +70,7 @@ if target.blocks > 0 and backstab = false
              
             with(target)
             {
-                triggerOnBlock()
+                triggerOnBlock(false)
             }
         }
     }
@@ -92,6 +90,11 @@ p = max(p-a,0)
 
 //Randomize decimal damage (.1 = 10% to do +1)
 p = floor(p+random(.99))
+
+if p > 0
+{
+    triggerOnWound(false)
+}
 
 //Descriptor
 ii = instance_create(target.x,target.y-target.h-target.height,obj_descriptor)
@@ -121,7 +124,7 @@ with(target)
 
 if target.life <= 0
 {
-    triggerOnDown()
+    triggerOnDown(false)
     actorDie(target)
 }
 

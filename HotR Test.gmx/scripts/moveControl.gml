@@ -105,14 +105,16 @@ switch(argument0)
         //Ranged Attack Tooltip
         if cHover.rangedAttack = true and (key_meleeToggle = false or cHover.meleeAttack = false)
         {
-            //i.target = cHover.occupant
+            attacker = i
+            target = cHover.occupant
             attackPreview(false)
         }
         
         //Melee Attack Tooltip
         if cHover.meleeAttack = true and (key_meleeToggle = true or cHover.rangedAttack = false) and global.attackFromTile != noone
-        {
-            //i.target = cHover.occupant
+        {   
+            attacker = i
+            target = cHover.occupant
             attackPreview(true)
         }
     }

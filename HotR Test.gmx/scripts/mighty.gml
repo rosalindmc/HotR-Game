@@ -30,7 +30,9 @@ if wepStrMult[atkHand] != 0
     }
     else                    //On Tooltip
     {
-    
+        obj_control.tooltipColour[obj_control.tooltipLength] = c_green
+        obj_control.tooltipText[obj_control.tooltipLength] = string(argument1)+'% Mighty'
+        obj_control.tooltipLength += 1
     }
 }
 

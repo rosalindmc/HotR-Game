@@ -12,13 +12,13 @@ if onHitSize > 0
 {
     for(t = 0; t < onHitSize; t++)
     {
-        script_execute(onHit[t,0],onHit[t,1],onHit[t,2],onHit[t,3],onHit[t,4],onHit[t,5],false)
+        script_execute(onHit[t,0],onHit[t,1],onHit[t,2],onHit[t,3],onHit[t,4],onHit[t,5],argument0)
     }
 }
 
 with(target)
 {
-    triggerAreHit()
+    triggerAreHit(argument0)
 }
 
 #define triggerOnAttack
@@ -26,13 +26,13 @@ if onAttackSize > 0
 {
     for(t = 0; t < onAttackSize; t++)
     {
-        script_execute(onAttack[t,0],onAttack[t,1],onAttack[t,2],onAttack[t,3],onAttack[t,4],onAttack[t,5],false)
+        script_execute(onAttack[t,0],onAttack[t,1],onAttack[t,2],onAttack[t,3],onAttack[t,4],onAttack[t,5],argument0)
     }
 }
 
 with(target)
 {
-    triggerAreAttacked()
+    triggerAreAttacked(argument0)
 }
 
 #define triggerOnWound
@@ -40,7 +40,7 @@ if onWoundSize > 0
 {
     for(t = 0; t < onWoundSize; t++)
     {
-        script_execute(onWound[t,0],onWound[t,1],onWound[t,2],onWound[t,3],onWound[t,4],onWound[t,5],false)
+        script_execute(onWound[t,0],onWound[t,1],onWound[t,2],onWound[t,3],onWound[t,4],onWound[t,5],argument0)
     }
 }
 
@@ -49,7 +49,7 @@ if onDownSize > 0
 {
     for(t = 0; t < onDownSize; t++)
     {
-        script_execute(onDown[t,0],onDown[t,1],onDown[t,2],onDown[t,3],onDown[t,4],onDown[t,5],false)
+        script_execute(onDown[t,0],onDown[t,1],onDown[t,2],onDown[t,3],onDown[t,4],onDown[t,5],argument0)
     }
 }
 
@@ -58,7 +58,7 @@ if areHitSize > 0
 {
     for(t = 0; t < areHitSize; t++)
     {
-        script_execute(areHit[t,0],areHit[t,1],areHit[t,2],areHit[t,3],areHit[t,4],areHit[t,5],false)
+        script_execute(areHit[t,0],areHit[t,1],areHit[t,2],areHit[t,3],areHit[t,4],areHit[t,5],argument0)
     }
 }
 
@@ -67,7 +67,7 @@ if areAttackedSize > 0
 {
     for(t = 0; t < areAttackedSize; t++)
     {
-        script_execute(areAttacked[t,0],areAttacked[t,1],areAttacked[t,2],areAttacked[t,3],areAttacked[t,4],areAttacked[t,5],false)
+        script_execute(areAttacked[t,0],areAttacked[t,1],areAttacked[t,2],areAttacked[t,3],areAttacked[t,4],areAttacked[t,5],argument0)
     }
 }
 
@@ -76,7 +76,7 @@ if areWoundedSize > 0
 {
     for(t = 0; t < areWoundedSize; t++)
     {
-        script_execute(areWounded[t,0],areWounded[t,1],areWounded[t,2],areWounded[t,3],areWounded[t,4],areWounded[t,5],false)
+        script_execute(areWounded[t,0],areWounded[t,1],areWounded[t,2],areWounded[t,3],areWounded[t,4],areWounded[t,5],argument0)
     }
 }
 
@@ -96,7 +96,7 @@ if onBlockSize > 0
 {
     for(t = 0; t < onBlockSize; t++)
     {
-        script_execute(onBlock[t,0],onBlock[t,1],onBlock[t,2],onBlock[t,3],onBlock[t,4],onBlock[t,5],false)
+        script_execute(onBlock[t,0],onBlock[t,1],onBlock[t,2],onBlock[t,3],onBlock[t,4],onBlock[t,5],argument0)
     }
 }
 
