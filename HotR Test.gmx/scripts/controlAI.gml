@@ -4,6 +4,8 @@ moveControl(0)
 //Temp AI
 attackRandom()
 
+
+
 #define attackRandom
 //Script for AI self control, manages the AI array
 //controlAI()
@@ -61,6 +63,46 @@ if global.target != -4
 }
 else
 {
-    wait(0)
+    march()
 }
 }
+
+#define march
+//March forewards to a tile within walking range
+
+var i = global.control
+var closest = 1000
+
+
+with (obj_tile){
+    if (overlay = 2){
+        with (obj_character){
+            if (team != i.team){
+               if (checkRange(id,other) < closest){
+                    closest = checkRange(id,other)
+                    global.target = other
+               } 
+            }
+        }        
+    }
+}
+
+//Move and Update Grid
+makeMovePath(global.target)
+i.pathLength = ii
+i.stm -= global.target.g*.1*i.movStaminaMult*(1+(i.enc*.01))
+if global.target.overlay = 2{i.stm -= global.target.g*.1*i.movStaminaMult*(1+(i.enc*.01))}
+gridUpdate(i, global.target)
+with(i){triggerOnMove()}
+
+with(i){actMove(1)}
+
+//End Turn
+endTurn(3.0/(i.haste+i.movHaste))
+
+wipeTiles()
+
+
+
+#define rangedAttackAI
+

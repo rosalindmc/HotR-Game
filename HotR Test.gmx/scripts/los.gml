@@ -68,3 +68,20 @@ switch(argument0)
     return(obj_losBlockZ4)
     break
 }
+#define checkRange
+//Check the range between two objects
+//checkRange(object, target)
+var ret = 0
+var i = 0
+
+while (ret = 0){
+    if point_distance(0,0,argument1.x-argument0.x,(argument1.y-argument0.y)*2) > i * metre * 1.5
+    {
+        i++
+    }
+    else{
+        ret = i
+    }
+}
+
+return(ret)

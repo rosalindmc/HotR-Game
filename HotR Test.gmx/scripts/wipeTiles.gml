@@ -3,7 +3,7 @@
 
 with(obj_tile)
 {
-    overlay = 0
+    overlay = 0 //Overlay 0 is clear (no movement), 1 is sprint, 2 is walk
     g = 0
     move = false
     rangedAttack = false
