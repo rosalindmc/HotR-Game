@@ -53,8 +53,8 @@ target = noone
 controlled = false
 
 //Attack Qualifiers
-rangeAttack = true
-greatWeapon = true
+rangeAttack = false
+greatWeapon = false
 dualWield = false
 reach = 1.5
 atkHand = 1
