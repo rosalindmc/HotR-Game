@@ -53,6 +53,9 @@ switch(argument0)
     //Ranged Attack
     if cHover.rangedAttack = true and (key_meleeToggle = false or cHover.meleeAttack = false)
     {
+        //Set Target
+        i.target = cHover.occupant
+    
         //Ranged Attack
         with(i){ranged()}
         //End Turn
