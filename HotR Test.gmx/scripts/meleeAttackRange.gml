@@ -12,7 +12,7 @@ with(obj_character)
         for(ii = 0; ii < ds_list_size(global.moveTile); ii ++)
         {
         current = ds_list_find_value(global.moveTile, ii)
-            if los(1,current,isoTile)
+            if los(reach,current,isoTile)
             {
                 //current.overlay = 5
                 isoTile.overlay = 3
