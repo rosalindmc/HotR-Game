@@ -10,6 +10,7 @@ iStrMult = .25
 iPen = 5
 iSpd = 1.50
 
+
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
@@ -36,12 +37,15 @@ wepPow[i] = iDmg
 wepType[i] = iType
 wepPowRng[i] = iDmgRng
 wepStrMult[i] = iStrMult
+wepStamina[i] = iStrMult
 wepPen[i] = iPen
 wepSpeed[i] = iSpd
 wepRange[i] = 1
 
 //Weapon Sprites
 weaponSprite[i] = iSpr
+
+threat = true
 break
 }
 
@@ -80,12 +84,15 @@ wepPow[i] = iDmg
 wepType[i] = iType
 wepPowRng[i] = iDmgRng
 wepStrMult[i] = iStrMult
+wepStamina[i] = iStrMult
 wepPen[i] = iPen
 wepSpeed[i] = iSpd
 wepRange[i] = 1
 
 //Weapon Sprites
 weaponSprite[i] = iSpr
+
+threat = true
 break
 }
 
@@ -124,11 +131,15 @@ wepPow[i] = iDmg
 wepType[i] = iType
 wepPowRng[i] = iDmgRng
 wepStrMult[i] = iStrMult
+wepStamina[i] = iStrMult
 wepPen[i] = iPen
 wepSpeed[i] = iSpd
 wepRange[i] = 1
 
 //Weapon Sprites
 weaponSprite[i] = iSpr
+
+greatWeapon = true
+threat = true
 break
 }

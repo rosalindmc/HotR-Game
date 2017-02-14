@@ -36,6 +36,7 @@ wepPow[i] = iDmg
 wepType[i] = iType
 wepPowRng[i] = iDmgRng
 wepStrMult[i] = iStrMult
+wepStamina[i] = iStrMult
 wepPen[i] = iPen
 wepSpeed[i] = iSpd
 wepRange[i] = 1
@@ -43,6 +44,7 @@ wepRange[i] = 1
 //Weapon Sprites
 weaponSprite[i] = iSpr
 
+threat = true
 break
 }
 
@@ -81,6 +83,7 @@ wepPow[i] = iDmg
 wepType[i] = iType
 wepPowRng[i] = iDmgRng
 wepStrMult[i] = iStrMult
+wepStamina[i] = iStrMult
 wepPen[i] = iPen
 wepSpeed[i] = iSpd
 wepRange[i] = 1
@@ -88,6 +91,7 @@ wepRange[i] = 1
 //Weapon Sprites
 weaponSprite[i] = iSpr
 
+threat = true
 break
 }
 
@@ -126,6 +130,7 @@ wepPow[i] = iDmg
 wepType[i] = iType
 wepPowRng[i] = iDmgRng
 wepStrMult[i] = iStrMult
+wepStamina[i] = iStrMult
 wepPen[i] = iPen
 wepSpeed[i] = iSpd
 wepRange[i] = 1
@@ -133,6 +138,7 @@ wepRange[i] = 1
 //Weapon Sprites
 weaponSprite[i] = iSpr
 
+threat = true
 break
 }
 
@@ -171,6 +177,7 @@ wepPow[i] = iDmg
 wepType[i] = iType
 wepPowRng[i] = iDmgRng
 wepStrMult[i] = iStrMult
+wepStamina[i] = iStrMult
 wepPen[i] = iPen
 wepSpeed[i] = iSpd
 wepRange[i] = 1
@@ -178,6 +185,7 @@ wepRange[i] = 1
 //Weapon Sprites
 weaponSprite[i] = iSpr
 
+threat = true
 break
 }
 
@@ -216,6 +224,7 @@ wepPow[i] = iDmg
 wepType[i] = iType
 wepPowRng[i] = iDmgRng
 wepStrMult[i] = iStrMult
+wepStamina[i] = iStrMult
 wepPen[i] = iPen
 wepSpeed[i] = iSpd
 wepRange[i] = 1
@@ -223,6 +232,7 @@ wepRange[i] = 1
 //Weapon Sprites
 weaponSprite[i] = iSpr
 
+threat = true
 break
 }
 
@@ -261,6 +271,7 @@ wepPow[i] = iDmg
 wepType[i] = iType
 wepPowRng[i] = iDmgRng
 wepStrMult[i] = iStrMult
+wepStamina[i] = iStrMult
 wepPen[i] = iPen
 wepSpeed[i] = iSpd
 wepRange[i] = 1
@@ -269,5 +280,6 @@ wepRange[i] = 1
 weaponSprite[i] = iSpr
 
 greatWeapon = true
+threat = true
 break
 }

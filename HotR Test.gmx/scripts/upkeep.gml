@@ -7,7 +7,7 @@ if obj_control.mapTimeOn = true and global.timeDelay = 0
 {
     //Life and Stamina Regeneration
     regenTime += lifeRegen/(global.fspd*5)
-    stm = min(stm+(stmRegen/(global.fspd*60)),stmMax)
+    stm = min(stm+((stmRegen*(1-(enc*.01)))/(global.fspd*60)),stmMax)
     
         if regenTime >= 1
         {
@@ -24,11 +24,19 @@ if obj_control.mapTimeOn = true and global.timeDelay = 0
     //Boldness
     if suppression = 0
     {
-        bold = min(bold+(1/(global.fspd*10)),1)
+        if bold != 1
+        {
+            bold = min(bold+(1/(global.fspd*10)),1)
+            
+            if bold = 1
+            {
+                iC()
+            }
+        }
     }
     else
     {
-        bold = 0
+        bold = max(bold-(suppression/(global.fspd*5)),0)
     }
 }
 

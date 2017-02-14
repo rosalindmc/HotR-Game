@@ -2,9 +2,8 @@ switch(argument0)
 {
 case 0:     //Stats
 icon = ico_daze
-potency = 50
 upkp = 60.0
-duration = 2.0
+potency = 50
 name = 'Daze'
 type = 'Mental'
 buff = false

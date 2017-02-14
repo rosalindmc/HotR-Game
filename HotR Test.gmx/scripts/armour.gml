@@ -181,7 +181,7 @@ iSkrt[3] = spr_robeSkirt1
 iDodge = 10
 iArm = 8
 iProt = 0
-iEnc = 0
+iEnc = 20
 
 switch(argument0)
 {

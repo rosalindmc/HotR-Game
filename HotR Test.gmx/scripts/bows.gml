@@ -3,11 +3,11 @@
 
 #define longBow
 iSpr = spr_longBow
-iDmg = 8.0
+iDmg = 5.0
 iDmgRng = .3
 iType = 'Piercing'
-iStrMult = .30
-iPen = 1
+iStrMult = .3
+iPen = 3
 iSpd = 0.60
 
 switch(argument0)
@@ -32,13 +32,14 @@ case 2:     //Called when equipped
 wepType[i] = ranged
 wepAnimType[i] = typeAxe
 
-wepPow[i] = iDmg
-wepType[i] = iType
-wepPowRng[i] = .5
-wepStrMult[i] = 1
-wepPen[i] = iPen
-wepSpeed[i] = iSpd
-wepRange[i] = 1
+wepRPow[i] = iDmg
+wepRType[i] = iType
+wepRPowRng[i] = .5
+wepRStrMult[i] = iStrMult
+wepRStamina[i] = iStrMult
+wepRPen[i] = iPen
+wepRSpeed[i] = iSpd
+wepRRange[i] = 1
 
 rangeAttack = true
 
@@ -49,11 +50,11 @@ break
 
 #define shortbow
 iSpr = spr_shortBow
-iDmg = 5.0
+iDmg = 4.0
 iDmgRng = .3
 iType = 'Piercing'
-iStrMult = .20
-iPen = 1
+iStrMult = .25
+iPen = 2
 iSpd = 0.80
 
 switch(argument0)
@@ -78,13 +79,14 @@ case 2:     //Called when equipped
 wepType[i] = ranged
 wepAnimType[i] = typeAxe
 
-wepPow[i] = iDmg
-wepType[i] = iType
-wepPowRng[i] = .5
-wepStrMult[i] = 1
-wepPen[i] = iPen
-wepSpeed[i] = iSpd
-wepRange[i] = 1
+wepRPow[i] = iDmg
+wepRType[i] = iType
+wepRPowRng[i] = .5
+wepRStrMult[i] = iStrMult
+wepRStamina[i] = iStrMult
+wepRPen[i] = iPen
+wepRSpeed[i] = iSpd
+wepRRange[i] = 1
 
 rangeAttack = true
 

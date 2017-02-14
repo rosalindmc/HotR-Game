@@ -144,18 +144,21 @@ with(obj_character)
 {
     if team != global.control.team
     {
-        i = 0
-        
-        repeat(ds_list_size(isoTile.adjacent))
+        if threat = true
         {
-            with(ds_list_find_value(isoTile.adjacent,i))
+            i = 0
+            
+            repeat(ds_list_size(isoTile.adjacent))
             {
-                if abs(angle_difference(other.cFacing, point_direction(other.isoTile.x,0,x,(y-other.isoTile.y)*2))) <= other.arc
+                with(ds_list_find_value(isoTile.adjacent,i))
                 {
-                    zoneControl = true
+                    if abs(angle_difference(other.cFacing, point_direction(other.isoTile.x,0,x,(y-other.isoTile.y)*2))) <= other.arc
+                    {
+                        zoneControl = true
+                    }
                 }
+                i += 1
             }
-            i += 1
         }
     }
 }

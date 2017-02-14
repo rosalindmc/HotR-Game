@@ -4,6 +4,7 @@
 o = argument0
 
 invSwitch = 1
+iCVis()
 iC()
 
 life = lifeMax
@@ -114,11 +115,13 @@ i += 1
 greatWeapon = false
 dualWield = false
 hasShield = false
+threat = false
 rangeAttack = false
 dodge = 25
 armMax = 0
 prot = 0
 enc = 0
+
 initializeWeapon(1)
 initializeWeapon(2)
 clearArmour()
@@ -152,6 +155,14 @@ if o.invSlot[2,0] != emptySlot
     {
         dualWield = true
     }
+}
+
+if dualWield = false and greatWeapon = false and hasShield = false
+{
+    mSkill += 1
+    rSkill += 1
+    cSkill += 1
+    dodge += 5
 }
 break
 
@@ -348,9 +359,38 @@ if o.invSlot[4,0] = emptySlot
     hipsColour[hipsItems] = c_white
 }
 #define iC
-iCVis()
 iCStats()
 iCWear()
 iCSubStats()
 iCEquip(invSwitch)
 iCTraits()
+
+if bold = 1
+{
+    haste += .5*(1+((fellowship-8)*.05))
+    mSkill += 2*(1+((fellowship-8)*.05))
+    rSkill += 2*(1+((fellowship-8)*.05))
+    cSkill += 2*(1+((fellowship-8)*.05))
+}
+
+#define staminaCheck
+if stm >= stmMax*.75
+{
+    //Fresh
+    applyStatusEffect(fatigue,id,0,120)
+}
+else if stm >= stmMax*.50
+{
+    //Winded
+    applyStatusEffect(fatigue,id,1,120)
+}
+else if stm >= stmMax*.50
+{
+    //Tired   
+    applyStatusEffect(fatigue,id,2,120)
+}
+else
+{
+    //Exhausted   
+    applyStatusEffect(fatigue,id,3,120)
+}

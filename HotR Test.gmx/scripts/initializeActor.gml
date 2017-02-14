@@ -217,6 +217,19 @@ wepStrMult[argument0] = .25
 wepPen[argument0] = 0
 wepSpeed[argument0] = 2
 wepRange[argument0] = 1
+wepStamina[argument0] = .25
+
+//Ranged Attributez
+wepRPow[argument0] = 0
+wepRType[argument0] = 'Impact'
+wepRPowRng[argument0] = .3
+wepRStrMult[argument0] = .25
+wepRPen[argument0] = 0
+wepRSpeed[argument0] = 1
+wepRRange[argument0] = 0
+wepRStamina[argument0] = .25
+wepRProjectile[argument0] = obj_projectile
+wepRProjSpeed[argument0] = 10
 
 //Weapon Sprites
 weaponSprite[argument0] = spr_none

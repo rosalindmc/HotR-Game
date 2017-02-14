@@ -6,6 +6,11 @@ with(obj_actionButton)
     instance_destroy()
 }
 
+with(global.control)
+{
+    staminaCheck()
+}
+
 with(obj_control)
 {
     actNum = 0
@@ -30,18 +35,21 @@ with(obj_character)
 {
     i = 0
     
-    repeat(ds_list_size(isoTile.adjacent))
-    {
-        with(ds_list_find_value(isoTile.adjacent,i))
+    if threat = true
+    {    
+        repeat(ds_list_size(isoTile.adjacent))
         {
-            if abs(angle_difference(other.cFacing, point_direction(other.isoTile.x,0,x,(y-other.isoTile.y)*2))) <= other.arc
+            with(ds_list_find_value(isoTile.adjacent,i))
             {
-                if occupant != noone
+                if abs(angle_difference(other.cFacing, point_direction(other.isoTile.x,0,x,(y-other.isoTile.y)*2))) <= other.arc
                 {
-                    if other.team != occupant.team
+                    if occupant != noone
                     {
-                        //Suppress
-                        suppress(occupant,1.0)                                              
+                        if other.team != occupant.team
+                        {
+                            //Suppress
+                            suppress(occupant,1.0)                                              
+                        }
                     }
                 }
             }

@@ -67,10 +67,11 @@ global.attackFromTile = -4
 
 //Action Control
 action = moveControl
+actionScroll = action
 
 //Tile Creation
-mapHeight = 10
-mapWidth = 10
+mapHeight = 20
+mapWidth = 20
 mapDepth = 3
 
 runEvent = -4
@@ -275,6 +276,8 @@ if mapTimeOn = true and global.nextChar != noone and global.timeDelay = 0
             other.mapTimeOn = false
             controlled = true
             
+            staminaCheck()
+            
             //TEMP player turns
             if readiedAction = false
             {
@@ -319,6 +322,18 @@ or (global.nextChar.owner.player = true and point_in_rectangle(mouse_x,mouse_y,v
 {
     cHover = noone
     global.attackFromTile = noone  
+}
+
+if point_in_rectangle(mouse_x,mouse_y,view_xview+130,view_yview+view_hview-40,view_xview+130+(actNum*20),view_yview+view_hview-20)
+{
+    if instance_exists(collision_point(mouse_x,mouse_y,obj_actionButton,false,false))
+    {
+        actionScroll = collision_point(mouse_x,mouse_y,obj_actionButton,false,false).action
+    }
+}
+else
+{
+    actionScroll = action
 }
 
 //zLevel Scrolling
@@ -475,6 +490,11 @@ if obj_camera.x != obj_camera.xprevious or obj_camera.y != obj_camera.yprevious
 draw_set_halign(fa_right)
 draw_set_valign(fa_middle)
 drawText(c_black,c_white,view_xview+view_wview-10,view_yview+60,mapTime)
+
+if global.timeDelay = 0 and global.nextChar.owner.player = true
+{   
+    script_execute(actionScroll,2)
+}
 //drawText(c_black,c_white,view_xview+view_wview-10,view_yview+80,cIsoZ)
 //drawText(c_black,c_white,view_xview+view_wview-10,view_yview+100,global.zLevel)
 

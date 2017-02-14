@@ -5,14 +5,23 @@
 backstab = false
 mle = argument0
 
-dge = target.dodge-(max(0,(mSkill-target.mSkill)*2))
+if mle = true
+{
+    mDamage()
+}
+else
+{
+    rDamage()
+}
+
+dge = target.dodge-(max(0,(skill-target.mSkill)*2))
 triggerOnAttack()
 
 //Facing
 if abs(angle_difference(target.cFacing,point_direction(isoTile.x,0,target.isoTile.x,(target.isoTile.y-isoTile.y)*2))) < 180-target.arc
 {
     backstab = true    
-    createNotification('Backstab!',ico_subterfuge,0)
+    //createNotification('Backstab!',ico_subterfuge,0)
 }
 
 //Check Miss/Dodge
@@ -27,6 +36,7 @@ else if irandom(99)+1 < dge and backstab = false
     ii = instance_create(target.x,target.y-target.h-target.height,obj_descriptor)
     ii.text = 'Dodge'
     ii.font = fnt_tiny
+    target.stm -= 2*(1+(target.enc*.01))
     
     //Suppress
     if target.evasion != true
@@ -39,16 +49,10 @@ else
 //Suppress
 suppress(target,2.0)
 
-//Find Attack Speed
-s = (3-(dualWield*.5))/((wepSpeed[atkHand]))
-
-//Find Base Attack Strength
-p = wepPow[atkHand]+(wepStrMult[atkHand]*atkDPS*s)
-
-//Roll Attack Strength
-p *= (1-wepPowRng[atkHand]+random(wepPowRng[atkHand]*2))
+//Damage Mitigation
 p /= (1+dmgMitigation)
 
+//Armour
 a = target.arm
 
 triggerOnHit()
@@ -56,24 +60,31 @@ triggerOnHit()
 //Check Block
 if target.blocks > 0 and backstab = false
 {
-    if irandom(99)+1 < 100-(max(0,(mSkill-target.mSkill)*2)) 
+    if irandom(99)+1 < 100-(max(0,(skill-target.mSkill)*2)) 
     {
         a += (p*.5)+target.blockStr
-        createNotification('Block!',ico_discipline,0)
+        target.stm -= p*.1
+        //createNotification('Block!',ico_discipline,0)
         
-        if mle = false
-        {   
+        if mle = true
+        {  
+            stm -= p*.1
+             
             with(target)
             {
                 triggerOnBlock()
             }
         }
     }
-    target.blocks -= 1
+    
+    if mle = true
+    {
+        target.blocks -= 1
+    }
 }
 
 //Armour and Penetration
-a = max(0,a-wepPen[atkHand])*.25*(.75+random(.25))
+a = max(0,a-pen)*.25*(.75+random(.25))
 
 //Calculate how much damage has been mitigated by armour
 ia = floor(p)-floor(p-a)
@@ -84,7 +95,7 @@ p = floor(p+random(.99))
 
 //Descriptor
 ii = instance_create(target.x,target.y-target.h-target.height,obj_descriptor)
-ii.text = string(p)+' '+string(wepType[atkHand])
+ii.text = string(p)+' '+string(typeName)
 ii.font = fnt_tiny
 
 if p = 0
@@ -101,6 +112,12 @@ else if ia > 0
 
 //Damage
 target.life -= p
+target.stm -= p*.5
+
+with(target)
+{
+    staminaCheck()
+}
 
 if target.life <= 0
 {
@@ -121,6 +138,42 @@ if argument1 > 1 or argument0.bold = false
         argument0.initSlot.delay += (argument1/argument0.sResist)-argument0.suppression
         argument0.suppression += (argument1/argument0.sResist)-argument0.suppression
     }
+    if argument0.bold = true
+    {
+        with(argument0)
+        {
+            iC()
+        }
+    }
 }
 
 initiativeSlotReset()
+#define mDamage
+//Find Attack Speed
+s = (3-(dualWield*.5))/((wepSpeed[atkHand]))
+
+//Find Base Attack Strength
+p = wepPow[atkHand]+(wepStrMult[atkHand]*atkDPS*s)
+
+//Roll Attack Strength
+p *= (1-wepPowRng[atkHand]+random(wepPowRng[atkHand]*2))
+
+//Skill
+skill = mSkill
+pen = wepPen[atkHand]
+typeName = wepType[atkHand]
+
+#define rDamage
+//Find Attack Speed
+s = (3-(dualWield*.5))/((wepRSpeed[atkHand]))
+
+//Find Base Attack Strength
+p = wepRPow[atkHand]+(wepRStrMult[atkHand]*atkDPS*s)
+
+//Roll Attack Strength
+p *= (1-wepRPowRng[atkHand]+random(wepRPowRng[atkHand]*2))
+
+//Skill
+skill = rSkill
+pen = wepRPen[atkHand]
+typeName = wepRType[atkHand]

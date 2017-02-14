@@ -2,9 +2,7 @@ switch(argument0)
 {
 case 0:     //Stats
 icon = ico_dodgeBuff
-potency = 10
 upkp = 60.0
-duration = 5.0
 name = 'Dodge '+string(potency)
 type = 'Focus'
 buff = true

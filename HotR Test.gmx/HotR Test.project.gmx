@@ -131,6 +131,7 @@
       </sprites>
       <sprites name="Status Icons">
         <sprite>sprites\ico_daze</sprite>
+        <sprite>sprites\ico_fatigue</sprite>
         <sprite>sprites\ico_strengthBuff</sprite>
         <sprite>sprites\ico_dodgeBuff</sprite>
       </sprites>
@@ -409,6 +410,7 @@
           <script>scripts\meleeAttackRange.gml</script>
           <script>scripts\projectileMovement.gml</script>
           <script>scripts\fireProjectile.gml</script>
+          <script>scripts\attackPreview.gml</script>
         </scripts>
         <scripts name="Actions">
           <scripts name="Core Actions">
@@ -522,6 +524,7 @@
     </scripts>
     <scripts name="Status Effects">
       <script>scripts\daze.gml</script>
+      <script>scripts\fatigue.gml</script>
       <script>scripts\strengthBuff.gml</script>
       <script>scripts\dodgeBuff.gml</script>
       <script>scripts\applyStatusEffect.gml</script>

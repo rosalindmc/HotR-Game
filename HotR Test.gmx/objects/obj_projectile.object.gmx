@@ -64,23 +64,21 @@ if instance_exists(collision)
     
     with(owner)
     {
-        attackDamage(true)
+        attackDamage(false)
     }
 }
 
 
-if isoX &gt;= 0 and isoY &gt;= 0 and isoX &lt; obj_control.mapWidth and isoY &lt; obj_control.mapHeight and isoZ &lt; obj_control.mapDepth
+if instance_exists(obj_control)
 {
-    global.isoX = isoX
-    global.isoY = isoY
-    global.isoZ = isoZ
-    
-    
-    with(obj_character)
-    {
-        if los(5,obj_control.map[global.isoX+(obj_control.mapWidth*global.isoZ),global.isoY],isoTile)
+    if isoX &gt;= 0 and isoY &gt;= 0 and isoZ &gt;= 0 and isoX &lt; obj_control.mapWidth and isoY &lt; obj_control.mapHeight and isoZ &lt; obj_control.mapDepth
+    {   
+        with(obj_character)
         {
-            suppress(id,1.0)
+            if los(5,obj_control.map[other.isoX+(obj_control.mapWidth*other.isoZ),other.isoY],isoTile)
+            {
+                suppress(id,1.0)
+            }
         }
     }
 }

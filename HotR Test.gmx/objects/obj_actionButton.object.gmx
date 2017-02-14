@@ -59,6 +59,7 @@ selected = false
     script_execute(global.action, 0)
     }
 }
+
 if point_in_rectangle(mouse_x,mouse_y,xstart+view_xview-10,ystart+view_yview-10,xstart+view_xview+9,ystart+view_yview+10)
 {
     selected = true

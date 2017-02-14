@@ -3,7 +3,7 @@
   <spriteName>&lt;undefined&gt;</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-100000</depth>
+  <depth>-1000</depth>
   <persistent>0</persistent>
   <parentName>obj_combatHUD</parentName>
   <maskName>&lt;undefined&gt;</maskName>
@@ -82,7 +82,7 @@ if global.timeDelay = 0 and global.nextChar.owner.player = true
     draw_rectangle(x+5,iy,x+105,iy+6,true)
     iy += 12
     
-    draw_text(x+55,iy,'Focus')
+    draw_text(x+55,iy,'Morale')
     iy += 12
     
     draw_set_colour(make_colour_rgb(155,0,0))
@@ -91,6 +91,15 @@ if global.timeDelay = 0 and global.nextChar.owner.player = true
     draw_rectangle(x+5,iy,x+105,iy+6,true)
     iy += 12
 }
+else
+{
+    //Status Effects
+    with(obj_status)
+    {
+        vis = false
+    }
+}
+
 </string>
           </argument>
         </arguments>

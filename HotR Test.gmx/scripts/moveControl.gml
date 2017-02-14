@@ -37,8 +37,8 @@ switch(argument0)
         //Move and Update Grid
         makeMovePath(cHover)
         i.pathLength = ii
-        i.stm -= cHover.g*.1*i.movStaminaMult
-        if cHover.overlay = 2{i.stm -= cHover.g*.1*i.movStaminaMult}
+        i.stm -= cHover.g*.1*i.movStaminaMult*(1+(i.enc*.01))
+        if cHover.overlay = 2{i.stm -= cHover.g*.1*i.movStaminaMult*(1+(i.enc*.01))}
         gridUpdate(i, cHover)
         with(i){triggerOnMove()}
         
@@ -53,8 +53,8 @@ switch(argument0)
     //Ranged Attack
     if cHover.rangedAttack = true and (key_meleeToggle = false or cHover.meleeAttack = false)
     {
-        //Temp Fire Projectile (Later add animation)
-        fireProjectile(obj_projectile,15)
+        //Ranged Attack
+        with(i){ranged()}
         //End Turn
         endTurn(3.0/i.haste)//Temp, turn will end after attack resolves when done
     }
@@ -70,8 +70,8 @@ switch(argument0)
             //Move and Update Grid
             makeMovePath(global.attackFromTile)
             i.pathLength = ii
-            i.stm -= global.attackFromTile.g*.1*i.movStaminaMult
-            if global.attackFromTile.overlay = 2{i.stm -= global.attackFromTile.g*.1*i.movStaminaMult}
+            i.stm -= global.attackFromTile.g*.1*i.movStaminaMult*(1+(i.enc*.01))
+            if global.attackFromTile.overlay = 2{i.stm -= global.attackFromTile.g*.1*i.movStaminaMult*(1+(i.enc*.01))}
             gridUpdate(i, global.attackFromTile)
             with(i){triggerOnMove()}
             
@@ -91,7 +91,28 @@ switch(argument0)
     
     //Run 2 to draw
     case 2:
-    
+    if instance_exists(cHover)
+    {
+        //Movement Tooltip
+        if cHover.move and cHover.vis != false
+        {
+            //Move
+        }
+        
+        //Ranged Attack Tooltip
+        if cHover.rangedAttack = true and (key_meleeToggle = false or cHover.meleeAttack = false)
+        {
+            //i.target = cHover.occupant
+            attackPreview(false)
+        }
+        
+        //Melee Attack Tooltip
+        if cHover.meleeAttack = true and (key_meleeToggle = true or cHover.rangedAttack = false) and global.attackFromTile != noone
+        {
+            //i.target = cHover.occupant
+            attackPreview(true)
+        }
+    }
     break
 }
 

@@ -33,10 +33,13 @@ effect = daze
 vis = false
 name = 'Status'
 tooltip = 'Tooltip'
+showDuration = true
 tt = 0
 upkp = 100
 tx = 0
 ty = 0
+
+image_speed = 0
 </string>
           </argument>
         </arguments>
@@ -148,8 +151,11 @@ else
     draw_set_halign(fa_left)
     draw_set_valign(fa_middle)
     draw_set_font(fnt_tiny)
-    drawText(c_black,c_white,x+15,y,string(name)+' '+string_format(duration,2,1)+' sec')
-
+    if showDuration
+    {drawText(c_black,c_white,x+15,y,string(name)+' '+string_format(duration,2,1)+' sec')}
+    else
+    {drawText(c_black,c_white,x+15,y,string(name))}
+    
     if tooltip != -4 and tt != 0
     {
         draw_set_alpha(tt)

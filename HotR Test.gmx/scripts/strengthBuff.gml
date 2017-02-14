@@ -2,9 +2,7 @@ switch(argument0)
 {
 case 0:     //Stats
 icon = ico_strengthBuff
-potency = 2
 upkp = 60.0
-duration = 5.0
 name = 'Strength '+string(potency)
 type = 'Focus'
 buff = true
