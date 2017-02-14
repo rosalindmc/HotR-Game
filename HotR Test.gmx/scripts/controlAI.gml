@@ -16,6 +16,14 @@ var i = global.control
 
 global.target = -4
 
+if (global.control.owner.invSlot[3,0] != emptySlot && !i.isoTile.threatened){
+    rangedAttackAI()
+}
+
+else if (i.isoTile.threatened && rangeAttack){
+    weaponSwitch(0)
+}
+else{
 with(obj_tile)
 {
     if meleeAttack = true
@@ -66,21 +74,23 @@ else
     march()
 }
 }
+}
 
 #define march
 //March forewards to a tile within walking range
 
 var i = global.control
-var closest = 1000
-
+var closest = 10000
 
 with (obj_tile){
     if (overlay = 2){
         with (obj_character){
             if (team != i.team){
                if (checkRange(id,other) < closest){
-                    closest = checkRange(id,other)
-                    global.target = other
+                    if (other.occupant = noone){
+                        closest = checkRange(id,other)
+                        global.target = other
+                    }
                } 
             }
         }        
@@ -98,11 +108,67 @@ with(i){triggerOnMove()}
 with(i){actMove(1)}
 
 //End Turn
-endTurn(3.0/(i.haste+i.movHaste))
+endTurn(2.0/(i.haste+i.movHaste))
 
 wipeTiles()
 
 
 
 #define rangedAttackAI
+//check all enemys for in range
+//check for units that might be hit
+//fire a projectile
+//march
 
+var i = global.control
+var closestTarget = 1000
+
+if (!rangeAttack){
+    weaponSwitch(0)
+}
+
+else{
+    with (obj_character){
+        if (team != i.team){
+            if (checkRange(id,i) < i.wepRRange && checkRange(id,i)< closestTarget){
+                
+    
+                closestTarget = checkRange(id,i)
+                var targetable = true
+                for (var ii = 0; ii < ds_list_size(i.isoTile.adjacent); ii++){
+                    
+                    if (checkRange(ds_list_find_value(i.isoTile.adjacent, ii),id)<closestTarget){
+                        if (ds_list_find_value(i.isoTile.adjacent, ii).occupant != noone){
+                            if (ds_list_find_value(i.isoTile.adjacent, ii).occupant.team = i.team){
+                                targetable = false
+                            }
+                        }
+                    }
+                    
+                    if (checkRange(ds_list_find_value(id.isoTile.adjacent, ii),i)<closestTarget){
+                         if (ds_list_find_value(id.isoTile.adjacent, ii).occupant != noone){
+                            if (ds_list_find_value(id.isoTile.adjacent, ii).occupant.team = i.team){
+                                targetable = false
+                            }
+                        }    
+                    }
+                }
+                
+                if (targetable = true){
+                    global.target = id
+                }     
+            }    
+        }
+    }
+
+    if (global.target != -4 && global.target.isoTile.rangedAttack = true){
+    
+        i.target = global.target    
+    
+        with(i){ranged()}
+        endTurn(3.0/i.haste)
+    }
+    else{
+        march()
+    }
+}
