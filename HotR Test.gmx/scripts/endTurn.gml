@@ -21,7 +21,7 @@ with(obj_control)
     global.control.suppression = 0
     global.control = noone
     global.timeDelay = 1
-    global.nextChar.delay = argument0
+    global.nextChar.delay += argument0
     global.attackFromTile = noone
     
     initiativeSlotReset()

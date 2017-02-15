@@ -125,6 +125,8 @@ with(target)
 if target.life <= 0
 {
     o.experience += target.expOnKill
+    bold = min(bold+.2,1)
+    
     checkLevelUp(o)
     
     triggerOnDown(false)
@@ -135,25 +137,26 @@ if target.life <= 0
 
 #define suppress
 //supress(Supressed Character, Supression Value)
-
-
-if argument1 > 1 or argument0.bold = false
+if argument1 > 1 or argument0.bold != 1
 {
     if argument1 > argument0.suppression
     {
         argument0.initSlot.delay += (argument1/argument0.sResist)-argument0.suppression
         argument0.suppression += (argument1/argument0.sResist)-argument0.suppression
     }
+    
     if argument0.bold = true
     {
         with(argument0)
         {
             iC()
+            createNotification(string(argument0.name)+' lost Bold',ico_bold,1)
         }
     }
 }
 
 initiativeSlotReset()
+
 #define mDamage
 //Find Attack Speed
 s = 1+(3-(dualWield*.5))/((wepSpeed[atkHand]))

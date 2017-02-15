@@ -1,3 +1,5 @@
+//createNotification(text,icon,iconindex)
+
 with(obj_notification)
 {
     up += 20

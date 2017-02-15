@@ -101,6 +101,9 @@
         <sprite>sprites\ico_attack</sprite>
         <sprite>sprites\ico_wait</sprite>
         <sprite>sprites\ico_switch</sprite>
+        <sprite>sprites\ico_money</sprite>
+        <sprite>sprites\ico_bold</sprite>
+        <sprite>sprites\ico_experience</sprite>
       </sprites>
       <sprites name="Talent Icons">
         <sprites name="Combat Talents">
@@ -137,8 +140,6 @@
         <sprite>sprites\ico_strengthBuff</sprite>
         <sprite>sprites\ico_dodgeBuff</sprite>
       </sprites>
-      <sprite>sprites\ico_money</sprite>
-      <sprite>sprites\ico_experience</sprite>
     </sprites>
     <sprites name="Equipment">
       <sprites name="Clothing">

@@ -31,6 +31,7 @@ if obj_control.mapTimeOn = true and global.timeDelay = 0
             if bold = 1
             {
                 iC()
+                createNotification(string(name)+' grew Bold',ico_bold,0)
             }
         }
     }
