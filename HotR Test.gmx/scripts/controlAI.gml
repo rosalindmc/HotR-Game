@@ -115,17 +115,19 @@ with (obj_tile)
     }
 }
 
+with(obj_control){
+    //Move and Update Grid9
+    r4ewes
+    makeMovePath(global.target)
+    i.pathLength = ii
+    i.stm -= global.target.g*.1*i.movStaminaMult*(1+(i.enc*.01))
+    if global.target.overlay = 2{i.stm -= global.target.g*.1*i.movStaminaMult*(1+(i.enc*.01))}
+    gridUpdate(i, global.target)
 
-//Move and Update Grid
-makeMovePath(global.target)
-i.pathLength = ii
-i.stm -= global.target.g*.1*i.movStaminaMult*(1+(i.enc*.01))
-if global.target.overlay = 2{i.stm -= global.target.g*.1*i.movStaminaMult*(1+(i.enc*.01))}
-gridUpdate(i, global.target)
-
-with(i){triggerOnMove()}
-
-with(i){actMove(1)}
+    with(i){triggerOnMove()}
+    
+    with(i){actMove(1)}
+    }
 
 //End Turn
 endTurn(2.0/(i.haste+i.movHaste))
@@ -206,4 +208,3 @@ else
 }
 
 wipeTiles()
-
