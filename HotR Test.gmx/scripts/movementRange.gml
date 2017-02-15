@@ -33,7 +33,7 @@ while(ds_priority_size(open) > 0)
         adjacent = ds_list_find_value(current.walk, ii)
         
         //Add adjacent tile if it is reachable
-        if (ds_list_find_index(closed, adjacent) < 0 && adjacent.pathable && adjacent.occupant = noone && adjacent.cost+current.g <= range && adjacent.ground = true && current.zoneControl = false) 
+        if (ds_list_find_index(closed, adjacent) < 0 && adjacent.pathable && adjacent.occupant = noone && adjacent.cost+current.g <= range && adjacent.ground = true && (current.zoneControl = false or ignoreZoC = true)) 
         {
             if ds_priority_find_priority(open, adjacent) = 0 || ds_priority_find_priority(open, adjacent) = undefined
             {

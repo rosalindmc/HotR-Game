@@ -408,6 +408,14 @@ if global.control != noone
         {
             global.mouseSprite = 1
             
+
+            
+            if action = battle
+            {
+                global.attackFromTile = global.control.isoTile        
+            }
+            else
+            {
             tDir = 360
             
             for(ii = 0; ii &lt; ds_list_size(cHover.walk); ii ++)
@@ -424,6 +432,7 @@ if global.control != noone
                 }
             }
             global.attackFromTile = tID
+            }
         }
         
         //Pathdrawing

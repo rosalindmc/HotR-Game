@@ -423,6 +423,8 @@
           </scripts>
           <scripts name="Action Control">
             <script>scripts\moveControl.gml</script>
+            <script>scripts\battle.gml</script>
+            <script>scripts\disengage.gml</script>
             <script>scripts\wait.gml</script>
             <script>scripts\weaponSwitch.gml</script>
             <script>scripts\createActionBar.gml</script>

@@ -1,8 +1,6 @@
-//Create the Action Bar 
+//Create the Action Bar
+zoneOfControl()
 createActionBar()
-
-//Run Move Control
-moveControl(0)
 
 //View
 obj_camera.x = global.control.x

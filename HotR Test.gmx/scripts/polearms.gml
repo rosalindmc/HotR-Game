@@ -139,6 +139,7 @@ wepRange[i] = 1
 weaponSprite[i] = iSpr
 
 greatWeapon = true
+reach = 3
 threat = true
 break
 }
@@ -186,6 +187,7 @@ wepRange[i] = 1
 //Weapon Sprites
 weaponSprite[i] = iSpr
 
+reach = 2.5
 greatWeapon = true
 threat = true
 break
