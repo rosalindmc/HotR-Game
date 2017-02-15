@@ -127,8 +127,9 @@ if dodge > dge
         p *= 1+((dodge-dge)*.01)
          
         obj_control.tooltipColour[obj_control.tooltipLength] = green
-        obj_control.tooltipText[obj_control.tooltipLength] = 'Lightning Strike '+string_format(dodge-dge,2,1)+'%'
+        obj_control.tooltipText[obj_control.tooltipLength] = 'Lightning Strike '+string(floor(dodge-dge))+'%'
         obj_control.tooltipLength += 1   
+        
     }
 }
 
@@ -137,55 +138,66 @@ if dodge > dge
 //Bonus damage while bolded
 
 //Additional Conditioners
-if argument5 = false    //On Proc
+if bold = 1 and mle = true
 {
-    if bold = 1 and mle = true
+    if argument5 = false    //On Proc
+    {
+        p += argument1*(s+1)
+    }
+    else                    //On Tooltip
     {
         p += argument1*(s+1)
         
-        //createNotification('Momentum did '+string(argument1*s)+' Damage',ico_evasion,0) 
+        obj_control.tooltipColour[obj_control.tooltipLength] = green
+        obj_control.tooltipText[obj_control.tooltipLength] = 'Momentum '+string_format(argument1*(s+1),2,1)
+        obj_control.tooltipLength += 1   
     }
 }
-else                    //On Tooltip
-{
 
-}
 
 #define advantageFel
 //advantageFel(name,bonus,false,false,false,tooltip)
 //Bonus Damage to High/Low Health foes
 
 //Additional Conditioners
-if argument5 = false    //On Proc
+if target.missChance != 0 or backstab = true
 {
-    if target.missChance != 0 or backstab = true
+    if argument5 = false    //On Proc
     {
         p += argument1*(s+1)
         
         //createNotification('Insight did '+string(argument1*s)+' Damage',ico_breaker,0) 
     }
+    else                    //On Tooltip
+    {
+        p += argument1*(s+1)
+        
+        obj_control.tooltipColour[obj_control.tooltipLength] = green
+        obj_control.tooltipText[obj_control.tooltipLength] = 'Insight '+string_format(argument1*(s+1),2,1)
+        obj_control.tooltipLength += 1       
+    }
 }
-else                    //On Tooltip
-{
 
-}
 
 #define advantageArmourPass
 //advantageFel(name,bonus,false,false,false,tooltip)
 //Bonus Damage to High/Low Health foes
 
 //Additional Conditioners
-if argument5 = false    //On Proc
+if target.missChance != 0 or backstab = true
 {
-    if target.missChance != 0 or backstab = true
+    if argument5 = false    //On Proc
     {
         if 1+irandom(99) >= argument1
         {
             a *= 1-argument2
         }
     }
+    else                    //On Tooltip
+    {
+        obj_control.tooltipColour[obj_control.tooltipLength] = green
+        obj_control.tooltipText[obj_control.tooltipLength] = 'Pass Armour'
+        obj_control.tooltipLength += 1    
+    }
 }
-else                    //On Tooltip
-{
 
-}

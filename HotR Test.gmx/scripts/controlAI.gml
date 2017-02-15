@@ -16,64 +16,66 @@ var i = global.control
 
 global.target = -4
 
-if (global.control.owner.invSlot[3,0] != emptySlot && !i.isoTile.threatened){
+if (global.control.owner.invSlot[3,0] != emptySlot && !i.isoTile.threatened)
+{
     rangedAttackAI()
 }
-
-else if (i.isoTile.threatened && rangeAttack){
+else if (i.isoTile.threatened && rangeAttack)
+{
     weaponSwitch(0)
-}
-else{
-with(obj_tile)
-{
-    if meleeAttack = true
-    {
-        global.target = id
-    }
-}
-
-with(obj_control)
-{
-if global.target != -4
-{
-    for(ii = 0; ii < ds_list_size(global.moveTile); ii ++)
-    {
-        current = ds_list_find_value(global.moveTile, ii)
-        if los(global.control.reach,current,global.target)
-        {
-            global.attackFromTile = current
-        }
-    }
-    
-    //Set Target
-    i.target = global.target.occupant
-    
-    //Charge or Attack?
-    if global.attackFromTile.occupant != i
-    {   
-        //Move and Update Grid
-        makeMovePath(global.attackFromTile)
-        i.pathLength = ii
-        i.stm -= global.attackFromTile.g*.1
-        if global.attackFromTile.overlay = 2{i.stm -= global.attackFromTile.g*.1}
-        gridUpdate(i, global.attackFromTile)
-        
-        //Start the Action
-        with(i){actCharge(1)}
-    }
-    else
-    {
-        //Start the Action
-        with(i){actAttack(1)}
-    }
-    
-    wipeTiles()
 }
 else
 {
-    march()
-}
-}
+    with(obj_tile)
+    {
+        if meleeAttack = true
+        {
+            global.target = id
+        }
+    }
+    
+    with(obj_control)
+    {
+        if global.target != -4
+        {
+            for(ii = 0; ii < ds_list_size(global.moveTile); ii ++)
+            {
+                current = ds_list_find_value(global.moveTile, ii)
+                if los(global.control.reach,current,global.target)
+                {
+                    global.attackFromTile = current
+                }
+            }
+            
+            //Set Target
+            i.target = global.target.occupant
+            
+            //Charge or Attack?
+            if global.attackFromTile.occupant != i
+            {   
+                //Move and Update Grid
+                makeMovePath(global.attackFromTile)
+                i.pathLength = ii
+                i.stm -= global.attackFromTile.g*.1
+                if global.attackFromTile.overlay = 2{i.stm -= global.attackFromTile.g*.1}
+                gridUpdate(i, global.attackFromTile)
+                
+                //Start the Action
+                with(i){actCharge(1)}
+            }
+            else
+            {
+                //Start the Action
+                with(i){actAttack(1)}
+            }
+            
+            wipeTiles()
+        }
+        else
+        {
+            march()
+        }
+    }
 }
 
 #define march
@@ -82,16 +84,22 @@ else
 var i = global.control
 var closest = 10000
 
-with (obj_tile){
-    if (overlay = 2){
-        with (obj_character){
-            if (team != i.team){
-               if (checkRange(id,other) < closest){
-                    if (other.occupant = noone){
+with (obj_tile)
+{
+    if (overlay = 2)
+    {
+        with (obj_character)
+        {
+            if (team != i.team)
+            {
+                if (checkRange(id,other) < closest)
+                {
+                    if (other.occupant = noone)
+                    {
                         closest = checkRange(id,other)
                         global.target = other
                     }
-               } 
+                } 
             }
         }        
     }
@@ -123,52 +131,62 @@ wipeTiles()
 var i = global.control
 var closestTarget = 1000
 
-if (!rangeAttack){
+if (!rangeAttack)
+{
     weaponSwitch(0)
 }
-
-else{
-    with (obj_character){
-        if (team != i.team){
-            if (checkRange(id,i) < i.wepRRange && checkRange(id,i)< closestTarget){
-                
-    
+else
+{
+    with (obj_character)
+    {
+        if (team != i.team)
+        {
+            if (checkRange(id,i) < i.wepRRange && checkRange(id,i)< closestTarget)
+            {
                 closestTarget = checkRange(id,i)
                 var targetable = true
-                for (var ii = 0; ii < ds_list_size(i.isoTile.adjacent); ii++){
-                    
-                    if (checkRange(ds_list_find_value(i.isoTile.adjacent, ii),id)<closestTarget){
-                        if (ds_list_find_value(i.isoTile.adjacent, ii).occupant != noone){
-                            if (ds_list_find_value(i.isoTile.adjacent, ii).occupant.team = i.team){
+                for (var ii = 0; ii < ds_list_size(i.isoTile.adjacent); ii++)
+                {    
+                    if (checkRange(ds_list_find_value(i.isoTile.adjacent, ii),id)<closestTarget)
+                    {
+                        if (ds_list_find_value(i.isoTile.adjacent, ii).occupant != noone)
+                        {
+                            if (ds_list_find_value(i.isoTile.adjacent, ii).occupant.team = i.team)
+                            {
                                 targetable = false
                             }
                         }
                     }
                     
-                    if (checkRange(ds_list_find_value(id.isoTile.adjacent, ii),i)<closestTarget){
-                         if (ds_list_find_value(id.isoTile.adjacent, ii).occupant != noone){
-                            if (ds_list_find_value(id.isoTile.adjacent, ii).occupant.team = i.team){
+                    if (checkRange(ds_list_find_value(id.isoTile.adjacent, ii),i)<closestTarget)
+                    {
+                         if (ds_list_find_value(id.isoTile.adjacent, ii).occupant != noone)
+                         {
+                            if (ds_list_find_value(id.isoTile.adjacent, ii).occupant.team = i.team)
+                            {
                                 targetable = false
                             }
                         }    
                     }
                 }
                 
-                if (targetable = true){
+                if (targetable = true)
+                {
                     global.target = id
                 }     
             }    
         }
     }
 
-    if (global.target != -4 && global.target.isoTile.rangedAttack = true){
-    
+    if (global.target != -4 && global.target.isoTile.rangedAttack = true)
+    {
         i.target = global.target    
     
         with(i){ranged()}
         endTurn(3.0/i.haste)
     }
-    else{
+    else
+    {
         march()
     }
 }

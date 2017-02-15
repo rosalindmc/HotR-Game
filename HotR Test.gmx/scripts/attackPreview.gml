@@ -12,8 +12,9 @@ with(i)
 {
     target = other.target
     backstab = false
+    mle = argument0
     
-    if argument0 = true
+    if mle = true
     {
         mDamage()
         p = wepPow[atkHand]+(wepStrMult[atkHand]*atkDPS*s)
@@ -50,7 +51,7 @@ with(i)
     
     triggerOnHit(true)
     
-    if argument0 = true
+    if mle = true
     {
         pMin = p*(1-wepPowRng[atkHand])
         pMax = p*(1+wepPowRng[atkHand])
@@ -107,9 +108,12 @@ if target.blocks > 0 and i.backstab = false
     draw_text(ix+5,iy,string(floor(100-(max(0,(i.skill-target.mSkill)*2))))+' % Block '+string(floor((i.p+target.blockStr)/4)))
     iy += 14  
 }
-for(ii = 0; ii < tooltipLength; ii++)
+if tooltipLength != 0
 {
-    draw_set_colour(tooltipColour[ii])
-    draw_text(ix+5,iy,tooltipText[ii])
-    iy += 14  
+    for(ii = 0; ii < tooltipLength; ii++)
+    {
+        draw_set_colour(tooltipColour[ii])
+        draw_text(ix+5,iy,tooltipText[ii])
+        iy += 14  
+    }
 }

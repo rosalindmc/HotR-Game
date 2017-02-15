@@ -16,7 +16,20 @@ if argument5 = false    //On Proc
 }
 else                    //On Tooltip
 {
-
+    if (life/lifeMax)*100 >= argument1 and argument3 = false
+    {
+        other.p *= (100-argument2)/100
+        obj_control.tooltipColour[obj_control.tooltipLength] = c_red
+        obj_control.tooltipText[obj_control.tooltipLength] = 'Thick Skin'
+        obj_control.tooltipLength += 1    
+    }
+    if (life/lifeMax)*100 <= argument1 and argument3 = true
+    {
+        other.p *= (100-argument2)/100
+        obj_control.tooltipColour[obj_control.tooltipLength] = c_red
+        obj_control.tooltipText[obj_control.tooltipLength] = 'Thick Skin'
+        obj_control.tooltipLength += 1
+    }
 }
 
 #define lifeGain
@@ -65,8 +78,41 @@ if argument5 = false    //On Proc
 }
 else                    //On Tooltip
 {
-
+    if argument3 = true
+    {
+        obj_control.tooltipColour[obj_control.tooltipLength] = green
+        obj_control.tooltipText[obj_control.tooltipLength] = string(floor(argument1*s))+'% Vigour'
+        obj_control.tooltipLength += 1
+    }
+    else
+    {
+        obj_control.tooltipColour[obj_control.tooltipLength] = green
+        obj_control.tooltipText[obj_control.tooltipLength] = string(floor(argument1))+'% Vigour'
+        obj_control.tooltipLength += 1
+    }
 }
+
+#define boldDodge
+//boldDodge(name,dodge,false,false,false,tooltip)
+//Gain a bonus to dodge chance while bolded
+
+//Additional Conditioners
+if bold = 1
+{
+    if argument5 = false    //On Proc
+    {
+        other.dge += argument1
+    }
+    else                    //On Tooltip
+    {
+        other.dge += argument1
+            
+        obj_control.tooltipColour[obj_control.tooltipLength] = c_red
+        obj_control.tooltipText[obj_control.tooltipLength] = 'Evasion'
+        obj_control.tooltipLength += 1    
+    }
+}
+
 
 #define statusGain
 //statusGain(statusEffect,procChance,potency,duration,multProcbyAS,tooltip)
@@ -115,23 +161,6 @@ if argument5 = false    //On Proc
         {
             applyStatusEffect(argument0,target,argument2,argument3)
         }
-    }
-}
-else                    //On Tooltip
-{
-
-}
-
-#define boldDodge
-//boldDodge(name,dodge,false,false,false,tooltip)
-//Gain a bonus to dodge chance while bolded
-
-//Additional Conditioners
-if argument5 = false    //On Proc
-{
-    if bold = 1
-    {
-        other.dge += argument1
     }
 }
 else                    //On Tooltip
