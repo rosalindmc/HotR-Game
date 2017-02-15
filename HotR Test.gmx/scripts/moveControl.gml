@@ -49,7 +49,7 @@ switch(argument0)
         with(i){actMove(1)}
                 
         //End Turn
-        endTurn(3.0/(i.haste+i.movHaste))
+        endTurn(min(3.0,cHover.g)/(i.haste+i.movHaste))
         wipeTiles()
     }
     
@@ -62,7 +62,8 @@ switch(argument0)
         //Ranged Attack
         with(i){ranged()}
         //End Turn
-        endTurn(3.0/(i.haste+i.atkHaste))//Temp, turn will end after attack resolves when done
+        s = 3.0/((i.wepRSpeed[i.atkHand]))
+        endTurn(s/(i.haste+i.atkHaste))//Temp, turn will end after attack resolves when done
     }
     //Melee Attack
     if cHover.meleeAttack = true and (key_meleeToggle = true or cHover.rangedAttack = false) and global.attackFromTile != noone
@@ -74,7 +75,7 @@ switch(argument0)
         if global.attackFromTile.occupant != i
         {   
             //Add a half movement to delay
-            global.nextChar.delay += 1.5/(i.haste+i.movHaste)
+            global.nextChar.delay += min(2.0,cHover.g)/(i.haste+i.movHaste)
         
             //Move and Update Grid
             makeMovePath(global.attackFromTile)
@@ -101,28 +102,48 @@ switch(argument0)
     //Run 2 to draw
     case 2:
     if instance_exists(cHover)
-    {
+    {   
         //Movement Tooltip
         if cHover.move and cHover.vis != false
         {
             //Move
+            global.testSlot.delayAdd = (min(3.0,cHover.g)/(i.haste+i.movHaste))
+            initiativeSlotAnticipate()
         }
-        
         //Ranged Attack Tooltip
-        if cHover.rangedAttack = true and (key_meleeToggle = false or cHover.meleeAttack = false)
+        else if cHover.rangedAttack = true and (key_meleeToggle = false or cHover.meleeAttack = false)
         {
             attacker = i
             target = cHover.occupant
             attackPreview(false)
+            global.testSlot.delayAdd = i.s/(i.haste+i.atkHaste)
+            initiativeSlotAnticipate()
         }
-        
         //Melee Attack Tooltip
-        if cHover.meleeAttack = true and (key_meleeToggle = true or cHover.rangedAttack = false) and global.attackFromTile != noone
+        else if cHover.meleeAttack = true and (key_meleeToggle = true or cHover.rangedAttack = false) and global.attackFromTile != noone
         {   
             attacker = i
             target = cHover.occupant
             attackPreview(true)
+            
+            if global.attackFromTile.occupant != i
+            {
+                global.testSlot.delayAdd = i.s/(i.haste+i.atkHaste)
+            }
+            else
+            {
+                global.testSlot.delayAdd = (i.s/(i.haste+i.atkHaste))+(min(2.0,cHover.g)/(i.haste+i.movHaste))
+            }   
+            initiativeSlotAnticipate()
         }
+        else
+        {
+            initiativeSlotReset()
+        }
+    }
+    else
+    {
+        initiativeSlotReset()
     }
     break
 }

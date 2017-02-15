@@ -207,7 +207,8 @@ else
         i.target = global.target    
     
         with(i){ranged()}
-        endTurn(3.0/(i.haste+i.atkHaste))
+        s = 3.0/((i.wepRSpeed[i.atkHand]))
+        endTurn(s/(i.haste+i.atkHaste))//Temp, turn will end after attack resolves when done
     }
     else
     {

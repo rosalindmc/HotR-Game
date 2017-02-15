@@ -56,22 +56,33 @@ switch(argument0)
     //Run 2 to draw
     case 2:
     if instance_exists(cHover)
-    {
+    {   
         //Ranged Attack Tooltip
         if cHover.rangedAttack = true and (key_meleeToggle = false or cHover.meleeAttack = false)
         {
             attacker = i
             target = cHover.occupant
             attackPreview(false)
+            global.testSlot.delayAdd = i.s/(i.haste+i.atkHaste)                
+            initiativeSlotAnticipate()
         }
-        
         //Melee Attack Tooltip
-        if cHover.meleeAttack = true and (key_meleeToggle = true or cHover.rangedAttack = false) and global.attackFromTile != noone
+        else if cHover.meleeAttack = true and (key_meleeToggle = true or cHover.rangedAttack = false) and global.attackFromTile != noone
         {   
             attacker = i
             target = cHover.occupant
             attackPreview(true)
+            global.testSlot.delayAdd = i.s/(i.haste+i.atkHaste)                
+            initiativeSlotAnticipate()
         }
+        else
+        {
+            initiativeSlotReset()
+        }
+    }
+    else
+    {
+        initiativeSlotReset()
     }
     break
 }

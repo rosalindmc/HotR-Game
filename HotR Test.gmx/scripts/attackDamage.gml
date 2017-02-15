@@ -214,4 +214,3 @@ if bold = 1
 
 bold = max(bold-argument0,0)
 
-

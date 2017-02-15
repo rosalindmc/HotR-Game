@@ -18,6 +18,7 @@ switch(argument0)
     
     //Run 2 to draw
     case 2:
-    
+    global.testSlot.delayAdd = 2.0
+    initiativeSlotAnticipate()
     break
 }

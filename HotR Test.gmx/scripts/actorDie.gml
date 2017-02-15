@@ -38,6 +38,11 @@ with(argument0)
             if team = global.team
             {
                 global.battleEnd = false
+                
+                if los(5,obj_control.map[other.isoX+(obj_control.mapWidth*other.isoZ),other.isoY],isoTile)
+                {
+                    suppress(id,2.0)
+                }
             }
         }
         

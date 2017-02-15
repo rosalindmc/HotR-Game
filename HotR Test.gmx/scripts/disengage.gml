@@ -44,6 +44,8 @@ switch(argument0)
         if cHover.move and cHover.vis != false
         {
             //Move
+            global.testSlot.delayAdd = (3.0/(i.haste+i.movHaste))
+            initiativeSlotAnticipate()
         }
     }
     break
