@@ -37,6 +37,7 @@ mapTimeOn = true
 global.timeDelay = 1
 global.target = -4
 global.expTotal = 0
+global.controlObject = id
 
 //Visuals
 image_speed = .3

@@ -6,11 +6,11 @@ upkp = 60.0
 name = 'Strength '+string(potency)
 type = 'Focus'
 buff = true
-tooltip = '+'+string(potency)+' DPS, Force Resistance and Block Strength'
+tooltip = '+'+string(potency*.1)+' POW, +'+string(potency)+' Force Resistance and +'+string(potency*.25)+' Block Strength'
 break
 
 case 1:     //Stats
-owner.atkDPS += potency
+owner.atkDPS += potency*.4
 owner.fResist += potency
 owner.blockStr += potency
 break
@@ -23,6 +23,6 @@ case 3:     //Stacking
 potency = max(potency,ipot)
 duration = max(duration,idur)
 name = 'Strength '+string(potency)
-tooltip = '+'+string(potency)+' DPS, Force Resistance and Block Strength'
+tooltip = '+'+string(potency*.1)+' POW, +'+string(potency)+' Force Resistance and +'+string(potency*.25)+' Block Strength'
 break
 }

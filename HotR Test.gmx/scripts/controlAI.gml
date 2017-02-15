@@ -1,5 +1,5 @@
 #define controlAI
-with(obj_control)
+with(global.controlObject)
 {
     moveControl(0)
     
@@ -19,76 +19,86 @@ var i = global.control
 
 global.target = -4
 
-if (global.control.owner.invSlot[3,0] != emptySlot)
+if (i.owner.invSlot[3,0] != emptySlot)
 {
     var enemyAdj = false
-    for(var j = 0; j < ds_list_size(i.isoTile.adjacent); j++){
-        if(ds_list_find_value(i.isoTile.adjacent, j).occupant != noone){
-            if(ds_list_find_value(i.isoTile.adjacent, j).occupant.team != i.team){
+    for(var j = 0; j < ds_list_size(i.isoTile.adjacent); j++)
+    {
+        if(ds_list_find_value(i.isoTile.adjacent, j).occupant != noone)
+        {
+            if(ds_list_find_value(i.isoTile.adjacent, j).occupant.team != i.team)
+            {
                 enemyAdj = true
             }
         }    
     }
-    if (!enemyAdj){
-    rangedAttackAI()
+    
+    if (!enemyAdj)
+    {
+        rangedAttackAI()
+        exit
     }
-    else if(i.rangeAttack){
+    else if(i.rangeAttack)
+    {
         weaponSwitch(0)
+        exit
     }
 }
-else
+
+global.aggro = -1000
+
+with(obj_tile)
 {
-    with(obj_tile)
+    if meleeAttack = true
     {
-        if meleeAttack = true
+        if random(1)+(occupant.bold*5)-occupant.initSlot.delay-((occupant.life/occupant.lifeMax)*3)-(max(occupant.arm-i.wepPen[i.atkHand],0)*.25) > global.aggro
         {
             global.target = id
+            global.aggro = random(1)+(occupant.bold*5)-occupant.initSlot.delay-((occupant.life/occupant.lifeMax)*3)-(max(occupant.arm-i.wepPen[i.atkHand],0)*.25)
+        }
+    }
+}
+
+if global.target != -4
+{
+    for(ii = 0; ii < ds_list_size(global.moveTile); ii ++)
+    {
+        current = ds_list_find_value(global.moveTile, ii)
+        if los(global.control.reach,current,global.target)
+        {
+            global.attackFromTile = current
         }
     }
     
-    with(obj_control)
-    {
-        if global.target != -4
-        {
-            for(ii = 0; ii < ds_list_size(global.moveTile); ii ++)
-            {
-                current = ds_list_find_value(global.moveTile, ii)
-                if los(global.control.reach,current,global.target)
-                {
-                    global.attackFromTile = current
-                }
-            }
-            
-            //Set Target
-            i.target = global.target.occupant
-            
-            //Charge or Attack?
-            if global.attackFromTile.occupant != i
-            {   
-                //Move and Update Grid
-                makeMovePath(global.attackFromTile)
-                i.pathLength = ii
-                i.stm -= global.attackFromTile.g*.1
-                if global.attackFromTile.overlay = 2{i.stm -= global.attackFromTile.g*.1}
-                gridUpdate(i, global.attackFromTile)
-                
-                //Start the Action
-                with(i){actCharge(1)}
-            }
-            else
-            {
-                //Start the Action
-                with(i){actAttack(1)}
-            }
-            
-            wipeTiles()
-        }
-        else
-        {
-            march()
-        }
+    //Set Target
+    i.target = global.target.occupant
+    
+    //Charge or Attack?
+    if global.attackFromTile.occupant != i
+    {   
+        //Move and Update Grid
+        makeMovePath(global.attackFromTile)
+        i.pathLength = ii
+        i.stm -= global.attackFromTile.g*.1
+        if global.attackFromTile.overlay = 2{i.stm -= global.attackFromTile.g*.1}
+        gridUpdate(i, global.attackFromTile)
+        
+        //Start the Action
+        with(i){actCharge(1)}
     }
+    else
+    {
+        //Start the Action
+        with(i){actAttack(1)}
+    }
+    
+    wipeTiles()
 }
+else
+{
+    march()
+}
+
 
 #define march
 //March forewards to a tile within walking range
@@ -163,7 +173,7 @@ else
                 var targetable = true
                 for (var ii = 0; ii < ds_list_size(i.isoTile.adjacent); ii++)
                 {    
-                    if (checkRange(ds_list_find_value(i.isoTile.adjacent, ii),id)<closestTarget)
+                    if (checkRange(ds_list_find_value(i.isoTile.adjacent, ii),id) < closestTarget)
                     {
                         if (ds_list_find_value(i.isoTile.adjacent, ii).occupant != noone)
                         {
@@ -174,11 +184,11 @@ else
                         }
                     }
                     
-                    if (checkRange(ds_list_find_value(id.isoTile.adjacent, ii),i)<closestTarget)
+                    if (checkRange(ds_list_find_value(isoTile.adjacent, ii),i) < closestTarget)
                     {
-                         if (ds_list_find_value(id.isoTile.adjacent, ii).occupant != noone)
+                         if (ds_list_find_value(isoTile.adjacent, ii).occupant != noone)
                          {
-                            if (ds_list_find_value(id.isoTile.adjacent, ii).occupant.team = i.team)
+                            if (ds_list_find_value(isoTile.adjacent, ii).occupant.team = i.team)
                             {
                                 targetable = false
                             }
