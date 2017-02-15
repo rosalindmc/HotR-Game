@@ -125,8 +125,8 @@ with(target)
 if target.life <= 0
 {
     o.experience += target.expOnKill
-    bold = min(bold+.2,1)
     
+    gainMorale(.2)
     checkLevelUp(o)
     
     triggerOnDown(false)
@@ -143,14 +143,10 @@ if argument1 > 1 or argument0.bold != 1
     {
         argument0.initSlot.delay += (argument1/argument0.sResist)-argument0.suppression
         argument0.suppression += (argument1/argument0.sResist)-argument0.suppression
-    }
-    
-    if argument0.bold = true
-    {
+        
         with(argument0)
         {
-            iC()
-            createNotification(string(argument0.name)+' lost Bold',ico_bold,1)
+            loseMorale(argument1*.15)
         }
     }
 }
@@ -186,3 +182,36 @@ p *= (1-wepRPowRng[atkHand]+random(wepRPowRng[atkHand]*2))
 skill = rSkill
 pen = wepRPen[atkHand]
 typeName = wepRType[atkHand]
+#define gainMorale
+//gainMorale
+if bold != 1
+{
+    bold = min(bold+argument0,1)
+    
+    if bold = 1
+    {
+        iC()
+        
+        if player = true
+        {
+            createNotification(string(o.firstName)+' grew Bold',ico_bold,0)
+        }
+    }
+}
+
+
+#define loseMorale
+//gainMorale
+if bold = 1
+{
+    iC()
+    
+    if player = true
+    {
+        createNotification(string(o.firstName)+' lost Bold',ico_bold,0)
+    }
+}
+
+bold = max(bold-argument0,0)
+
+

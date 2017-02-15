@@ -101,7 +101,6 @@ if target.missChance != 0
     if argument5 = false    //On Proc
     {
         p += argument1*s   
-        //createNotification('Opportunist did '+string(argument1*s)+' Damage',ico_breaker,0) 
     }
     else                    //On Tooltip
     {
@@ -164,17 +163,14 @@ if target.missChance != 0 or backstab = true
 {
     if argument5 = false    //On Proc
     {
-        p += argument1*s
-        
-        //createNotification('Insight did '+string(argument1*s)+' Damage',ico_breaker,0) 
-    }
+        p += argument1*s    }
     else                    //On Tooltip
     {
         p += argument1*s
         
-        //obj_control.tooltipColour[obj_control.tooltipLength] = green
-        //obj_control.tooltipText[obj_control.tooltipLength] = 'Insight '+string_format(argument1*s,2,1)
-        //obj_control.tooltipLength += 1       
+        obj_control.tooltipColour[obj_control.tooltipLength] = green
+        obj_control.tooltipText[obj_control.tooltipLength] = 'Insight '+string_format(argument1*s,2,1)
+        obj_control.tooltipLength += 1       
     }
 }
 
