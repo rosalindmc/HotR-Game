@@ -76,7 +76,7 @@ if global.timeDelay = 0 and global.nextChar.owner.player = true
     draw_text(x+55,iy,'Stamina')
     iy += 12
     
-    draw_set_colour(c_yellow)
+    draw_set_colour(c_orange)
     draw_rectangle(x+5,iy,x+5+(100*(h.stm/h.stmMax)),iy+6,false)
     draw_set_colour(c_black)
     draw_rectangle(x+5,iy,x+105,iy+6,true)

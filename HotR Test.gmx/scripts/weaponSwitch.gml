@@ -12,10 +12,12 @@ switch(argument0)
         if invSwitch = 1
         {
             iCEquip(2)
+            blocks = 0
         }
         else
         {
             iCEquip(1)
+            blocks = 0
         }
     }
     endTurn(1.5/i.haste)

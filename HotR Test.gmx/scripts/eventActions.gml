@@ -40,5 +40,5 @@ createNotification('Lost $'+string_format(ii,2,2),ico_money,1)
 
 //Add Item to active parties inventory
 global.eventCharacter.experience += argument0
-createNotification(string(global.eventCharacter.firstName)+' +'+string_format(argument0,2,0)+'xp',ico_experience,0)
+createNotification(string(global.eventCharacter.firstName)+' +'+string_format(argument0,2,1)+'xp',ico_experience,0)
 checkLevelUp(global.eventCharacter)

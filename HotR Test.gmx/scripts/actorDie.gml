@@ -8,6 +8,8 @@ with(argument0)
     {
         //Temporary, later replace with OoA script
         isoTile.occupant = noone
+        
+        global.expTotal += expOnKill
         global.team = team
         instance_destroy()
         

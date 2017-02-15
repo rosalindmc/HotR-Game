@@ -124,6 +124,9 @@ with(target)
 
 if target.life <= 0
 {
+    o.experience += target.expOnKill
+    checkLevelUp(o)
+    
     triggerOnDown(false)
     actorDie(target)
 }

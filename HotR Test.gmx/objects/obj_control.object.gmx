@@ -36,6 +36,7 @@ mapTime = 0
 mapTimeOn = true
 global.timeDelay = 1
 global.target = -4
+global.expTotal = 0
 
 //Visuals
 image_speed = .3
@@ -441,7 +442,7 @@ if global.control != noone
             
             if i.move or (i.occupant = global.control and global.mouseSprite = 1)
             {
-                i.onPath = 5
+                i.onPath = 5+cHover.meleeAttack
                 if i.pathParent != noone
                 {
                     i = i.pathParent

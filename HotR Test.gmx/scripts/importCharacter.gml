@@ -11,6 +11,8 @@ life = lifeMax
 stm = stmMax
 arm = armMax
 
+expOnKill = floor(o.level*2*(1+(o.level*.1)))
+
 if hasShield = true
 {
     blocks = blockMax

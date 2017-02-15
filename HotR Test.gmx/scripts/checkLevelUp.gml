@@ -1,6 +1,6 @@
 char = argument0
 
-while (char.experience >= char.expToLevel)
+while(char.experience >= char.expToLevel)
 {
     char.level += 1
     char.levelPending += 1

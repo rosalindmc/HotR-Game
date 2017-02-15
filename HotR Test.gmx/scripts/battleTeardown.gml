@@ -6,7 +6,8 @@ instance_deactivate_object(obj_characterSheet)
 
 with(obj_control)
 {
-    if(runEvent == true){
+    if runEvent = true
+    {
         eventStart(eventName,eventLine)
     }
     
@@ -18,7 +19,24 @@ with(obj_combatHUD)
     instance_destroy()
 }
 
-with(obj_allVisible)
+with(obj_character)
+{
+    if important = true     //Demake Tool for non-mooks
+    {
+        o.experience += global.expTotal
+        checkLevelUp(o)
+    }
+    else                    //Demake Tool for mooks
+    {
+        with(o)
+        {
+            instance_destroy()
+        }
+    }
+    instance_destroy()
+}
+
+with(obj_terrain)
 {
     instance_destroy()
 }
