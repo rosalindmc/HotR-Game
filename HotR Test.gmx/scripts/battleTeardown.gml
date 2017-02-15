@@ -23,12 +23,12 @@ with(obj_character)
 {
     if important = true     //Demake Tool for non-mooks
     {
-        o.experience += global.expTotal
-        checkLevelUp(o)
+        owner.experience += global.expTotal
+        checkLevelUp(owner)
     }
     else                    //Demake Tool for mooks
     {
-        with(o)
+        with(owner)
         {
             instance_destroy()
         }
