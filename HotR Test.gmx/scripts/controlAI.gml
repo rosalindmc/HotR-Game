@@ -16,13 +16,22 @@ var i = global.control
 
 global.target = -4
 
-if (global.control.owner.invSlot[3,0] != emptySlot && !i.isoTile.threatened)
+if (global.control.owner.invSlot[3,0] != emptySlot)
 {
+    var enemyAdj = false
+    for(var j = 0; j < ds_list_size(i.isoTile.adjacent); j++){
+        if(ds_list_find_value(i.isoTile.adjacent, j).occupant != noone){
+            if(ds_list_find_value(i.isoTile.adjacent, j).occupant.team != i.team){
+                enemyAdj = true
+            }
+        }    
+    }
+    if (!enemyAdj){
     rangedAttackAI()
-}
-else if (i.isoTile.threatened && rangeAttack)
-{
-    weaponSwitch(0)
+    }
+    else if(i.rangeAttack){
+        weaponSwitch(0)
+    }
 }
 else
 {
@@ -113,6 +122,7 @@ i.pathLength = ii
 i.stm -= global.target.g*.1*i.movStaminaMult*(1+(i.enc*.01))
 if global.target.overlay = 2{i.stm -= global.target.g*.1*i.movStaminaMult*(1+(i.enc*.01))}
 gridUpdate(i, global.target)
+
 with(i){triggerOnMove()}
 
 with(i){actMove(1)}
