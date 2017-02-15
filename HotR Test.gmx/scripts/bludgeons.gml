@@ -6,7 +6,7 @@ iSpr = spr_lightMace
 iDmg = 3.6
 iDmgRng = .3
 iType = 'Impact'
-iStrMult = .25
+iStrMult = .30
 iPen = 1
 iSpd = 1.40
 
@@ -29,7 +29,7 @@ case 1:     //Called when owned
 break
 
 case 2:     //Called when equipped
-wepType[i] = melee
+wepClass[i] = melee
 wepAnimType[i] = typeAxe
 
 wepPow[i] = iDmg
@@ -53,7 +53,7 @@ iSpr = spr_mace
 iDmg = 5.0
 iDmgRng = .3
 iType = 'Impact'
-iStrMult = .35
+iStrMult = .30
 iPen = 1
 iSpd = 1.15
 
@@ -76,7 +76,7 @@ case 1:     //Called when owned
 break
 
 case 2:     //Called when equipped
-wepType[i] = melee
+wepClass[i] = melee
 wepAnimType[i] = typeAxe
 
 wepPow[i] = iDmg
@@ -100,7 +100,7 @@ iSpr = spr_hammer
 iDmg = 4.0
 iDmgRng = .3
 iType = 'Piercing'
-iStrMult = .20
+iStrMult = .30
 iPen = 10
 iSpd = 1.20
 
@@ -123,7 +123,7 @@ case 1:     //Called when owned
 break
 
 case 2:     //Called when equipped
-wepType[i] = melee
+wepClass[i] = melee
 wepAnimType[i] = typeAxe
 
 wepPow[i] = iDmg
@@ -147,7 +147,7 @@ iSpr = spr_warhammer
 iDmg = 6.5
 iDmgRng = .3
 iType = 'Piercing'
-iStrMult = .40
+iStrMult = .30
 iPen = 14
 iSpd = 0.80
 
@@ -170,7 +170,7 @@ case 1:     //Called when owned
 break
 
 case 2:     //Called when equipped
-wepType[i] = melee
+wepClass[i] = melee
 wepAnimType[i] = typeAxe
 
 wepPow[i] = iDmg
@@ -195,7 +195,7 @@ iSpr = spr_maul
 iDmg = 7.5
 iDmgRng = .3
 iType = 'Impact'
-iStrMult = .40
+iStrMult = .30
 iPen = 1
 iSpd = 0.85
 
@@ -218,7 +218,7 @@ case 1:     //Called when owned
 break
 
 case 2:     //Called when equipped
-wepType[i] = melee
+wepClass[i] = melee
 wepAnimType[i] = typeAxe
 
 wepPow[i] = iDmg

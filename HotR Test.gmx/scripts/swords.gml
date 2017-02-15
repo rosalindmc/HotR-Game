@@ -6,7 +6,7 @@ iSpr = spr_knife
 iDmg = 2.0
 iDmgRng = .3
 iType = 'Rending'
-iStrMult = .20
+iStrMult = .25
 iPen = 1
 iSpd = 2.00
 
@@ -29,7 +29,7 @@ case 1:     //Called when owned
 break
 
 case 2:     //Called when equipped
-wepType[i] = melee
+wepClass[i] = melee
 wepAnimType[i] = typeAxe
 
 wepPow[i] = iDmg
@@ -53,7 +53,7 @@ iSpr = spr_dagger
 iDmg = 2.0
 iDmgRng = .5
 iType = 'Piercing'
-iStrMult = .20
+iStrMult = .25
 iPen = 8
 iSpd = 1.85
 
@@ -76,7 +76,7 @@ case 1:     //Called when owned
 break
 
 case 2:     //Called when equipped
-wepType[i] = melee
+wepClass[i] = melee
 wepAnimType[i] = typeAxe
 
 wepPow[i] = iDmg
@@ -123,7 +123,7 @@ case 1:     //Called when owned
 break
 
 case 2:     //Called when equipped
-wepType[i] = melee
+wepClass[i] = melee
 wepAnimType[i] = typeAxe
 
 wepPow[i] = iDmg
@@ -147,7 +147,7 @@ iSpr = spr_armSword
 iDmg = 4.0
 iDmgRng = .3
 iType = 'Rending'
-iStrMult = .35
+iStrMult = .25
 iPen = 1
 iSpd = 1.30
 
@@ -170,7 +170,7 @@ case 1:     //Called when owned
 break
 
 case 2:     //Called when equipped
-wepType[i] = melee
+wepClass[i] = melee
 wepAnimType[i] = typeAxe
 
 wepPow[i] = iDmg
@@ -194,7 +194,7 @@ iSpr = spr_sabre
 iDmg = 4.0
 iDmgRng = .3
 iType = 'Rending'
-iStrMult = .20
+iStrMult = .25
 iPen = 3
 iSpd = 1.35
 
@@ -217,7 +217,7 @@ case 1:     //Called when owned
 break
 
 case 2:     //Called when equipped
-wepType[i] = melee
+wepClass[i] = melee
 wepAnimType[i] = typeAxe
 
 wepPow[i] = iDmg
@@ -241,7 +241,7 @@ iSpr = spr_greatSword
 iDmg = 6.5
 iDmgRng = .3
 iType = 'Rending'
-iStrMult = .40
+iStrMult = .25
 iPen = 2
 iSpd = 1.00
 
@@ -264,7 +264,7 @@ case 1:     //Called when owned
 break
 
 case 2:     //Called when equipped
-wepType[i] = melee
+wepClass[i] = melee
 wepAnimType[i] = typeAxe
 
 wepPow[i] = iDmg

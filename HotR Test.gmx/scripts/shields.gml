@@ -5,7 +5,7 @@ iSpr = spr_heaterShield
 iDmg = 3.0
 iDmgRng = .3
 iType = 'Impact'
-iStrMult = .3
+iStrMult = .30
 iPen = 1
 iSpd = 1
 iBlockGen = .3
@@ -28,7 +28,7 @@ case 1:     //Called when owned
 break
 
 case 2:     //Called when equipped
-wepType[i] = melee
+wepClass[i] = melee
 wepAnimType[i] = typeShield
 
 wepPow[i] = iDmg
@@ -77,7 +77,7 @@ case 1:     //Called when owned
 break
 
 case 2:     //Called when equipped
-wepType[i] = melee
+wepClass[i] = melee
 wepAnimType[i] = typeShield
 
 wepPow[i] = iDmg
@@ -103,7 +103,7 @@ iSpr = spr_squareShield
 iDmg = 4.0
 iDmgRng = .3
 iType = 'Impact'
-iStrMult = .35
+iStrMult = .30
 iPen = 1
 iSpd = 0.5
 iBlockGen = .25
@@ -126,7 +126,7 @@ case 1:     //Called when owned
 break
 
 case 2:     //Called when equipped
-wepType[i] = melee
+wepClass[i] = melee
 wepAnimType[i] = typeShield
 
 wepPow[i] = iDmg

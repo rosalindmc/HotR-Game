@@ -199,7 +199,7 @@ rSkill = max(((grace-8)*.1)+((cunning-8)*.2)+o.rSkill,0)
 cSkill = max(((grace-8)*.1)+((cunning-8)*.2)+o.cSkill,0)
 
 //Offense
-atkDPS = (might-8)
+atkDPS = (might-8)*.40
 atkHaste = ((grace-8)*.03)
 
 //Resistance

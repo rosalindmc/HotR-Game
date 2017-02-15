@@ -207,7 +207,7 @@ dmgMitigation = 0
 //initializeWeapon(hand)
 //Used in the create event of all game actors who use weapons
 
-wepType[argument0] = melee
+wepClass[argument0] = melee
 wepAnimType[argument0] = typeAxe
 
 wepPow[argument0] = 1

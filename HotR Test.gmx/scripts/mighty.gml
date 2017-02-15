@@ -8,7 +8,7 @@ if wepStrMult[atkHand] != 0
     {
         if 1+irandom(99) <= argument1
         {
-            p += argument2*(s+1)
+            p += argument2*s
             
             applyStatusEffect(daze,target,50,5)
             
@@ -20,7 +20,7 @@ if wepStrMult[atkHand] != 0
             
             if crunch = true
             {
-                p += max((might-target.might)*(.2*s),0)       
+                p += max((might-target.might)*(.1*s),0)       
             }
         }
     }
@@ -37,13 +37,13 @@ if wepStrMult[atkHand] != 0
         if crunch = true
         {
             obj_control.tooltipColour[obj_control.tooltipLength] = green
-            obj_control.tooltipText[obj_control.tooltipLength] = '  +'+string_format(max((might-target.might)*(.2*s),0)+(argument2*(s+1)),2,1)+' Damage'
+            obj_control.tooltipText[obj_control.tooltipLength] = '  +'+string_format(max((might-target.might)*(.1*s),0)+(argument2*s),2,1)+' Damage'
             obj_control.tooltipLength += 1             
         }
         else
         {
             obj_control.tooltipColour[obj_control.tooltipLength] = green
-            obj_control.tooltipText[obj_control.tooltipLength] = '  +'+string_format(argument2*(s+1),2,1)+' Damage'
+            obj_control.tooltipText[obj_control.tooltipLength] = '  +'+string_format(argument2*s,2,1)+' Damage'
             obj_control.tooltipLength += 1     
         }
                     
@@ -65,13 +65,13 @@ if (target.life/target.lifeMax)*100 >= argument1 and argument3 = false
 {
     if argument5 = false    //On Proc
     {
-        p += argument2*(s+1)
+        p += argument2*s
     }
     else
     {
-        p += argument2*(s+1)
+        p += argument2*s
         obj_control.tooltipColour[obj_control.tooltipLength] = green
-        obj_control.tooltipText[obj_control.tooltipLength] = 'Smash '+string_format(argument2*(s+1),2,1)
+        obj_control.tooltipText[obj_control.tooltipLength] = 'Smash '+string_format(argument2*s,2,1)
         obj_control.tooltipLength += 1            
     }
 }
@@ -80,13 +80,13 @@ if (target.life/target.lifeMax)*100 <= argument1 and argument3 = true
 {
     if argument5 = false    //On Proc
     {
-        p += argument2*(s+1)
+        p += argument2*s
     }
     else       
     {
-        p += argument2*(s+1)
+        p += argument2*s
         obj_control.tooltipColour[obj_control.tooltipLength] = green
-        obj_control.tooltipText[obj_control.tooltipLength] = 'Slayer '+string_format(argument2*(s+1),2,1)
+        obj_control.tooltipText[obj_control.tooltipLength] = 'Slayer '+string_format(argument2*s,2,1)
         obj_control.tooltipLength += 1         
     }
 }
@@ -100,15 +100,15 @@ if target.missChance != 0
 {
     if argument5 = false    //On Proc
     {
-        p += argument1*(s+1)   
+        p += argument1*s   
         //createNotification('Opportunist did '+string(argument1*s)+' Damage',ico_breaker,0) 
     }
     else                    //On Tooltip
     {
-        p += argument1*(s+1)  
+        p += argument1*s  
          
         obj_control.tooltipColour[obj_control.tooltipLength] = green
-        obj_control.tooltipText[obj_control.tooltipLength] = 'Opportunist '+string_format(argument2*(s+1),2,1)
+        obj_control.tooltipText[obj_control.tooltipLength] = 'Opportunist '+string_format(argument2*s,2,1)
         obj_control.tooltipLength += 1   
     }
 }
@@ -142,14 +142,14 @@ if bold = 1 and mle = true
 {
     if argument5 = false    //On Proc
     {
-        p += argument1*(s+1)
+        p += argument1*s
     }
     else                    //On Tooltip
     {
-        p += argument1*(s+1)
+        p += argument1*s
         
         obj_control.tooltipColour[obj_control.tooltipLength] = green
-        obj_control.tooltipText[obj_control.tooltipLength] = 'Momentum '+string_format(argument1*(s+1),2,1)
+        obj_control.tooltipText[obj_control.tooltipLength] = 'Momentum '+string_format(argument1*s,2,1)
         obj_control.tooltipLength += 1   
     }
 }
@@ -164,16 +164,16 @@ if target.missChance != 0 or backstab = true
 {
     if argument5 = false    //On Proc
     {
-        p += argument1*(s+1)
+        p += argument1*s
         
         //createNotification('Insight did '+string(argument1*s)+' Damage',ico_breaker,0) 
     }
     else                    //On Tooltip
     {
-        p += argument1*(s+1)
+        p += argument1*s
         
         obj_control.tooltipColour[obj_control.tooltipLength] = green
-        obj_control.tooltipText[obj_control.tooltipLength] = 'Insight '+string_format(argument1*(s+1),2,1)
+        obj_control.tooltipText[obj_control.tooltipLength] = 'Insight '+string_format(argument1*s,2,1)
         obj_control.tooltipLength += 1       
     }
 }

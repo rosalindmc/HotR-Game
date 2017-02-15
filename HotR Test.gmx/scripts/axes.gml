@@ -10,7 +10,6 @@ iStrMult = .25
 iPen = 5
 iSpd = 1.50
 
-
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
@@ -30,7 +29,7 @@ case 1:     //Called when owned
 break
 
 case 2:     //Called when equipped
-wepType[i] = melee
+wepClass[i] = melee
 wepAnimType[i] = typeAxe
 
 wepPow[i] = iDmg
@@ -77,11 +76,11 @@ case 1:     //Called when owned
 break
 
 case 2:     //Called when equipped
-wepType[i] = melee
+wepClass[i] = melee
 wepAnimType[i] = typeAxe
 
 wepPow[i] = iDmg
-wepType[i] = iType
+wepDType[i] = iType
 wepPowRng[i] = iDmgRng
 wepStrMult[i] = iStrMult
 wepStamina[i] = iStrMult
@@ -124,7 +123,7 @@ case 1:     //Called when owned
 break
 
 case 2:     //Called when equipped
-wepType[i] = melee
+wepClass[i] = melee
 wepAnimType[i] = typeAxe
 
 wepPow[i] = iDmg

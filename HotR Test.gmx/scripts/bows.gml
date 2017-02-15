@@ -6,7 +6,7 @@ iSpr = spr_longBow
 iDmg = 5.0
 iDmgRng = .3
 iType = 'Piercing'
-iStrMult = .3
+iStrMult = .25
 iPen = 3
 iSpd = 0.60
 
@@ -29,7 +29,7 @@ case 1:     //Called when owned
 break
 
 case 2:     //Called when equipped
-wepType[i] = ranged
+wepClass[i] = ranged
 wepAnimType[i] = typeAxe
 
 wepRPow[i] = iDmg
@@ -76,7 +76,7 @@ case 1:     //Called when owned
 break
 
 case 2:     //Called when equipped
-wepType[i] = ranged
+wepClass[i] = ranged
 wepAnimType[i] = typeAxe
 
 wepRPow[i] = iDmg

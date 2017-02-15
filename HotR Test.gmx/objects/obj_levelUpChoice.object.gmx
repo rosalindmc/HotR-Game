@@ -67,7 +67,7 @@ if owner.step = 1
     switch(image_index)
     {
     case 0: name = 'Might' 
-    tooltip = '+.25 Damage per Second#+1 Force Resist#+1 Physical Resist#+.25 Block Strength#+.50 Life' break
+    tooltip = '+.1 POW#+1 Force Resist#+1 Physical Resist#+.25 Block Strength#+.50 Life' break
     case 1: name = 'Grace' 
     tooltip = '+Movement#+3% Action Speed#+1 Force Resist#+.10 Skill#+.50 Stamina' break
     case 2: name = 'Cunning' 

@@ -7,7 +7,8 @@ switch(argument0)
 {
     //Run 0 when a player selects the command
     case 0:
-    endTurn(2.0/i.haste)
+    i.stm = min(i.stm+(i.stmRegen*(1-(i.enc*.01))),i.stmMax)
+    endTurn(2.0)
     break
     
     //Run 1 to execute

@@ -153,7 +153,7 @@ if argument1 > 1 or argument0.bold = false
 initiativeSlotReset()
 #define mDamage
 //Find Attack Speed
-s = (3-(dualWield*.5))/((wepSpeed[atkHand]))
+s = 1+(3-(dualWield*.5))/((wepSpeed[atkHand]))
 
 //Find Base Attack Strength
 p = wepPow[atkHand]+(wepStrMult[atkHand]*atkDPS*s)
@@ -168,7 +168,7 @@ typeName = wepType[atkHand]
 
 #define rDamage
 //Find Attack Speed
-s = (3-(dualWield*.5))/((wepRSpeed[atkHand]))
+s = 1+(3-(dualWield*.5))/((wepRSpeed[atkHand]))
 
 //Find Base Attack Strength
 p = wepRPow[atkHand]+(wepRStrMult[atkHand]*atkDPS*s)
