@@ -1,8 +1,11 @@
 #define controlAI
-moveControl(0)
-
-//Temp AI
-attackRandom()
+with(obj_control)
+{
+    moveControl(0)
+    
+    //Temp AI
+    attackRandom()
+}
 
 
 
@@ -115,19 +118,18 @@ with (obj_tile)
     }
 }
 
-with(obj_control){
-    //Move and Update Grid9
-    r4ewes
-    makeMovePath(global.target)
-    i.pathLength = ii
-    i.stm -= global.target.g*.1*i.movStaminaMult*(1+(i.enc*.01))
-    if global.target.overlay = 2{i.stm -= global.target.g*.1*i.movStaminaMult*(1+(i.enc*.01))}
-    gridUpdate(i, global.target)
 
-    with(i){triggerOnMove()}
-    
-    with(i){actMove(1)}
-    }
+//Move and Update Grid9
+makeMovePath(global.target)
+i.pathLength = ii
+i.stm -= global.target.g*.1*i.movStaminaMult*(1+(i.enc*.01))
+if global.target.overlay = 2{i.stm -= global.target.g*.1*i.movStaminaMult*(1+(i.enc*.01))}
+gridUpdate(i, global.target)
+
+with(i){triggerOnMove()}
+
+with(i){actMove(1)}
+
 
 //End Turn
 endTurn(2.0/(i.haste+i.movHaste))
@@ -145,13 +147,13 @@ wipeTiles()
 var i = global.control
 var closestTarget = 1000
 
-if (!rangeAttack)
+if (!i.rangeAttack)
 {
     weaponSwitch(0)
 }
 else
 {
-    with (obj_character)
+    with(obj_character)
     {
         if (team != i.team)
         {
@@ -183,7 +185,6 @@ else
                         }    
                     }
                 }
-                
                 if (targetable = true)
                 {
                     global.target = id
@@ -191,19 +192,16 @@ else
             }    
         }
     }
-
     if (global.target != -4 && global.target.isoTile.rangedAttack = true)
     {
         i.target = global.target    
     
         with(i){ranged()}
-        endTurn(3.0/i.haste)
+        endTurn(3.0/(i.haste+i.atkHaste))
     }
     else
     {
-        with(obj_control){
-            march()
-        }
+        march()
     }
 }
 

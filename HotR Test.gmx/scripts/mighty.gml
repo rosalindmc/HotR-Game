@@ -200,4 +200,3 @@ if target.missChance != 0 or backstab = true
         obj_control.tooltipLength += 1    
     }
 }
-
