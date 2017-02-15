@@ -16,10 +16,10 @@ repeat(choose(40))
 {
 
     inventory[ii,0] = choose(
-    choose(knife,dagger,armingSword,greatSword,shortSword,sabre),
+    choose(knife,dagger,armingSword,greatSword,shortSword,sabre,bastardSword),
     choose(handAxe,battleAxe,greatAxe),
     choose(halberd,shortSpear,spear,pike),
-    choose(maul,lightMace,mace,hammer,warhammer),
+    choose(maul,lightMace,mace,hammer,warhammer,staff),
     choose(robe,chainmail,dress),
     choose(heaterShield,squareShield,roundShield),
     choose(shortbow,longBow))

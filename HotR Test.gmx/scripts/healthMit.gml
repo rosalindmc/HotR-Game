@@ -41,7 +41,7 @@ if argument5 = false    //On Proc
 {
     if argument3 = true
     {
-        if 1+irandom(99) >= argument1*s
+        if 1+irandom(99) <= argument1*s
         {
             iii = min(lifeMax-life,argument2)
             
@@ -59,7 +59,7 @@ if argument5 = false    //On Proc
     }
     else
     {
-        if 1+irandom(99) >= argument1
+        if 1+irandom(99) <= argument1
         {
             iii = min(lifeMax-life,argument2)
             
@@ -81,13 +81,13 @@ else                    //On Tooltip
     if argument3 = true
     {
         obj_control.tooltipColour[obj_control.tooltipLength] = green
-        obj_control.tooltipText[obj_control.tooltipLength] = string(floor(argument1*s))+'% Vigour'
+        obj_control.tooltipText[obj_control.tooltipLength] = string(floor(argument1*s))+'% '+string(argument0)
         obj_control.tooltipLength += 1
     }
     else
     {
         obj_control.tooltipColour[obj_control.tooltipLength] = green
-        obj_control.tooltipText[obj_control.tooltipLength] = string(floor(argument1))+'% Vigour'
+        obj_control.tooltipText[obj_control.tooltipLength] = string(floor(argument1))+'% '+string(argument0)
         obj_control.tooltipLength += 1
     }
 }
@@ -108,14 +108,14 @@ if bold = 1
         other.dge += argument1
             
         obj_control.tooltipColour[obj_control.tooltipLength] = c_red
-        obj_control.tooltipText[obj_control.tooltipLength] = 'Evasion'
+        obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)
         obj_control.tooltipLength += 1    
     }
 }
 
 
 #define statusGain
-//statusGain(statusEffect,procChance,potency,duration,multProcbyAS,tooltip)
+//statusGain(name,statusEffect,procChance,potency,duration,tooltip)
 //Apply a Status to the active character
 
 //Additional Conditioners
@@ -123,26 +123,21 @@ if argument5 = false    //On Proc
 {
     if argument4 = true
     {
-        if 1+irandom(99) >= argument1*s
+        if 1+irandom(99) <= argument2
         {
-            applyStatusEffect(argument0,id,argument2,argument3)
-        }
-    }
-    else
-    {
-        if 1+irandom(99) >= argument1
-        {
-            applyStatusEffect(argument0,id,argument2,argument3)
+            applyStatusEffect(argument1,id,argument3,argument4)
         }
     }
 }
 else                    //On Tooltip
 {
-
+    obj_control.tooltipColour[obj_control.tooltipLength] = green
+    obj_control.tooltipText[obj_control.tooltipLength] = string(floor(argument2))+'% '+string(argument0)
+    obj_control.tooltipLength += 1
 }
 
 #define statusGive
-//statusGive(statusEffect,procChance,potency,duration,multProcbyAS,tooltip)
+//statusGive(name,statusEffect,procChance,potency,duration,tooltip)
 //Apply a Status to the target
 
 //Additional Conditioners
@@ -150,20 +145,15 @@ if argument5 = false    //On Proc
 {
     if argument4 = true
     {
-        if 1+irandom(99) >= argument1*s
+        if 1+irandom(99) <= argument2
         {
-            applyStatusEffect(argument0,target,argument2,argument3)
-        }
-    }
-    else
-    {
-        if 1+irandom(99) >= argument1
-        {
-            applyStatusEffect(argument0,target,argument2,argument3)
+            applyStatusEffect(argument1,target,argument3,argument4)
         }
     }
 }
 else                    //On Tooltip
 {
-
+    obj_control.tooltipColour[obj_control.tooltipLength] = green
+    obj_control.tooltipText[obj_control.tooltipLength] = string(floor(argument2))+'% '+string(argument0)
+    obj_control.tooltipLength += 1
 }

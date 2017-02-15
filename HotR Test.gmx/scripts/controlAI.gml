@@ -76,6 +76,9 @@ if global.target != -4
     //Charge or Attack?
     if global.attackFromTile.occupant != i
     {   
+        //Add a half movement to delay
+        global.nextChar.delay += min(2.0,global.target.g)/(i.haste+i.movHaste)
+    
         //Move and Update Grid
         makeMovePath(global.attackFromTile)
         i.pathLength = ii
@@ -106,6 +109,10 @@ else
 var i = global.control
 var closest = 10000
 global.target = i.isoTile
+
+
+if i.movement >= 1
+{
 
 with (obj_tile)
 {
@@ -142,10 +149,14 @@ with(i){actMove(1)}
 
 
 //End Turn
-endTurn(2.0/(i.haste+i.movHaste))
+endTurn(min(3.0,global.target.g)/(i.haste+i.movHaste))
 
 wipeTiles()
-
+}
+else
+{
+wait(0)
+}
 
 
 #define rangedAttackAI

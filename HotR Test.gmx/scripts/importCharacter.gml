@@ -125,6 +125,8 @@ prot = 0
 enc = 0
 reach = 1.5
 
+initializeTraits()
+initializeTriggers()
 initializeWeapon(1)
 initializeWeapon(2)
 clearArmour()
@@ -226,9 +228,6 @@ stmRegen = 5+(stmMax*.1)
 
 #define iCTraits
 //Talents
-initializeTraits()
-initializeTriggers()
-
 for(i = 0; i < 8; i++)
 {
     if o.talent[i,0] != emptyTalent

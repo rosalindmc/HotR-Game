@@ -45,6 +45,15 @@ wepRange[i] = 1
 weaponSprite[i] = iSpr
 
 threat = true
+
+//Skill
+onHit[onHitSize,0] = wepsklImpale
+onHit[onHitSize,1] = 'Impale'
+onHit[onHitSize,2] = 10
+onHit[onHitSize,3] = 0
+onHit[onHitSize,4] = i
+onHit[onHitSize,5] = 10
+onHitSize += 1
 break
 }
 
@@ -92,6 +101,15 @@ wepRange[i] = 1
 weaponSprite[i] = iSpr
 
 threat = true
+
+//Skill
+onHit[onHitSize,0] = wepsklImpale
+onHit[onHitSize,1] = 'Impale'
+onHit[onHitSize,2] = 15
+onHit[onHitSize,3] = 0
+onHit[onHitSize,4] = i
+onHit[onHitSize,5] = 10
+onHitSize += 1
 break
 }
 
@@ -141,6 +159,15 @@ weaponSprite[i] = iSpr
 greatWeapon = true
 reach = 3
 threat = true
+
+//Skill
+onHit[onHitSize,0] = wepsklImpale
+onHit[onHitSize,1] = 'Impale'
+onHit[onHitSize,2] = 20
+onHit[onHitSize,3] = 0
+onHit[onHitSize,4] = i
+onHit[onHitSize,5] = 10
+onHitSize += 1
 break
 }
 
@@ -190,5 +217,14 @@ weaponSprite[i] = iSpr
 reach = 2.5
 greatWeapon = true
 threat = true
+
+//Skill
+onHit[onHitSize,0] = wepsklCripple
+onHit[onHitSize,1] = 'Cripple'
+onHit[onHitSize,2] = 10
+onHit[onHitSize,3] = 4
+onHit[onHitSize,4] = i
+onHit[onHitSize,5] = 15
+onHitSize += 1
 break
 }

@@ -124,10 +124,10 @@ with(target)
 
 if target.life <= 0
 {
-    o.experience += target.expOnKill
+    owner.experience += target.expOnKill
     
     gainMorale(.2)
-    checkLevelUp(o)
+    checkLevelUp(owner)
     
     triggerOnDown(false)
     actorDie(target)
@@ -213,4 +213,3 @@ if bold = 1
 }
 
 bold = max(bold-argument0,0)
-

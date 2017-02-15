@@ -199,7 +199,7 @@ repeat(3)
     
     talentPrereq(branchVigiliance,treeInsight)
     talentPrereq(branchPassArmour,treeInsight)
-    talentPrereq(branchHeightAdvantage,treeInsight)
+    //talentPrereq(branchHeightAdvantage,treeInsight)
     
     talentPrereq(branchShadowStep,treeSubterfuge)
     talentPrereq(branchAmbush,treeSubterfuge)

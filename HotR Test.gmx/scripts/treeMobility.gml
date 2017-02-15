@@ -119,11 +119,11 @@ switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
 onMove[onMoveSize,0] = statusGain
-onMove[onMoveSize,1] = dodgeBuff
-onMove[onMoveSize,2] = 10
-onMove[onMoveSize,3] = false
-onMove[onMoveSize,4] = false
-onMove[onMoveSize,5] = false
+onMove[onMoveSize,1] = 'Hard Target'
+onMove[onMoveSize,2] = dodgeBuff
+onMove[onMoveSize,3] = 10
+onMove[onMoveSize,4] = 10
+onMove[onMoveSize,5] = 5
 onMoveSize += 1
 break
 

@@ -71,7 +71,7 @@ if (target.life/target.lifeMax)*100 >= argument1 and argument3 = false
     {
         p += argument2*s
         obj_control.tooltipColour[obj_control.tooltipLength] = green
-        obj_control.tooltipText[obj_control.tooltipLength] = 'Smash '+string_format(argument2*s,2,1)
+        obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)+' '+string_format(argument2*s,2,1)
         obj_control.tooltipLength += 1            
     }
 }
@@ -86,17 +86,17 @@ if (target.life/target.lifeMax)*100 <= argument1 and argument3 = true
     {
         p += argument2*s
         obj_control.tooltipColour[obj_control.tooltipLength] = green
-        obj_control.tooltipText[obj_control.tooltipLength] = 'Slayer '+string_format(argument2*s,2,1)
+        obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)+' '+string_format(argument2*s,2,1)
         obj_control.tooltipLength += 1         
     }
 }
 
 #define disableFel
 //healthFel(name,bonus,false,false,false,tooltip)
-//Bonus Damage to High/Low Health foes
+//Bonus Damage to debuffed foes
 
 //Additional Conditioners
-if target.missChance != 0
+if target.missChance != 0 or target.movement = 0
 {
     if argument5 = false    //On Proc
     {
@@ -107,7 +107,7 @@ if target.missChance != 0
         p += argument1*s  
          
         obj_control.tooltipColour[obj_control.tooltipLength] = green
-        obj_control.tooltipText[obj_control.tooltipLength] = 'Opportunist '+string_format(argument2*s,2,1)
+        obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)+' '+string_format(argument2*s,2,1)
         obj_control.tooltipLength += 1   
     }
 }
@@ -148,7 +148,7 @@ if bold = 1 and mle = true
         p += argument1*s
         
         obj_control.tooltipColour[obj_control.tooltipLength] = green
-        obj_control.tooltipText[obj_control.tooltipLength] = 'Momentum '+string_format(argument1*s,2,1)
+        obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)+' '+string_format(argument1*s,2,1)
         obj_control.tooltipLength += 1   
     }
 }
@@ -156,20 +156,21 @@ if bold = 1 and mle = true
 
 #define advantageFel
 //advantageFel(name,bonus,false,false,false,tooltip)
-//Bonus Damage to High/Low Health foes
+//Bonus Damage to helpless foes
 
 //Additional Conditioners
-if target.missChance != 0 or backstab = true
+if target.missChance != 0 or backstab = true or target.movement = 0
 {
     if argument5 = false    //On Proc
     {
-        p += argument1*s    }
+        p += argument1*s    
+    }
     else                    //On Tooltip
     {
         p += argument1*s
         
         obj_control.tooltipColour[obj_control.tooltipLength] = green
-        obj_control.tooltipText[obj_control.tooltipLength] = 'Insight '+string_format(argument1*s,2,1)
+        obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)+' '+string_format(argument1*s,2,1)
         obj_control.tooltipLength += 1       
     }
 }
@@ -177,14 +178,14 @@ if target.missChance != 0 or backstab = true
 
 #define advantageArmourPass
 //advantageFel(name,bonus,false,false,false,tooltip)
-//Bonus Damage to High/Low Health foes
+//Chance to ignore armour on an advantaged attack
 
 //Additional Conditioners
 if target.missChance != 0 or backstab = true
 {
     if argument5 = false    //On Proc
     {
-        if 1+irandom(99) >= argument1
+        if 1+irandom(99) <= argument1
         {
             a *= 1-argument2
         }
@@ -192,7 +193,7 @@ if target.missChance != 0 or backstab = true
     else                    //On Tooltip
     {
         obj_control.tooltipColour[obj_control.tooltipLength] = green
-        obj_control.tooltipText[obj_control.tooltipLength] = 'Pass Armour'
+        obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)
         obj_control.tooltipLength += 1    
     }
 }

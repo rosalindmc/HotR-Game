@@ -143,7 +143,7 @@ switch(irandom(4))
 {
 case 0: 
 class = 'Wizard'
-invSlot[1,0] = choose(greatSword,armingSword,shortSword)
+invSlot[1,0] = choose(greatSword,armingSword,staff)
 invSlot[3,0] = choose(shortbow,longBow,emptySlot,emptySlot,emptySlot)
 invSlot[4,0] = robe
 
@@ -273,7 +273,9 @@ classCSkill = .3
 might += 2
 will += 1
 //Talent
-talent[0,0] = choose(treeStrength,treeDiscipline,treeToughness,treeMartial)
+talent[0,0] = choose(treeStrength)//,treeDiscipline,treeToughness,treeMartial)
+talent[0,1] = branchMightyBlock
+talent[0,2] = branchThickSkin
 talent[0,5] = 2
 break
 }

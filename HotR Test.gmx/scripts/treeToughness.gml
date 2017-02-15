@@ -81,11 +81,11 @@ switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
 onBlock[onBlockSize,0] = statusGive
-onBlock[onBlockSize,1] = daze
-onBlock[onBlockSize,2] = 100
-onBlock[onBlockSize,3] = 50
-onBlock[onBlockSize,4] = 5
-onBlock[onBlockSize,5] = false
+onBlock[onBlockSize,1] = 'Mighty Block'
+onBlock[onBlockSize,2] = daze
+onBlock[onBlockSize,3] = 100
+onBlock[onBlockSize,4] = 50
+onBlock[onBlockSize,5] = 5
 onBlockSize += 1
 break
 
@@ -93,7 +93,7 @@ case 1:     //Tooltip and icon
 sprite_index = ico_breaker
 image_index = 1
 name = 'Mighty Block'
-tooltip = 'Blocking can STUN or DAZE the attacker'
+tooltip = 'Blocking can DAZE the attacker'
 branch = treeToughness
 break
 

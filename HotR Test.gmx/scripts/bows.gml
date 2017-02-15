@@ -45,6 +45,15 @@ rangeAttack = true
 
 //Weapon Sprites
 weaponSprite[i] = iSpr
+
+//Skill
+onHit[onHitSize,0] = wepsklCripple
+onHit[onHitSize,1] = 'Cripple'
+onHit[onHitSize,2] = 10
+onHit[onHitSize,3] = 3
+onHit[onHitSize,4] = i
+onHit[onHitSize,5] = 15
+onHitSize += 1
 break
 }
 
@@ -92,5 +101,14 @@ rangeAttack = true
 
 //Weapon Sprites
 weaponSprite[i] = iSpr
+
+//Skill
+onHit[onHitSize,0] = wepsklCripple
+onHit[onHitSize,1] = 'Cripple'
+onHit[onHitSize,2] = 10
+onHit[onHitSize,3] = 2
+onHit[onHitSize,4] = i
+onHit[onHitSize,5] = 15
+onHitSize += 1
 break
 }
