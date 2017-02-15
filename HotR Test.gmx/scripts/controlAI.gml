@@ -83,6 +83,7 @@ else
 
 var i = global.control
 var closest = 10000
+global.target = i.isoTile
 
 with (obj_tile)
 {
@@ -104,6 +105,7 @@ with (obj_tile)
         }        
     }
 }
+
 
 //Move and Update Grid
 makeMovePath(global.target)
@@ -187,6 +189,11 @@ else
     }
     else
     {
-        march()
+        with(obj_control){
+            march()
+        }
     }
 }
+
+wipeTiles()
+
