@@ -20,7 +20,7 @@ if hasShield = true
 
 #define iCVis
 //Import Character visuals
-race = o.race
+race = o.raceName
 class = o.class
 skinTone = o.skinTone
 eyeColour = o.eyeColour

@@ -98,7 +98,6 @@ fellowship = 5
 
 //Temp randomizer
 movement = 0
-scr_charactergenerator()
 
 //Size and Movement
 size = 1

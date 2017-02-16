@@ -39,4 +39,3 @@ detailGen(cwName)
 attributeGen()
 classGen()
 fashionInitialize()
-

@@ -2,6 +2,7 @@
 addActor()
 
 player = 0
+playerControl = false
 node = noone
 
 active = false

@@ -26,7 +26,7 @@ fashionInitialize()
 #define raceGen
 script_execute(argument0,0)
 
-switch(s)
+switch(size)
 {
     //Small characters
     case 1:
@@ -119,6 +119,13 @@ grcCap = 10
 cunCap = 10 
 wilCap = 10
 felCap = 10
+raceMove = 0
+
+might = 5
+grace = 5
+cunning = 5
+will = 5
+fellowship = 5
 
 //Race Adjust
 script_execute(race,2)
@@ -330,5 +337,5 @@ break
 }
 
 #define detailGen
-firstName = cwName(gender)
+firstName = script_execute(argument0,gender)
 lastName = script_execute(race,1)

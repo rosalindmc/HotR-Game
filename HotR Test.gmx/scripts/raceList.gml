@@ -33,12 +33,10 @@ size = min(choose(1,1,1,2,2,3,3,4)+gender,4)
     legSpriteMod = 0 
     hipsOffset = 11+bodyImage
     height = 28+bodyImage
-
-
 break
 
 case 1:
-lastName = choose("Frost","Strong","Kind","Green","Free","Swift","Blue")
+return choose("Frost","Strong","Kind","Green","Free","Swift","Blue")
 +choose("blade","storm","heart","hilt","foot","man","tree")
 break
 
@@ -71,7 +69,7 @@ size = min(choose(1,1,2,2,3,3,4)+gender,4)
 break
 
 case 1:
-lastName = choose("Frost","Strong","Kind","Green","Free","Swift","Blue")
+return choose("Frost","Strong","Kind","Green","Free","Swift","Blue")
 +choose("blade","storm","heart","hilt","foot","man","tree")
 break
 
@@ -109,7 +107,7 @@ size = min(choose(1,2,2,3,3,4)+gender,4)
 break
 
 case 1:
-lastName = choose("Frost","Strong","Kind","Green","Free","Swift","Blue")
+return choose("Frost","Strong","Kind","Green","Free","Swift","Blue")
 +choose("blade","storm","heart","hilt","foot","man","tree")
 break
 
@@ -148,7 +146,7 @@ size = 4   //min(choose(3,3,4)+gender,4)
 break
 
 case 1:
-lastName = choose("Frost","Strong","Kind","Green","Free","Swift","Blue")
+return choose("Frost","Strong","Kind","Green","Free","Swift","Blue")
 +choose("blade","storm","heart","hilt","foot","man","tree")
 break
 
@@ -161,6 +159,8 @@ grace -= 2
 mgtCap = 13
 grcCap = 8
 wilCap = 13
+
+raceMove = -1
 break
 }
 
@@ -191,7 +191,7 @@ bodyOffset -= 1
 break
 
 case 1:
-lastName = choose("Stout","Strong","Swift","Kind","Free","Love","Wheat","Red","Winter","Old")
+return choose("Stout","Strong","Swift","Kind","Free","Love","Wheat","Red","Winter","Old")
 +choose("blade","storm","tooth","axe","ship","spear","hilt","heart","harvest","foot")
 break
 
@@ -208,6 +208,8 @@ grcCap = 12
 cunCap = 11
 wilCap = 11
 felCap = 11
+
+raceMove = -.5
 break
 }
 
@@ -237,7 +239,7 @@ bodyOffset += bodyImage
 break
 
 case 1:
-lastName = choose("Frost","Strong","War","Green","Free","Savage","Blue","Red","Winter","Old")
+return choose("Frost","Strong","War","Green","Free","Savage","Blue","Red","Winter","Old")
 +choose("blade","storm","tooth","axe","ship","spear","hilt","wolf","bear","sea")
 break
 
@@ -276,7 +278,7 @@ size = min(choose(1,1,1,2,2,3,3)+(gender*2),4)
 break
 
 case 1:
-lastName = choose("Frost","Strong","Kind","Green","Free","Swift","Blue")
+return choose("Frost","Strong","Kind","Green","Free","Swift","Blue")
 +choose("blade","storm","heart","hilt","foot","man","tree")
 break
 

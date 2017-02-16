@@ -88,4 +88,3 @@ break
 }
 
 #define cwFashion
-
