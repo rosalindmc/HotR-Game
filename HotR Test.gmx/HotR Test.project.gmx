@@ -333,6 +333,7 @@
           <script>scripts\owMovementRange.gml</script>
         </scripts>
         <scripts name="Character Creation">
+          <script>scripts\classList.gml</script>
           <script>scripts\raceList.gml</script>
           <script>scripts\characterInitialize.gml</script>
           <script>scripts\scr_charactergenerator.gml</script>
@@ -342,6 +343,7 @@
         </scripts>
         <scripts name="Cultures">
           <script>scripts\commonwealth.gml</script>
+          <script>scripts\coldfist.gml</script>
         </scripts>
       </scripts>
       <scripts name="Outdated">

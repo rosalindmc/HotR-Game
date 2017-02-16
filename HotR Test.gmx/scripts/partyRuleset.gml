@@ -48,6 +48,11 @@ repeat(choose(1,2,3))
 {
     createCharacterSheet(id,orcVeteran)
 }
+
+repeat(choose(8,9,10,11,12))
+{
+    createCharacterSheet(id,choose(orcWarrior,goblinWarrior))
+}
 /*
 mooks[0,0] = emptySlot
 mookTypes = 0

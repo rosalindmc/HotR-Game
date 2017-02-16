@@ -36,8 +36,8 @@ size = min(choose(1,1,1,2,2,3,3,4)+gender,4)
 break
 
 case 1:
-return choose("Frost","Strong","Kind","Green","Free","Swift","Blue")
-+choose("blade","storm","heart","hilt","foot","man","tree")
+return choose("Fey","Shadow","Light","Wind","Wild","Flame","Love","Willow","Oak","Elm")
++choose("wood","leaf","tree","blade","heart","man","maiden","arrow","grace","hunt")
 break
 
 case 2:
@@ -69,8 +69,8 @@ size = min(choose(1,1,2,2,3,3,4)+gender,4)
 break
 
 case 1:
-return choose("Frost","Strong","Kind","Green","Free","Swift","Blue")
-+choose("blade","storm","heart","hilt","foot","man","tree")
+return choose("Wise","Just","Sand","New","Law","Trade","Book","Scroll","Civil","Fair")
++choose("castle","mind","law","man","pact","bringer","keeper","thinker","thought","river")
 break
 
 
@@ -107,8 +107,8 @@ size = min(choose(1,2,2,3,3,4)+gender,4)
 break
 
 case 1:
-return choose("Frost","Strong","Kind","Green","Free","Swift","Blue")
-+choose("blade","storm","heart","hilt","foot","man","tree")
+return choose("Cold","Frost","War","Wild","Blood","Valour","Living","White","Black","Grey")
++choose("man","wood","ship","rock","soul","fen","hold","castle","keep","vale")
 break
 
 
@@ -146,8 +146,8 @@ size = 4   //min(choose(3,3,4)+gender,4)
 break
 
 case 1:
-return choose("Frost","Strong","Kind","Green","Free","Swift","Blue")
-+choose("blade","storm","heart","hilt","foot","man","tree")
+return choose("Hard","Stone","Iron","Stout","Law","Wise","Gold","Copper","Noble","Strong")
++choose("","mountain","beard","man","vein","crown","hilt","hammer","axe","dwarf")
 break
 
 
@@ -191,8 +191,8 @@ bodyOffset -= 1
 break
 
 case 1:
-return choose("Stout","Strong","Swift","Kind","Free","Love","Wheat","Red","Winter","Old")
-+choose("blade","storm","tooth","axe","ship","spear","hilt","heart","harvest","foot")
+return choose("Strong","Brave","Swift","Kind","Free","Love","Spring","Autumn","Fair","Summer")
++choose("","smith","weather","man","field","tree","hill","heart","harvest","foot")
 break
 
 
@@ -240,7 +240,7 @@ break
 
 case 1:
 return choose("Frost","Strong","War","Green","Free","Savage","Blue","Red","Winter","Old")
-+choose("blade","storm","tooth","axe","ship","spear","hilt","wolf","bear","sea")
++choose("blade","storm","tooth","axe","ship","spear","hall","wolf","bear","sea")
 break
 
 
@@ -278,12 +278,53 @@ size = min(choose(1,1,1,2,2,3,3)+(gender*2),4)
 break
 
 case 1:
-return choose("Frost","Strong","Kind","Green","Free","Swift","Blue")
-+choose("blade","storm","heart","hilt","foot","man","tree")
+return choose("Shadow","Dark","Blood","Murder","Slaughter","Brutal","Vile","Butcher","Gore","War")
++choose("maul","forge","slave","tyrant","axe","fist","chains","master","thrall","sword")
 break
 
 
 case 2:
 randDice += 2
+break
+}
+
+#define race_goblin
+//0 Vis Generation
+//1 Name Generation
+//2 Attribute Generation
+
+switch(argument0)
+{
+case 0:
+race = race_goblin
+raceName = 'Goblin'
+
+raceHead = spr_elfHead
+skinTone = choose(orcBrown,orcGreen)
+bodyImage = 0
+size = choose(1,1,1,2,3)
+
+    legSprite = spr_shortLeg
+    legSpriteMod = 1
+    hipsOffset = 8+bodyImage
+    height = 24+bodyImage
+    raceMove = -1
+        
+bodyOffset -= 1  
+
+break
+
+case 1:
+break
+
+
+case 2:
+grace += 1
+might -= 3
+
+mgtCap = 7
+grcCap = 11
+
+raceMove = -1
 break
 }

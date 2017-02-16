@@ -7,7 +7,7 @@ initializeHumanoid()
 raceGen(cwRaceList())
 detailGen(cwName)
 attributeGen()
-classGen()
+classGen(classList)
 fashionInitialize()
 
 
@@ -17,7 +17,7 @@ initializeHumanoid()
 raceGen(race_orc)
 detailGen(cwName)
 attributeGen()
-classGen()
+classGen(class_warrior)
 fashionInitialize()
 
 
@@ -27,7 +27,7 @@ initializeHumanoid()
 raceGen(race_orc)
 detailGen(cwName)
 attributeGen()
-classGen()
+classGen(class_warrior)
 fashionInitialize()
 
 
@@ -37,5 +37,23 @@ initializeHumanoid()
 raceGen(race_northerner)
 detailGen(cwName)
 attributeGen()
-classGen()
+classGen(class_warrior)
+fashionInitialize()
+
+#define orcWarrior
+//Rules for an Orc Warrior
+initializeHumanoid()
+raceGen(race_orc)
+detailGen(cwName)
+attributeGen()
+classGen(class_warrior)
+fashionInitialize()
+
+#define goblinWarrior
+//Rules for an Goblin Warrior
+initializeHumanoid()
+raceGen(race_orc)
+detailGen(cwName)
+attributeGen()
+classGen(class_warrior)
 fashionInitialize()
