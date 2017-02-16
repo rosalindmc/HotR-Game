@@ -5,7 +5,7 @@
 //Rules for a commonwealth adventurer
 initializeHumanoid()
 raceGen(cwRaceList())
-detailGen(cwCulture)
+detailGen(cwName)
 attributeGen()
 classGen()
 fashionInitialize()
@@ -13,13 +13,30 @@ fashionInitialize()
 
 #define orcThane
 //Rules for an Orc Thane
+initializeHumanoid()
+raceGen(race_orc)
+detailGen(cwName)
+attributeGen()
+classGen()
+fashionInitialize()
 
-race = race_orc
-class = 
 
 #define orcVeteran
 //Rules for an Orc Veteran
+initializeHumanoid()
+raceGen(race_orc)
+detailGen(cwName)
+attributeGen()
+classGen()
+fashionInitialize()
+
 
 #define raiderCaptain
 //Rules for a Raider Captain
+initializeHumanoid()
+raceGen(race_northerner)
+detailGen(cwName)
+attributeGen()
+classGen()
+fashionInitialize()
 

@@ -26,7 +26,6 @@ fashionInitialize()
 #define raceGen
 script_execute(argument0,0)
 
-
 switch(s)
 {
     //Small characters
@@ -331,18 +330,5 @@ break
 }
 
 #define detailGen
-//Temp Names
-if firstName = -4
-{    
-    firstName = choose("Gae","Mop","Quar","She","Be")+choose("ah","or","gash","ivik","k","alia","rae")
-}
-
-if lastName = -4
-{
-    lastName = choose("Frost","Strong","Kind","Green","Free","Swift","Blue")+choose("blade","storm","heart","hilt","foot","man","tree")
-}
-
-script_execute(race,0)
-//Gender
-
-//Body Type
+firstName = cwName(gender)
+lastName = script_execute(race,1)

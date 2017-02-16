@@ -27,7 +27,8 @@ hairColour = choose(black,dkBrown,dkRed,c_yellow)
 break
 
 case 1:
-//Later
+lastName = choose("Frost","Strong","Kind","Green","Free","Swift","Blue")
++choose("blade","storm","heart","hilt","foot","man","tree")
 break
 
 case 2:
@@ -48,7 +49,10 @@ raceName = 'Human'
 break
 
 case 1:
+lastName = choose("Frost","Strong","Kind","Green","Free","Swift","Blue")
++choose("blade","storm","heart","hilt","foot","man","tree")
 break
+
 
 case 2:
 randDice += 1
@@ -71,7 +75,10 @@ raceName = 'Human'
 break
 
 case 1:
+lastName = choose("Frost","Strong","Kind","Green","Free","Swift","Blue")
++choose("blade","storm","heart","hilt","foot","man","tree")
 break
+
 
 case 2:
 will += 2
@@ -93,7 +100,10 @@ raceName = 'Dwarf'
 break
 
 case 1:
+lastName = choose("Frost","Strong","Kind","Green","Free","Swift","Blue")
++choose("blade","storm","heart","hilt","foot","man","tree")
 break
+
 
 case 2:
 might += 3
@@ -119,7 +129,10 @@ raceName = 'Halfling'
 break
 
 case 1:
+lastName = choose("Stout","Strong","Swift","Kind","Free","Love","Wheat","Red","Winter","Old")
++choose("blade","storm","tooth","axe","ship","spear","hilt","heart","harvest","foot")
 break
+
 
 case 2:
 grace += 2
@@ -149,7 +162,10 @@ raceName = 'Orc'
 break
 
 case 1:
+lastName = choose("Frost","Strong","War","Green","Free","Savage","Blue","Red","Winter","Old")
++choose("blade","storm","tooth","axe","ship","spear","hilt","wolf","bear","sea")
 break
+
 
 case 2:
 might += 4
@@ -175,7 +191,10 @@ raceName = 'Tiefling'
 break
 
 case 1:
+lastName = choose("Frost","Strong","Kind","Green","Free","Swift","Blue")
++choose("blade","storm","heart","hilt","foot","man","tree")
 break
+
 
 case 2:
 randDice += 2
