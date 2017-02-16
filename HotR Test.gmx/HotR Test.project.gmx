@@ -682,13 +682,15 @@
     <room>rooms\rom_charSprite</room>
     <room>rooms\rom_battle</room>
   </rooms>
-  <constants number="37">
+  <constants number="39">
     <constant name="femme">0</constant>
     <constant name="masc">1</constant>
     <constant name="beige">make_color_rgb(205,165,117)</constant>
     <constant name="dark">make_color_rgb(112,83,33)</constant>
     <constant name="pale">make_color_rgb(245,218,184)</constant>
     <constant name="fair">make_color_rgb(249,205,152)</constant>
+    <constant name="demonTan">make_color_rgb(255,159,102)</constant>
+    <constant name="demonPurp">make_color_rgb(198,178,204)</constant>
     <constant name="demonRed">make_color_rgb(170,71,71)</constant>
     <constant name="orcBrown">make_color_rgb(80,90,40)</constant>
     <constant name="orcGreen">make_color_rgb(77,110,56)</constant>
