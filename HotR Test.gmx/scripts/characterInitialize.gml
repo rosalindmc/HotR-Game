@@ -119,7 +119,8 @@ if gender = masc
 //createCharacterSheet(party,ruleset)
 
 i = instance_create(x,y,obj_characterSheet)
-i.party = id
+i.party = argument0
+i.ruleSet = argument1
 ds_list_add(party,i)
 
 with(i)

@@ -160,9 +160,6 @@ legAnimFrame = 0
 legCross = 0
 legAngleX = 1 //Multiplier of leg movement
 
-//Randomizer
-randomizeHumanoid()
-
 #define drawHumanoid
 //Draw a humanoid
 
@@ -508,86 +505,6 @@ if bodyOffset > 4
 //size test
 //s = 1
 
-switch(s)
-{
-    //Small characters
-    case 1:
-    hipsImage = 0
-    bodyImage = 0
-    bodyAdjust = choose(0,-1)
-    chstAdjust = 0
-    break
-    
-    //Medium characters
-    case 2:
-    hipsImage = 2
-    bodyImage = choose(0,2)
-    bodyAdjust = -1
-    if bodyImage = 0 {bodyAdjust = 0}
-    chstAdjust = 1
-    break
-    
-    //Medium characters
-    case 3:
-    hipsImage = 4
-    bodyImage = choose(2,4)
-    bodyAdjust = -1
-    break
-    
-    //Large characters
-    case 4:
-    hipsImage = 6
-    bodyImage = choose(2,4)
-    legOffset[2] = 4
-    bodyAdjust = -1
-    break
-}
-
-switch(bodyImage)
-{
-    case 0: //Small Body
-    shldrOffset[1] = 4
-    shldrOffset[2] = 3
-    shldrAdjust = 0
-    chstImage = choose(1,2)
-    if chstImage = 2 {bodyAdjust = -1}
-    chstAdjust += 1+bodyAdjust
-    if chstImage = 1 {chstAdjust = 1}
-    headAdjust = 1
-    break
-    
-    case 2: //Medium Body
-    shldrOffset[1] = 5
-    shldrOffset[2] = 4
-    shldrAdjust = 1
-    chstImage = 3
-    chstAdjust = 1
-    headOffset += 1 
-    height += 1
-    headAdjust = 1   
-    break
-    
-    case 4: //Big Body
-    shldrOffset[1] = 5
-    shldrOffset[2] = 5
-    shldrAdjust = 1
-    chstImage = 3
-    chstAdjust = 1
-    headOffset += 1
-    height += 1
-    headAdjust = 0
-    break
-}
-
-//Male chest exception
-if gender = masc
-{
-    chstImage = 0
-}
-
-//Establish Hand height
-handHeight[1] += height-28
-handHeight[2] += height-28
 
 //Old Characters headOff -1, headAdj +1
 //Upright Characters headAdj -1

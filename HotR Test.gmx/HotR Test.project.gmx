@@ -326,7 +326,6 @@
         <script>scripts\removeActor.gml</script>
         <script>scripts\checkLevelUp.gml</script>
         <scripts name="Party Scripts">
-          <script>scripts\characterInitialize.gml</script>
           <script>scripts\partyInitialize.gml</script>
           <script>scripts\partyRuleset.gml</script>
         </scripts>
@@ -335,9 +334,14 @@
         </scripts>
         <scripts name="Character Creation">
           <script>scripts\raceList.gml</script>
+          <script>scripts\characterInitialize.gml</script>
           <script>scripts\scr_charactergenerator.gml</script>
           <script>scripts\createCharacter.gml</script>
           <script>scripts\characterRuleset.gml</script>
+          <script>scripts\mookAdd.gml</script>
+        </scripts>
+        <scripts name="Cultures">
+          <script>scripts\commonwealth.gml</script>
         </scripts>
       </scripts>
       <scripts name="Outdated">

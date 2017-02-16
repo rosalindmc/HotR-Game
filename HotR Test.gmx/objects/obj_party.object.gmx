@@ -27,13 +27,6 @@
             <kind>1</kind>
             <string>partyInitialize()
 
-//Temp
-with(obj_party)
-{
-    playerControl = false
-}
-playerControl = true
-
 vis = false
 alarm[1] = 2
 
