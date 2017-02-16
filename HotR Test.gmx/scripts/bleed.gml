@@ -18,7 +18,7 @@ owner.stm -= i
 owner.life -= i
 upkp = 5.0
 
-ii = instance_create(target.x,target.y-target.h-target.height,obj_descriptor)
+ii = instance_create(owner.x,owner.y-owner.h-owner.height,obj_descriptor)
 ii.text = i
 ii.font = fnt_tiny
 ii.colour1 = dkRed

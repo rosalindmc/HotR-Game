@@ -11,6 +11,10 @@ if wepStrMult[atkHand] != 0
             p += argument2*s
             
             applyStatusEffect(daze,target,50,5)
+                        
+            ii = instance_create(x,y-h-height,obj_descriptor)
+            ii.text = argument0
+            ii.font = fnt_tinyText
             
             if breaker = true
             {
@@ -188,6 +192,10 @@ if target.missChance != 0 or backstab = true
         if 1+irandom(99) <= argument1
         {
             a *= 1-argument2
+                        
+            ii = instance_create(x,y-h-height,obj_descriptor)
+            ii.text = argument0
+            ii.font = fnt_tinyText
         }
     }
     else                    //On Tooltip

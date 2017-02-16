@@ -273,9 +273,7 @@ classCSkill = .3
 might += 2
 will += 1
 //Talent
-talent[0,0] = choose(treeStrength)//,treeDiscipline,treeToughness,treeMartial)
-talent[0,1] = branchMightyBlock
-talent[0,2] = branchThickSkin
+talent[0,0] = choose(treeStrength,treeDiscipline,treeToughness,treeMartial)
 talent[0,5] = 2
 break
 }
