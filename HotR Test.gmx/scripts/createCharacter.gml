@@ -27,7 +27,7 @@ fashionInitialize()
 script_execute(argument0,0)
 
 
-switch(s)
+switch(size)
 {
     //Small characters
     case 1:

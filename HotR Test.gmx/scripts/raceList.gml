@@ -17,6 +17,7 @@ break
 switch(argument0)
 {
 case 0:
+race = race_highelf
 raceName = 'Elf'
 gender = choose(femme,femme,masc)
 
@@ -24,6 +25,16 @@ skinTone = choose(fair,fair,fair,dark,beige,beige,pale,pale)
 headSprite = spr_elfHead
 hairStyle = choose(spr_upHair,spr_shortHair)
 hairColour = choose(black,dkBrown,dkRed,c_yellow)
+
+bodyImage = choose(0,0,0,1,1,1,2)
+size = min(choose(1,1,1,2,2,3,3,4)+gender,4)
+
+    legSprite = spr_leg
+    legSpriteMod = 0 
+    hipsOffset = 11+bodyImage
+    height = 28+bodyImage
+
+
 break
 
 case 1:
@@ -43,7 +54,18 @@ break
 switch(argument0)
 {
 case 0:
+race = race_irunian
 raceName = 'Human'
+
+raceHead = spr_humanHead
+skinTone = choose(dark,dark,beige,beige,beige)
+bodyImage = choose(0,0,1,2)
+size = min(choose(1,1,2,2,3,3,4)+gender,4)
+
+    legSprite = spr_leg
+    legSpriteMod = 0 
+    hipsOffset = 11+bodyImage
+    height = 28+bodyImage
 
 break
 
@@ -66,7 +88,19 @@ break
 switch(argument0)
 {
 case 0:
+race = race_northerner
 raceName = 'Human'
+
+raceHead = spr_humanHead
+skinTone = choose(pale,pale,fair)
+bodyImage = choose(0,0,1,2,2)
+size = min(choose(1,2,2,3,3,4)+gender,4)
+
+    legSprite = spr_leg
+    legSpriteMod = 0 
+    hipsOffset = 11+bodyImage
+    height = 28+bodyImage
+    
 
 break
 
@@ -88,7 +122,21 @@ break
 switch(argument0)
 {
 case 0:
+race = race_dwarf
 raceName = 'Dwarf'
+
+raceHead = spr_humanHead
+skinTone = choose(fair,pale)
+bodyImage = choose(0,0,0,1,1)
+size = 4   //min(choose(3,3,4)+gender,4)
+
+    legSprite = spr_shortLeg
+    legSpriteMod = 1
+    hipsOffset = 8+bodyImage
+    height = 25+bodyImage
+    raceMove = -1
+    //headOffset -= 1
+
 
 break
 
@@ -114,7 +162,21 @@ break
 switch(argument0)
 {
 case 0:
+race = race_halfling
 raceName = 'Halfling'
+
+raceHead = choose(spr_humanHead,spr_elfHead)
+skinTone = choose(fair,fair,fair,dark,beige,beige,pale,pale)
+bodyImage = 0
+size = choose(1,1,1,2,3)
+
+    legSprite = spr_shortLeg
+    legSpriteMod = 1
+    hipsOffset = 8+bodyImage
+    height = 24+bodyImage
+    raceMove = -1
+        
+bodyOffset -= 1  
 
 break
 
@@ -144,7 +206,20 @@ break
 switch(argument0)
 {
 case 0:
+race = race_orc
 raceName = 'Orc'
+
+raceHead = spr_humanHead
+skinTone = choose(orcBrown,orcGreen)
+bodyImage = choose(0,1,1,1,2,2)
+size = min(choose(2,2,3,3,4)+gender,4)
+
+    legSprite = spr_leg
+    legSpriteMod = 0 
+    hipsOffset = 11+bodyImage
+    height = 28+(2*bodyImage)
+
+bodyOffset += bodyImage   
 
 break
 
@@ -170,8 +245,18 @@ break
 switch(argument0)
 {
 case 0:
+race = race_tiefling
 raceName = 'Tiefling'
 
+raceHead = spr_elfHead
+skinTone = choose(fair,demonRed, demonPurp, demonTan)
+bodyImage = choose(0,1,1,2)
+size = min(choose(1,1,1,2,2,3,3)+(gender*2),4)
+
+    legSprite = spr_leg
+    legSpriteMod = 0 
+    hipsOffset = 11+bodyImage
+    height = 28+bodyImage
 break
 
 case 1:
