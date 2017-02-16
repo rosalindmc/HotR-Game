@@ -193,7 +193,7 @@ crunch = false
 aim = 1
 
 //Various Effects
-arc = 70
+arc = 100
 atkHaste = 0
 movHaste = 0
 atkStaminaMult = 1

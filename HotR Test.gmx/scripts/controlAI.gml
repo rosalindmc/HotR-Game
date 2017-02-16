@@ -51,10 +51,10 @@ with(obj_tile)
 {
     if meleeAttack = true
     {
-        if random(1)+(occupant.bold*5)-occupant.initSlot.delay-((occupant.life/occupant.lifeMax)*3)-(max(occupant.arm-i.wepPen[i.atkHand],0)*.25) > global.aggro
+        if random(1)+(occupant.bold*5)-occupant.initSlot.delay-((occupant.life/occupant.lifeMax)*3) > global.aggro
         {
             global.target = id
-            global.aggro = random(1)+(occupant.bold*5)-occupant.initSlot.delay-((occupant.life/occupant.lifeMax)*3)-(max(occupant.arm-i.wepPen[i.atkHand],0)*.25)
+            global.aggro = random(1)+(occupant.bold*5)-occupant.initSlot.delay-((occupant.life/occupant.lifeMax)*3)
         }
     }
 }

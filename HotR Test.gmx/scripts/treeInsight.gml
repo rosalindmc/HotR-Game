@@ -48,7 +48,7 @@ break
 switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
-arc = 110
+arc = 140
 break
 
 case 1:     //Tooltip and icon
