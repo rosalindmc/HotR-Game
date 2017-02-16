@@ -115,3 +115,16 @@ if gender = masc
     bodyVariant = 1
     cutVariant = choose(1,2)
 }
+#define createCharacterSheet
+//createCharacterSheet(party,ruleset)
+
+i = instance_create(x,y,obj_characterSheet)
+i.party = id
+ds_list_add(party,i)
+
+with(i)
+{
+    //Character Creation
+    createCharacter()
+    instance_deactivate_object(id)
+}

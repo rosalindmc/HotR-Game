@@ -34,7 +34,5 @@ repeat(choose(40))
 //Temp
 repeat(choose(5,6,7))
 {
-    i = instance_create(x,y,obj_characterSheet)
-    i.party = id
-    ds_list_add(party,i)
+    createCharacterSheet(id)
 }

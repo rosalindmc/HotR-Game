@@ -328,14 +328,16 @@
         <scripts name="Party Scripts">
           <script>scripts\characterInitialize.gml</script>
           <script>scripts\partyInitialize.gml</script>
-          <scripts name="Character Creation">
-            <script>scripts\raceList.gml</script>
-            <script>scripts\scr_charactergenerator.gml</script>
-            <script>scripts\createCharacter.gml</script>
-          </scripts>
+          <script>scripts\partyRuleset.gml</script>
         </scripts>
         <scripts name="Movement and Control">
           <script>scripts\owMovementRange.gml</script>
+        </scripts>
+        <scripts name="Character Creation">
+          <script>scripts\raceList.gml</script>
+          <script>scripts\scr_charactergenerator.gml</script>
+          <script>scripts\createCharacter.gml</script>
+          <script>scripts\characterRuleset.gml</script>
         </scripts>
       </scripts>
       <scripts name="Outdated">
