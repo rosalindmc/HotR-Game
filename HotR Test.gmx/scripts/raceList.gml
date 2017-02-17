@@ -19,7 +19,7 @@ switch(argument0)
 case 0:
 race = race_highelf
 raceName = 'Elf'
-gender = choose(femme,femme,masc)
+gender = choose(femme,femme,femme,masc)
 
 skinTone = choose(fair,fair,fair,dark,beige,beige,pale,pale)
 headSprite = spr_elfHead
@@ -55,6 +55,7 @@ switch(argument0)
 case 0:
 race = race_irunian
 raceName = 'Human'
+gender = choose(femme,femme,masc)
 
 raceHead = spr_humanHead
 skinTone = choose(dark,dark,beige,beige,beige)
@@ -92,6 +93,7 @@ switch(argument0)
 case 0:
 race = race_northerner
 raceName = 'Human'
+gender = choose(femme,femme,masc)
 
 raceHead = spr_humanHead
 skinTone = choose(pale,pale,fair)
@@ -129,6 +131,7 @@ switch(argument0)
 case 0:
 race = race_dwarf
 raceName = 'Dwarf'
+gender = choose(femme,masc)
 
 raceHead = spr_humanHead
 skinTone = choose(fair,pale)
@@ -174,6 +177,7 @@ switch(argument0)
 case 0:
 race = race_halfling
 raceName = 'Halfling'
+gender = choose(femme,femme,masc)
 
 raceHead = choose(spr_humanHead,spr_elfHead)
 skinTone = choose(fair,fair,fair,dark,beige,beige,pale,pale)
@@ -223,6 +227,7 @@ switch(argument0)
 case 0:
 race = race_orc
 raceName = 'Orc'
+gender = choose(femme,masc,masc,masc,masc,masc)
 
 raceHead = spr_humanHead
 skinTone = choose(orcBrown,orcGreen)
@@ -265,6 +270,7 @@ switch(argument0)
 case 0:
 race = race_tiefling
 raceName = 'Tiefling'
+gender = choose(femme,femme,masc)
 
 raceHead = spr_elfHead
 skinTone = choose(fair,demonRed, demonPurp, demonTan)
@@ -298,6 +304,7 @@ switch(argument0)
 case 0:
 race = race_goblin
 raceName = 'Goblin'
+gender = masc
 
 raceHead = spr_elfHead
 skinTone = choose(orcBrown,orcGreen)

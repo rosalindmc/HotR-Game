@@ -2,6 +2,7 @@
 //Establish ALL variables
 //Allegiance
 party = -4
+mook = false
 
 //Identity
 firstName = -4
@@ -79,8 +80,6 @@ itemProf[0] = lightWeaponProficiency
 itemProf[1] = mediumWeaponProficiency
 itemProf[2] = heavyWeaponProficiency
 
-alarm[0] = 2
-
 #define fashionInitialize
 favColour = choose(clothBlue,clothRed,clothGreen)
 eyeTrinket = choose(-4,-4,-4,spr_fashion1,spr_fashion2)      //Glasses, Monocle, Eyepatch
@@ -127,5 +126,6 @@ with(i)
 {
     //Character Creation
     createCharacter()
-    instance_deactivate_object(id)
 }
+
+instance_deactivate_object(i)

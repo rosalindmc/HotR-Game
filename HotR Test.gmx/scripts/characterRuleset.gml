@@ -7,7 +7,7 @@ initializeHumanoid()
 raceGen(cwRaceList())
 detailGen(cwName)
 attributeGen()
-classGen(classList)
+classGen(classList())
 fashionInitialize()
 
 
@@ -46,14 +46,32 @@ initializeHumanoid()
 raceGen(race_orc)
 detailGen(cwName)
 attributeGen()
-classGen(class_warrior)
+classGen(class_thrall)
 fashionInitialize()
+
+//Names
+firstName = 'Orc'
+lastName = 'Thrall'
+
+favColour = ltBlue
+eyeTrinket = -4
+neckTrinket = -4
+overBodyItem = -4
 
 #define goblinWarrior
 //Rules for an Goblin Warrior
 initializeHumanoid()
-raceGen(race_orc)
+raceGen(race_goblin)
 detailGen(cwName)
 attributeGen()
-classGen(class_warrior)
+classGen(class_thrall)
 fashionInitialize()
+
+//Names
+firstName = 'Goblin'
+lastName = 'Thrall'
+
+favColour = make_colour_rgb(139,69,19)
+eyeTrinket = -4
+neckTrinket = -4
+overBodyItem = -4

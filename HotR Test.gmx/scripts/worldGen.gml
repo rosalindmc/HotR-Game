@@ -255,7 +255,7 @@ repeat(floor(mapWidth/4))
                 iii = instance_create(ii.x,ii.y,obj_party)
                 iii.node = ii
                 iii.depth = ii.depth-1
-                iii.ruleSet = choose(cwParty,orcViking,orcViking,raidingParty,raidingParty)
+                iii.ruleSet = choose(cwParty,orcViking,orcViking,orcViking,orcViking)
                 
                 with(iii)
                 {

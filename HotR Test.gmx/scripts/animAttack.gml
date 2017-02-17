@@ -31,6 +31,7 @@ switch(argument0)
     case 2:
     legAnim[1] = 4
     legAnim[2] = 6
+    skrtAnim = 1
     hipsThrust = 5
     bounce = 1
     alarm[5] = global.fspd*.1

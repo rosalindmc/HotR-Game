@@ -79,7 +79,6 @@ alarm[1] = 2
 
 humanoid(0)
 
-
 //Effects
 status = ds_list_create()
 

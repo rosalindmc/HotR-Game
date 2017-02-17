@@ -25,6 +25,7 @@ class = o.className
 skinTone = o.skinTone
 eyeColour = o.eyeColour
 hairColour = o.hairColour
+name = string(o.firstName)+' '+string(o.lastName)
 
 legSprite = o.legSprite
 legSpriteMod = o.legSpriteMod
@@ -110,6 +111,42 @@ i += 1
 }
 
 
+#define iCSubStats
+//Calculate derivative attributes
+
+//Movement
+movement = 4+((grace-8)*.2)+o.raceMove      //metres to a move action
+movementBonus = 3+((grace-8)*.3)            //running bonus
+haste = 1+((grace-8)*.03) 
+
+//Skill
+mSkill = max(((grace-8)*.1)+((cunning-8)*.2)+o.mSkill,0)
+rSkill = max(((grace-8)*.1)+((cunning-8)*.2)+o.rSkill,0)
+cSkill = max(((grace-8)*.1)+((cunning-8)*.2)+o.cSkill,0)
+
+//Offense
+atkDPS = (might-8)*.40
+atkHaste = ((grace-8)*.03)
+
+//Resistance
+fResist = 25+(grace-8)+(might-8)
+pResist = 25+(will-8)+(might-8)
+mResist = 25+(cunning-8)+(will-8)
+sResist = 1
+
+//Blocking
+blockMax = 1
+blockGen = 0
+blockStr = might
+
+//Vitals
+lifeMax = max(floor(8+(will-8)+((might-8)/2)+o.life),4)
+lifeRegen = 2+((will-8)*.25)
+
+stmMax = max(floor(8+(will-8)+((grace-8)/2)+o.stamina),4)
+stmRegen = 5+(stmMax*.1)
+
+
 #define iCEquip
 //Equip Items
 //Reset variables
@@ -189,42 +226,6 @@ script_execute(o.invSlot[4,2],2)
 script_execute(o.invSlot[4,3],2)
 script_execute(o.invSlot[4,4],2)
 postArmourCustom()
-
-#define iCSubStats
-//Calculate derivative attributes
-
-//Movement
-movement = 4+((grace-8)*.2)+o.raceMove      //metres to a move action
-movementBonus = 3+((grace-8)*.3)            //running bonus
-haste = 1+((grace-8)*.03) 
-
-//Skill
-mSkill = max(((grace-8)*.1)+((cunning-8)*.2)+o.mSkill,0)
-rSkill = max(((grace-8)*.1)+((cunning-8)*.2)+o.rSkill,0)
-cSkill = max(((grace-8)*.1)+((cunning-8)*.2)+o.cSkill,0)
-
-//Offense
-atkDPS = (might-8)*.40
-atkHaste = ((grace-8)*.03)
-
-//Resistance
-fResist = 25+(grace-8)+(might-8)
-pResist = 25+(will-8)+(might-8)
-mResist = 25+(cunning-8)+(will-8)
-sResist = 1
-
-//Blocking
-blockMax = 1
-blockGen = 0
-blockStr = might
-
-//Vitals
-lifeMax = floor(8+(will-8)+((might-8)/2)+o.life)
-lifeRegen = 2+((will-8)*.25)
-
-stmMax = floor(8+(will-8)+((grace-8)/2)+o.stamina)
-stmRegen = 5+(stmMax*.1)
-
 
 #define iCTraits
 //Talents
@@ -373,6 +374,16 @@ if bold = 1
     mSkill += 2*(1+((fellowship-8)*.05))
     rSkill += 2*(1+((fellowship-8)*.05))
     cSkill += 2*(1+((fellowship-8)*.05))
+}
+
+if o.mook = true
+{
+    wepPow[1] *= .75
+    wepPow[2] *= .75
+    atkHaste -= .3
+    dodge -= 20
+    arc -= 40
+    blockStr *= .5
 }
 
 #define staminaCheck

@@ -222,7 +222,7 @@ if global.charTab = tab
     draw_set_font(fnt_main)
     draw_text(x,y-150,string(global.charSelect.firstName)+' '+string(global.charSelect.lastName))
     draw_set_font(fnt_small)
-    draw_text(x,y-130,'Level '+string(global.charSelect.level)+' '+string(global.charSelect.raceName)+' '+string(global.charSelect.class))
+    draw_text(x,y-130,'Level '+string(global.charSelect.level)+' '+string(global.charSelect.raceName)+' '+string(global.charSelect.className))
     draw_set_font(fnt_tinyText)
     
     draw_set_colour(make_colour_rgb(128,0,25))

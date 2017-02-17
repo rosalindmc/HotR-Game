@@ -417,10 +417,10 @@
           <script>scripts\wipeTiles.gml</script>
           <script>scripts\movementRange.gml</script>
           <script>scripts\colourTiles.gml</script>
+          <script>scripts\melee.gml</script>
         </scripts>
         <scripts name="Attack and Damage">
           <script>scripts\attackDamage.gml</script>
-          <script>scripts\melee.gml</script>
           <script>scripts\damageType.gml</script>
           <script>scripts\los.gml</script>
           <script>scripts\meleeAttackRange.gml</script>

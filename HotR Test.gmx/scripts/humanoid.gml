@@ -33,10 +33,10 @@ animPriority[0] = 0
 animIndex[0] = animIdle
 animStep[1] = 0
 animPriority[1] = 0
-animIndex[1] = animPresentArms
+animIndex[1] = animMeleeHold
 animStep[2] = 0
 animPriority[2] = 0
-animIndex[2] = animPresentArms
+animIndex[2] = animMeleeHold
 
 alarm[5] = 1
 alarm[6] = 1
@@ -524,7 +524,7 @@ with(argument0)
     //Head and Hair
     draw_sprite_ext(headSprite,faceImage,argument1,argument2,argument3,argument3,0,skinTone,1)
     draw_sprite_ext(spr_eyes,faceImage,argument1,argument2,argument3,argument3,0,eyeColour,1)
-    draw_sprite_ext(hairStyle,bounce,argument1,argument2,argument3,argument3,0,hairColour,hairVisible)
+    draw_sprite_ext(hairStyle,0,argument1,argument2,argument3,argument3,0,hairColour,hairVisible)
     i = 0 repeat(headItems){i++ draw_sprite_ext(headItem[i],0,argument1,argument2,argument3,argument3,0,headColour[i],1)}
     
     shader_reset()

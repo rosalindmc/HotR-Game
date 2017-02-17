@@ -44,12 +44,12 @@ repeat(choose(0,1))
     createCharacterSheet(id,orcThane)
 }
 
-repeat(choose(1,2,3))
+repeat(choose(0,0,1,2))
 {
     createCharacterSheet(id,orcVeteran)
 }
 
-repeat(choose(8,9,10,11,12))
+repeat(choose(6,8,10,12))
 {
     createCharacterSheet(id,choose(orcWarrior,goblinWarrior))
 }

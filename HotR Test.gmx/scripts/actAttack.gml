@@ -6,9 +6,6 @@
 switch(argument0)
 {
 case 1:
-//Stop Leg Movement
-startAnimation(0,animAttack)
-
 //Facing
 facing = round(point_direction(x,y,target.x,target.y)/45)*45
 cFacing = facing

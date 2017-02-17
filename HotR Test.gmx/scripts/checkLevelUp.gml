@@ -5,7 +5,7 @@ while(char.experience >= char.expToLevel)
     char.level += 1
     char.levelPending += 1
     
-    if char.party.player != 0
+    if char.party.playerControl = true
     {
         createNotification(string(char.firstName)+' is level '+string(char.level),ico_experience,2)
     }
