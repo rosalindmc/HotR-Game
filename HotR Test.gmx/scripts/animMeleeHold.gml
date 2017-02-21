@@ -10,14 +10,14 @@ switch(argument1)
 {
 case 0:
 handHeight[argument0] = 4
-handRot[argument0] = facing+(bodyHFacing*(2*(argument0-1.5))*45)
+handRot[argument0] = facing+(bodyHFacing*(2*(argument0-1.5))*-45)
 handDist[argument0] = 6
 handDir[argument0] =  300+(bodyHFacing*(2*(argument0-1.5))*75)
 break
 
 case 1:
 handHeight[argument0] = 3
-handRot[argument0] = facing+(bodyHFacing*(2*(argument0-1.5))*45)
+handRot[argument0] = facing+(bodyHFacing*(2*(argument0-1.5))*-45)
 handDist[argument0] = 6
 handDir[argument0] =  300+(bodyHFacing*(2*(argument0-1.5))*75)
 
@@ -26,7 +26,7 @@ break
 
 case 2:
 handHeight[argument0] = 4
-handRot[argument0] = facing+(bodyHFacing*(2*(argument0-1.5))*45)
+handRot[argument0] = facing+(bodyHFacing*(2*(argument0-1.5))*-45)
 handDist[argument0] = 5
 handDir[argument0] =  300+(bodyHFacing*(2*(argument0-1.5))*75)
 

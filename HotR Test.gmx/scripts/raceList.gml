@@ -21,6 +21,11 @@ race = race_highelf
 raceName = 'Elf'
 gender = choose(femme,femme,femme,masc)
 
+if irandom(4)+gender >= 5
+{
+    beardStyle = choose(spr_bigMoustache, spr_sadStache, spr_longStache, spr_chaplinStache, spr_goatee)
+}
+
 skinTone = choose(fair,fair,fair,dark,beige,beige,pale,pale)
 headSprite = spr_elfHead
 hairStyle = choose(spr_upHair,spr_shortHair)
@@ -56,6 +61,11 @@ case 0:
 race = race_irunian
 raceName = 'Human'
 gender = choose(femme,femme,masc)
+
+if irandom(2)+gender >= 3
+{
+    beardStyle = choose(spr_bigMoustache, spr_fullBeard, spr_sadStache, spr_longStache, spr_chaplinStache, spr_goatee)
+}
 
 raceHead = spr_humanHead
 skinTone = choose(dark,dark,beige,beige,beige)
@@ -95,6 +105,11 @@ race = race_northerner
 raceName = 'Human'
 gender = choose(femme,femme,masc)
 
+if irandom(1)+gender >= 2
+{
+    beardStyle = choose(spr_bigMoustache, spr_fullBeard, spr_sadStache, spr_longStache, spr_chaplinStache, spr_goatee)
+}
+
 raceHead = spr_humanHead
 skinTone = choose(pale,pale,fair)
 bodyImage = choose(0,0,1,2,2)
@@ -133,6 +148,10 @@ race = race_dwarf
 raceName = 'Dwarf'
 gender = choose(femme,masc)
 
+if irandom(9)+gender >= 9
+{
+    beardStyle = choose(spr_longBeard, spr_fullBeard, spr_sadStache, spr_longStache)
+}
 raceHead = spr_humanHead
 skinTone = choose(fair,pale)
 bodyImage = choose(0,0,0,1,1)
@@ -179,6 +198,10 @@ race = race_halfling
 raceName = 'Halfling'
 gender = choose(femme,femme,masc)
 
+if irandom(4)+gender >= 5
+{
+    beardStyle = choose(spr_bigMoustache, spr_fullBeard, spr_sadStache, spr_longStache, spr_chaplinStache, spr_goatee)
+}
 raceHead = choose(spr_humanHead,spr_elfHead)
 skinTone = choose(fair,fair,fair,dark,beige,beige,pale,pale)
 bodyImage = 0
@@ -229,6 +252,11 @@ race = race_orc
 raceName = 'Orc'
 gender = choose(femme,masc,masc,masc,masc,masc)
 
+if irandom(3)+gender >= 4
+{
+    beardStyle = choose(spr_bigMoustache, spr_fullBeard, spr_sadStache, spr_longStache, spr_chaplinStache, spr_goatee)
+}
+
 raceHead = spr_humanHead
 skinTone = choose(orcBrown,orcGreen)
 bodyImage = choose(0,1,1,1,2,2)
@@ -272,6 +300,11 @@ race = race_tiefling
 raceName = 'Tiefling'
 gender = choose(femme,femme,masc)
 
+if irandom(4)+gender >= 5
+{
+    beardStyle = choose(spr_bigMoustache, spr_fullBeard, spr_sadStache, spr_longStache, spr_chaplinStache, spr_goatee)
+}
+
 raceHead = spr_elfHead
 skinTone = choose(fair,demonRed, demonPurp, demonTan)
 bodyImage = choose(0,1,1,2)
@@ -305,6 +338,11 @@ case 0:
 race = race_goblin
 raceName = 'Goblin'
 gender = masc
+
+if irandom(4)+gender >= 5
+{
+    beardStyle = choose(spr_bigMoustache, spr_fullBeard, spr_sadStache, spr_longStache, spr_chaplinStache, spr_goatee)
+}
 
 raceHead = spr_elfHead
 skinTone = choose(orcBrown,orcGreen)

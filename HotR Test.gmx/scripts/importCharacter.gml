@@ -25,6 +25,8 @@ class = o.className
 skinTone = o.skinTone
 eyeColour = o.eyeColour
 hairColour = o.hairColour
+hairStyle = o.hairStyle
+beardStyle = o.beardStyle
 name = string(o.firstName)+' '+string(o.lastName)
 
 legSprite = o.legSprite

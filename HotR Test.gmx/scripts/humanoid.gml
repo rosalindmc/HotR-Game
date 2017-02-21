@@ -24,6 +24,7 @@ headSprite = spr_humanHead
 skinTone = fair
 eyeColour = choose(eyeBlue,eyeGreen,c_dkgray,eyeViolet,c_olive,eyeBrown)
 hairStyle = spr_upHair
+beardStyle = spr_none
 hairColour = black
 hairVisible = true
 
@@ -305,9 +306,11 @@ if bodyVFacing = 0
 }
 
 //Head and Hair
+if bodyVFacing = 1{draw_sprite_ext(beardStyle,bounce,headX,headY,hFacing*sX,sX,headRot,hairColour,1)}
 draw_sprite_ext(headSprite,faceImage+vFacing,headX,headY,hFacing*sX,sX,headRot,skinTone,1)
 draw_sprite_ext(spr_eyes,faceImage+vFacing,headX,headY,hFacing*sX,sX,headRot,eyeColour,1)
 draw_sprite_ext(hairStyle,bounce+(vFacing*2),headX,headY,hFacing*sX,sX,headRot,hairColour,hairVisible)
+if bodyVFacing = 0{draw_sprite_ext(beardStyle,bounce,headX,headY,hFacing*sX,sX,headRot,hairColour,1)}
 i = 0 repeat(headItems){i++ draw_sprite_ext(headItem[i],vFacing,headX,headY,hFacing*sX,sX,headRot,headColour[i],1)}
 
 if bodyVFacing = 1
@@ -525,6 +528,7 @@ with(argument0)
     draw_sprite_ext(headSprite,faceImage,argument1,argument2,argument3,argument3,0,skinTone,1)
     draw_sprite_ext(spr_eyes,faceImage,argument1,argument2,argument3,argument3,0,eyeColour,1)
     draw_sprite_ext(hairStyle,0,argument1,argument2,argument3,argument3,0,hairColour,hairVisible)
+    draw_sprite_ext(beardStyle,0,argument1,argument2,argument3,argument3,0,hairColour,1)
     i = 0 repeat(headItems){i++ draw_sprite_ext(headItem[i],0,argument1,argument2,argument3,argument3,0,headColour[i],1)}
     
     shader_reset()

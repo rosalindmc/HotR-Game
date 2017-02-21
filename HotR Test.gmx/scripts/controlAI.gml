@@ -135,7 +135,8 @@ with (obj_tile)
     }
 }
 
-
+if global.target != i.isoTile
+{
 //Move and Update Grid9
 makeMovePath(global.target)
 i.pathLength = ii
@@ -152,6 +153,11 @@ with(i){actMove(1)}
 endTurn(min(3.0,global.target.g)/(i.haste+i.movHaste))
 
 wipeTiles()
+}
+else
+{
+wait(0)
+}
 }
 else
 {

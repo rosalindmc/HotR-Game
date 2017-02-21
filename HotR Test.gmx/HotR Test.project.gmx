@@ -222,6 +222,8 @@
       <sprite>sprites\spr_wall</sprite>
       <sprite>sprites\spr_step</sprite>
       <sprite>sprites\spr_tile</sprite>
+      <sprite>sprites\spr_dirtStep</sprite>
+      <sprite>sprites\spr_dirtWall</sprite>
     </sprites>
     <sprites name="Characters">
       <sprite>sprites\spr_portrait</sprite>
@@ -243,6 +245,15 @@
           <sprite>sprites\spr_upHair</sprite>
           <sprite>sprites\spr_shortHair</sprite>
         </sprites>
+      </sprites>
+      <sprites name="Beard">
+        <sprite>sprites\spr_bigMoustache</sprite>
+        <sprite>sprites\spr_fullBeard</sprite>
+        <sprite>sprites\spr_longBeard</sprite>
+        <sprite>sprites\spr_sadStache</sprite>
+        <sprite>sprites\spr_longStache</sprite>
+        <sprite>sprites\spr_chaplinStache</sprite>
+        <sprite>sprites\spr_goatee</sprite>
       </sprites>
     </sprites>
     <sprites name="UI">

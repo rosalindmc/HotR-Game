@@ -79,7 +79,7 @@ actionScroll = action
 //Tile Creation
 mapHeight = 20
 mapWidth = 20
-mapDepth = 3
+mapDepth = 4
 
 runEvent = -4
 eventName = -4
@@ -95,6 +95,7 @@ repeat(mapWidth)
         repeat(mapDepth)
         {
             map[ix+(mapWidth*iz),iy] = instance_create((room_width/2)+(ix*20)-(iy*20),110+(ix*10)+(iy*10),obj_tile)
+            map[ix+(mapWidth*iz),iy].sprite_index = global.sprite
             map[ix+(mapWidth*iz),iy].isoX = ix
             map[ix+(mapWidth*iz),iy].isoY = iy
             map[ix+(mapWidth*iz),iy].isoZ = iz

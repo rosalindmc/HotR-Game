@@ -36,6 +36,7 @@ cost = 1
 
 //Details
 occupant = noone
+heightMap = random(100)
 
 //Pathing
 overlay = 0
@@ -119,6 +120,7 @@ ds_list_destroy(walk)
 //Temp Random Walling
 if ground = true
 {
+    /*
     if irandom(100) &lt; 0//20
     {    
         i = instance_create(x,y,obj_step)
@@ -153,6 +155,7 @@ if ground = true
             }
         }
     }
+    */
 }
 else
 {

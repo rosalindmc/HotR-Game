@@ -91,6 +91,7 @@ if global.eventActive = false
             {
                 if node = other.id and id != global.activeActor
                 {
+                    global.sprite = other.tile.sprite_index
                     battleSetup(global.activeActor,id)
                 }
             }

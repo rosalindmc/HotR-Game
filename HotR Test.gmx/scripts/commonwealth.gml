@@ -1,5 +1,6 @@
 #define commonwealth
 
+
 #define cwRaceList
 switch(irandom(15))
 {
