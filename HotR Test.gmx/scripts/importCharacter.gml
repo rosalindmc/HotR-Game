@@ -131,10 +131,15 @@ atkDPS = (might-8)*.40
 atkHaste = ((grace-8)*.03)
 
 //Resistance
-fResist = 25+(grace-8)+(might-8)
-pResist = 25+(will-8)+(might-8)
-mResist = 25+(cunning-8)+(will-8)
+//fResist = 25+(grace-8)+(might-8)
+//pResist = 25+(will-8)+(might-8)
+//mResist = 25+(cunning-8)+(will-8)
+
+//Morale
 sResist = 1
+bravery = 0
+stubborn = false
+threatResist = 0
 
 //Blocking
 blockMax = 1
@@ -241,6 +246,9 @@ for(i = 0; i < 8; i++)
         script_execute(o.talent[i,3],0,o.talent[i,5])
     }
 }
+
+//Race Trait
+script_execute(o.race,3)
 
 //Status Effects
 for(s = 0; s < ds_list_size(status); s++)

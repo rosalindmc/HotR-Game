@@ -48,6 +48,10 @@ break
 case 2:
 randDice += 2
 break
+
+case 3:     //Race Trait
+sResist += .25
+break
 }
 
 #define race_irunian
@@ -91,6 +95,10 @@ cunning += 1
     
 cunCap = 11
 break
+
+case 3:     //Race Trait
+bravery += .20
+break
 }
 
 #define race_northerner
@@ -133,6 +141,16 @@ case 2:
 will += 2
     
 wilCap = 12
+break
+
+case 3:     //Race Trait
+onHit[onHitSize,0] = northMoraleGain
+onHit[onHitSize,1] = 'Northerner'
+onHit[onHitSize,2] = false
+onHit[onHitSize,3] = false
+onHit[onHitSize,4] = false
+onHit[onHitSize,5] = false
+onHitSize += 1
 break
 }
 
@@ -183,6 +201,10 @@ grcCap = 8
 wilCap = 13
 
 raceMove = -1
+break
+
+case 3:     //Race Trait
+stubborn = true
 break
 }
 
@@ -238,6 +260,16 @@ felCap = 11
 
 raceMove = -.5
 break
+
+case 3:     //Race Trait
+onDown[onDownSize,0] = halflingMoraleGain
+onDown[onDownSize,1] = 'Halfling'
+onDown[onDownSize,2] = false
+onDown[onDownSize,3] = false
+onDown[onDownSize,4] = false
+onDown[onDownSize,5] = false
+onDownSize += 1
+break
 }
 
 #define race_orc
@@ -286,6 +318,10 @@ fellowship -= 1
 
 mgtCap = 14
 break
+
+case 3:     //Race Trait
+threatResist += .5
+break
 }
 
 #define race_tiefling
@@ -324,6 +360,10 @@ break
 
 case 2:
 randDice += 2
+break
+
+case 3:     //Race Trait
+sResist += .25
 break
 }
 

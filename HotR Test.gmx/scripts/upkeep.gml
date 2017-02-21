@@ -26,7 +26,7 @@ if obj_control.mapTimeOn = true and global.timeDelay = 0
     {
         if bold != 1
         {
-            gainMorale(1/(global.fspd*10))
+            gainMorale((1+bravery)/(global.fspd*10))
         }
     }
     else

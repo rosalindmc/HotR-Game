@@ -6,13 +6,13 @@ case 0:     //Run when the unit is initialized in battle
 switch(argument1)
 {
 case 1: dmgMitigation += .10
-sResist += 20 break
+sResist += .20 break
 case 2: dmgMitigation += .15
-sResist += 30 break
+sResist += .30 break
 case 3: dmgMitigation += .20
-sResist += 40 break
+sResist += .40 break
 case 4: dmgMitigation += .25
-sResist += 50 break
+sResist += .50 break
 }
 break
 

@@ -41,7 +41,7 @@ with(argument0)
                 
                 if los(5,obj_control.map[other.isoX+(obj_control.mapWidth*other.isoZ),other.isoY],isoTile)
                 {
-                    suppress(id,2.0)
+                    suppress(id,2.0-(stubborn*1.1))
                 }
             }
         }

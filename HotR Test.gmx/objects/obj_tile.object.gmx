@@ -180,12 +180,6 @@ else
         draw_sprite_ext(sprite_index,image_index,x,y-h+(global.zLevel*30),1,1,0,c_black,1)
     }
 }
-
-if obj_control.cHover = id
-{
-    draw_text(x,y-100,depth)
-}
-
 </string>
           </argument>
         </arguments>

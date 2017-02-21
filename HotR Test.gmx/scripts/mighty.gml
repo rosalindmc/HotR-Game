@@ -205,3 +205,30 @@ if target.missChance != 0 or backstab = true
         obj_control.tooltipLength += 1    
     }
 }
+#define northMoraleGain
+//northMoraleGain(name,bonus,false,false,false,tooltip)
+//Bonus morale on attack
+
+if argument5 = false    //On Proc
+{
+    gainMorale(.05*(s+1+mle))
+}
+else                    //On Tooltip
+{
+    //No Tooltip
+}
+
+
+#define halflingMoraleGain
+//halflingMoraleGain(name,bonus,false,false,false,tooltip)
+//Bonus morale on down
+
+if argument5 = false    //On Proc
+{
+    gainMorale(.4)
+}
+else                    //On Tooltip
+{
+    //No Tooltip
+}
+
