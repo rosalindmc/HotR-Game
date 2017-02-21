@@ -118,16 +118,16 @@ for(ii = 0; ii < ds_list_size(adjacent); ii++)
     if (i.h >= h - 15) and (i.h <= h + 15)
     {
         //North Wall Check
-        if (wall[0] = noone and i.wall[2] = noone) or (i.isoY >= isoY)
+        if (wall[0] = noone and i.wall[2] = noone) or (i.isoY >= isoY) or (i.isoZ != isoZ)
         {
         //East Wall Check
-        if (wall[1] = noone and i.wall[3] = noone)  or (i.isoX <= isoX)
+        if (wall[1] = noone and i.wall[3] = noone)  or (i.isoX <= isoX) or (i.isoZ != isoZ)
         {
         //South Wall Check
-        if (wall[2] = noone and i.wall[0] = noone)  or (i.isoY <= isoY)
+        if (wall[2] = noone and i.wall[0] = noone)  or (i.isoY <= isoY) or (i.isoZ != isoZ)
         {
         //West Wall Check
-        if (wall[3] = noone and i.wall[1] = noone)  or (i.isoX >= isoX)
+        if (wall[3] = noone and i.wall[1] = noone)  or (i.isoX >= isoX) or (i.isoZ != isoZ)
         {
             ds_list_add(walk, i)
         }
@@ -136,6 +136,7 @@ for(ii = 0; ii < ds_list_size(adjacent); ii++)
         }
     }
 }
+
 #define zoneOfControl
 //zoneOfControl()
 //All Enemies make tiles in their zone of control flagged as zoneControl

@@ -36,7 +36,7 @@ cost = 1
 
 //Details
 occupant = noone
-heightMap = random(100)
+heightMap = random(165)
 
 //Pathing
 overlay = 0
@@ -120,42 +120,11 @@ ds_list_destroy(walk)
 //Temp Random Walling
 if ground = true
 {
-    /*
-    if irandom(100) &lt; 0//20
+    if irandom(100) &lt; 20
     {    
-        i = instance_create(x,y,obj_step)
-        i.owner = id
-        i.h = h
+        sprite_index = spr_mudTile
+        cost = 1.5
     }
-    else
-    {
-        if irandom(100) &lt; 0//10 and (isoX != 0 or isoX != obj_control.mapWidth or isoY != 0 or isoY != obj_control.mapHeight)
-        {    
-            i = instance_create(x+10,y-6,obj_thinwall)
-            i.owner = id
-            i.h = h
-            i.facing = 1
-            wall[0] = i
-            if isoY &gt; 0
-            {
-                obj_control.map[isoX+(isoZ*obj_control.mapWidth),isoY-1].wall[2] = i
-            }
-        }
-        
-        if irandom(100) &lt; 0//10 and (isoX != 0 or isoX != obj_control.mapWidth or isoY != 0 or isoY != obj_control.mapHeight)
-        {    
-            i = instance_create(x-10,y-6,obj_thinwall)
-            i.owner = id
-            i.h = h
-            i.facing = -1
-            wall[3] = i
-            if isoX &gt; 0
-            {
-                obj_control.map[isoX-1+(isoZ*obj_control.mapWidth),isoY].wall[1] = i
-            }
-        }
-    }
-    */
 }
 else
 {
@@ -210,6 +179,11 @@ else
     {
         draw_sprite_ext(sprite_index,image_index,x,y-h+(global.zLevel*30),1,1,0,c_black,1)
     }
+}
+
+if obj_control.cHover = id
+{
+    draw_text(x,y-100,depth)
 }
 
 </string>

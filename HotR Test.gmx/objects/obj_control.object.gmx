@@ -190,7 +190,7 @@ repeat(mapWidth)
 }
 
 //Adjacency After Map Build
-alarm[0] = 10
+alarm[0] = 20
 </string>
           </argument>
         </arguments>
@@ -535,7 +535,6 @@ if global.timeDelay = 0 and global.nextChar.owner.player = true
 {   
     script_execute(actionScroll,2)
 }
-//drawText(c_black,c_white,view_xview+view_wview-10,view_yview+80,cIsoZ)
 //drawText(c_black,c_white,view_xview+view_wview-10,view_yview+100,global.zLevel)
 
 

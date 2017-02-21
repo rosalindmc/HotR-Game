@@ -80,7 +80,6 @@ repeat(2)
         i = 0
         heightMap *= 2
         
-    
             repeat(ds_list_size(adjacent))
             {
                 if ds_list_find_value(adjacent, i).ground = true
@@ -101,7 +100,7 @@ with(obj_tile)
 {
     if h = 0
     {
-    if heightMap >= 75
+    if heightMap >= 85
     {
         i = obj_control.map[isoX+((isoZ+2)*obj_control.mapWidth),isoY]
         instance_activate_object(i)
@@ -112,6 +111,7 @@ with(obj_tile)
         ii = instance_create(x,y,obj_step)
         ii.owner = i
         ii.h = i.h
+        ground = false
     }
     else if heightMap >= 60
     {
@@ -119,9 +119,10 @@ with(obj_tile)
         instance_activate_object(i)
         i.alarm[0] = 2
         i.sprite_index = sprite_index
-        i.ground = true    
+        i.ground = true
+        ground = false
     }
-    else if heightMap >= 45
+    else if heightMap >= 55
     {
         i = obj_control.map[isoX+((isoZ+1)*obj_control.mapWidth),isoY]
         instance_activate_object(i)
@@ -131,7 +132,8 @@ with(obj_tile)
     
         ii = instance_create(x,y,obj_step)
         ii.owner = i
-        ii.h = i.h    
+        ii.h = i.h
+        ground = false
     }
     else if heightMap >= 30
     {
@@ -139,9 +141,10 @@ with(obj_tile)
         instance_activate_object(i)
         i.alarm[0] = 2
         i.sprite_index = sprite_index
-        i.ground = true    
+        i.ground = true
+        ground = false
     }
-    else if heightMap >= 15
+    else if heightMap >= 25
     {
         i = instance_create(x,y,obj_step)
         i.owner = id
@@ -154,60 +157,58 @@ with(obj_tile)
 {
     if ground = true
     {
-    //Check North Wall
-    if isoY > 0
-    {
-        if obj_control.map[isoX+((isoZ+1)*obj_control.mapWidth),isoY-1].ground = true
+        //Check North Wall
+        if isoY > 0
         {
-            i = instance_create(x+10,y-6,obj_thinwall)
-            i.owner = id
-            i.h = h
-            i.facing = 1
-            wall[0] = i
-            obj_control.map[isoX+(isoZ*obj_control.mapWidth),isoY-1].wall[2] = i
+            if obj_control.map[isoX+((isoZ+1)*obj_control.mapWidth),isoY-1].ground = true
+            {
+                i = instance_create(x+10,y-7,obj_thinwall)
+                i.owner = id
+                i.h = h
+                i.facing = 1
+                wall[0] = i
+                obj_control.map[isoX+(isoZ*obj_control.mapWidth),isoY-1].wall[2] = i
+            }
         }
-    }
-    
-    //Check West Wall
-    if isoX > 0
-    {
-        if obj_control.map[isoX-1+((isoZ+1)*obj_control.mapWidth),isoY].ground = true
+        //Check West Wall
+        if isoX > 0
         {
-            i = instance_create(x+10,y-6,obj_thinwall)
-            i.owner = id
-            i.h = h
-            i.facing = -1
-            wall[3] = i
-            obj_control.map[isoX-1+(isoZ*obj_control.mapWidth),isoY].wall[1] = i
+            if obj_control.map[isoX-1+((isoZ+1)*obj_control.mapWidth),isoY].ground = true
+            {
+                i = instance_create(x-10,y-7,obj_thinwall)
+                i.owner = id
+                i.h = h
+                i.facing = -1
+                wall[3] = i
+                obj_control.map[isoX-1+(isoZ*obj_control.mapWidth),isoY].wall[1] = i
+            }
         }
-    }
-    
-    //Check South Wall
-    if isoY < obj_control.mapHeight-1
-    {
-        if obj_control.map[isoX+((isoZ+1)*obj_control.mapWidth),isoY+1].ground = true
+        //Check South Wall
+        if isoY < obj_control.mapHeight-1
         {
-            i = instance_create(x+10,y-6,obj_thinwall)
-            i.owner = id
-            i.h = h
-            i.facing = 1
-            wall[2] = i
-            obj_control.map[isoX+(isoZ*obj_control.mapWidth),isoY+1].wall[0] = i
+            if obj_control.map[isoX+((isoZ+1)*obj_control.mapWidth),isoY+1].ground = true
+            {
+                i = instance_create(x-10,y+4,obj_thinwall)
+                i.owner = obj_control.map[isoX+(isoZ*obj_control.mapWidth),isoY+1]
+                i.h = h
+                i.facing = 1
+                wall[2] = i
+                obj_control.map[isoX+(isoZ*obj_control.mapWidth),isoY+1].wall[0] = i
+            }
         }
-    }
-    
-    //Check East Wall
-    if isoX < obj_control.mapWidth-1
-    {
-        if obj_control.map[isoX+1+((isoZ+1)*obj_control.mapWidth),isoY].ground = true
+        
+        //Check East Wall
+        if isoX < obj_control.mapWidth-1
         {
-            i = instance_create(x+10,y-6,obj_thinwall)
-            i.owner = id
-            i.h = h
-            i.facing = -1
-            wall[1] = i
-            obj_control.map[isoX+1+(isoZ*obj_control.mapWidth),isoY].wall[3] = i
+            if obj_control.map[isoX+1+((isoZ+1)*obj_control.mapWidth),isoY].ground = true
+            {
+                i = instance_create(x+10,y+4,obj_thinwall)
+                i.owner = obj_control.map[isoX+1+(isoZ*obj_control.mapWidth),isoY]
+                i.h = h
+                i.facing = -1
+                wall[1] = i
+                obj_control.map[isoX+1+(isoZ*obj_control.mapWidth),isoY].wall[3] = i
+            }
         }
-    }
     }
 }

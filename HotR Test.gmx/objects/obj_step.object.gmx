@@ -66,10 +66,11 @@ alarm[0] = 2
     isoX = owner.isoX
     isoY = owner.isoY
     isoZ = owner.isoZ
+    
     with(owner)
     {
         h += 15
-        depthCheck(10)
+        depthCheck(0)
         if occupant != noone
         {
             occupant.h += 15

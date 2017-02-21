@@ -41,7 +41,6 @@
         draw_sprite_ext(sprite_index,image_index,x,y-h+(global.zLevel*30),facing,1,0,c_black,1)
     }
 }
-
 </string>
           </argument>
         </arguments>

@@ -62,9 +62,7 @@ alarm[0] = 2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if instance_exists(owner)
-{
-    isoX = owner.isoX
+            <string>    isoX = owner.isoX
     isoY = owner.isoY
     isoZ = owner.isoZ
     
@@ -76,7 +74,6 @@ alarm[0] = 2
     image_xscale = facing
     
     depth = owner.depth-7
-}
 </string>
           </argument>
         </arguments>
@@ -99,8 +96,7 @@ alarm[0] = 2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-draw_sprite_ext(sprite_index,image_index,x,y+(global.zLevel*30)-h,facing,1,0,c_white,1)
+            <string>draw_sprite_ext(sprite_index,image_index,x,y+(global.zLevel*30)-h,facing,1,0,c_white,1)
 </string>
           </argument>
         </arguments>

@@ -222,6 +222,7 @@
       <sprite>sprites\spr_wall</sprite>
       <sprite>sprites\spr_step</sprite>
       <sprite>sprites\spr_tile</sprite>
+      <sprite>sprites\spr_mudTile</sprite>
       <sprite>sprites\spr_dirtStep</sprite>
       <sprite>sprites\spr_dirtWall</sprite>
     </sprites>
