@@ -205,6 +205,28 @@ if target.missChance != 0 or backstab = true
         obj_control.tooltipLength += 1    
     }
 }
+#define heightFel
+//advantageFel(name,bonus,false,false,false,tooltip)
+//Bonus Damage to helpless foes
+
+//Additional Conditioners
+if target.h < h
+{
+    if argument5 = false    //On Proc
+    {
+        p += argument1*s    
+    }
+    else                    //On Tooltip
+    {
+        p += argument1*s
+        
+        obj_control.tooltipColour[obj_control.tooltipLength] = green
+        obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)+' '+string_format(argument1*s,2,1)
+        obj_control.tooltipLength += 1       
+    }
+}
+
+
 #define northMoraleGain
 //northMoraleGain(name,bonus,false,false,false,tooltip)
 //Bonus morale on attack

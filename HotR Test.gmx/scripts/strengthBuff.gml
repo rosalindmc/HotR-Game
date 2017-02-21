@@ -3,7 +3,7 @@ switch(argument0)
 case 0:     //Stats
 icon = ico_strengthBuff
 upkp = 60.0
-name = 'Strength '+string(potency)
+name = 'Strength'
 type = 'Focus'
 buff = true
 tooltip = '+'+string(potency*.1)+' POW, +'+string(potency)+' Force Resistance and +'+string(potency*.25)+' Block Strength'
@@ -22,7 +22,7 @@ break
 case 3:     //Stacking
 potency = max(potency,ipot)
 duration = max(duration,idur)
-name = 'Strength '+string(potency)
+name = 'Strength'
 tooltip = '+'+string(potency*.1)+' POW, +'+string(potency)+' Force Resistance and +'+string(potency*.25)+' Block Strength'
 break
 }

@@ -48,7 +48,7 @@ with(obj_character)
                         if other.team != occupant.team
                         {
                             //Suppress
-                            suppress(occupant,1.0/(1+threatResist))                                              
+                            suppress(occupant,1.0/(1+occupant.threatResist))                                              
                         }
                     }
                 }

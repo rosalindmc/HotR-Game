@@ -168,6 +168,19 @@ skill = mSkill
 pen = wepPen[atkHand]
 typeName = wepType[atkHand]
 
+//Height Advantage
+if h > target.h
+{
+    skill += 1
+    p*= 1.1
+}
+
+if h < target.h
+{
+    skill -= 1
+    p*= .9
+}
+
 #define rDamage
 //Find Attack Speed
 s = 1+(3-(dualWield*.5))/((wepRSpeed[atkHand]))

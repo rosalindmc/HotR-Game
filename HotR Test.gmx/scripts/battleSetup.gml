@@ -27,7 +27,7 @@ repeat(ds_list_size(attacker.party))
     ii.isoZ = floor(obj_control.map[i,0].heightMap/30)
     ii.cFacing = 180
     ii.facing = 180
-    ii.isoTile = obj_control.map[i,0]
+    ii.isoTile = obj_control.map[i+((ii.isoZ+1)*obj_control.mapWidth),0]
     ii.x = obj_control.map[i,0].x
     ii.y = obj_control.map[i,0].y
     obj_control.map[i,0].occupant = ii
@@ -53,7 +53,7 @@ repeat(ds_list_size(defender.party))
     ii.isoX = i
     ii.isoY = obj_control.mapWidth-1
     ii.isoZ = floor(obj_control.map[i,0].heightMap/30)
-    ii.isoTile = obj_control.map[i,obj_control.mapWidth-1]
+    ii.isoTile = obj_control.map[i+((ii.isoZ+1)*obj_control.mapWidth),obj_control.mapWidth-1]
     ii.x = obj_control.map[i,obj_control.mapWidth-1].x
     ii.y = obj_control.map[i,obj_control.mapWidth-1].y
     obj_control.map[i,obj_control.mapWidth-1].occupant = ii

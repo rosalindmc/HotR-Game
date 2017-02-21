@@ -96,14 +96,20 @@ break
 switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
-
+onHit[onHitSize,0] = heightFel
+onHit[onHitSize,1] = 'Height Advantage'
+onHit[onHitSize,2] = .7
+onHit[onHitSize,3] = false
+onHit[onHitSize,4] = false
+onHit[onHitSize,5] = false
+onHitSize += 1
 break
 
 case 1:     //Tooltip and icon
 sprite_index = ico_subtlety
 image_index = 1
 name = 'Height Advantage'
-tooltip = 'Increased damage to foes on a lower elevation'
+tooltip = '+.7 POW against foes at a lower elevation'
 branch = treeInsight
 break
 

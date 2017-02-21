@@ -104,7 +104,12 @@ else if adjacent.isoZ != current.isoZ
 else
 {costMod = 1}
 
+//Height Check      h0 tile h10 stairs h15 step h20 stairs+
+if adjacent.h > current.h+5
+{costMod *= 1+((adjacent.h-current.h-5)*.1)}
+
 return(costMod)
+
 #define adjacency
 //Clear old info to Reupdate
 ds_list_clear(walk)

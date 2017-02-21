@@ -50,7 +50,7 @@ global.nextChar = noone
 actNum = 0 //Variable for number of actions
 
 //Other variables
-global.zViewToggle = false
+global.zViewToggle = true
 
 //Create Combat HUD
 i = instance_create(0,view_hview-120,obj_charInfo)
