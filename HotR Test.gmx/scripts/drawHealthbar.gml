@@ -3,7 +3,7 @@
 
 //Healthbar draw poistion
 var tx = round(x)
-var ty = round(y-h-height-10)+(global.zLevel*30)
+var ty = round(y-h-height-10)+(global.zLevel*15)
 var i = 0
 
 //Healthbar width and height (halved)

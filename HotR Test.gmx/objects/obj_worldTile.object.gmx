@@ -53,6 +53,7 @@ adjacent = ds_list_create()
 overlay = -4
 overlayImg = irandom(5)
 vis = true
+trimColour = c_white
 
 /*Vital
 movOverlay = 0

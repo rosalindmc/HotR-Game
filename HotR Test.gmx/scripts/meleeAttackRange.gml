@@ -13,10 +13,16 @@ with(obj_character)
         for(ii = 0; ii < ds_list_size(global.moveTile); ii ++)
         {
         current = ds_list_find_value(global.moveTile, ii)
-            if los(1.5,current,sightTile)
+            if los(1.5,current.sightTile,sightTile)
             {
-                isoTile.overlay = 3
-                isoTile.meleeAttack = true
+                for(iii = 0; iii < ds_list_size(isoTile.walk); iii ++)
+                {
+                    if ds_list_find_value(isoTile.walk, iii) = current
+                    {
+                        isoTile.overlay = 3
+                        isoTile.meleeAttack = true
+                    }
+                }
             }
             i += 1
         }    
@@ -47,7 +53,7 @@ with(obj_character)
 {
     if team != actor.team
     {
-        if los(global.control.reach,current,isoTile)
+        if los(global.control.reach,current,sightTile)
         {
             isoTile.overlay = 3
             isoTile.meleeAttack = true

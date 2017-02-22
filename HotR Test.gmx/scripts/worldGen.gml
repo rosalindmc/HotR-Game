@@ -104,7 +104,7 @@ with(obj_worldTile)
     {
         sprite_index = spr_hgGrass
         overlay = spr_mountain
-        humidity += 10
+        humidity += 25
     }
     else if height > 10
     {
@@ -116,12 +116,12 @@ with(obj_worldTile)
     }
     else
     {
-        humidity += 50
+        humidity += 75
     }
 }
 
 #define humidityGen
-repeat(2)
+repeat(4)
 {
     with(obj_worldTile)
     {
@@ -171,15 +171,18 @@ with(obj_worldTile)
             if temprature > 0
             {
             sprite_index = spr_hgGrass
+            trimColour = green
             }
             else
             {
             sprite_index = spr_orangeGrass
+            trimColour = dkBrown
             }
         }
         else if humidity > 15 and height < 15
         {
             sprite_index = spr_swamp
+            trimColour = c_teal
         }
         else if humidity > 8
         {
@@ -187,32 +190,51 @@ with(obj_worldTile)
             {
             sprite_index = spr_hgGrass
             overlay = spr_forest
+            trimColour = green
             }
             else
             {
             sprite_index = spr_orangeGrass
             overlay = spr_forest
+            trimColour = dkBrown
             }
         }
-        else if humidity >= -50 //Temp Remove desert
+        else if humidity >= 1
         {
             if temprature > 0
             {
             sprite_index = spr_hgGrass
+            trimColour = green
             }
             else
             {
             sprite_index = spr_orangeGrass
+            trimColour = dkBrown
             }
         }
         else
         {
+            if temprature > 15
+            {
             sprite_index = spr_desert
+            trimColour = dkBrown
+            }
+            else if temprature > 0
+            {
+            sprite_index = spr_hgGrass
+            trimColour = green
+            }
+            else
+            {
+            sprite_index = spr_orangeGrass
+            trimColour = dkBrown
+            }
         }
     }
     else
     {
         sprite_index = spr_snow
+        trimColour = iceBlue
     }
     }
     humidity = max(humidity,0)

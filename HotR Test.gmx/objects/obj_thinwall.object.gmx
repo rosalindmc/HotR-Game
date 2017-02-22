@@ -73,7 +73,9 @@ alarm[0] = 2
     mask_index = m
     image_xscale = facing
     
-    depth = owner.depth-7
+    
+    owner.depth = -owner.y-(owner.h*.3)+(ceil(owner.h/15)*-10)+10
+    depth = owner.depth-3
 </string>
           </argument>
         </arguments>
@@ -96,7 +98,7 @@ alarm[0] = 2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_sprite_ext(sprite_index,image_index,x,y+(global.zLevel*30)-h,facing,1,0,c_white,1)
+            <string>draw_sprite_ext(sprite_index,image_index,x,y+(global.zLevel*15)-h,facing,1,0,c_white,1)
 </string>
           </argument>
         </arguments>

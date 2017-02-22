@@ -37,6 +37,7 @@ mapTimeOn = true
 global.timeDelay = 1
 global.target = -4
 global.expTotal = 0
+global.losCheckFrom = noone
 
 //Visuals
 image_speed = .3
@@ -50,6 +51,7 @@ actNum = 0 //Variable for number of actions
 
 //Other variables
 global.zViewToggle = true
+zViewAlpha = 0
 
 //Create Combat HUD
 i = instance_create(0,view_hview-120,obj_charInfo)
@@ -189,7 +191,7 @@ repeat(mapWidth)
 }
 
 //Adjacency After Map Build
-alarm[0] = 20
+alarm[0] = 10
 </string>
           </argument>
         </arguments>
@@ -245,6 +247,11 @@ with(obj_tile)
     //Clear Up Grid
     if ground = false
     {
+        sprite_index = spr_none
+    }
+
+    if ground = false and wall[0] = noone and wall[1] = noone and wall[2] = noone and wall[3] = noone
+    {
         instance_deactivate_object(id)
     }
 }
@@ -272,6 +279,8 @@ with(obj_tile)
             <kind>1</kind>
             <string>//Controls
 key_meleeToggle = keyboard_check(global.meleeToggle)
+
+zViewAlpha -= 1/global.fspd
 
 //Timer 
 if mapTimeOn = true and global.nextChar != noone and global.timeDelay = 0
@@ -381,6 +390,7 @@ if mouse_wheel_up() and global.zLevel &lt; mapDepth-1
 {
     cIsoZ = cIsoZ+1
     global.zLevel = cIsoZ
+    zViewAlpha = 3
     updateScrollVis()
 }
 
@@ -388,6 +398,7 @@ if mouse_wheel_down() and global.zLevel &gt; 0
 {
     cIsoZ = cIsoZ-1
     global.zLevel = cIsoZ
+    zViewAlpha = 3
     updateScrollVis()
 }
 
@@ -431,6 +442,9 @@ if global.control != noone
     {
         obj_camera.x = global.control.x
         obj_camera.y = global.control.y
+        cIsoZ = global.control.isoZ
+        global.zLevel = cIsoZ
+        zViewAlpha = 3
     }
 
     //Mouse Sprite
@@ -543,11 +557,45 @@ drawText(c_black,c_white,view_xview+view_wview-10,view_yview+60,mapTime)
 if global.timeDelay = 0 and global.nextChar.owner.player = true
 {   
     script_execute(actionScroll,2)
-}    
-    /*if cHover != noone
-    //{
-    //    losCheck(40,global.nextChar.owner.sightTile,cHover.sightTile)
-    //}
+}  
+
+if zViewAlpha &gt; 0
+{
+    draw_set_alpha(zViewAlpha)
+
+    draw_set_valign(fa_center)
+    draw_set_halign(fa_right)
+    draw_set_font(fnt_tiny)
+    drawText(c_black,c_white,view_xview+view_wview-25,view_yview+view_hview-30,'Z')
+    draw_set_halign(fa_left)
+    draw_set_font(fnt_main)
+    drawText(c_black,c_white,view_xview+view_wview-20,view_yview+view_hview-30,global.zLevel)
+    
+    draw_set_alpha(1)
+}
+     /* 
+if cHover != noone
+{
+    with(cHover)
+    {
+    drawText(c_black,c_white,x,y,ground)
+    }
+    drawText(c_black,c_white,x,y+20,cHover.wall[0])
+    drawText(c_black,c_white,x,y+40,cHover.wall[1])
+    drawText(c_black,c_white,x,y+60,cHover.wall[2])
+    drawText(c_black,c_white,x,y+80,cHover.wall[3])
+    
+    if global.losCheckFrom != noone
+    {
+        losCheck(40,global.losCheckFrom,cHover.sightTile)
+    }
+    
+    if mouse_check_button_pressed(mb_left)
+    {
+        global.losCheckFrom = cHover.sightTile
+    }
+}
+
 if cHover != noone
 {
     drawText(c_black,c_white,x,y,map[cHover.isoX,cHover.isoY].heightMap)

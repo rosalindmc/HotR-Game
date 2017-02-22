@@ -63,6 +63,13 @@ wall[1] = noone
 wall[2] = noone
 wall[3] = noone
 
+level[0] = spr_none
+level[1] = spr_none
+level[2] = spr_none
+level[3] = spr_none
+level[4] = spr_none
+trimColour = c_white
+
 //Visuals
 image_index = random(16)
 image_speed = 0
@@ -121,7 +128,10 @@ ds_list_destroy(walk)
 
 if isoZ &lt; obj_control.mapDepth-1
 {
-    sightTile = obj_control.map[isoX+(obj_control.mapWidth*(isoZ+1)),isoY]
+    if obj_control.map[isoX+(obj_control.mapWidth*(isoZ+1)),isoY].ground = false
+    {
+        sightTile = obj_control.map[isoX+(obj_control.mapWidth*(isoZ+1)),isoY]
+    }
 }
 
 //Temp Random Mud
@@ -132,11 +142,17 @@ if ground = true
         sprite_index = spr_mudTile
         cost = 1.5
     }
-}
-else
-{
-    //Clear Up Grid
-    instance_deactivate_object(id)
+    /* Replace with shrub script
+    if wall[0] = noone and isoY &gt; 0 and random(100) &lt; 10
+    {
+        i = instance_create(x+10,y-7,obj_thinwall)
+        i.owner = id
+        i.h = i.owner.h
+        i.facing = 1
+        wall[0] = i
+        obj_control.map[isoX+((isoZ)*obj_control.mapWidth),isoY-1].wall[2] = i
+    }
+    */
 }
 //adjacency()
 </string>
@@ -161,7 +177,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if isoZ &lt;= global.zLevel+1 or global.zViewToggle = true
+            <string>if isoZ &lt;= global.zLevel or global.zViewToggle = true
 {
     if vis != false and scrollVis != false
     {
@@ -171,6 +187,10 @@ else
             shader_set(shd_greyscale)
         }
         draw_sprite(sprite_index,image_index,x,y-h+(global.zLevel*15))
+        for(i=0;i&lt;5;i++)
+        {
+            draw_sprite_ext(level[i],i,x,y-h+(global.zLevel*15),1,1,0,trimColour,1)
+        }
         shader_reset()
         
         if  overlay != 0 || onPath &gt;= 4 //(global.zLevel = isoZ and overlay != 0)

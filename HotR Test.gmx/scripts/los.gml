@@ -56,8 +56,8 @@ var zDif = argument2.isoZ-argument1.isoZ
 var zCur = argument1.isoZ
 var i, ix, iy, tx, ty, isX, isY, isZ
 
-draw_line(argument1.x,argument1.y,argument1.x,argument1.y-10)
-draw_line(argument2.x,argument2.y,argument2.x,argument2.y-10)
+draw_line(argument1.x,argument1.y+(global.zLevel*15),argument1.x,argument1.y+(global.zLevel*15)-10)
+draw_line(argument2.x,argument2.y+(global.zLevel*15),argument2.x,argument2.y+(global.zLevel*15)-10)
 
 sight = true
 draw_set_colour(c_white)
@@ -82,7 +82,7 @@ if point_distance(0,0,argument2.x-argument1.x,(argument2.y-argument1.y)*2) < arg
             {
                 sight = false
                 draw_set_colour(c_red)
-                draw_line(tx-5,ty-5,tx+5,ty+5)
+                draw_line(tx-5,ty-5+(global.zLevel*15),tx+5,ty+5+(global.zLevel*15))
             }
         }
         
@@ -92,7 +92,7 @@ if point_distance(0,0,argument2.x-argument1.x,(argument2.y-argument1.y)*2) < arg
             draw_set_colour(c_red)
         }
           
-        draw_arrow(ix,iy-(zCur*15),tx,ty-(zCur*15),8)
+        draw_arrow(ix,iy+(global.zLevel*15)-(zCur*15),tx,ty+(global.zLevel*15)-(zCur*15),8)
         
         i += 1
         zCur += sign(zDif)

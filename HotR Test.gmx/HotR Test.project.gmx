@@ -252,6 +252,7 @@
       <sprite>sprites\spr_wall</sprite>
       <sprite>sprites\spr_step</sprite>
       <sprite>sprites\spr_tile</sprite>
+      <sprite>sprites\spr_tileBorder</sprite>
       <sprite>sprites\spr_mudTile</sprite>
       <sprite>sprites\spr_dirtStep</sprite>
       <sprite>sprites\spr_dirtWall</sprite>
@@ -689,9 +690,7 @@
     <objects name="Combat">
       <objects name="Core">
         <object>objects\obj_tile</object>
-        <object>objects\obj_wall</object>
         <object>objects\obj_thinwall</object>
-        <object>objects\obj_step</object>
         <object>objects\obj_projectile</object>
         <object>objects\obj_allVisible</object>
         <object>objects\obj_terrain</object>

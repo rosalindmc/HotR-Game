@@ -10,7 +10,7 @@ zspd -= (grav*metre)/global.fspd
 //Move forward 2 pixels at a time (no barrier is narrower)
 move += spd
 
-isoZ = floor(z/30)
+isoZ = floor(z/15)
 
 if isoZ < 0
 {

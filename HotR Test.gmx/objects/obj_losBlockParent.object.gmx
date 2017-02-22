@@ -41,6 +41,11 @@
         draw_sprite_ext(sprite_index,image_index,x,y-h+(global.zLevel*15),facing,1,0,c_black,1)
     }
 }
+/*
+if obj_control.cHover = owner
+{
+    draw_text(x,y-50,depth)
+}
 </string>
           </argument>
         </arguments>

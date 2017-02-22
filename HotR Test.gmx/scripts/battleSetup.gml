@@ -142,7 +142,14 @@ with(obj_tile)
                         i.facing = 1
                         i.owner.wall[0] = i
                         obj_control.map[isoX+((iZ)*obj_control.mapWidth),isoY-1].wall[2] = i
+                        instance_activate_object(i.owner)
                 }
+            }
+            
+            //Check North Level
+            if w < 0
+            {
+                level[0] = spr_tileBorder
             }
         }
         //Check West Wall
@@ -159,7 +166,14 @@ with(obj_tile)
                         i.facing = -1
                         i.owner.wall[3] = i
                         obj_control.map[isoX-1+((iZ)*obj_control.mapWidth),isoY].wall[1] = i
+                        instance_activate_object(i.owner)
                 }
+            }
+            
+            //Check West Level
+            if w < 0
+            {
+                level[3] = spr_tileBorder
             }
         }
         //Check South Wall
@@ -171,12 +185,19 @@ with(obj_tile)
                 for(iZ = isoZ; iZ < isoZ+w; iZ ++)
                 {
                     i = instance_create(x-10,y+4,obj_thinwall)
-                    i.owner = obj_control.map[isoX+((iZ)*obj_control.mapWidth),isoY]
+                    i.owner = obj_control.map[isoX+((iZ)*obj_control.mapWidth),isoY+1]
                     i.h = i.owner.h
                     i.facing = 1
                     wall[2] = i
                     obj_control.map[isoX+((iZ)*obj_control.mapWidth),isoY+1].wall[0] = i
+                    instance_activate_object(i.owner)
                 }
+            }
+            
+            //Check South Level
+            if w < 0
+            {
+                level[2] = spr_tileBorder
             }
         }
         
@@ -189,14 +210,33 @@ with(obj_tile)
                 for(iZ = isoZ; iZ < isoZ+w; iZ ++)
                 {
                     i = instance_create(x+10,y+4,obj_thinwall)
-                    i.owner = obj_control.map[isoX+((iZ)*obj_control.mapWidth),isoY]
+                    i.owner = obj_control.map[isoX+1+((iZ)*obj_control.mapWidth),isoY]
                     i.h = i.owner.h
                     i.facing = -1
                     i.owner.wall[1] = i
                     obj_control.map[isoX+1+((iZ)*obj_control.mapWidth),isoY].wall[3] = i
+                    instance_activate_object(i.owner)
                 }
             }
+            
+            //Check East Level
+            if w < 0
+            {
+                level[1] = spr_tileBorder
+            }
         }
+        
+        //Check North West Level
+        if isoY > 0 and isoX > 0
+        {
+            w = obj_control.map[isoX-1,isoY-1].heightMap-obj_control.map[isoX,isoY].heightMap
+            if w < 0
+            {
+                level[4] = spr_tileBorder
+            }
+        }
+        
+        trimColour = global.battlefield.tile.trimColour
     }
 }
 
@@ -225,4 +265,3 @@ repeat(3)
         }
     }
 }
-
