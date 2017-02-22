@@ -71,12 +71,13 @@ switch(argument0)
 #define checkRange
 //Check the range between two objects
 //checkRange(object, target)
+
 var ret = 0
 var i = 0
+var distance = sqrt(power(sqrt(power((argument1.x-argument0.x),2)+ power((argument1.y-argument0.y)*2,2)),2)+power(argument1.h-argument0.h,2))
 
 while (ret = 0){
-    if point_distance(0,0,argument1.x-argument0.x,(argument1.y-argument0.y)*2) > i * metre * 1.5
-    {
+    if distance > i * metre * 1.5{
         i++
     }
     else{
