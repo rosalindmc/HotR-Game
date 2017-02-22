@@ -108,6 +108,7 @@ switch(argument0)
         {
             //Move
             global.testSlot.delayAdd = (min(3.0,cHover.g)/(i.haste+i.movHaste))
+            suppressionPreview(false)
             initiativeSlotAnticipate()
         }
         //Ranged Attack Tooltip
@@ -115,6 +116,8 @@ switch(argument0)
         {
             attacker = i
             target = cHover.occupant
+            
+            timeReset()
             attackPreview(false)
             global.testSlot.delayAdd = i.s/(i.haste+i.atkHaste)
             initiativeSlotAnticipate()
@@ -124,6 +127,7 @@ switch(argument0)
         {   
             attacker = i
             target = cHover.occupant
+            suppressionPreview(true)
             attackPreview(true)
             
             if global.attackFromTile.occupant != i

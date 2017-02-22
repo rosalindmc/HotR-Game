@@ -1,3 +1,4 @@
+#define attackPreview
 //Handle Attack and Time Previews in an actions individuals script (c2:)
 ix = cHover.x+50
 iy = cHover.y-30
@@ -74,7 +75,12 @@ with(i)
     pMax = ceil(pMax)
         
     triggerOnWound(true)
+    
+    //Suppress
+    target.initSlot.delayAdd += max(0,((2.0/target.sResist))-(target.fSuppression+target.suppression))    
+    target.fSuppression += max(0,((2.0/target.sResist))-(target.fSuppression+target.suppression))    
 }
+
 
 if i.missChance > 0{extraTT += 1}
 if i.dge > 0 and i.backstab = false{extraTT += 1}
@@ -116,4 +122,78 @@ if tooltipLength != 0
         draw_text(ix+5,iy,tooltipText[ii])
         iy += 14  
     }
+}
+
+#define suppressionPreview
+timeReset()
+
+with(obj_character)
+{
+    i = 0
+    
+    if threat = true
+    {
+    
+    if id != global.nextChar.owner
+    {
+        t = isoTile
+    }
+    else
+    {
+        if argument0 = true
+        {
+            t = global.attackFromTile
+        }
+        else
+        {
+            t = obj_control.cHover
+        }
+    }
+    
+    if t = -4
+    {
+        t = isoTile
+    }
+    
+        repeat(ds_list_size(t.adjacent))
+        {
+            with(ds_list_find_value(t.adjacent,i))
+            {
+                if abs(angle_difference(other.cFacing, point_direction(other.isoTile.x,0,x,(y-other.isoTile.y)*2))) <= other.arc
+                {
+                    if occupant != noone
+                    {
+                        if other.team != occupant.team
+                        {
+                            o = occupant
+                            //Suppress
+                            o.initSlot.delayAdd += max(0,((1.0/o.sResist)/(1+o.threatResist))-(o.fSuppression+o.suppression))    
+                            o.fSuppression += max(0,((1.0/o.sResist)/(1+o.threatResist))-(o.fSuppression+o.suppression))                                        
+                        }
+                    }
+                    else if id = other.t
+                    {
+                        if other.team != global.nextChar.owner.team
+                        {
+                            o = global.nextChar.owner
+                            //Suppress
+                            o.initSlot.delayAdd += max(0,((1.0/o.sResist)/(1+o.threatResist))-(o.fSuppression+o.suppression))    
+                            o.fSuppression += max(0,((1.0/o.sResist)/(1+o.threatResist))-(o.fSuppression+o.suppression))                                       
+                        }
+                    }
+                }
+            }
+        }
+        i += 1
+    }
+}
+
+#define timeReset
+with(obj_character)
+{
+    fSuppression = 0
+}
+with(obj_initiativeSlot)
+{
+    delayAdd = 0
 }

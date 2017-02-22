@@ -47,13 +47,13 @@ weaponSprite[i] = iSpr
 threat = true
 
 //Skill
-onHit[onHitSize,0] = wepsklCripple
-onHit[onHitSize,1] = 'Cripple'
-onHit[onHitSize,2] = 10
-onHit[onHitSize,3] = 2
-onHit[onHitSize,4] = i
-onHit[onHitSize,5] = 15
-onHitSize += 1
+onWound[onWoundSize,0] = wepsklCripple
+onWound[onWoundSize,1] = 'Cripple'
+onWound[onWoundSize,2] = 10
+onWound[onWoundSize,3] = 2
+onWound[onWoundSize,4] = i
+onWound[onWoundSize,5] = 15
+onWoundSize += 1
 break
 }
 
@@ -103,13 +103,13 @@ weaponSprite[i] = iSpr
 threat = true
 
 //Skill
-onHit[onHitSize,0] = wepsklCripple
-onHit[onHitSize,1] = 'Cripple'
-onHit[onHitSize,2] = 10
-onHit[onHitSize,3] = 3
-onHit[onHitSize,4] = i
-onHit[onHitSize,5] = 15
-onHitSize += 1
+onWound[onWoundSize,0] = wepsklCripple
+onWound[onWoundSize,1] = 'Cripple'
+onWound[onWoundSize,2] = 10
+onWound[onWoundSize,3] = 3
+onWound[onWoundSize,4] = i
+onWound[onWoundSize,5] = 15
+onWoundSize += 1
 break
 }
 
@@ -160,12 +160,12 @@ greatWeapon = true
 threat = true
 
 //Skill
-onHit[onHitSize,0] = wepsklCripple
-onHit[onHitSize,1] = 'Cripple'
-onHit[onHitSize,2] = 10
-onHit[onHitSize,3] = 4
-onHit[onHitSize,4] = i
-onHit[onHitSize,5] = 15
-onHitSize += 1
+onWound[onWoundSize,0] = wepsklCripple
+onWound[onWoundSize,1] = 'Cripple'
+onWound[onWoundSize,2] = 10
+onWound[onWoundSize,3] = 4
+onWound[onWoundSize,4] = i
+onWound[onWoundSize,5] = 15
+onWoundSize += 1
 break
 }

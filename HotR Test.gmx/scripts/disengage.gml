@@ -45,6 +45,7 @@ switch(argument0)
         {
             //Move
             global.testSlot.delayAdd = (3.0/(i.haste+i.movHaste))
+            suppressionPreview(false)
             initiativeSlotAnticipate()
         }
     }

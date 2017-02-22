@@ -47,13 +47,13 @@ weaponSprite[i] = iSpr
 threat = true
 
 //Skill
-onHit[onHitSize,0] = wepsklRend
-onHit[onHitSize,1] = 'Rend'
-onHit[onHitSize,2] = 10
-onHit[onHitSize,3] = 1
-onHit[onHitSize,4] = i
-onHit[onHitSize,5] = 30
-onHitSize += 1
+onWound[onWoundSize,0] = wepsklRend
+onWound[onWoundSize,1] = 'Rend'
+onWound[onWoundSize,2] = 10
+onWound[onWoundSize,3] = 1
+onWound[onWoundSize,4] = i
+onWound[onWoundSize,5] = 30
+onWoundSize += 1
 break
 }
 

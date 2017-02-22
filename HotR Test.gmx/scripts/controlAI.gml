@@ -49,7 +49,7 @@ global.aggro = -1000
 
 with(obj_tile)
 {
-    if meleeAttack = true
+    if meleeAttack = true and instance_exists(occupant)
     {
         if random(1)+(occupant.bold*5)-occupant.initSlot.delay-((occupant.life/occupant.lifeMax)*3) > global.aggro
         {

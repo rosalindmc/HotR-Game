@@ -15,7 +15,7 @@ switch(argument0)
         {
             if team != i.team
             {
-                if los(40, i.isoTile, isoTile)
+                if los(2, i.isoTile, isoTile)
                 {
                     isoTile.rangedAttack = true
                     isoTile.overlay = 3
@@ -62,6 +62,8 @@ switch(argument0)
         {
             attacker = i
             target = cHover.occupant
+            
+            timeReset()
             attackPreview(false)
             global.testSlot.delayAdd = i.s/(i.haste+i.atkHaste)                
             initiativeSlotAnticipate()
@@ -71,6 +73,7 @@ switch(argument0)
         {   
             attacker = i
             target = cHover.occupant
+            suppressionPreview(true)
             attackPreview(true)
             global.testSlot.delayAdd = i.s/(i.haste+i.atkHaste)                
             initiativeSlotAnticipate()

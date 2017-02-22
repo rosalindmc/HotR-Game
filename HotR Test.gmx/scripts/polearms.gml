@@ -47,13 +47,13 @@ weaponSprite[i] = iSpr
 threat = true
 
 //Skill
-onHit[onHitSize,0] = wepsklImpale
-onHit[onHitSize,1] = 'Impale'
-onHit[onHitSize,2] = 10
-onHit[onHitSize,3] = 0
-onHit[onHitSize,4] = i
-onHit[onHitSize,5] = 10
-onHitSize += 1
+onWound[onWoundSize,0] = wepsklImpale
+onWound[onWoundSize,1] = 'Impale'
+onWound[onWoundSize,2] = 10
+onWound[onWoundSize,3] = 0
+onWound[onWoundSize,4] = i
+onWound[onWoundSize,5] = 10
+onWoundSize += 1
 break
 }
 
@@ -103,13 +103,13 @@ weaponSprite[i] = iSpr
 threat = true
 
 //Skill
-onHit[onHitSize,0] = wepsklImpale
-onHit[onHitSize,1] = 'Impale'
-onHit[onHitSize,2] = 15
-onHit[onHitSize,3] = 0
-onHit[onHitSize,4] = i
-onHit[onHitSize,5] = 10
-onHitSize += 1
+onWound[onWoundSize,0] = wepsklImpale
+onWound[onWoundSize,1] = 'Impale'
+onWound[onWoundSize,2] = 15
+onWound[onWoundSize,3] = 0
+onWound[onWoundSize,4] = i
+onWound[onWoundSize,5] = 10
+onWoundSize += 1
 break
 }
 
@@ -161,13 +161,13 @@ reach = 3
 threat = true
 
 //Skill
-onHit[onHitSize,0] = wepsklImpale
-onHit[onHitSize,1] = 'Impale'
-onHit[onHitSize,2] = 20
-onHit[onHitSize,3] = 0
-onHit[onHitSize,4] = i
-onHit[onHitSize,5] = 10
-onHitSize += 1
+onWound[onWoundSize,0] = wepsklImpale
+onWound[onWoundSize,1] = 'Impale'
+onWound[onWoundSize,2] = 20
+onWound[onWoundSize,3] = 0
+onWound[onWoundSize,4] = i
+onWound[onWoundSize,5] = 10
+onWoundSize += 1
 break
 }
 
@@ -219,12 +219,12 @@ greatWeapon = true
 threat = true
 
 //Skill
-onHit[onHitSize,0] = wepsklCripple
-onHit[onHitSize,1] = 'Cripple'
-onHit[onHitSize,2] = 10
-onHit[onHitSize,3] = 4
-onHit[onHitSize,4] = i
-onHit[onHitSize,5] = 15
-onHitSize += 1
+onWound[onWoundSize,0] = wepsklCripple
+onWound[onWoundSize,1] = 'Cripple'
+onWound[onWoundSize,2] = 10
+onWound[onWoundSize,3] = 4
+onWound[onWoundSize,4] = i
+onWound[onWoundSize,5] = 15
+onWoundSize += 1
 break
 }
