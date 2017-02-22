@@ -37,7 +37,6 @@ mapTimeOn = true
 global.timeDelay = 1
 global.target = -4
 global.expTotal = 0
-global.controlObject = id
 
 //Visuals
 image_speed = .3
@@ -544,12 +543,22 @@ drawText(c_black,c_white,view_xview+view_wview-10,view_yview+60,mapTime)
 if global.timeDelay = 0 and global.nextChar.owner.player = true
 {   
     script_execute(actionScroll,2)
+}    
+    /*if cHover != noone
+    //{
+    //    losCheck(40,global.nextChar.owner.sightTile,cHover.sightTile)
+    //}
+if cHover != noone
+{
+    drawText(c_black,c_white,x,y,map[cHover.isoX,cHover.isoY].heightMap)
 }
+    
 //drawText(c_black,c_white,view_xview+view_wview-10,view_yview+100,global.battlefield.tile.humidity)
 //drawText(c_black,c_white,view_xview+view_wview-10,view_yview+140,global.battlefield.tile.height)
 
 
 //draw_set_colour(c_black)
+
 </string>
           </argument>
         </arguments>

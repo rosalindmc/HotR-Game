@@ -427,6 +427,7 @@
     <scripts name="Combat">
       <scripts name="Actors">
         <script>scripts\updateVision.gml</script>
+        <script>scripts\los.gml</script>
         <script>scripts\initializeActor.gml</script>
         <script>scripts\upkeep.gml</script>
         <script>scripts\drawActor.gml</script>
@@ -467,7 +468,6 @@
         <scripts name="Attack and Damage">
           <script>scripts\attackDamage.gml</script>
           <script>scripts\damageType.gml</script>
-          <script>scripts\los.gml</script>
           <script>scripts\meleeAttackRange.gml</script>
           <script>scripts\projectileMovement.gml</script>
           <script>scripts\fireProjectile.gml</script>

@@ -36,8 +36,8 @@ cost = 1
 
 //Details
 occupant = noone
-heightMap = random(70+(global.battlefield.tile.height))
-humidity = random(global.battlefield.tile.humidity*5)
+heightMap = random(global.battlefield.tile.height*6)-(global.battlefield.tile.height*3)+30
+humidity = random(global.battlefield.tile.humidity)
 
 //Pathing
 overlay = 0
@@ -55,6 +55,7 @@ threatened = false
 isoX = 0
 isoY = 0
 isoZ = 0
+sightTile = id
 
 //Walls (NESW)
 wall[0] = noone
@@ -118,10 +119,15 @@ ds_list_destroy(walk)
             <kind>1</kind>
             <string>depthCheck(10)
 
+if isoZ &lt; obj_control.mapDepth-1
+{
+    sightTile = obj_control.map[isoX+(obj_control.mapWidth*(isoZ+1)),isoY]
+}
+
 //Temp Random Mud
 if ground = true
 {
-    if humidity &gt; 3.5+random(1)
+    if humidity &gt; 25+random(10)
     {    
         sprite_index = spr_mudTile
         cost = 1.5

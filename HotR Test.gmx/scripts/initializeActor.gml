@@ -24,6 +24,7 @@ isoX = 1
 isoY = 1
 isoZ = 0
 isoTile = noone
+sightTile = noone
 
 //Move
 canMove = true

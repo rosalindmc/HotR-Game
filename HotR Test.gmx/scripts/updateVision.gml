@@ -14,21 +14,35 @@ with(obj_character)
     if team = 1
     {
         vis = true
-        global.id = isoTile
         
         with(obj_tile)
         {
             if vis != true
             {
                 if ground = true or occupant = true
-                    {
-                    if los(40,global.id,id)
+                {
+                    if los(40,other.sightTile,sightTile)
                     {
                         vis = true
                         if instance_exists(occupant)
                         {
                             occupant.vis = true
                         }
+                    }
+                }
+            }
+        }
+        
+        with(obj_character)
+        {
+            if team != other.team
+            {
+                if vis != true
+                {
+                    if los(40,other.sightTile,sightTile)
+                    {
+                        vis = true
+                        isoTile.vis = true
                     }
                 }
             }

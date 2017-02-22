@@ -9,7 +9,7 @@ global.battlefield = argument2
 instance_deactivate_object(obj_overworldParent)
 room_height = 1200
 room_width = 2200
-instance_create(0,0,obj_control)
+global.controlObject = instance_create(0,0,obj_control)
 
 //Temporary Map Gen
 combatHillsGen()
@@ -26,10 +26,11 @@ repeat(ds_list_size(attacker.party))
     ii = instance_create((room_width/2)+(i*20)-(i*20),10+(i*10)+(i*10),obj_character)
     ii.isoX = i
     ii.isoY = 0
-    ii.isoZ = floor(obj_control.map[i,0].heightMap/15)
+    ii.isoZ = obj_control.map[i,0].heightMap
     ii.cFacing = 180
     ii.facing = 180
     ii.isoTile = obj_control.map[ii.isoX+((ii.isoZ)*obj_control.mapWidth),ii.isoY]
+    ii.sightTile = obj_control.map[ii.isoX+((ii.isoZ+1)*obj_control.mapWidth),ii.isoY]
     ii.x = ii.isoTile.x
     ii.y = ii.isoTile.y
     ii.h = ii.isoTile.h
@@ -55,8 +56,9 @@ repeat(ds_list_size(defender.party))
     ii = instance_create((room_width/2)+(i*20)-(i*20),10+(i*10)+(i*10),obj_character)
     ii.isoX = i
     ii.isoY = obj_control.mapWidth-1
-    ii.isoZ = floor(obj_control.map[i,ii.isoY].heightMap/15)
+    ii.isoZ = obj_control.map[i,ii.isoY].heightMap
     ii.isoTile = obj_control.map[ii.isoX+((ii.isoZ)*obj_control.mapWidth),ii.isoY]
+    ii.sightTile = obj_control.map[ii.isoX+((ii.isoZ+1)*obj_control.mapWidth),ii.isoY]
     ii.x = obj_control.map[i,obj_control.mapWidth-1].x
     ii.y = obj_control.map[i,obj_control.mapWidth-1].y
     ii.h = ii.isoTile.h
@@ -75,7 +77,7 @@ repeat(ds_list_size(defender.party))
 
 
 #define combatHillsGen
-repeat(2)
+repeat(3)
 {
     with(obj_tile)
     {
@@ -95,7 +97,7 @@ repeat(2)
                 }
             }
     
-        heightMap = heightMap/(ds_list_size(adjacent)+2)
+        heightMap = heightMap/(i+2)
         }
     }
 }
@@ -104,51 +106,21 @@ with(obj_tile)
 {
     if h = 0
     {
-    if heightMap >= 75
-    {
-        i = obj_control.map[isoX+((isoZ+5)*obj_control.mapWidth),isoY]
-        instance_activate_object(i)
-        i.alarm[0] = 2
-        i.sprite_index = sprite_index
-        i.ground = true
-        ground = false
-    }
-    else if heightMap >= 60
-    {
-        i = obj_control.map[isoX+((isoZ+4)*obj_control.mapWidth),isoY]
-        instance_activate_object(i)
-        i.alarm[0] = 2
-        i.sprite_index = sprite_index
-        i.ground = true
-        ground = false
-    }
-    else if heightMap >= 45
-    {
-        i = obj_control.map[isoX+((isoZ+3)*obj_control.mapWidth),isoY]
-        instance_activate_object(i)
-        i.alarm[0] = 2
-        i.sprite_index = sprite_index
-        i.ground = true
-        ground = false
-    }
-    else if heightMap >= 30
-    {
-        i = obj_control.map[isoX+((isoZ+2)*obj_control.mapWidth),isoY]
-        instance_activate_object(i)
-        i.alarm[0] = 2
-        i.sprite_index = sprite_index
-        i.ground = true
-        ground = false
-    }
-    else if heightMap >= 15
-    {
-        i = obj_control.map[isoX+((isoZ+1)*obj_control.mapWidth),isoY]
-        instance_activate_object(i)
-        i.alarm[0] = 2
-        i.sprite_index = sprite_index
-        i.ground = true
-        ground = false
-    }
+    heightMap = min(floor(heightMap/15),7)
+    
+        if heightMap >= 1
+        {
+            i = obj_control.map[isoX+((isoZ+heightMap)*obj_control.mapWidth),isoY]
+            instance_activate_object(i)
+            i.alarm[0] = 2
+            i.sprite_index = sprite_index
+            i.ground = true
+            ground = false
+        }
+        else
+        {
+            heightMap = 0
+        }
     }
 }
 
@@ -159,61 +131,77 @@ with(obj_tile)
         //Check North Wall
         if isoY > 0
         {
-            if obj_control.map[isoX+((isoZ+1)*obj_control.mapWidth),isoY-1].ground = true
+            w = obj_control.map[isoX,isoY-1].heightMap-obj_control.map[isoX,isoY].heightMap
+            if w > 0
             {
-                i = instance_create(x+10,y-7,obj_thinwall)
-                i.owner = id
-                i.h = h
-                i.facing = 1
-                wall[0] = i
-                obj_control.map[isoX+(isoZ*obj_control.mapWidth),isoY-1].wall[2] = i
+                for(iZ = isoZ; iZ < isoZ+w; iZ ++)
+                {
+                        i = instance_create(x+10,y-7,obj_thinwall)
+                        i.owner = obj_control.map[isoX+((iZ)*obj_control.mapWidth),isoY]
+                        i.h = i.owner.h
+                        i.facing = 1
+                        i.owner.wall[0] = i
+                        obj_control.map[isoX+((iZ)*obj_control.mapWidth),isoY-1].wall[2] = i
+                }
             }
         }
         //Check West Wall
         if isoX > 0
         {
-            if obj_control.map[isoX-1+((isoZ+1)*obj_control.mapWidth),isoY].ground = true
+            w = obj_control.map[isoX-1,isoY].heightMap-obj_control.map[isoX,isoY].heightMap
+            if w > 0
             {
-                i = instance_create(x-10,y-7,obj_thinwall)
-                i.owner = id
-                i.h = h
-                i.facing = -1
-                wall[3] = i
-                obj_control.map[isoX-1+(isoZ*obj_control.mapWidth),isoY].wall[1] = i
+                for(iZ = isoZ; iZ < isoZ+w; iZ ++)
+                {
+                        i = instance_create(x-10,y-7,obj_thinwall)
+                        i.owner = obj_control.map[isoX+((iZ)*obj_control.mapWidth),isoY]
+                        i.h = i.owner.h
+                        i.facing = -1
+                        i.owner.wall[3] = i
+                        obj_control.map[isoX-1+((iZ)*obj_control.mapWidth),isoY].wall[1] = i
+                }
             }
         }
         //Check South Wall
         if isoY < obj_control.mapHeight-1
         {
-            if obj_control.map[isoX+((isoZ+1)*obj_control.mapWidth),isoY+1].ground = true
+            w = obj_control.map[isoX,isoY+1].heightMap-obj_control.map[isoX,isoY].heightMap
+            if w > 0
             {
-                i = instance_create(x-10,y+4,obj_thinwall)
-                i.owner = obj_control.map[isoX+(isoZ*obj_control.mapWidth),isoY+1]
-                i.h = h
-                i.facing = 1
-                wall[2] = i
-                obj_control.map[isoX+(isoZ*obj_control.mapWidth),isoY+1].wall[0] = i
+                for(iZ = isoZ; iZ < isoZ+w; iZ ++)
+                {
+                    i = instance_create(x-10,y+4,obj_thinwall)
+                    i.owner = obj_control.map[isoX+((iZ)*obj_control.mapWidth),isoY]
+                    i.h = i.owner.h
+                    i.facing = 1
+                    wall[2] = i
+                    obj_control.map[isoX+((iZ)*obj_control.mapWidth),isoY+1].wall[0] = i
+                }
             }
         }
         
         //Check East Wall
         if isoX < obj_control.mapWidth-1
         {
-            if obj_control.map[isoX+1+((isoZ+1)*obj_control.mapWidth),isoY].ground = true
+            w = obj_control.map[isoX+1,isoY].heightMap-obj_control.map[isoX,isoY].heightMap
+            if w > 0
             {
-                i = instance_create(x+10,y+4,obj_thinwall)
-                i.owner = obj_control.map[isoX+1+(isoZ*obj_control.mapWidth),isoY]
-                i.h = h
-                i.facing = -1
-                wall[1] = i
-                obj_control.map[isoX+1+(isoZ*obj_control.mapWidth),isoY].wall[3] = i
+                for(iZ = isoZ; iZ < isoZ+w; iZ ++)
+                {
+                    i = instance_create(x+10,y+4,obj_thinwall)
+                    i.owner = obj_control.map[isoX+((iZ)*obj_control.mapWidth),isoY]
+                    i.h = i.owner.h
+                    i.facing = -1
+                    i.owner.wall[1] = i
+                    obj_control.map[isoX+1+((iZ)*obj_control.mapWidth),isoY].wall[3] = i
+                }
             }
         }
     }
 }
 
 #define combatMudGen
-repeat(2)
+repeat(3)
 {
     with(obj_tile)
     {
@@ -233,9 +221,8 @@ repeat(2)
                 }
             }
     
-        humidity = humidity/(ds_list_size(adjacent)+2)
+        humidity = humidity/(i+2)
         }
     }
 }
-
 

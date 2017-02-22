@@ -21,7 +21,7 @@ switch(argument0)
         {
             if team != i.team
             {
-                if los(40, i.isoTile, isoTile)
+                if los(40, i.sightTile, sightTile)
                 {
                     isoTile.rangedAttack = true
                     isoTile.overlay = 3
@@ -163,6 +163,7 @@ act.isoX = dest.isoX
 act.isoY = dest.isoY
 act.isoZ = dest.isoZ
 act.isoTile = dest
+act.sightTile = obj_control.map[act.isoX+(obj_control.mapWidth*(act.isoZ+1)),act.isoY]
 
 //Tell the new tile its occupant (Update for large)
 dest.occupant = act
