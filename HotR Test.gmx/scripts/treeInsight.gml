@@ -52,7 +52,7 @@ arc = 140
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_subtlety
+sprite_index = ico_vigiliance
 image_index = 1
 name = 'Vigiliance'
 tooltip = 'Larger front arc'
@@ -70,7 +70,7 @@ switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
 onHit[onHitSize,0] = advantageArmourPass
-onHit[onHitSize,1] = 'Armour Pass'
+onHit[onHitSize,1] = 'Pass Armour'
 onHit[onHitSize,2] = 50
 onHit[onHitSize,3] = 1
 onHit[onHitSize,4] = false
@@ -79,7 +79,7 @@ onHitSize += 1
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_subtlety
+sprite_index = ico_passArmour
 image_index = 1
 name = 'Pass Armour'
 tooltip = 'Flanking attacks have a chance to ignore armour'
@@ -106,7 +106,7 @@ onHitSize += 1
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_subtlety
+sprite_index = ico_heightAdvantage
 image_index = 1
 name = 'Height Advantage'
 tooltip = '+.7 POW against foes at a lower elevation'

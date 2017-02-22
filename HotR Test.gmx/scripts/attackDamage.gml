@@ -222,7 +222,7 @@ if bold = 1
     
     if player = true
     {
-        createNotification(string(o.firstName)+' lost Bold',ico_bold,0)
+        createNotification(string(o.firstName)+' lost Bold',ico_bold,1)
     }
 }
 

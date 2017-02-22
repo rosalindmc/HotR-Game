@@ -132,15 +132,26 @@
             <sprite>sprites\ico_momentum</sprite>
             <sprite>sprites\ico_lightningStrike</sprite>
           </sprites>
-          <sprite>sprites\ico_subterfuge</sprite>
-          <sprite>sprites\ico_insight</sprite>
-          <sprite>sprites\ico_subtlety</sprite>
-          <sprite>sprites\ico_frenzy</sprite>
-          <sprite>sprites\ico_discipline</sprite>
-          <sprite>sprites\ico_confidence</sprite>
-          <sprite>sprites\ico_daring</sprite>
-          <sprite>sprites\ico_leadership</sprite>
-          <sprite>sprites\ico_bravery</sprite>
+          <sprites name="cunning">
+            <sprite>sprites\ico_subterfuge</sprite>
+            <sprite>sprites\ico_insight</sprite>
+            <sprite>sprites\ico_subtlety</sprite>
+            <sprite>sprites\ico_vigiliance</sprite>
+            <sprite>sprites\ico_passArmour</sprite>
+            <sprite>sprites\ico_heightAdvantage</sprite>
+          </sprites>
+          <sprites name="will">
+            <sprite>sprites\ico_frenzy</sprite>
+            <sprite>sprites\ico_discipline</sprite>
+            <sprite>sprites\ico_blockTraining</sprite>
+            <sprite>sprites\ico_confidence</sprite>
+            <sprite>sprites\ico_shakeItOff</sprite>
+          </sprites>
+          <sprites name="fellowship">
+            <sprite>sprites\ico_daring</sprite>
+            <sprite>sprites\ico_leadership</sprite>
+            <sprite>sprites\ico_bravery</sprite>
+          </sprites>
         </sprites>
         <sprites name="Travel Talents">
           <sprite>sprites\ico_thievery</sprite>

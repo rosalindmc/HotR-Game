@@ -52,12 +52,15 @@ instance_destroy()
 break
 case 1:
 name = 'Winded'
+image_index = 1
 break
 case 2:
 name = 'Tired'
+image_index = 2
 break
 case 3:
 name = 'Exhausted'
+image_index = 3
 break
 }
 }

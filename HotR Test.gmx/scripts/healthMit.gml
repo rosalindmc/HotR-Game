@@ -121,12 +121,9 @@ if bold = 1
 //Additional Conditioners
 if argument5 = false    //On Proc
 {
-    if argument4 = true
+    if 1+irandom(99) <= argument2
     {
-        if 1+irandom(99) <= argument2
-        {
-            applyStatusEffect(argument1,id,argument3,argument4)
-        }
+        applyStatusEffect(argument1,id,argument3,argument4)
     }
 }
 else                    //On Tooltip
@@ -155,5 +152,41 @@ else                    //On Tooltip
 {
     obj_control.tooltipColour[obj_control.tooltipLength] = green
     obj_control.tooltipText[obj_control.tooltipLength] = string(floor(argument2))+'% '+string(argument0)
+    obj_control.tooltipLength += 1
+}
+#define cancelDebuff
+//cancelDebuff(name,procChance,potency,false,false,tooltip)
+//Reduce duration off all negative Status on the character
+
+if argument5 = false    //On Proc
+{
+    if 1+irandom(99) <= argument1
+    {
+        iii = false
+        
+        for(s = 0; s < ds_list_size(status); s++)
+        {
+            with(ds_list_find_value(status,s))
+            {
+                if buff = false and showDuration = true
+                {
+                    other.iii = true
+                    duration -= argument2
+                }
+            }
+        }
+        
+        if iii = true
+        {
+            ii = instance_create(x,y-h-height,obj_descriptor)
+            ii.text = argument0
+            ii.font = fnt_tinyText
+        }
+    }
+}
+else                    //On Tooltip
+{
+    obj_control.tooltipColour[obj_control.tooltipLength] = green
+    obj_control.tooltipText[obj_control.tooltipLength] = string(floor(argument1))+'% '+string(argument0)
     obj_control.tooltipLength += 1
 }

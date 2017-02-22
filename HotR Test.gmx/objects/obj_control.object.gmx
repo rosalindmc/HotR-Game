@@ -280,8 +280,18 @@ if mapTimeOn = true and global.nextChar != noone and global.timeDelay = 0
     global.newturn = false
 
     //Advance the Timer
+    mapTemp = floor(mapTime)
     ii = max(min(1/global.fspd,global.nextChar.delay),0)
     mapTime += ii
+    
+    //Run Upkeep
+    if mapTemp != floor(mapTime)
+    {
+        with(obj_character)
+        {
+            triggerOnUpkeep()
+        }
+    }
     
     //Reduce all intiative timers
     with(obj_initiativeSlot)

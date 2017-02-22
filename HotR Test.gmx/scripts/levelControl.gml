@@ -211,7 +211,7 @@ repeat(3)
     
     talentPrereq(branchBlockTraining,treeDiscipline)
     talentPrereq(branchConfidence,treeDiscipline)
-    //talentPrereq(branchShakeItOff,treeDiscipline)
+    talentPrereq(branchShakeItOff,treeDiscipline)
     
     talentPrereq(branchLeadByExample,treeLeadership)
     talentPrereq(branchUnity,treeLeadership)

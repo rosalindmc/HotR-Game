@@ -51,7 +51,7 @@ blockStr = floor(blockStr*1.50)
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_confidence
+sprite_index = ico_blockTraining
 image_index = 1
 name = 'Block Training'
 tooltip = '+1 Maximum Block, Block 50% more damage and 25% more frequently'
@@ -89,11 +89,17 @@ break
 switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
-
+onUpkeep[onUpkeepSize,0] = cancelDebuff
+onUpkeep[onUpkeepSize,1] = 'Shake it Off'
+onUpkeep[onUpkeepSize,2] = 20
+onUpkeep[onUpkeepSize,3] = 5
+onUpkeep[onUpkeepSize,4] = false
+onUpkeep[onUpkeepSize,5] = false
+onUpkeepSize += 1
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_confidence
+sprite_index = ico_shakeItOff
 image_index = 1
 name = 'Shake it Off'
 tooltip = '20% chance each second to reduce duration of debuffs applied to you by 5 seconds'
