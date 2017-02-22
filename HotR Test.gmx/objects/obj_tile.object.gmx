@@ -36,7 +36,8 @@ cost = 1
 
 //Details
 occupant = noone
-heightMap = random(165)
+heightMap = random(70+(global.battlefield.tile.height))
+humidity = random(global.battlefield.tile.humidity*5)
 
 //Pathing
 overlay = 0
@@ -117,10 +118,10 @@ ds_list_destroy(walk)
             <kind>1</kind>
             <string>depthCheck(10)
 
-//Temp Random Walling
+//Temp Random Mud
 if ground = true
 {
-    if irandom(100) &lt; 20
+    if humidity &gt; 3.5+random(1)
     {    
         sprite_index = spr_mudTile
         cost = 1.5
@@ -154,7 +155,7 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if isoZ &lt;= global.zLevel or global.zViewToggle = true
+            <string>if isoZ &lt;= global.zLevel+1 or global.zViewToggle = true
 {
     if vis != false and scrollVis != false
     {
@@ -163,12 +164,12 @@ else
         {
             shader_set(shd_greyscale)
         }
-        draw_sprite(sprite_index,image_index,x,y-h+(global.zLevel*30))
+        draw_sprite(sprite_index,image_index,x,y-h+(global.zLevel*15))
         shader_reset()
         
-        if (global.zLevel = isoZ and overlay != 0) || onPath &gt;= 4
+        if  overlay != 0 || onPath &gt;= 4 //(global.zLevel = isoZ and overlay != 0)
         {
-            draw_sprite(spr_tilePathing,max(overlay,onPath),x,y-h+(global.zLevel*30))
+            draw_sprite(spr_tilePathing,max(overlay,onPath),x,y-h+(global.zLevel*15))
         }
         //if zoneControl = true 
         //{
@@ -177,7 +178,7 @@ else
     }
     else
     {
-        draw_sprite_ext(sprite_index,image_index,x,y-h+(global.zLevel*30),1,1,0,c_black,1)
+        draw_sprite_ext(sprite_index,image_index,x,y-h+(global.zLevel*15),1,1,0,c_black,1)
     }
 }
 </string>

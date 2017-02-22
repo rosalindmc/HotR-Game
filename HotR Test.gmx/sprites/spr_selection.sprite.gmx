@@ -23,5 +23,6 @@
     <frame index="0">images\spr_selection_0.png</frame>
     <frame index="1">images\spr_selection_1.png</frame>
     <frame index="2">images\spr_selection_2.png</frame>
+    <frame index="3">images\spr_selection_3.png</frame>
   </frames>
 </sprite>

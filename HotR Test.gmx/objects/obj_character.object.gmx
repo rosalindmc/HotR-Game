@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>initializeActor()
 alarm[0] = 10
+image_speed = 10/global.fspd
 </string>
           </argument>
         </arguments>

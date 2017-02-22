@@ -4,6 +4,7 @@
 
 attacker = argument0
 defender = argument1
+global.battlefield = argument2
 
 instance_deactivate_object(obj_overworldParent)
 room_height = 1200
@@ -12,6 +13,7 @@ instance_create(0,0,obj_control)
 
 //Temporary Map Gen
 combatHillsGen()
+combatMudGen()
 
 //Temporary Party Making
 
@@ -24,7 +26,7 @@ repeat(ds_list_size(attacker.party))
     ii = instance_create((room_width/2)+(i*20)-(i*20),10+(i*10)+(i*10),obj_character)
     ii.isoX = i
     ii.isoY = 0
-    ii.isoZ = floor(obj_control.map[i,0].heightMap/30)
+    ii.isoZ = floor(obj_control.map[i,0].heightMap/15)
     ii.cFacing = 180
     ii.facing = 180
     ii.isoTile = obj_control.map[ii.isoX+((ii.isoZ)*obj_control.mapWidth),ii.isoY]
@@ -53,7 +55,7 @@ repeat(ds_list_size(defender.party))
     ii = instance_create((room_width/2)+(i*20)-(i*20),10+(i*10)+(i*10),obj_character)
     ii.isoX = i
     ii.isoY = obj_control.mapWidth-1
-    ii.isoZ = floor(obj_control.map[i,ii.isoY].heightMap/30)
+    ii.isoZ = floor(obj_control.map[i,ii.isoY].heightMap/15)
     ii.isoTile = obj_control.map[ii.isoX+((ii.isoZ)*obj_control.mapWidth),ii.isoY]
     ii.x = obj_control.map[i,obj_control.mapWidth-1].x
     ii.y = obj_control.map[i,obj_control.mapWidth-1].y
@@ -102,21 +104,35 @@ with(obj_tile)
 {
     if h = 0
     {
-    if heightMap >= 85
+    if heightMap >= 75
     {
-        i = obj_control.map[isoX+((isoZ+2)*obj_control.mapWidth),isoY]
+        i = obj_control.map[isoX+((isoZ+5)*obj_control.mapWidth),isoY]
         instance_activate_object(i)
         i.alarm[0] = 2
         i.sprite_index = sprite_index
-        i.ground = true    
-        
-        ii = instance_create(x,y,obj_step)
-        ii.owner = i
-        ii.h = i.h
+        i.ground = true
         ground = false
     }
     else if heightMap >= 60
     {
+        i = obj_control.map[isoX+((isoZ+4)*obj_control.mapWidth),isoY]
+        instance_activate_object(i)
+        i.alarm[0] = 2
+        i.sprite_index = sprite_index
+        i.ground = true
+        ground = false
+    }
+    else if heightMap >= 45
+    {
+        i = obj_control.map[isoX+((isoZ+3)*obj_control.mapWidth),isoY]
+        instance_activate_object(i)
+        i.alarm[0] = 2
+        i.sprite_index = sprite_index
+        i.ground = true
+        ground = false
+    }
+    else if heightMap >= 30
+    {
         i = obj_control.map[isoX+((isoZ+2)*obj_control.mapWidth),isoY]
         instance_activate_object(i)
         i.alarm[0] = 2
@@ -124,20 +140,7 @@ with(obj_tile)
         i.ground = true
         ground = false
     }
-    else if heightMap >= 55
-    {
-        i = obj_control.map[isoX+((isoZ+1)*obj_control.mapWidth),isoY]
-        instance_activate_object(i)
-        i.alarm[0] = 2
-        i.sprite_index = sprite_index
-        i.ground = true    
-    
-        ii = instance_create(x,y,obj_step)
-        ii.owner = i
-        ii.h = i.h
-        ground = false
-    }
-    else if heightMap >= 30
+    else if heightMap >= 15
     {
         i = obj_control.map[isoX+((isoZ+1)*obj_control.mapWidth),isoY]
         instance_activate_object(i)
@@ -145,12 +148,6 @@ with(obj_tile)
         i.sprite_index = sprite_index
         i.ground = true
         ground = false
-    }
-    else if heightMap >= 25
-    {
-        i = instance_create(x,y,obj_step)
-        i.owner = id
-        i.h = h
     }
     }
 }
@@ -214,3 +211,31 @@ with(obj_tile)
         }
     }
 }
+
+#define combatMudGen
+repeat(2)
+{
+    with(obj_tile)
+    {
+        if ground = true
+        {
+        i = 0
+        humidity *= 2
+        
+            repeat(ds_list_size(adjacent))
+            {
+                if ds_list_find_value(adjacent, i).ground = true
+                {
+                tile = ds_list_find_value(adjacent, i)
+                humidity += tile.humidity
+                
+                i += 1
+                }
+            }
+    
+        humidity = humidity/(ds_list_size(adjacent)+2)
+        }
+    }
+}
+
+

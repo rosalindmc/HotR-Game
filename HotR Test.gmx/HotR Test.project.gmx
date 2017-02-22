@@ -255,6 +255,7 @@
       <sprite>sprites\spr_mudTile</sprite>
       <sprite>sprites\spr_dirtStep</sprite>
       <sprite>sprites\spr_dirtWall</sprite>
+      <sprite>sprites\spr_dirtWallTall</sprite>
     </sprites>
     <sprites name="Characters">
       <sprite>sprites\spr_portrait</sprite>
@@ -297,6 +298,8 @@
       <sprite>sprites\spr_mouse</sprite>
       <sprite>sprites\spr_buttonMask</sprite>
       <sprite>sprites\spr_slider</sprite>
+      <sprite>sprites\spr_selectionDiamond</sprite>
+      <sprite>sprites\spr_enemyDiamond</sprite>
       <sprite>sprites\spr_selection</sprite>
       <sprite>sprites\spr_enemyselect</sprite>
       <sprite>sprites\spr_tilePathing</sprite>
@@ -698,6 +701,12 @@
           <object>objects\obj_losBlockZ2</object>
           <object>objects\obj_losBlockZ3</object>
           <object>objects\obj_losBlockZ4</object>
+          <object>objects\obj_losBlockZ5</object>
+          <object>objects\obj_losBlockZ6</object>
+          <object>objects\obj_losBlockZ7</object>
+          <object>objects\obj_losBlockZ8</object>
+          <object>objects\obj_losBlockZ9</object>
+          <object>objects\obj_losBlockZ10</object>
           <object>objects\obj_losBlockParent</object>
         </objects>
       </objects>
@@ -734,7 +743,7 @@
     <constant name="pale">make_color_rgb(245,218,184)</constant>
     <constant name="fair">make_color_rgb(249,205,152)</constant>
     <constant name="demonTan">make_color_rgb(255,159,102)</constant>
-    <constant name="demonPurp">make_color_rgb(198,178,204)</constant>
+    <constant name="demonPurp">make_color_rgb(179,195,205)</constant>
     <constant name="demonRed">make_color_rgb(170,71,71)</constant>
     <constant name="orcBrown">make_color_rgb(80,90,40)</constant>
     <constant name="orcGreen">make_color_rgb(77,110,56)</constant>

@@ -46,6 +46,20 @@ else
 }
 return(sight)
 
+
+#define losCheck
+//Line of Sight script
+//los(rng, origin, target)
+
+if losCheck(argument0,argument1,argument2) or losCheck(argument0,argument2,argument1)
+{
+    return true
+} 
+else
+{
+    return false
+}
+
 #define losHeight
 //returns the right parent for the inputted z level
 //losHeight(heighttofind)
@@ -67,7 +81,26 @@ switch(argument0)
     case 4:
     return(obj_losBlockZ4)
     break
+    case 5:
+    return(obj_losBlockZ5)
+    break
+    case 6:
+    return(obj_losBlockZ6)
+    break
+    case 7:
+    return(obj_losBlockZ7)
+    break
+    case 8:
+    return(obj_losBlockZ8)
+    break
+    case 9:
+    return(obj_losBlockZ9)
+    break
+    case 10:
+    return(obj_losBlockZ10)
+    break
 }
+
 #define checkRange
 //Check the range between two objects
 //checkRange(object, target)

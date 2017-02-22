@@ -173,7 +173,7 @@ shader_set(global.shader)
 twist(bodyTwist)
 
 hipsX = round(x)+(hipsThrust*hFacing)
-hipsY = round(y)-(hipsOffset*sX)-hipsBounce-h+(global.zLevel*30)
+hipsY = round(y)-(hipsOffset*sX)-hipsBounce-h+(global.zLevel*15)
 
 legX[1] = round(hipsX+lengthdir_x(legOffset[1]*hFacing*sX, hipsRot)+lengthdir_x(legAdjust[1]*sX, hipsRot-90))
 legY[1] = round(hipsY+lengthdir_y(legOffset[1]*hFacing*sX, hipsRot)+lengthdir_y(legAdjust[1]*sX, hipsRot-90))
@@ -197,10 +197,10 @@ shldrX[2] = round(bodyX+lengthdir_x(shldrOffset[2]*bodyHFacing*sX, bodyRot-180)+
 shldrY[2] = round(bodyY+lengthdir_y(shldrOffset[2]*bodyHFacing*sX, bodyRot-180)+lengthdir_y(shldrAdjust, bodyRot+90))
 
 handX[1] = round(x+lengthdir_x(handDist[1]*sX, (handDir[1])))
-handY[1] = round(y+lengthdir_y(handDist[1]*sX, (handDir[1]))-((hipsOffset+handHeight[1])*sX)-h)+(global.zLevel*30)
+handY[1] = round(y+lengthdir_y(handDist[1]*sX, (handDir[1]))-((hipsOffset+handHeight[1])*sX)-h)+(global.zLevel*15)
 
 handX[2] = round(x+lengthdir_x(handDist[2]*sX, (handDir[2])))
-handY[2] = round(y+lengthdir_y(handDist[2]*sX, (handDir[2]))-((hipsOffset+handHeight[2])*sX)-h)+(global.zLevel*30)
+handY[2] = round(y+lengthdir_y(handDist[2]*sX, (handDir[2]))-((hipsOffset+handHeight[2])*sX)-h)+(global.zLevel*15)
 
 //Correct Shoulder Rotation
 shldrSwap = 0

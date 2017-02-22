@@ -47,8 +47,8 @@ with(obj_terrain)
     
     if x > view_xview-40
     {if x < view_xview+view_wview+40
-    {if y+h-(global.zLevel*30) > view_yview-20
-    {if y+h-(global.zLevel*30) < view_yview+view_hview+50
+    {if y+h-(global.zLevel*15) > view_yview-20
+    {if y+h-(global.zLevel*15) < view_yview+view_hview+50
     {scrollVis = true}}}}
 }
 
@@ -58,7 +58,7 @@ with(obj_character)
     
     if x > view_xview-40
     {if x < view_xview+view_wview+40
-    {if y+h-(global.zLevel*30) > view_yview-20
-    {if y+h-(global.zLevel*30) < view_yview+view_hview+50
+    {if y+h-(global.zLevel*15) > view_yview-20
+    {if y+h-(global.zLevel*15) < view_yview+view_hview+50
     {scrollVis = true}}}}
 }

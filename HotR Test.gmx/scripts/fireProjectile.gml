@@ -5,7 +5,7 @@
 i = obj_control
 
 ii = instance_create(x,y,argument0)
-ii.dir = point_direction(x,y,target.x,target.y)+((max(random(5/(rSkill*aim)),0))*choose(-1,1))
+ii.dir = point_direction(x,y,target.x,target.y)+((max(random(5/(max(rSkill,0.5)*aim)),0))*choose(-1,1))
 ii.owner = id
 ii.image_angle = ii.dir
 ii.z = h+(height/2)

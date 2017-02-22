@@ -79,7 +79,7 @@ actionScroll = action
 //Tile Creation
 mapHeight = 20
 mapWidth = 20
-mapDepth = 4
+mapDepth = 10
 
 runEvent = -4
 eventName = -4
@@ -95,11 +95,11 @@ repeat(mapWidth)
         repeat(mapDepth)
         {
             map[ix+(mapWidth*iz),iy] = instance_create((room_width/2)+(ix*20)-(iy*20),110+(ix*10)+(iy*10),obj_tile)
-            map[ix+(mapWidth*iz),iy].sprite_index = global.sprite
+            map[ix+(mapWidth*iz),iy].sprite_index = global.battlefield.tile.sprite_index
             map[ix+(mapWidth*iz),iy].isoX = ix
             map[ix+(mapWidth*iz),iy].isoY = iy
             map[ix+(mapWidth*iz),iy].isoZ = iz
-            map[ix+(mapWidth*iz),iy].h = iz*30
+            map[ix+(mapWidth*iz),iy].h = iz*15
             
             if iz != 0
             {
@@ -343,7 +343,7 @@ y = mouse_y
     
 cIsoX = floor(((x-100)/40)+((y-100)/20))-25
 cIsoY = floor(((y-100)/20)-((x-100)/40))+25
-cIsoZ = global.zLevel 
+cIsoZ = global.zLevel
 
 
 if cIsoX &gt;= 0 and cIsoX &lt; mapWidth and cIsoY &gt;= 0 and cIsoY &lt; mapHeight
@@ -545,7 +545,8 @@ if global.timeDelay = 0 and global.nextChar.owner.player = true
 {   
     script_execute(actionScroll,2)
 }
-//drawText(c_black,c_white,view_xview+view_wview-10,view_yview+100,global.zLevel)
+//drawText(c_black,c_white,view_xview+view_wview-10,view_yview+100,global.battlefield.tile.humidity)
+//drawText(c_black,c_white,view_xview+view_wview-10,view_yview+140,global.battlefield.tile.height)
 
 
 //draw_set_colour(c_black)
@@ -579,11 +580,12 @@ if cHover != noone
 {
     if global.mouseSprite = 0
     {
-        draw_sprite(spr_selection,image_index,cHover.x,cHover.y-cHover.h+(global.zLevel*30))  
+        draw_sprite(spr_selection,image_index,cHover.x,cHover.y-cHover.h+(global.zLevel*15))
+        //draw_sprite_ext(spr_selection,image_index,cHover.x,cHover.y-30-cHover.h+(global.zLevel*30),1,-1,0,c_white,1)  
     }
     else
     {
-        draw_sprite(spr_enemyselect,image_index,cHover.x,cHover.y-cHover.h+(global.zLevel*30))  
+        draw_sprite(spr_enemyselect,image_index,cHover.x,cHover.y-cHover.h+(global.zLevel*15))  
     }
 }
 

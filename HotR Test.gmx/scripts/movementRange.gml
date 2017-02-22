@@ -164,7 +164,10 @@ with(obj_character)
                 {
                     if abs(angle_difference(other.cFacing, point_direction(other.isoTile.x,0,x,(y-other.isoTile.y)*2))) <= other.arc
                     {
-                        zoneControl = true
+                        if los(1000,id,other.isoTile)
+                        {
+                            zoneControl = true
+                        }
                     }
                 }
                 i += 1
