@@ -63,7 +63,7 @@ onDownSize += 1
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_breaker
+sprite_index = ico_vigour
 image_index = 1
 name = 'Vigour'
 tooltip = 'Small chance to heal on attack.  Heal on downing a foe'
@@ -90,10 +90,10 @@ onBlockSize += 1
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_breaker
+sprite_index = ico_mightyBlock
 image_index = 1
 name = 'Mighty Block'
-tooltip = 'Blocking can DAZE the attacker'
+tooltip = 'Blocking DAZES the attacker'
 branch = treeToughness
 break
 
@@ -117,7 +117,7 @@ areHitSize += 1
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_breaker
+sprite_index = ico_thickSkin
 image_index = 1
 name = 'Thick Skin'
 tooltip = 'Suffer 30% less damage while below half life'
@@ -138,7 +138,7 @@ lifeRegen *= 1.5
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_breaker
+sprite_index = ico_mightyHealth
 image_index = 1
 name = 'Mighty Health'
 tooltip = 'Increase life regeneration by 50%'

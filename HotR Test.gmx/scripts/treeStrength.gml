@@ -73,7 +73,7 @@ crunch = true
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_breaker
+sprite_index = ico_crunch
 image_index = 1
 name = 'Crunch'
 tooltip = 'MIGHTY attacks inflict +.1 POW to lower Might characters for each point of Might difference'
@@ -100,7 +100,7 @@ onHitSize += 1
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_breaker
+sprite_index = ico_smash
 image_index = 1
 name = 'Smash'
 tooltip = 'Attacks inflict +.4 POW to high health foes (70%+)'
@@ -127,7 +127,7 @@ onDownSize += 1
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_breaker
+sprite_index = ico_readyForMore
 image_index = 1
 name = 'Ready for More'
 tooltip = 'Gain STRENGTH 2 on downing a foe'

@@ -79,7 +79,7 @@ onHitSize += 1
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_evasion
+sprite_index = ico_lightningStrike
 image_index = 1
 name = 'Lightning Strike'
 tooltip = 'Inflict increased % damage to foes with lower dodge chance'
@@ -101,7 +101,7 @@ movStaminaMult *= .20
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_evasion
+sprite_index = ico_marathon
 image_index = 1
 name = 'Marathon'
 tooltip = '10% increased movement Rate. Reduce all stamina costs from moving by 80%'
@@ -128,7 +128,7 @@ onMoveSize += 1
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_evasion
+sprite_index = ico_hardTarget
 image_index = 1
 name = 'Hard Target'
 tooltip = 'Gain +10% dodge chance when moving'
@@ -155,7 +155,7 @@ onHitSize += 1
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_evasion
+sprite_index = ico_momentum
 image_index = 1
 name = 'Momentum'
 tooltip = 'Gain +1.0 POW to melee attacks while BOLD'

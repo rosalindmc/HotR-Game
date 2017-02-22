@@ -107,12 +107,31 @@
       </sprites>
       <sprites name="Talent Icons">
         <sprites name="Combat Talents">
-          <sprite>sprites\ico_strength</sprite>
-          <sprite>sprites\ico_toughness</sprite>
-          <sprite>sprites\ico_breaker</sprite>
-          <sprite>sprites\ico_martial</sprite>
-          <sprite>sprites\ico_mobility</sprite>
-          <sprite>sprites\ico_evasion</sprite>
+          <sprites name="might">
+            <sprite>sprites\ico_strength</sprite>
+            <sprite>sprites\ico_breaker</sprite>
+            <sprite>sprites\ico_crunch</sprite>
+            <sprite>sprites\ico_smash</sprite>
+            <sprite>sprites\ico_readyForMore</sprite>
+            <sprite>sprites\ico_toughness</sprite>
+            <sprite>sprites\ico_vigour</sprite>
+            <sprite>sprites\ico_mightyBlock</sprite>
+            <sprite>sprites\ico_thickSkin</sprite>
+            <sprite>sprites\ico_mightyHealth</sprite>
+          </sprites>
+          <sprites name="grace">
+            <sprite>sprites\ico_martial</sprite>
+            <sprite>sprites\ico_mobility</sprite>
+            <sprite>sprites\ico_evasion</sprite>
+            <sprite>sprites\ico_accuracy</sprite>
+            <sprite>sprites\ico_combatDrill</sprite>
+            <sprite>sprites\ico_slayer</sprite>
+            <sprite>sprites\ico_opportunist</sprite>
+            <sprite>sprites\ico_hardTarget</sprite>
+            <sprite>sprites\ico_marathon</sprite>
+            <sprite>sprites\ico_momentum</sprite>
+            <sprite>sprites\ico_lightningStrike</sprite>
+          </sprites>
           <sprite>sprites\ico_subterfuge</sprite>
           <sprite>sprites\ico_insight</sprite>
           <sprite>sprites\ico_subtlety</sprite>

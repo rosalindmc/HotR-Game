@@ -4,6 +4,7 @@
 
 backstab = false
 mle = argument0
+global.attackFromTile = isoTile
 
 if mle = true
 {
@@ -169,13 +170,13 @@ pen = wepPen[atkHand]
 typeName = wepType[atkHand]
 
 //Height Advantage
-if h > target.h
+if global.attackFromTile.h > target.h
 {
     skill += 1
     p*= 1.1
 }
 
-if h < target.h
+if global.attackFromTile.h < target.h
 {
     skill -= 1
     p*= .9

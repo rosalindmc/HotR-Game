@@ -49,7 +49,7 @@ aim += 1
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_evasion
+sprite_index = ico_accuracy
 image_index = 1
 name = 'Accuracy'
 tooltip = 'Increase range weapon accuracy sharply'
@@ -71,7 +71,7 @@ atkHaste += .10
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_evasion
+sprite_index = ico_combatDrill
 image_index = 1
 name = 'Combat Drill'
 tooltip = '10% Increased attack rate and 20% reduced stamina cost on all attacks'
@@ -98,7 +98,7 @@ onHitSize += 1
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_evasion
+sprite_index = ico_slayer
 image_index = 1
 name = 'Slayer'
 tooltip = '+.7 POW against foes with less than 50% life'
@@ -125,7 +125,7 @@ onHitSize += 1
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_evasion
+sprite_index = ico_opportunist
 image_index = 1
 name = 'Opportunist'
 tooltip = '+.7 POW against foes who are STUNNED, IMMOBILIZED, SLOWED, DAZED or BLINDED'
