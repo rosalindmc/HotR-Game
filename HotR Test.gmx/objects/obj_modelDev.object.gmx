@@ -33,8 +33,6 @@ humanoid(0)
 //Game Attributes
 initializeCharStats()
 
-global.shader = shd_day 
-
 mode = 1
 
 //Grid

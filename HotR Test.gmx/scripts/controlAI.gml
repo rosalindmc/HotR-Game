@@ -64,7 +64,7 @@ if global.target != -4
     for(ii = 0; ii < ds_list_size(global.moveTile); ii ++)
     {
         current = ds_list_find_value(global.moveTile, ii)
-        if los(global.control.reach,current.sightTile,global.target.sightTile)
+        if los(global.control.reach,current,global.target)
         {
             global.attackFromTile = current
         }
@@ -110,8 +110,6 @@ var i = global.control
 var closest = 10000
 global.target = i.isoTile
 
-
-//Replace with A* later
 
 if i.movement >= 1
 {

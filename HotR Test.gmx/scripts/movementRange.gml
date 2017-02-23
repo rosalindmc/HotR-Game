@@ -95,17 +95,17 @@ var current = argument1
 var costMod
 
 //Diagonal Check
-if adjacent.isoZ != current.isoZ && adjacent.isoX != current.isoX && adjacent.isoY != current.isoY
-{costMod = 3}
+if adjacent.isoX != current.isoX && adjacent.isoY != current.isoY
+{costMod = 1.5}
 else if adjacent.isoZ != current.isoZ && (adjacent.isoX != current.isoX || adjacent.isoY != current.isoY)
 {costMod = 2}
-else if adjacent.isoX != current.isoX && adjacent.isoY != current.isoY
+else if adjacent.isoZ != current.isoZ
 {costMod = 1.5}
 else
 {costMod = 1}
 
-//Height Check
-if adjacent.h > current.h+7.5
+//Height Check      h0 tile h10 stairs h15 step h20 stairs+
+if adjacent.h > current.h+5
 {costMod *= 1+((adjacent.h-current.h-5)*.1)}
 
 return(costMod)

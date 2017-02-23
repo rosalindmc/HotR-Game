@@ -143,6 +143,7 @@
           <sprites name="will">
             <sprite>sprites\ico_frenzy</sprite>
             <sprite>sprites\ico_discipline</sprite>
+            <sprite>sprites\ico_blockTraining</sprite>
             <sprite>sprites\ico_confidence</sprite>
             <sprite>sprites\ico_shakeItOff</sprite>
           </sprites>

@@ -82,7 +82,7 @@ case 1:     //Tooltip and icon
 sprite_index = ico_lightningStrike
 image_index = 1
 name = 'Lightning Strike'
-tooltip = 'Inflict increased % melee damage to foes with lower dodge chance'
+tooltip = 'Inflict increased % damage to foes with lower dodge chance'
 branch = treeMobility
 break
 

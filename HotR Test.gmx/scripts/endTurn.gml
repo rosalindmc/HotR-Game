@@ -19,7 +19,6 @@ with(obj_control)
     
     global.control.controlled = false
     global.control.suppression = 0
-    global.control.stm = max(0,global.control.stm)
     global.control = noone
     global.timeDelay = 1
     global.nextChar.delay += argument0
