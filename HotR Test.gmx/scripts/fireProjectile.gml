@@ -4,6 +4,9 @@
 
 i = obj_control
 
+//Temp Facing
+i.facing = round(point_direction(x,y,target.x,target.y)/30)*30
+
 ii = instance_create(x,y,argument0)
 ii.dir = point_direction(x,y,target.x,target.y)+((max(random(5/(max(rSkill,0.5)*aim)),0))*choose(-1,1))
 ii.owner = id

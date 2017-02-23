@@ -416,4 +416,5 @@ else
 {
     //Exhausted   
     applyStatusEffect(fatigue,id,3,120)
+    stm = max(0,stm)
 }

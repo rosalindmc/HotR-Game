@@ -105,6 +105,7 @@ repeat(mapWidth)
             if iz != 0
             {
                 map[ix+(mapWidth*iz),iy].ground = false 
+                instance_deactivate_object(map[ix+(mapWidth*iz),iy])
             }            
             iz += 1
         }   
@@ -590,10 +591,10 @@ if zViewAlpha &gt; 0
     draw_set_valign(fa_center)
     draw_set_halign(fa_right)
     draw_set_font(fnt_tiny)
-    drawText(c_black,c_white,view_xview+view_wview-25,view_yview+view_hview-30,'Z')
+    drawText(c_black,c_white,view_xview+view_wview-125,view_yview+view_hview-80,'Z')
     draw_set_halign(fa_left)
     draw_set_font(fnt_main)
-    drawText(c_black,c_white,view_xview+view_wview-20,view_yview+view_hview-30,global.zLevel)
+    drawText(c_black,c_white,view_xview+view_wview-120,view_yview+view_hview-80,global.zLevel)
     
     draw_set_alpha(1)
 }

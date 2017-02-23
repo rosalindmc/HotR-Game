@@ -119,7 +119,7 @@ if target.missChance != 0 or target.movement = 0
 #define lightningStrike
 //Additional Conditioners
 
-if dodge > dge
+if dodge > dge and mle = true
 {
     if argument5 = false    //On Proc
     {
