@@ -119,15 +119,15 @@ if target.missChance != 0 or target.movement = 0
 #define lightningStrike
 //Additional Conditioners
 
-if dodge > dge
+if dodge > dge and mle = true
 {
     if argument5 = false    //On Proc
     {
-        p *= 1+((dodge-dge)*.01)
+        p += ((dodge-dge)*.03)*s
     }
     else                    //On Tooltip
     {
-        p *= 1+((dodge-dge)*.01)
+        p += ((dodge-dge)*.03)*s
          
         obj_control.tooltipColour[obj_control.tooltipLength] = green
         obj_control.tooltipText[obj_control.tooltipLength] = 'Lightning Strike '+string(floor(dodge-dge))+'%'

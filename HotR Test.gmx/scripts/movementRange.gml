@@ -95,11 +95,9 @@ var current = argument1
 var costMod
 
 //Diagonal Check
-if adjacent.isoX != current.isoX && adjacent.isoY != current.isoY
-{costMod = 1.5}
-else if adjacent.isoZ != current.isoZ && (adjacent.isoX != current.isoX || adjacent.isoY != current.isoY)
-{costMod = 2}
-else if adjacent.isoZ != current.isoZ
+if adjacent.isoZ != current.isoZ && adjacent.isoX != current.isoX && adjacent.isoY != current.isoY
+{costMod = 3}
+else if adjacent.isoX != current.isoX && adjacent.isoY != current.isoY
 {costMod = 1.5}
 else
 {costMod = 1}

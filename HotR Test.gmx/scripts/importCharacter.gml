@@ -414,6 +414,7 @@ else if stm >= stmMax*.50
 }
 else
 {
+    stm = max(stm,0)
     //Exhausted   
     applyStatusEffect(fatigue,id,3,120)
 }
