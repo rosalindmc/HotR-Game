@@ -163,6 +163,18 @@ repeat(mapWidth)
         //Down-South Adjacency
         if iy &lt; mapHeight-1 &amp;&amp; iz &gt; 0
         ds_list_add(tile.adjacent, map[ix+(mapWidth*(iz-1)),iy+1])
+        //Down-South-West Adjacency
+        if ix &gt; 0 &amp;&amp; iy &lt; mapHeight-1 &amp;&amp; iz &gt; 0
+        ds_list_add(tile.adjacent, map[ix-1+(mapWidth*(iz-1)),iy+1])
+        //Down-North-East Adjacency
+        if ix &lt; mapWidth-1 &amp;&amp; iy &gt; 0 &amp;&amp; iz &gt; 0
+        ds_list_add(tile.adjacent, map[ix+1+(mapWidth*(iz-1)),iy-1])
+        //Down-North-West Adjacency
+        if ix &gt; 0 &amp;&amp; iy &gt; 0 &amp;&amp; iz &gt; 0
+        ds_list_add(tile.adjacent, map[ix-1+(mapWidth*(iz-1)),iy-1])
+        //Down-South-East Adjacency
+        if ix &lt; mapWidth-1 &amp;&amp; iy &lt; mapHeight-1 &amp;&amp; iz &gt; 0
+        ds_list_add(tile.adjacent, map[ix+1+(mapWidth*(iz-1)),iy+1])
         //Down Adjacency
         if iz &gt; 0
         ds_list_add(tile.adjacent, map[ix+(mapWidth*(iz-1)),iy])
@@ -179,6 +191,18 @@ repeat(mapWidth)
         //Up-South Adjacency
         if iy &lt; mapHeight-1 &amp;&amp; iz &lt; mapDepth-1
         ds_list_add(tile.adjacent, map[ix+(mapWidth*(iz+1)),iy+1])
+        //Up-South-West Adjacency
+        if ix &gt; 0 &amp;&amp; iy &lt; mapHeight-1 &amp;&amp; iz &lt; mapDepth-1
+        ds_list_add(tile.adjacent, map[ix-1+(mapWidth*(iz+1)),iy+1])
+        //Up-North-East Adjacency
+        if ix &lt; mapWidth-1 &amp;&amp; iy &gt; 0 &amp;&amp; iz &lt; mapDepth-1
+        ds_list_add(tile.adjacent, map[ix+1+(mapWidth*(iz+1)),iy-1])
+        //Up-North-West Adjacency
+        if ix &gt; 0 &amp;&amp; iy &gt; 0 &amp;&amp; iz &lt; mapDepth-1
+        ds_list_add(tile.adjacent, map[ix-1+(mapWidth*(iz+1)),iy-1])
+        //Up-South-East Adjacency
+        if ix &lt; mapWidth-1 &amp;&amp; iy &lt; mapHeight-1 &amp;&amp; iz &lt; mapDepth-1
+        ds_list_add(tile.adjacent, map[ix+1+(mapWidth*(iz+1)),iy+1])
         //Up Adjacency
         if iz &lt; mapDepth-1
         ds_list_add(tile.adjacent, map[ix+(mapWidth*(iz+1)),iy])

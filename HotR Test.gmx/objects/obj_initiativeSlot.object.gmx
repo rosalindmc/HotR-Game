@@ -149,7 +149,9 @@ if vis != 0
         draw_set_font(fnt_tiny)
         draw_set_halign(fa_middle)
         draw_set_valign(fa_middle)
-        drawText(c_black,c_red,ix,iy+20,string_format(delay+delayAdd,2,1))    
+        drawText(c_black,c_red,ix,iy+20,string_format(delay+delayAdd,2,1))  
+        draw_set_font(fnt_tinyText)  
+        drawText(c_black,c_red,ix,iy-17,'+'+string_format(delayAdd,2,1))  
     }
     else if order != 0
     {

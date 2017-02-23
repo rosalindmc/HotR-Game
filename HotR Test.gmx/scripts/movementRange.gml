@@ -134,11 +134,7 @@ for(ii = 0; ii < ds_list_size(adjacent); ii++)
         //West Wall Check
         if (wall[3] = noone and i.wall[1] = noone)  or (i.isoX >= isoX) or (i.isoZ != isoZ)
         {
-        //Diagonal Check
-        if (i.isoX = isoX) or (i.isoY = isoY) or i.h = h
-        {
             ds_list_add(walk, i)
-        }
         }
         }
         }

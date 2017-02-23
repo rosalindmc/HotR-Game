@@ -9,7 +9,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
     {
         if 1+irandom(99) <= argument1+((skill-target.mSkill)*5)
         {
-            initSlot.delay -= argument2
+            initSlot.delay = max(initSlot.delay-argument2,0)
             
             ii = instance_create(x,y-h-height,obj_descriptor)
             ii.text = argument0

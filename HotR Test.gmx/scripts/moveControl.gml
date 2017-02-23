@@ -107,8 +107,8 @@ switch(argument0)
         if cHover.move and cHover.vis != false
         {
             //Move
-            global.testSlot.delayAdd = (min(3.0,cHover.g)/(i.haste+i.movHaste))
             suppressionPreview(false)
+            global.testSlot.delayAdd = (min(3.0,cHover.g)/(i.haste+i.movHaste))
             initiativeSlotAnticipate()
         }
         //Ranged Attack Tooltip
