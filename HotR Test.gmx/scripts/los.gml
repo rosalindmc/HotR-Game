@@ -151,13 +151,21 @@ switch(argument0)
 
 var ret = 0
 var i = 0
-if argument1 = obj_camera
-    return 1000
-else if argument0 = obj_camera
-    return 1000
-var distance = sqrt(power(sqrt(power((argument1.x-argument0.x),2) + power((argument1.y-argument0.y)*2,2)),2) + power(argument1.h-argument0.h,2))
+with (obj_camera){
+    if (argument1.id == id){
+        ret = 1000
+        }
+    else if (argument0.id == id){
+        ret = 1000
+        }
+}
+
+if (ret = 0){
+    var distance = sqrt(power(sqrt(power((argument1.x-argument0.x),2) + power((argument1.y-argument0.y)*2,2)),2) + power(argument1.h-argument0.h,2))
+}
 
 while (ret = 0){
+
     if distance > i * metre * 1.5{
         i++
     }
@@ -167,3 +175,4 @@ while (ret = 0){
 }
 
 return(ret)
+
