@@ -56,7 +56,6 @@ break
 
 case 4:
 //End Animation
-animStep[argument0] = 0
-animIndex[argument0] = animMeleeHold
+startAnimation(argument0,script_execute(wepAnimType[argument0],0))
 break
 }

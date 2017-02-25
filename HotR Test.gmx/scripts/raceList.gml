@@ -342,7 +342,7 @@ if irandom(4)+gender >= 5
 }
 
 raceHead = spr_elfHead
-skinTone = choose(fair,demonRed, demonPurp, demonTan)
+skinTone = choose(fair, beige, demonRed, demonPurp, demonTan)
 bodyImage = choose(0,1,1,2)
 size = min(choose(1,1,1,2,2,3,3)+(gender*2),4)
 

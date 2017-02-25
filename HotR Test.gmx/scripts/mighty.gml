@@ -210,7 +210,14 @@ if target.missChance != 0 or backstab = true
 //Bonus Damage to helpless foes
 
 //Additional Conditioners
-if target.h < global.attackFromTile.h
+var iii = global.attackFromTile
+
+if iii = noone
+{
+    iii = isoTile
+}
+
+if target.h < iii.h
 {
     if argument5 = false    //On Proc
     {

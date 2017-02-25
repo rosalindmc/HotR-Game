@@ -80,6 +80,7 @@ sX = 1
 status = ds_list_create()
 
 boldGlow()
+actorParticles()
 
 #define initializeCharStats
 //Initialize game stats for actors
@@ -251,3 +252,26 @@ part_type_blend(p1,1)
 part_type_life(p1,global.fspd*.05,global.fspd*.15)
 
 em1 = part_emitter_create(ps1)
+#define actorParticles
+ps2 = part_system_create()
+
+//Blood
+p2 = part_type_create()
+part_type_shape(p2,pt_shape_pixel)
+part_type_size(p2,1,1,0,0)
+part_type_scale(p2,1,1)
+part_type_color2(p2,c_red,dkRed)
+part_type_alpha2(p2,1,0)
+part_type_speed(p2,60/global.fspd,120/global.fspd,0,0)
+part_type_direction(p2,30,150,0,10)
+part_type_gravity(p2,gravity/global.fspd,270)
+part_type_orientation(p2,0,0,0,0,0)
+part_type_blend(p2,false)
+part_type_life(p2,global.fspd*.5,global.fspd*1)
+
+//Sparks
+
+
+
+
+em2 = part_emitter_create(ps2)

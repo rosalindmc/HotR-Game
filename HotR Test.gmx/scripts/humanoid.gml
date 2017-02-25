@@ -130,6 +130,7 @@ hipsX = 0
 hipsY = 0
 hipsRot = 0
 hipsBounce = 0
+hipsAdjust = 0
 hipsOffset = 12
 hipsThrust = 0
 
@@ -153,6 +154,7 @@ headRot = 0
 headOffset = 6
 headAdjust = 1
 headThrust = 0
+headFacing = 1
 
 //Animations
 bounce = 0
@@ -172,14 +174,14 @@ shader_set(global.shader)
 //Body Facing and Direction
 twist(bodyTwist)
 
-hipsX = round(x)+(hipsThrust*hFacing)
-hipsY = round(y)-(hipsOffset*sX)-hipsBounce-h+(global.zLevel*15)
+hipsX = round(x)+(hipsThrust*sX*hFacing)
+hipsY = round(y)-((hipsOffset+hipsAdjust+hipsBounce)*sX)-h+(global.zLevel*15)
 
-legX[1] = round(hipsX+lengthdir_x(legOffset[1]*hFacing*sX, hipsRot)+lengthdir_x(legAdjust[1]*sX, hipsRot-90))
-legY[1] = round(hipsY+lengthdir_y(legOffset[1]*hFacing*sX, hipsRot)+lengthdir_y(legAdjust[1]*sX, hipsRot-90))
+legX[1] = round(hipsX+lengthdir_x(legOffset[1]*hFacing*sX, hipsRot)+lengthdir_x(legAdjust[1]*sX, hipsRot-90)+lengthdir_x(hipsBounce*sX, hipsRot-90))
+legY[1] = round(hipsY+lengthdir_y(legOffset[1]*hFacing*sX, hipsRot)+lengthdir_y(legAdjust[1]*sX, hipsRot-90)+lengthdir_y(hipsBounce*sX, hipsRot-90))
 
-legX[2] = round(hipsX+lengthdir_x(legOffset[2]*hFacing*sX, hipsRot-180)+lengthdir_x(legAdjust[2]*sX, hipsRot-90))
-legY[2] = round(hipsY+lengthdir_y(legOffset[2]*hFacing*sX, hipsRot-180)+lengthdir_y(legAdjust[2]*sX, hipsRot-90))
+legX[2] = round(hipsX+lengthdir_x(legOffset[2]*hFacing*sX, hipsRot-180)+lengthdir_x(legAdjust[2]*sX, hipsRot-90)+lengthdir_x(hipsBounce*sX, hipsRot-90))
+legY[2] = round(hipsY+lengthdir_y(legOffset[2]*hFacing*sX, hipsRot-180)+lengthdir_y(legAdjust[2]*sX, hipsRot-90)+lengthdir_y(hipsBounce*sX, hipsRot-90))
 
 bodyX = round(hipsX+lengthdir_x(bodyOffset*sX, hipsRot+90)+lengthdir_x(bodyAdjust*hFacing*sX, hipsRot))
 bodyY = round(hipsY+lengthdir_y(bodyOffset*sX, hipsRot+90)+lengthdir_y(bodyAdjust*hFacing*sX, hipsRot))
@@ -196,11 +198,11 @@ shldrY[1] = round(bodyY+lengthdir_y(shldrOffset[1]*bodyHFacing*sX, bodyRot)+leng
 shldrX[2] = round(bodyX+lengthdir_x(shldrOffset[2]*bodyHFacing*sX, bodyRot-180)+lengthdir_x(shldrAdjust, bodyRot+90))
 shldrY[2] = round(bodyY+lengthdir_y(shldrOffset[2]*bodyHFacing*sX, bodyRot-180)+lengthdir_y(shldrAdjust, bodyRot+90))
 
-handX[1] = round(x+lengthdir_x(handDist[1]*sX, (handDir[1])))
-handY[1] = round(y+lengthdir_y(handDist[1]*sX, (handDir[1]))-((hipsOffset+handHeight[1])*sX)-h)+(global.zLevel*15)
+handX[1] = round(hipsX+lengthdir_x(handDist[1]*sX, handDir[1]))
+handY[1] = round(hipsY+lengthdir_y(handDist[1]*sX, handDir[1]))-(handHeight[1]*sX)
 
-handX[2] = round(x+lengthdir_x(handDist[2]*sX, (handDir[2])))
-handY[2] = round(y+lengthdir_y(handDist[2]*sX, (handDir[2]))-((hipsOffset+handHeight[2])*sX)-h)+(global.zLevel*15)
+handX[2] = round(hipsX+lengthdir_x(handDist[2]*sX, handDir[2]))
+handY[2] = round(hipsY+lengthdir_y(handDist[2]*sX, handDir[2]))-(handHeight[2]*sX)
 
 //Correct Shoulder Rotation
 shldrSwap = 0
@@ -306,12 +308,12 @@ if bodyVFacing = 0
 }
 
 //Head and Hair
-if bodyVFacing = 1{draw_sprite_ext(beardStyle,bounce,headX,headY,hFacing*sX,sX,headRot,hairColour,1)}
-draw_sprite_ext(headSprite,faceImage+vFacing,headX,headY,hFacing*sX,sX,headRot,skinTone,1)
-draw_sprite_ext(spr_eyes,faceImage+vFacing,headX,headY,hFacing*sX,sX,headRot,eyeColour,1)
-draw_sprite_ext(hairStyle,bounce+(vFacing*2),headX,headY,hFacing*sX,sX,headRot,hairColour,hairVisible)
-if bodyVFacing = 0{draw_sprite_ext(beardStyle,bounce,headX,headY,hFacing*sX,sX,headRot,hairColour,1)}
-i = 0 repeat(headItems){i++ draw_sprite_ext(headItem[i],vFacing,headX,headY,hFacing*sX,sX,headRot,headColour[i],1)}
+if bodyVFacing = 1{draw_sprite_ext(beardStyle,bounce,headX,headY,headFacing*hFacing*sX,sX,headRot,hairColour,1)}
+draw_sprite_ext(headSprite,faceImage+vFacing,headX,headY,headFacing*hFacing*sX,sX,headRot,skinTone,1)
+draw_sprite_ext(spr_eyes,faceImage+vFacing,headX,headY,headFacing*hFacing*sX,sX,headRot,eyeColour,1)
+draw_sprite_ext(hairStyle,bounce+(vFacing*2),headX,headY,headFacing*hFacing*sX,sX,headRot,hairColour,hairVisible)
+if bodyVFacing = 0{draw_sprite_ext(beardStyle,bounce,headX,headY,headFacing*hFacing*sX,sX,headRot,hairColour,1)}
+i = 0 repeat(headItems){i++ draw_sprite_ext(headItem[i],vFacing,headX,headY,headFacing*hFacing*sX,sX,headRot,headColour[i],1)}
 
 if bodyVFacing = 1
 {
@@ -336,26 +338,40 @@ if vFacing = 1
 //Arms Infront of Body
 if bodyVFacing = 0 and handY[1] < handY[2]
 {
-    //Draw Hand1
+    //Draw Arm1
     draw_sprite_ext(spr_arms,7-(7*max(armHFacing[1],0))+min(round(point_distance(handX[1],handY[1],shldrX[1+shldrSwap],shldrY[1+shldrSwap])),6),shldrX[1+shldrSwap],shldrY[1+shldrSwap],bodyHFacing*sX*armHFacing[1],armStretch[1],handPoint[1]+90,skinTone,1)
     i = 0 repeat(armsItems[1+vFacing]){i++ draw_sprite_ext(armsItem[i,1+vFacing],20-(20*max(armHFacing[2],0))+32+armLength[1],shldrX[1+shldrSwap],shldrY[1+shldrSwap],bodyHFacing*sX*armHFacing[1],armStretch[1],handPoint[1]+90,armsColour[i,1+vFacing],1)}
+}
+if abs(angle_difference(270,facing+(hFacing*handDir[2]))) <= 90 or (greatWeapon = true and bodyVFacing = 0)
+{
+    //Draw Arm2
+    draw_sprite_ext(spr_arms,7-(7*max(armHFacing[1],0))+min(round(point_distance(handX[2],handY[2],shldrX[2-shldrSwap],shldrY[2-shldrSwap])),6),shldrX[2-shldrSwap],shldrY[2-shldrSwap],bodyHFacing*sX*armHFacing[2],armStretch[2],handPoint[2]+90,skinTone,1)
+    i = 0 repeat(armsItems[2-vFacing]){i++ draw_sprite_ext(armsItem[i,2-vFacing],20+32+armLength[2],shldrX[2-shldrSwap],shldrY[2-shldrSwap],bodyHFacing*sX*armHFacing[2],armStretch[2],handPoint[2]+90,armsColour[i,2-vFacing],1)}
+}
+if bodyVFacing = 0 and handY[1] >= handY[2]
+{
+    //Draw Arm1
+    draw_sprite_ext(spr_arms,7-(7*max(armHFacing[1],0))+min(round(point_distance(handX[1],handY[1],shldrX[1+shldrSwap],shldrY[1+shldrSwap])),6),shldrX[1+shldrSwap],shldrY[1+shldrSwap],bodyHFacing*sX*armHFacing[1],armStretch[1],handPoint[1]+90,skinTone,1)
+    i = 0 repeat(armsItems[1+vFacing]){i++ draw_sprite_ext(armsItem[i,1+vFacing],20-(20*max(armHFacing[2],0))+32+armLength[1],shldrX[1+shldrSwap],shldrY[1+shldrSwap],bodyHFacing*sX*armHFacing[1],armStretch[1],handPoint[1]+90,armsColour[i,1+vFacing],1)}
+}
+
+//Hands Infront of Body
+if bodyVFacing = 0 and handY[1] < handY[2]
+{
+    //Draw Hand1
     draw_sprite_ext(weaponSprite[1],0,handX[1],handY[1],sX,bodyHFacing*sX,handRot[1],c_white,1)
     draw_sprite_ext(spr_hand,0,handX[1],handY[1],bodyHFacing*sX,sX,handRot[1]+facing,skinTone,1)
 }
 if abs(angle_difference(270,facing+(hFacing*handDir[2]))) <= 90 or (greatWeapon = true and bodyVFacing = 0)
-{
-    //Draw Hand2
-    draw_sprite_ext(spr_arms,7-(7*max(armHFacing[1],0))+min(round(point_distance(handX[2],handY[2],shldrX[2-shldrSwap],shldrY[2-shldrSwap])),6),shldrX[2-shldrSwap],shldrY[2-shldrSwap],bodyHFacing*sX*armHFacing[2],armStretch[2],handPoint[2]+90,skinTone,1)
-    i = 0 repeat(armsItems[2-vFacing]){i++ draw_sprite_ext(armsItem[i,2-vFacing],20+32+armLength[2],shldrX[2-shldrSwap],shldrY[2-shldrSwap],bodyHFacing*sX*armHFacing[2],armStretch[2],handPoint[2]+90,armsColour[i,2-vFacing],1)}
+{  
+    //Draw Hand2  
     draw_sprite_ext(weaponSprite[2],0,handX[2],handY[2],sX,bodyHFacing*sX,handRot[2],c_white,1)
     if hasShield = false
     {draw_sprite_ext(spr_hand,0,handX[2],handY[2],bodyHFacing*sX,sX,handRot[2]+facing,skinTone,1)}
 }
 if bodyVFacing = 0 and handY[1] >= handY[2]
-{
+{    
     //Draw Hand1
-    draw_sprite_ext(spr_arms,7-(7*max(armHFacing[1],0))+min(round(point_distance(handX[1],handY[1],shldrX[1+shldrSwap],shldrY[1+shldrSwap])),6),shldrX[1+shldrSwap],shldrY[1+shldrSwap],bodyHFacing*sX*armHFacing[1],armStretch[1],handPoint[1]+90,skinTone,1)
-    i = 0 repeat(armsItems[1+vFacing]){i++ draw_sprite_ext(armsItem[i,1+vFacing],20-(20*max(armHFacing[2],0))+32+armLength[1],shldrX[1+shldrSwap],shldrY[1+shldrSwap],bodyHFacing*sX*armHFacing[1],armStretch[1],handPoint[1]+90,armsColour[i,1+vFacing],1)}
     draw_sprite_ext(weaponSprite[1],0,handX[1],handY[1],sX,bodyHFacing*sX,handRot[1],c_white,1)
     draw_sprite_ext(spr_hand,0,handX[1],handY[1],bodyHFacing*sX,sX,handRot[1]+facing,skinTone,1)
 }

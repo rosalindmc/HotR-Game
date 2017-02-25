@@ -1,9 +1,8 @@
 #define attackDamage
-//Damage script for melee attacks
-//attackDamage(Ranged?)
-
+//Damage script
 backstab = false
 mle = argument0
+
 global.attackFromTile = isoTile
 
 if mle = true
@@ -37,6 +36,11 @@ else if irandom(99)+1 < dge and backstab = false
     ii.text = 'Dodge'
     ii.font = fnt_tiny
     target.stm -= 2*(1+(target.enc*.01))
+    
+    with(target)
+    {
+        {startAnimation(0,animDodge)}
+    }
     
     //Suppress
     if target.evasion != true
@@ -95,6 +99,18 @@ p = floor(p+random(.99))
 if p > 0
 {
     triggerOnWound(false)
+    
+    with(target)
+    {
+        if other.backstab = true
+        {startAnimation(0,animFlinchForward)}
+        else
+        {startAnimation(0,animFlinch)}
+        
+        part_system_depth(ps2,depth-1)
+        part_emitter_region(ps2,em2,bodyX,bodyX,bodyY,bodyY,ps_shape_rectangle,1)
+        part_emitter_burst(ps2,em2,p2,5)
+    }
 }
 
 //Descriptor
@@ -125,7 +141,7 @@ with(target)
 
 if target.life <= 0
 {
-    owner.experience += target.expOnKill
+    owner.experience += (target.expOnKill)*(1-((cunning-8)*.03))
     
     gainMorale(.2)
     checkLevelUp(owner)
@@ -196,6 +212,7 @@ p *= (1-wepRPowRng[atkHand]+random(wepRPowRng[atkHand]*2))
 skill = rSkill
 pen = wepRPen[atkHand]
 typeName = wepRType[atkHand]
+
 #define gainMorale
 //gainMorale
 if bold != 1

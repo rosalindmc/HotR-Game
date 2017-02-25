@@ -19,7 +19,7 @@ case 2: break
 
 switch(argument0)
 {
-case 0: return(animMeleeHold) break
+case 0: return(animShield) break
 case 1: return(choose(animDownSwing,animCrossSwing)) break
 case 2: break
 }

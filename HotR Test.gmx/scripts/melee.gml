@@ -1,7 +1,7 @@
 #define melee
 //Melee control script
 startAnimation(atkHand,script_execute(wepAnimType[atkHand],1))
-startAnimation(0,animAttack)
+startAnimation(0,animThrust)
 
 //Stamina Cost
 s = (3-(dualWield*.5))/((wepSpeed[atkHand]))
