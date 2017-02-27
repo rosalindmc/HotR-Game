@@ -11,7 +11,7 @@ with(obj_character)
 {
     vis = false
     
-    if team = 1
+    if player = true
     {
         vis = true
         

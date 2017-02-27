@@ -48,7 +48,7 @@ case 0:     //Run when the unit is initialized in battle
 onHit[onHitSize,0] = lifeGain
 onHit[onHitSize,1] = 'Vigour'
 onHit[onHitSize,2] = 20
-onHit[onHitSize,3] = 1
+onHit[onHitSize,3] = 2
 onHit[onHitSize,4] = true
 onHit[onHitSize,5] = false
 onHitSize += 1
@@ -66,7 +66,7 @@ case 1:     //Tooltip and icon
 sprite_index = ico_vigour
 image_index = 1
 name = 'Vigour'
-tooltip = 'Small chance to heal on attack.  Heal on downing a foe'
+tooltip = 'Small chance to heal 2 on attack.  Heal on downing a foe'
 branch = treeToughness
 break
 
@@ -83,7 +83,7 @@ case 0:     //Run when the unit is initialized in battle
 onBlock[onBlockSize,0] = statusGive
 onBlock[onBlockSize,1] = 'Mighty Block'
 onBlock[onBlockSize,2] = daze
-onBlock[onBlockSize,3] = 100
+onBlock[onBlockSize,3] = 50
 onBlock[onBlockSize,4] = 50
 onBlock[onBlockSize,5] = 5
 onBlockSize += 1
@@ -93,7 +93,7 @@ case 1:     //Tooltip and icon
 sprite_index = ico_mightyBlock
 image_index = 1
 name = 'Mighty Block'
-tooltip = 'Blocking DAZES the attacker'
+tooltip = 'Blocking DAZES the attacker 50% of the time'
 branch = treeToughness
 break
 
@@ -134,14 +134,14 @@ break
 switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
-lifeRegen *= 1.5
+lifeRegen *= 1.4
 break
 
 case 1:     //Tooltip and icon
 sprite_index = ico_mightyHealth
 image_index = 1
 name = 'Mighty Health'
-tooltip = 'Increase life regeneration by 50%'
+tooltip = 'Increase life regeneration by 40%'
 branch = treeToughness
 break
 

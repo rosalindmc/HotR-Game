@@ -24,14 +24,9 @@ repeat(choose(40))
 }
 
 //Create Party
-repeat(choose(5,6,7))
+repeat(7)
 {
     createCharacterSheet(id,cwAdventurer)
-}
-
-with(obj_party)
-{
-    playerControl = false
 }
 
 playerControl = true

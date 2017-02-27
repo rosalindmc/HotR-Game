@@ -98,7 +98,7 @@ switch(argument0)
 case 0:     //Run when the unit is initialized in battle
 onHit[onHitSize,0] = heightFel
 onHit[onHitSize,1] = 'Height Advantage'
-onHit[onHitSize,2] = .7
+onHit[onHitSize,2] = .3
 onHit[onHitSize,3] = false
 onHit[onHitSize,4] = false
 onHit[onHitSize,5] = false

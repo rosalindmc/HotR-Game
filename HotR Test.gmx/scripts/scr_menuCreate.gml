@@ -40,16 +40,16 @@ break
 
 case 1:     //New Campaign Menu
 i = instance_create(50,30,obj_menuTitle)
-i.text = 'Difficulty'
+i.text = 'Player Count'
 
 i = instance_create(32,60,obj_menuButton)
-i.text = 'Normal' i.number = 5 i.descriptor = 'Suggested difficulty for all first time players'
+i.text = 'Single Player' i.number = 5 i.descriptor = 'Start a singleplayer campaign'
 
-//i = instance_create(32,90,obj_menuButton)
-//i.text = 'Heroic' i.number = 6 i.descriptor = 'Ideal for players who have mastered the core mechanics'
+i = instance_create(32,90,obj_menuButton)
+i.text = 'Two Players' i.number = 6 i.descriptor = 'Battle a friend'
 
-//i = instance_create(32,120,obj_menuButton)
-//i.text = 'Nightmare' i.number = 7 i.descriptor = 'For players who found the other two difficulties too easy'
+i = instance_create(32,120,obj_menuButton)
+i.text = 'Three Players' i.number = 7 i.descriptor = 'Battle more friends'
 
 i = instance_create(544,320,obj_menuButton)
 i.text = 'Return' i.number = 4

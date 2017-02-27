@@ -29,15 +29,21 @@ if argument1 = 0
     case 6: eventEnd() break
 
     case 20:
-    choice('1 Experience', 21, true) 
-    choice('10 Experience', 22, true) 
-    choice('100 Experience', 23, true) 
-    choice('1000 Experience', 24, true) 
+    choice('10 Experience', 21, true) 
+    choice('10 Party Experience', 22, true) 
+    choice('100 Party Experience', 23, true) 
+    choice('100 Experience', 24, true) 
     choice('Return', 1, true)
     break
 
-    case 21: gainExperience(1) skipTo(20) break
-    case 22: gainExperience(10) skipTo(20) break
+    case 21: gainExperience(10) skipTo(20) break
+    case 22:
+    for(i = 0; i < ds_list_size(global.eventActor.party); i++)
+    {
+    global.eventCharacter = ds_list_find_value(global.eventActor.party,i)
+    gainExperience(10) 
+    }
+    skipTo(20) break
     case 23: 
     for(i = 0; i < ds_list_size(global.eventActor.party); i++)
     {
@@ -45,7 +51,7 @@ if argument1 = 0
     gainExperience(100) 
     }
     skipTo(20) break
-    case 24: gainExperience(1000) skipTo(20) break
+    case 24: gainExperience(100) skipTo(20) break
     
     case 40:
     choice('Attribute Check', 43, true)

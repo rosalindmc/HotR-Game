@@ -109,7 +109,7 @@ if p > 0
         
         part_system_depth(ps2,depth-1)
         part_emitter_region(ps2,em2,bodyX,bodyX,bodyY,bodyY,ps_shape_rectangle,1)
-        part_emitter_burst(ps2,em2,p2,5)
+        part_emitter_burst(ps2,em2,p2,25)
     }
 }
 

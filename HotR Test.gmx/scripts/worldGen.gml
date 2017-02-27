@@ -243,6 +243,9 @@ with(obj_worldTile)
 #define populate
 //Node Populate
 //Dont Know if I'll Keep?
+
+var iiii = 0
+            
 ix = 3
 iy = 3
 
@@ -277,7 +280,16 @@ repeat(floor(mapWidth/4))
                 iii = instance_create(ii.x,ii.y,obj_party)
                 iii.node = ii
                 iii.depth = ii.depth-1
-                iii.ruleSet = choose(cwParty,orcViking,orcViking,orcViking,orcViking)
+                
+                if iiii < global.playerCount
+                {
+                iii.ruleSet = choose(cwParty)
+                iiii += 1
+                }
+                else
+                {
+                iii.ruleSet = choose(orcViking)
+                }
                 
                 with(iii)
                 {

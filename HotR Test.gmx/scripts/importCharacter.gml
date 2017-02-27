@@ -384,6 +384,11 @@ if bold = 1
     mSkill += 2*(1+((fellowship-8)*.05))
     rSkill += 2*(1+((fellowship-8)*.05))
     cSkill += 2*(1+((fellowship-8)*.05))
+    
+    if evasion = true
+    {
+        dodge += 15
+    }
 }
 
 if o.mook = true

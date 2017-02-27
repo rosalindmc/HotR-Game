@@ -41,13 +41,6 @@ break
 switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
-areAttacked[areAttackedSize,0] = boldDodge
-areAttacked[areAttackedSize,1] = 15
-areAttacked[areAttackedSize,2] = false
-areAttacked[areAttackedSize,3] = false
-areAttacked[areAttackedSize,4] = false
-areAttacked[areAttackedSize,5] = false
-areAttackedSize += 1
 evasion = true
 break
 

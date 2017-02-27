@@ -38,8 +38,13 @@ repeat(ds_list_size(attacker.party))
     
     ii.important = true
     ii.team = 1
-    ii.controlScript = controlPlayer
-    ii.player = true
+    
+    if attacker.playerControl = true
+    {
+        ii.controlScript = controlPlayer
+        ii.player = true
+    }
+    
     ii.owner = ds_list_find_value(attacker.party,i)
     with(ii)
     {
@@ -67,6 +72,13 @@ repeat(ds_list_size(defender.party))
     ii.team = 2
     ii.important = true
     ii.owner = ds_list_find_value(defender.party,i)
+    
+    if defender.playerControl = true
+    {
+        ii.controlScript = controlPlayer
+        ii.player = true
+    }
+    
     with(ii)
     {
         importCharacter(owner)

@@ -29,14 +29,14 @@ if c.travelTalentPoint >= 1
 c.lifePoint += c.classLife
 c.staminaPoint += c.classStamina
 
-c.mSkill += c.classMSkill
-i.mSkill = c.classMSkill
+c.mSkill += c.classMSkill/2
+i.mSkill = c.classMSkill/2
 
-c.rSkill += c.classRSkill
-i.rSkill = c.classRSkill
+c.rSkill += c.classRSkill/2
+i.rSkill = c.classRSkill/2
 
-c.cSkill += c.classCSkill
-i.cSkill = c.classCSkill
+c.cSkill += c.classCSkill/2
+i.cSkill = c.classCSkill/2
 
 c.levelPending -= 1
 
