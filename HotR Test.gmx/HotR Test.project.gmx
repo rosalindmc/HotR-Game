@@ -274,10 +274,6 @@
         <sprite>sprites\spr_leg</sprite>
         <sprite>sprites\spr_shortLeg</sprite>
         <sprite>sprites\spr_hand</sprite>
-        <sprites name="Hair Styles">
-          <sprite>sprites\spr_upHair</sprite>
-          <sprite>sprites\spr_shortHair</sprite>
-        </sprites>
       </sprites>
       <sprites name="Beard">
         <sprite>sprites\spr_bigMoustache</sprite>
@@ -287,6 +283,10 @@
         <sprite>sprites\spr_longStache</sprite>
         <sprite>sprites\spr_chaplinStache</sprite>
         <sprite>sprites\spr_goatee</sprite>
+      </sprites>
+      <sprites name="Hair Styles">
+        <sprite>sprites\spr_upHair</sprite>
+        <sprite>sprites\spr_shortHair</sprite>
       </sprites>
     </sprites>
     <sprites name="UI">
@@ -443,6 +443,7 @@
           <scripts name="Movement Animation">
             <script>scripts\animHumanoidWalk.gml</script>
             <script>scripts\animIdle.gml</script>
+            <script>scripts\animDown.gml</script>
             <script>scripts\animAttack.gml</script>
           </scripts>
           <scripts name="Attack Animation">

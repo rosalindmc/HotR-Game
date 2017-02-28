@@ -381,6 +381,7 @@ wepRange[i] = 1
 weaponSprite[i] = iSpr
 
 greatWeapon = true
+greatWeaponSize = 1
 threat = true
 
 //Skill

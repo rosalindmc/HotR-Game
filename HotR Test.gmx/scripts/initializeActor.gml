@@ -234,6 +234,7 @@ wepRProjSpeed[argument0] = 10
 
 //Weapon Sprites
 weaponSprite[argument0] = spr_none
+greatWeaponSize = 2
 
 #define boldGlow
 ps1 = part_system_create()
@@ -267,7 +268,7 @@ part_type_direction(p2,0,359,0,10)
 part_type_gravity(p2,(grav*metre)/global.fspd,270)
 part_type_orientation(p2,0,0,0,0,0)
 part_type_blend(p2,false)
-part_type_life(p2,global.fspd*.5,global.fspd*1)
+part_type_life(p2,global.fspd*.25,global.fspd*.5)
 
 //Sparks
 

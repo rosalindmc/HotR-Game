@@ -137,7 +137,7 @@ if isoZ &lt; obj_control.mapDepth-1
 //Temp Random Mud
 if ground = true
 {
-    if humidity &gt; 25+random(10)
+    if humidity &gt; 15+random(5)
     {    
         sprite_index = spr_mudTile
         cost = 1.5

@@ -168,11 +168,12 @@ switch(argument0)
     case 0:
     legAnim[1] = 10
     legAnim[2] = 8
-    hipsThrust = -2
+    hipsThrust = -4
     bounce = 0
     headFacing = -1
     hipsBounce = 0
     hipsAdjust = 0
+    skrtAnim = 4
     
     headRot = 30*hFacing
     bodyRot = 45*hFacing
@@ -184,9 +185,10 @@ switch(argument0)
     legAnim[2] = 6
     bounce = 0
     headFacing = -1
-    hipsThrust = -4
+    hipsThrust = -8
     hipsBounce = 0
     hipsAdjust = 0
+    skrtAnim = 4
     
     headRot = 15*hFacing
     bodyRot = 30*hFacing
@@ -196,11 +198,12 @@ switch(argument0)
     case 2:
     legAnim[1] = 10
     legAnim[2] = 4
-    hipsThrust = -2
+    hipsThrust = -6
     bounce = 1
     headFacing = 1
     hipsBounce = -1
     hipsAdjust = 0
+    skrtAnim = 2
     
     headRot = 0
     bodyRot = 0
@@ -210,7 +213,7 @@ switch(argument0)
     case 3:
     legAnim[1] = 4
     legAnim[2] = 6
-    hipsThrust = -1
+    hipsThrust = -3
     headFacing = 1
     bounce = 0
     hipsBounce = 0
@@ -265,7 +268,7 @@ switch(argument0)
     legAnim[1] = 0
     legAnim[2] = 6
     bounce = 1
-    hipsThrust = 3
+    hipsThrust = 4
     hipsBounce = 0
     hipsAdjust = 0
     
@@ -335,13 +338,14 @@ legRot[2] = 0
 switch(argument0)
 {
     case 0:
-    legAnim[1] = 8
-    legAnim[2] = 4
+    legAnim[1] = 4
+    legAnim[2] = 6
     hipsThrust = -2
     bounce = 0
-    headFacing = -1
+    headFacing = 1
     hipsBounce = 0
-    hipsAdjust = 0
+    hipsAdjust = 1
+    skrtAnim = 4
     
     headRot = 30*hFacing
     bodyRot = 30*hFacing
@@ -354,7 +358,8 @@ switch(argument0)
     bounce = 1
     hipsThrust = -4
     hipsBounce = 0
-    hipsAdjust = 0
+    hipsAdjust = 2
+    skrtAnim = 2
     
     headRot = 45*hFacing
     bodyRot = 45*hFacing
@@ -368,7 +373,8 @@ switch(argument0)
     bounce = 0
     headFacing = 1
     hipsBounce = -1
-    hipsAdjust = 0
+    hipsAdjust = 1
+    skrtAnim = 4
     
     headRot = 15*hFacing
     bodyRot = 30*hFacing
@@ -378,11 +384,12 @@ switch(argument0)
     case 3:
     legAnim[1] = 4
     legAnim[2] = 6
-    hipsThrust = -1
+    hipsThrust = 1
     headFacing = 1
     bounce = 0
     hipsBounce = 0
     hipsAdjust = 0
+    skrtAnim = 2
         
     headRot = 0
     bodyRot = 0

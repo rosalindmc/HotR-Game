@@ -90,6 +90,7 @@ vis = false
 legMult = 1
 legSprt = 0
 sX = 2
+target = -4
 
 global.zLevel = 0
 </string>
@@ -188,17 +189,30 @@ script_execute(animIndex[0],animStep[0])
             <kind>1</kind>
             <string>//Facing
 facing = 0
-
 /*
-if keyboard_check_pressed(ord('X'))
+round(point_direction(x,y,mouse_x,mouse_y)/30)*30
+
+if keyboard_check_pressed(ord('1'))
 {
     startAnimation(0,animThrust)
+    startAnimation(1,script_execute(wepAnimType[1],1))
 }
-if keyboard_check_pressed(ord('C'))
+if keyboard_check_pressed(ord('2'))
 {
     startAnimation(0,animFlinch)
 }
-
+if keyboard_check_pressed(ord('3'))
+{
+    startAnimation(0,animDodge)
+}
+if keyboard_check_pressed(ord('4'))
+{
+    startAnimation(0,animDown)
+}
+if keyboard_check_pressed(ord('5'))
+{
+    startAnimation(1+hasShield,animBlock)
+}
 </string>
           </argument>
         </arguments>

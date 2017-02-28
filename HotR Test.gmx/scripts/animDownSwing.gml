@@ -17,10 +17,10 @@ handDir[argument0] = facing+0
 
 if animPriority[3-argument0] = 0
 {
-    handHeight[argument0] = 24
-    handRot[argument0] = 120
-    handDist[argument0] = 5
-    handDir[argument0] = -30
+    handHeight[3-argument0] = 4
+    handRot[3-argument0] = facing+(bodyHFacing*(2*(argument0-1.5))*45)
+    handDist[3-argument0] = 5
+    handDir[3-argument0] = facing+(bodyHFacing*(2*(argument0-1.5))*-30)
 }
 
 alarm[5+argument0] = global.fspd*.2
@@ -36,7 +36,8 @@ break
 
 //Mid Swing
 case 2:
-attackDamage(true)
+if instance_exists(target)
+{attackDamage(true)}
 handHeight[argument0] = 3
 handRot[argument0] = facing+(bodyHFacing*30)
 handDist[argument0] = 6

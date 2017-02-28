@@ -42,25 +42,31 @@ switch(i)
 case 0:
 bodyVFacing = 0
 bodyHFacing = 1
+shldrSwap = 1
 break
 case 1:
 bodyVFacing = 1
 bodyHFacing = 1
+shldrSwap = 0
 break
 case 2:
 bodyVFacing = 1
 bodyHFacing = -1
+shldrSwap = 1
 break
 case 3:
 bodyVFacing = 0
 bodyHFacing = -1
+shldrSwap = 0
 break
 case 4:
 bodyVFacing = 0
 bodyHFacing = 1
+shldrSwap = 1
 break
 case 5:
 bodyVFacing = 1
 bodyHFacing = 1
+shldrSwap = 0
 break
 }

@@ -75,6 +75,7 @@ if target.blocks > 0 and backstab = false
              
             with(target)
             {
+                startAnimation(1+other.hasShield,animBlock)
                 triggerOnBlock(false)
             }
         }
@@ -102,12 +103,14 @@ if p > 0
     
     with(target)
     {
-        if other.backstab = true
+        if (other.hFacing = 1 and x < other.x) or (other.hFacing = -1 and x > other.x)
         {startAnimation(0,animFlinchForward)}
         else
         {startAnimation(0,animFlinch)}
         
         part_system_depth(ps2,depth-1)
+        iii = point_direction(x,y,other.x,other.y)
+        part_type_direction(p2,iii-30,iii+30,0,10)
         part_emitter_region(ps2,em2,bodyX,bodyX,bodyY,bodyY,ps_shape_rectangle,1)
         part_emitter_burst(ps2,em2,p2,25)
     }
