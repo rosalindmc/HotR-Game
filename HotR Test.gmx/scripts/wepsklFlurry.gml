@@ -16,10 +16,10 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
             ii.font = fnt_tinyText
         }
     }
-    else                    //On Tooltip
+    else if min(100,floor(argument1+((skill-target.mSkill)*5))) > 0                    //On Tooltip
     {
-        obj_control.tooltipColour[obj_control.tooltipLength] = c_teal
-        obj_control.tooltipText[obj_control.tooltipLength] = string(floor(argument1+((skill-target.mSkill)*5)))+' % '+string(argument0)
+        obj_control.tooltipColour[obj_control.tooltipLength] = ltBlue
+        obj_control.tooltipText[obj_control.tooltipLength] = string(min(100,floor(argument1+((skill-target.mSkill)*5))))+' % '+string(argument0)
         obj_control.tooltipLength += 1    
     }
 }
@@ -42,10 +42,10 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
             ii.font = fnt_tinyText
         }
     }
-    else                    //On Tooltip
+    else if min(100,floor(argument1+((skill-target.mSkill)*5))) > 0                  //On Tooltip
     {
-        obj_control.tooltipColour[obj_control.tooltipLength] = c_teal
-        obj_control.tooltipText[obj_control.tooltipLength] = string(floor(argument1+((skill-target.mSkill)*5)))+' % '+string(argument0)
+        obj_control.tooltipColour[obj_control.tooltipLength] = ltBlue
+        obj_control.tooltipText[obj_control.tooltipLength] = string(min(100,floor(argument1+((skill-target.mSkill)*5))))+' % '+string(argument0)
         obj_control.tooltipLength += 1    
     }
 }
@@ -68,10 +68,10 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
             ii.font = fnt_tinyText
         }
     }
-    else                    //On Tooltip
+    else if min(100,floor(argument1+((skill-target.mSkill)*5))) > 0                  //On Tooltip
     {
-        obj_control.tooltipColour[obj_control.tooltipLength] = c_teal
-        obj_control.tooltipText[obj_control.tooltipLength] = string(floor(argument1+((skill-target.mSkill)*5)))+' % '+string(argument0)
+        obj_control.tooltipColour[obj_control.tooltipLength] = ltBlue
+        obj_control.tooltipText[obj_control.tooltipLength] = string(min(100,floor(argument1+((skill-target.mSkill)*5))))+' % '+string(argument0)
         obj_control.tooltipLength += 1    
     }
 }
@@ -96,10 +96,10 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
             ii.font = fnt_tinyText
         }
     }
-    else                    //On Tooltip
+    else if min(100,floor(argument1+((skill-target.mSkill)*5))) > 0                    //On Tooltip
     {
-        obj_control.tooltipColour[obj_control.tooltipLength] = c_teal
-        obj_control.tooltipText[obj_control.tooltipLength] = string(floor(argument1+((skill-target.mSkill)*5)))+' % '+string(argument0)
+        obj_control.tooltipColour[obj_control.tooltipLength] = ltBlue
+        obj_control.tooltipText[obj_control.tooltipLength] = string(min(100,floor(argument1+((skill-target.mSkill)*5))))+' % '+string(argument0)
         obj_control.tooltipLength += 1    
     }
 }
@@ -123,10 +123,10 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
             ii.font = fnt_tinyText
         }
     }
-    else                    //On Tooltip
+    else if min(100,floor(argument1+((skill-target.mSkill)*5))) > 0                    //On Tooltip
     {
-        obj_control.tooltipColour[obj_control.tooltipLength] = c_teal
-        obj_control.tooltipText[obj_control.tooltipLength] = string(floor(argument1+((skill-target.mSkill)*5)))+' % '+string(argument0)
+        obj_control.tooltipColour[obj_control.tooltipLength] = ltBlue
+        obj_control.tooltipText[obj_control.tooltipLength] = string(min(100,floor(argument1+((skill-target.mSkill)*5))))+' % '+string(argument0)
         obj_control.tooltipLength += 1    
     }
 }
@@ -142,17 +142,20 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
     {
         if 1+irandom(99) <= argument1+((skill-target.mSkill)*5)
         {
-            target.initSlot.delay += argument2
-                        
+            if target.active = true
+            {
+                target.initSlot.delay += argument2
+            }   
+                    
             ii = instance_create(x,y-h-height,obj_descriptor)
             ii.text = argument0
             ii.font = fnt_tinyText
         }
     }
-    else                    //On Tooltip
+    else if min(100,floor(argument1+((skill-target.mSkill)*5))) > 0                        //On Tooltip
     {
-        obj_control.tooltipColour[obj_control.tooltipLength] = c_teal
-        obj_control.tooltipText[obj_control.tooltipLength] = string(floor(argument1+((skill-target.mSkill)*5)))+' % '+string(argument0)
+        obj_control.tooltipColour[obj_control.tooltipLength] = ltBlue
+        obj_control.tooltipText[obj_control.tooltipLength] = string(min(100,floor(argument1+((skill-target.mSkill)*5))))+' % '+string(argument0)
         obj_control.tooltipLength += 1    
     }
 }
@@ -175,10 +178,10 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
             ii.font = fnt_tinyText
         }
     }
-    else                    //On Tooltip
+    else if min(100,floor(argument1+((skill-target.mSkill)*5))) > 0                        //On Tooltip
     {
-        obj_control.tooltipColour[obj_control.tooltipLength] = c_teal
-        obj_control.tooltipText[obj_control.tooltipLength] = string(floor(argument1+((skill-target.mSkill)*5)))+' % '+string(argument0)
+        obj_control.tooltipColour[obj_control.tooltipLength] = ltBlue
+        obj_control.tooltipText[obj_control.tooltipLength] = string(min(100,floor(argument1+((skill-target.mSkill)*5))))+' % '+string(argument0)
         obj_control.tooltipLength += 1    
     }
 }
@@ -201,10 +204,10 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
             ii.font = fnt_tinyText
         }
     }
-    else                    //On Tooltip
+    else if min(100,floor(argument1+((skill-target.mSkill)*5))) > 0                        //On Tooltip
     {
-        obj_control.tooltipColour[obj_control.tooltipLength] = c_teal
-        obj_control.tooltipText[obj_control.tooltipLength] = string(floor(argument1+((skill-target.mSkill)*5)))+' % '+string(argument0)
+        obj_control.tooltipColour[obj_control.tooltipLength] = ltBlue
+        obj_control.tooltipText[obj_control.tooltipLength] = string(min(100,floor(argument1+((skill-target.mSkill)*5))))+' % '+string(argument0)
         obj_control.tooltipLength += 1    
     }
 }
@@ -227,10 +230,10 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
             ii.font = fnt_tinyText
         }
     }
-    else                    //On Tooltip
+    else if min(100,floor(argument1+((skill-target.mSkill)*5))) > 0                        //On Tooltip
     {
-        obj_control.tooltipColour[obj_control.tooltipLength] = c_teal
-        obj_control.tooltipText[obj_control.tooltipLength] = string(floor(argument1+((skill-target.mSkill)*5)))+' % '+string(argument0)
+        obj_control.tooltipColour[obj_control.tooltipLength] = ltBlue
+        obj_control.tooltipText[obj_control.tooltipLength] = string(min(100,floor(argument1+((skill-target.mSkill)*5))))+' % '+string(argument0)
         obj_control.tooltipLength += 1    
     }
 }

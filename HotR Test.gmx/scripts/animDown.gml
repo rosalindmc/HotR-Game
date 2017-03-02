@@ -5,6 +5,9 @@
 alarm[5] = global.fspd*.2
 animStep[0] += 1
 
+animIndex[1] = animMeleeRest
+animIndex[2] = animMeleeRest
+
 hipsRot = 0
 hipsBounce = 0
 

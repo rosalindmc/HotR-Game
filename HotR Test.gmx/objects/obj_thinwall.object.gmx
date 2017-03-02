@@ -74,8 +74,8 @@ alarm[0] = 2
     image_xscale = facing
     
     
-    owner.depth = -owner.y-(owner.h*.3)+(ceil(owner.h/15)*-10)+10
-    depth = owner.depth-3
+    owner.depth = -owner.y-(owner.h*.3)+10
+    depth = owner.depth+1
 </string>
           </argument>
         </arguments>

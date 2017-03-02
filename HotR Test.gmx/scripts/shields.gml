@@ -5,7 +5,7 @@ iSpr = spr_heaterShield
 iDmg = 3.0
 iDmgRng = .3
 iType = 'Impact'
-iStrMult = .30
+iStrMult = .25
 iPen = 1
 iSpd = 1
 iBlockGen = .3
@@ -41,6 +41,7 @@ wepRange[i] = 1
 
 //Shield Stuff
 sResist += .5
+wepSpeed[1] -= .2
 blockStr += iBlockStr
 blockGen += iBlockGen
 
@@ -57,7 +58,7 @@ iType = 'Impact'
 iStrMult = .25
 iPen = 1
 iSpd = 1.1
-iBlockGen = .35
+iBlockGen = .33
 iBlockStr = 4
 
 switch(argument0)
@@ -90,6 +91,7 @@ wepRange[i] = 1
 
 //Shield Stuff
 sResist += .5
+wepSpeed[1] -= .1
 blockStr += iBlockStr
 blockGen += iBlockGen
 
@@ -106,7 +108,7 @@ iType = 'Impact'
 iStrMult = .30
 iPen = 1
 iSpd = 0.5
-iBlockGen = .25
+iBlockGen = .27
 iBlockStr = 12
 
 switch(argument0)
@@ -139,6 +141,7 @@ wepRange[i] = 1
 
 //Shield Stuff
 sResist += .5
+wepSpeed[1] -= .3
 blockStr += iBlockStr
 blockGen += iBlockGen
 

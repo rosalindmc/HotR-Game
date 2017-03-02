@@ -19,7 +19,7 @@ switch(argument0)
     {
         with(obj_character)
         {
-            if team != i.team
+            if team != i.team and dead = false
             {
                 if los(40, i.sightTile, sightTile)
                 {
@@ -40,8 +40,8 @@ switch(argument0)
         //Move and Update Grid
         makeMovePath(cHover)
         i.pathLength = ii
-        i.stm -= cHover.g*.1*i.movStaminaMult*(1+(i.enc*.01))
-        if cHover.overlay = 2{i.stm -= cHover.g*.1*i.movStaminaMult*(1+(i.enc*.01))}
+        i.stm -= cHover.g*.03*i.movStaminaMult*(1+(i.enc*.01))
+        if cHover.overlay = 2{i.stm -= cHover.g*.07*i.movStaminaMult*(1+(i.enc*.01))}
         gridUpdate(i, cHover)
         with(i){triggerOnMove()}
         
@@ -80,8 +80,8 @@ switch(argument0)
             //Move and Update Grid
             makeMovePath(global.attackFromTile)
             i.pathLength = ii
-            i.stm -= global.attackFromTile.g*.1*i.movStaminaMult*(1+(i.enc*.01))
-            if global.attackFromTile.overlay = 2{i.stm -= global.attackFromTile.g*.1*i.movStaminaMult*(1+(i.enc*.01))}
+            i.stm -= global.attackFromTile.g*.03*i.movStaminaMult*(1+(i.enc*.01))
+            if global.attackFromTile.overlay = 2{i.stm -= global.attackFromTile.g*.07*i.movStaminaMult*(1+(i.enc*.01))}
             gridUpdate(i, global.attackFromTile)
             with(i){triggerOnMove()}
             
@@ -101,6 +101,8 @@ switch(argument0)
     
     //Run 2 to draw
     case 2:
+    global.pathDraw = true
+    
     if instance_exists(cHover)
     {   
         //Movement Tooltip

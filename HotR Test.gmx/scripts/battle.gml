@@ -13,7 +13,7 @@ switch(argument0)
     {
         with(obj_character)
         {
-            if team != i.team
+            if team != i.team and dead = false
             {
                 if los(2, i.isoTile, isoTile)
                 {
@@ -55,6 +55,8 @@ switch(argument0)
     
     //Run 2 to draw
     case 2:
+    global.pathDraw = false
+    
     if instance_exists(cHover)
     {   
         //Ranged Attack Tooltip

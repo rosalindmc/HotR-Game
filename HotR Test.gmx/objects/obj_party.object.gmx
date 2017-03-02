@@ -82,8 +82,7 @@ humanoid(0)
 //Effects
 status = ds_list_create()
 
-initializeTriggers()
-initializeTraits()
+initializeCharStats()
 importCharacter(owner)
 vis = true
 </string>

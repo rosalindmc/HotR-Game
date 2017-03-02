@@ -150,7 +150,7 @@ switch(argument0)
 //checkRange(object, target)
 
 var ret = 0
-var i = 0
+var d = 0
 with (obj_camera){
     if (argument1.id == id){
         ret = 1000
@@ -166,11 +166,11 @@ if (ret = 0){
 
 while (ret = 0){
 
-    if distance > i * metre * 1.5{
-        i++
+    if distance > d * metre * 1.5{
+        d++
     }
     else{
-        ret = i
+        ret = d
     }
 }
 

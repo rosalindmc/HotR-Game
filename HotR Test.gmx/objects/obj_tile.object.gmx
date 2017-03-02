@@ -195,7 +195,14 @@ if ground = true
         
         if  overlay != 0 || onPath &gt;= 4 //(global.zLevel = isoZ and overlay != 0)
         {
-            draw_sprite(spr_tilePathing,max(overlay,onPath),x,y-h+(global.zLevel*15))
+            if isoZ = global.zLevel or onPath &gt;= 4
+            {
+                draw_sprite(spr_tilePathing,max(overlay,onPath),x,y-h+(global.zLevel*15))
+            }
+            else 
+            {
+                draw_sprite(spr_tilePathing,overlay+6,x,y-h+(global.zLevel*15))
+            }
         }
         //if zoneControl = true 
         //{

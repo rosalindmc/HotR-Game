@@ -11,6 +11,8 @@ initializeCharStats()
 
 //Core
 important = false
+active = true
+dead = false
 
 //Initiative
 initSlot = instance_create(20,20,obj_initiativeSlot)
@@ -147,6 +149,7 @@ stmRegen = 5+(stmMax*.1)
 
 suppression = 0
 bold = 0
+wounds = 0
 
 //Initialize of weapons for weapon users
 initializeTriggers()

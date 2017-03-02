@@ -21,19 +21,22 @@ with(obj_combatHUD)
 
 with(obj_character)
 {
-    if important = true     //Demake Tool for non-mooks
+    if dead = false
     {
-        owner.experience += global.expTotal*(1-((cunning-8)*.03))
-        checkLevelUp(owner)
-    }
-    else                    //Demake Tool for mooks
-    {
-        with(owner)
+        if important = true    //Demake Tool for non-mooks
         {
-            instance_destroy()
+            owner.experience += global.expTotal*(1-((cunning-8)*.03))
+            checkLevelUp(owner)
         }
+        else                    //Demake Tool for mooks
+        {
+            with(owner)
+            {
+                instance_destroy()
+            }
+        }
+        instance_destroy()
     }
-    instance_destroy()
 }
 
 with(obj_terrain)

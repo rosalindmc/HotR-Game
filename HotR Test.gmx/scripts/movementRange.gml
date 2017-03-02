@@ -148,7 +148,7 @@ with(obj_character)
 {
     if team != global.control.team
     {
-        if threat = true
+        if threat = true and active = true
         {
             i = 0
             

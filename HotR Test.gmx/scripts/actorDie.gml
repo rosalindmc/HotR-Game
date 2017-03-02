@@ -6,12 +6,22 @@ with(argument0)
 {
     if life <= 0
     {
-        //Temporary, later replace with OoA script
-        isoTile.occupant = noone
-        
-        global.expTotal += expOnKill
+        //Out of Action
         global.team = team
-        instance_destroy()
+        active = false
+        
+        if owner.mook = true
+        {
+            dead = true
+        }
+        else
+        {
+            woundCheck(wounds)
+            wounds += 1
+        }
+        
+        life += floor(lifeMax/2)
+        startAnimation(0,animDown)
         
         //Destroy Initiative Slot
         with(initSlot)
@@ -20,22 +30,34 @@ with(argument0)
         }
         initiativeSlotReset()
         
-        //Destroy Character Sheet (Temp char murder)
-        if important = true
+        
+        if dead = true
         {
-            instance_activate_object(owner)
-            with(owner)
+            isoTile.occupant = noone
+            global.expTotal += expOnKill
+            
+            //Destroy Character Sheet (Temp char murder)
+            if important = true
             {
-                characterDie()
+                instance_activate_object(owner)
+                with(owner)
+                {
+                    if mook = false
+                    {
+                        createNotification(string(firstName)+' was killed',ico_bold,1)
+                    }
+                    characterDie()
+                }
+                instance_deactivate_object(owner)
             }
-            instance_deactivate_object(owner)
         }
         
         //Temporary Battle End
         global.battleEnd = true
+        
         with(obj_character)
         {
-            if team = global.team
+            if team = global.team and active = true
             {
                 global.battleEnd = false
                 
@@ -89,3 +111,26 @@ else
 
 instance_deactivate_object(party)            
 instance_destroy()
+#define actorRevive
+active = true
+startAnimation(0,animIdle)
+
+initSlot = instance_create(20,20,obj_initiativeSlot)
+initSlot.owner = id
+initSlot.order = 0
+initSlot.delay = 2
+initiativeSlotReset()
+
+#define woundCheck
+    if argument0 >= 2 and 1+irandom(99) < 75
+    {
+        dead = true
+    }
+    else if argument0 >= 1 and 1+irandom(99) < 75
+    {
+        //Get Wounded
+    }
+    else
+    {
+        //Nothing
+    }

@@ -19,6 +19,7 @@ with(obj_control)
     
     global.control.controlled = false
     global.control.suppression = 0
+    global.pathDraw = false
     global.control = noone
     global.timeDelay = 1
     global.nextChar.delay += argument0
@@ -35,7 +36,7 @@ with(obj_character)
 {
     i = 0
     
-    if threat = true
+    if threat = true and active = true
     {    
         repeat(ds_list_size(isoTile.adjacent))
         {

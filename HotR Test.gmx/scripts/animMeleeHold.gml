@@ -12,14 +12,14 @@ switch(argument1)
 case 0:
 handHeight[argument0] = 6
 handRot[argument0] = facing+(bodyHFacing*45)
-handDist[argument0] = 6
+handDist[argument0] = 4
 handDir[argument0] = facing+((argument0-1.5)*60)
 break
 
 case 1:
 handHeight[argument0] = 4
 handRot[argument0] = facing+(bodyHFacing*45)
-handDist[argument0] = 6
+handDist[argument0] = 4
 handDir[argument0] =  facing+((argument0-1.5)*60)
 
 alarm[5+argument0] = global.fspd*.05
@@ -28,7 +28,7 @@ break
 case 2:
 handHeight[argument0] = 5
 handRot[argument0] = facing+(bodyHFacing*45)
-handDist[argument0] = 6
+handDist[argument0] = 4
 handDir[argument0] =  facing+((argument0-1.5)*60)
 
 alarm[5+argument0] = global.fspd*(.3+random(.7))
@@ -179,3 +179,10 @@ case 4:
 startAnimation(argument0,script_execute(wepAnimType[argument0],0))
 break
 }
+#define animMeleeRest
+alarm[5+argument0] = global.fspd*.1
+handHeight[argument0] = 0
+handRot[argument0] = 90-(bodyHFacing*90)
+handDist[argument0] = 5
+handDir[argument0] = 90-(bodyHFacing*90)-((argument0-1.5)*15)
+animPriority[argument0] = 3

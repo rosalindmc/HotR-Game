@@ -28,6 +28,7 @@
             <string>//A Character Sheet stores all the information for a given character
 //It is always inactive, and only ever referenced directly
 
+initializeCharStats()
 characterInitialize()
 </string>
           </argument>

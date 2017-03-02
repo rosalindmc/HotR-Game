@@ -79,6 +79,10 @@ model = -4
         }
     }
 }
+else if global.charTab = tab
+{
+    dropDown = min(dropDown+(50/global.fspd),10)   
+}
 else
 {
     dropDown = max(dropDown-(25/global.fspd),0)   

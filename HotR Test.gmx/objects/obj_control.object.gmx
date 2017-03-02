@@ -46,6 +46,7 @@ tID = noone
 
 //Selection
 global.control = noone
+global.pathDraw = false
 global.nextChar = noone
 actNum = 0 //Variable for number of actions
 
@@ -513,7 +514,7 @@ if global.control != noone
         }
         
         //Pathdrawing
-        if action = moveControl
+        if global.pathDraw = true
         {
             obj_tile.onPath = false
             

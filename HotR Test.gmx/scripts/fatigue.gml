@@ -7,7 +7,7 @@ duration = 2.0
 type = 'Fatigue'
 buff = false
 showDuration = false
-tooltip = 'Reduced dodge, skill, action speed and movement'
+tooltip = 'Reduced dodge, skill, life regeneration, action speed and movement'
 image_index = potency
 
 switch(potency)
@@ -33,6 +33,8 @@ owner.dodge = max(owner.dodge-(potency*5),0)
 owner.mSkill = max(owner.mSkill-potency,0)
 owner.rSkill = max(owner.rSkill-potency,0)
 owner.cSkill = max(owner.cSkill-potency,0)
+owner.lifeRegen /= 1+(potency*.25)
+owner.stmRegen /= 1+(potency*.25)
 owner.movement /= 1+(potency*.2)
 owner.movementBonus /= 1+(potency*.5)
 break

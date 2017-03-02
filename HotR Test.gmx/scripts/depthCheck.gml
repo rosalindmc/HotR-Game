@@ -2,4 +2,4 @@
 //depthCheck(adjust)
 //Called in the step event of any object that is drawn isometrically
 
-depth = -y-(h*.3)+(ceil(h/15)*-10)+argument0
+depth = -y-(h*.3)+argument0

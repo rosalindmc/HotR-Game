@@ -42,7 +42,7 @@ with(i)
     }
 
     triggerOnAttack(true)
-    dge = target.dodge-(max(0,(skill-target.mSkill)*2))
+    dge = target.dodge-(max(0,(skill-target.mSkill)*3))
     
     //Damage Mitigation
     p /= (1+dmgMitigation)
@@ -76,15 +76,18 @@ with(i)
         
     triggerOnWound(true)
     
-    //Suppress
-    target.initSlot.delayAdd += max(0,((2.0/target.sResist))-(target.fSuppression+target.suppression))    
-    target.fSuppression += max(0,((2.0/target.sResist))-(target.fSuppression+target.suppression))    
+    if target.active = true
+    {
+        //Suppress
+        target.initSlot.delayAdd += max(0,((2.0/target.sResist))-(target.fSuppression+target.suppression))    
+        target.fSuppression += max(0,((2.0/target.sResist))-(target.fSuppression+target.suppression))    
+    }
 }
 
 
 if i.missChance > 0{extraTT += 1}
 if i.dge > 0 and i.backstab = false{extraTT += 1}
-if target.blocks > 0 and i.backstab = false{extraTT += 1}
+if target.blocks > 0 and i.backstab = false and floor(100-((i.skill-target.mSkill)*3)) > 0 and (mle = true or target.hasShield = true){extraTT += 1}
 
 draw_set_colour(c_dkgray)
 draw_rectangle(ix,iy,ix+120,iy+20+((extraTT+tooltipLength)*14),false)
@@ -109,9 +112,9 @@ if i.dge > 0 and i.backstab = false
     draw_text(ix+5,iy,string(floor(i.dge))+' % Dodge')
     iy += 14  
 }
-if target.blocks > 0 and i.backstab = false
+if target.blocks > 0 and i.backstab = false and floor(100-((i.skill-target.mSkill)*3)) > 0 and (mle = true or target.hasShield = true)
 {
-    draw_text(ix+5,iy,string(floor(100-(max(0,(i.skill-target.mSkill)*2))))+' % Block '+string(floor((i.p+target.blockStr)/4)))
+    draw_text(ix+5,iy,string(floor(100-(max(0,(i.skill-target.mSkill)*3))))+' % Block '+string(floor((i.p+target.blockStr)/4)))
     iy += 14  
 }
 if tooltipLength != 0
@@ -163,7 +166,7 @@ with(obj_character)
                 {
                     if occupant != noone
                     {
-                        if other.team != occupant.team
+                        if other.team != occupant.team and occupant.active = true
                         {
                             o = occupant
                             //Suppress
@@ -173,7 +176,7 @@ with(obj_character)
                     }
                     else if id = other.t
                     {
-                        if other.team != global.nextChar.owner.team
+                        if other.team != global.nextChar.owner.team and occupant.active = true
                         {
                             o = global.nextChar.owner
                             //Suppress

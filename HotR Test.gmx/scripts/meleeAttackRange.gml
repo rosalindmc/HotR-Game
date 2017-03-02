@@ -8,7 +8,7 @@ var current
 
 with(obj_character)
 {
-    if team != actor.team
+    if team != actor.team and dead = false
     {
         for(ii = 0; ii < ds_list_size(global.moveTile); ii ++)
         {
@@ -32,7 +32,7 @@ with(obj_character)
 #define embattled
 with(obj_character)
 {
-    if team != argument0.team
+    if team != argument0.team and dead = false
     {
         if los(argument0.reach,argument0.sightTile,sightTile)
         {
@@ -51,7 +51,7 @@ var current = global.control.sightTile
 
 with(obj_character)
 {
-    if team != actor.team
+    if team != actor.team and dead = false
     {
         if los(global.control.reach,current,sightTile)
         {

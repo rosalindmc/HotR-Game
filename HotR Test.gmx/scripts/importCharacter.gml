@@ -7,6 +7,7 @@ invSwitch = 1
 iCVis()
 iC()
 
+wounds = o.wounds
 life = lifeMax
 stm = stmMax
 arm = armMax
@@ -372,6 +373,8 @@ if o.invSlot[4,0] = emptySlot
     hipsColour[hipsItems] = c_white
 }
 #define iC
+o = owner
+
 iCStats()
 iCWear()
 iCSubStats()

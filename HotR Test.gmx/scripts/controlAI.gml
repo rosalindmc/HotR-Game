@@ -51,10 +51,10 @@ with(obj_tile)
 {
     if meleeAttack = true and instance_exists(occupant)
     {
-        if random(1)+(occupant.bold*5)-occupant.initSlot.delay-((occupant.life/occupant.lifeMax)*3) > global.aggro
+        if random(1)+(occupant.bold*5)-occupant.suppression-((occupant.life/occupant.lifeMax)*3)+(occupant.active*5) > global.aggro
         {
             global.target = id
-            global.aggro = random(1)+(occupant.bold*5)-occupant.initSlot.delay-((occupant.life/occupant.lifeMax)*3)
+            global.aggro = random(1)+(occupant.bold*5)-occupant.suppression-((occupant.life/occupant.lifeMax)*3)+(occupant.active*5)
         }
     }
 }
@@ -82,8 +82,8 @@ if global.target != -4
         //Move and Update Grid
         makeMovePath(global.attackFromTile)
         i.pathLength = ii
-        i.stm -= global.attackFromTile.g*.1
-        if global.attackFromTile.overlay = 2{i.stm -= global.attackFromTile.g*.1}
+        i.stm -= global.attackFromTile.g*.03*i.movStaminaMult*(1+(i.enc*.01))
+        if global.attackFromTile.overlay = 2{i.stm -= global.attackFromTile.g*.07*i.movStaminaMult*(1+(i.enc*.01))}
         gridUpdate(i, global.attackFromTile)
         
         //Start the Action
@@ -140,8 +140,8 @@ if global.target != i.isoTile
 //Move and Update Grid9
 makeMovePath(global.target)
 i.pathLength = ii
-i.stm -= global.target.g*.1*i.movStaminaMult*(1+(i.enc*.01))
-if global.target.overlay = 2{i.stm -= global.target.g*.1*i.movStaminaMult*(1+(i.enc*.01))}
+i.stm -= global.target.g*.03*i.movStaminaMult*(1+(i.enc*.01))
+if global.target.overlay = 2{i.stm -= global.target.g*.07*i.movStaminaMult*(1+(i.enc*.01))}
 gridUpdate(i, global.target)
 
 with(i){triggerOnMove()}
@@ -182,7 +182,7 @@ else
 {
     with(obj_character)
     {
-        if (team != i.team)
+        if team != i.team and dead = false
         {
             if (checkRange(id,i) < i.wepRRange && checkRange(id,i)< closestTarget)
             {

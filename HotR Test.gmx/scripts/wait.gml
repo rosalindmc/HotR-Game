@@ -7,7 +7,7 @@ switch(argument0)
 {
     //Run 0 when a player selects the command
     case 0:
-    i.stm = min(i.stm+(i.stmRegen*(1-(i.enc*.01))),i.stmMax)
+    i.stm = min(i.stm+(i.stmRegen*.25*(1-(i.enc*.01))),i.stmMax)
     endTurn(2.0)
     break
     

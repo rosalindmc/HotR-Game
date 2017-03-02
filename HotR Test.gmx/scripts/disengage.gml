@@ -22,8 +22,8 @@ switch(argument0)
         //Move and Update Grid
         makeMovePath(cHover)
         i.pathLength = ii
-        i.stm -= cHover.g*.1*i.movStaminaMult*(1+(i.enc*.01))
-        if cHover.overlay = 2{i.stm -= cHover.g*.1*i.movStaminaMult*(1+(i.enc*.01))}
+        i.stm -= cHover.g*.03*i.movStaminaMult*(1+(i.enc*.01))
+        if cHover.overlay = 2{i.stm -= cHover.g*.07*i.movStaminaMult*(1+(i.enc*.01))}
         gridUpdate(i, cHover)
         with(i){triggerOnMove()}
         
@@ -38,6 +38,8 @@ switch(argument0)
     
     //Run 2 to draw
     case 2:
+    global.pathDraw = true
+    
     if instance_exists(cHover)
     {
         //Movement Tooltip

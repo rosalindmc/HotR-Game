@@ -14,7 +14,7 @@ else
     rDamage()
 }
 
-dge = target.dodge-(max(0,(skill-target.mSkill)*2))
+dge = target.dodge-(max(0,(skill-target.mSkill)*3))
 triggerOnAttack(false)
 
 //Facing
@@ -35,11 +35,11 @@ else if irandom(99)+1 < dge and backstab = false
     ii = instance_create(target.x,target.y-target.h-target.height,obj_descriptor)
     ii.text = 'Dodge'
     ii.font = fnt_tiny
-    target.stm -= 2*(1+(target.enc*.01))
+    target.stm -= 1*(1+(target.enc*.01))
     
     with(target)
     {
-        {startAnimation(0,animDodge)}
+        startAnimation(0,animDodge)
     }
     
     //Suppress
@@ -62,16 +62,16 @@ a = target.arm
 triggerOnHit(false)
 
 //Check Block
-if target.blocks > 0 and backstab = false
+if target.blocks > 0 and backstab = false and (mle = true or target.hasShield = true)
 {
-    if irandom(99)+1 < 100-(max(0,(skill-target.mSkill)*2)) 
+    if irandom(99)+1 < 100-(max(0,(skill-target.mSkill)*3)) 
     {
         a += p+target.blockStr
-        target.stm -= p*.1
+        target.stm -= p*.05
         
         if mle = true
         {  
-            stm -= p*.1
+            stm -= p*.05
              
             with(target)
             {
@@ -103,10 +103,13 @@ if p > 0
     
     with(target)
     {
-        if (other.hFacing = 1 and x < other.x) or (other.hFacing = -1 and x > other.x)
-        {startAnimation(0,animFlinchForward)}
-        else
-        {startAnimation(0,animFlinch)}
+        if active = true
+        {
+            if (hFacing = 1 and x > other.x) or (hFacing = -1 and x < other.x)
+            {startAnimation(0,animFlinchForward)}
+            else
+            {startAnimation(0,animFlinch)}
+        }
         
         part_system_depth(ps2,depth-1)
         iii = point_direction(x,y,other.x,other.y)
@@ -159,15 +162,10 @@ if target.life <= 0
 //supress(Supressed Character, Supression Value)
 if argument1 > 1 or argument0.bold != 1
 {
-    if argument1 > argument0.suppression
+    if argument1 > argument0.suppression and argument0.active = true
     {
         argument0.initSlot.delay += (argument1/argument0.sResist)-argument0.suppression
         argument0.suppression += (argument1/argument0.sResist)-argument0.suppression
-        
-        with(argument0)
-        {
-            loseMorale(argument1*.15)
-        }
     }
 }
 
@@ -187,6 +185,11 @@ p *= (1-wepPowRng[atkHand]+random(wepPowRng[atkHand]*2))
 skill = mSkill
 pen = wepPen[atkHand]
 typeName = wepType[atkHand]
+
+if target.active = false
+{
+    skill += 100
+}
 
 //Height Advantage
 if global.attackFromTile.h > target.h

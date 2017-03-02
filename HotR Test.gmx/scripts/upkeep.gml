@@ -7,16 +7,21 @@ if obj_control.mapTimeOn = true and global.timeDelay = 0
 {
     //Life and Stamina Regeneration
     regenTime += lifeRegen/(global.fspd*5)
-    stm = min(stm+((stmRegen*(1-(enc*.01)))/(global.fspd*15)),stmMax)
+    stm = min(stm+((stmRegen*(1-(enc*.01)))/(global.fspd*60)),stmMax)
     
-        if regenTime >= 1
+    if regenTime >= 1
+    {
+        if life < lifeMax
         {
-            if life < lifeMax
-            {
-                life += 1
-            }
-            regenTime -= 1
+            life += 1
         }
+        regenTime -= 1
+    }
+    
+    if life = lifeMax and active = false and dead = false
+    {
+        actorRevive()
+    }
     
     //Block Generation
     blocks = min(blocks+(blockGen/(global.fspd)),blockMax)
