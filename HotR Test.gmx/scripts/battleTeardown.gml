@@ -34,9 +34,9 @@ with(obj_character)
             {
                 instance_destroy()
             }
-        }
-        instance_destroy()
+        }   
     }
+    instance_destroy()
 }
 
 with(obj_terrain)

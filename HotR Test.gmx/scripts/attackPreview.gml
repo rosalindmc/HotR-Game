@@ -87,7 +87,7 @@ with(i)
 
 if i.missChance > 0{extraTT += 1}
 if i.dge > 0 and i.backstab = false{extraTT += 1}
-if target.blocks > 0 and i.backstab = false and floor(100-((i.skill-target.mSkill)*3)) > 0 and (mle = true or target.hasShield = true){extraTT += 1}
+if target.blocks > 0 and i.backstab = false and floor(100-((i.skill-target.mSkill)*3)) > 0 and (i.mle = true or target.hasShield = true){extraTT += 1}
 
 draw_set_colour(c_dkgray)
 draw_rectangle(ix,iy,ix+120,iy+20+((extraTT+tooltipLength)*14),false)
@@ -112,7 +112,7 @@ if i.dge > 0 and i.backstab = false
     draw_text(ix+5,iy,string(floor(i.dge))+' % Dodge')
     iy += 14  
 }
-if target.blocks > 0 and i.backstab = false and floor(100-((i.skill-target.mSkill)*3)) > 0 and (mle = true or target.hasShield = true)
+if target.blocks > 0 and i.backstab = false and floor(100-((i.skill-target.mSkill)*3)) > 0 and (i.mle = true or target.hasShield = true)
 {
     draw_text(ix+5,iy,string(floor(100-(max(0,(i.skill-target.mSkill)*3))))+' % Block '+string(floor((i.p+target.blockStr)/4)))
     iy += 14  

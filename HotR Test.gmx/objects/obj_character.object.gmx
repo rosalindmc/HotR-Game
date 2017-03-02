@@ -183,7 +183,7 @@ upkeep()
 
 //Perform currently assigned action
 script_execute(action,0)
-depthCheck(-2)
+depthCheck(active)
 </string>
           </argument>
         </arguments>
