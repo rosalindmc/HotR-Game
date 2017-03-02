@@ -373,8 +373,6 @@ if o.invSlot[4,0] = emptySlot
     hipsColour[hipsItems] = c_white
 }
 #define iC
-o = owner
-
 iCStats()
 iCWear()
 iCSubStats()

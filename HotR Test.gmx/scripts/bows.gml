@@ -30,11 +30,11 @@ break
 
 case 2:     //Called when equipped
 wepClass[i] = ranged
-wepAnimType[i] = typeAxe
+wepAnimType[i] = typeBow
 
 wepRPow[i] = iDmg
 wepRType[i] = iType
-wepRPowRng[i] = .5
+wepRPowRng[i] = .3
 wepRStrMult[i] = iStrMult
 wepRStamina[i] = iStrMult*2
 wepRPen[i] = iPen
@@ -86,11 +86,11 @@ break
 
 case 2:     //Called when equipped
 wepClass[i] = ranged
-wepAnimType[i] = typeAxe
+wepAnimType[i] = typeBow
 
 wepRPow[i] = iDmg
 wepRType[i] = iType
-wepRPowRng[i] = .5
+wepRPowRng[i] = .3
 wepRStrMult[i] = iStrMult
 wepRStamina[i] = iStrMult*1.5
 wepRPen[i] = iPen

@@ -25,10 +25,8 @@ repeat(ds_list_size(attacker.party))
 {
     ii = instance_create((room_width/2)+(i*20)-(i*20),10+(i*10)+(i*10),obj_character)
     ii.isoX = i
-    ii.isoY = 0
-    ii.isoZ = obj_control.map[i,0].heightMap
-    ii.cFacing = 180
-    ii.facing = 180
+    ii.isoY = obj_control.mapWidth-1
+    ii.isoZ = obj_control.map[i,ii.isoY].heightMap
     ii.isoTile = obj_control.map[ii.isoX+((ii.isoZ)*obj_control.mapWidth),ii.isoY]
     ii.sightTile = obj_control.map[ii.isoX+((ii.isoZ+1)*obj_control.mapWidth),ii.isoY]
     ii.x = ii.isoTile.x
@@ -60,12 +58,14 @@ repeat(ds_list_size(defender.party))
 {
     ii = instance_create((room_width/2)+(i*20)-(i*20),10+(i*10)+(i*10),obj_character)
     ii.isoX = i
-    ii.isoY = obj_control.mapWidth-1
-    ii.isoZ = obj_control.map[i,ii.isoY].heightMap
+    ii.isoY = 0
+    ii.isoZ = obj_control.map[i,0].heightMap
+    ii.cFacing = 180
+    ii.facing = 180
     ii.isoTile = obj_control.map[ii.isoX+((ii.isoZ)*obj_control.mapWidth),ii.isoY]
     ii.sightTile = obj_control.map[ii.isoX+((ii.isoZ+1)*obj_control.mapWidth),ii.isoY]
-    ii.x = obj_control.map[i,obj_control.mapWidth-1].x
-    ii.y = obj_control.map[i,obj_control.mapWidth-1].y
+    ii.x = ii.isoTile.x
+    ii.y = ii.isoTile.y
     ii.h = ii.isoTile.h
     ii.isoTile.occupant = ii
     

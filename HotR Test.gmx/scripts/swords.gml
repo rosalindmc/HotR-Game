@@ -4,7 +4,7 @@
 #define knife
 iSpr = spr_knife
 iDmg = 2.0
-iDmgRng = .3
+iDmgRng = .2
 iType = 'Rending'
 iStrMult = .25
 iPen = 1
@@ -60,7 +60,7 @@ break
 #define dagger
 iSpr = spr_dagger
 iDmg = 2.0
-iDmgRng = .5
+iDmgRng = .3
 iType = 'Piercing'
 iStrMult = .25
 iPen = 8
@@ -116,7 +116,7 @@ break
 #define shortSword
 iSpr = spr_shortSword
 iDmg = 3.0
-iDmgRng = .3
+iDmgRng = .2
 iType = 'Rending'
 iStrMult = .25
 iPen = 1
@@ -172,7 +172,7 @@ break
 #define armingSword
 iSpr = spr_armSword
 iDmg = 4.0
-iDmgRng = .3
+iDmgRng = .2
 iType = 'Rending'
 iStrMult = .25
 iPen = 1
@@ -228,7 +228,7 @@ break
 #define sabre
 iSpr = spr_sabre
 iDmg = 4.0
-iDmgRng = .3
+iDmgRng = .2
 iType = 'Rending'
 iStrMult = .25
 iPen = 3
@@ -284,7 +284,7 @@ break
 #define bastardSword
 iSpr = spr_bstdSword
 iDmg = 4.4
-iDmgRng = .3
+iDmgRng = .2
 iType = 'Rending'
 iStrMult = .3
 iPen = 1
@@ -340,7 +340,7 @@ break
 #define greatSword
 iSpr = spr_greatSword
 iDmg = 6.5
-iDmgRng = .3
+iDmgRng = .2
 iType = 'Rending'
 iStrMult = .25
 iPen = 2

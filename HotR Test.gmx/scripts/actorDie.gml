@@ -10,7 +10,7 @@ with(argument0)
         global.team = team
         active = false
         
-        if owner.mook = true
+        if o.mook = true
         {
             dead = true
         }

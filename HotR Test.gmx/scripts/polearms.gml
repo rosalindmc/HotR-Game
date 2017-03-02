@@ -4,7 +4,7 @@
 #define shortSpear
 iSpr = spr_shortSpear
 iDmg = 2.8
-iDmgRng = .5
+iDmgRng = .3
 iType = 'Piercing'
 iStrMult = .20
 iPen = 2
@@ -60,7 +60,7 @@ break
 #define spear
 iSpr = spr_spear
 iDmg = 3.4
-iDmgRng = .5
+iDmgRng = .3
 iType = 'Piercing'
 iStrMult = .20
 iPen = 2
@@ -116,7 +116,7 @@ break
 #define pike
 iSpr = spr_pike
 iDmg = 6.00
-iDmgRng = .5
+iDmgRng = .3
 iType = 'Piercing'
 iStrMult = .20
 iPen = 3
@@ -175,7 +175,7 @@ break
 #define halberd
 iSpr = spr_halberd
 iDmg = 6.50
-iDmgRng = .3
+iDmgRng = .2
 iType = 'Rending'
 iStrMult = .25
 iPen = 2

@@ -4,7 +4,7 @@
 #define lightMace
 iSpr = spr_lightMace
 iDmg = 3.6
-iDmgRng = .3
+iDmgRng = .2
 iType = 'Impact'
 iStrMult = .30
 iPen = 1
@@ -60,7 +60,7 @@ break
 #define mace
 iSpr = spr_mace
 iDmg = 5.0
-iDmgRng = .3
+iDmgRng = .2
 iType = 'Impact'
 iStrMult = .30
 iPen = 1
@@ -116,7 +116,7 @@ break
 #define maul
 iSpr = spr_maul
 iDmg = 7.5
-iDmgRng = .3
+iDmgRng = .2
 iType = 'Impact'
 iStrMult = .30
 iPen = 1
@@ -174,7 +174,7 @@ break
 #define hammer
 iSpr = spr_hammer
 iDmg = 4.0
-iDmgRng = .3
+iDmgRng = .2
 iType = 'Piercing'
 iStrMult = .30
 iPen = 10
@@ -230,7 +230,7 @@ break
 #define warhammer
 iSpr = spr_warhammer
 iDmg = 6.5
-iDmgRng = .3
+iDmgRng = .2
 iType = 'Piercing'
 iStrMult = .30
 iPen = 14
@@ -288,7 +288,7 @@ break
 #define staff
 iSpr = spr_staff
 iDmg = 3.0
-iDmgRng = .3
+iDmgRng = .2
 iType = 'Impact'
 iStrMult = .25
 iPen = 1

@@ -257,7 +257,7 @@ if global.charTab = tab
     
     if global.charSelect.levelPending != 0{draw_text(x+55,y-117,'+')}
     
-    draw_text(x,y-105,string(global.charSelect.experience)+' / '+string(global.charSelect.expToLevel))
+    draw_text(x,y-105,string_format(global.charSelect.experience,2,1)+' / '+string(global.charSelect.expToLevel))
 
         
     draw_set_halign(fa_left)

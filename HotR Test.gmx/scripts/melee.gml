@@ -9,9 +9,8 @@ stm -= s*wepStamina[atkHand]*atkStaminaMult*.25
 
 #define ranged
 //Ranged attack Script
-
-//Fire Projectile (Temp, later anim will handle)
-fireProjectile(wepRProjectile[atkHand],wepRProjSpeed[atkHand])
+facing = round(point_direction(x,y,target.x,target.y)/30)*30
+startAnimation(atkHand,script_execute(wepAnimType[atkHand],2))
 
 //Stamina Cost
 s = (3-(dualWield*.5))/((wepRSpeed[atkHand]))

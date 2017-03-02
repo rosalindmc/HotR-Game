@@ -450,6 +450,7 @@
             <script>scripts\animMeleeHold.gml</script>
             <script>scripts\animPresentArms.gml</script>
             <script>scripts\animDownSwing.gml</script>
+            <script>scripts\animFireBow.gml</script>
             <script>scripts\animCrossSwing.gml</script>
           </scripts>
           <script>scripts\startAnimation.gml</script>

@@ -79,7 +79,7 @@ with(obj_character)
     {
         if i.z > h
         {
-            if i.z < h+height
+            if i.z < h+(height*(.25+(.75*active)))
             {   
                 //Adjust for Size
                 if abs(isoX-i.isoX) <= 1

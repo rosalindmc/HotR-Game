@@ -3,7 +3,7 @@
 #define heaterShield
 iSpr = spr_heaterShield
 iDmg = 3.0
-iDmgRng = .3
+iDmgRng = .2
 iType = 'Impact'
 iStrMult = .25
 iPen = 1
@@ -53,7 +53,7 @@ break
 #define roundShield
 iSpr = spr_roundShield
 iDmg = 2.0
-iDmgRng = .3
+iDmgRng = .2
 iType = 'Impact'
 iStrMult = .25
 iPen = 1
@@ -103,7 +103,7 @@ break
 #define squareShield
 iSpr = spr_squareShield
 iDmg = 4.0
-iDmgRng = .3
+iDmgRng = .2
 iType = 'Impact'
 iStrMult = .30
 iPen = 1

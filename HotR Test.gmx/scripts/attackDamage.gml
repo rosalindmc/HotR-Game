@@ -138,7 +138,7 @@ else if ia > 0
 
 //Damage
 target.life -= p
-target.stm -= p*.5
+target.stm -= p*.25
 
 with(target)
 {
