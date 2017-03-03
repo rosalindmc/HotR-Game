@@ -42,6 +42,11 @@ switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
 evasion = true
+
+if bold = 1
+{
+    dodge += 15
+}
 break
 
 case 1:     //Tooltip and icon

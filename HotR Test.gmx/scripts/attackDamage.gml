@@ -224,7 +224,7 @@ typeName = wepRType[atkHand]
 
 #define gainMorale
 //gainMorale
-if bold != 1
+if bold != 1 and dead = false
 {
     bold = min(bold+argument0,1)
     
@@ -242,7 +242,7 @@ if bold != 1
 
 #define loseMorale
 //gainMorale
-if bold = 1
+if bold = 1 and dead = false
 {
     iC()
     

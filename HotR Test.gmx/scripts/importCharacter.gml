@@ -12,7 +12,7 @@ life = lifeMax
 stm = stmMax
 arm = armMax
 
-expOnKill = floor(o.level*2*(1+(o.level*.1)))
+expOnKill = floor(o.level*(1+(o.level*.1)))
 
 if hasShield = true
 {
@@ -131,10 +131,9 @@ cSkill = max(((grace-8)*.1)+((cunning-8)*.2)+o.cSkill,0)
 atkDPS = (might-8)/2
 atkHaste = ((grace-8)*.03)
 
-//Resistance
-//fResist = 25+(grace-8)+(might-8)
-//pResist = 25+(will-8)+(might-8)
-//mResist = 25+(cunning-8)+(will-8)
+//Ability
+spellPow = (cunning-8)
+spellDur = 1+((cunning-8)*.1)
 
 //Morale
 sResist = 1
@@ -374,8 +373,8 @@ if o.invSlot[4,0] = emptySlot
 }
 #define iC
 iCStats()
-iCWear()
 iCSubStats()
+iCWear()
 iCEquip(invSwitch)
 iCTraits()
 
@@ -385,20 +384,16 @@ if bold = 1
     mSkill += 2*(1+((fellowship-8)*.05))
     rSkill += 2*(1+((fellowship-8)*.05))
     cSkill += 2*(1+((fellowship-8)*.05))
-    
-    if evasion = true
-    {
-        dodge += 15
-    }
 }
 
 if o.mook = true
 {
     wepPow[1] *= .75
     wepPow[2] *= .75
-    atkHaste -= .3
+    wepRPow[1] *= .75
+    wepRPow[2] *= .75
+    atkHaste *= .7
     dodge -= 20
-    arc -= 40
     blockStr *= .5
 }
 
@@ -423,4 +418,22 @@ else
     stm = max(stm,0)
     //Exhausted   
     applyStatusEffect(fatigue,id,3,120)
+}
+#define adjacentCharacters
+foeAdj = 0
+allyAdj = 0
+
+for(var j = 0; j < ds_list_size(isoTile.adjacent); j++)
+{
+    if(ds_list_find_value(isoTile.adjacent, j).occupant != noone)
+    {
+        if(ds_list_find_value(isoTile.adjacent, j).occupant.team != team)
+        {
+            foeAdj += 1
+        }
+        if(ds_list_find_value(isoTile.adjacent, j).occupant.team = team)
+        {
+            allyAdj += 1
+        }
+    }    
 }

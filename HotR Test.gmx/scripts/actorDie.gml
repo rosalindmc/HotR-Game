@@ -44,7 +44,7 @@ with(argument0)
                 {
                     if mook = false
                     {
-                        createNotification(string(firstName)+' was killed',ico_bold,1)
+                        createNotification(string(firstName)+' was killed',ico_death,1)
                     }
                     characterDie()
                 }

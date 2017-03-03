@@ -169,10 +169,10 @@ talentPrereq(treeMartial,0)
 talentPrereq(treeMobility,0)
 talentPrereq(treeInsight,0)
 //talentPrereq(treeSubterfuge,0)
-//talentPrereq(treeFrenzy,0)
+talentPrereq(treeValour,0)
 talentPrereq(treeDiscipline,0)
 //talentPrereq(treeLeadership,0)
-//talentPrereq(treeDaring,0)
+talentPrereq(treeDaring,0)
 
 repeat(3)
 {
@@ -209,7 +209,11 @@ repeat(3)
     talentPrereq(branchBloodlust,treeFrenzy)
     talentPrereq(branchWrath,treeFrenzy)
     
+    //talentPrereq(branchBravery,treeValour)
+    talentPrereq(branchAgainstTheOdds,treeValour)
+    
     talentPrereq(branchBlockTraining,treeDiscipline)
+    talentPrereq(branchArmourTraining,treeDiscipline)
     talentPrereq(branchConfidence,treeDiscipline)
     talentPrereq(branchShakeItOff,treeDiscipline)
     
@@ -217,10 +221,9 @@ repeat(3)
     talentPrereq(branchUnity,treeLeadership)
     talentPrereq(branchRally,treeLeadership)
     
-    talentPrereq(branchBravery,treeDaring)
-    talentPrereq(branchAgainstTheOdds,treeDaring)
-    talentPrereq(branchFlourish,treeDaring)
-    
+    //talentPrereq(branchFlourish,treeDaring)
+    talentPrereq(branchParry,treeDaring)
+    talentPrereq(branchFocus,treeDaring)
 }
 
 for(ttt = 0; ttt < 8; ttt++)

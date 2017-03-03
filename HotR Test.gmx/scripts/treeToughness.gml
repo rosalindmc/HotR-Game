@@ -134,7 +134,7 @@ break
 switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
-lifeRegen *= 1.4
+lifeRegen += .8+((will-8)*.12)
 break
 
 case 1:     //Tooltip and icon

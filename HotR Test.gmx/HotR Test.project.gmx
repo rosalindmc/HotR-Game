@@ -103,6 +103,7 @@
         <sprite>sprites\ico_switch</sprite>
         <sprite>sprites\ico_money</sprite>
         <sprite>sprites\ico_bold</sprite>
+        <sprite>sprites\ico_death</sprite>
         <sprite>sprites\ico_experience</sprite>
       </sprites>
       <sprites name="Talent Icons">
@@ -142,6 +143,7 @@
           </sprites>
           <sprites name="will">
             <sprite>sprites\ico_frenzy</sprite>
+            <sprite>sprites\ico_valour</sprite>
             <sprite>sprites\ico_discipline</sprite>
             <sprite>sprites\ico_confidence</sprite>
             <sprite>sprites\ico_blockTraining</sprite>
@@ -552,6 +554,7 @@
         <script>scripts\treeInsight.gml</script>
         <script>scripts\treeSubterfuge.gml</script>
         <script>scripts\treeFrenzy.gml</script>
+        <script>scripts\treeValour.gml</script>
         <script>scripts\treeDiscipline.gml</script>
         <script>scripts\treeDaring.gml</script>
         <script>scripts\treeLeadership.gml</script>

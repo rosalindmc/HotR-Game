@@ -152,6 +152,10 @@ suppression = 0
 bold = 0
 wounds = 0
 
+//Adjacency
+foeAdj = 0
+allyAdj = 0
+
 //Initialize of weapons for weapon users
 initializeTriggers()
 initializeTraits()

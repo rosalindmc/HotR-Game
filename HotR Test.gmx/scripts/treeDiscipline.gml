@@ -110,3 +110,24 @@ case 2:
 return true
 break
 }
+#define branchArmourTraining
+//tree(how to use, rank)
+switch(argument0)
+{
+case 0:     //Run when the unit is initialized in battle
+armMax += 2
+enc /= 1.5
+break
+
+case 1:     //Tooltip and icon
+sprite_index = ico_blockTraining
+image_index = 1
+name = 'Armour Training'
+tooltip = 'Reduce armour encumberance by 33% and increase armour by 1/2'
+branch = treeDiscipline
+break
+
+case 2:
+return true
+break
+}
