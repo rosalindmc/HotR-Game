@@ -38,6 +38,7 @@ global.timeDelay = 1
 global.target = -4
 global.expTotal = 0
 global.losCheckFrom = noone
+global.follow = noone
 
 //Visuals
 image_speed = .3
@@ -364,7 +365,7 @@ if mapTimeOn = true and global.nextChar != noone and global.timeDelay = 0
         }
     }
 }
-else
+else if global.follow = noone
 {
     ii = min(1/global.fspd,global.timeDelay)
     global.timeDelay -= ii
@@ -544,6 +545,17 @@ if global.control != noone
         }      
     }
 }
+
+if instance_exists(global.follow)
+{
+    obj_camera.x = global.follow.x
+    obj_camera.y = global.follow.y
+}
+else
+{
+    global.follow = noone
+}
+
 
 //Update Visible Tiles
 if obj_camera.x != obj_camera.xprevious or obj_camera.y != obj_camera.yprevious

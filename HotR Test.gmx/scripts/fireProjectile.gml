@@ -20,3 +20,5 @@ iSpd = (argument1*metre)*max(1,5-(point_distance(target.x,target.y,x,y)/(10*metr
 ii.spd = iSpd/global.fspd
 ii.zspd = (vDist/(dDist/iSpd))/global.fspd+((dDist/iSpd)*(grav*metre/2))
 ii.zspd *= (1+((max(random(.1-(rSkill*aim*.01)),0))*choose(-1,1)))
+
+global.follow = ii

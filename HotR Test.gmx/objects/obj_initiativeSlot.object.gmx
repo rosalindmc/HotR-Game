@@ -114,6 +114,11 @@ if vis != 0
         if owner.vis = true
         {
             humanoidPortrait(owner,ix,iy,size)
+            
+            if owner.readiedAction = dualStrike
+            {
+                draw_sprite(spr_dualStrike,0,ix+(size*4),iy+(size*4))
+            }
         }
         else
         {

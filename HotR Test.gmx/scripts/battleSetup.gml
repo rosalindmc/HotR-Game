@@ -28,6 +28,7 @@ repeat(ds_list_size(attacker.party))
     ii.isoY = obj_control.mapWidth-1
     ii.isoZ = obj_control.map[i,ii.isoY].heightMap
     ii.isoTile = obj_control.map[ii.isoX+((ii.isoZ)*obj_control.mapWidth),ii.isoY]
+    ii.currentTile = ii.isoTile
     ii.sightTile = obj_control.map[ii.isoX+((ii.isoZ+1)*obj_control.mapWidth),ii.isoY]
     ii.x = ii.isoTile.x
     ii.y = ii.isoTile.y
@@ -63,6 +64,7 @@ repeat(ds_list_size(defender.party))
     ii.cFacing = 180
     ii.facing = 180
     ii.isoTile = obj_control.map[ii.isoX+((ii.isoZ)*obj_control.mapWidth),ii.isoY]
+    ii.currentTile = ii.isoTile
     ii.sightTile = obj_control.map[ii.isoX+((ii.isoZ+1)*obj_control.mapWidth),ii.isoY]
     ii.x = ii.isoTile.x
     ii.y = ii.isoTile.y
@@ -253,7 +255,7 @@ with(obj_tile)
 }
 
 #define combatMudGen
-repeat(3)
+repeat(2)
 {
     with(obj_tile)
     {

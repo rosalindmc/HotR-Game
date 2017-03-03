@@ -26,6 +26,7 @@ with(obj_character)
         if important = true    //Demake Tool for non-mooks
         {
             owner.experience += global.expTotal*(1-((cunning-8)*.03))
+            owner.wounds = wounds
             checkLevelUp(owner)
         }
         else                    //Demake Tool for mooks

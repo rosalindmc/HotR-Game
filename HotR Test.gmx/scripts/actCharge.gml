@@ -81,6 +81,11 @@ else
         actAttack(1)
     }
 }
+
+iX = floor(((x-100)/40)+((y-100)/20))-25
+iY = floor(((y-100)/20)-((x-100)/40))+25
+iZ = floor((h+14)/15)
+currentTile = obj_control.map[iX+(obj_control.mapWidth*iZ),iY]
 break
 
 case 1:

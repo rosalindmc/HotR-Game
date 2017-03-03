@@ -312,6 +312,7 @@
       <sprite>sprites\ico_invSlot</sprite>
       <sprite>sprites\spr_menuSheet</sprite>
       <sprite>sprites\spr_levelSheet</sprite>
+      <sprite>sprites\spr_dualStrike</sprite>
     </sprites>
     <sprites name="Overworld">
       <sprites name="Outdated">
