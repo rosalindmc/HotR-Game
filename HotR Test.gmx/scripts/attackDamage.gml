@@ -62,7 +62,7 @@ a = target.arm
 triggerOnHit(false)
 
 //Check Block
-if target.blocks > 0 and backstab = false and (mle = true or target.hasShield = true)
+if target.blocks >= 1 and backstab = false and (mle = true or target.hasShield = true)
 {
     if irandom(99)+1 < 100-(max(0,(skill-target.mSkill)*3)) 
     {

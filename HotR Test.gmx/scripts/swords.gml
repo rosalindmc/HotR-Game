@@ -6,7 +6,7 @@ iSpr = spr_knife
 iDmg = 2.0
 iDmgRng = .2
 iType = 'Rending'
-iStrMult = .25
+iStrMult = 1
 iPen = 1
 iSpd = 2.00
 
@@ -62,7 +62,7 @@ iSpr = spr_dagger
 iDmg = 2.0
 iDmgRng = .3
 iType = 'Piercing'
-iStrMult = .25
+iStrMult = 1
 iPen = 8
 iSpd = 1.85
 
@@ -118,7 +118,7 @@ iSpr = spr_shortSword
 iDmg = 3.0
 iDmgRng = .2
 iType = 'Rending'
-iStrMult = .25
+iStrMult = 1
 iPen = 1
 iSpd = 1.50
 
@@ -174,7 +174,7 @@ iSpr = spr_armSword
 iDmg = 4.0
 iDmgRng = .2
 iType = 'Rending'
-iStrMult = .25
+iStrMult = 1
 iPen = 1
 iSpd = 1.30
 
@@ -230,7 +230,7 @@ iSpr = spr_sabre
 iDmg = 4.0
 iDmgRng = .2
 iType = 'Rending'
-iStrMult = .25
+iStrMult = 1
 iPen = 3
 iSpd = 1.35
 
@@ -286,7 +286,7 @@ iSpr = spr_bstdSword
 iDmg = 4.4
 iDmgRng = .2
 iType = 'Rending'
-iStrMult = .3
+iStrMult = 1.2
 iPen = 1
 iSpd = 1.10
 
@@ -342,7 +342,7 @@ iSpr = spr_greatSword
 iDmg = 6.5
 iDmgRng = .2
 iType = 'Rending'
-iStrMult = .25
+iStrMult = 1
 iPen = 2
 iSpd = 1.00
 

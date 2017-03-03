@@ -6,7 +6,7 @@ iSpr = spr_handAxe
 iDmg = 3.0
 iDmgRng = .2
 iType = 'Rending'
-iStrMult = .25
+iStrMult = 1
 iPen = 5
 iSpd = 1.50
 
@@ -62,7 +62,7 @@ iSpr = spr_battleAxe
 iDmg = 4.0
 iDmgRng = .2
 iType = 'Rending'
-iStrMult = .25
+iStrMult = 1
 iPen = 6
 iSpd = 1.25
 
@@ -118,7 +118,7 @@ iSpr = spr_greatAxe
 iDmg = 6.5
 iDmgRng = .2
 iType = 'Rending'
-iStrMult = .25
+iStrMult = 1
 iPen = 7
 iSpd = 1.00
 

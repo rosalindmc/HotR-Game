@@ -6,7 +6,7 @@ iSpr = spr_shortSpear
 iDmg = 2.8
 iDmgRng = .3
 iType = 'Piercing'
-iStrMult = .20
+iStrMult = .8
 iPen = 2
 iSpd = 1.50
 
@@ -62,7 +62,7 @@ iSpr = spr_spear
 iDmg = 3.4
 iDmgRng = .3
 iType = 'Piercing'
-iStrMult = .20
+iStrMult = .8
 iPen = 2
 iSpd = 1.30
 
@@ -118,7 +118,7 @@ iSpr = spr_pike
 iDmg = 6.00
 iDmgRng = .3
 iType = 'Piercing'
-iStrMult = .20
+iStrMult = .8
 iPen = 3
 iSpd = 0.85
 
@@ -177,7 +177,7 @@ iSpr = spr_halberd
 iDmg = 6.50
 iDmgRng = .2
 iType = 'Rending'
-iStrMult = .25
+iStrMult = 1
 iPen = 2
 iSpd = 0.90
 

@@ -6,11 +6,11 @@ upkp = 60.0
 name = 'Strength'
 type = 'Focus'
 buff = true
-tooltip = '+'+string(potency*.1)+' POW, +'+string(potency)+' Force Resistance and +'+string(potency*.25)+' Block Strength'
+tooltip = '+'+string(potency/2)+' POW, +'+string(potency)+' Force Resistance and +'+string(potency*.25)+' Block Strength'
 break
 
 case 1:     //Stats
-owner.atkDPS += potency*.4
+owner.atkDPS += potency/2
 owner.fResist += potency
 owner.blockStr += potency
 break

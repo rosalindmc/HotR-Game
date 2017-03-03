@@ -5,10 +5,10 @@ switch(argument0)
 case 0:     //Run when the unit is initialized in battle
 switch(argument1)
 {
-case 1: onHit[onHitSize,2] = .6 break
-case 2: onHit[onHitSize,2] = .9 break
-case 3: onHit[onHitSize,2] = 1.2 break
-case 4: onHit[onHitSize,2] = 1.5 break
+case 1: onHit[onHitSize,2] = 1.0 break
+case 2: onHit[onHitSize,2] = 1.5 break
+case 3: onHit[onHitSize,2] = 2.0 break
+case 4: onHit[onHitSize,2] = 2.5 break
 }
 
 onHit[onHitSize,0] = advantageFel
@@ -25,13 +25,13 @@ image_index = argument1-1
 switch(argument1)
 {
 case 1: name = 'Basic Insight'
-tooltip = 'Increased detection range and +.6 POW on backstab and against helpless foes' break
+tooltip = 'Increased detection range and +1.0 POW on backstab and against helpless foes' break
 case 2: name = 'Improved Insight'
-tooltip = 'Increased detection range and +.9 POW on backstab and against helpless foes' break
-case 3: name = 'Expert Insight'
-tooltip = 'Increased detection range and +1.2 POW on backstab and against helpless foes' break
-case 4: name = 'Master Insight'
 tooltip = 'Increased detection range and +1.5 POW on backstab and against helpless foes' break
+case 3: name = 'Expert Insight'
+tooltip = 'Increased detection range and +2.0 POW on backstab and against helpless foes' break
+case 4: name = 'Master Insight'
+tooltip = 'Increased detection range and +2.5 POW on backstab and against helpless foes' break
 }
 break
 
@@ -98,7 +98,7 @@ switch(argument0)
 case 0:     //Run when the unit is initialized in battle
 onHit[onHitSize,0] = heightFel
 onHit[onHitSize,1] = 'Height Advantage'
-onHit[onHitSize,2] = .3
+onHit[onHitSize,2] = 1.0
 onHit[onHitSize,3] = false
 onHit[onHitSize,4] = false
 onHit[onHitSize,5] = false
@@ -109,7 +109,7 @@ case 1:     //Tooltip and icon
 sprite_index = ico_heightAdvantage
 image_index = 1
 name = 'Height Advantage'
-tooltip = '+.7 POW against foes at a lower elevation'
+tooltip = '+1.0 POW against foes at a lower elevation'
 branch = treeInsight
 break
 

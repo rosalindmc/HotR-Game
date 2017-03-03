@@ -21,7 +21,7 @@ with(obj_control)
     global.control.suppression = 0
     global.pathDraw = false
     global.control = noone
-    global.timeDelay = 2.0
+    global.timeDelay = 1.5
     global.nextChar.delay += argument0
     global.attackFromTile = noone
     

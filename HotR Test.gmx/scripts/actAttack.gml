@@ -40,24 +40,22 @@ target = readiedTarget
 i = 0
 global.ii = false     
 
-repeat(ds_list_size(isoTile.adjacent))
+if los(reach,target.sightTile,sightTile)
 {
-    with(ds_list_find_value(isoTile.adjacent,i))
+    if target.active = true
     {
-        if other.target = occupant
-        {
-            global.ii = true
-        }
+        global.ii = true
     }
-    i += 1
 }
 
 if global.ii = true
 {
     actAttack(1)
+    readiedAction = false
 }
 else
 {
     atkHand = 1
     script_execute(controlScript)
+    readiedAction = false
 }

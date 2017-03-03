@@ -18,13 +18,13 @@ if wepStrMult[atkHand] != 0
             
             if breaker = true
             {
-                iii = min(target.arm, floor(4+random(s*4)))
+                iii = min(target.arm, floor(4+random(s*20)))
                 target.arm -= iii        
             }
             
             if crunch = true
             {
-                p += max((might-target.might)*(.1*s),0)       
+                p += max((might-target.might)*(.2*s),0)       
             }
         }
     }
@@ -41,7 +41,7 @@ if wepStrMult[atkHand] != 0
         if crunch = true
         {
             obj_control.tooltipColour[obj_control.tooltipLength] = green
-            obj_control.tooltipText[obj_control.tooltipLength] = '  +'+string_format(max((might-target.might)*(.1*s),0)+(argument2*s),2,1)+' Damage'
+            obj_control.tooltipText[obj_control.tooltipLength] = '  +'+string_format(max((might-target.might)*(.2*s),0)+(argument2*s),2,1)+' Damage'
             obj_control.tooltipLength += 1             
         }
         else
@@ -54,7 +54,7 @@ if wepStrMult[atkHand] != 0
         if breaker = true
         {
             obj_control.tooltipColour[obj_control.tooltipLength] = green
-            obj_control.tooltipText[obj_control.tooltipLength] = '  SUNDER 1 - '+string(floor(s+1))
+            obj_control.tooltipText[obj_control.tooltipLength] = '  SUNDER 1 - '+string(floor(s*5))
             obj_control.tooltipLength += 1             
         }
     }
@@ -123,14 +123,14 @@ if dodge > dge and mle = true
 {
     if argument5 = false    //On Proc
     {
-        p += ((dodge-dge)*.03)*s
+        p += ((dodge-dge)*argument1)*s
     }
     else                    //On Tooltip
     {
-        p += ((dodge-dge)*.03)*s
+        p += ((dodge-dge)*argument1)*s
          
         obj_control.tooltipColour[obj_control.tooltipLength] = green
-        obj_control.tooltipText[obj_control.tooltipLength] = 'Lightning Strike '+string(floor(dodge-dge))+'%'
+        obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)+' '+string_format(((dodge-dge)*argument1)*s,2,1)
         obj_control.tooltipLength += 1   
         
     }

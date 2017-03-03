@@ -13,7 +13,7 @@ case 4: onHit[onHitSize,2] = 50 break
 
 onHit[onHitSize,0] = mighty
 onHit[onHitSize,1] = 'Mighty'
-onHit[onHitSize,3] = .6
+onHit[onHitSize,3] = 2
 onHit[onHitSize,4] = false
 onHit[onHitSize,5] = false
 onHitSize += 1
@@ -25,13 +25,13 @@ image_index = argument1-1
 switch(argument1)
 {
 case 1: name = 'Basic Strength'
-tooltip = 'Attacks have a 20% chance to inflict +.6 POW and DAZE for 2 seconds' break
+tooltip = 'Attacks have a 20% chance to be MIGHTY and inflict +2.0 POW and DAZE for 2 seconds' break
 case 2: name = 'Improved Strength'
-tooltip = 'Attacks have a 30% chance to inflict +.6 POW and DAZE for 2 seconds' break
+tooltip = 'Attacks have a 30% chance to be MIGHTY and inflict +2.0 POW and DAZE for 2 seconds' break
 case 3: name = 'Expert Strength'
-tooltip = 'Attacks have a 40% chance to inflict +.6 POW and DAZE for 2 seconds' break
+tooltip = 'Attacks have a 40% chance to be MIGHTY and inflict +2.0 POW and DAZE for 2 seconds' break
 case 4: name = 'Master Strength'
-tooltip = 'Attacks have a 50% chance to inflict +.6 POW and DAZE for 2 seconds' break
+tooltip = 'Attacks have a 50% chance to be MIGHTY and inflict +2.0 POW and DAZE for 2 seconds' break
 }
 break
 
@@ -76,7 +76,7 @@ case 1:     //Tooltip and icon
 sprite_index = ico_crunch
 image_index = 1
 name = 'Crunch'
-tooltip = 'MIGHTY attacks inflict +.1 POW to lower Might characters for each point of Might difference'
+tooltip = 'MIGHTY attacks inflict +.2 POW to lower Might characters for each point of Might difference'
 branch = treeStrength
 break
 
@@ -93,7 +93,7 @@ case 0:     //Run when the unit is initialized in battle
 onHit[onHitSize,0] = healthFel
 onHit[onHitSize,1] = 'Smash'
 onHit[onHitSize,2] = 70
-onHit[onHitSize,3] = .4
+onHit[onHitSize,3] = 1.2
 onHit[onHitSize,4] = false
 onHit[onHitSize,5] = false
 onHitSize += 1
@@ -103,7 +103,7 @@ case 1:     //Tooltip and icon
 sprite_index = ico_smash
 image_index = 1
 name = 'Smash'
-tooltip = 'Attacks inflict +.4 POW to high health foes (70%+)'
+tooltip = 'Attacks inflict +1.2 POW to high health foes (70%+)'
 branch = treeStrength
 break
 

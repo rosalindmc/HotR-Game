@@ -6,7 +6,7 @@ iSpr = spr_longBow
 iDmg = 5.0
 iDmgRng = .3
 iType = 'Piercing'
-iStrMult = .25
+iStrMult = .8
 iPen = 3
 iSpd = 0.60
 
@@ -62,7 +62,7 @@ iSpr = spr_shortBow
 iDmg = 4.0
 iDmgRng = .3
 iType = 'Piercing'
-iStrMult = .25
+iStrMult = .8
 iPen = 2
 iSpd = 0.80
 

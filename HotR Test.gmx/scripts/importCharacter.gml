@@ -128,7 +128,7 @@ rSkill = max(((grace-8)*.1)+((cunning-8)*.2)+o.rSkill,0)
 cSkill = max(((grace-8)*.1)+((cunning-8)*.2)+o.cSkill,0)
 
 //Offense
-atkDPS = (might-8)*.40
+atkDPS = (might-8)/2
 atkHaste = ((grace-8)*.03)
 
 //Resistance
@@ -149,7 +149,7 @@ blockStr = might
 
 //Vitals
 lifeMax = max(floor(8+(will-8)+((might-8)/2)+o.life),4)
-lifeRegen = 2+((will-8)*.25)
+lifeRegen = 2+((will-8)*.3)
 
 stmMax = max(floor(8+(will-8)+((grace-8)/2)+o.stamina),4)
 stmRegen = 5+(stmMax*.1)
