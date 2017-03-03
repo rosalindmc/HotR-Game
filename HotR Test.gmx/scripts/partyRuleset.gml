@@ -14,7 +14,7 @@ repeat(choose(40))
     choose(maul,lightMace,mace,hammer,warhammer,staff),
     choose(robe,chainmail,dress),
     choose(heaterShield,squareShield,roundShield),
-    choose(shortbow,longBow))
+    choose(shortBow,crossbow,longBow))
     inventory[ii,1] = choose(0,0,0,1,1,1,1,1,1,1,1,1)
     inventory[ii,2] = emptyMutator
     inventory[ii,3] = emptyMutator

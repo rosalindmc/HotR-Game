@@ -26,7 +26,7 @@ className = 'Wizard'
 
 //Inventory
 invSlot[1,0] = choose(greatSword,armingSword,staff)
-invSlot[3,0] = choose(shortbow,longBow,emptySlot,emptySlot,emptySlot)
+invSlot[3,0] = choose(shortBow,longBow,emptySlot,emptySlot,emptySlot)
 invSlot[4,0] = robe
 
 //Class Stats and Progression
@@ -86,7 +86,7 @@ className = 'Adventurer'
 
 //Inventory
 invSlot[1,0] = choose(greatSword,maul,greatAxe)
-invSlot[3,0] = choose(shortbow,longBow,emptySlot,emptySlot,emptySlot)
+invSlot[3,0] = choose(shortBow,crossbow,longBow,emptySlot,emptySlot,emptySlot)
 invSlot[4,0] = robe
 
 life = 4
@@ -116,7 +116,7 @@ className = 'Thief'
 //Inventory
 invSlot[1,0] = shortSword
 invSlot[2,0] = choose(shortSword,dagger,knife,roundShield,emptySlot)
-invSlot[3,0] = choose(shortbow,emptySlot,emptySlot,emptySlot)
+invSlot[3,0] = choose(shortBow,crossbow,emptySlot,emptySlot,emptySlot)
 invSlot[4,0] = robe
 
 life = 2
@@ -146,7 +146,7 @@ className = 'Warrior'
 //Inventory
 invSlot[1,0] = choose(battleAxe,spear,armingSword,mace)
 invSlot[2,0] = choose(shortSword,handAxe,roundShield,squareShield,heaterShield)
-invSlot[3,0] = choose(shortbow,longBow,emptySlot,emptySlot,emptySlot)
+invSlot[3,0] = choose(shortBow,crossbow,longBow,emptySlot,emptySlot,emptySlot)
 invSlot[4,0] = chainmail
 
 life = 6
@@ -166,13 +166,14 @@ will += 1
 //Talent
 talent[0,0] = choose(treeStrength,treeDiscipline,treeToughness,treeMartial)
 talent[0,5] = 2
+
 #define class_thrall
 className = 'Thrall'
 
 //Inventory
 invSlot[1,0] = choose(battleAxe,spear,armingSword)
 invSlot[2,0] = choose(shortSword,handAxe,roundShield,squareShield,heaterShield)
-invSlot[3,0] = choose(shortbow,emptySlot,emptySlot,emptySlot)
+invSlot[3,0] = choose(shortBow,emptySlot,emptySlot,emptySlot)
 invSlot[4,0] = robe
 
 life = 0
@@ -190,6 +191,7 @@ classCSkill = .3
 cunning -= 2
 fellowship -= 2
 mook = true
+
 #define class_thane
 className = 'Thane'
 

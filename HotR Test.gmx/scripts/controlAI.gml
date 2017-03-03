@@ -120,7 +120,7 @@ with (obj_tile)
     {
         with (obj_character)
         {
-            if (team != i.team)
+            if (team != i.team) and active = true
             {
                 if (checkRange(id,other) < closest)
                 {

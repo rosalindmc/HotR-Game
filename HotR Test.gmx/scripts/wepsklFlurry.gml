@@ -116,7 +116,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
     {
         if 1+irandom(99) <= argument1+((skill-target.mSkill)*5)
         {
-            applyStatusEffect(daze,target,50,5)
+            applyStatusEffect(daze,target,50,argument2)
                         
             ii = instance_create(x,y-h-height,obj_descriptor)
             ii.text = argument0
