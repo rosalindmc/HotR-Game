@@ -31,7 +31,7 @@ handRot[argument0] = facing+(bodyHFacing*45)
 handDist[argument0] = 4
 handDir[argument0] =  facing+((argument0-1.5)*60)
 
-alarm[5+argument0] = global.fspd*(.3+random(.7))
+alarm[5+argument0] = global.fspd*(.3+random(.2))
 break
 
 case 3:
@@ -55,14 +55,14 @@ switch(argument1)
 case 0:
 handHeight[argument0] = 4
 handRot[argument0] = 90-(bodyHFacing*90)
-handDist[argument0] = 6
+handDist[argument0] = 4
 handDir[argument0] = facing+((argument0-1.5)*60)
 break
 
 case 1:
 handHeight[argument0] = 2
 handRot[argument0] = 90-(bodyHFacing*90)
-handDist[argument0] = 6
+handDist[argument0] = 4
 handDir[argument0] = facing+((argument0-1.5)*60)
 
 alarm[5+argument0] = global.fspd*.05
@@ -71,11 +71,11 @@ break
 case 2:
 handHeight[argument0] = 3
 handRot[argument0] = 90-(bodyHFacing*90)
-handDist[argument0] = 6
+handDist[argument0] = 4
 handDir[argument0] = facing+((argument0-1.5)*60)
 
 
-alarm[5+argument0] = global.fspd*(.3+random(.7))
+alarm[5+argument0] = global.fspd*(.3+random(.2))
 break
 
 case 3:

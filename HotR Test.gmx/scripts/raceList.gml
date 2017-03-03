@@ -28,7 +28,7 @@ if irandom(4)+gender >= 5
 
 skinTone = choose(fair,fair,fair,dark,beige,beige,pale,pale)
 headSprite = spr_elfHead
-hairStyle = choose(spr_upHair,spr_shortHair)
+hairStyle = choose(spr_longHair,spr_bunHair,spr_shortHair)
 hairColour = choose(black,dkBrown,dkRed,c_yellow)
 
 bodyImage = choose(0,0,0,1,1,1,2)
@@ -38,6 +38,9 @@ size = min(choose(1,1,1,2,2,3,3,4)+gender,4)
     legSpriteMod = 0 
     hipsOffset = 11+bodyImage
     height = 28+bodyImage
+    
+legAdjust[1] = 1
+legAdjust[2] = 1
 break
 
 case 1:
@@ -72,6 +75,8 @@ if irandom(2)+gender >= 3
 }
 
 raceHead = spr_humanHead
+hairStyle = choose(spr_longHair,spr_bunHair,spr_shortHair)
+hairColour = choose(black,dkBrown)
 skinTone = choose(dark,dark,beige,beige,beige)
 bodyImage = choose(0,0,1,2)
 size = min(choose(1,1,2,2,3,3,4)+gender,4)
@@ -81,6 +86,8 @@ size = min(choose(1,1,2,2,3,3,4)+gender,4)
     hipsOffset = 11+bodyImage
     height = 28+bodyImage
 
+legAdjust[1] = 1
+legAdjust[2] = 1
 break
 
 case 1:
@@ -119,6 +126,8 @@ if irandom(1)+gender >= 2
 }
 
 raceHead = spr_humanHead
+hairStyle = choose(spr_longHair,spr_bunHair,spr_shortHair)
+hairColour = choose(black,dkBrown,dkRed,c_yellow)
 skinTone = choose(pale,pale,fair)
 bodyImage = choose(0,0,1,2,2)
 size = min(choose(1,2,2,3,3,4)+gender,4)
@@ -128,7 +137,8 @@ size = min(choose(1,2,2,3,3,4)+gender,4)
     hipsOffset = 11+bodyImage
     height = 28+bodyImage
     
-
+legAdjust[1] = 1
+legAdjust[2] = 1
 break
 
 case 1:
@@ -170,8 +180,11 @@ if irandom(9)+gender >= 9
 {
     beardStyle = choose(spr_longBeard, spr_fullBeard, spr_sadStache, spr_longStache)
 }
+
 raceHead = spr_humanHead
-skinTone = choose(fair,pale)
+hairStyle = choose(spr_longHair,spr_bunHair,spr_shortHair)
+hairColour = choose(black,dkBrown,dkRed,c_yellow)
+skinTone = choose(beige,fair,pale)
 bodyImage = choose(0,0,0,1,1)
 size = 4   //min(choose(3,3,4)+gender,4)
 
@@ -182,7 +195,8 @@ size = 4   //min(choose(3,3,4)+gender,4)
     raceMove = -1
     //headOffset -= 1
 
-
+legAdjust[1] = 1
+legAdjust[2] = 1
 break
 
 case 1:
@@ -224,8 +238,14 @@ if irandom(4)+gender >= 5
 {
     beardStyle = choose(spr_bigMoustache, spr_fullBeard, spr_sadStache, spr_longStache, spr_chaplinStache, spr_goatee)
 }
+
 raceHead = choose(spr_humanHead,spr_elfHead)
+hairColour = choose(black,dkBrown,dkRed,c_yellow)
 skinTone = choose(fair,fair,fair,dark,beige,beige,pale,pale)
+if skinTone = fair or skinTone = pale
+{hairColour = choose(black,dkBrown,dkRed,c_yellow)}
+else
+{hairColour = choose(black,dkBrown)}
 bodyImage = 0
 size = choose(1,1,1,2,3)
 
@@ -237,6 +257,8 @@ size = choose(1,1,1,2,3)
         
 bodyOffset -= 1  
 
+legAdjust[1] = 1
+legAdjust[2] = 1
 break
 
 case 1:
@@ -290,6 +312,8 @@ if irandom(3)+gender >= 4
 }
 
 raceHead = spr_humanHead
+hairStyle = choose(spr_longHair,spr_bunHair,spr_shortHair)
+hairColour = choose(black,dkBrown)
 skinTone = choose(orcBrown,orcGreen)
 bodyImage = choose(0,1,1,1,2,2)
 size = min(choose(2,2,3,3,4)+gender,4)
@@ -301,6 +325,8 @@ size = min(choose(2,2,3,3,4)+gender,4)
 
 bodyOffset += bodyImage   
 
+legAdjust[1] = 1
+legAdjust[2] = 1
 break
 
 case 1:
@@ -342,6 +368,8 @@ if irandom(4)+gender >= 5
 }
 
 raceHead = spr_elfHead
+hairStyle = choose(spr_longHair,spr_bunHair,spr_shortHair)
+hairColour = black
 skinTone = choose(fair, beige, demonRed, demonPurp, demonTan)
 bodyImage = choose(0,1,1,2)
 size = min(choose(1,1,1,2,2,3,3)+(gender*2),4)
@@ -350,6 +378,9 @@ size = min(choose(1,1,1,2,2,3,3)+(gender*2),4)
     legSpriteMod = 0 
     hipsOffset = 11+bodyImage
     height = 28+bodyImage
+    
+legAdjust[1] = 1
+legAdjust[2] = 1
 break
 
 case 1:
@@ -385,6 +416,8 @@ if irandom(4)+gender >= 5
 }
 
 raceHead = spr_elfHead
+hairStyle = choose(spr_longHair,spr_bunHair,spr_shortHair)
+hairColour = black
 skinTone = choose(orcBrown,orcGreen)
 bodyImage = 0
 size = choose(1,1,1,2,3)
@@ -397,6 +430,8 @@ size = choose(1,1,1,2,3)
         
 bodyOffset -= 1  
 
+legAdjust[1] = 1
+legAdjust[2] = 1
 break
 
 case 1:

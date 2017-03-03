@@ -2,12 +2,12 @@
 <sprite>
   <type>0</type>
   <xorig>6</xorig>
-  <yorigin>5</yorigin>
+  <yorigin>6</yorigin>
   <colkind>1</colkind>
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
   <bboxmode>0</bboxmode>
-  <bbox_left>2</bbox_left>
+  <bbox_left>1</bbox_left>
   <bbox_right>10</bbox_right>
   <bbox_top>0</bbox_top>
   <bbox_bottom>6</bbox_bottom>
@@ -18,13 +18,13 @@
   </TextureGroups>
   <For3D>0</For3D>
   <width>11</width>
-  <height>11</height>
+  <height>12</height>
   <frames>
-    <frame index="0">images\spr_shortHair_0.png</frame>
-    <frame index="1">images\spr_shortHair_1.png</frame>
-    <frame index="2">images\spr_shortHair_2.png</frame>
-    <frame index="3">images\spr_shortHair_3.png</frame>
-    <frame index="4">images\spr_shortHair_4.png</frame>
-    <frame index="5">images\spr_shortHair_5.png</frame>
+    <frame index="0">images\spr_bunHair_0.png</frame>
+    <frame index="1">images\spr_bunHair_1.png</frame>
+    <frame index="2">images\spr_bunHair_2.png</frame>
+    <frame index="3">images\spr_bunHair_3.png</frame>
+    <frame index="4">images\spr_bunHair_4.png</frame>
+    <frame index="5">images\spr_bunHair_5.png</frame>
   </frames>
 </sprite>

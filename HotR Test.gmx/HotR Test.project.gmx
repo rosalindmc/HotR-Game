@@ -190,13 +190,10 @@
         <sprite>sprites\spr_royalSkirt</sprite>
         <sprite>sprites\spr_royalDress</sprite>
         <sprite>sprites\spr_underClothes</sprite>
-        <sprite>sprites\spr_belt</sprite>
-        <sprite>sprites\spr_belt2</sprite>
       </sprites>
       <sprites name="Heavy Armour">
         <sprite>sprites\spr_chainMail</sprite>
         <sprite>sprites\spr_plateMail</sprite>
-        <sprite>sprites\spr_chainLeather</sprite>
         <sprite>sprites\spr_chainTabard</sprite>
       </sprites>
       <sprites name="Weapons">
@@ -225,6 +222,7 @@
         <sprite>sprites\spr_shortSword</sprite>
       </sprites>
       <sprites name="Light Armour">
+        <sprite>sprites\spr_chainLeather</sprite>
         <sprite>sprites\spr_underChains</sprite>
         <sprite>sprites\spr_chainLoin</sprite>
       </sprites>
@@ -232,6 +230,8 @@
         <sprite>sprites\spr_arrow</sprite>
       </sprites>
       <sprites name="Details">
+        <sprite>sprites\spr_belt</sprite>
+        <sprite>sprites\spr_belt2</sprite>
         <sprite>sprites\spr_fashion1</sprite>
         <sprite>sprites\spr_fashion2</sprite>
         <sprite>sprites\spr_vest</sprite>
@@ -242,12 +242,6 @@
         <sprite>sprites\spr_squareShield</sprite>
         <sprite>sprites\spr_roundShield</sprite>
       </sprites>
-    </sprites>
-    <sprites name="Masks">
-      <sprite>sprites\spr_mask</sprite>
-      <sprite>sprites\spr_wallmask</sprite>
-      <sprite>sprites\spr_largemask</sprite>
-      <sprite>sprites\spr_metremask</sprite>
     </sprites>
     <sprites name="Environment">
       <sprite>sprites\spr_thinwall</sprite>
@@ -260,6 +254,12 @@
       <sprite>sprites\spr_dirtStep</sprite>
       <sprite>sprites\spr_dirtWall</sprite>
       <sprite>sprites\spr_dirtWallTall</sprite>
+    </sprites>
+    <sprites name="Masks">
+      <sprite>sprites\spr_mask</sprite>
+      <sprite>sprites\spr_wallmask</sprite>
+      <sprite>sprites\spr_largemask</sprite>
+      <sprite>sprites\spr_metremask</sprite>
     </sprites>
     <sprites name="Characters">
       <sprite>sprites\spr_portrait</sprite>
@@ -288,8 +288,9 @@
         <sprite>sprites\spr_goatee</sprite>
       </sprites>
       <sprites name="Hair Styles">
-        <sprite>sprites\spr_upHair</sprite>
         <sprite>sprites\spr_shortHair</sprite>
+        <sprite>sprites\spr_bunHair</sprite>
+        <sprite>sprites\spr_longHair</sprite>
       </sprites>
     </sprites>
     <sprites name="UI">
