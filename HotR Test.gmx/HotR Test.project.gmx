@@ -69,7 +69,7 @@
           <sprite>sprites\ico_hide</sprite>
           <sprite>sprites\ico_breastPlate</sprite>
           <sprite>sprites\ico_heavyLeather</sprite>
-          <sprite>sprites\ico_chainmail</sprite>
+          <sprite>sprites\ico_chainMail</sprite>
           <sprite>sprites\ico_platemail1</sprite>
           <sprite>sprites\ico_platemail2</sprite>
           <sprite>sprites\ico_platemail3</sprite>
@@ -194,7 +194,10 @@
         <sprite>sprites\spr_belt2</sprite>
       </sprites>
       <sprites name="Heavy Armour">
+        <sprite>sprites\spr_chainMail</sprite>
         <sprite>sprites\spr_plateMail</sprite>
+        <sprite>sprites\spr_chainLeather</sprite>
+        <sprite>sprites\spr_chainTabard</sprite>
       </sprites>
       <sprites name="Weapons">
         <sprite>sprites\spr_longBow</sprite>
@@ -222,11 +225,8 @@
         <sprite>sprites\spr_shortSword</sprite>
       </sprites>
       <sprites name="Light Armour">
-        <sprite>sprites\spr_chainMail</sprite>
         <sprite>sprites\spr_underChains</sprite>
-        <sprite>sprites\spr_chainTabard</sprite>
         <sprite>sprites\spr_chainLoin</sprite>
-        <sprite>sprites\spr_chainLeather</sprite>
       </sprites>
       <sprites name="Projectiles">
         <sprite>sprites\spr_arrow</sprite>

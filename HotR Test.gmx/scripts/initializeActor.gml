@@ -128,9 +128,6 @@ prot = 0
 enc = 0
 
 //Resistance
-fResist = 25+(grace-8)+(might-8)
-pResist = 25+(will-8)+(might-8)
-mResist = 25+(cunning-8)+(will-8)
 sResist = 1
 
 //Blocking
@@ -155,6 +152,9 @@ wounds = 0
 //Adjacency
 foeAdj = 0
 allyAdj = 0
+
+//Other
+rigid = false
 
 //Initialize of weapons for weapon users
 initializeTriggers()

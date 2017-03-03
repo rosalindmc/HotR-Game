@@ -56,7 +56,7 @@ talent[1,5] = 1
 className = 'Duelist'
 invSlot[1,0] = sabre
 invSlot[2,0] = choose(dagger,roundShield,emptySlot,emptySlot,emptySlot)
-invSlot[4,0] = robe
+invSlot[4,0] = choose(robe,dress,chainShirt)
 
 life = 4
 classLife = .3
@@ -75,7 +75,7 @@ grace += 1
 fellowship += 1
 
 //Talent
-talent[0,0] = choose(treeMartial,treeInsight,treeMobility)
+talent[0,0] = choose(treeMartial,treeDaring,treeMobility)
 talent[0,5] = 2
 talent[1,0] = choose(treeDiplomacy,treeStreetwise,treePerform)
 talent[1,5] = 1
@@ -87,7 +87,7 @@ className = 'Adventurer'
 //Inventory
 invSlot[1,0] = choose(greatSword,maul,greatAxe)
 invSlot[3,0] = choose(shortBow,crossbow,longBow,emptySlot,emptySlot,emptySlot)
-invSlot[4,0] = robe
+invSlot[4,0] = choose(robe,chainShirt)
 
 life = 4
 classLife = .3
@@ -105,7 +105,7 @@ cunning += 1
 grace += 2
 
 //Talent
-talent[0,0] = choose(treeMartial,treeInsight,treeMobility)
+talent[0,0] = choose(treeMartial,treeInsight,treeValour)
 talent[0,5] = 2
 talent[1,0] = choose(treeDiplomacy,treeSurvival)
 talent[1,5] = 1
@@ -135,7 +135,7 @@ cunning += 2
 grace += 1
 
 //Talent
-talent[0,0] = choose(treeMobility)
+talent[0,0] = choose(treeMobility,treeInsight)
 talent[0,5] = 1
 talent[1,0] = choose(treeThievery,treeStreetwise)
 talent[1,5] = 2
@@ -147,7 +147,7 @@ className = 'Warrior'
 invSlot[1,0] = choose(battleAxe,spear,armingSword,mace)
 invSlot[2,0] = choose(shortSword,handAxe,roundShield,squareShield,heaterShield)
 invSlot[3,0] = choose(shortBow,crossbow,longBow,emptySlot,emptySlot,emptySlot)
-invSlot[4,0] = chainmail
+invSlot[4,0] = choose(chainMail,chainMail,breastPlate)
 
 life = 6
 classLife = .35
@@ -174,7 +174,7 @@ className = 'Thrall'
 invSlot[1,0] = choose(battleAxe,spear,armingSword)
 invSlot[2,0] = choose(shortSword,handAxe,roundShield,squareShield,heaterShield)
 invSlot[3,0] = choose(shortBow,emptySlot,emptySlot,emptySlot)
-invSlot[4,0] = robe
+invSlot[4,0] = chainShirt
 
 life = 0
 classLife = .3
@@ -199,7 +199,7 @@ className = 'Thane'
 invSlot[1,0] = choose(greatAxe,greatSword,warhammer,maul)
 invSlot[2,0] = emptySlot
 invSlot[3,0] = emptySlot
-invSlot[4,0] = chainmail
+invSlot[4,0] = choose(chainMail,chainMail,breastPlate)
 
 life = 8
 classLife = .35

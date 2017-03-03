@@ -86,3 +86,41 @@ break
 case 2:     //Called when ?
 break
 }
+#define armourApplyVis
+bodyItems += 1
+bodyItem[bodyItems] = iSpr[cutVariant]
+bodyColour[bodyItems] = argument0
+
+chstItems += 1
+chstItem[chstItems] = iSpr[max(cleaveVariant,cutVariant)]
+chstColour[chstItems] = argument0
+
+hipsItems += 1
+hipsItem[hipsItems] = iSpr[bodyVariant]
+hipsColour[hipsItems] = argument0
+
+if iSkrt[skirtVariant] != spr_none
+{
+skrtItems += 1
+skrtItem[skrtItems] = iSkrt[skirtVariant]
+skrtColour[skrtItems] = argument0
+}
+
+if sleeveVariant != 1
+{
+armsItems[1] += 1
+armsItem[armsItems[1],1] = iSpr[sleeveVariant]
+armsColour[armsItems[1],1] = argument0
+
+armsItems[2] += 1
+armsItem[armsItems[2],2] = iSpr[sleeveVariant]
+armsColour[armsItems[2],2] = argument0
+}
+
+legsItems[1] += 1
+legsItem[legsItems[1],1] = iSpr[legsVariant]
+legsColour[legsItems[1],1] = argument0
+
+legsItems[2] += 1
+legsItem[legsItems[2],2] = iSpr[legsVariant]
+legsColour[legsItems[2],2] = argument0

@@ -168,6 +168,7 @@ armMax = 0
 prot = 0
 enc = 0
 reach = 1.5
+rigid = false
 
 initializeTraits()
 initializeTriggers()

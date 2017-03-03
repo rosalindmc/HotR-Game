@@ -189,8 +189,8 @@ legY[2] = round(hipsY+lengthdir_y(legOffset[2]*hFacing*sX, hipsRot-180)+lengthdi
 bodyX = round(hipsX+lengthdir_x(bodyOffset*sX, hipsRot+90)+lengthdir_x(bodyAdjust*hFacing*sX, hipsRot))
 bodyY = round(hipsY+lengthdir_y(bodyOffset*sX, hipsRot+90)+lengthdir_y(bodyAdjust*hFacing*sX, hipsRot))
 
-chstX = round(bodyX+lengthdir_x(bounce*sX, bodyRot+90)+lengthdir_x(chstAdjust*bodyHFacing*sX, bodyRot))
-chstY = round(bodyY+lengthdir_y(bounce*sX, bodyRot+90)+lengthdir_y(chstAdjust*bodyHFacing*sX, bodyRot))
+chstX = round(bodyX+lengthdir_x(max(bounce-rigid,0)*sX, bodyRot+90)+lengthdir_x(chstAdjust*bodyHFacing*sX, bodyRot))
+chstY = round(bodyY+lengthdir_y(max(bounce-rigid,0)*sX, bodyRot+90)+lengthdir_y(chstAdjust*bodyHFacing*sX, bodyRot))
 
 headX = round(bodyX+lengthdir_x(headOffset*sX, bodyRot+90)+lengthdir_x((headAdjust+headThrust)*hFacing*sX, bodyRot))
 headY = round(bodyY+lengthdir_y(headOffset*sX, bodyRot+90)+lengthdir_y((headAdjust+headThrust)*hFacing*sX, bodyRot))

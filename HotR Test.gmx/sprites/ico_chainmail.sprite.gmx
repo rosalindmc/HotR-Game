@@ -20,10 +20,10 @@
   <width>20</width>
   <height>20</height>
   <frames>
-    <frame index="0">images\ico_chainmail_0.png</frame>
-    <frame index="1">images\ico_chainmail_1.png</frame>
-    <frame index="2">images\ico_chainmail_2.png</frame>
-    <frame index="3">images\ico_chainmail_3.png</frame>
-    <frame index="4">images\ico_chainmail_4.png</frame>
+    <frame index="0">images\ico_chainMail_0.png</frame>
+    <frame index="1">images\ico_chainMail_1.png</frame>
+    <frame index="2">images\ico_chainMail_2.png</frame>
+    <frame index="3">images\ico_chainMail_3.png</frame>
+    <frame index="4">images\ico_chainMail_4.png</frame>
   </frames>
 </sprite>
