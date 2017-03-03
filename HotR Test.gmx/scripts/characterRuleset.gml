@@ -15,21 +15,23 @@ fashionInitialize()
 //Rules for an Orc Thane
 initializeHumanoid()
 raceGen(race_orc)
-detailGen(cwName)
+detailGen(cfName)
 attributeGen()
 classGen(class_warrior)
 fashionInitialize()
 
+eyeTrinket = choose(-4,-4,-4,spr_fashion2)
 
 #define orcVeteran
 //Rules for an Orc Veteran
 initializeHumanoid()
 raceGen(race_orc)
-detailGen(cwName)
+detailGen(cfName)
 attributeGen()
 classGen(class_warrior)
 fashionInitialize()
 
+eyeTrinket = choose(-4,-4,-4,spr_fashion2)
 
 #define raiderCaptain
 //Rules for a Raider Captain
@@ -44,14 +46,13 @@ fashionInitialize()
 //Rules for an Orc Warrior
 initializeHumanoid()
 raceGen(race_orc)
-detailGen(cwName)
+detailGen(cfName)
 attributeGen()
 classGen(class_thrall)
 fashionInitialize()
 
 //Names
-firstName = 'Orc'
-lastName = 'Thrall'
+lastName = ''
 
 favColour = ltBlue
 eyeTrinket = -4
@@ -62,14 +63,13 @@ overBodyItem = -4
 //Rules for an Goblin Warrior
 initializeHumanoid()
 raceGen(race_goblin)
-detailGen(cwName)
+detailGen(cfName)
 attributeGen()
 classGen(class_thrall)
 fashionInitialize()
 
 //Names
-firstName = 'Goblin'
-lastName = 'Thrall'
+lastName = ''
 
 favColour = make_colour_rgb(139,69,19)
 eyeTrinket = -4

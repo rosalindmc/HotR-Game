@@ -1,6 +1,6 @@
 #define dragEquip
 //Check equipment proficencies to see if you can equip the item.
-//dragEquip(character) 
+//dragEquip(slot,character) 
 //Script is run by the dragged item
 
 success = false

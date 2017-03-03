@@ -173,7 +173,7 @@ initiativeSlotReset()
 
 #define mDamage
 //Find Attack Speed
-s = 1+(3-(dualWield*.5))/((wepSpeed[atkHand]))
+s = (1+(3-(dualWield*.5))/((wepSpeed[atkHand])))/5
 
 //Find Base Attack Strength
 p = wepPow[atkHand]+(wepStrMult[atkHand]*atkDPS*s)
@@ -206,7 +206,7 @@ if global.attackFromTile.h < target.h
 
 #define rDamage
 //Find Attack Speed
-s = 1+(3-(dualWield*.5))/((wepRSpeed[atkHand]))
+s = (1+(3-(dualWield*.5))/((wepRSpeed[atkHand])))/5
 
 //Find Base Attack Strength
 p = wepRPow[atkHand]+(wepRStrMult[atkHand]*atkDPS*s)

@@ -664,6 +664,7 @@
         <object>objects\obj_invHud</object>
         <object>objects\obj_talHud</object>
         <object>objects\obj_talentSlot</object>
+        <object>objects\obj_designateRanged</object>
         <object>objects\obj_inventorySlot</object>
         <object>objects\obj_backDrop</object>
         <object>objects\obj_hudParent</object>

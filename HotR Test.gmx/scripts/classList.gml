@@ -190,3 +190,36 @@ classCSkill = .3
 cunning -= 2
 fellowship -= 2
 mook = true
+#define class_thane
+className = 'Thane'
+
+//Inventory
+invSlot[1,0] = choose(greatAxe,greatSword,warhammer,maul)
+invSlot[2,0] = emptySlot
+invSlot[3,0] = emptySlot
+invSlot[4,0] = chainmail
+
+life = 8
+classLife = .35
+stamina = 8
+classStamina = .3
+
+mSkill = 3
+rSkill = 3
+cSkill = 1
+classMSkill = .5
+classRSkill = .5
+classCSkill = .3
+
+might += 2
+will += 1
+
+//Talent
+talent[0,0] = treeStrength
+talent[0,1] = choose(branchBreaker,branchCrunch,branchReadyForMore,branchSmash)
+talent[0,5] = 2
+talent[1,0] = treeToughness
+talent[1,1] = choose(branchVigour,branchMightyBlock,branchMightyHealth)
+talent[1,5] = 2
+talent[2,0] = choose(treeDiscipline,treeMartial)
+talent[2,5] = 1

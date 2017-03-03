@@ -75,7 +75,7 @@ alarm[0] = 2
     
     
     owner.depth = -owner.y-(owner.h*.3)+10
-    depth = owner.depth+1
+    depth = owner.depth-4
 </string>
           </argument>
         </arguments>

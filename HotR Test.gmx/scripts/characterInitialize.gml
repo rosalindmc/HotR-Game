@@ -54,6 +54,9 @@ for(var i = 0; i < 8; i++)
     talent[i,5] = 0
 }
 
+//Role
+range = false
+
 //Appearance
 gender = -4
 skinTone = -4

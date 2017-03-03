@@ -383,7 +383,7 @@ cIsoZ = global.zLevel
 if cIsoX &gt;= 0 and cIsoX &lt; mapWidth and cIsoY &gt;= 0 and cIsoY &lt; mapHeight
 {
     cHover = map[cIsoX+(cIsoZ*mapWidth),cIsoY]
-    depth = cHover.depth-1
+    depth = cHover.depth-500
 }
 else
 {

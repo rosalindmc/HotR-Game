@@ -26,6 +26,9 @@ i += 1
 
 instance_create(210,158,obj_backDrop)
 
+ii = instance_create(170,169,obj_designateRanged)
+ii.image_index = global.charSelect.range+1
+
 repeat(10)
 {
     repeat(8)
@@ -42,7 +45,7 @@ repeat(10)
 }
 
 //Add Items from Inventory
-i = 0
+i = inventorySize-1
 ix = 350
 iy = 80
 
@@ -59,7 +62,7 @@ repeat(inventorySize)
     {
         script_execute(itemType,0)
     }
-    i += 1
+    i -= 1
     ix += 22
     if ix >= 350+(8*22)
     {

@@ -3,7 +3,7 @@
 
 o = argument0
 
-invSwitch = 1
+invSwitch = 1+o.range
 iCVis()
 iC()
 
