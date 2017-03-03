@@ -134,7 +134,7 @@ with(obj_character)
 {
     i = 0
     
-    if threat = true
+    if threat = true and active = true
     {
     
     if id != global.nextChar.owner
@@ -168,20 +168,20 @@ with(obj_character)
                     {
                         if other.team != occupant.team and occupant.active = true
                         {
-                            o = occupant
+                            ii = occupant
                             //Suppress
-                            o.initSlot.delayAdd += max(0,((1.0/o.sResist)/(1+o.threatResist))-(o.fSuppression+o.suppression))    
-                            o.fSuppression += max(0,((1.0/o.sResist)/(1+o.threatResist))-(o.fSuppression+o.suppression))                                        
+                            ii.initSlot.delayAdd += max(0,((1.0/ii.sResist)/(1+ii.threatResist))-(ii.fSuppression+ii.suppression))    
+                            ii.fSuppression += max(0,((1.0/ii.sResist)/(1+ii.threatResist))-(ii.fSuppression+ii.suppression))                                        
                         }
                     }
                     else if id = other.t
                     {
                         if other.team != global.nextChar.owner.team and occupant.active = true
                         {
-                            o = global.nextChar.owner
+                            ii = global.nextChar.owner
                             //Suppress
-                            o.initSlot.delayAdd += max(0,((1.0/o.sResist)/(1+o.threatResist))-(o.fSuppression+o.suppression))    
-                            o.fSuppression += max(0,((1.0/o.sResist)/(1+o.threatResist))-(o.fSuppression+o.suppression))                                       
+                            ii.initSlot.delayAdd += max(0,((1.0/ii.sResist)/(1+ii.threatResist))-(ii.fSuppression+ii.suppression))    
+                            ii.fSuppression += max(0,((1.0/ii.sResist)/(1+ii.threatResist))-(ii.fSuppression+ii.suppression))                                       
                         }
                     }
                 }

@@ -46,7 +46,7 @@ with(obj_character)
                 {
                     if occupant != noone
                     {
-                        if other.team != occupant.team
+                        if other.team != occupant.team and occupant.active = true
                         {
                             //Suppress
                             suppress(occupant,1.0/(1+occupant.threatResist))                                              

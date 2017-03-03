@@ -1,161 +1,164 @@
 #define attackDamage
-//Damage script
-backstab = false
-mle = argument0
-
-global.attackFromTile = isoTile
-
-if mle = true
+if target.dead = false
 {
-    mDamage()
-}
-else
-{
-    rDamage()
-}
-
-dge = target.dodge-(max(0,(skill-target.mSkill)*3))
-triggerOnAttack(false)
-
-//Facing
-if abs(angle_difference(target.cFacing,point_direction(isoTile.x,0,target.isoTile.x,(target.isoTile.y-isoTile.y)*2))) < 180-target.arc
-{
-    backstab = true    
-}
-
-//Check Miss/Dodge
-if irandom(99)+1 < missChance
-{
-    ii = instance_create(x,y-h-height,obj_descriptor)
-    ii.text = 'Miss'
-    ii.font = fnt_tiny
-}
-else if irandom(99)+1 < dge and backstab = false
-{
-    ii = instance_create(target.x,target.y-target.h-target.height,obj_descriptor)
-    ii.text = 'Dodge'
-    ii.font = fnt_tiny
-    target.stm -= 1*(1+(target.enc*.01))
+    //Damage script
+    backstab = false
+    mle = argument0
     
-    with(target)
-    {
-        startAnimation(0,animDodge)
-    }
-    
-    //Suppress
-    if target.evasion != true
-    {
-        suppress(target,2.0)
-    }
-}
-else
-{
-//Suppress
-suppress(target,2.0)
-
-//Damage Mitigation
-p /= (1+dmgMitigation)
-
-//Armour
-a = target.arm
-
-triggerOnHit(false)
-
-//Check Block
-if target.blocks >= 1 and backstab = false and (mle = true or target.hasShield = true)
-{
-    if irandom(99)+1 < 100-(max(0,(skill-target.mSkill)*3)) 
-    {
-        a += p+target.blockStr
-        target.stm -= p*.05
-        
-        if mle = true
-        {  
-            stm -= p*.05
-             
-            with(target)
-            {
-                startAnimation(1+other.hasShield,animBlock)
-                triggerOnBlock(false)
-            }
-        }
-    }
+    global.attackFromTile = isoTile
     
     if mle = true
     {
-        target.blocks -= 1
+        mDamage()
     }
-}
-
-//Armour and Penetration
-a = max(0,a-pen)*.25*(.75+random(.25))
-
-//Calculate how much damage has been mitigated by armour
-ia = floor(p)-floor(p-a)
-p = max(p-a,0)
-
-//Randomize decimal damage (.1 = 10% to do +1)
-p = floor(p+random(.99))
-
-if p > 0
-{
-    triggerOnWound(false)
+    else
+    {
+        rDamage()
+    }
+    
+    dge = target.dodge-(max(0,(skill-target.mSkill)*3))
+    triggerOnAttack(false)
+    
+    //Facing
+    if abs(angle_difference(target.cFacing,point_direction(isoTile.x,0,target.isoTile.x,(target.isoTile.y-isoTile.y)*2))) < 180-target.arc
+    {
+        backstab = true    
+    }
+    
+    //Check Miss/Dodge
+    if irandom(99)+1 < missChance
+    {
+        ii = instance_create(x,y-h-height,obj_descriptor)
+        ii.text = 'Miss'
+        ii.font = fnt_tiny
+    }
+    else if irandom(99)+1 < dge and backstab = false
+    {
+        ii = instance_create(target.x,target.y-target.h-target.height,obj_descriptor)
+        ii.text = 'Dodge'
+        ii.font = fnt_tiny
+        target.stm -= 1*(1+(target.enc*.01))
+        
+        with(target)
+        {
+            startAnimation(0,animDodge)
+        }
+        
+        //Suppress
+        if target.evasion != true
+        {
+            suppress(target,2.0)
+        }
+    }
+    else
+    {
+    //Suppress
+    suppress(target,2.0)
+    
+    //Damage Mitigation
+    p /= (1+dmgMitigation)
+    
+    //Armour
+    a = target.arm
+    
+    triggerOnHit(false)
+    
+    //Check Block
+    if target.blocks >= 1 and backstab = false and (mle = true or target.hasShield = true)
+    {
+        if irandom(99)+1 < 100-(max(0,(skill-target.mSkill)*3)) 
+        {
+            a += p+target.blockStr
+            target.stm -= p*.05
+            
+            if mle = true
+            {  
+                stm -= p*.05
+                 
+                with(target)
+                {
+                    startAnimation(1+other.hasShield,animBlock)
+                    triggerOnBlock(false)
+                }
+            }
+        }
+        
+        if mle = true
+        {
+            target.blocks -= 1
+        }
+    }
+    
+    //Armour and Penetration
+    a = max(0,a-pen)*.25*(.75+random(.25))
+    
+    //Calculate how much damage has been mitigated by armour
+    ia = floor(p)-floor(p-a)
+    p = max(p-a,0)
+    
+    //Randomize decimal damage (.1 = 10% to do +1)
+    p = floor(p+random(.99))
+    
+    if p > 0
+    {
+        triggerOnWound(false)
+        
+        with(target)
+        {
+            if active = true
+            {
+                if (hFacing = 1 and x > other.x) or (hFacing = -1 and x < other.x)
+                {startAnimation(0,animFlinchForward)}
+                else
+                {startAnimation(0,animFlinch)}
+            }
+            
+            part_system_depth(ps2,depth-1)
+            iii = point_direction(x,y,other.x,other.y)
+            part_type_direction(p2,iii-30,iii+30,0,10)
+            part_emitter_region(ps2,em2,bodyX,bodyX,bodyY,bodyY,ps_shape_rectangle,1)
+            part_emitter_burst(ps2,em2,p2,25)
+        }
+    }
+    
+    //Descriptor
+    ii = instance_create(target.x,target.y-target.h-target.height,obj_descriptor)
+    ii.text = string(p)+' '+string(typeName)
+    ii.font = fnt_tiny
+    
+    if p = 0
+    {
+        ii.text = "No Damage"
+    }
+    else if ia > 0
+    {
+        ii = instance_create(target.x,target.y-target.h-target.height+20,obj_descriptor)
+        ii.text = string(ia)+' Mitigated'
+        ii.font = fnt_tiny
+        ii.alarm[0] = global.fspd*.50
+    }
+    
+    //Damage
+    target.life -= p
+    target.stm -= p*.25
     
     with(target)
     {
-        if active = true
-        {
-            if (hFacing = 1 and x > other.x) or (hFacing = -1 and x < other.x)
-            {startAnimation(0,animFlinchForward)}
-            else
-            {startAnimation(0,animFlinch)}
-        }
-        
-        part_system_depth(ps2,depth-1)
-        iii = point_direction(x,y,other.x,other.y)
-        part_type_direction(p2,iii-30,iii+30,0,10)
-        part_emitter_region(ps2,em2,bodyX,bodyX,bodyY,bodyY,ps_shape_rectangle,1)
-        part_emitter_burst(ps2,em2,p2,25)
+        staminaCheck()
     }
-}
-
-//Descriptor
-ii = instance_create(target.x,target.y-target.h-target.height,obj_descriptor)
-ii.text = string(p)+' '+string(typeName)
-ii.font = fnt_tiny
-
-if p = 0
-{
-    ii.text = "No Damage"
-}
-else if ia > 0
-{
-    ii = instance_create(target.x,target.y-target.h-target.height+20,obj_descriptor)
-    ii.text = string(ia)+' Mitigated'
-    ii.font = fnt_tiny
-    ii.alarm[0] = global.fspd*.50
-}
-
-//Damage
-target.life -= p
-target.stm -= p*.25
-
-with(target)
-{
-    staminaCheck()
-}
-
-if target.life <= 0
-{
-    owner.experience += (target.expOnKill)*(1-((cunning-8)*.03))
     
-    gainMorale(.2)
-    checkLevelUp(owner)
+    if target.life <= 0
+    {
+        owner.experience += (target.expOnKill)*(1-((cunning-8)*.03))
+        
+        gainMorale(.2)
+        checkLevelUp(owner)
+        
+        triggerOnDown(false)
+        actorDie(target)
+    }
     
-    triggerOnDown(false)
-    actorDie(target)
-}
-
+    }
 }
 
 #define suppress

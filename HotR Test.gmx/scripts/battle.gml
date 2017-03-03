@@ -13,7 +13,7 @@ switch(argument0)
     {
         with(obj_character)
         {
-            if team != i.team and dead = false
+            if team != i.team and active = true
             {
                 if los(2, i.isoTile, isoTile)
                 {
