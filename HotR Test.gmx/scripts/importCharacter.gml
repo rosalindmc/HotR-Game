@@ -12,6 +12,7 @@ life = lifeMax
 stm = stmMax
 arm = armMax
 
+expEarned = false
 expOnKill = floor(o.level*(1+(o.level*.1)))
 
 if hasShield = true

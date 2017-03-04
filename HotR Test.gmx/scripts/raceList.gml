@@ -313,7 +313,7 @@ if irandom(3)+gender >= 4
 
 raceHead = spr_humanHead
 hairStyle = choose(spr_longHair,spr_bunHair,spr_shortHair)
-hairColour = choose(black,dkBrown)
+hairColour = black
 skinTone = choose(orcBrown,orcGreen)
 bodyImage = choose(0,1,1,1,2,2)
 size = min(choose(2,2,3,3,4)+gender,4)

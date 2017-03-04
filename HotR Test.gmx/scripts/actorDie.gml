@@ -30,11 +30,15 @@ with(argument0)
         }
         initiativeSlotReset()
         
+        if expEarned = false
+        {
+            expEarned = true
+            global.expTotal += expOnKill
+        }
         
         if dead = true
         {
             isoTile.occupant = noone
-            global.expTotal += expOnKill
             
             //Destroy Character Sheet (Temp char murder)
             if important = true

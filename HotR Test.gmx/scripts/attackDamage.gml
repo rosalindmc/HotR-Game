@@ -149,10 +149,13 @@ if target.dead = false
     
     if target.life <= 0
     {
-        owner.experience += (target.expOnKill)*(1-((cunning-8)*.03))
+        if target.expEarned = false
+        {
+            owner.experience += (target.expOnKill)*(1-((cunning-8)*.03))
+            checkLevelUp(owner)
+        }
         
         gainMorale(.2)
-        checkLevelUp(owner)
         
         triggerOnDown(false)
         actorDie(target)
