@@ -7,7 +7,7 @@ if obj_control.mapTimeOn = true and global.timeDelay = 0
 {
     //Life and Stamina Regeneration
     regenTime += lifeRegen/(global.fspd*5)
-    stm = min(stm+((stmRegen*(1-(enc*.01)))/(global.fspd*60)),stmMax)
+    stm = min(stm+((stmRegen*(1-(enc*.01)))/(global.fspd*30)),stmMax)
     
     if regenTime >= 1
     {

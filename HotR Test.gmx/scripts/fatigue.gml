@@ -34,9 +34,11 @@ owner.mSkill = max(owner.mSkill-potency,0)
 owner.rSkill = max(owner.rSkill-potency,0)
 owner.cSkill = max(owner.cSkill-potency,0)
 owner.lifeRegen /= 1+(potency*.25)
-owner.stmRegen /= 1+(potency*.25)
+owner.stmRegen /= 1+(potency*.15)
 owner.movement /= 1+(potency*.2)
 owner.movementBonus /= 1+(potency*.5)
+owner.blockStr /= 1+(potency*.2)
+owner.blockGen /= 1+(potency*.2)
 break
 
 case 2:     //Upkeep
