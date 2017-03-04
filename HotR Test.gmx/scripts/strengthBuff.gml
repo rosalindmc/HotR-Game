@@ -11,7 +11,6 @@ break
 
 case 1:     //Stats
 owner.atkDPS += potency/2
-owner.fResist += potency
 owner.blockStr += potency
 break
 
