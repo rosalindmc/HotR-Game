@@ -27,6 +27,9 @@
             <kind>1</kind>
             <string>action = moveControl
 selected = false
+cooldown = 0
+selectable = true
+number = 0
 </string>
           </argument>
         </arguments>
@@ -49,18 +52,22 @@ selected = false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check_pressed(global.abilityKey[number])
+            <string>if number != 0
 {
-    global.action = action
-
-    with(obj_control)
+    if keyboard_check_pressed(global.abilityKey[number]) and selectable = true and cooldown = 0
     {
-    wipeTiles()
-    script_execute(global.action, 0)
+        global.action = action
+        global.actionNum = number
+        
+        with(obj_control)
+        {
+        wipeTiles()
+        script_execute(global.action, 0)
+        }
     }
 }
 
-if point_in_rectangle(mouse_x,mouse_y,xstart+view_xview-10,ystart+view_yview-10,xstart+view_xview+9,ystart+view_yview+10)
+if point_in_rectangle(mouse_x,mouse_y,xstart+view_xview-10,ystart+view_yview-10,xstart+view_xview+9,ystart+view_yview+10) and selectable = true and cooldown = 0
 {
     selected = true
 }
@@ -90,12 +97,16 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>global.action = action
-
-with(obj_control)
+            <string>if selectable = true and cooldown = 0
 {
-wipeTiles()
-script_execute(global.action, 0)
+    global.action = action
+    global.actionNum = number
+
+    with(obj_control)
+    {
+    wipeTiles()
+    script_execute(global.action, 0)
+    }
 }
 </string>
           </argument>
@@ -122,8 +133,17 @@ script_execute(global.action, 0)
             <string>x = xstart+view_xview
 y = ystart+view_yview
 
+if selectable = false
+{
+    shader_set(shd_greyscale)
+}
 
 draw_sprite(sprite_index,0,x,y)
+
+if selectable = false
+{
+    shader_reset()
+}
 
 if selected = false
 {
@@ -137,7 +157,22 @@ else
 draw_set_font(fnt_tinyText)
 draw_set_halign(fa_middle)
 draw_set_valign(fa_middle)
-drawText(c_black,c_white,x,y+20,scr_keyCode(global.abilityKey[number]))
+
+if cooldown != 0
+{
+    if cooldown &gt;= 10
+    {
+        drawText(c_black,c_white,x,y,string_format(cooldown,2,1))
+    }
+    else
+    {
+        drawText(c_black,c_white,x,y,string_format(cooldown,1,0))
+    }
+}
+if number != 0
+{
+    drawText(c_black,c_white,x,y+20,scr_keyCode(global.abilityKey[number]))
+}
 </string>
           </argument>
         </arguments>

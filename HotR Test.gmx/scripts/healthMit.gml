@@ -1,5 +1,5 @@
 #define healthMit
-//healthFel(name,%,bonus,high/low,false,tooltip)
+//healthMit(name,%,bonus,high/low,false,tooltip)
 //% damage reduction at low health
 
 //Additional Conditioners
@@ -54,6 +54,8 @@ if argument5 = false    //On Proc
                 ii.colour2 = iceBlue
                 
                 life += iii
+                stm += argument2
+                staminaCheck()
             }
         }
     }
@@ -123,7 +125,7 @@ if argument5 = false    //On Proc
 {
     if 1+irandom(99) <= argument2
     {
-        applyStatusEffect(argument1,id,argument3,argument4)
+        applyStatusEffect(argument1,id,argument3,argument4*spellDur)
     }
 }
 else                    //On Tooltip
@@ -144,7 +146,7 @@ if argument5 = false    //On Proc
     {
         if 1+irandom(99) <= argument2
         {
-            applyStatusEffect(argument1,target,argument3,argument4)
+            applyStatusEffect(argument1,target,argument3,argument4*spellDur)
         }
     }
 }
@@ -154,6 +156,7 @@ else                    //On Tooltip
     obj_control.tooltipText[obj_control.tooltipLength] = string(floor(argument2))+'% '+string(argument0)
     obj_control.tooltipLength += 1
 }
+
 #define cancelDebuff
 //cancelDebuff(name,procChance,potency,false,false,tooltip)
 //Reduce duration off all negative Status on the character

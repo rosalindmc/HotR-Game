@@ -35,7 +35,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
     {
         if 1+irandom(99) <= argument1+((skill-target.mSkill)*5)
         {
-            applyStatusEffect(bleed,target,argument2,argument4)
+            applyStatusEffect(bleed,target,argument2,argument4*spellDur)
             
             ii = instance_create(x,y-h-height,obj_descriptor)
             ii.text = argument0
@@ -116,7 +116,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
     {
         if 1+irandom(99) <= argument1+((skill-target.mSkill)*5)
         {
-            applyStatusEffect(daze,target,50,argument2)
+            applyStatusEffect(daze,target,50,argument2*spellDur)
                         
             ii = instance_create(x,y-h-height,obj_descriptor)
             ii.text = argument0
@@ -171,7 +171,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
     {
         if 1+irandom(99) <= argument1+((skill-target.mSkill)*5)
         {
-            applyStatusEffect(cripple,target,argument2,argument4)
+            applyStatusEffect(cripple,target,argument2,argument4*spellDur)
                         
             ii = instance_create(x,y-h-height,obj_descriptor)
             ii.text = argument0
@@ -197,7 +197,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
     {
         if 1+irandom(99) <= argument1+((skill-target.mSkill)*5)
         {
-            applyStatusEffect(immobilized,target,argument2,argument4)
+            applyStatusEffect(immobilized,target,argument2,argument4*spellDur)
                         
             ii = instance_create(x,y-h-height,obj_descriptor)
             ii.text = argument0

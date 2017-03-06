@@ -51,10 +51,9 @@ break
 
 case 2:     //Called when Equipped
 dodge = iDodge
-armMax = iArm
-arm = iArm
-prot = iProt
-enc = iEnc
+armMax += iArm
+prot += iProt
+enc += iEnc
 
 bodyItems += 1
 bodyItem[bodyItems] = iSpr[cutVariant]
@@ -135,10 +134,9 @@ break
 
 case 2:     //Called when ?
 dodge = iDodge
-armMax = iArm
-arm = iArm
-prot = iProt
-enc = iEnc
+armMax += iArm
+prot += iProt
+enc += iEnc
 
 armourApplyVis(c_white)
 
@@ -170,7 +168,6 @@ arm = iArm
 dodge = iDodge
 prot = iProt
 enc = iEnc
- 
 break
 
 case 1:     //Called when the item is equipped by a model.
@@ -178,10 +175,9 @@ break
 
 case 2:     //Called when ?
 dodge = iDodge
-armMax = iArm
-arm = iArm
-prot = iProt
-enc = iEnc
+armMax += iArm
+prot += iProt
+enc += iEnc
 
 armourApplyVis(c_white)
 
@@ -223,10 +219,9 @@ break
 
 case 2:     //Called when ?
 dodge = iDodge
-armMax = iArm
-arm = iArm
-prot = iProt
-enc = iEnc
+armMax += iArm
+prot += iProt
+enc += iEnc
 
 armourApplyVis(c_white)
 break
@@ -264,10 +259,9 @@ break
 
 case 2:     //Called when ?
 dodge = iDodge
-armMax = iArm
-arm = iArm
-prot = iProt
-enc = iEnc
+armMax += iArm
+prot += iProt
+enc += iEnc
 
 rigid = true
 

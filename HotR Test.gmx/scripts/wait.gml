@@ -21,4 +21,12 @@ switch(argument0)
     global.testSlot.delayAdd = 2.0
     initiativeSlotAnticipate()
     break
+    
+    //Run 3 for ai use 
+    case 3:
+    break
+    
+    //Run 4 for hotbar check 
+    case 4:
+    break
 }

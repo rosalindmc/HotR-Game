@@ -371,6 +371,7 @@
     </scripts>
     <scripts name="Overworld">
       <scripts name="Actors and Control">
+        <script>scripts\addAbility.gml</script>
         <script>scripts\scr_tempActorListDraw.gml</script>
         <script>scripts\worldControlInitialize.gml</script>
         <script>scripts\addActor.gml</script>

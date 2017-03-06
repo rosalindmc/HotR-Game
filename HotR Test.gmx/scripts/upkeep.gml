@@ -9,6 +9,11 @@ if obj_control.mapTimeOn = true and global.timeDelay = 0
     regenTime += lifeRegen/(global.fspd*5)
     stm = min(stm+((stmRegen*(1-(enc*.01)))/(global.fspd*30)),stmMax)
     
+    for(i = 0; i < abilityNumber; i++)
+    {
+        abilityCD[0] = max(0,abilityCD[0]-(1/global.fspd))
+    }
+    
     if regenTime >= 1
     {
         if life < lifeMax

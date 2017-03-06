@@ -90,4 +90,13 @@ switch(argument0)
         initiativeSlotReset()
     }
     break
+    
+    //Run 3 for ai use 
+    case 3:
+    break
+    
+    //Run 4 for hotbar check 
+    case 4:
+    break
+    
 }

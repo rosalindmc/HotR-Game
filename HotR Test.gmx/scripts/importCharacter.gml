@@ -6,6 +6,7 @@ o = argument0
 invSwitch = 1+o.range
 iCVis()
 iC()
+iCAbilities()
 
 wounds = o.wounds
 life = lifeMax
@@ -121,7 +122,10 @@ i += 1
 //Movement
 movement = 4+((grace-8)*.2)+o.raceMove      //metres to a move action
 movementBonus = 3+((grace-8)*.3)            //running bonus
-haste = 1+((grace-8)*.03) 
+if grace >= 8
+{haste = 1+((grace-8)*.03)}
+else
+{haste = 1/(1+((grace-8)*-.03))}
 
 //Skill
 mSkill = max(((grace-8)*.1)+((cunning-8)*.2)+o.mSkill,0)
@@ -134,7 +138,10 @@ atkHaste = ((grace-8)*.03)
 
 //Ability
 spellPow = (cunning-8)
-spellDur = 1+((cunning-8)*.1)
+if cunning >= 8
+{spellDur = 1+((cunning-8)*.1)}
+else
+{spellDur = 1/(1+((cunning-8)*-.1))}
 
 //Morale
 sResist = 1
@@ -148,12 +155,11 @@ blockGen = 0
 blockStr = might
 
 //Vitals
-lifeMax = max(floor(8+(will-8)+((might-8)/2)+o.lifeGain),4)
+lifeMax = max(floor(8+(will-8)+((might-8)/2)+o.life),4)
 lifeRegen = 2+((will-8)*.3)
 
 stmMax = max(floor(8+(will-8)+((grace-8)/2)+o.stamina),4)
 stmRegen = 5+(stmMax*.2)
-
 
 #define iCEquip
 //Equip Items
@@ -259,6 +265,45 @@ for(s = 0; s < ds_list_size(status); s++)
     {
         script_execute(effect,1)
     }
+}
+
+#define iCAbilities
+//Talents
+for(i = 0; i < 8; i++)
+{
+    if o.talent[i,0] != emptyTalent
+    {
+        script_execute(o.talent[i,0],3,o.talent[i,5])
+        script_execute(o.talent[i,1],3,o.talent[i,5])
+        script_execute(o.talent[i,2],3,o.talent[i,5])
+        script_execute(o.talent[i,3],3,o.talent[i,5])
+    }
+}
+
+#define iC
+iCStats()
+iCSubStats()
+iCWear()
+iCEquip(invSwitch)
+iCTraits()
+
+if bold = 1
+{
+    haste += .5*(1+((fellowship-8)*.05))
+    mSkill += 2*(1+((fellowship-8)*.05))
+    rSkill += 2*(1+((fellowship-8)*.05))
+    cSkill += 2*(1+((fellowship-8)*.05))
+}
+
+if o.mook = true
+{
+    wepPow[1] *= .75
+    wepPow[2] *= .75
+    wepRPow[1] *= .75
+    wepRPow[2] *= .75
+    atkHaste *= .7
+    dodge -= 20
+    blockStr *= .5
 }
 
 #define clearArmour
@@ -373,32 +418,6 @@ if o.invSlot[4,0] = emptySlot
     hipsItem[hipsItems] = spr_underClothes
     hipsColour[hipsItems] = c_white
 }
-#define iC
-iCStats()
-iCSubStats()
-iCWear()
-iCEquip(invSwitch)
-iCTraits()
-
-if bold = 1
-{
-    haste += .5*(1+((fellowship-8)*.05))
-    mSkill += 2*(1+((fellowship-8)*.05))
-    rSkill += 2*(1+((fellowship-8)*.05))
-    cSkill += 2*(1+((fellowship-8)*.05))
-}
-
-if o.mook = true
-{
-    wepPow[1] *= .75
-    wepPow[2] *= .75
-    wepRPow[1] *= .75
-    wepRPow[2] *= .75
-    atkHaste *= .7
-    dodge -= 20
-    blockStr *= .5
-}
-
 #define staminaCheck
 if stm >= stmMax*.75
 {

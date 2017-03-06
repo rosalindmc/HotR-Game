@@ -159,6 +159,7 @@ rigid = false
 //Initialize of weapons for weapon users
 initializeTriggers()
 initializeTraits()
+initializeAbilities()
 initializeWeapon(1)
 initializeWeapon(2)
 
@@ -284,3 +285,7 @@ part_type_life(p2,global.fspd*.25,global.fspd*.5)
 
 
 em2 = part_emitter_create(ps2)
+#define initializeAbilities
+abilityNumber = 0
+ability[0] = -4
+abilityCD[0] = 0

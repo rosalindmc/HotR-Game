@@ -138,3 +138,85 @@ case 2:
 return true
 break
 }
+#define branchFeatOfStrength
+//tree(how to use, rank)
+switch(argument0)
+{
+case 3:     //case 3 for abilities
+addAbility(actFeatOfStrength)
+break
+
+case 1:     //Tooltip and icon
+sprite_index = ico_readyForMore
+image_index = 1
+name = 'Feat of Strength'
+tooltip = 'Active: Gain EMPOWER 4 for 5 seconds'
+branch = treeStrength
+break
+
+case 2:
+return true
+break
+}
+
+#define branchGrapple
+//tree(how to use, rank)
+switch(argument0)
+{
+case 0:     //Run when the unit is initialized in battle
+
+break
+
+case 1:     //Tooltip and icon
+sprite_index = ico_readyForMore
+image_index = 1
+name = 'Grapple'
+tooltip = 'Active: IMMOBILIZE an adjacent foe'
+branch = treeStrength
+break
+
+case 2:
+return true
+break
+}
+
+#define branchOverpower
+//tree(how to use, rank)
+switch(argument0)
+{
+case 0:     //Run when the unit is initialized in battle
+
+break
+
+case 1:     //Tooltip and icon
+sprite_index = ico_readyForMore
+image_index = 1
+name = 'Overpower'
+tooltip = 'Active: PUSH an adjacent target and destroy a block'
+branch = treeStrength
+break
+
+case 2:
+return true
+break
+}
+
+#define branchSunderArmour
+//tree(how to use, rank)
+switch(argument0)
+{
+case 3:     //case 3 for abilities
+break
+
+case 1:     //Tooltip and icon
+sprite_index = ico_readyForMore
+image_index = 1
+name = 'Sunder Armour'
+tooltip = 'Special Attack: Inflict SUNDER'
+branch = treeStrength
+break
+
+case 2:
+return true
+break
+}

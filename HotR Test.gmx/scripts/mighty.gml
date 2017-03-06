@@ -10,7 +10,7 @@ if wepStrMult[atkHand] != 0
         {
             p += argument2*s
             
-            applyStatusEffect(daze,target,50,5)
+            applyStatusEffect(daze,target,50,5*spellDur)
                         
             ii = instance_create(x,y-h-height,obj_descriptor)
             ii.text = argument0
