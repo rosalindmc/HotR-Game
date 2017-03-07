@@ -145,10 +145,10 @@ break
 }
 
 #define chainShirt
-iSpr[1] = spr_chainLeather
-iSpr[2] = spr_chainLeather
-iSpr[3] = spr_chainLeather
-iSpr[4] = spr_chainLeather
+iSpr[1] = spr_chainMail
+iSpr[2] = spr_chainMail
+iSpr[3] = spr_chainMail
+iSpr[4] = spr_chainMail
 iSkrt[1] = spr_none
 iSkrt[2] = spr_none
 iSkrt[3] = spr_none

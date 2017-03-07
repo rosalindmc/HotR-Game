@@ -10,6 +10,7 @@ iPen = 1
 iSpd = 1
 iBlockGen = .3
 iBlockStr = 8
+iEnc = 10
 
 switch(argument0)
 {
@@ -20,6 +21,7 @@ ttType = itemTypeShield
 tooltip = "A metal shield."
 blockGen = iBlockGen
 blockStr = iBlockStr
+enc = iEnc
 
 itemProf[0] = shieldProficiency  
 break
@@ -41,6 +43,7 @@ wepRange[i] = 1
 
 //Shield Stuff
 sResist += .5
+enc += iEnc
 wepSpeed[1] -= .2
 blockStr += iBlockStr
 blockGen += iBlockGen
@@ -60,6 +63,7 @@ iPen = 1
 iSpd = 1.1
 iBlockGen = .33
 iBlockStr = 4
+iEnc = 0
 
 switch(argument0)
 {
@@ -70,6 +74,7 @@ ttType = itemTypeShield
 tooltip = "A round dueling shield."
 blockGen = iBlockGen
 blockStr = iBlockStr
+enc = iEnc
 
 itemProf[0] = shieldProficiency  
 break
@@ -91,6 +96,7 @@ wepRange[i] = 1
 
 //Shield Stuff
 sResist += .5
+enc += iEnc
 wepSpeed[1] -= .1
 blockStr += iBlockStr
 blockGen += iBlockGen
@@ -110,6 +116,7 @@ iPen = 1
 iSpd = 0.5
 iBlockGen = .27
 iBlockStr = 12
+iEnc = 20
 
 switch(argument0)
 {
@@ -120,6 +127,7 @@ ttType = itemTypeShield
 tooltip = "A large shield."
 blockGen = iBlockGen
 blockStr = iBlockStr
+enc = iEnc
 
 itemProf[0] = shieldProficiency  
 break
@@ -141,6 +149,7 @@ wepRange[i] = 1
 
 //Shield Stuff
 sResist += .5
+enc += iEnc
 wepSpeed[1] -= .3
 blockStr += iBlockStr
 blockGen += iBlockGen

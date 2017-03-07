@@ -90,7 +90,7 @@ if target.dead = false
     }
     
     //Armour and Penetration
-    a = max(0,a-pen)*.25*(.75+random(.25))
+    a = max(0,(a*.25*(.25+random(.75)))-pen)
     
     //Calculate how much damage has been mitigated by armour
     ia = floor(p)-floor(p-a)

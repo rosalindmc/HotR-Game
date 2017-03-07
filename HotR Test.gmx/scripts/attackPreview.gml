@@ -64,11 +64,11 @@ with(i)
     }    
         
     //Armour and Penetration
-    a = max(0,a-pen)*.25
+    a = a*.25
     
     p = max(p-a,0)
-    pMin = max(pMin-a,0)
-    pMax = max(pMax-(a*.75),0)
+    pMin = max(pMin-max(a-pen,0),0)
+    pMax = max(pMax-max((a*.25)-pen,0),0)
     
     //Randomize Decimal Damage
     pMin = floor(pMin)

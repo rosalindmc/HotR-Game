@@ -20,7 +20,8 @@ with(argument0)
             wounds += 1
         }
         
-        life += floor(lifeMax/2)
+        life += floor(lifeMax*.75)
+        lifeVis = lifeMax
         startAnimation(0,animDown)
         
         //Destroy Initiative Slot

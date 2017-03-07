@@ -11,6 +11,7 @@ with(obj_control)
         actNum += 1
         i = instance_create(120+(actNum*20), view_hview-30, obj_actionButton)
         i.action = battle
+        i.number = actNum
         i.sprite_index = ico_attack
     }
     
@@ -19,6 +20,7 @@ with(obj_control)
         actNum += 1
         i = instance_create(120+(actNum*20), view_hview-30, obj_actionButton)
         i.action = moveControl
+        i.number = actNum
         i.sprite_index = ico_attackMove
         
         //Run Move Control
@@ -28,7 +30,8 @@ with(obj_control)
     {
         actNum += 1
         i = instance_create(120+(actNum*20), view_hview-30, obj_actionButton)
-        i.action = disengage
+        i.action = disengage    
+        i.number = actNum
         i.sprite_index = ico_move
         
         //Run Battle
@@ -40,19 +43,21 @@ with(obj_control)
         actNum += 1
         i = instance_create(120+(actNum*20), view_hview-30, obj_actionButton)
         i.action = weaponSwitch
+        i.number = actNum
         i.sprite_index = ico_switch
     }
     
     actNum += 1
     i = instance_create(120+(actNum*20), view_hview-30, obj_actionButton)
     i.action = wait
+    i.number = actNum
     i.sprite_index = ico_wait
     
     for(iii = 0; iii < global.control.abilityNumber; iii++)
     {
         actNum += 1
         iv = instance_create(120+(actNum*20), view_hview-30, obj_actionButton)
-        iv.number = iii+1
+        iv.number = actNum
         iv.action = global.control.ability[iii]
         iv.cooldown = global.control.abilityCD[iii]
         script_execute(global.control.ability[iii],4)

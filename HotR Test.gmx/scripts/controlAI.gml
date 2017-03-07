@@ -118,7 +118,7 @@ with (obj_tile)
 {
     if (overlay = 2)
     {
-        with (obj_character)
+        with(obj_character)
         {
             if (team != i.team) and active = true
             {
@@ -137,26 +137,12 @@ with (obj_tile)
 
 if global.target != i.isoTile
 {
-//Move and Update Grid9
-makeMovePath(global.target)
-i.pathLength = ii
-i.stm -= global.target.g*.03*i.movStaminaMult*(1+(i.enc*.01))
-if global.target.overlay = 2{i.stm -= global.target.g*.07*i.movStaminaMult*(1+(i.enc*.01))}
-gridUpdate(i, global.target)
-
-with(i){triggerOnMove()}
-
-with(i){actMove(1)}
-
-
-//End Turn
-endTurn(min(3.0,global.target.g)/(i.haste+i.movHaste))
-
-wipeTiles()
+    moveTo(global.target)
+    endTurn(min(3.0,global.target.g)/(i.haste+i.movHaste))
 }
 else
 {
-wait(0)
+    wait(0)
 }
 }
 else

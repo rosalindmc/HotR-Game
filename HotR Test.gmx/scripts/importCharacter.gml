@@ -26,6 +26,8 @@ if hasShield = true
 race = o.raceName
 class = o.className
 skinTone = o.skinTone
+headSprite = o.headSprite
+earSprite = o.earSprite
 eyeColour = o.eyeColour
 hairColour = o.hairColour
 hairStyle = o.hairStyle
@@ -393,11 +395,11 @@ if overBodyItem != -4 and o.invSlot[4,0] != emptySlot
     chstColour[chstItems] = c_dkgray
 }
 
-if hipTrinket != -4 and o.invSlot[4,0] != emptySlot
+if hipTrinket != -4 and o.invSlot[4,0] != emptySlot and rigid = false
 {
-    hipsItems += 1
-    hipsItem[hipsItems] = hipTrinket
-    hipsColour[hipsItems] = c_white
+    beltItems += 1
+    beltItem[beltItems] = hipTrinket
+    beltColour[beltItems] = c_white
 }
 
 //Min Clothing
@@ -418,6 +420,7 @@ if o.invSlot[4,0] = emptySlot
     hipsItem[hipsItems] = spr_underClothes
     hipsColour[hipsItems] = c_white
 }
+
 #define staminaCheck
 if stm >= stmMax*.75
 {

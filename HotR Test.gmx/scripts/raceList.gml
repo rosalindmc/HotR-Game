@@ -26,10 +26,14 @@ if irandom(4)+gender >= 5
     beardStyle = choose(spr_bigMoustache, spr_sadStache, spr_longStache, spr_chaplinStache, spr_goatee)
 }
 
-skinTone = choose(fair,fair,fair,dark,beige,beige,pale,pale)
-headSprite = spr_elfHead
+skinTone = choose(fair,fair,fair,dark,dark,beige,beige,pale,pale)
+headSprite = choose(spr_youngHead,spr_youngHead,spr_baseHead,spr_youngHead,spr_freckleHead)
+earSprite = spr_elfEar
 hairStyle = choose(spr_longHair,spr_bunHair,spr_shortHair)
-hairColour = choose(black,dkBrown,dkRed,c_yellow)
+if skinTone = fair or skinTone = pale
+{hairColour = choose(black,dkBrown,dkRed,c_yellow)}
+else
+{hairColour = choose(black,dkBrown)}
 
 bodyImage = choose(0,0,0,1,1,1,2)
 size = min(choose(1,1,1,2,2,3,3,4)+gender,4)
@@ -74,7 +78,7 @@ if irandom(2)+gender >= 3
     beardStyle = choose(spr_bigMoustache, spr_fullBeard, spr_sadStache, spr_longStache, spr_chaplinStache, spr_goatee)
 }
 
-raceHead = spr_humanHead
+headSprite = choose(spr_baseHead,spr_youngHead,spr_oldHead)
 hairStyle = choose(spr_longHair,spr_bunHair,spr_shortHair)
 hairColour = choose(black,dkBrown)
 skinTone = choose(dark,dark,beige,beige,beige)
@@ -125,7 +129,7 @@ if irandom(1)+gender >= 2
     beardStyle = choose(spr_bigMoustache, spr_fullBeard, spr_sadStache, spr_longStache, spr_chaplinStache, spr_goatee)
 }
 
-raceHead = spr_humanHead
+headSprite = choose(spr_baseHead,spr_youngHead,spr_oldHead,spr_oldHead)
 hairStyle = choose(spr_longHair,spr_bunHair,spr_shortHair)
 hairColour = choose(black,dkBrown,dkRed,c_yellow)
 skinTone = choose(pale,pale,fair)
@@ -181,7 +185,7 @@ if irandom(9)+gender >= 9
     beardStyle = choose(spr_longBeard, spr_fullBeard, spr_sadStache, spr_longStache)
 }
 
-raceHead = spr_humanHead
+headSprite = choose(spr_oldHead,spr_oldHead,spr_oldHead,spr_baseHead)
 hairStyle = choose(spr_longHair,spr_bunHair,spr_shortHair)
 hairColour = choose(black,dkBrown,dkRed,c_yellow)
 skinTone = choose(beige,fair,pale)
@@ -239,7 +243,8 @@ if irandom(4)+gender >= 5
     beardStyle = choose(spr_bigMoustache, spr_fullBeard, spr_sadStache, spr_longStache, spr_chaplinStache, spr_goatee)
 }
 
-raceHead = choose(spr_humanHead,spr_elfHead)
+headSprite = choose(spr_youngHead,spr_freckleHead)
+earSprite = choose(spr_elfEar,spr_none)
 hairColour = choose(black,dkBrown,dkRed,c_yellow)
 skinTone = choose(fair,fair,fair,dark,beige,beige,pale,pale)
 if skinTone = fair or skinTone = pale
@@ -311,7 +316,7 @@ if irandom(3)+gender >= 4
     beardStyle = choose(spr_bigMoustache, spr_fullBeard, spr_sadStache, spr_longStache, spr_chaplinStache, spr_goatee)
 }
 
-raceHead = spr_humanHead
+headSprite = choose(spr_oldHead,spr_baseHead,spr_baseHead)
 hairStyle = choose(spr_longHair,spr_bunHair,spr_shortHair)
 hairColour = black
 skinTone = choose(orcBrown,orcGreen)
@@ -367,10 +372,11 @@ if irandom(4)+gender >= 5
     beardStyle = choose(spr_bigMoustache, spr_fullBeard, spr_sadStache, spr_longStache, spr_chaplinStache, spr_goatee)
 }
 
-raceHead = spr_elfHead
+headSprite = choose(spr_youngHead,spr_youngHead,spr_baseHead,spr_youngHead,spr_freckleHead)
+earSprite = choose(spr_elfEar,spr_none)
 hairStyle = choose(spr_longHair,spr_bunHair,spr_shortHair)
 hairColour = black
-skinTone = choose(fair, beige, demonRed, demonPurp, demonTan)
+skinTone = choose(fair, beige, dark, pale, demonRed, demonPurp, demonTan)
 bodyImage = choose(0,1,1,2)
 size = min(choose(1,1,1,2,2,3,3)+(gender*2),4)
 
@@ -415,7 +421,8 @@ if irandom(4)+gender >= 5
     beardStyle = choose(spr_bigMoustache, spr_fullBeard, spr_sadStache, spr_longStache, spr_chaplinStache, spr_goatee)
 }
 
-raceHead = spr_elfHead
+headSprite = choose(spr_oldHead,spr_baseHead,spr_baseHead)
+earSprite = spr_elfEar
 hairStyle = choose(spr_longHair,spr_bunHair,spr_shortHair)
 hairColour = black
 skinTone = choose(orcBrown,orcGreen)

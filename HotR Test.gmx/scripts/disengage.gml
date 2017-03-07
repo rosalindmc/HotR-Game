@@ -11,7 +11,7 @@ switch(argument0)
     
     global.moveTile = ds_list_create()
     ignoreZoC = true
-    movementRange(i.isoTile, i.movement*.5, 0)
+    movementRange(i.isoTile, i.movement*.75, i.movementBonus*.5)
     break
     
     //Run 1 to execute
@@ -19,20 +19,8 @@ switch(argument0)
     //Movement
     if cHover.move and cHover.vis != false
     {
-        //Move and Update Grid
-        makeMovePath(cHover)
-        i.pathLength = ii
-        i.stm -= cHover.g*.03*i.movStaminaMult*(1+(i.enc*.01))
-        if cHover.overlay = 2{i.stm -= cHover.g*.07*i.movStaminaMult*(1+(i.enc*.01))}
-        gridUpdate(i, cHover)
-        with(i){triggerOnMove()}
-        
-        //Start the Action
-        with(i){actMove(1)}
-                
-        //End Turn
-        endTurn(3.0/(i.haste+i.movHaste))
-        wipeTiles()
+        moveTo(cHover)
+        endTurn(min(3.0,cHover.g)/(i.haste+i.movHaste))
     }
     break
     

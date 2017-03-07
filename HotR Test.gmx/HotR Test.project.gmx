@@ -231,6 +231,7 @@
       </sprites>
       <sprites name="Details">
         <sprite>sprites\spr_belt</sprite>
+        <sprite>sprites\spr_corset</sprite>
         <sprite>sprites\spr_belt2</sprite>
         <sprite>sprites\spr_fashion1</sprite>
         <sprite>sprites\spr_fashion2</sprite>
@@ -266,9 +267,12 @@
       <sprites name="Core">
         <sprite>sprites\spr_horns</sprite>
         <sprite>sprites\spr_none</sprite>
-        <sprite>sprites\spr_humanHead</sprite>
+        <sprite>sprites\spr_baseHead</sprite>
+        <sprite>sprites\spr_freckleHead</sprite>
+        <sprite>sprites\spr_oldHead</sprite>
+        <sprite>sprites\spr_youngHead</sprite>
         <sprite>sprites\spr_eyes</sprite>
-        <sprite>sprites\spr_elfHead</sprite>
+        <sprite>sprites\spr_elfEar</sprite>
         <sprite>sprites\spr_body</sprite>
         <sprite>sprites\spr_chest</sprite>
         <sprite>sprites\spr_hips</sprite>
@@ -497,6 +501,18 @@
             <script>scripts\weaponSwitch.gml</script>
             <script>scripts\createActionBar.gml</script>
           </scripts>
+          <scripts name="Abilities">
+            <scripts name="Spells">
+              <script>scripts\flameLore.gml</script>
+            </scripts>
+            <scripts name="Blessings">
+              <script>scripts\oscoPrayer.gml</script>
+            </scripts>
+            <scripts name="Tactics">
+              <script>scripts\strengthTactics.gml</script>
+              <script>scripts\martialTactics.gml</script>
+            </scripts>
+          </scripts>
         </scripts>
       </scripts>
     </scripts>
@@ -583,17 +599,6 @@
         <script>scripts\wepsklFlurry.gml</script>
         <script>scripts\mighty.gml</script>
         <script>scripts\healthMit.gml</script>
-      </scripts>
-      <scripts name="Abilities">
-        <scripts name="Spells">
-          <script>scripts\flameLore.gml</script>
-        </scripts>
-        <scripts name="Blessings">
-          <script>scripts\oscoPrayer.gml</script>
-        </scripts>
-        <scripts name="Tactics">
-          <script>scripts\martialTactics.gml</script>
-        </scripts>
       </scripts>
     </scripts>
     <scripts name="Status Effects">

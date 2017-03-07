@@ -137,6 +137,8 @@ if blockStr > i
 
 iy += 14
 draw_text(ix,iy,'SPEED: '+string_format(1/blockGen,2,1))
+iy += 14
+draw_text(ix,iy,'ENC: '+string_format(1/enc,2,1))
 iy += 28
 draw_text_ext(ix,iy,tooltip,12,100)
 

@@ -37,20 +37,8 @@ switch(argument0)
     //Movement
     if cHover.move and cHover.vis != false
     {
-        //Move and Update Grid
-        makeMovePath(cHover)
-        i.pathLength = ii
-        i.stm -= cHover.g*.03*i.movStaminaMult*(1+(i.enc*.01))
-        if cHover.overlay = 2{i.stm -= cHover.g*.07*i.movStaminaMult*(1+(i.enc*.01))}
-        gridUpdate(i, cHover)
-        with(i){triggerOnMove()}
-        
-        //Start the Action
-        with(i){actMove(1)}
-                
-        //End Turn
+        moveTo(cHover)
         endTurn(min(3.0,cHover.g)/(i.haste+i.movHaste))
-        wipeTiles()
     }
     
     //Ranged Attack
@@ -78,13 +66,7 @@ switch(argument0)
             global.nextChar.delay += min(2.0,cHover.g)/(i.haste+i.movHaste)
         
             //Move and Update Grid
-            makeMovePath(global.attackFromTile)
-            i.pathLength = ii
-            i.stm -= global.attackFromTile.g*.03*i.movStaminaMult*(1+(i.enc*.01))
-            if global.attackFromTile.overlay = 2{i.stm -= global.attackFromTile.g*.07*i.movStaminaMult*(1+(i.enc*.01))}
-            gridUpdate(i, global.attackFromTile)
-            with(i){triggerOnMove()}
-            
+            moveTo(global.attackFromTile)
             //Start the Action
             with(i){actCharge(1)}
         }
@@ -217,3 +199,19 @@ until(ds_priority_empty(path))
 //Clean Up que
 ds_priority_destroy(path)
         
+#define moveTo
+var i = global.control
+var d = argument0
+
+
+    //Move and Update Grid
+    makeMovePath(d)
+    i.pathLength = ii
+    i.stm -= d.g*.03*i.movStaminaMult*(1+(i.enc*.01))
+    if d.overlay = 2{i.stm -= d.g*.07*i.movStaminaMult*(1+(i.enc*.01))}
+    
+    gridUpdate(i, d)
+    with(i){triggerOnMove()}
+    
+    //Start the Action
+    with(i){actMove(1)}
