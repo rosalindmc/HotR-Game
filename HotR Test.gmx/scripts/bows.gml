@@ -142,7 +142,7 @@ break
 
 case 2:     //Called when equipped
 wepClass[i] = ranged
-wepAnimType[i] = typeBow
+wepAnimType[i] = typeCrossbow
 
 wepRPow[i] = iDmg
 wepRType[i] = iType

@@ -26,6 +26,11 @@ if irandom(4)+gender >= 5
     beardStyle = choose(spr_bigMoustache, spr_sadStache, spr_longStache, spr_chaplinStache, spr_goatee)
 }
 
+if gender = femme
+{
+    headScarfTrinket = choose(-4,-4,-4,-4,-4,-4,-4,-4,spr_hood)
+}
+
 skinTone = choose(fair,fair,fair,dark,dark,beige,beige,pale,pale)
 headSprite = choose(spr_youngHead,spr_youngHead,spr_baseHead,spr_youngHead,spr_freckleHead)
 earSprite = spr_elfEar
@@ -78,6 +83,11 @@ if irandom(2)+gender >= 3
     beardStyle = choose(spr_bigMoustache, spr_fullBeard, spr_sadStache, spr_longStache, spr_chaplinStache, spr_goatee)
 }
 
+if gender = femme
+{
+    headScarfTrinket = choose(-4,spr_hood)
+}
+
 headSprite = choose(spr_baseHead,spr_youngHead,spr_oldHead)
 hairStyle = choose(spr_longHair,spr_bunHair,spr_shortHair)
 hairColour = choose(black,dkBrown)
@@ -127,6 +137,11 @@ gender = choose(femme,femme,masc)
 if irandom(1)+gender >= 2
 {
     beardStyle = choose(spr_bigMoustache, spr_fullBeard, spr_sadStache, spr_longStache, spr_chaplinStache, spr_goatee)
+}
+
+if gender = femme
+{
+    headScarfTrinket = choose(-4,-4,-4,spr_hood)
 }
 
 headSprite = choose(spr_baseHead,spr_youngHead,spr_oldHead,spr_oldHead)

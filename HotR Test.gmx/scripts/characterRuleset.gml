@@ -4,52 +4,54 @@
 #define cwAdventurer
 //Rules for a commonwealth adventurer
 initializeHumanoid()
+fashionInitialize()
 raceGen(cwRaceList())
 detailGen(cwName)
 attributeGen()
 classGen(classList())
-fashionInitialize()
 
 
 #define orcThane
 //Rules for an Orc Thane
 initializeHumanoid()
+fashionInitialize()
 raceGen(race_orc)
 detailGen(cfName)
 attributeGen()
 classGen(class_warrior)
-fashionInitialize()
 
 eyeTrinket = choose(-4,-4,-4,spr_fashion2)
 
 #define orcVeteran
 //Rules for an Orc Veteran
 initializeHumanoid()
+fashionInitialize()
 raceGen(race_orc)
 detailGen(cfName)
 attributeGen()
 classGen(class_warrior)
-fashionInitialize()
 
 eyeTrinket = choose(-4,-4,-4,spr_fashion2)
 
 #define raiderCaptain
 //Rules for a Raider Captain
 initializeHumanoid()
+fashionInitialize()
 raceGen(race_northerner)
 detailGen(cwName)
 attributeGen()
 classGen(class_warrior)
-fashionInitialize()
+
 
 #define orcWarrior
 //Rules for an Orc Warrior
 initializeHumanoid()
+fashionInitialize()
 raceGen(race_orc)
 detailGen(cfName)
 attributeGen()
 classGen(class_thrall)
-fashionInitialize()
+
 
 //Names
 lastName = ''
@@ -62,11 +64,11 @@ overBodyItem = -4
 #define goblinWarrior
 //Rules for an Goblin Warrior
 initializeHumanoid()
+fashionInitialize()
 raceGen(race_goblin)
 detailGen(cfName)
 attributeGen()
 classGen(class_thrall)
-fashionInitialize()
 
 //Names
 lastName = ''

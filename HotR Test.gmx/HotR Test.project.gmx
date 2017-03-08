@@ -237,6 +237,8 @@
         <sprite>sprites\spr_fashion2</sprite>
         <sprite>sprites\spr_vest</sprite>
         <sprite>sprites\spr_coat</sprite>
+        <sprite>sprites\spr_hood</sprite>
+        <sprite>sprites\spr_crown</sprite>
       </sprites>
       <sprites name="Shields">
         <sprite>sprites\spr_heaterShield</sprite>

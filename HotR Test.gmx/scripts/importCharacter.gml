@@ -75,6 +75,7 @@ backTrinket = o.backTrinket
 neckTrinket = o.neckTrinket
 hipTrinket = o.hipTrinket
 headTrinket = o.headTrinket
+headScarfTrinket = o.headScarfTrinket
 
 overBodyItem = o.overBodyItem
 underBodyItem = o.underBodyItem
@@ -362,8 +363,7 @@ if underLegsItem != -4 and o.invSlot[4,0] != emptySlot
     {
         underHipsNum += 1
         hipsItems += 1
-        hipsItem[bodyItems] = underLegsItem
-        hipsColour[bodyItems] = favColour
+        hipsItem[hipsItems] = underLegsItem
     }
 }
 
@@ -400,6 +400,26 @@ if hipTrinket != -4 and o.invSlot[4,0] != emptySlot and rigid = false
     beltItems += 1
     beltItem[beltItems] = hipTrinket
     beltColour[beltItems] = c_white
+}
+
+if headTrinket != -4
+{
+    headItems += 1
+    headItem[headItems] = headTrinket
+    headColour[headItems] = c_white
+}
+
+if headScarfTrinket != -4
+{
+    hairVisible = 0    
+
+    headItems += 1
+    headItem[headItems] = headScarfTrinket
+    headColour[headItems] = favColour
+    
+    bodyItems += 1
+    bodyItem[bodyItems] = headScarfTrinket
+    bodyColour[bodyItems] = favColour
 }
 
 //Min Clothing

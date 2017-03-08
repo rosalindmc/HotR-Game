@@ -210,7 +210,7 @@ depthCheck(-2+active)
             <string>//Draw Healthbar
 if isoZ &lt;= global.zLevel and dead = false
 {
-    if (obj_control.cHover = isoTile or global.control = id) and vis = true
+    if (obj_control.cHover = isoTile or global.control = id or lifeVis != life) and vis = true
     {
         drawHealthbar()    
     }

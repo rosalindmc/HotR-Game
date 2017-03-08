@@ -593,7 +593,7 @@ with(argument0)
     draw_sprite_ext(spr_eyes,faceImage,argument1,argument2,argument3,argument3,0,eyeColour,1)
     draw_sprite_ext(hairStyle,0,argument1,argument2,argument3,argument3,0,hairColour,hairVisible)
     draw_sprite_ext(earSprite,0,argument1,argument2,argument3,argument3,0,skinTone,1)
-    draw_sprite_general(beardStyle,0,0,0,7,8,argument1,argument2,argument3,argument3,0,hairColour,hairColour,hairColour,hairColour,1)
+    draw_sprite_general(beardStyle,0,0,0,7,9,argument1-(3*argument3),argument2-(4*argument3),argument3,argument3,0,hairColour,hairColour,hairColour,hairColour,1)
     i = 0 repeat(headItems){i++ draw_sprite_ext(headItem[i],0,argument1,argument2,argument3,argument3,0,headColour[i],1)}
     
     shader_reset()

@@ -41,6 +41,49 @@ animIndex[argument0] = script_execute(wepAnimType[argument0],0)
 break
 }
 
+#define animBowHold
+//Holding animation for bows
+//animBowHold(hand,animStep)
+
+alarm[5+argument0] = global.fspd*.3
+animStep[argument0] += 1
+
+animPriority[argument0] = 0
+
+switch(argument1)
+{
+case 0:
+handHeight[argument0] = 6
+handRot[argument0] = facing+(bodyHFacing*-45)
+handDist[argument0] = 4
+handDir[argument0] = facing+((argument0-1.5)*60)
+break
+
+case 1:
+handHeight[argument0] = 4
+handRot[argument0] = facing+(bodyHFacing*-45)
+handDist[argument0] = 4
+handDir[argument0] =  facing+((argument0-1.5)*60)
+
+alarm[5+argument0] = global.fspd*.05
+break
+
+case 2:
+handHeight[argument0] = 5
+handRot[argument0] = facing+(bodyHFacing*-45)
+handDist[argument0] = 4
+handDir[argument0] =  facing+((argument0-1.5)*60)
+
+alarm[5+argument0] = global.fspd*(.3+random(.2))
+break
+
+case 3:
+//Loop Animation
+animStep[argument0] = 0
+animIndex[argument0] = script_execute(wepAnimType[argument0],0)
+break
+}
+
 #define animShield
 //Holding animation for melee weapons
 //animMeleeHold(hand,animStep)
