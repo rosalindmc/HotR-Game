@@ -143,7 +143,7 @@ break
 switch(argument0)
 {
 case 3:     //case 3 for abilities
-addAbility(actFeatOfStrength)
+addAbility(actFeatOfStrength,-4)
 break
 
 case 1:     //Tooltip and icon
@@ -163,12 +163,12 @@ break
 //tree(how to use, rank)
 switch(argument0)
 {
-case 0:     //Run when the unit is initialized in battle
-
+case 3:     //Run when the unit is initialized in battle
+addAbility(actGrapple,-4)
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_readyForMore
+sprite_index = ico_crunch
 image_index = 1
 name = 'Grapple'
 tooltip = 'Active: IMMOBILIZE an adjacent foe'
@@ -184,7 +184,7 @@ break
 //tree(how to use, rank)
 switch(argument0)
 {
-case 0:     //Run when the unit is initialized in battle
+case 3:     //Run when the unit is initialized in battle
 
 break
 
@@ -206,6 +206,7 @@ break
 switch(argument0)
 {
 case 3:     //case 3 for abilities
+
 break
 
 case 1:     //Tooltip and icon

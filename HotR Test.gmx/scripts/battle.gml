@@ -37,7 +37,7 @@ switch(argument0)
         //Ranged Attack
         with(i){ranged()}
         //End Turn
-        endTurn(3.0/i.haste)//Temp, turn will end after attack resolves when done
+        endTurn(3.0/i.haste)
     }
     //Melee Attack
     if cHover.meleeAttack = true and (key_meleeToggle = true or cHover.rangedAttack = false) and global.attackFromTile != noone
@@ -56,6 +56,8 @@ switch(argument0)
     //Run 2 to draw
     case 2:
     global.pathDraw = false
+    tooltipTitle = 'Battle'
+    abilityTT = 'Attack a foe in range'
     
     if instance_exists(cHover)
     {   

@@ -181,6 +181,7 @@ repeat(3)
     talentPrereq(branchSmash,treeStrength)
     talentPrereq(branchReadyForMore,treeStrength)
     talentPrereq(branchFeatOfStrength,treeStrength)
+    talentPrereq(branchGrapple,treeStrength)
         
     talentPrereq(branchVigour,treeToughness)
     talentPrereq(branchMightyBlock,treeToughness)

@@ -51,7 +51,7 @@ switch(argument0)
         with(i){ranged()}
         //End Turn
         s = 3.0/((i.wepRSpeed[i.atkHand]))
-        endTurn(s/(i.haste+i.atkHaste))//Temp, turn will end after attack resolves when done
+        endTurn(s/(i.haste+i.atkHaste))
     }
     //Melee Attack
     if cHover.meleeAttack = true and (key_meleeToggle = true or cHover.rangedAttack = false) and global.attackFromTile != noone
@@ -84,6 +84,8 @@ switch(argument0)
     //Run 2 to draw
     case 2:
     global.pathDraw = true
+    abilityTT = 'Move and/or Attack'
+    tooltipTitle = 'Attack/Move'
     
     if instance_exists(cHover)
     {   

@@ -29,6 +29,7 @@ with(obj_control)
     mapTimeOn = true
 }
 
+tooltipTitle = -4
 areaSuppression()
 
 #define areaSuppression

@@ -1,13 +1,13 @@
 switch(argument0)
 {
 case 0:     //Stats
-icon = ico_fatigue
+icon = ico_wounded
 upkp = 60.0
 duration = 2.0
 type = 'Fatigue'
 buff = false
 showDuration = false
-tooltip = 'Reduced dodge, skill, life regeneration, action speed and movement'
+tooltip = 'Reduced dodge, skill, stamina regeneration, life regeneration, action speed and movement'
 image_index = potency
 
 switch(potency)
@@ -37,7 +37,7 @@ owner.lifeRegen /= 1+(potency*.25)
 owner.stmRegen /= 1+(potency*.15)
 owner.movement /= 1+(potency*.2)
 owner.movementBonus /= 1+(potency*.5)
-owner.blockStr /= 1+(potency*.2)
+owner.blockStr -= potency
 owner.blockGen /= 1+(potency*.2)
 break
 

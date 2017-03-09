@@ -17,7 +17,7 @@ with(argument0)
         else
         {
             woundCheck(wounds)
-            wounds += 1
+            wounds = min(3,wounds+1)
         }
         
         life += floor(lifeMax*.75)

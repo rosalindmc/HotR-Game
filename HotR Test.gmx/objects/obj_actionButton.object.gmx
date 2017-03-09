@@ -30,6 +30,7 @@ selected = false
 cooldown = 0
 selectable = true
 number = 0
+actionNum = 0
 </string>
           </argument>
         </arguments>
@@ -52,12 +53,12 @@ number = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if number != 0
+            <string>if number != 0 and number &lt;= 10
 {
     if keyboard_check_pressed(global.abilityKey[number]) and selectable = true and cooldown = 0
     {
         global.action = action
-        global.actionNum = number
+        global.actionNum = actionNum
         
         with(obj_control)
         {
@@ -100,7 +101,7 @@ else
             <string>if selectable = true and cooldown = 0
 {
     global.action = action
-    global.actionNum = number
+    global.actionNum = actionNum
 
     with(obj_control)
     {
@@ -169,7 +170,7 @@ if cooldown != 0
         drawText(c_black,c_white,x,y,string_format(cooldown,1,0))
     }
 }
-if number != 0
+if number != 0 and number &lt;= 10
 {
     drawText(c_black,c_white,x,y+20,scr_keyCode(global.abilityKey[number]))
 }

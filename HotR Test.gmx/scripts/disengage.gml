@@ -27,6 +27,8 @@ switch(argument0)
     //Run 2 to draw
     case 2:
     global.pathDraw = true
+    tooltipTitle = 'Disengage'
+    abilityTT = 'Move and ignore ZoC'
     
     if instance_exists(cHover)
     {

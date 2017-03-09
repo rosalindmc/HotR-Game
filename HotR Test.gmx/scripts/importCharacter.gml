@@ -123,7 +123,7 @@ i += 1
 //Calculate derivative attributes
 
 //Movement
-movement = 4+((grace-8)*.2)+o.raceMove      //metres to a move action
+movement = 5+((grace-8)*.2)+o.raceMove      //metres to a move action
 movementBonus = 3+((grace-8)*.3)            //running bonus
 if grace >= 8
 {haste = 1+((grace-8)*.03)}
@@ -463,6 +463,10 @@ else
     //Exhausted   
     applyStatusEffect(fatigue,id,3,120)
 }
+
+applyStatusEffect(wounded,id,wounds,120)
+
+
 #define adjacentCharacters
 foeAdj = 0
 allyAdj = 0

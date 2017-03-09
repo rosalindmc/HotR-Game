@@ -168,10 +168,12 @@
       </sprites>
       <sprites name="Status Icons">
         <sprite>sprites\ico_daze</sprite>
+        <sprite>sprites\ico_stun</sprite>
         <sprite>sprites\ico_cripple</sprite>
-        <sprite>sprites\ico_immobilized</sprite>
+        <sprite>sprites\ico_immobilize</sprite>
         <sprite>sprites\ico_bleed</sprite>
         <sprite>sprites\ico_fatigue</sprite>
+        <sprite>sprites\ico_wounded</sprite>
         <sprite>sprites\ico_strengthBuff</sprite>
         <sprite>sprites\ico_dodgeBuff</sprite>
       </sprites>
@@ -502,6 +504,7 @@
             <script>scripts\wait.gml</script>
             <script>scripts\weaponSwitch.gml</script>
             <script>scripts\createActionBar.gml</script>
+            <script>scripts\abilityTooltip.gml</script>
           </scripts>
           <scripts name="Abilities">
             <scripts name="Spells">
@@ -605,11 +608,13 @@
     </scripts>
     <scripts name="Status Effects">
       <script>scripts\daze.gml</script>
+      <script>scripts\stun.gml</script>
       <script>scripts\fatigue.gml</script>
+      <script>scripts\wounded.gml</script>
       <script>scripts\strengthBuff.gml</script>
       <script>scripts\bleed.gml</script>
       <script>scripts\cripple.gml</script>
-      <script>scripts\immobilized.gml</script>
+      <script>scripts\immobilize.gml</script>
       <script>scripts\dodgeBuff.gml</script>
       <script>scripts\applyStatusEffect.gml</script>
     </scripts>

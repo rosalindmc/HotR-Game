@@ -31,6 +31,11 @@ switch(argument0)
     //Run 2 to draw
     case 2:
     global.testSlot.delayAdd = (1.5/i.haste)
+    if i.invSwitch = 0
+    {abilityTT = 'Switch to Ranged Set'}
+    else
+    {abilityTT = 'Switch to Melee Set'}
+    tooltipTitle = 'Switch Weapons'
     initiativeSlotAnticipate()
     break
     

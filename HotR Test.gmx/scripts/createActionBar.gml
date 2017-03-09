@@ -58,8 +58,10 @@ with(obj_control)
         actNum += 1
         iv = instance_create(120+(actNum*20), view_hview-30, obj_actionButton)
         iv.number = actNum
+        iv.actionNum = iii
         iv.action = global.control.ability[iii]
         iv.cooldown = global.control.abilityCD[iii]
+        iv.charges = global.control.abilityCharges[iii]
         script_execute(global.control.ability[iii],4)
     }
 }

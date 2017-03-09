@@ -60,3 +60,21 @@ with(obj_character)
         }
     }    
 }
+#define meleeAbilityRange
+//Determine if a character cna be melee attacked
+//meleeAttackRange(attacker)
+
+var actor = argument0
+var current = global.control.sightTile
+
+with(obj_character)
+{
+    if team != actor.team and dead = false
+    {
+        if los(1.5,current,sightTile)
+        {
+            isoTile.overlay = 3
+            isoTile.meleeAttack = true
+        }
+    }    
+}

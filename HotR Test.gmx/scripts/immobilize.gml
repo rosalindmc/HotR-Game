@@ -1,7 +1,7 @@
 switch(argument0)
 {
 case 0:     //Stats
-icon = ico_immobilized
+icon = ico_immobilize
 upkp = 120.0
 name = 'Immobilized'
 type = 'Wound'

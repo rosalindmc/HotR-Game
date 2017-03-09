@@ -144,7 +144,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
         {
             if target.active = true
             {
-                target.initSlot.delay += argument2
+                applyStatusEffect(stun,target,50,argument2*spellDur)
             }   
                     
             ii = instance_create(x,y-h-height,obj_descriptor)
@@ -197,7 +197,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
     {
         if 1+irandom(99) <= argument1+((skill-target.mSkill)*5)
         {
-            applyStatusEffect(immobilized,target,argument2,argument4*spellDur)
+            applyStatusEffect(immobilize,target,argument2,argument4*spellDur)
                         
             ii = instance_create(x,y-h-height,obj_descriptor)
             ii.text = argument0

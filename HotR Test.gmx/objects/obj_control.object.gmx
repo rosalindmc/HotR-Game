@@ -51,9 +51,13 @@ global.pathDraw = false
 global.nextChar = noone
 actNum = 0 //Variable for number of actions
 
-//Other variables
+//z variables
 global.zViewToggle = true
 zViewAlpha = 0
+
+//tooltips
+tooltipText = -4
+tooltipTitle = -4
 
 //Create Combat HUD
 i = instance_create(0,view_hview-120,obj_charInfo)
@@ -400,6 +404,10 @@ or (global.nextChar.owner.player = true and point_in_rectangle(mouse_x,mouse_y,v
     cHover = noone
     global.attackFromTile = noone  
 }
+else
+{
+    tooltipTitle = -4
+}
 
 if point_in_rectangle(mouse_x,mouse_y,view_xview+130,view_yview+view_hview-40,view_xview+130+(actNum*20),view_yview+view_hview-20)
 {
@@ -592,6 +600,8 @@ if obj_camera.x != obj_camera.xprevious or obj_camera.y != obj_camera.yprevious
 draw_set_halign(fa_right)
 draw_set_valign(fa_middle)
 drawText(c_black,c_white,view_xview+view_wview-10,view_yview+60,mapTime)
+
+abilityTooltip()
 
 if global.timeDelay = 0 and global.nextChar.owner.player = true
 {   

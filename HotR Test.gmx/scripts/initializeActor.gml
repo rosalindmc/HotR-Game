@@ -289,3 +289,4 @@ em2 = part_emitter_create(ps2)
 abilityNumber = 0
 ability[0] = -4
 abilityCD[0] = 0
+abilityCharges[0] = 0
