@@ -56,14 +56,14 @@ actionNum = 0
             <string>if number != 0 and number &lt;= 10
 {
     if keyboard_check_pressed(global.abilityKey[number]) and selectable = true and cooldown = 0
-    {
-        global.action = action
+    {   
         global.actionNum = actionNum
         
         with(obj_control)
         {
-        wipeTiles()
-        script_execute(global.action, 0)
+            wipeTiles()
+            script_execute(other.action, 0)
+            global.action = action
         }
     }
 }
@@ -134,25 +134,25 @@ else
             <string>x = xstart+view_xview
 y = ystart+view_yview
 
-if selectable = false
+if selectable = false or cooldown != 0
 {
     shader_set(shd_greyscale)
 }
 
 draw_sprite(sprite_index,0,x,y)
 
-if selectable = false
+if selectable = false or cooldown != 0
 {
     shader_reset()
 }
 
-if selected = false
+if selected = true or obj_control.action = action or global.attackMode = action
 {
-    draw_sprite(spr_iconBorder,0,x,y)
+    draw_sprite(spr_iconBorder,1,x,y)
 }
 else
 {
-    draw_sprite(spr_iconBorder,1,x,y)
+    draw_sprite(spr_iconBorder,0,x,y)
 }
 
 draw_set_font(fnt_tinyText)
@@ -163,11 +163,11 @@ if cooldown != 0
 {
     if cooldown &gt;= 10
     {
-        drawText(c_black,c_white,x,y,string_format(cooldown,2,1))
+        drawText(c_black,c_white,x,y,string_format(cooldown,2,0))
     }
     else
     {
-        drawText(c_black,c_white,x,y,string_format(cooldown,1,0))
+        drawText(c_black,c_white,x,y,string_format(cooldown,1,1))
     }
 }
 if number != 0 and number &lt;= 10

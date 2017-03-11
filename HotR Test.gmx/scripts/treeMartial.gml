@@ -128,7 +128,76 @@ case 1:     //Tooltip and icon
 sprite_index = ico_opportunist
 image_index = 1
 name = 'Opportunist'
-tooltip = '+1.0 POW against foes who are STUNNED, IMMOBILIZED, SLOWED, DAZED or BLINDED'
+tooltip = '+1.0 POW against foes who are STUNNED, IMMOBILIZED, CRIPPLED, SLOWED, DAZED or BLINDED'
+branch = treeMartial
+break
+
+case 2:
+return true
+break
+}
+
+#define branchMastery
+//tree(how to use, rank)
+switch(argument0)
+{
+case 0:     //Run when the unit is initialized in battle
+onHit[onHitSize,0] = masteryStrike
+onHit[onHitSize,1] = 'Mastery'
+onHit[onHitSize,2] = .4
+onHit[onHitSize,3] = false
+onHit[onHitSize,4] = false
+onHit[onHitSize,5] = false
+onHitSize += 1
+break
+
+case 1:     //Tooltip and icon
+sprite_index = ico_slayer
+image_index = 1
+name = 'Mastery'
+tooltip = '+POW against foes with lower Skill'
+branch = treeMartial
+break
+
+case 2:
+return true
+break
+}
+
+#define branchGuardBreak
+//tree(how to use, rank)
+switch(argument0)
+{
+case 3:     //case 3 for abilities
+addAbility(actGuardBreak,-4)
+break
+
+case 1:     //Tooltip and icon
+sprite_index = ico_accuracy
+image_index = 1
+name = 'Guard Break'
+tooltip = 'Special Melee: Destroy all blocks but deal reduced damage'
+branch = treeMartial
+break
+
+case 2:
+return true
+break
+}
+
+#define branchSlow
+//tree(how to use, rank)
+switch(argument0)
+{
+case 3:     //case 3 for abilities
+addAbility(actSlow,-4)
+break
+
+case 1:     //Tooltip and icon
+sprite_index = ico_slayer
+image_index = 1
+name = 'Slow'
+tooltip = 'Special Attack: Slow the target'
 branch = treeMartial
 break
 

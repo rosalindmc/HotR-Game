@@ -516,6 +516,9 @@
             <scripts name="Tactics">
               <script>scripts\strengthTactics.gml</script>
               <script>scripts\martialTactics.gml</script>
+              <script>scripts\mobilityTactics.gml</script>
+              <script>scripts\setAttackMode.gml</script>
+              <script>scripts\toughnessTactics.gml</script>
             </scripts>
           </scripts>
         </scripts>
@@ -604,19 +607,36 @@
         <script>scripts\wepsklFlurry.gml</script>
         <script>scripts\mighty.gml</script>
         <script>scripts\healthMit.gml</script>
+        <script>scripts\tacSunderArm.gml</script>
       </scripts>
     </scripts>
     <scripts name="Status Effects">
-      <script>scripts\daze.gml</script>
-      <script>scripts\stun.gml</script>
-      <script>scripts\fatigue.gml</script>
-      <script>scripts\wounded.gml</script>
-      <script>scripts\strengthBuff.gml</script>
-      <script>scripts\bleed.gml</script>
-      <script>scripts\cripple.gml</script>
-      <script>scripts\immobilize.gml</script>
-      <script>scripts\dodgeBuff.gml</script>
-      <script>scripts\applyStatusEffect.gml</script>
+      <scripts name="Meta">
+        <script>scripts\applyStatusEffect.gml</script>
+      </scripts>
+      <scripts name="Wound">
+        <script>scripts\cripple.gml</script>
+        <script>scripts\slow.gml</script>
+        <script>scripts\immobilize.gml</script>
+        <script>scripts\bleed.gml</script>
+      </scripts>
+      <scripts name="Mechanics">
+        <script>scripts\fatigue.gml</script>
+        <script>scripts\wounded.gml</script>
+      </scripts>
+      <scripts name="Attack Mode">
+        <script>scripts\attackModeSunder.gml</script>
+      </scripts>
+      <scripts name="Focus">
+        <script>scripts\strengthBuff.gml</script>
+        <script>scripts\regenerateBuff.gml</script>
+        <script>scripts\dodgeBuff.gml</script>
+        <script>scripts\adrenalineRush.gml</script>
+      </scripts>
+      <scripts name="Mental">
+        <script>scripts\daze.gml</script>
+        <script>scripts\stun.gml</script>
+      </scripts>
     </scripts>
   </scripts>
   <shaders name="shaders">

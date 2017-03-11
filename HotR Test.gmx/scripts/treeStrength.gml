@@ -206,7 +206,7 @@ break
 switch(argument0)
 {
 case 3:     //case 3 for abilities
-
+addAbility(actSunderArmour,-4)
 break
 
 case 1:     //Tooltip and icon

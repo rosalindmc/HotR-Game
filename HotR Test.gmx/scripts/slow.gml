@@ -1,18 +1,18 @@
 switch(argument0)
 {
 case 0:     //Stats
-icon = ico_immobilize
+icon = ico_cripple
 upkp = 120.0
-name = 'Immobilized'
+name = 'Slow'
 type = 'Wound'
 buff = false
-tooltip = 'Cannot move or dodge'
+tooltip = 'Reduced Movement and Dodge'
 break
 
 case 1:     //Stats
-owner.movement = 0
-owner.movementBonus = 0
-owner.dodge = 0
+owner.movement *= potency
+owner.movementBonus *= potency
+owner.dodge -= 10
 break
 
 case 2:     //Upkeep

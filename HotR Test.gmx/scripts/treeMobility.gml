@@ -164,3 +164,44 @@ case 2:
 return true
 break
 }
+#define branchBurstOfSpeed
+//tree(how to use, rank)
+switch(argument0)
+{
+case 3:     //case 3 for abilities
+addAbility(actBurstOfSpeed,-4)
+break
+
+case 1:     //Tooltip and icon
+sprite_index = ico_lightningStrike
+image_index = 1
+name = 'Burst of Speed'
+tooltip = 'Active: Move very quickly'
+branch = treeMobility
+break
+
+case 2:
+return true
+break
+}
+
+#define branchTumble
+//tree(how to use, rank)
+switch(argument0)
+{
+case 3:     //case 3 for abilities
+addAbility(actTumble,-4)
+break
+
+case 1:     //Tooltip and icon
+sprite_index = ico_hardTarget
+image_index = 1
+name = 'Tumble'
+tooltip = 'Active: Move and ignore ZoC'
+branch = treeMobility
+break
+
+case 2:
+return true
+break
+}

@@ -66,6 +66,14 @@ image_speed = 0
 {
     s = ds_list_find_index(owner.status,id)
     ds_list_delete(owner.status,s)
+    
+    with(owner)
+    {
+        if dead = false
+        {
+            iC()
+        }
+    }
 }
 </string>
           </argument>

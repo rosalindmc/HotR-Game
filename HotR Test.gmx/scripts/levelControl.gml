@@ -29,14 +29,14 @@ if c.travelTalentPoint >= 1
 c.lifePoint += c.classLife
 c.staminaPoint += c.classStamina
 
-c.mSkill += c.classMSkill/2
-i.mSkill = c.classMSkill/2
+c.mSkill += c.classMSkill
+i.mSkill = c.classMSkill
 
-c.rSkill += c.classRSkill/2
-i.rSkill = c.classRSkill/2
+c.rSkill += c.classRSkill
+i.rSkill = c.classRSkill
 
-c.cSkill += c.classCSkill/2
-i.cSkill = c.classCSkill/2
+c.cSkill += c.classCSkill
+i.cSkill = c.classCSkill
 
 c.levelPending -= 1
 
@@ -182,23 +182,32 @@ repeat(3)
     talentPrereq(branchReadyForMore,treeStrength)
     talentPrereq(branchFeatOfStrength,treeStrength)
     talentPrereq(branchGrapple,treeStrength)
-        
+    talentPrereq(branchSunderArmour,treeStrength)
+    
     talentPrereq(branchVigour,treeToughness)
     talentPrereq(branchMightyBlock,treeToughness)
     talentPrereq(branchThickSkin,treeToughness)
     talentPrereq(branchMightyHealth,treeToughness)
+    talentPrereq(branchAdrenalineRush,treeToughness)
+    talentPrereq(branchSuperiority,treeToughness)
+    talentPrereq(branchSecondWind,treeToughness)
     
     talentPrereq(branchAccuracy,treeMartial)
     talentPrereq(branchCombatDrill,treeMartial)
     talentPrereq(branchSlayer,treeMartial)
     talentPrereq(branchOpportunist,treeMartial)
+    talentPrereq(branchMastery,treeMartial)
+    talentPrereq(branchGuardBreak,treeMartial)
+    talentPrereq(branchSlow,treeMartial)
         
     talentPrereq(branchEvasion,treeMobility)
     talentPrereq(branchLightningStrike,treeMobility)
     talentPrereq(branchMarathon,treeMobility)
     talentPrereq(branchHardTarget,treeMobility)
     talentPrereq(branchMomentum,treeMobility)
-    
+    talentPrereq(branchBurstOfSpeed,treeMobility)
+    talentPrereq(branchTumble,treeMobility)
+        
     talentPrereq(branchVigiliance,treeInsight)
     talentPrereq(branchPassArmour,treeInsight)
     talentPrereq(branchHeightAdvantage,treeInsight)

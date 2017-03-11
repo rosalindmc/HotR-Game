@@ -4,7 +4,7 @@ case 0:     //Stats
 icon = ico_fatigue
 upkp = 60.0
 duration = 20.0
-type = 'Wound'
+type = 'Core'
 buff = false
 showDuration = false
 tooltip = 'Reduced stamina and life regeneration and increases chance of death'

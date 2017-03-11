@@ -7,25 +7,25 @@ if argument5 = false    //On Proc
 {
     if (life/lifeMax)*100 >= argument1 and argument3 = false
     {
-        other.p *= (100-argument2)/100
+        other.pMult *= (100-argument2)/100
     }
     if (life/lifeMax)*100 <= argument1 and argument3 = true
     {
-        other.p *= (100-argument2)/100
+        other.pMult *= (100-argument2)/100
     }
 }
 else                    //On Tooltip
 {
     if (life/lifeMax)*100 >= argument1 and argument3 = false
     {
-        other.p *= (100-argument2)/100
+        other.pMult *= (100-argument2)/100
         obj_control.tooltipColour[obj_control.tooltipLength] = c_red
         obj_control.tooltipText[obj_control.tooltipLength] = 'Thick Skin'
         obj_control.tooltipLength += 1    
     }
     if (life/lifeMax)*100 <= argument1 and argument3 = true
     {
-        other.p *= (100-argument2)/100
+        other.pMult *= (100-argument2)/100
         obj_control.tooltipColour[obj_control.tooltipLength] = c_red
         obj_control.tooltipText[obj_control.tooltipLength] = 'Thick Skin'
         obj_control.tooltipLength += 1

@@ -31,16 +31,16 @@ invSlot[4,0] = robe
 
 //Class Stats and Progression
 life = 2
-classLife = .25
+classLife = .13
 stamina = 6
-classStamina = .35
+classStamina = .19
 
 mSkill = 1
 rSkill = 1
 cSkill = 3
-classMSkill = .3
-classRSkill = .3
-classCSkill = .5
+classMSkill = .15
+classRSkill = .15
+classCSkill = .25
 
 cunning += 1
 will += 1
@@ -59,16 +59,16 @@ invSlot[2,0] = choose(dagger,roundShield,emptySlot,emptySlot,emptySlot)
 invSlot[4,0] = choose(robe,dress,chainShirt)
 
 life = 4
-classLife = .3
+classLife = .16
 stamina = 4
-classStamina = .3
+classStamina = .16
 
 mSkill = 3
 rSkill = 2
 cSkill = 1
-classMSkill = .5
-classRSkill = .4
-classCSkill = .3
+classMSkill = .25
+classRSkill = .20
+classCSkill = .15
 
 cunning += 1
 grace += 1
@@ -90,16 +90,16 @@ invSlot[3,0] = choose(shortBow,crossbow,longBow,emptySlot,emptySlot,emptySlot)
 invSlot[4,0] = choose(robe,chainShirt)
 
 life = 4
-classLife = .3
+classLife = .16
 stamina = 8
-classStamina = .4
+classStamina = .22
 
 mSkill = 2
 rSkill = 2
 cSkill = 1
-classMSkill = .4
-classRSkill = .4
-classCSkill = .3
+classMSkill = .20
+classRSkill = .20
+classCSkill = .15
 
 cunning += 1
 grace += 2
@@ -120,16 +120,16 @@ invSlot[3,0] = choose(shortBow,crossbow,emptySlot,emptySlot,emptySlot)
 invSlot[4,0] = robe
 
 life = 2
-classLife = .25
+classLife = .13
 stamina = 6
-classStamina = .35
+classStamina = .19
 
 mSkill = 1
 rSkill = 1
 cSkill = 1
-classMSkill = .3
-classRSkill = .3
-classCSkill = .3
+classMSkill = .15
+classRSkill = .15
+classCSkill = .15
 
 cunning += 2
 grace += 1
@@ -150,22 +150,27 @@ invSlot[3,0] = choose(shortBow,crossbow,longBow,emptySlot,emptySlot,emptySlot)
 invSlot[4,0] = choose(chainMail,chainMail,breastPlate)
 
 life = 6
-classLife = .35
+classLife = .19
 stamina = 4
-classStamina = .3
+classStamina = .16
 
 mSkill = 3
 rSkill = 3
 cSkill = 1
-classMSkill = .5
-classRSkill = .5
-classCSkill = .3
+classMSkill = .25
+classRSkill = .25
+classCSkill = .15
 
 might += 2
 will += 1
 //Talent
 talent[0,0] = choose(treeStrength,treeDiscipline,treeToughness,treeMartial)
 talent[0,5] = 2
+
+/*Temp
+talent[0,1] = choose(branchGuardBreak)
+talent[0,2] = choose(branchSuperiority)
+talent[0,3] = choose(branchSecondWind)
 
 #define class_thrall
 className = 'Thrall'
@@ -177,16 +182,16 @@ invSlot[3,0] = choose(shortBow,emptySlot,emptySlot,emptySlot)
 invSlot[4,0] = chainShirt
 
 life = 0
-classLife = .3
+classLife = .10
 stamina = 0
-classStamina = .3
+classStamina = .10
 
 mSkill = 0
 rSkill = 1
 cSkill = 0
-classMSkill = .4
-classRSkill = .4
-classCSkill = .3
+classMSkill = .20
+classRSkill = .20
+classCSkill = .15
 
 cunning -= 2
 fellowship -= 2
@@ -202,16 +207,16 @@ invSlot[3,0] = emptySlot
 invSlot[4,0] = choose(chainMail,chainMail,breastPlate)
 
 life = 8
-classLife = .35
+classLife = .22
 stamina = 8
-classStamina = .3
+classStamina = .22
 
 mSkill = 3
 rSkill = 3
 cSkill = 1
-classMSkill = .5
-classRSkill = .5
-classCSkill = .3
+classMSkill = .25
+classRSkill = .25
+classCSkill = .15
 
 might += 2
 will += 1

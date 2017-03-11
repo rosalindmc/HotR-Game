@@ -35,10 +35,15 @@ randomize()
 mapTime = 0
 mapTimeOn = true
 global.timeDelay = 1
+
+//Other
 global.target = -4
 global.expTotal = 0
 global.losCheckFrom = noone
 global.follow = noone
+
+global.attackMode = -4
+global.attackModeNum = 0
 
 //Visuals
 image_speed = .3

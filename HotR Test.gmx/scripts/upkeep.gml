@@ -11,7 +11,7 @@ if obj_control.mapTimeOn = true and global.timeDelay = 0
     
     for(i = 0; i < abilityNumber; i++)
     {
-        abilityCD[0] = max(0,abilityCD[0]-(1/global.fspd))
+        abilityCD[i] = max(0,abilityCD[i]-(1/global.fspd))
     }
     
     if regenTime >= 1

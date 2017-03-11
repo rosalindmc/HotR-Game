@@ -68,14 +68,14 @@ break
 switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
-lifeMax += floor(armMax/4)
+lifeMax += min(3,floor(armMax/4))
 break
 
 case 1:     //Tooltip and icon
 sprite_index = ico_confidence
 image_index = 1
 name = 'Confidence'
-tooltip = 'Gain maximum life equal to your armour value'
+tooltip = 'Gain life equal to your armour value (Max 3)'
 branch = treeDiscipline
 break
 

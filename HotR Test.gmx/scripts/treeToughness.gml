@@ -149,3 +149,71 @@ case 2:
 return true
 break
 }
+#define branchAdrenalineRush
+//tree(how to use, rank)
+switch(argument0)
+{
+case 3:     //case 3 for abilities
+addAbility(actAdrenalineRush,-4)
+break
+
+case 1:     //Tooltip and icon
+sprite_index = ico_thickSkin
+image_index = 1
+name = 'Adrenaline Rush'
+tooltip = 'Active: Gain Maximum Life, Stamina and Regeneration'
+branch = treeToughness
+break
+
+case 2:
+return true
+break
+}
+
+#define branchSecondWind
+//tree(how to use, rank)
+switch(argument0)
+{
+case 3:     //case 3 for abilities
+addAbility(actSecondWind,-4)
+break
+
+case 1:     //Tooltip and icon
+sprite_index = ico_mightyHealth
+image_index = 1
+name = 'Second Wind'
+tooltip = 'Active: Regain all stamina and some Life'
+branch = treeToughness
+break
+
+case 2:
+return true
+break
+}
+
+#define branchSuperiority
+//tree(how to use, rank)
+switch(argument0)
+{
+case 0:     //Run when the unit is initialized in battle
+areHit[areHitSize,0] = statusGain
+areHit[areHitSize,1] = regenerateBuff
+areHit[areHitSize,2] = 100
+areHit[areHitSize,3] = 2
+areHit[areHitSize,4] = 5
+areHit[areHitSize,5] = false
+areHitSize += 1
+break
+
+case 1:     //Tooltip and icon
+sprite_index = ico_thickSkin
+image_index = 1
+name = 'Superiority'
+tooltip = 'Gain regeneration on being attacked'
+branch = treeToughness
+break
+
+case 2:
+return true
+break
+}

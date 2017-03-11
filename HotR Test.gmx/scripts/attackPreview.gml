@@ -14,6 +14,7 @@ with(i)
     target = other.target
     backstab = false
     mle = argument0
+    pMult = 1
     
     if mle = true
     {
@@ -63,6 +64,11 @@ with(i)
         pMax = p*(1+wepRPowRng[atkHand])    
     }    
         
+    //Mult Pow
+    p *= pMult
+    pMin *= pMult
+    pMax *= pMult
+    
     //Armour and Penetration
     a = a*.25
     
@@ -85,7 +91,7 @@ with(i)
 }
 
 
-if i.missChance > 0{extraTT += 1}
+if i.missChance >= 1{extraTT += 1}
 if i.dge > 0 and i.backstab = false{extraTT += 1}
 if target.blocks >= 1 and i.backstab = false and floor(100-((i.skill-target.mSkill)*3)) > 0 and (i.mle = true or target.hasShield = true){extraTT += 1}
 
@@ -102,9 +108,9 @@ iy += 4
 draw_text(ix+5,iy,string(i.pMin)+' - '+string(i.pMax)+' '+string(i.typeName))
 iy += 14  
 
-if i.missChance > 0
+if i.missChance >= 1
 {
-    draw_text(ix+5,iy,string(i.missChance)+' % Miss')
+    draw_text(ix+5,iy,string(floor(i.missChance))+' % Miss')
     iy += 14  
 }
 if i.dge > 0 and i.backstab = false

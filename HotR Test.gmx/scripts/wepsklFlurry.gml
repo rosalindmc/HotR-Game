@@ -18,7 +18,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
     }
     else if min(100,floor(argument1+((skill-target.mSkill)*5))) > 0                    //On Tooltip
     {
-        obj_control.tooltipColour[obj_control.tooltipLength] = ltBlue
+        obj_control.tooltipColour[obj_control.tooltipLength] = green
         obj_control.tooltipText[obj_control.tooltipLength] = string(min(100,floor(argument1+((skill-target.mSkill)*5))))+' % '+string(argument0)
         obj_control.tooltipLength += 1    
     }
@@ -44,7 +44,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
     }
     else if min(100,floor(argument1+((skill-target.mSkill)*5))) > 0                  //On Tooltip
     {
-        obj_control.tooltipColour[obj_control.tooltipLength] = ltBlue
+        obj_control.tooltipColour[obj_control.tooltipLength] = green
         obj_control.tooltipText[obj_control.tooltipLength] = string(min(100,floor(argument1+((skill-target.mSkill)*5))))+' % '+string(argument0)
         obj_control.tooltipLength += 1    
     }
@@ -70,7 +70,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
     }
     else if min(100,floor(argument1+((skill-target.mSkill)*5))) > 0                  //On Tooltip
     {
-        obj_control.tooltipColour[obj_control.tooltipLength] = ltBlue
+        obj_control.tooltipColour[obj_control.tooltipLength] = green
         obj_control.tooltipText[obj_control.tooltipLength] = string(min(100,floor(argument1+((skill-target.mSkill)*5))))+' % '+string(argument0)
         obj_control.tooltipLength += 1    
     }
@@ -98,7 +98,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
     }
     else if min(100,floor(argument1+((skill-target.mSkill)*5))) > 0                    //On Tooltip
     {
-        obj_control.tooltipColour[obj_control.tooltipLength] = ltBlue
+        obj_control.tooltipColour[obj_control.tooltipLength] = green
         obj_control.tooltipText[obj_control.tooltipLength] = string(min(100,floor(argument1+((skill-target.mSkill)*5))))+' % '+string(argument0)
         obj_control.tooltipLength += 1    
     }
@@ -125,7 +125,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
     }
     else if min(100,floor(argument1+((skill-target.mSkill)*5))) > 0                    //On Tooltip
     {
-        obj_control.tooltipColour[obj_control.tooltipLength] = ltBlue
+        obj_control.tooltipColour[obj_control.tooltipLength] = green
         obj_control.tooltipText[obj_control.tooltipLength] = string(min(100,floor(argument1+((skill-target.mSkill)*5))))+' % '+string(argument0)
         obj_control.tooltipLength += 1    
     }
@@ -154,7 +154,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
     }
     else if min(100,floor(argument1+((skill-target.mSkill)*5))) > 0                        //On Tooltip
     {
-        obj_control.tooltipColour[obj_control.tooltipLength] = ltBlue
+        obj_control.tooltipColour[obj_control.tooltipLength] = green
         obj_control.tooltipText[obj_control.tooltipLength] = string(min(100,floor(argument1+((skill-target.mSkill)*5))))+' % '+string(argument0)
         obj_control.tooltipLength += 1    
     }
@@ -180,7 +180,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
     }
     else if min(100,floor(argument1+((skill-target.mSkill)*5))) > 0                        //On Tooltip
     {
-        obj_control.tooltipColour[obj_control.tooltipLength] = ltBlue
+        obj_control.tooltipColour[obj_control.tooltipLength] = green
         obj_control.tooltipText[obj_control.tooltipLength] = string(min(100,floor(argument1+((skill-target.mSkill)*5))))+' % '+string(argument0)
         obj_control.tooltipLength += 1    
     }
@@ -206,7 +206,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
     }
     else if min(100,floor(argument1+((skill-target.mSkill)*5))) > 0                        //On Tooltip
     {
-        obj_control.tooltipColour[obj_control.tooltipLength] = ltBlue
+        obj_control.tooltipColour[obj_control.tooltipLength] = green
         obj_control.tooltipText[obj_control.tooltipLength] = string(min(100,floor(argument1+((skill-target.mSkill)*5))))+' % '+string(argument0)
         obj_control.tooltipLength += 1    
     }
@@ -232,7 +232,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
     }
     else if min(100,floor(argument1+((skill-target.mSkill)*5))) > 0                        //On Tooltip
     {
-        obj_control.tooltipColour[obj_control.tooltipLength] = ltBlue
+        obj_control.tooltipColour[obj_control.tooltipLength] = green
         obj_control.tooltipText[obj_control.tooltipLength] = string(min(100,floor(argument1+((skill-target.mSkill)*5))))+' % '+string(argument0)
         obj_control.tooltipLength += 1    
     }

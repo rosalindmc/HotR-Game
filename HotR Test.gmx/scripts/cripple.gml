@@ -11,7 +11,11 @@ break
 
 case 1:     //Stats
 owner.atkDPS -= potency/2
+owner.mSkill -= potency
+owner.rSkill -= potency
+owner.cSkill -= potency
 owner.blockStr -= potency
+owner.missChance += .01
 break
 
 case 2:     //Upkeep

@@ -4,7 +4,7 @@ case 0:     //Stats
 icon = ico_wounded
 upkp = 60.0
 duration = 2.0
-type = 'Fatigue'
+type = 'Core'
 buff = false
 showDuration = false
 tooltip = 'Reduced dodge, skill, stamina regeneration, life regeneration, action speed and movement'

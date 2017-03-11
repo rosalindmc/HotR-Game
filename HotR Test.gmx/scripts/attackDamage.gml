@@ -4,6 +4,7 @@ if target.dead = false
     //Damage script
     backstab = false
     mle = argument0
+    pMult = 1
     
     global.attackFromTile = isoTile
     
@@ -89,6 +90,9 @@ if target.dead = false
         }
     }
     
+    //Mult Pow
+    p *= pMult
+    
     //Armour and Penetration
     a = max(0,(a*.25*(.25+random(.75)))-pen)
     
@@ -140,7 +144,7 @@ if target.dead = false
     
     //Damage
     target.life -= p
-    target.stm -= p*.25
+    target.stm -= p*.15
     
     with(target)
     {

@@ -260,3 +260,22 @@ else                    //On Tooltip
 {
     //No Tooltip
 }
+#define masteryStrike
+//Additional Conditioners
+
+if skill > target.mSkill and mle = true
+{
+    if argument5 = false    //On Proc
+    {
+        p += ((mSkill-target.mSkill)*argument1)*s
+    }
+    else                    //On Tooltip
+    {
+        p += ((mSkill-target.mSkill)*argument1)*s
+         
+        obj_control.tooltipColour[obj_control.tooltipLength] = green
+        obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)+' '+string_format(((mSkill-target.mSkill)*argument1)*s,2,1)
+        obj_control.tooltipLength += 1   
+        
+    }
+}
