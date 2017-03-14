@@ -149,18 +149,18 @@ case 2:
 return true
 break
 }
-#define branchAdrenalineRush
+#define branchBattleRush
 //tree(how to use, rank)
 switch(argument0)
 {
 case 3:     //case 3 for abilities
-addAbility(actAdrenalineRush,-4)
+addAbility(actBattleRush,-4)
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_thickSkin
+sprite_index = ico_battleRush
 image_index = 1
-name = 'Adrenaline Rush'
+name = 'Battle Rush'
 tooltip = 'Active: Gain Maximum Life, Stamina and Regeneration'
 branch = treeToughness
 break
@@ -179,7 +179,7 @@ addAbility(actSecondWind,-4)
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_mightyHealth
+sprite_index = ico_secondWind
 image_index = 1
 name = 'Second Wind'
 tooltip = 'Active: Regain all stamina and some Life'
@@ -197,16 +197,16 @@ switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
 areHit[areHitSize,0] = statusGain
-areHit[areHitSize,1] = regenerateBuff
-areHit[areHitSize,2] = 100
-areHit[areHitSize,3] = 2
+areHit[areHitSize,1] = 'Superiority'
+areHit[areHitSize,2] = regenerateBuff
+areHit[areHitSize,3] = 100
 areHit[areHitSize,4] = 5
 areHit[areHitSize,5] = false
 areHitSize += 1
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_thickSkin
+sprite_index = ico_superiority
 image_index = 1
 name = 'Superiority'
 tooltip = 'Gain regeneration on being attacked'

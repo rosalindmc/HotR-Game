@@ -13,16 +13,9 @@ case 1:     //Stats
 break
 
 case 2:     //Upkeep
-i = floor(potency+random(.99))
-owner.stm -= i
-owner.life -= i
+loseStamina(owner,i)
+woundLife(owner,creator,potency,typeBlood)
 upkp = 5.0
-
-ii = instance_create(owner.x,owner.y-owner.h-owner.height,obj_descriptor)
-ii.text = i
-ii.font = fnt_tiny
-ii.colour1 = dkRed
-ii.colour2 = c_red
 break
 
 case 3:     //Stacking

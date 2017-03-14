@@ -179,5 +179,8 @@ while (i <= ii)
 script_execute(argument0)
 
 #define detailGen
+if firstName = -4
+{
 firstName = script_execute(argument0,gender)
+}
 lastName = script_execute(race,1)

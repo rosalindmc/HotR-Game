@@ -20,7 +20,7 @@ switch(argument0)
             blocks = 0
         }
     }
-    endTurn(1.5/i.haste)
+    endTurn(1.0/i.haste)
     break
     
     //Run 1 to execute
@@ -30,12 +30,13 @@ switch(argument0)
     
     //Run 2 to draw
     case 2:
-    global.testSlot.delayAdd = (1.5/i.haste)
-    if i.invSwitch = 0
-    {abilityTT = 'Switch to Ranged Set'}
-    else
-    {abilityTT = 'Switch to Melee Set'}
+    global.testSlot.delayAdd = (1.0/i.haste)
     tooltipTitle = 'Switch Weapons'
+    if i.invSwitch = 0
+    {abilityTT = 'Action#Switch to Ranged Set'}
+    else
+    {abilityTT = 'Action#Switch to Melee Set'}
+    abilityTTLength = 1
     initiativeSlotAnticipate()
     break
     

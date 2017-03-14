@@ -5,7 +5,7 @@
 iSpr = spr_longBow
 iDmg = 5.0
 iDmgRng = .3
-iType = 'Piercing'
+iType = typePierce
 iStrMult = .8
 iPen = 3
 iSpd = 0.60
@@ -61,7 +61,7 @@ break
 iSpr = spr_shortBow
 iDmg = 4.0
 iDmgRng = .3
-iType = 'Piercing'
+iType = typePierce
 iStrMult = .8
 iPen = 2
 iSpd = 0.80
@@ -117,7 +117,7 @@ break
 iSpr = spr_crossbow
 iDmg = 10.0
 iDmgRng = .3
-iType = 'Piercing'
+iType = typePierce
 iStrMult = 0
 iPen = 8
 iSpd = 0.40

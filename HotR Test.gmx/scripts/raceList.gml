@@ -78,6 +78,11 @@ race = race_irunian
 raceName = 'Human'
 gender = choose(femme,femme,masc)
 
+if 1+irandom(99) < 75
+{
+    firstName = script_execute(irunName,gender)
+}
+
 if irandom(2)+gender >= 3
 {
     beardStyle = choose(spr_bigMoustache, spr_fullBeard, spr_sadStache, spr_longStache, spr_chaplinStache, spr_goatee)
@@ -133,6 +138,11 @@ case 0:
 race = race_northerner
 raceName = 'Human'
 gender = choose(femme,femme,masc)
+
+if 1+irandom(99) < 50
+{
+    firstName = script_execute(whName,gender)
+}
 
 if irandom(1)+gender >= 2
 {
@@ -194,6 +204,11 @@ case 0:
 race = race_dwarf
 raceName = 'Dwarf'
 gender = choose(femme,masc)
+
+if 1+irandom(99) < 90
+{
+    firstName = script_execute(efName,gender)
+}
 
 if irandom(9)+gender >= 9
 {
@@ -325,6 +340,11 @@ case 0:
 race = race_orc
 raceName = 'Orc'
 gender = choose(femme,masc,masc,masc,masc,masc)
+
+if 1+irandom(99) < 50
+{
+    firstName = script_execute(cfName,gender)
+}
 
 if irandom(3)+gender >= 4
 {

@@ -2,12 +2,14 @@
 //upkeep()
 //Run in the step event of any actor
 
+if dead = false
+{
 //Regenerate life (Life regen measured in life per 5 seconds)
 if obj_control.mapTimeOn = true and global.timeDelay = 0
 {
     //Life and Stamina Regeneration
     regenTime += lifeRegen/(global.fspd*5)
-    stm = min(stm+((stmRegen*(1-(enc*.01)))/(global.fspd*30)),stmMax)
+    gainStamina(id,stmRegen/(global.fspd*30))
     
     for(i = 0; i < abilityNumber; i++)
     {
@@ -16,13 +18,15 @@ if obj_control.mapTimeOn = true and global.timeDelay = 0
     
     if regenTime >= 1
     {
-        if life < lifeMax
-        {
-            life += 1
-        }
+        healLife(id,1)
         regenTime -= 1
     }
-    
+            
+    if life = lifeMax
+    {
+        regenTime = 0
+    }
+        
     if life = lifeMax and active = false and dead = false
     {
         actorRevive()
@@ -47,3 +51,4 @@ if obj_control.mapTimeOn = true and global.timeDelay = 0
 
 //Visualize life changes for healthbar
 lifeVis += (life-lifeVis)/(global.fspd/5)
+}

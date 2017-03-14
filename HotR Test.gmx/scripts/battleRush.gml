@@ -1,9 +1,9 @@
 switch(argument0)
 {
 case 0:     //Stats
-icon = ico_strengthBuff
+icon = ico_rushBuff
 upkp = 60.0
-name = 'Adrenaline Rush'
+name = 'Battle Rush'
 type = 'Focus'
 buff = true
 tooltip = '+'+string(potency)+' Life, +'+string(potency)+' Stamina and +'+string(potency)+' Regeneration'

@@ -60,8 +60,21 @@ with(obj_character)
         }
     }    
 }
+#define ifAbilityRange
+with(obj_character)
+{
+    if team != argument0.team and dead = false
+    {
+        if los(argument0.argument1,argument0.sightTile,sightTile)
+        {
+            return true
+        }
+    }
+}
+return false
+
 #define meleeAbilityRange
-//Determine if a character cna be melee attacked
+//Determine if a character can use a melee ability
 //meleeAttackRange(attacker)
 
 var actor = argument0
@@ -77,4 +90,37 @@ with(obj_character)
             isoTile.meleeAttack = true
         }
     }    
+}
+
+#define rangeAbilityRange
+//Determine if a character can use a ranged ability
+//meleeAttackRange(attacker,range,hostile)
+
+var actor = argument0
+var current = global.control.sightTile
+
+with(obj_character)
+{
+    if argument2 = true
+    {
+    if team != actor.team and dead = false
+    {
+        if los(argument1,current,sightTile)
+        {
+            isoTile.overlay = 3
+            isoTile.meleeAttack = true
+        }
+    }    
+    }
+    else
+    {
+    if team = actor.team and dead = false
+    {
+        if los(argument1,current,sightTile)
+        {
+            isoTile.overlay = 3
+            isoTile.meleeAttack = true
+        }
+    } 
+    }  
 }

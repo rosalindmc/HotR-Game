@@ -55,6 +55,8 @@ with(obj_initiativeSlot)
 }
 
 #define initiativeSlotAnticipate
+if global.suppPreview = true
+{
 global.initiative = ds_priority_create()
 
 //Put all initiative markers in the list
@@ -93,4 +95,5 @@ with(obj_initiativeSlot)
     {
         vis = true
     }
+}
 }

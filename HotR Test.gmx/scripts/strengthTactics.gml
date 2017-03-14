@@ -14,7 +14,7 @@ switch(argument0)
     case 0:
     applyStatusEffect(strengthBuff,i,4,5*i.spellDur)
     i.abilityCD[global.actionNum] = 30/i.spellCD
-    i.stm -= 1
+    spendStamina(i,1)
     actionBarReset()
     break
     
@@ -26,7 +26,8 @@ switch(argument0)
     //Run 2 to draw
     case 2:
     tooltipTitle = 'Feat of Strength'
-    abilityTT = 'Gain Empower 4'
+    abilityTT = 'Free Action#Cooldown '+string_format(30/i.spellCD,0,1)+'#Stamina Cost 2##Gain EMPOWER 4 for '+string_format(5*i.spellDur,0,1)+'sec'
+    abilityTTLength = 4
     break
     
     //Run 3 for ai use 
@@ -43,7 +44,7 @@ switch(argument0)
     {
         iv.selectable = false
     }
-    iv.sprite_index = ico_readyForMore
+    iv.sprite_index = ico_featOfStrength
     break
 }
 
@@ -56,6 +57,7 @@ switch(argument0)
     //Run 0 when a player selects the command
     case 0:
     action = actGrapple
+    global.castMouse = 2
     meleeAbilityRange(i)
     break
     
@@ -76,7 +78,8 @@ switch(argument0)
     //Run 2 to draw
     case 2:
     tooltipTitle = 'Grapple'
-    abilityTT = 'Immobilize a foe'
+    abilityTT = 'Action#Cooldown '+string_format(10/i.spellCD,0,1)+'##IMMOBILIZE an adjacent foe with your free hand for '+string_format(5*i.spellDur,0,1)+'sec'
+    abilityTTLength = 4
     break
     
     //Run 3 for ai use 
@@ -85,8 +88,8 @@ switch(argument0)
     
     //Run 4 for hotbar check 
     case 4:
-    iv.sprite_index = ico_crunch
-    if embattled(i)
+    iv.sprite_index = ico_grapple
+    if ifAbilityRange(i,1.5) and i.dualWield = false and i.hasShield = false
     {
         iv.selectable = true
     }
@@ -116,7 +119,8 @@ switch(argument0)
     //Run 2 to draw
     case 2:
     tooltipTitle = 'Sunder Armour'
-    abilityTT = 'Special Attack: Sunder 2'
+    abilityTT = 'Special Attack#Cooldown '+string_format(30/i.spellCD,0,1)+'#Stamina Cost 1##Attack gains SUNDER 2'
+    abilityTTLength = 4
     break
     
     //Run 3 for ai use 
@@ -133,6 +137,6 @@ switch(argument0)
     {
         iv.selectable = false
     }
-    iv.sprite_index = ico_readyForMore
+    iv.sprite_index = ico_sunderArmour
     break
 }

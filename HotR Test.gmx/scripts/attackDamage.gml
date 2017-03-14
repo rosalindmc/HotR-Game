@@ -37,8 +37,8 @@ if target.dead = false
     {
         ii = instance_create(target.x,target.y-target.h-target.height,obj_descriptor)
         ii.text = 'Dodge'
-        ii.font = fnt_tiny
-        target.stm -= 1*(1+(target.enc*.01))
+        ii.font = fnt_damage
+        loseStamina(target,1)
         
         with(target)
         {
@@ -55,10 +55,7 @@ if target.dead = false
     {
     //Suppress
     suppress(target,2.0)
-    
-    //Damage Mitigation
-    p /= (1+dmgMitigation)
-    
+     
     //Armour
     a = target.arm
     
@@ -70,17 +67,21 @@ if target.dead = false
         if irandom(99)+1 < 100-(max(0,(skill-target.mSkill)*3)) 
         {
             a += p+target.blockStr
-            target.stm -= p*.05
+            spendStamina(target,p*.05)
             
             if mle = true
             {  
-                stm -= p*.05
+                loseStamina(id,p*.05)
                  
                 with(target)
                 {
                     startAnimation(1+other.hasShield,animBlock)
                     triggerOnBlock(false)
                 }
+            }
+            else
+            {
+                a += p*2
             }
         }
         
@@ -100,10 +101,7 @@ if target.dead = false
     ia = floor(p)-floor(p-a)
     p = max(p-a,0)
     
-    //Randomize decimal damage (.1 = 10% to do +1)
-    p = floor(p+random(.99))
-    
-    if p > 0
+    if p > 0 and target.immune[type] = false
     {
         triggerOnWound(false)
         
@@ -123,48 +121,22 @@ if target.dead = false
             part_emitter_region(ps2,em2,bodyX,bodyX,bodyY,bodyY,ps_shape_rectangle,1)
             part_emitter_burst(ps2,em2,p2,25)
         }
+        
+        //Armour Descriptor
+        if ia > 0
+        {
+            ii = instance_create(target.x,target.y-target.h-target.height+20,obj_descriptor)
+            ii.text = string(ia)+' Mitigated'
+            ii.font = fnt_damage
+            ii.alarm[0] = global.fspd*.50
+        }
     }
-    
-    //Descriptor
-    ii = instance_create(target.x,target.y-target.h-target.height,obj_descriptor)
-    ii.text = string(p)+' '+string(typeName)
-    ii.font = fnt_tiny
-    
-    if p = 0
-    {
-        ii.text = "No Damage"
-    }
-    else if ia > 0
-    {
-        ii = instance_create(target.x,target.y-target.h-target.height+20,obj_descriptor)
-        ii.text = string(ia)+' Mitigated'
-        ii.font = fnt_tiny
-        ii.alarm[0] = global.fspd*.50
-    }
+
+    //Stamina
+    loseStamina(target,p*.15)    
     
     //Damage
-    target.life -= p
-    target.stm -= p*.15
-    
-    with(target)
-    {
-        staminaCheck()
-    }
-    
-    if target.life <= 0
-    {
-        if target.expEarned = false
-        {
-            owner.experience += (target.expOnKill)*(1-((cunning-8)*.03))
-            checkLevelUp(owner)
-        }
-        
-        gainMorale(.2)
-        
-        triggerOnDown(false)
-        actorDie(target)
-    }
-    
+    woundLife(target,id,p,type)
     }
 }
 
@@ -194,7 +166,8 @@ p *= (1-wepPowRng[atkHand]+random(wepPowRng[atkHand]*2))
 //Skill
 skill = mSkill
 pen = wepPen[atkHand]
-typeName = wepType[atkHand]
+type = wepType[atkHand]
+typeName = damageType(wepType[atkHand])
 
 if target.active = false
 {
@@ -227,7 +200,8 @@ p *= (1-wepRPowRng[atkHand]+random(wepRPowRng[atkHand]*2))
 //Skill
 skill = rSkill
 pen = wepRPen[atkHand]
-typeName = wepRType[atkHand]
+type = wepRType[atkHand]
+typeName = damageType(wepRType[atkHand])
 
 #define gainMorale
 //gainMorale

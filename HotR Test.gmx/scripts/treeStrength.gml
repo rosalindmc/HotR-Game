@@ -147,7 +147,7 @@ addAbility(actFeatOfStrength,-4)
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_readyForMore
+sprite_index = ico_featOfStrength
 image_index = 1
 name = 'Feat of Strength'
 tooltip = 'Active: Gain EMPOWER 4 for 5 seconds'
@@ -168,10 +168,10 @@ addAbility(actGrapple,-4)
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_crunch
+sprite_index = ico_grapple
 image_index = 1
 name = 'Grapple'
-tooltip = 'Active: IMMOBILIZE an adjacent foe'
+tooltip = 'Active: IMMOBILIZE an adjacent foe, must not be using a shield or dual wielding'
 branch = treeStrength
 break
 
@@ -210,7 +210,7 @@ addAbility(actSunderArmour,-4)
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_readyForMore
+sprite_index = ico_sunderArmour
 image_index = 1
 name = 'Sunder Armour'
 tooltip = 'Special Attack: Inflict SUNDER'

@@ -24,7 +24,7 @@ switch(argument0)
         moveTo(cHover)
     }
     i.abilityCD[global.actionNum] = 10/i.spellCD
-    i.stm -= 2
+    spendStamina(i,2)
     actionBarReset()
     break
     
@@ -32,19 +32,8 @@ switch(argument0)
     case 2:
     global.pathDraw = true
     tooltipTitle = 'Tumble'
-    abilityTT = 'Move and ignore ZoC'
-    
-    if instance_exists(cHover)
-    {
-        //Movement Tooltip
-        if cHover.move and cHover.vis != false
-        {
-            //Move
-            suppressionPreview(false)
-            global.testSlot.delayAdd = (1.5/(i.haste+i.movHaste))
-            initiativeSlotAnticipate()
-        }
-    }
+    abilityTT = 'Free Action#Cooldown '+string_format(10/i.spellCD,0,1)+'##Move ignoring Zone of Control'
+    abilityTTLength = 4
     break
     
     //Run 3 for ai use 
@@ -61,7 +50,7 @@ switch(argument0)
     {
         iv.selectable = false
     }
-    iv.sprite_index = ico_hardTarget
+    iv.sprite_index = ico_tumble
     break
 }
 
@@ -93,7 +82,8 @@ switch(argument0)
     case 2:
     global.pathDraw = true
     tooltipTitle = 'Burst of Speed'
-    abilityTT = 'Move very quickly'
+    abilityTT = 'Action#Cooldown '+string_format(10/i.spellCD,0,1)+'##Move very far'
+    abilityTTLength = 3
     
     if instance_exists(cHover)
     {
@@ -114,7 +104,7 @@ switch(argument0)
     
     //Run 4 for hotbar check 
     case 4:
-    iv.sprite_index = ico_lightningStrike
+    iv.sprite_index = ico_burstOfSpeed
     if embattled(i)
     {
         iv.selectable = false

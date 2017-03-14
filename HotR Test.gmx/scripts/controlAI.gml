@@ -80,11 +80,7 @@ if global.target != -4
         global.nextChar.delay += min(2.0,global.target.g)/(i.haste+i.movHaste)
     
         //Move and Update Grid
-        makeMovePath(global.attackFromTile)
-        i.pathLength = ii
-        i.stm -= global.attackFromTile.g*.03*i.movStaminaMult*(1+(i.enc*.01))
-        if global.attackFromTile.overlay = 2{i.stm -= global.attackFromTile.g*.07*i.movStaminaMult*(1+(i.enc*.01))}
-        gridUpdate(i, global.attackFromTile)
+        moveTo(global.attackFromTile)
         
         //Start the Action
         with(i){actCharge(1)}

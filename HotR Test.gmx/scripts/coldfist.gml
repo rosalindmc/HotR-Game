@@ -5,7 +5,7 @@
 switch(argument0)
 {
 case femme:
-switch(irandom(24))
+switch(min(irandom(24),irandom(50)))
 {
     case 0: return 'Anna' break
     case 1: return 'Karen' break
@@ -36,7 +36,7 @@ switch(irandom(24))
 break
 
 case masc:
-switch(irandom(24))
+switch(min(irandom(24),irandom(50)))
 {
     case 0: return 'Hans' break
     case 1: return 'Jans' break

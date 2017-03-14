@@ -12,6 +12,7 @@ break
 
 case 1:     //Stats
 owner.missChance += 100
+owner.dodge -= 100
 break
 
 case 2:     //Upkeep

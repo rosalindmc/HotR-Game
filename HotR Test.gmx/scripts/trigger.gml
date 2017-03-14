@@ -44,6 +44,11 @@ if onWoundSize > 0
     }
 }
 
+with(target)
+{
+    triggerAreWounded(argument0)
+}
+
 #define triggerOnDown
 if onDownSize > 0
 {

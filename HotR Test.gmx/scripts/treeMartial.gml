@@ -152,7 +152,7 @@ onHitSize += 1
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_slayer
+sprite_index = ico_mastery
 image_index = 1
 name = 'Mastery'
 tooltip = '+POW against foes with lower Skill'
@@ -173,7 +173,7 @@ addAbility(actGuardBreak,-4)
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_accuracy
+sprite_index = ico_guardBreak
 image_index = 1
 name = 'Guard Break'
 tooltip = 'Special Melee: Destroy all blocks but deal reduced damage'
@@ -194,7 +194,7 @@ addAbility(actSlow,-4)
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_slayer
+sprite_index = ico_slow
 image_index = 1
 name = 'Slow'
 tooltip = 'Special Attack: Slow the target'

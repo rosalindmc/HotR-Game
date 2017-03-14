@@ -173,7 +173,7 @@ addAbility(actBurstOfSpeed,-4)
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_lightningStrike
+sprite_index = ico_burstOfSpeed
 image_index = 1
 name = 'Burst of Speed'
 tooltip = 'Active: Move very quickly'
@@ -194,7 +194,7 @@ addAbility(actTumble,-4)
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_hardTarget
+sprite_index = ico_tumble
 image_index = 1
 name = 'Tumble'
 tooltip = 'Active: Move and ignore ZoC'

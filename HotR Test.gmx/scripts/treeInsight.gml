@@ -117,3 +117,87 @@ case 2:
 return true
 break
 }
+#define branchAssessSituation
+//tree(how to use, rank)
+switch(argument0)
+{
+case 3:     //case 3 for abilities
+addAbility(actAssessSituation,-4)
+break
+
+case 1:     //Tooltip and icon
+sprite_index = ico_assessSituation
+image_index = 1
+name = 'Assess Situation'
+tooltip = 'Active: Gain a Block and increased detection range and front arc'
+branch = treeInsight
+break
+
+case 2:
+return true
+break
+}
+
+#define branchPreciseStrike
+//tree(how to use, rank)
+switch(argument0)
+{
+case 3:     //case 3 for abilities
+addAbility(actPreciseStrike,-4)
+break
+
+case 1:     //Tooltip and icon
+sprite_index = ico_preciseStrike
+image_index = 1
+name = 'Precise Strike'
+tooltip = 'Special Attack: Make an attack with bonus POW and PEN based on cunning'
+branch = treeInsight
+break
+
+case 2:
+return true
+break
+}
+
+#define branchSpotWeakness
+//tree(how to use, rank)
+switch(argument0)
+{
+case 3:     //case 3 for abilities
+addAbility(actSpotWeakness,-4)
+addAbility(actExploitWeakness,-4)
+break
+
+case 1:     //Tooltip and icon
+sprite_index = ico_spotWeakness
+image_index = 1
+name = 'Spot Weakness'
+tooltip = 'Active: Mark a target, reducing their armour and allowing you to make a powerful attack'
+branch = treeInsight
+break
+
+case 2:
+return true
+break
+}
+
+#define branchSap
+//tree(how to use, rank)
+switch(argument0)
+{
+case 3:     //case 3 for abilities
+addAbility(actSap,-4)
+break
+
+case 1:     //Tooltip and icon
+sprite_index = ico_sap
+image_index = 1
+name = 'Sap'
+tooltip = 'Active: Stun an adjacent foe, only usable while not in melee threat'
+branch = treeInsight
+break
+
+case 2:
+return true
+break
+}

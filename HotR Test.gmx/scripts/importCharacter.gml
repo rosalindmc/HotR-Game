@@ -444,17 +444,17 @@ if o.invSlot[4,0] = emptySlot
 }
 
 #define staminaCheck
-if stm >= stmMax*.75
+if stm >= stmMax*.60
 {
     //Fresh
     applyStatusEffect(fatigue,id,0,120)
 }
-else if stm >= stmMax*.50
+else if stm >= stmMax*.40
 {
     //Winded
     applyStatusEffect(fatigue,id,1,120)
 }
-else if stm >= stmMax*.50
+else if stm >= stmMax*.20
 {
     //Tired   
     applyStatusEffect(fatigue,id,2,120)
@@ -467,7 +467,6 @@ else
 }
 
 applyStatusEffect(wounded,id,wounds,120)
-
 
 #define adjacentCharacters
 foeAdj = 0

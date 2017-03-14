@@ -2,93 +2,13 @@
 //Set Up Battle 
 //battleSetup()     Will feature variables later
 
-attacker = argument0
-defender = argument1
+global.attacker = argument0
+global.defender = argument1
 global.battlefield = argument2
+global.mapGen = argument3
 
 instance_deactivate_object(obj_overworldParent)
-room_height = 1200
-room_width = 2200
 global.controlObject = instance_create(0,0,obj_control)
-
-//Temporary Map Gen
-combatHillsGen()
-combatMudGen()
-
-//Temporary Party Making
-
-
-//Create Characters TEMP
-i = 0
-
-repeat(ds_list_size(attacker.party))
-{
-    ii = instance_create((room_width/2)+(i*20)-(i*20),10+(i*10)+(i*10),obj_character)
-    ii.isoX = i
-    ii.isoY = obj_control.mapWidth-1
-    ii.isoZ = obj_control.map[i,ii.isoY].heightMap
-    ii.isoTile = obj_control.map[ii.isoX+((ii.isoZ)*obj_control.mapWidth),ii.isoY]
-    ii.currentTile = ii.isoTile
-    ii.sightTile = obj_control.map[ii.isoX+((ii.isoZ+1)*obj_control.mapWidth),ii.isoY]
-    ii.x = ii.isoTile.x
-    ii.y = ii.isoTile.y
-    ii.h = ii.isoTile.h
-    ii.isoTile.occupant = ii
-    
-    ii.important = true
-    ii.team = 1
-    
-    if attacker.playerControl = true
-    {
-        ii.controlScript = controlPlayer
-        ii.player = true
-    }
-    
-    ii.owner = ds_list_find_value(attacker.party,i)
-    with(ii)
-    {
-        importCharacter(owner)
-    }
-    
-    i += 1
-}
-
-i = 0
-
-repeat(ds_list_size(defender.party))
-{
-    ii = instance_create((room_width/2)+(i*20)-(i*20),10+(i*10)+(i*10),obj_character)
-    ii.isoX = i
-    ii.isoY = 0
-    ii.isoZ = obj_control.map[i,0].heightMap
-    ii.cFacing = 180
-    ii.facing = 180
-    ii.isoTile = obj_control.map[ii.isoX+((ii.isoZ)*obj_control.mapWidth),ii.isoY]
-    ii.currentTile = ii.isoTile
-    ii.sightTile = obj_control.map[ii.isoX+((ii.isoZ+1)*obj_control.mapWidth),ii.isoY]
-    ii.x = ii.isoTile.x
-    ii.y = ii.isoTile.y
-    ii.h = ii.isoTile.h
-    ii.isoTile.occupant = ii
-    
-    ii.team = 2
-    ii.important = true
-    ii.owner = ds_list_find_value(defender.party,i)
-    
-    if defender.playerControl = true
-    {
-        ii.controlScript = controlPlayer
-        ii.player = true
-    }
-    
-    with(ii)
-    {
-        importCharacter(owner)
-    }
-    
-    i += 1
-}
-
 
 #define combatHillsGen
 repeat(3)

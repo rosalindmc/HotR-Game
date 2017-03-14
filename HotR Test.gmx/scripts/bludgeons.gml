@@ -5,7 +5,7 @@
 iSpr = spr_lightMace
 iDmg = 3.6
 iDmgRng = .2
-iType = 'Impact'
+iType = typeImpact
 iStrMult = 1.2
 iPen = 1
 iSpd = 1.40
@@ -61,7 +61,7 @@ break
 iSpr = spr_mace
 iDmg = 5.0
 iDmgRng = .2
-iType = 'Impact'
+iType = typeImpact
 iStrMult = 1.2
 iPen = 1
 iSpd = 1.15
@@ -117,7 +117,7 @@ break
 iSpr = spr_maul
 iDmg = 7.5
 iDmgRng = .2
-iType = 'Impact'
+iType = typeImpact
 iStrMult = 1.2
 iPen = 1
 iSpd = 0.85
@@ -175,7 +175,7 @@ break
 iSpr = spr_hammer
 iDmg = 4.0
 iDmgRng = .2
-iType = 'Piercing'
+iType = typePierce
 iStrMult = 1.2
 iPen = 10
 iSpd = 1.20
@@ -231,7 +231,7 @@ break
 iSpr = spr_warhammer
 iDmg = 6.5
 iDmgRng = .2
-iType = 'Piercing'
+iType = typePierce
 iStrMult = 1.2
 iPen = 14
 iSpd = 0.80
@@ -289,7 +289,7 @@ break
 iSpr = spr_staff
 iDmg = 3.0
 iDmgRng = .2
-iType = 'Impact'
+iType = typeImpact
 iStrMult = 1
 iPen = 1
 iSpd = 1.4

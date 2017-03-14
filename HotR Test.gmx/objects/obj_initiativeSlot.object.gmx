@@ -64,11 +64,13 @@ if point_in_rectangle(mouse_x,mouse_y,ix-(size*6),iy-(size*6),ix+(size*6),iy+(si
     {
         obj_control.cHover = owner.isoTile
         obj_control.depth = obj_control.cHover.depth-50
+        global.suppPreview = false
     }
     else
     {
         obj_control.cHover = global.nextChar.owner.isoTile
         obj_control.depth = obj_control.cHover.depth-50
+        global.suppPreview = false
     }
 }
 </string>
@@ -93,7 +95,9 @@ if point_in_rectangle(mouse_x,mouse_y,ix-(size*6),iy-(size*6),ix+(size*6),iy+(si
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Draw Initiative Portrait
+            <string>if global.loading = false
+{
+//Draw Initiative Portrait
 ix = x + view_xview[]
 iy = y + view_yview[]
 
@@ -151,7 +155,7 @@ if vis != 0
     
     if vis = 2 and delayAdd != 0
     {
-        draw_set_font(fnt_tiny)
+        draw_set_font(fnt_damage)
         draw_set_halign(fa_middle)
         draw_set_valign(fa_middle)
         drawText(c_black,c_red,ix,iy+20,string_format(delay+delayAdd,2,1))  
@@ -160,7 +164,7 @@ if vis != 0
     }
     else if order != 0
     {
-        draw_set_font(fnt_tiny)
+        draw_set_font(fnt_damage)
         draw_set_halign(fa_middle)
         draw_set_valign(fa_middle)
         drawText(c_black,c_white,ix,iy+20,string_format(delay,2,1))
@@ -174,6 +178,7 @@ if vis != 0
         draw_set_font(fnt_tiny)
         drawText(c_black,c_white,ix-20,iy+42,string(owner.race)+" "+string(owner.class))
     }
+}
 }
 </string>
           </argument>

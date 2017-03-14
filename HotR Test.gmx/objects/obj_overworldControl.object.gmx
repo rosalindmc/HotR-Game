@@ -105,14 +105,16 @@ if global.eventActive = false
 {
     hover = instance_nearest(mouse_x,mouse_y,obj_travelNode)
 
-
     if keyboard_check_pressed(global.centerKey)
     {
-        obj_camera.x = global.activeActor.x
-        obj_camera.y = global.activeActor.y
-        view_xview = median(obj_camera.x-(view_wview/2),0,room_width-view_wview)
-        view_yview = median(obj_camera.y-(view_hview/2),0,room_height-view_hview)
-        worldScrollVis()
+        if global.inMenu != 2 and global.eventActive = false
+        {
+            obj_camera.x = global.activeActor.x
+            obj_camera.y = global.activeActor.y
+            view_xview = median(obj_camera.x-(view_wview/2),0,room_width-view_wview)
+            view_yview = median(obj_camera.y-(view_hview/2),0,room_height-view_hview)
+            worldScrollVis()
+        }
     }
     
     //Temporary

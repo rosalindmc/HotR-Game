@@ -17,9 +17,9 @@ iy = y-6
 draw_text(ix+50,iy,name)
 draw_set_colour(c_white)
 draw_set_halign(fa_left)
-draw_set_font(fnt_smallText)
+draw_set_font(fnt_tooltip)
 iy += 20
-draw_text(ix,iy,string_format(dmg,2,1)+' '+string(dmgType))
+draw_text(ix,iy,string_format(dmg,2,1)+' '+string(damageType(dmgType)))
 draw_set_font(fnt_tinyText)
 iy += 14
 draw_text(ix,iy,'RAT: '+string_format(rat,2,1))
@@ -69,7 +69,7 @@ draw_set_colour(c_white)
 draw_set_halign(fa_left)
 draw_set_font(fnt_tooltip)
 iy += 20
-draw_text(ix,iy,string_format(dmg,2,1)+' '+string(dmgType))
+draw_text(ix,iy,string_format(dmg,2,1)+' '+string(damageType(dmgType)))
 draw_set_font(fnt_tinyText)
 iy += 14
 draw_text(ix,iy,'RAT: '+string_format(rat,2,1))

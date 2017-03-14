@@ -154,7 +154,6 @@ if ground = true
     }
     */
 }
-//adjacency()
 </string>
           </argument>
         </arguments>
@@ -212,6 +211,15 @@ if ground = true
     else
     {
         draw_sprite_ext(sprite_index,image_index,x,y-h+(global.zLevel*15),1,1,0,c_black,1)
+    }
+}
+/*
+if id = obj_control.cHover
+{  
+    draw_set_colour(c_green)
+    for(i=0;i&lt;ds_list_size(walk);i++)
+    {
+        draw_line(x,y,ds_list_find_value(walk,i).x,ds_list_find_value(walk,i).y)
     }
 }
 </string>

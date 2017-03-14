@@ -26,7 +26,6 @@
           <argument>
             <kind>1</kind>
             <string>var i = 1
-var ii, ix, iy
 
 //Generates new random seed
 randomize()
@@ -37,10 +36,15 @@ mapTimeOn = true
 global.timeDelay = 1
 
 //Other
+global.loading = true
+global.loadingI = 0
+global.loadingMax = 1
+global.loadingTooltip = ''
 global.target = -4
 global.expTotal = 0
 global.losCheckFrom = noone
 global.follow = noone
+global.castMouse = 0
 
 global.attackMode = -4
 global.attackModeNum = 0
@@ -63,6 +67,7 @@ zViewAlpha = 0
 //tooltips
 tooltipText = -4
 tooltipTitle = -4
+abilityTTLength = 0
 
 //Create Combat HUD
 i = instance_create(0,view_hview-120,obj_charInfo)
@@ -97,6 +102,8 @@ runEvent = -4
 eventName = -4
 eventLine = -4
 
+script_execute(global.mapGen,0)
+
 ix = 0
 repeat(mapWidth)
 {
@@ -124,7 +131,11 @@ repeat(mapWidth)
     ix += 1
 }
 
-//Establish Adjacency
+
+global.loadingI = 0
+global.loadingMax = mapWidth
+global.loadingTooltip = 'Adjacency'
+
 ix = 0
 repeat(mapWidth)
 {
@@ -223,10 +234,91 @@ repeat(mapWidth)
         iy += 1
     }
     ix += 1
+    global.loadingI += 1
 }
 
 //Adjacency After Map Build
+script_execute(global.mapGen,1)
 alarm[0] = 10
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>    updateVision()
+    updateScrollVis()
+    global.loading = false
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Stepthrough
+//repeat(min(100,global.loadingMax-global.loadingI))
+//{
+    with(obj_tile)//instance_find(obj_tile,global.loadingI))
+    {
+        adjacency()
+        
+        //Clear Up Grid
+        if ground = false
+        {
+            sprite_index = spr_none
+        }
+    
+        if ground = false and wall[0] = noone and wall[1] = noone and wall[2] = noone and wall[3] = noone
+        {
+            instance_deactivate_object(id)
+        }
+    }
+//    global.loadingI += 1
+//}
+
+
+//if global.loadingI = global.loadingMax
+//{
+    alarm[3] = 1
+//}
+//else
+//{
+//    alarm[2] = 1
+//}
 </string>
           </argument>
         </arguments>
@@ -275,21 +367,11 @@ alarm[0] = 10
             <string>//Reactivate to Check Adjacency
 instance_activate_object(obj_tile)
 
-with(obj_tile)
-{
-    adjacency()
-    
-    //Clear Up Grid
-    if ground = false
-    {
-        sprite_index = spr_none
-    }
+global.loadingI = 0
+global.loadingMax = instance_number(obj_tile)
+global.loadingTooltip = 'Walls'
 
-    if ground = false and wall[0] = noone and wall[1] = noone and wall[2] = noone and wall[3] = noone
-    {
-        instance_deactivate_object(id)
-    }
-}
+alarm[2] = 1
 </string>
           </argument>
         </arguments>
@@ -312,10 +394,15 @@ with(obj_tile)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Controls
+            <string>if global.loading = false
+{
+//Controls
 key_meleeToggle = keyboard_check(global.meleeToggle)
 
 zViewAlpha -= 1/global.fspd
+
+//SuppPreview Fix
+global.suppPreview = true
 
 //Timer 
 if mapTimeOn = true and global.nextChar != noone and global.timeDelay = 0
@@ -412,6 +499,7 @@ or (global.nextChar.owner.player = true and point_in_rectangle(mouse_x,mouse_y,v
 else
 {
     tooltipTitle = -4
+    abilityTTLength = 0
 }
 
 if point_in_rectangle(mouse_x,mouse_y,view_xview+130,view_yview+view_hview-40,view_xview+130+(actNum*20),view_yview+view_hview-20)
@@ -500,7 +588,7 @@ if global.control != noone
         //Melee Attack Icon
         if cHover.meleeAttack = true and (key_meleeToggle = true or cHover.rangedAttack = false)
         {
-            global.mouseSprite = 1
+            global.mouseSprite = 1+global.castMouse
             
 
             
@@ -577,8 +665,7 @@ if obj_camera.x != obj_camera.xprevious or obj_camera.y != obj_camera.yprevious
 {
     updateScrollVis()
 }
-
-
+}
 </string>
           </argument>
         </arguments>
@@ -601,31 +688,48 @@ if obj_camera.x != obj_camera.xprevious or obj_camera.y != obj_camera.yprevious
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_set_font(fnt_small)
-draw_set_halign(fa_right)
-draw_set_valign(fa_middle)
-drawText(c_black,c_white,view_xview+view_wview-10,view_yview+60,mapTime)
-
-abilityTooltip()
-
-if global.timeDelay = 0 and global.nextChar.owner.player = true
-{   
-    script_execute(actionScroll,2)
-}  
-
-if zViewAlpha &gt; 0
+            <string>if global.loading = false
 {
-    draw_set_alpha(zViewAlpha)
-
-    draw_set_valign(fa_center)
+    draw_set_font(fnt_small)
     draw_set_halign(fa_right)
-    draw_set_font(fnt_tiny)
-    drawText(c_black,c_white,view_xview+view_wview-125,view_yview+view_hview-80,'Z')
-    draw_set_halign(fa_left)
-    draw_set_font(fnt_main)
-    drawText(c_black,c_white,view_xview+view_wview-120,view_yview+view_hview-80,global.zLevel)
+    draw_set_valign(fa_middle)
+    drawText(c_black,c_white,view_xview+view_wview-10,view_yview+60,mapTime)
     
-    draw_set_alpha(1)
+    abilityTooltip()
+    
+    if global.timeDelay = 0 and global.nextChar.owner.player = true and actionScroll != -4 and global.control != -4
+    {   
+        script_execute(actionScroll,2)
+    }  
+    
+    if zViewAlpha &gt; 0
+    {
+        draw_set_alpha(zViewAlpha)
+    
+        draw_set_valign(fa_center)
+        draw_set_halign(fa_right)
+        draw_set_font(fnt_damage)
+        drawText(c_black,c_white,view_xview+view_wview-125,view_yview+view_hview-80,'Z')
+        draw_set_halign(fa_left)
+        draw_set_font(fnt_z)
+        drawText(c_black,c_white,view_xview+view_wview-120,view_yview+view_hview-80,global.zLevel)
+        
+        draw_set_alpha(1)
+    }
+}
+else
+{
+    dx = view_xview+(view_wview/2)
+    dy = view_yview+(view_hview/2)
+
+    draw_set_colour(dkRed)
+    draw_rectangle(dx-50,dy-5,dx-50+(100*(global.loadingI/global.loadingMax)),dy+5,false)
+    draw_set_colour(c_white)
+    draw_rectangle(dx-50,dy-5,dx+50,dy+5,true)
+    draw_set_halign(fa_center)
+    draw_set_valign(fa_middle)
+    draw_set_font(fnt_smlMenu)
+    drawText(c_black,c_white,dx,dy,global.loadingTooltip)
 }
      /* 
 if cHover != noone
@@ -687,19 +791,21 @@ if cHover != noone
 //scr_playerPortrait(5)
 
 //Highlighted Area
-if cHover != noone
+if global.loading = false
 {
-    if global.mouseSprite = 0
+    if cHover != noone
     {
-        draw_sprite(spr_selection,image_index,cHover.x,cHover.y-cHover.h+(global.zLevel*15))
-        //draw_sprite_ext(spr_selection,image_index,cHover.x,cHover.y-30-cHover.h+(global.zLevel*30),1,-1,0,c_white,1)  
-    }
-    else
-    {
-        draw_sprite(spr_enemyselect,image_index,cHover.x,cHover.y-cHover.h+(global.zLevel*15))  
+        if global.mouseSprite = 0
+        {
+            draw_sprite(spr_selection,image_index,cHover.x,cHover.y-cHover.h+(global.zLevel*15))
+            //draw_sprite_ext(spr_selection,image_index,cHover.x,cHover.y-30-cHover.h+(global.zLevel*30),1,-1,0,c_white,1)  
+        }
+        else
+        {
+            draw_sprite(spr_enemyselect,image_index,cHover.x,cHover.y-cHover.h+(global.zLevel*15))  
+        }
     }
 }
-
 </string>
           </argument>
         </arguments>

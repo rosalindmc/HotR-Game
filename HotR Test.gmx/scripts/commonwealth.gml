@@ -26,7 +26,7 @@ switch(irandom(15))
 switch(argument0)
 {
 case femme:
-switch(irandom(24))
+switch(min(irandom(39),irandom(100)))
 {
     case 0: return 'Mary' break
     case 1: return 'Dorothy' break
@@ -50,14 +50,29 @@ switch(irandom(24))
     case 19: return 'Marjorie' break
     case 20: return 'Florence' break
     case 21: return 'Lois' break
-    case 22: return 'Shirley' break
-    case 23: return 'Martha' break
-    case 24: return 'Rose' break
+    case 22: return 'Martha' break
+    case 23: return 'Rose' break
+    case 24: return 'Lillian' break
+    case 25: return 'Louise' break
+    case 26: return 'Catherine' break
+    case 27: return 'Ruby' break
+    case 28: return 'Eleanor' break
+    case 29: return 'Patricia' break
+    case 30: return 'Gladys' break
+    case 31: return 'Annie' break
+    case 32: return 'Josephine' break
+    case 33: return 'Thelma' break
+    case 34: return 'Edna' break
+    case 35: return 'Norma' break
+    case 36: return 'Pauline' break
+    case 37: return 'Lucille' break
+    case 38: return 'Edith' break
+    case 39: return 'Gloria' break
 }
 break
 
 case masc:
-switch(irandom(24))
+switch(min(irandom(39),irandom(100)))
 {
     case 0: return 'Robert' break
     case 1: return 'John' break
@@ -80,10 +95,25 @@ switch(irandom(24))
     case 18: return 'Kenneth' break
     case 19: return 'Arthur' break
     case 20: return 'David' break
-    case 21: return 'Harry' break
-    case 22: return 'Eugene' break
-    case 23: return 'Ralph' break
-    case 24: return 'Howard' break
+    case 21: return 'Albert' break
+    case 22: return 'Harry' break
+    case 23: return 'Eugene' break
+    case 24: return 'Ralph' break
+    case 25: return 'Howard' break
+    case 26: return 'Carl' break
+    case 27: return 'Will' break
+    case 28: return 'Louis' break
+    case 29: return 'Clarence' break
+    case 30: return 'Earl' break
+    case 31: return 'Roy' break
+    case 32: return 'Fred' break
+    case 33: return 'Joe' break
+    case 34: return 'Francis' break
+    case 35: return 'Lawrence' break
+    case 36: return 'Herbert' break
+    case 37: return 'Leonard' break
+    case 38: return 'Ernest' break
+    case 39: return 'Alfred' break
 }
 break
 }

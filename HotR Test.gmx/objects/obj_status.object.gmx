@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>//Statuses need
 owner = -4
+creator = -4
 potency = 0
 duration = 1.0
 effect = daze

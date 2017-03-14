@@ -120,10 +120,79 @@ enc /= 1.5
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_blockTraining
+sprite_index = ico_armourTraining
 image_index = 1
 name = 'Armour Training'
 tooltip = 'Reduce armour encumberance by 33% and increase armour by 1/2'
+branch = treeDiscipline
+break
+
+case 2:
+return true
+break
+}
+
+#define branchCounterAttack
+//tree(how to use, rank)
+switch(argument0)
+{
+case 0:     //Run when the unit is initialized in battle
+onBlock[onBlockSize,0] = fastAttack
+onBlock[onBlockSize,1] = 'Counter Attack'
+onBlock[onBlockSize,2] = 20
+onBlock[onBlockSize,3] = 3
+onBlock[onBlockSize,4] = false
+onBlock[onBlockSize,5] = false
+onBlockSize += 1
+break
+
+case 1:     //Tooltip and icon
+sprite_index = ico_counterAttack
+image_index = 1
+name = 'Counter Attack'
+tooltip = 'Blocking has 20% chance to make your next turn come 3 seconds faster'
+branch = treeDiscipline
+break
+
+case 2:
+return true
+break
+}
+
+#define branchHoldTheLine
+//tree(how to use, rank)
+switch(argument0)
+{
+case 3:     //case 3 for abilities
+addAbility(actHoldTheLine,-4)
+break
+
+case 1:     //Tooltip and icon
+sprite_index = ico_holdTheLine
+image_index = 1
+name = 'Hold The Line'
+tooltip = 'Active: Gain a block for each adjacent foes'
+branch = treeDiscipline
+break
+
+case 2:
+return true
+break
+}
+
+#define branchGuardedAttack
+//tree(how to use, rank)
+switch(argument0)
+{
+case 3:     //case 3 for abilities
+addAbility(actGuardedAttack,-4)
+break
+
+case 1:     //Tooltip and icon
+sprite_index = ico_guardedAttack
+image_index = 1
+name = 'Guarded Attack'
+tooltip = 'Special Melee: Make a slow attack and gain a Block'
 branch = treeDiscipline
 break
 

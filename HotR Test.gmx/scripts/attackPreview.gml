@@ -45,9 +45,6 @@ with(i)
     triggerOnAttack(true)
     dge = target.dodge-(max(0,(skill-target.mSkill)*3))
     
-    //Damage Mitigation
-    p /= (1+dmgMitigation)
-
     //Armour
     a = target.arm
     
@@ -76,11 +73,32 @@ with(i)
     pMin = max(pMin-max(a-pen,0),0)
     pMax = max(pMax-max((a*.25)-pen,0),0)
     
+    //Damage Mitigation
+    p /= (1+target.dmgMitigation)
+    pMin /= (1+target.dmgMitigation)
+    pMax /= (1+target.dmgMitigation)
+    
+    if target.resist[type] >= 0
+    {
+        p = (p/(1+(target.resist[type]/5)))
+        pMin = (pMin/(1+(target.resist[type]/5)))
+        pMax = (pMax/(1+(target.resist[type]/5)))
+    }
+    else
+    {
+        p = (p*(1-(target.resist[type]/5)))
+        pMin = (pMin*(1-(target.resist[type]/5)))
+        pMax = (pMax*(1-(target.resist[type]/5)))
+    }
+    
     //Randomize Decimal Damage
     pMin = floor(pMin)
     pMax = ceil(pMax)
-        
-    triggerOnWound(true)
+    
+    if target.immune[type] = false
+    {
+        triggerOnWound(true)
+    }
     
     if target.active = true
     {
@@ -105,8 +123,11 @@ draw_set_valign(fa_top)
 draw_set_font(fnt_smallText)
 
 iy += 4  
-draw_text(ix+5,iy,string(i.pMin)+' - '+string(i.pMax)+' '+string(i.typeName))
-iy += 14  
+if target.immune[i.type] = false
+{draw_text(ix+5,iy,string(i.pMin)+' - '+string(i.pMax)+' '+string(i.typeName))}
+else
+{draw_text(ix+5,iy,'Immune')}
+iy += 14
 
 if i.missChance >= 1
 {
@@ -136,6 +157,8 @@ if tooltipLength != 0
 #define suppressionPreview
 timeReset()
 
+if global.suppPreview = true
+{
 with(obj_character)
 {
     i = 0
@@ -195,6 +218,7 @@ with(obj_character)
         }
         i += 1
     }
+}
 }
 
 #define timeReset

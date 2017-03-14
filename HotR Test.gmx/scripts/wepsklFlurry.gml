@@ -36,6 +36,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
         if 1+irandom(99) <= argument1+((skill-target.mSkill)*5)
         {
             applyStatusEffect(bleed,target,argument2,argument4*spellDur)
+            ss.creator = id
             
             ii = instance_create(x,y-h-height,obj_descriptor)
             ii.text = argument0

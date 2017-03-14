@@ -9,6 +9,7 @@ switch(argument0)
     //Run 0 when a player selects the move/attack command 
     case 0:
     action = moveControl
+    global.castMouse = 0
     
     global.moveTile = ds_list_create()
     ignoreZoC = false
@@ -84,8 +85,9 @@ switch(argument0)
     //Run 2 to draw
     case 2:
     global.pathDraw = true
-    abilityTT = 'Move and/or Attack'
     tooltipTitle = 'Attack/Move'
+    abilityTT = 'Action#Move and/or Attack'
+    abilityTTLength = 1
     
     if instance_exists(cHover)
     {   
@@ -209,8 +211,8 @@ var d = argument0
     //Move and Update Grid
     makeMovePath(d)
     i.pathLength = ii
-    i.stm -= d.g*.03*i.movStaminaMult*(1+(i.enc*.01))
-    if d.overlay = 2{i.stm -= d.g*.07*i.movStaminaMult*(1+(i.enc*.01))}
+    spendStamina(i,d.g*.03*i.movStaminaMult)
+    if d.overlay = 2{spendStamina(i,d.g*.07*i.movStaminaMult)}
     
     gridUpdate(i, d)
     with(i){triggerOnMove()}

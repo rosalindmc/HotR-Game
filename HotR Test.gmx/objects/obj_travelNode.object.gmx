@@ -87,19 +87,19 @@ if global.eventActive = false
     {
         if image_index = 0
         {
-            with(obj_party)
-            {
-                if node = other.id and id != global.activeActor
-                {
-                    battleSetup(global.activeActor,id,node)
-                }
-            }
-            
             global.activeActor.x = x
             global.activeActor.y = y
             global.activeActor.node = id
             
             nextTurn()
+    
+            with(obj_party)
+            {
+                if node = other.id and id != global.activeActor
+                {
+                    battleSetup(global.activeActor,id,node,overWorldMapGen)
+                }
+            }           
         }
     }
 }

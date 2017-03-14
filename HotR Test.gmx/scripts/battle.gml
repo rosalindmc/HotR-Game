@@ -8,6 +8,7 @@ switch(argument0)
     //Run 0 when a player selects the move/attack command 
     case 0:
     action = battle
+    global.castMouse = 0
     //Check Line of Sight to all enemies
     if i.rangeAttack = true
     {
@@ -57,7 +58,8 @@ switch(argument0)
     case 2:
     global.pathDraw = false
     tooltipTitle = 'Battle'
-    abilityTT = 'Attack a foe in range'
+    abilityTT = 'Action#Attack a foe in range'
+    abilityTTLength = 1
     
     if instance_exists(cHover)
     {   

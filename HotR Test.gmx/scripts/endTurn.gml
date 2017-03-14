@@ -14,6 +14,7 @@ with(global.control)
 with(obj_control)
 {
     actNum = 0
+    actionScroll = -4
     ds_list_destroy(global.moveTile)
     wipeTiles()
     
@@ -21,7 +22,7 @@ with(obj_control)
     global.control.suppression = 0
     global.pathDraw = false
     global.control = noone
-    global.timeDelay = 1.5
+    global.timeDelay = 1.25
     global.nextChar.delay += argument0
     global.attackFromTile = noone
     

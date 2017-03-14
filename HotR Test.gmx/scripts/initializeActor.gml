@@ -210,6 +210,37 @@ atkStaminaMult = 1
 movStaminaMult = 1
 missChance = 0
 dmgMitigation = 0
+mark = false
+
+//Resistances
+resist[typeImpact] = 0
+resist[typePierce] = 0
+resist[typeRend] = 0
+resist[typeFire] = 0
+resist[typeCold] = 0
+resist[typeLightning] = 0
+resist[typeCorrosion] = 0
+resist[typeBlood] = 0
+resist[typeSpirit] = 0
+resist[typeMind] = 0
+resist[typeSpirit] = 0
+resist[typeProfane] = 0
+resist[typeRadiant] = 0
+
+//Immunities
+immune[typeImpact] = 0
+immune[typePierce] = 0
+immune[typeRend] = 0
+immune[typeFire] = 0
+immune[typeCold] = 0
+immune[typeLightning] = 0
+immune[typeCorrosion] = 0
+immune[typeBlood] = 0
+immune[typeSpirit] = 0
+immune[typeMind] = 0
+immune[typeSpirit] = 0
+immune[typeProfane] = 0
+immune[typeRadiant] = 0
 
 
 #define initializeWeapon
@@ -221,7 +252,7 @@ wepClass[argument0] = melee
 wepAnimType[argument0] = typeAxe
 
 wepPow[argument0] = 1
-wepType[argument0] = 'Impact'
+wepType[argument0] = typeImpact
 wepPowRng[argument0] = .3
 wepStrMult[argument0] = .25
 wepPen[argument0] = 0
@@ -231,7 +262,7 @@ wepStamina[argument0] = .25
 
 //Ranged Attributez
 wepRPow[argument0] = 0
-wepRType[argument0] = 'Impact'
+wepRType[argument0] = typeImpact
 wepRPowRng[argument0] = .3
 wepRStrMult[argument0] = .25
 wepRPen[argument0] = 0

@@ -113,11 +113,17 @@
             <sprite>sprites\ico_breaker</sprite>
             <sprite>sprites\ico_crunch</sprite>
             <sprite>sprites\ico_smash</sprite>
+            <sprite>sprites\ico_sunderArmour</sprite>
+            <sprite>sprites\ico_featOfStrength</sprite>
+            <sprite>sprites\ico_grapple</sprite>
             <sprite>sprites\ico_readyForMore</sprite>
             <sprite>sprites\ico_toughness</sprite>
             <sprite>sprites\ico_vigour</sprite>
             <sprite>sprites\ico_mightyBlock</sprite>
             <sprite>sprites\ico_thickSkin</sprite>
+            <sprite>sprites\ico_battleRush</sprite>
+            <sprite>sprites\ico_secondWind</sprite>
+            <sprite>sprites\ico_superiority</sprite>
             <sprite>sprites\ico_mightyHealth</sprite>
           </sprites>
           <sprites name="grace">
@@ -125,18 +131,28 @@
             <sprite>sprites\ico_mobility</sprite>
             <sprite>sprites\ico_evasion</sprite>
             <sprite>sprites\ico_accuracy</sprite>
+            <sprite>sprites\ico_burstOfSpeed</sprite>
+            <sprite>sprites\ico_tumble</sprite>
             <sprite>sprites\ico_combatDrill</sprite>
             <sprite>sprites\ico_slayer</sprite>
             <sprite>sprites\ico_opportunist</sprite>
             <sprite>sprites\ico_hardTarget</sprite>
             <sprite>sprites\ico_marathon</sprite>
             <sprite>sprites\ico_momentum</sprite>
+            <sprite>sprites\ico_guardBreak</sprite>
+            <sprite>sprites\ico_mastery</sprite>
+            <sprite>sprites\ico_slow</sprite>
             <sprite>sprites\ico_lightningStrike</sprite>
           </sprites>
           <sprites name="cunning">
             <sprite>sprites\ico_subterfuge</sprite>
             <sprite>sprites\ico_insight</sprite>
             <sprite>sprites\ico_subtlety</sprite>
+            <sprite>sprites\ico_spotWeakness</sprite>
+            <sprite>sprites\ico_exploitWeakness</sprite>
+            <sprite>sprites\ico_sap</sprite>
+            <sprite>sprites\ico_preciseStrike</sprite>
+            <sprite>sprites\ico_assessSituation</sprite>
             <sprite>sprites\ico_vigiliance</sprite>
             <sprite>sprites\ico_passArmour</sprite>
             <sprite>sprites\ico_heightAdvantage</sprite>
@@ -146,7 +162,11 @@
             <sprite>sprites\ico_valour</sprite>
             <sprite>sprites\ico_discipline</sprite>
             <sprite>sprites\ico_confidence</sprite>
+            <sprite>sprites\ico_counterAttack</sprite>
             <sprite>sprites\ico_blockTraining</sprite>
+            <sprite>sprites\ico_armourTraining</sprite>
+            <sprite>sprites\ico_guardedAttack</sprite>
+            <sprite>sprites\ico_holdTheLine</sprite>
             <sprite>sprites\ico_shakeItOff</sprite>
           </sprites>
           <sprites name="fellowship">
@@ -169,12 +189,15 @@
       <sprites name="Status Icons">
         <sprite>sprites\ico_daze</sprite>
         <sprite>sprites\ico_stun</sprite>
+        <sprite>sprites\ico_sleep</sprite>
         <sprite>sprites\ico_cripple</sprite>
         <sprite>sprites\ico_immobilize</sprite>
         <sprite>sprites\ico_bleed</sprite>
         <sprite>sprites\ico_fatigue</sprite>
         <sprite>sprites\ico_wounded</sprite>
         <sprite>sprites\ico_strengthBuff</sprite>
+        <sprite>sprites\ico_detectionBuff</sprite>
+        <sprite>sprites\ico_rushBuff</sprite>
         <sprite>sprites\ico_dodgeBuff</sprite>
       </sprites>
     </sprites>
@@ -376,6 +399,8 @@
       <script>scripts\battleSetup.gml</script>
       <script>scripts\battleTeardown.gml</script>
       <script>scripts\importCharacter.gml</script>
+      <script>scripts\setupMap.gml</script>
+      <script>scripts\overWorldMapGen.gml</script>
     </scripts>
     <scripts name="Overworld">
       <scripts name="Actors and Control">
@@ -404,6 +429,10 @@
         <scripts name="Cultures">
           <script>scripts\commonwealth.gml</script>
           <script>scripts\coldfist.gml</script>
+          <script>scripts\empire.gml</script>
+          <script>scripts\federation.gml</script>
+          <script>scripts\warhost.gml</script>
+          <script>scripts\irun.gml</script>
         </scripts>
       </scripts>
       <scripts name="Outdated">
@@ -448,6 +477,7 @@
         <script>scripts\drawActor.gml</script>
         <script>scripts\drawHealthbar.gml</script>
         <script>scripts\actorDie.gml</script>
+        <script>scripts\spendStamina.gml</script>
         <script>scripts\tempArmourRandomize.gml</script>
         <scripts name="Animation Types">
           <script>scripts\humanoid.gml</script>
@@ -515,10 +545,15 @@
             </scripts>
             <scripts name="Tactics">
               <script>scripts\strengthTactics.gml</script>
+              <script>scripts\toughnessTactics.gml</script>
               <script>scripts\martialTactics.gml</script>
               <script>scripts\mobilityTactics.gml</script>
+              <script>scripts\insightTactics.gml</script>
+              <script>scripts\disciplineTactics.gml</script>
+              <script>scripts\frenzyTactics.gml</script>
+              <script>scripts\daringTactics.gml</script>
+              <script>scripts\leadershipTactics.gml</script>
               <script>scripts\setAttackMode.gml</script>
-              <script>scripts\toughnessTactics.gml</script>
             </scripts>
           </scripts>
         </scripts>
@@ -629,13 +664,16 @@
       </scripts>
       <scripts name="Focus">
         <script>scripts\strengthBuff.gml</script>
+        <script>scripts\detectionBuff.gml</script>
+        <script>scripts\marked.gml</script>
         <script>scripts\regenerateBuff.gml</script>
         <script>scripts\dodgeBuff.gml</script>
-        <script>scripts\adrenalineRush.gml</script>
+        <script>scripts\battleRush.gml</script>
       </scripts>
       <scripts name="Mental">
         <script>scripts\daze.gml</script>
         <script>scripts\stun.gml</script>
+        <script>scripts\sleep.gml</script>
       </scripts>
     </scripts>
   </scripts>
@@ -654,6 +692,8 @@
       <font>fonts\fnt_main</font>
       <font>fonts\fnt_tiny</font>
       <font>fonts\fnt_small</font>
+      <font>fonts\fnt_damage</font>
+      <font>fonts\fnt_z</font>
     </fonts>
     <fonts name="Menu">
       <font>fonts\fnt_lrgMenu</font>
@@ -776,7 +816,7 @@
     <room>rooms\rom_charSprite</room>
     <room>rooms\rom_battle</room>
   </rooms>
-  <constants number="39">
+  <constants number="52">
     <constant name="femme">0</constant>
     <constant name="masc">1</constant>
     <constant name="beige">make_color_rgb(205,165,117)</constant>
@@ -816,6 +856,19 @@
     <constant name="mediumWeaponProficiency">2</constant>
     <constant name="lightWeaponProficiency">1</constant>
     <constant name="grav">.8</constant>
+    <constant name="typeImpact">0</constant>
+    <constant name="typeRend">1</constant>
+    <constant name="typePierce">2</constant>
+    <constant name="typeFire">3</constant>
+    <constant name="typeCold">4</constant>
+    <constant name="typeLightning">5</constant>
+    <constant name="typeCorrosion">6</constant>
+    <constant name="typePoison">7</constant>
+    <constant name="typeBlood">8</constant>
+    <constant name="typeSpirit">9</constant>
+    <constant name="typeMind">10</constant>
+    <constant name="typeProfane">11</constant>
+    <constant name="typeRadiant">12</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

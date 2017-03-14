@@ -19,7 +19,8 @@ switch(argument0)
     //Run 2 to draw
     case 2:
     tooltipTitle = 'Wait'
-    abilityTT = 'End turn'
+    abilityTT = 'Action#End turn and gain stamina'
+    abilityTTLength = 1
     global.testSlot.delayAdd = 2.0
     initiativeSlotAnticipate()
     break

@@ -4,7 +4,7 @@
 iSpr = spr_heaterShield
 iDmg = 3.0
 iDmgRng = .2
-iType = 'Impact'
+iType = typeImpact
 iStrMult = 1
 iPen = 1
 iSpd = 1
@@ -57,7 +57,7 @@ break
 iSpr = spr_roundShield
 iDmg = 2.0
 iDmgRng = .2
-iType = 'Impact'
+iType = typeImpact
 iStrMult = 1
 iPen = 1
 iSpd = 1.1
@@ -110,7 +110,7 @@ break
 iSpr = spr_squareShield
 iDmg = 4.0
 iDmgRng = .2
-iType = 'Impact'
+iType = typeImpact
 iStrMult = 1.2
 iPen = 1
 iSpd = 0.5

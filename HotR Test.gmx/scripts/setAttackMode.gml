@@ -18,3 +18,4 @@ else
     applyStatusEffect(argument1,global.control,argument2,0.1)
     global.attackModeBuff = ss
 }
+actionBarReset()

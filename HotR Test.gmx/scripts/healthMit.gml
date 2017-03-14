@@ -43,38 +43,16 @@ if argument5 = false    //On Proc
     {
         if 1+irandom(99) <= argument1*s
         {
-            iii = min(lifeMax-life,argument2)
-            
-            if iii != 0
-            {
-                ii = instance_create(x,y-h-height+20,obj_descriptor)
-                ii.text = iii
-                ii.font = fnt_tiny
-                ii.colour1 = ltBlue
-                ii.colour2 = iceBlue
-                
-                life += iii
-                stm += argument2
-                staminaCheck()
-            }
+            gainStamina(id,argument2)
+            healLife(id,argument2)
         }
     }
     else
     {
         if 1+irandom(99) <= argument1
         {
-            iii = min(lifeMax-life,argument2)
-            
-            if iii != 0
-            {
-                ii = instance_create(x,y-h-height+20,obj_descriptor)
-                ii.text = iii
-                ii.font = fnt_tiny
-                ii.colour1 = ltBlue
-                ii.colour2 = iceBlue
-                
-                life += iii
-            }
+            gainStamina(id,argument2)
+            healLife(id,argument2)
         }
     }
 }
@@ -192,4 +170,22 @@ else                    //On Tooltip
     obj_control.tooltipColour[obj_control.tooltipLength] = green
     obj_control.tooltipText[obj_control.tooltipLength] = string(floor(argument1))+'% '+string(argument0)
     obj_control.tooltipLength += 1
+}
+#define fastAttack
+if argument5 = false    //On Proc
+{
+    if 1+irandom(99) <= argument1
+    {
+        initSlot.delay = max(initSlot.delay-argument2,0)
+        
+        ii = instance_create(x,y-h-height,obj_descriptor)
+        ii.text = argument0
+        ii.font = fnt_tinyText
+    }
+}
+else               //On Tooltip
+{
+    obj_control.tooltipColour[obj_control.tooltipLength] = green
+    obj_control.tooltipText[obj_control.tooltipLength] = string(min(100,floor(argument1)))+' % '+string(argument0)
+    obj_control.tooltipLength += 1    
 }

@@ -21,6 +21,11 @@ global.itemColour[4] = make_colour_rgb(245,164,230)
 #define nextTurn
 global.activeActorNum += 1
 
+with(obj_notification)
+{
+    instance_destroy()
+}
+
 if global.activeActorNum > global.actorCount
 {
     //Time Passes
@@ -33,11 +38,19 @@ global.activeActor = global.actorList[global.activeActorNum]
 
 if global.activeActor.playerControl = true
 {
+    with(obj_overworldControl)
+    {
+        obj_camera.x = global.activeActor.x
+        obj_camera.y = global.activeActor.y
+        view_xview = median(obj_camera.x-(view_wview/2),0,room_width-view_wview)
+        view_yview = median(obj_camera.y-(view_hview/2),0,room_height-view_hview)
+        worldScrollVis()
+    }
     owMovePath() 
 }
 else
 {
-    //Replace with AI script later, until then jsut pass
+    //Replace with AI script later, until then just pass
     nextTurn()
 }
 
