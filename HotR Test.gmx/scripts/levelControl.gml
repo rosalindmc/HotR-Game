@@ -3,6 +3,7 @@
 c = argument0
 i = instance_create(view_wview/2,view_hview/2,obj_levelUpScreen)
 i.char = c
+i.player = argument1
 
 c.attributePoint += .5
 c.combatTalentPoint += 1
@@ -174,7 +175,7 @@ talentPrereq(treeDiscipline,0)
 //talentPrereq(treeLeadership,0)
 talentPrereq(treeDaring,0)
 
-repeat(1)
+repeat(2)
 {
     talentPrereq(branchBreaker,treeStrength)
     talentPrereq(branchCrunch,treeStrength)

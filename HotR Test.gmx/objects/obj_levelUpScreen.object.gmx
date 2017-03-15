@@ -67,14 +67,29 @@ button.owner = id
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if step = 1 and attribute = 0
+            <string>if step = 0 and player = false
 {
-    step += 1
+    step += 1   
+}
+if step = 1 and attribute = 0
+{
+    step += 1   
 }
 if backStep != 1 and step = 1
 {
     backStep = 1
     attributeChoices()
+    if player = false
+    {
+    global.talentChoice = i 
+    step += 1 
+    finalizeChoice(backStep)
+    
+    with(obj_levelUpChoice)
+    {
+        instance_destroy()
+    }
+    }
 }
 
 if step = 2 and combat = 0
@@ -85,6 +100,17 @@ if backStep != 2 and step = 2
 {
     backStep = 2
     talentChoices(1)
+    if player = false
+    {
+    global.talentChoice = ii
+    step += 1 
+    finalizeChoice(backStep)
+    
+    with(obj_levelUpChoice)
+    {
+        instance_destroy()
+    }
+    }
 }
 
 if step = 3 and travel = 0
@@ -95,6 +121,17 @@ if backStep != 3 and step = 3
 {
     backStep = 3
     talentChoices(2)
+    if player = false
+    {
+    global.talentChoice = ii
+    step += 1 
+    finalizeChoice(backStep)
+    
+    with(obj_levelUpChoice)
+    {
+        instance_destroy()
+    }
+    }
 }
 
 if step = 4
@@ -134,7 +171,9 @@ if step = 4
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = xstart+view_xview
+            <string>if player = true
+{
+x = xstart+view_xview
 y = ystart+view_yview
 
 draw_self()
@@ -183,7 +222,7 @@ if cSkill != 0
     iy += 16
 }
 }
-
+}
 </string>
           </argument>
         </arguments>

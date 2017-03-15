@@ -56,8 +56,16 @@ alarm[0] = 1
     {
         if point_in_rectangle(mouse_x,mouse_y,x-10,y-10,x+10,y+10)
         {
-            levelControl(global.charSelect)
-            global.eventActive = true
+            if keyboard_check(vk_shift)
+            {
+                levelControl(global.charSelect,false)
+                global.eventActive = true
+            }
+            else
+            {
+                levelControl(global.charSelect,true)
+                global.eventActive = true
+            }
         }
     }
 }
