@@ -9,6 +9,11 @@ while(char.experience >= char.expToLevel)
     {
         createNotification(string(char.firstName)+' is level '+string(char.level),ico_experience,2)
     }
+    else
+    {
+        levelControl(char,false)
+        global.eventActive = true
+    }
     
     char.experience -= char.expToLevel
 
