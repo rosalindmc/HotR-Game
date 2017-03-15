@@ -18,9 +18,12 @@ fashionInitialize()
 raceGen(race_orc)
 detailGen(cfName)
 attributeGen()
-classGen(class_warrior)
+classGen(class_thane)
 
 eyeTrinket = choose(-4,-4,-4,spr_fashion2)
+
+experience += 30+irandom(100)
+checkLevelUp(id)
 
 #define orcVeteran
 //Rules for an Orc Veteran
@@ -32,6 +35,9 @@ attributeGen()
 classGen(class_warrior)
 
 eyeTrinket = choose(-4,-4,-4,spr_fashion2)
+
+experience += 5+irandom(10)
+checkLevelUp(id)
 
 #define raiderCaptain
 //Rules for a Raider Captain

@@ -200,7 +200,7 @@ areAttackedSize = 0
 evasion = false
 breaker = false
 crunch = false
-aim = 1
+aim = global.accuracyBase
 
 //Various Effects
 arc = 100

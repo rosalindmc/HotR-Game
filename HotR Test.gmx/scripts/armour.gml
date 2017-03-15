@@ -56,32 +56,8 @@ prot += iProt
 enc += iEnc
 spellCD += .2
 
-bodyItems += 1
-bodyItem[bodyItems] = iSpr[cutVariant]
-bodyColour[bodyItems] = favColour
 
-chstItems += 1
-chstItem[chstItems] = iSpr[max(cleaveVariant,cutVariant)]
-chstColour[chstItems] = favColour
-
-hipsItems += 1
-hipsItem[hipsItems] = iSpr[bodyVariant]
-hipsColour[hipsItems] = favColour
-
-skrtItems += 1
-skrtItem[skrtItems] = iSkrt[skirtVariant]
-skrtColour[skrtItems] = favColour
-
-if sleeveVariant != 1
-{
-armsItems[1] += 1
-armsItem[armsItems[1],1] = iSpr[sleeveVariant]
-armsColour[armsItems[1],1] = favColour
-
-armsItems[2] += 1
-armsItem[armsItems[2],2] = iSpr[sleeveVariant]
-armsColour[armsItems[2],2] = favColour
-}
+armourApplyVis(favColour)
 
 legsItems[1] += 1
 legsItem[legsItems[1],1] = spr_witchDress
@@ -90,14 +66,6 @@ legsColour[legsItems[1],1] = c_white
 legsItems[2] += 1
 legsItem[legsItems[2],2] = spr_witchDress
 legsColour[legsItems[2],2] = c_white
-
-legsItems[1] += 1
-legsItem[legsItems[1],1] = spr_robe1
-legsColour[legsItems[1],1] = favColour
-
-legsItems[2] += 1
-legsItem[legsItems[2],2] = spr_robe1
-legsColour[legsItems[2],2] = favColour
 
 underHipsNum -= 1
 break
@@ -199,13 +167,13 @@ break
 }
 
 #define breastPlate
-iSpr[1] = spr_chainMail
-iSpr[2] = spr_chainMail
-iSpr[3] = spr_chainMail
-iSpr[4] = spr_chainMail
-iSkrt[1] = spr_chainTabard
-iSkrt[2] = spr_chainTabard
-iSkrt[3] = spr_chainTabard
+iSpr[1] = spr_robe1
+iSpr[2] = spr_robe2
+iSpr[3] = spr_robe3
+iSpr[4] = spr_robe4
+iSkrt[1] = spr_robeSkirt1
+iSkrt[2] = spr_robeSkirt1
+iSkrt[3] = spr_robeSkirt1
 iDodge = 10
 iArm = 16
 iProt = 0
@@ -245,32 +213,7 @@ areHit[areHitSize,4] = false
 areHit[areHitSize,5] = false
 areHitSize += 1
 
-bodyItems += 1
-bodyItem[bodyItems] = iSpr[cutVariant]
-bodyColour[bodyItems] = favColour
-
-chstItems += 1
-chstItem[chstItems] = iSpr[max(cleaveVariant,cutVariant)]
-chstColour[chstItems] = favColour
-
-hipsItems += 1
-hipsItem[hipsItems] = iSpr[bodyVariant]
-hipsColour[hipsItems] = favColour
-
-skrtItems += 1
-skrtItem[skrtItems] = iSkrt[skirtVariant]
-skrtColour[skrtItems] = favColour
-
-if sleeveVariant != 1
-{
-armsItems[1] += 1
-armsItem[armsItems[1],1] = iSpr[sleeveVariant]
-armsColour[armsItems[1],1] = favColour
-
-armsItems[2] += 1
-armsItem[armsItems[2],2] = iSpr[sleeveVariant]
-armsColour[armsItems[2],2] = favColour
-}
+armourApplyVis(favColour)
 
 legsItems[1] += 1
 legsItem[legsItems[1],1] = spr_witchDress
@@ -280,16 +223,6 @@ legsItems[2] += 1
 legsItem[legsItems[2],2] = spr_witchDress
 legsColour[legsItems[2],2] = c_white
 
-legsItems[1] += 1
-legsItem[legsItems[1],1] = spr_robe1
-legsColour[legsItems[1],1] = favColour
-
-legsItems[2] += 1
-legsItem[legsItems[2],2] = spr_robe1
-legsColour[legsItems[2],2] = favColour
-
-underHipsNum -= 1
-
 iSpr[1] = spr_plateMail
 iSpr[2] = spr_plateMail
 iSpr[3] = spr_plateMail
@@ -298,6 +231,8 @@ iSkrt[1] = spr_none
 iSkrt[2] = spr_none
 iSkrt[3] = spr_none
 armourApplyVis(c_white)
+
+underHipsNum -= 1
 break
 }
 

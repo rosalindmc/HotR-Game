@@ -223,10 +223,4 @@ will += 1
 
 //Talent
 talent[0,0] = treeStrength
-talent[0,1] = choose(branchBreaker,branchCrunch,branchReadyForMore,branchSmash)
 talent[0,5] = 2
-talent[1,0] = treeToughness
-talent[1,1] = choose(branchVigour,branchMightyBlock,branchMightyHealth)
-talent[1,5] = 2
-talent[2,0] = choose(treeDiscipline,treeMartial)
-talent[2,5] = 1

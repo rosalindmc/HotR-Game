@@ -12,6 +12,7 @@ tooltip = ''
 break
 
 case 1:     //Stats
+owner.aim += 1
 owner.onWound[owner.onWoundSize,0] = tacSunderArm
 owner.onWound[owner.onWoundSize,1] = 'Sunder Armour'
 owner.onWound[owner.onWoundSize,2] = potency
@@ -74,6 +75,7 @@ tooltip = ''
 break
 
 case 1:     //Stats
+owner.aim += 1
 owner.onWound[owner.onWoundSize,0] = tacSlow
 owner.onWound[owner.onWoundSize,1] = 'Slow'
 owner.onWound[owner.onWoundSize,2] = potency
@@ -105,6 +107,7 @@ tooltip = ''
 break
 
 case 1:     //Stats
+owner.aim += 2
 owner.onAttack[owner.onAttackSize,0] = tacPreciseStrike
 owner.onAttack[owner.onAttackSize,1] = 'Precise Strike'
 owner.onAttack[owner.onAttackSize,2] = potency
@@ -136,6 +139,7 @@ tooltip = ''
 break
 
 case 1:     //Stats
+owner.aim += 2
 owner.onAttack[owner.onAttackSize,0] = tacExploitWeakness
 owner.onAttack[owner.onAttackSize,1] = 'Exploit Weakness'
 owner.onAttack[owner.onAttackSize,2] = potency

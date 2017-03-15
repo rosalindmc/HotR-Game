@@ -120,12 +120,9 @@ else                    //On Tooltip
 //Additional Conditioners
 if argument5 = false    //On Proc
 {
-    if argument4 = true
+    if 1+irandom(99) <= argument2
     {
-        if 1+irandom(99) <= argument2
-        {
-            applyStatusEffect(argument1,target,argument3,argument4*spellDur)
-        }
+        applyStatusEffect(argument1,target,argument3,argument4*spellDur)
     }
 }
 else                    //On Tooltip
@@ -172,23 +169,27 @@ else                    //On Tooltip
     obj_control.tooltipLength += 1
 }
 #define fastAttack
-if argument5 = false    //On Proc
+if target.mle = true
 {
-    if 1+irandom(99) <= argument1
+    if argument5 = false    //On Proc
     {
-        initSlot.delay = max(initSlot.delay-argument2,0)
-        
-        ii = instance_create(x,y-h-height,obj_descriptor)
-        ii.text = argument0
-        ii.font = fnt_tinyText
+        if 1+irandom(99) <= argument1
+        {
+            initSlot.delay = max(initSlot.delay-argument2,0)
+            
+            ii = instance_create(x,y-h-height,obj_descriptor)
+            ii.text = argument0
+            ii.font = fnt_tinyText
+        }
+    }
+    else               //On Tooltip
+    {
+        obj_control.tooltipColour[obj_control.tooltipLength] = green
+        obj_control.tooltipText[obj_control.tooltipLength] = string(min(100,floor(argument1)))+' % '+string(argument0)
+        obj_control.tooltipLength += 1    
     }
 }
-else               //On Tooltip
-{
-    obj_control.tooltipColour[obj_control.tooltipLength] = green
-    obj_control.tooltipText[obj_control.tooltipLength] = string(min(100,floor(argument1)))+' % '+string(argument0)
-    obj_control.tooltipLength += 1    
-}
+
 #define glancing
 //Additional Conditioners
 if argument5 = false    //On Proc
@@ -214,4 +215,66 @@ if argument5 = false    //On Proc
 else                    //On Tooltip
 {
     other.pen *= 1.5
+}
+#define meleeBlockStatusGive
+//statusGive(name,statusEffect,procChance,potency,duration,tooltip)
+//Apply a Status to the target
+
+//Additional Conditioners
+if target.mle = true
+{
+    if argument5 = false    //On Proc
+    {
+        if argument4 = true
+        {
+            if 1+irandom(99) <= argument2
+            {
+                applyStatusEffect(argument1,target,argument3,argument4*spellDur)
+            }
+        }
+    }
+    else                    //On Tooltip
+    {
+        obj_control.tooltipColour[obj_control.tooltipLength] = c_red
+        obj_control.tooltipText[obj_control.tooltipLength] = string(floor(argument2))+'% '+string(argument0)
+        obj_control.tooltipLength += 1
+    }
+}
+
+#define smallShield
+//statusGive(name,statusEffect,procChance,potency,duration,tooltip)
+//Apply a Status to the target
+
+//Additional Conditioners
+if target.mle = false
+{
+    if argument5 = false    //On Proc
+    {
+        blocks -= 1
+    }
+    else                    //On Tooltip
+    {
+        obj_control.tooltipColour[obj_control.tooltipLength] = c_red
+        obj_control.tooltipText[obj_control.tooltipLength] = 'Small Shield'
+        obj_control.tooltipLength += 1
+    }
+}
+
+#define largeShield
+//statusGive(name,statusEffect,procChance,potency,duration,tooltip)
+//Apply a Status to the target
+
+//Additional Conditioners
+if target.mle = false
+{
+    if argument5 = false    //On Proc
+    {
+        target.a += target.p
+    }
+    else                    //On Tooltip
+    {
+        obj_control.tooltipColour[obj_control.tooltipLength] = c_red
+        obj_control.tooltipText[obj_control.tooltipLength] = 'Large Shield'
+        obj_control.tooltipLength += 1
+    }
 }

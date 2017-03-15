@@ -69,15 +69,17 @@ if target.dead = false
             a += p+target.blockStr
             spendStamina(target,p*.05)
             
+            with(target)
+            {
+                startAnimation(1+other.hasShield,animBlock)
+                triggerOnBlock(false)
+            }
+            
             if mle = true
             {  
                 loseStamina(id,p*.05)
                  
-                with(target)
-                {
-                    startAnimation(1+other.hasShield,animBlock)
-                    triggerOnBlock(false)
-                }
+                
             }
             else
             {

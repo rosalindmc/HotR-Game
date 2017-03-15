@@ -80,7 +80,7 @@ break
 switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
-onBlock[onBlockSize,0] = statusGive
+onBlock[onBlockSize,0] = meleeBlockStatusGive
 onBlock[onBlockSize,1] = 'Mighty Block'
 onBlock[onBlockSize,2] = daze
 onBlock[onBlockSize,3] = 50

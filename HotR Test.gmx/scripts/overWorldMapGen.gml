@@ -12,10 +12,12 @@ mapDepth = 10
 if global.timeOfDay = 3
 {
     global.sightBase = 10
+    global.accuracyBase = .75
 }
 else
 {
     global.sightBase = 30
+    global.accuracyBase = 1
 }
 break
 

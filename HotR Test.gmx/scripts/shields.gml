@@ -94,6 +94,14 @@ wepPen[i] = iPen
 wepSpeed[i] = iSpd
 wepRange[i] = 1
 
+onBlock[onBlockSize,0] = smallShield
+onBlock[onBlockSize,1] = 'Small Shield'
+onBlock[onBlockSize,2] = false
+onBlock[onBlockSize,3] = false
+onBlock[onBlockSize,4] = false
+onBlock[onBlockSize,5] = false
+onBlockSize += 1
+
 //Shield Stuff
 sResist += .5
 enc += iEnc
@@ -146,6 +154,14 @@ wepStrMult[i] = iStrMult
 wepPen[i] = iPen
 wepSpeed[i] = iSpd
 wepRange[i] = 1
+
+onBlock[onBlockSize,0] = largeShield
+onBlock[onBlockSize,1] = 'Large Shield'
+onBlock[onBlockSize,2] = false
+onBlock[onBlockSize,3] = false
+onBlock[onBlockSize,4] = false
+onBlock[onBlockSize,5] = false
+onBlockSize += 1
 
 //Shield Stuff
 sResist += .5
