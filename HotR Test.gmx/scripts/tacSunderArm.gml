@@ -67,8 +67,8 @@ else
     obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)+' '+string_format(argument1+min(a/4,(argument1)),0,1)
     obj_control.tooltipLength += 1     
     
-    a = max(0,a-(argument1*4))
-    p += argument1
+    obj_control.a = max(0,obj_control.a-(argument1*4))
+    obj_control.p += argument1
 }
 
 #define tacExploitWeakness
@@ -86,7 +86,7 @@ if target.mark = true
         obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)+' '+string_format(argument1+min(a/4,(argument1)),0,1)
         obj_control.tooltipLength += 1     
         
-        p += argument1
+        obj_control.p += argument1
     }
 }
 
