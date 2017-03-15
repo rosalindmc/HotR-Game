@@ -33,6 +33,7 @@ duration = 1.0
 effect = daze
 vis = false
 name = 'Status'
+type = -4
 tooltip = 'Tooltip'
 showDuration = true
 tt = 0

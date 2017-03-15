@@ -167,6 +167,7 @@ tooltip = ''
 break
 
 case 1:     //Stats
+owner.atkHaste -= .2
 owner.onAttack[owner.onAttackSize,0] = tacGuardedAttack
 owner.onAttack[owner.onAttackSize,1] = 'Guarded Attack'
 owner.onAttack[owner.onAttackSize,2] = potency

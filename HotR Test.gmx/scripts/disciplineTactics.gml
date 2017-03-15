@@ -20,7 +20,7 @@ switch(argument0)
     case 2:
     tooltipTitle = 'Guarded Attack'
     abilityTT = 'Special Melee#Cooldown '+string_format(5/i.spellCD,0,1)+'#Stamina Cost 1##Make an attack that breaks 3 blocks and deals 1/4 reduced damage'
-    abilityTTLength = 4
+    abilityTTLength = 6
     break
     
     //Run 3 for ai use 
@@ -37,7 +37,7 @@ switch(argument0)
     {
         iv.selectable = false
     }
-    iv.sprite_index = ico_guardBreak
+    iv.sprite_index = ico_guardedAttack
     break
 }
 
@@ -50,7 +50,7 @@ switch(argument0)
 {
     //Run 0 when a player selects the command
     case 0:
-    i.blocks += i.foeAdj
+    applyStatusEffect(blockBuff,i,i.foeAdj,10*i.spellDur)
     spendStamina(i,1)
     endTurn(1.0)
     break
@@ -65,6 +65,8 @@ switch(argument0)
     tooltipTitle = 'Hold the Line'
     abilityTT = 'Action#Cooldown '+string_format(30/i.spellCD,0,1)+'##Gain a block for each adjacent foe'
     abilityTTLength = 4
+    global.testSlot.delayAdd = 1.0
+    initiativeSlotAnticipate()
     break
     
     //Run 3 for ai use 

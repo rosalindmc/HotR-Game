@@ -204,6 +204,9 @@ aim = 1
 
 //Various Effects
 arc = 100
+detection = 5
+sight = global.sightBase+cunning-8
+detection = sight/10
 atkHaste = 0
 movHaste = 0
 atkStaminaMult = 1

@@ -33,7 +33,7 @@ if obj_control.mapTimeOn = true and global.timeDelay = 0
     }
     
     //Block Generation
-    blocks = min(blocks+(blockGen/(global.fspd)),blockMax)
+    blocks = min(blocks+(blockGen/(global.fspd)),blockMax,5)
     
     //Boldness
     if suppression = 0

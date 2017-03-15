@@ -171,7 +171,7 @@ case 1:     //Tooltip and icon
 sprite_index = ico_holdTheLine
 image_index = 1
 name = 'Hold The Line'
-tooltip = 'Active: Gain a block for each adjacent foes'
+tooltip = 'Active: Gain a block for each adjacent foe'
 branch = treeDiscipline
 break
 

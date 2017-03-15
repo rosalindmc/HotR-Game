@@ -1,7 +1,7 @@
 switch(argument0)
 {
 case 0:     //Stats
-icon = ico_fatigue
+icon = ico_wounded
 upkp = 60.0
 duration = 20.0
 type = 'Core'

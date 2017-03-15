@@ -224,6 +224,14 @@ onHit[onHitSize,3] = 4
 onHit[onHitSize,4] = i
 onHit[onHitSize,5] = false
 onHitSize += 1
+
+onHit[onHitSize,0] = wepSlashImpact
+onHit[onHitSize,1] = 'Hammer'
+onHit[onHitSize,2] = i
+onHit[onHitSize,3] = false
+onHit[onHitSize,4] = false
+onHit[onHitSize,5] = false
+onHitSize += 1
 break
 }
 
@@ -280,6 +288,14 @@ onHit[onHitSize,1] = 'Shatter'
 onHit[onHitSize,2] = 10
 onHit[onHitSize,3] = 2
 onHit[onHitSize,4] = i
+onHit[onHitSize,5] = false
+onHitSize += 1
+
+onHit[onHitSize,0] = wepSlashImpact
+onHit[onHitSize,1] = 'Hammer'
+onHit[onHitSize,2] = i
+onHit[onHitSize,3] = false
+onHit[onHitSize,4] = false
 onHit[onHitSize,5] = false
 onHitSize += 1
 break

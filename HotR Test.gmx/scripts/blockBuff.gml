@@ -1,19 +1,17 @@
 switch(argument0)
 {
 case 0:     //Stats
-icon = ico_detectionBuff
+icon = ico_blockBuff
 upkp = 60.0
-name = 'Assess Situation'
+name = 'Hold the Line'
 type = 'Focus'
 buff = true
-tooltip = '+1 Max Block, Larger Front Arc and increased detection'
+tooltip = '+'+string(potency)+' Max Blocks'
+owner.blocks += potency
 break
 
 case 1:     //Stats
-owner.arc += 40
-owner.blockMax += 1
-owner.sight += 4 
-owner.detection += 4 
+owner.blockMax += potency
 break
 
 case 2:     //Upkeep

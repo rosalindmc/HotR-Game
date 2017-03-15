@@ -276,20 +276,25 @@ for(ttt = 0; ttt < 8; ttt++)
     {
         if ds_list_find_index(list,char.talent[ttt,0]) != -1
         {
-            talentPrereq(char.talent[ttt,0],0)
-            talentPrereq(char.talent[ttt,0],0)
+            repeat(10)
+            {
+                talentPrereq(char.talent[ttt,0],0)
+            }
         }
     }
 }
 
 #define checkList
 success = true
+if player = true
+{
 for(p = 0; p < argument1; p++)
 {
     if pTalent[p] = argument0
     {
         success = false
     }
+}
 }
 
 return success

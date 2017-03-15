@@ -197,6 +197,7 @@
         <sprite>sprites\ico_wounded</sprite>
         <sprite>sprites\ico_strengthBuff</sprite>
         <sprite>sprites\ico_detectionBuff</sprite>
+        <sprite>sprites\ico_blockBuff</sprite>
         <sprite>sprites\ico_rushBuff</sprite>
         <sprite>sprites\ico_dodgeBuff</sprite>
       </sprites>
@@ -665,6 +666,7 @@
       <scripts name="Focus">
         <script>scripts\strengthBuff.gml</script>
         <script>scripts\detectionBuff.gml</script>
+        <script>scripts\blockBuff.gml</script>
         <script>scripts\marked.gml</script>
         <script>scripts\regenerateBuff.gml</script>
         <script>scripts\dodgeBuff.gml</script>

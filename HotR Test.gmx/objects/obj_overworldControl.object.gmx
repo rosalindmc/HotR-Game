@@ -34,6 +34,7 @@ global.subTab = -4
 global.menuSheet = -4
 global.eventActive = false
 global.eventActor = -4
+global.sightBase = 30
 
 i = instance_create(40,-10,obj_topButton)
 i.image_index = 0

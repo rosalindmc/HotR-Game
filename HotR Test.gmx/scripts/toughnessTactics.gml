@@ -23,7 +23,7 @@ switch(argument0)
     //Run 2 to draw
     case 2:
     tooltipTitle = 'Battle Rush'
-    abilityTT = 'Free Action#Cooldown '+string_format(30/i.spellCD,0,1)+'##Gain +4 Max Life, Max Stamina, Life Regen and Stamina Regen for '+string_format(5*i.spellDur,0,1)+'sec'
+    abilityTT = 'Free Action#Cooldown '+string_format(30/i.spellCD,0,1)+'##Gain +4 Max Life, Max Stamina, Life Regen and Stamina Regen for '+string_format(5*i.spellDur,0,1)+' sec'
     abilityTTLength = 5
     break
     

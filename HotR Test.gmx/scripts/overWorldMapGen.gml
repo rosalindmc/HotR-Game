@@ -9,6 +9,14 @@ mapHeight = 20
 mapWidth = 20
 mapDepth = 10
 
+if global.timeOfDay = 3
+{
+    global.sightBase = 10
+}
+else
+{
+    global.sightBase = 30
+}
 break
 
 case 1:

@@ -27,7 +27,7 @@ switch(argument0)
     case 2:
     tooltipTitle = 'Feat of Strength'
     abilityTT = 'Free Action#Cooldown '+string_format(30/i.spellCD,0,1)+'#Stamina Cost 2##Gain EMPOWER 4 for '+string_format(5*i.spellDur,0,1)+'sec'
-    abilityTTLength = 4
+    abilityTTLength = 5
     break
     
     //Run 3 for ai use 
@@ -79,7 +79,9 @@ switch(argument0)
     case 2:
     tooltipTitle = 'Grapple'
     abilityTT = 'Action#Cooldown '+string_format(10/i.spellCD,0,1)+'##IMMOBILIZE an adjacent foe with your free hand for '+string_format(5*i.spellDur,0,1)+'sec'
-    abilityTTLength = 4
+    abilityTTLength = 5
+    global.testSlot.delayAdd = 2.0
+    initiativeSlotAnticipate()
     break
     
     //Run 3 for ai use 

@@ -189,3 +189,29 @@ else               //On Tooltip
     obj_control.tooltipText[obj_control.tooltipLength] = string(min(100,floor(argument1)))+' % '+string(argument0)
     obj_control.tooltipLength += 1    
 }
+#define glancing
+//Additional Conditioners
+if argument5 = false    //On Proc
+{
+    if 1+irandom(99) <= argument1
+    {
+        other.pen = 0
+    }
+}
+else                    //On Tooltip
+{
+    obj_control.tooltipColour[obj_control.tooltipLength] = green
+    obj_control.tooltipText[obj_control.tooltipLength] = string(floor(argument1))+'% '+string(argument0)
+    obj_control.tooltipLength += 1
+}
+
+#define penMult
+//Additional Conditioners
+if argument5 = false    //On Proc
+{
+    other.pen *= 1.5
+}
+else                    //On Tooltip
+{
+    other.pen *= 1.5
+}

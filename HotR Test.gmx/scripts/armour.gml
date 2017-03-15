@@ -54,6 +54,7 @@ dodge = iDodge
 armMax += iArm
 prot += iProt
 enc += iEnc
+spellCD += .2
 
 bodyItems += 1
 bodyItem[bodyItems] = iSpr[cutVariant]
@@ -137,6 +138,7 @@ dodge = iDodge
 armMax += iArm
 prot += iProt
 enc += iEnc
+lifeRegen += 2
 
 armourApplyVis(c_white)
 
@@ -179,51 +181,20 @@ armMax += iArm
 prot += iProt
 enc += iEnc
 
+//Skill
+areHit[areHitSize,0] = penMult
+areHit[areHitSize,1] = 'Chainmail'
+areHit[areHitSize,2] = false
+areHit[areHitSize,3] = false
+areHit[areHitSize,4] = false
+areHit[areHitSize,5] = false
+areHitSize += 1
+
 armourApplyVis(c_white)
 
 skrtItems += 1
 skrtItem[skrtItems] = spr_robeSkirt1
 skrtColour[skrtItems] = favColour
-break
-}
-
-#define chainMail
-iSpr[1] = spr_chainMail
-iSpr[2] = spr_chainMail
-iSpr[3] = spr_chainMail
-iSpr[4] = spr_chainMail
-iSkrt[1] = spr_chainTabard
-iSkrt[2] = spr_chainTabard
-iSkrt[3] = spr_chainTabard
-iDodge = 0
-iArm = 16
-iProt = 0
-iEnc = 50
-
-switch(argument0)
-{
-case 0:     //Called when the item creates an icon and tooltip
-sprite_index = ico_chainMail
-ttType = itemTypeArmour
-name = 'Chain Mail'
-tooltip = 'A hefty suit of chain mail armour'
-arm = iArm
-dodge = iDodge
-prot = iProt
-enc = iEnc
- 
-break
-
-case 1:     //Called when the item is equipped by a model.
-break
-
-case 2:     //Called when ?
-dodge = iDodge
-armMax += iArm
-prot += iProt
-enc += iEnc
-
-armourApplyVis(c_white)
 break
 }
 
@@ -235,10 +206,10 @@ iSpr[4] = spr_chainMail
 iSkrt[1] = spr_chainTabard
 iSkrt[2] = spr_chainTabard
 iSkrt[3] = spr_chainTabard
-iDodge = 0
-iArm = 20
+iDodge = 10
+iArm = 16
 iProt = 0
-iEnc = 70
+iEnc = 50
 
 switch(argument0)
 {
@@ -264,6 +235,167 @@ prot += iProt
 enc += iEnc
 
 rigid = true
+
+//Skill
+areHit[areHitSize,0] = glancing
+areHit[areHitSize,1] = 'Glancing'
+areHit[areHitSize,2] = false
+areHit[areHitSize,3] = false
+areHit[areHitSize,4] = false
+areHit[areHitSize,5] = false
+areHitSize += 1
+
+bodyItems += 1
+bodyItem[bodyItems] = iSpr[cutVariant]
+bodyColour[bodyItems] = favColour
+
+chstItems += 1
+chstItem[chstItems] = iSpr[max(cleaveVariant,cutVariant)]
+chstColour[chstItems] = favColour
+
+hipsItems += 1
+hipsItem[hipsItems] = iSpr[bodyVariant]
+hipsColour[hipsItems] = favColour
+
+skrtItems += 1
+skrtItem[skrtItems] = iSkrt[skirtVariant]
+skrtColour[skrtItems] = favColour
+
+if sleeveVariant != 1
+{
+armsItems[1] += 1
+armsItem[armsItems[1],1] = iSpr[sleeveVariant]
+armsColour[armsItems[1],1] = favColour
+
+armsItems[2] += 1
+armsItem[armsItems[2],2] = iSpr[sleeveVariant]
+armsColour[armsItems[2],2] = favColour
+}
+
+legsItems[1] += 1
+legsItem[legsItems[1],1] = spr_witchDress
+legsColour[legsItems[1],1] = c_white
+
+legsItems[2] += 1
+legsItem[legsItems[2],2] = spr_witchDress
+legsColour[legsItems[2],2] = c_white
+
+legsItems[1] += 1
+legsItem[legsItems[1],1] = spr_robe1
+legsColour[legsItems[1],1] = favColour
+
+legsItems[2] += 1
+legsItem[legsItems[2],2] = spr_robe1
+legsColour[legsItems[2],2] = favColour
+
+underHipsNum -= 1
+
+iSpr[1] = spr_plateMail
+iSpr[2] = spr_plateMail
+iSpr[3] = spr_plateMail
+iSpr[4] = spr_plateMail
+iSkrt[1] = spr_none
+iSkrt[2] = spr_none
+iSkrt[3] = spr_none
+armourApplyVis(c_white)
+break
+}
+
+#define chainMail
+iSpr[1] = spr_chainMail
+iSpr[2] = spr_chainMail
+iSpr[3] = spr_chainMail
+iSpr[4] = spr_chainMail
+iSkrt[1] = spr_chainTabard
+iSkrt[2] = spr_chainTabard
+iSkrt[3] = spr_chainTabard
+iDodge = 0
+iArm = 20
+iProt = 0
+iEnc = 70
+
+switch(argument0)
+{
+case 0:     //Called when the item creates an icon and tooltip
+sprite_index = ico_chainMail
+ttType = itemTypeArmour
+name = 'Chain Mail'
+tooltip = 'A hefty suit of chain mail armour'
+arm = iArm
+dodge = iDodge
+prot = iProt
+enc = iEnc
+ 
+break
+
+case 1:     //Called when the item is equipped by a model.
+break
+
+case 2:     //Called when ?
+dodge = iDodge
+armMax += iArm
+prot += iProt
+enc += iEnc
+
+//Skill
+areHit[areHitSize,0] = penMult
+areHit[areHitSize,1] = 'Chainmail'
+areHit[areHitSize,2] = false
+areHit[areHitSize,3] = false
+areHit[areHitSize,4] = false
+areHit[areHitSize,5] = false
+areHitSize += 1
+
+armourApplyVis(c_white)
+break
+}
+
+#define plateMail
+iSpr[1] = spr_chainMail
+iSpr[2] = spr_chainMail
+iSpr[3] = spr_chainMail
+iSpr[4] = spr_chainMail
+iSkrt[1] = spr_chainTabard
+iSkrt[2] = spr_chainTabard
+iSkrt[3] = spr_chainTabard
+iDodge = 0
+iArm = 24
+iProt = 0
+iEnc = 100
+
+switch(argument0)
+{
+case 0:     //Called when the item creates an icon and tooltip
+sprite_index = ico_platemail1
+ttType = itemTypeArmour
+name = 'Platemail'
+tooltip = 'Plate and chain full army'
+arm = iArm
+dodge = iDodge
+prot = iProt
+enc = iEnc
+ 
+break
+
+case 1:     //Called when the item is equipped by a model.
+break
+
+case 2:     //Called when ?
+dodge = iDodge
+armMax += iArm
+prot += iProt
+enc += iEnc
+
+rigid = true
+
+//Skill
+areHit[areHitSize,0] = glancing
+areHit[areHitSize,1] = 'Glancing'
+areHit[areHitSize,2] = false
+areHit[areHitSize,3] = false
+areHit[areHitSize,4] = false
+areHit[areHitSize,5] = false
+areHitSize += 1
 
 armourApplyVis(c_white)
 iSpr[1] = spr_plateMail

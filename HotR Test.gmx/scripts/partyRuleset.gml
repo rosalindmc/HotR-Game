@@ -13,7 +13,7 @@ repeat(choose(60))
     choose(handAxe,battleAxe,greatAxe),
     choose(halberd,shortSpear,spear,pike),
     choose(maul,lightMace,mace,hammer,warhammer,staff),
-    choose(chainMail,chainShirt,breastPlate,robe,dress),
+    choose(chainMail,chainShirt,breastPlate,plateMail,robe,dress),
     choose(heaterShield,squareShield,roundShield),
     choose(shortBow,crossbow,longBow))
     inventory[ii,1] = choose(0,0,0,1,1,1,1,1,1,1,1,1)

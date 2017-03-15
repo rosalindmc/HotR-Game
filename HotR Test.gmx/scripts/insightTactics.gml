@@ -10,7 +10,7 @@ switch(argument0)
     //Run 0 when a player selects the command
     case 0:
     i.blocks += 1
-    applyStatusEffect(detectionBuff,i,4,1*i.spellDur)
+    applyStatusEffect(detectionBuff,i,4,10*i.spellDur)
     i.abilityCD[global.actionNum] = 10/i.spellCD
     endTurn(1.0)
     break
@@ -23,8 +23,10 @@ switch(argument0)
     //Run 2 to draw
     case 2:
     tooltipTitle = 'Assess Situation'
-    abilityTT = 'Action#Cooldown '+string_format(10/i.spellCD,0,1)+'##Gain a Block and increased detection range and front arc for '+string_format(1*i.spellDur,0,1)+'sec'
+    abilityTT = 'Action#Cooldown '+string_format(10/i.spellCD,0,1)+'##Gain a Block and increased detection range and front arc for '+string_format(1*i.spellDur,0,1)+' sec'
     abilityTTLength = 5
+    global.testSlot.delayAdd = 1.0
+    initiativeSlotAnticipate()
     break
     
     //Run 3 for ai use 
@@ -110,6 +112,8 @@ switch(argument0)
     tooltipTitle = 'Spot Weakness'
     abilityTT = 'Action#Range 10m#Cooldown '+string_format(10/i.spellCD,0,1)+'##MARK the target for '+string_format(15*i.spellDur,0,1)+' sec, MARKED targets suffer 10% more damage'
     abilityTTLength = 6
+    global.testSlot.delayAdd = 1.0
+    initiativeSlotAnticipate()
     break
     
     //Run 3 for ai use 
@@ -204,6 +208,8 @@ switch(argument0)
     tooltipTitle = 'Sap'
     abilityTT = 'Action#Cooldown '+string_format(30/i.spellCD,0,1)+'##Sleep an adjacent foe for '+string_format(15*i.spellDur,0,1)+' sec, only usable if not under melee Threat'
     abilityTTLength = 5
+    global.testSlot.delayAdd = 1.0
+    initiativeSlotAnticipate()
     break
     
     //Run 3 for ai use 

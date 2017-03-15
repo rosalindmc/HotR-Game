@@ -19,7 +19,7 @@ with(obj_character)
         {
             if vis != true
             {
-                if los(40,other.sightTile,sightTile)
+                if los(other.sight,other.sightTile,sightTile)
                 {
                     vis = true
                     if instance_exists(occupant)
@@ -36,7 +36,7 @@ with(obj_character)
             {
                 if vis != true
                 {
-                    if los(40,other.sightTile,sightTile)
+                    if los(other.sight,other.sightTile,sightTile)
                     {
                         vis = true
                         isoTile.vis = true

@@ -286,30 +286,30 @@ for(i = 0; i < 8; i++)
 }
 
 #define iC
-    iCStats()
-    iCSubStats()
-    iCWear()
-    iCEquip(invSwitch)
-    iCTraits()
-    
-    if bold = 1
-    {
-        haste += .5*(1+((fellowship-8)*.05))
-        mSkill += 2*(1+((fellowship-8)*.05))
-        rSkill += 2*(1+((fellowship-8)*.05))
-        cSkill += 2*(1+((fellowship-8)*.05))
-    }
-    
-    if o.mook = true
-    {
-        wepPow[1] *= .75
-        wepPow[2] *= .75
-        wepRPow[1] *= .75
-        wepRPow[2] *= .75
-        atkHaste *= .7
-        dodge -= 20
-        blockStr *= .5
-    }
+iCStats()
+iCSubStats()
+iCWear()
+iCEquip(invSwitch)
+iCTraits()
+
+if bold = 1
+{
+    haste += .5*(1+((fellowship-8)*.05))
+    mSkill += 2*(1+((fellowship-8)*.05))
+    rSkill += 2*(1+((fellowship-8)*.05))
+    cSkill += 2*(1+((fellowship-8)*.05))
+}
+
+if o.mook = true
+{
+    wepPow[1] *= .75
+    wepPow[2] *= .75
+    wepRPow[1] *= .75
+    wepRPow[2] *= .75
+    atkHaste *= .7
+    dodge -= 20
+    blockStr *= .5
+}
 
 #define clearArmour
 bodyItems = 0

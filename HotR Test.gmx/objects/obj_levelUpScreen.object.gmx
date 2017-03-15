@@ -144,9 +144,13 @@ if step = 4
     }
     //Reset Talents and Stats
     destroyTalents()
-    createTalents()
-    resetModels()
     
+    if global.inMenu = 1
+    {
+        createTalents()
+        resetModels()
+    }
+       
     instance_destroy()
 }
 </string>

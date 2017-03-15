@@ -5,10 +5,10 @@ switch(argument0)
 case 0:     //Run when the unit is initialized in battle
 switch(argument1)
 {
-case 1: onHit[onHitSize,2] = 1.0 break
-case 2: onHit[onHitSize,2] = 1.5 break
-case 3: onHit[onHitSize,2] = 2.0 break
-case 4: onHit[onHitSize,2] = 2.5 break
+case 1: onHit[onHitSize,2] = 1.0 sight += 2 detection += 2 break
+case 2: onHit[onHitSize,2] = 1.5 sight += 3 detection += 3 break
+case 3: onHit[onHitSize,2] = 2.0 sight += 4 detection += 4 break
+case 4: onHit[onHitSize,2] = 2.5 sight += 5 detection += 5 break
 }
 
 onHit[onHitSize,0] = advantageFel

@@ -1,13 +1,15 @@
+with(obj_status)
+{
+    if type = 'Attack'
+    {
+        instance_destroy()
+    }
+}
+    
 if global.attackMode = argument0
 {
     global.attackMode = -4
     global.attackModeNum = 0
-    
-    with(global.attackModeBuff)
-    {
-        instance_destroy()
-    }
-    
     global.attackModeBuff = -4
 }
 else

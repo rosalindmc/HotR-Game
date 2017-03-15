@@ -125,7 +125,9 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = xstart+view_xview
+            <string>if owner.player = true
+{
+x = xstart+view_xview
 y = ystart+view_yview
 
 draw_set_halign(fa_left)
@@ -140,6 +142,7 @@ if selected = false
 else
 {
     drawText(c_black,c_white,x,y,string(text))
+}
 }
 </string>
           </argument>

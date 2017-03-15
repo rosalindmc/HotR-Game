@@ -238,3 +238,52 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
         obj_control.tooltipLength += 1    
     }
 }
+#define wepSlashImpact
+//Additional Conditioners
+if atkHand = argument1
+{
+if target.immune[type] = true or (target.immune[typeImpact] = false and target.resist[type] > target.resist[typeImpact])
+{
+    if argument5 = false    //On Proc
+    {
+        type = typeImpact        
+            
+        ii = instance_create(x,y-h-height,obj_descriptor)
+        ii.text = argument0
+        ii.font = fnt_tinyText
+    }
+    else
+    {
+        type = typeImpact        
+
+        obj_control.tooltipColour[obj_control.tooltipLength] = green
+        obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)
+        obj_control.tooltipLength += 1    
+    }
+}
+}
+
+#define wepSlashPierce
+//Additional Conditioners
+if atkHand = argument1
+{
+if target.immune[type] = true or (target.immune[typeImpact] = false and target.resist[type] > target.resist[typePierce])
+{
+    if argument5 = false    //On Proc
+    {
+        type = typePierce        
+            
+        ii = instance_create(x,y-h-height,obj_descriptor)
+        ii.text = argument0
+        ii.font = fnt_tinyText
+    }
+    else
+    {
+        type = typePierce
+
+        obj_control.tooltipColour[obj_control.tooltipLength] = green
+        obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)
+        obj_control.tooltipLength += 1    
+    }
+}
+}
