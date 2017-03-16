@@ -149,6 +149,13 @@
             <sprite>sprites\ico_actHide</sprite>
             <sprite>sprites\ico_insight</sprite>
             <sprite>sprites\ico_subtlety</sprite>
+            <sprite>sprites\ico_vanish</sprite>
+            <sprite>sprites\ico_fightDirty</sprite>
+            <sprite>sprites\ico_debilitate</sprite>
+            <sprite>sprites\ico_shadowStep</sprite>
+            <sprite>sprites\ico_ambush</sprite>
+            <sprite>sprites\ico_shadowStrike</sprite>
+            <sprite>sprites\ico_incognito</sprite>
             <sprite>sprites\ico_spotWeakness</sprite>
             <sprite>sprites\ico_exploitWeakness</sprite>
             <sprite>sprites\ico_sap</sprite>

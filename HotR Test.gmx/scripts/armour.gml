@@ -149,15 +149,6 @@ armMax += iArm
 prot += iProt
 enc += iEnc
 
-//Skill
-areHit[areHitSize,0] = penMult
-areHit[areHitSize,1] = 'Chainmail'
-areHit[areHitSize,2] = false
-areHit[areHitSize,3] = false
-areHit[areHitSize,4] = false
-areHit[areHitSize,5] = false
-areHitSize += 1
-
 armourApplyVis(c_white)
 
 skrtItems += 1
@@ -271,15 +262,6 @@ dodge = iDodge
 armMax += iArm
 prot += iProt
 enc += iEnc
-
-//Skill
-areHit[areHitSize,0] = penMult
-areHit[areHitSize,1] = 'Chainmail'
-areHit[areHitSize,2] = false
-areHit[areHitSize,3] = false
-areHit[areHitSize,4] = false
-areHit[areHitSize,5] = false
-areHitSize += 1
 
 armourApplyVis(c_white)
 break

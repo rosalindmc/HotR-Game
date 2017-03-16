@@ -3,7 +3,7 @@ switch(argument0)
 case 0:     //Stats
 icon = ico_blockBuff
 upkp = 60.0
-name = 'Hold the Line'
+name = 'Block'
 type = 'Focus'
 buff = true
 tooltip = '+'+string(potency)+' Max Blocks'

@@ -188,3 +188,34 @@ break
 case 3:     //Stacking
 break
 }
+#define attackModeDebilitate
+switch(argument0)
+{
+case 0:     //Stats
+icon = ico_debilitate
+upkp = 60.0
+name = 'Debilitate'
+type = 'Attack'
+buff = true
+showDuration = false
+tooltip = ''
+break
+
+case 1:     //Stats
+owner.aim += 2
+owner.onWound[owner.onWoundSize,0] = tacDebilitate
+owner.onWound[owner.onWoundSize,1] = 'Debilitate'
+owner.onWound[owner.onWoundSize,2] = potency
+owner.onWound[owner.onWoundSize,3] = false
+owner.onWound[owner.onWoundSize,4] = false
+owner.onWound[owner.onWoundSize,5] = false
+owner.onWoundSize += 1
+break
+
+case 2:     //Upkeep
+
+break
+
+case 3:     //Stacking
+break
+}

@@ -283,11 +283,11 @@ if skill > target.mSkill and mle = true
 if argument5 = false    //On Proc
 {
     p += sneakDamage   
-    applyStatusEffect(id,stealth,0,0)
+    applyStatusEffect(stealth,id,0,0)
     
     if sneakAmbush = true
     {
-        applyStatusEffect(id,celerity,1,10)
+        applyStatusEffect(celerity,id,1,10)
     }
 }
 else                    //On Tooltip

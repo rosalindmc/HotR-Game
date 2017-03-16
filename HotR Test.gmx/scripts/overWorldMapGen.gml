@@ -5,9 +5,9 @@ room_height = 1200
 room_width = 2200
 
 //Tile Creation
-mapHeight = 20
-mapWidth = 20
-mapDepth = 10
+mapHeight = 25
+mapWidth = 25
+mapDepth = 6
 
 if global.timeOfDay = 3
 {
@@ -32,8 +32,8 @@ i = 0
 repeat(ds_list_size(global.attacker.party))
 {
     ii = instance_create(0,0,obj_character)
-    ii.isoX = i
-    ii.isoY = obj_control.mapWidth-1
+    ii.isoX = i+5
+    ii.isoY = obj_control.mapWidth-6
     ii.isoZ = obj_control.map[ii.isoX,ii.isoY].heightMap
     ii.isoTile = obj_control.map[ii.isoX+((ii.isoZ)*obj_control.mapWidth),ii.isoY]
     ii.currentTile = ii.isoTile
@@ -68,8 +68,8 @@ i = 0
 repeat(ds_list_size(global.defender.party))
 {
     ii = instance_create(0,0,obj_character)
-    ii.isoX = i
-    ii.isoY = 0
+    ii.isoX = i+5
+    ii.isoY = 5
     ii.isoZ = obj_control.map[ii.isoX,ii.isoY].heightMap
     ii.cFacing = 180
     ii.facing = 180

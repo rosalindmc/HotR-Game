@@ -7,6 +7,18 @@ name = 'Stealth'
 type = 'Focus'
 buff = true
 tooltip = 'Hidden'
+
+if potency = 1 and owner.sneakIncognito = true
+{
+    with(obj_character)
+    {
+        if los(1.5,sightTile,other.owner.sightTile) and id != other.owner.id and team = other.owner.team
+        {
+            applyStatusEffect(stealth,id,2,5)
+        }
+    }
+}
+
 break
 
 case 1:     //Stats

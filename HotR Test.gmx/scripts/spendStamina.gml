@@ -5,25 +5,31 @@ argument0.stm = max(0,argument0.stm-argument1)
 #define loseStamina
 var iii = argument1*(1+(argument0.enc*.01));
 
-argument0.stm = max(0,argument0.stm-iii)
+with(argument0)
+{
+stm = max(0,stm-iii)
 
-if floor(argument0.stm/5) != floor((argument0.stm+iii)/5) and dead = false
+if floor(stm/5) != floor((stm+iii)/5) and dead = false
 {
     staminaCheck()
+}
 }
 
 #define gainStamina
 var iii = argument1/(1+(argument0.enc*.01));
 
-argument0.stm = min(argument0.stmMax,argument0.stm+iii)
+with(argument0)
+{
+stm = min(stmMax,stm+iii)
 
-if floor(argument0.stm/5) != floor((argument0.stm-iii)/5) and dead = false
+if floor(stm/5) != floor((stm-iii)/5) and dead = false
 {
     staminaCheck()
 }
+}
 
 #define healLife
-var iii = min(argument0.lifeMax-argument0.life,argument1)
+var iii = min(argument0.lifeMax-argument0.life,floor(argument1+random(.99)))
 if iii != 0
 {
     ii = instance_create(argument0.x,argument0.y-argument0.h-argument0.height,obj_descriptor)

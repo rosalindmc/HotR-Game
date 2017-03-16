@@ -26,7 +26,7 @@ switch(argument0)
     //Run 2 to draw
     case 2:
     tooltipTitle = 'Feat of Strength'
-    abilityTT = 'Free Action#Cooldown '+string_format(30/i.spellCD,0,1)+'#Stamina Cost 2##Gain EMPOWER 4 for '+string_format(5*i.spellDur,0,1)+'sec'
+    abilityTT = 'Free Action#Cooldown '+string_format(30/i.spellCD,0,1)+'#Stamina Cost 2##Gain EMPOWER 4 for '+string_format(5*i.spellDur,0,1)+' sec'
     abilityTTLength = 5
     break
     
@@ -71,7 +71,7 @@ switch(argument0)
         //Add grapple animation eventually
         applyStatusEffect(immobilize,i.target,100,5*i.spellDur)
         i.abilityCD[global.actionNum] = 10/i.spellCD
-        endTurn(2.0/i.haste)
+        endTurn(1.0/i.haste)
     }
     break
     
@@ -80,7 +80,7 @@ switch(argument0)
     tooltipTitle = 'Grapple'
     abilityTT = 'Action#Cooldown '+string_format(10/i.spellCD,0,1)+'##IMMOBILIZE an adjacent foe with your free hand for '+string_format(5*i.spellDur,0,1)+'sec'
     abilityTTLength = 5
-    global.testSlot.delayAdd = 2.0
+    global.testSlot.delayAdd = 1.0
     initiativeSlotAnticipate()
     break
     

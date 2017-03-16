@@ -46,7 +46,7 @@ sneakMove = 1.25
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_subtlety
+sprite_index = ico_shadowStep
 image_index = 1
 name = 'Shadow Step'
 tooltip = 'Gain +25% Movement while STEALTHED'
@@ -67,10 +67,10 @@ sneakIncognito = true
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_subtlety
+sprite_index = ico_incognito
 image_index = 1
 name = 'Incognito'
-tooltip = 'Whenever you gain STEALTH, a nearby unengaged ally also gains STEALTH'
+tooltip = 'Whenever you gain STEALTH, aall adjacent unengaged allies also gains STEALTH'
 branch = treeSubterfuge
 break
 
@@ -88,10 +88,10 @@ sneakAmbush = true
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_subtlety
+sprite_index = ico_ambush
 image_index = 1
 name = 'Ambush'
-tooltip = 'Attacking from STEALTH grants CELERITY for 5 seconds'
+tooltip = 'Attacking from STEALTH grants CELERITY'
 branch = treeSubterfuge
 break
 
@@ -99,13 +99,6 @@ case 2:
 return true
 break
 }
-
-#define branchFightDirty
-
-
-#define branchVanish
-
-#define branchDebilitate
 
 #define branchShadowStrike
 //tree(how to use, rank)
@@ -122,10 +115,73 @@ onDownSize += 1
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_subtlety
+sprite_index = ico_shadowStrike
 image_index = 1
 name = 'Shadow Strike'
 tooltip = 'Gain STEALTH on downing a foe'
+branch = treeSubterfuge
+break
+
+case 2:
+return true
+break
+}
+
+#define branchFightDirty
+//tree(how to use, rank)
+switch(argument0)
+{
+case 3:     //case 3 for abilities
+addAbility(actFightDirty,-4)
+break
+
+case 1:     //Tooltip and icon
+sprite_index = ico_fightDirty
+image_index = 1
+name = 'Fight Dirty'
+tooltip = 'Action: BLIND an adjacent foe, must not be using a shield or dual wielding'
+branch = treeSubterfuge
+break
+
+case 2:
+return true
+break
+}
+
+#define branchVanish
+//tree(how to use, rank)
+switch(argument0)
+{
+case 3:     //case 3 for abilities
+addAbility(actVanish,-4)
+break
+
+case 1:     //Tooltip and icon
+sprite_index = ico_vanish
+image_index = 1
+name = 'Vanish'
+tooltip = 'Action: Gain Stealth, even while seen'
+branch = treeSubterfuge
+break
+
+case 2:
+return true
+break
+}
+
+#define branchDebilitate
+//tree(how to use, rank)
+switch(argument0)
+{
+case 3:     //case 3 for abilities
+addAbility(actDebilitate,-4)
+break
+
+case 1:     //Tooltip and icon
+sprite_index = ico_debilitate
+image_index = 1
+name = 'Debilitate'
+tooltip = 'Special Attack: Attack gains STUN'
 branch = treeSubterfuge
 break
 
