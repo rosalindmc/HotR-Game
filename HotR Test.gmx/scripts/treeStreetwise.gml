@@ -11,9 +11,9 @@ sprite_index = ico_streetwise
 image_index = argument1-1
 switch(argument1)
 {
-case 1: name = 'Basic Streetwise'
+case 1: name = 'Novice Streetwise'
 tooltip = 'City actions are safer. 10% better haggling' break
-case 2: name = 'Improved Streetwise'
+case 2: name = 'Adept Streetwise'
 tooltip = 'City actions are safer. 15% better haggling' break
 case 3: name = 'Expert Streetwise'
 tooltip = 'City actions are safer. 20% better haggling' break

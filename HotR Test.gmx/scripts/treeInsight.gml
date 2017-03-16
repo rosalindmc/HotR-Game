@@ -24,9 +24,9 @@ sprite_index = ico_insight
 image_index = argument1-1
 switch(argument1)
 {
-case 1: name = 'Basic Insight'
+case 1: name = 'Novice Insight'
 tooltip = 'Increased detection range and +1.0 POW on backstab and against helpless foes' break
-case 2: name = 'Improved Insight'
+case 2: name = 'Adept Insight'
 tooltip = 'Increased detection range and +1.5 POW on backstab and against helpless foes' break
 case 3: name = 'Expert Insight'
 tooltip = 'Increased detection range and +2.0 POW on backstab and against helpless foes' break

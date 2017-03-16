@@ -11,9 +11,9 @@ sprite_index = ico_diplomacy
 image_index = argument1-1
 switch(argument1)
 {
-case 1: name = 'Basic Diplomacy'
+case 1: name = 'Novice Diplomacy'
 tooltip = 'Gain the Inspire ability.' break
-case 2: name = 'Improved Diplomacy'
+case 2: name = 'Adept Diplomacy'
 tooltip = 'Inspire is 10% stronger.' break
 case 3: name = 'Expert Diplomacy'
 tooltip = 'Inspire is 20% stronger.' break

@@ -21,9 +21,9 @@ sprite_index = ico_toughness
 image_index = argument1-1
 switch(argument1)
 {
-case 1: name = 'Basic Toughness'
+case 1: name = 'Novice Toughness'
 tooltip = 'Gain +2 life and stamina' break
-case 2: name = 'Improved Toughness'
+case 2: name = 'Adept Toughness'
 tooltip = 'Gain +3 life and stamina' break
 case 3: name = 'Expert Toughness'
 tooltip = 'Gain +4 life and stamina' break

@@ -11,9 +11,9 @@ sprite_index = ico_alchemy
 image_index = argument1-1
 switch(argument1)
 {
-case 1: name = 'Basic Alchemy'
+case 1: name = 'Novice Alchemy'
 tooltip = 'Craft and modify potions, poisons and bombs' break
-case 2: name = 'Improved Alchemy'
+case 2: name = 'Adept Alchemy'
 tooltip = 'Craft and modify potions, poisons and bombs' break
 case 3: name = 'Expert Alchemy'
 tooltip = 'Craft and modify potions, poisons and bombs' break

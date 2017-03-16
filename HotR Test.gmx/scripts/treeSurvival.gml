@@ -11,9 +11,9 @@ sprite_index = ico_survival
 image_index = argument1-1
 switch(argument1)
 {
-case 1: name = 'Basic Survival'
+case 1: name = 'Novice Survival'
 tooltip = 'Foraging and Hunting yield better results. +1.0 skill when fighting animals' break
-case 2: name = 'Improved Survival'
+case 2: name = 'Adept Survival'
 tooltip = 'Foraging and Hunting yield better results. +1.5 skill when fighting animals' break
 case 3: name = 'Expert Survival'
 tooltip = 'Foraging and Hunting yield better results. +2.0 skill when fighting animals' break

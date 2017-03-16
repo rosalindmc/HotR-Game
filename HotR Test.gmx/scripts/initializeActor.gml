@@ -202,11 +202,18 @@ breaker = false
 crunch = false
 aim = global.accuracyBase
 
-//Various Effects
+//Sight
 arc = 100
 detection = 5
 sight = global.sightBase+cunning-8
 detection = sight/10
+hidden = false
+sneakDamage = 0
+sneakMove = 1
+sneakIncognito = false
+sneakAmbush = false
+
+//Other
 atkHaste = 0
 movHaste = 0
 atkStaminaMult = 1

@@ -21,9 +21,9 @@ sprite_index = ico_discipline
 image_index = argument1-1
 switch(argument1)
 {
-case 1: name = 'Basic Discipline'
+case 1: name = 'Novice Discipline'
 tooltip = 'Gain 10% damage mitigation and 20% suppression resistance' break
-case 2: name = 'Improved Discipline'
+case 2: name = 'Adept Discipline'
 tooltip = 'Gain 15% damage mitigation and 30% suppression resistance' break
 case 3: name = 'Expert Discipline'
 tooltip = 'Gain 20% damage mitigation and 40% suppression resistance' break

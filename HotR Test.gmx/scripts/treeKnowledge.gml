@@ -11,9 +11,9 @@ sprite_index = ico_knowledge
 image_index = argument1-1
 switch(argument1)
 {
-case 1: name = 'Basic Knowledge'
+case 1: name = 'Novice Knowledge'
 tooltip = 'Research 40% faster' break
-case 2: name = 'Improved Knowledge'
+case 2: name = 'Adept Knowledge'
 tooltip = 'Research 60% faster' break
 case 3: name = 'Expert Knowledge'
 tooltip = 'Research 80% faster' break

@@ -20,7 +20,7 @@ switch(argument0)
     {
         with(obj_character)
         {
-            if team != i.team and active = true
+            if team != i.team and active = true and hidden = false
             {
                 if los(40, i.sightTile, sightTile)
                 {

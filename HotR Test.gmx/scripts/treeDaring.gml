@@ -20,9 +20,9 @@ sprite_index = ico_daring
 image_index = argument1-1
 switch(argument1)
 {
-case 1: name = 'Basic Daring'
+case 1: name = 'Novice Daring'
 tooltip = 'Gain +1.0 melee skill and +4 dodge when engaged with a single foe and no allies' break
-case 2: name = 'Improved Daring'
+case 2: name = 'Adept Daring'
 tooltip = 'Gain +1.5 melee skill and +6 dodge when engaged with a single foe and no allies' break
 case 3: name = 'Expert Daring'
 tooltip = 'Gain +2.0 melee skill and +8 dodge when engaged with a single foe and no allies' break

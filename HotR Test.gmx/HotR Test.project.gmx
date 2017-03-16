@@ -146,6 +146,7 @@
           </sprites>
           <sprites name="cunning">
             <sprite>sprites\ico_subterfuge</sprite>
+            <sprite>sprites\ico_actHide</sprite>
             <sprite>sprites\ico_insight</sprite>
             <sprite>sprites\ico_subtlety</sprite>
             <sprite>sprites\ico_spotWeakness</sprite>
@@ -197,6 +198,7 @@
         <sprite>sprites\ico_wounded</sprite>
         <sprite>sprites\ico_strengthBuff</sprite>
         <sprite>sprites\ico_detectionBuff</sprite>
+        <sprite>sprites\ico_stealth</sprite>
         <sprite>sprites\ico_blockBuff</sprite>
         <sprite>sprites\ico_rushBuff</sprite>
         <sprite>sprites\ico_dodgeBuff</sprite>
@@ -549,6 +551,7 @@
               <script>scripts\toughnessTactics.gml</script>
               <script>scripts\martialTactics.gml</script>
               <script>scripts\mobilityTactics.gml</script>
+              <script>scripts\subterfugeTactics.gml</script>
               <script>scripts\insightTactics.gml</script>
               <script>scripts\disciplineTactics.gml</script>
               <script>scripts\frenzyTactics.gml</script>
@@ -655,6 +658,7 @@
         <script>scripts\slow.gml</script>
         <script>scripts\immobilize.gml</script>
         <script>scripts\bleed.gml</script>
+        <script>scripts\blind.gml</script>
       </scripts>
       <scripts name="Mechanics">
         <script>scripts\fatigue.gml</script>
@@ -665,6 +669,8 @@
       </scripts>
       <scripts name="Focus">
         <script>scripts\strengthBuff.gml</script>
+        <script>scripts\celerity.gml</script>
+        <script>scripts\stealth.gml</script>
         <script>scripts\detectionBuff.gml</script>
         <script>scripts\blockBuff.gml</script>
         <script>scripts\marked.gml</script>
@@ -682,6 +688,7 @@
   <shaders name="shaders">
     <shaders name="Combat">
       <shader type="GLSLES">shaders\shd_greyscale.shader</shader>
+      <shader type="GLSLES">shaders\shd_stealth.shader</shader>
     </shaders>
     <shaders name="TimeofDay">
       <shader type="GLSLES">shaders\shd_evening.shader</shader>

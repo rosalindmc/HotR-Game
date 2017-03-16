@@ -171,7 +171,14 @@ legAngleX = 1 //Multiplier of leg movement
 //Draw a humanoid
 
 //Shader
-shader_set(global.shader)
+if hidden = false
+{
+    shader_set(global.shader)
+}
+else
+{
+    shader_set(shd_stealth)
+}
 
     //Adjust Bones
     

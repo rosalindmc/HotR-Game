@@ -5,9 +5,16 @@ for(ss = 0; ss < ds_list_size(argument1.status); ss++)
     {
         with(ds_list_find_value(argument1.status,ss))
         {
-            ipot = argument2
-            idur = argument3
-            script_execute(effect,3)
+            if argument3 != 0
+            {
+                ipot = argument2
+                idur = argument3
+                script_execute(effect,3)
+            }
+            else
+            {
+                instance_destroy()
+            }
             exit
         }
     }

@@ -21,9 +21,9 @@ sprite_index = ico_martial
 image_index = argument1-1
 switch(argument1)
 {
-case 1: name = 'Basic Martial'
+case 1: name = 'Novice Martial'
 tooltip = 'Gain +1.0 Melee and Ranged Skill' break
-case 2: name = 'Improved Martial'
+case 2: name = 'Adept Martial'
 tooltip = 'Gain +1.5 Melee and Ranged Skill' break
 case 3: name = 'Expert Martial'
 tooltip = 'Gain +2.0 Melee and Ranged Skill' break

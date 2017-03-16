@@ -11,9 +11,9 @@ sprite_index = ico_leadership
 image_index = argument1-1
 switch(argument1)
 {
-case 1: name = 'Basic Leadership'
+case 1: name = 'Novice Leadership'
 tooltip = 'Increased life and stamina regeneration to all nearby allies' break
-case 2: name = 'Improved Leadership'
+case 2: name = 'Adept Leadership'
 tooltip = 'Increased life and stamina regeneration to all nearby allies' break
 case 3: name = 'Expert Leadership'
 tooltip = 'Increased life and stamina regeneration to all nearby allies' break

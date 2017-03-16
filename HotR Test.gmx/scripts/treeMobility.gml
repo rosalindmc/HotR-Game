@@ -17,9 +17,9 @@ sprite_index = ico_mobility
 image_index = argument1-1
 switch(argument1)
 {
-case 1: name = 'Basic Mobility'
+case 1: name = 'Novice Mobility'
 tooltip = 'Gain +1.0 sprint speed and sprinting costs less stamina' break
-case 2: name = 'Improved Mobility'
+case 2: name = 'Adept Mobility'
 tooltip = 'Gain +1.5 sprint speed and sprinting costs less stamina' break
 case 3: name = 'Expert Mobility'
 tooltip = 'Gain +2.0 sprint speed and sprinting costs less stamina' break

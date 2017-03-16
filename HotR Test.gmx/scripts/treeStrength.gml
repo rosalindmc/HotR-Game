@@ -24,9 +24,9 @@ sprite_index = ico_strength
 image_index = argument1-1
 switch(argument1)
 {
-case 1: name = 'Basic Strength'
+case 1: name = 'Novice Strength'
 tooltip = 'Attacks have a 20% chance to be MIGHTY and inflict +2.0 POW and DAZE for 2 seconds' break
-case 2: name = 'Improved Strength'
+case 2: name = 'Adept Strength'
 tooltip = 'Attacks have a 30% chance to be MIGHTY and inflict +2.0 POW and DAZE for 2 seconds' break
 case 3: name = 'Expert Strength'
 tooltip = 'Attacks have a 40% chance to be MIGHTY and inflict +2.0 POW and DAZE for 2 seconds' break

@@ -11,6 +11,7 @@ break
 
 case 1:     //Stats
 owner.movement = 0
+owner.threat = false
 owner.movementBonus = 0
 owner.dodge -= 100
 break

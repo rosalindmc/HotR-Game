@@ -75,7 +75,7 @@ grace += 1
 fellowship += 1
 
 //Talent
-talent[0,0] = choose(treeMartial,treeDaring,treeMobility)
+talent[0,0] = choose(treeMartial,treeDaring,treeMobility,treeInsight)
 talent[0,5] = 2
 talent[1,0] = choose(treeDiplomacy,treeStreetwise,treePerform)
 talent[1,5] = 1
@@ -105,7 +105,7 @@ cunning += 1
 grace += 2
 
 //Talent
-talent[0,0] = choose(treeMartial,treeInsight,treeValour)
+talent[0,0] = choose(treeInsight,treeMobility,treeDaring,treeSubterfuge)
 talent[0,5] = 2
 talent[1,0] = choose(treeDiplomacy,treeSurvival)
 talent[1,5] = 1
@@ -135,7 +135,7 @@ cunning += 2
 grace += 1
 
 //Talent
-talent[0,0] = choose(treeMobility,treeInsight)
+talent[0,0] = choose(treeMobility,treeSubterfuge,treeInsight)
 talent[0,5] = 1
 talent[1,0] = choose(treeThievery,treeStreetwise)
 talent[1,5] = 2

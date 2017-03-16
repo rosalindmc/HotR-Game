@@ -11,9 +11,9 @@ sprite_index = ico_perform
 image_index = argument1-1
 switch(argument1)
 {
-case 1: name = 'Basic Perform'
+case 1: name = 'Novice Perform'
 tooltip = 'Gain the Perform camp ability' break
-case 2: name = 'Improved Perform'
+case 2: name = 'Adept Perform'
 tooltip = 'Improve the Perform camp ability' break
 case 3: name = 'Expert Perform'
 tooltip = 'Futher Improve the Perform camp ability' break

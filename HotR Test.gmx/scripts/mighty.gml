@@ -279,3 +279,22 @@ if skill > target.mSkill and mle = true
         
     }
 }
+#define sneakAttack
+if argument5 = false    //On Proc
+{
+    p += sneakDamage   
+    applyStatusEffect(id,stealth,0,0)
+    
+    if sneakAmbush = true
+    {
+        applyStatusEffect(id,celerity,1,10)
+    }
+}
+else                    //On Tooltip
+{
+    p += sneakDamage
+    
+    obj_control.tooltipColour[obj_control.tooltipLength] = green
+    obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)+' '+string_format(argument1,2,1)
+    obj_control.tooltipLength += 1       
+}

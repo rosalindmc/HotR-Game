@@ -11,9 +11,9 @@ sprite_index = ico_medicine
 image_index = argument1-1
 switch(argument1)
 {
-case 1: name = 'Basic Medicine'
+case 1: name = 'Novice Medicine'
 tooltip = 'Increase the party healing rate by 40% and gain Surgeons Tools proficiency' break
-case 2: name = 'Improved Medicine'
+case 2: name = 'Adept Medicine'
 tooltip = 'Increase the party healing rate by 60%. Patch Up, Cure and Revive 50% faster' break
 case 3: name = 'Expert Medicine'
 tooltip = 'Increase the party healing rate by 80%. Patch Up, Cure and Revive 100% faster' break

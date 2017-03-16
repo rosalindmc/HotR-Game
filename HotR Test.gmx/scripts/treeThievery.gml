@@ -11,9 +11,9 @@ sprite_index = ico_thievery
 image_index = argument1-1
 switch(argument1)
 {
-case 1: name = 'Basic Thievery'
+case 1: name = 'Novice Thievery'
 tooltip = 'Gain the Pilfer ability and Thieves Tools proficiency' break
-case 2: name = 'Improved Thievery'
+case 2: name = 'Adept Thievery'
 tooltip = 'Pilfer, Picklock, and Disarm Traps 50% faster' break
 case 3: name = 'Expert Thievery'
 tooltip = 'Pilfer, Picklock, and Disarm Traps 100% faster' break

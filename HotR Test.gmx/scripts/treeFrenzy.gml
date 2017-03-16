@@ -11,9 +11,9 @@ sprite_index = ico_frenzy
 image_index = argument1-1
 switch(argument1)
 {
-case 1: name = 'Basic Frenzy'
+case 1: name = 'Novice Frenzy'
 tooltip = 'Frenzy to gain combat advantages' break
-case 2: name = 'Improved Frenzy'
+case 2: name = 'Adept Frenzy'
 tooltip = 'Frenzy to gain combat advantages' break
 case 3: name = 'Expert Frenzy'
 tooltip = 'Frenzy to gain combat advantages' break
