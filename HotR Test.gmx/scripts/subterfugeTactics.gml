@@ -109,8 +109,8 @@ switch(argument0)
     //Run 2 to draw
     case 2:
     tooltipTitle = 'Fight Dirty'
-    abilityTT = 'Action#Cooldown '+string_format(30/i.spellCD,0,1)+'##BLIND an adjacent foe with your free hand for '+string_format(5*i.spellDur,0,1)+'sec'
-    abilityTTLength = 5
+    abilityTT = 'Action#Cooldown '+string_format(30/i.spellCD,0,1)+'##BLIND an adjacent foe with your free hand for '+string_format(5*i.spellDur,0,1)+' sec'
+    abilityTTLength = 4
     global.testSlot.delayAdd = 1.0
     initiativeSlotAnticipate()
     break

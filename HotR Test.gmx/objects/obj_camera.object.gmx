@@ -78,20 +78,20 @@ if mouse_y &gt;= view_yview[0]+view_hview[0]-1
 
 if key_right-key_left = 1
 {
-    x = max(x+(1000/global.fspd),view_xview[0]+(view_wview[0]*.5))
+    x = min(x+(1000/global.fspd),room_width-(view_wview[0]*.5))
 }
 else if key_right-key_left = -1
 {
-    x = min(x-(1000/global.fspd),view_xview[0]+(view_wview[0]*.5))
+    x = max(x-(1000/global.fspd),(view_wview[0]*.5))
 }
 
 if key_down-key_up = 1
 {
-    y = max(y+(1000/global.fspd),view_yview[0]+(view_hview[0]*.5))
+    y = min(y+(1000/global.fspd),room_height-(view_hview[0]*.5))
 }
 else if key_down-key_up = -1
 {
-    y = min(y-(1000/global.fspd),view_yview[0]+(view_hview[0]*.5))
+    y = max(y-(1000/global.fspd),(view_hview[0]*.5))
 }
 }
 </string>

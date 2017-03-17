@@ -219,3 +219,65 @@ break
 case 3:     //Stacking
 break
 }
+#define attackModeHeroicStrike
+switch(argument0)
+{
+case 0:     //Stats
+icon = ico_heroicStrike
+upkp = 60.0
+name = 'Heroic Strike'
+type = 'Attack'
+buff = true
+showDuration = false
+tooltip = ''
+break
+
+case 1:     //Stats
+owner.mSkill += potency
+owner.onAttack[owner.onAttackSize,0] = tacHeroicStrike
+owner.onAttack[owner.onAttackSize,1] = 'Heroic Strike'
+owner.onAttack[owner.onAttackSize,2] = potency
+owner.onAttack[owner.onAttackSize,3] = false
+owner.onAttack[owner.onAttackSize,4] = false
+owner.onAttack[owner.onAttackSize,5] = false
+owner.onAttackSize += 1
+break
+
+case 2:     //Upkeep
+
+break
+
+case 3:     //Stacking
+break
+}
+
+#define attackModeFlourish
+switch(argument0)
+{
+case 0:     //Stats
+icon = ico_flourish
+upkp = 60.0
+name = 'Flourish'
+type = 'Attack'
+buff = true
+showDuration = false
+tooltip = ''
+break
+
+case 1:     //Stats
+owner.onAttack[owner.onAttackSize,0] = tacFlourish
+owner.onAttack[owner.onAttackSize,1] = 'Flourish'
+owner.onAttack[owner.onAttackSize,2] = potency
+owner.onAttack[owner.onAttackSize,3] = false
+owner.onAttack[owner.onAttackSize,4] = false
+owner.onAttack[owner.onAttackSize,5] = false
+owner.onAttackSize += 1
+break
+
+case 2:     //Upkeep
+
+break
+
+case 3:     //Stacking
+break
+}

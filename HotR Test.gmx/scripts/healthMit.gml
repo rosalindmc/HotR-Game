@@ -201,7 +201,7 @@ if argument5 = false    //On Proc
 }
 else                    //On Tooltip
 {
-    obj_control.tooltipColour[obj_control.tooltipLength] = green
+    obj_control.tooltipColour[obj_control.tooltipLength] = c_red
     obj_control.tooltipText[obj_control.tooltipLength] = string(floor(argument1))+'% '+string(argument0)
     obj_control.tooltipLength += 1
 }

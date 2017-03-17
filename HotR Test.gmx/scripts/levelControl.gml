@@ -173,7 +173,7 @@ talentPrereq(treeSubterfuge,0)
 //talentPrereq(treeValour,0)
 talentPrereq(treeDiscipline,0)
 //talentPrereq(treeLeadership,0)
-talentPrereq(treeDaring,0)
+talentPrereq(treeDueling,0)
 
 repeat(2)
 {
@@ -244,9 +244,13 @@ repeat(2)
     talentPrereq(branchUnity,treeLeadership)
     talentPrereq(branchRally,treeLeadership)
     
-    //talentPrereq(branchFlourish,treeDaring)
-    talentPrereq(branchParry,treeDaring)
-    talentPrereq(branchFocus,treeDaring)
+    talentPrereq(branchFlourish,treeDueling)
+    talentPrereq(branchParry,treeDueling)
+    talentPrereq(branchFocus,treeDueling)
+    talentPrereq(branchRiposte,treeDueling)
+    talentPrereq(branchFootwork,treeDueling)
+    talentPrereq(branchChallenge,treeDueling)
+    talentPrereq(branchHeroicStrike,treeDueling)
 }
 
 for(ttt = 0; ttt < 8; ttt++)

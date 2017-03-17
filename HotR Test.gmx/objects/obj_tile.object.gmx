@@ -188,7 +188,14 @@ if ground = true
         draw_sprite(sprite_index,image_index,x,y-h+(global.zLevel*15))
         for(i=0;i&lt;5;i++)
         {
-            draw_sprite_ext(level[i],i,x,y-h+(global.zLevel*15),1,1,0,trimColour,1)
+            if vis = 2
+            {
+                draw_sprite_ext(level[i],i,x,y-h+(global.zLevel*15),1,1,0,c_gray,1)
+            }
+            else
+            {
+                draw_sprite_ext(level[i],i,x,y-h+(global.zLevel*15),1,1,0,trimColour,1)
+            }
         }
         shader_reset()
         

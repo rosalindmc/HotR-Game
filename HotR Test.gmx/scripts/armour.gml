@@ -198,7 +198,7 @@ rigid = true
 //Skill
 areHit[areHitSize,0] = glancing
 areHit[areHitSize,1] = 'Glancing'
-areHit[areHitSize,2] = false
+areHit[areHitSize,2] = 15
 areHit[areHitSize,3] = false
 areHit[areHitSize,4] = false
 areHit[areHitSize,5] = false
@@ -308,7 +308,7 @@ rigid = true
 //Skill
 areHit[areHitSize,0] = glancing
 areHit[areHitSize,1] = 'Glancing'
-areHit[areHitSize,2] = false
+areHit[areHitSize,2] = 15
 areHit[areHitSize,3] = false
 areHit[areHitSize,4] = false
 areHit[areHitSize,5] = false

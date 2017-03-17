@@ -135,9 +135,147 @@ repeat(mapWidth)
 global.loadingI = 0
 global.loadingMax = mapWidth
 global.loadingTooltip = 'Adjacency'
-
 ix = 0
-repeat(mapWidth)
+
+alarm[0] = 2
+
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>    updateVision()
+    updateScrollVis()
+    global.loading = false
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Stepthrough
+repeat(min(5,global.loadingMax-global.loadingI))
+{
+    iy = 0
+    repeat(mapHeight)
+    {
+        iz = 0
+        repeat(mapDepth)
+        {
+            with(map[ix+(mapWidth*iz),iy])
+            {
+                adjacency()
+                
+                //Clear Up Grid
+                if ground = false
+                {
+                    sprite_index = spr_none
+                }
+            
+                if ground = false and wall[0] = noone and wall[1] = noone and wall[2] = noone and wall[3] = noone
+                {
+                    instance_deactivate_object(id)
+                }
+            }
+        iz += 1
+        }                              
+        iy += 1
+    }
+    ix += 1
+    global.loadingI += 1
+}
+
+
+if global.loadingI = global.loadingMax
+{
+    alarm[3] = 1
+}
+else
+{
+    alarm[2] = 1
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>initiativeSlotReset()
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Reactivate to Check Adjacency
+
+repeat(min(5,global.loadingMax-global.loadingI))
 {
     iy = 0
     repeat(mapHeight)
@@ -237,141 +375,24 @@ repeat(mapWidth)
     global.loadingI += 1
 }
 
+if global.loadingI = global.loadingMax
+{
 //Adjacency After Map Build
 script_execute(global.mapGen,1)
-alarm[0] = 10
 
-
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="3">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>    updateVision()
-    updateScrollVis()
-    global.loading = false
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="2">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//Stepthrough
-//repeat(min(100,global.loadingMax-global.loadingI))
-//{
-    with(obj_tile)//instance_find(obj_tile,global.loadingI))
-    {
-        adjacency()
-        
-        //Clear Up Grid
-        if ground = false
-        {
-            sprite_index = spr_none
-        }
-    
-        if ground = false and wall[0] = noone and wall[1] = noone and wall[2] = noone and wall[3] = noone
-        {
-            instance_deactivate_object(id)
-        }
-    }
-//    global.loadingI += 1
-//}
-
-
-//if global.loadingI = global.loadingMax
-//{
-    alarm[3] = 1
-//}
-//else
-//{
-//    alarm[2] = 1
-//}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>initiativeSlotReset()
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="2" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//Reactivate to Check Adjacency
 instance_activate_object(obj_tile)
 
 global.loadingI = 0
-global.loadingMax = instance_number(obj_tile)
+global.loadingMax = mapWidth
 global.loadingTooltip = 'Walls'
+ix = 0
 
-alarm[2] = 1
+alarm[2] = 10
+}
+else
+{
+alarm[0] = 1
+}
 </string>
           </argument>
         </arguments>
@@ -415,7 +436,7 @@ if mapTimeOn = true and global.nextChar != noone and global.timeDelay = 0
     mapTime += ii
     
     //Run Upkeep
-    if mapTemp != floor(mapTime)
+    if floor(mapTemp) != floor(mapTime)
     {
         with(obj_character)
         {
@@ -694,6 +715,11 @@ if obj_camera.x != obj_camera.xprevious or obj_camera.y != obj_camera.yprevious
     draw_set_halign(fa_right)
     draw_set_valign(fa_middle)
     drawText(c_black,c_white,view_xview+view_wview-10,view_yview+60,mapTime)
+    
+    if keyboard_check(vk_alt)
+    {
+        drawText(c_black,c_white,view_xview+view_wview-10,view_yview+80,fps)
+    }
     
     abilityTooltip()
     

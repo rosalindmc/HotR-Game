@@ -19,8 +19,8 @@ switch(argument0)
     //Run 2 to draw
     case 2:
     tooltipTitle = 'Guarded Attack'
-    abilityTT = 'Special Melee#Cooldown '+string_format(5/i.spellCD,0,1)+'#Stamina Cost 1##Make an attack that breaks 3 blocks and deals 1/4 reduced damage'
-    abilityTTLength = 6
+    abilityTT = 'Special Melee#Cooldown '+string_format(5/i.spellCD,0,1)+'#Stamina Cost 1##Make a slow attack and gain a block'
+    abilityTTLength = 5
     break
     
     //Run 3 for ai use 

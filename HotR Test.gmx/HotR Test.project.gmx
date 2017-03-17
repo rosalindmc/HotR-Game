@@ -178,9 +178,15 @@
             <sprite>sprites\ico_shakeItOff</sprite>
           </sprites>
           <sprites name="fellowship">
-            <sprite>sprites\ico_daring</sprite>
+            <sprite>sprites\ico_dueling</sprite>
             <sprite>sprites\ico_leadership</sprite>
-            <sprite>sprites\ico_bravery</sprite>
+            <sprite>sprites\ico_focus</sprite>
+            <sprite>sprites\ico_parry</sprite>
+            <sprite>sprites\ico_riposte</sprite>
+            <sprite>sprites\ico_flourish</sprite>
+            <sprite>sprites\ico_footwork</sprite>
+            <sprite>sprites\ico_heroicStrike</sprite>
+            <sprite>sprites\ico_challenge</sprite>
           </sprites>
         </sprites>
         <sprites name="Travel Talents">
@@ -557,12 +563,12 @@
               <script>scripts\strengthTactics.gml</script>
               <script>scripts\toughnessTactics.gml</script>
               <script>scripts\martialTactics.gml</script>
-              <script>scripts\mobilityTactics.gml</script>
               <script>scripts\subterfugeTactics.gml</script>
+              <script>scripts\mobilityTactics.gml</script>
               <script>scripts\insightTactics.gml</script>
               <script>scripts\disciplineTactics.gml</script>
               <script>scripts\frenzyTactics.gml</script>
-              <script>scripts\daringTactics.gml</script>
+              <script>scripts\duelingTactics.gml</script>
               <script>scripts\leadershipTactics.gml</script>
               <script>scripts\setAttackMode.gml</script>
             </scripts>
@@ -628,7 +634,7 @@
         <script>scripts\treeFrenzy.gml</script>
         <script>scripts\treeValour.gml</script>
         <script>scripts\treeDiscipline.gml</script>
-        <script>scripts\treeDaring.gml</script>
+        <script>scripts\treeDueling.gml</script>
         <script>scripts\treeLeadership.gml</script>
         <script>scripts\talents.gml</script>
       </scripts>
@@ -676,6 +682,7 @@
       </scripts>
       <scripts name="Focus">
         <script>scripts\strengthBuff.gml</script>
+        <script>scripts\flatFooted.gml</script>
         <script>scripts\celerity.gml</script>
         <script>scripts\stealth.gml</script>
         <script>scripts\detectionBuff.gml</script>

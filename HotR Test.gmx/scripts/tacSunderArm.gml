@@ -95,8 +95,7 @@ if argument5 = false    //On Proc
 {
     spendStamina(id,1)
     abilityCD[global.actionNum] = 5/spellCD
-    applyStatusEffect(blockBuff,id,1,10*i.spellDur)
-    blocks += 1
+    applyStatusEffect(blockBuff,id,1,10*spellDur)
 }
 else
 {    
@@ -124,13 +123,47 @@ else
     obj_control.tooltipColour[obj_control.tooltipLength] = ltBlue
     if backstab = true
     {
-    obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)+' '+string_format(argument1*2*spellDur,0,1)
+    obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)+' '+string_format(argument1*2*spellDur,0,1)+' stun'
     target.initSlot.delayAdd += argument1*2*spellDur 
     }
     else
     {
-    obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)+' '+string_format(argument1*spellDur,0,1)
+    obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)+' '+string_format(argument1*spellDur,0,1)+' stun'
     target.initSlot.delayAdd += argument1*spellDur
     }
     obj_control.tooltipLength += 1   
+}
+
+#define tacFlourish
+if argument5 = false    //On Proc
+{
+    spendStamina(id,1)
+    abilityCD[global.actionNum] = 30/spellCD
+    
+    with(obj_character)
+    {
+        if los(1.5,other.sightTile,sightTile) and id != other.target and active = true
+        {
+            applyStatusEffect(daze,id,50,5*spellDur)
+        }
+    }
+}
+else
+{    
+    obj_control.tooltipColour[obj_control.tooltipLength] = ltBlue
+    obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)
+    obj_control.tooltipLength += 1     
+}
+
+#define tacHeroicStrike
+if argument5 = false    //On Proc
+{
+    spendStamina(id,1)
+    abilityCD[global.actionNum] = 30/spellCD
+}
+else
+{    
+    obj_control.tooltipColour[obj_control.tooltipLength] = ltBlue
+    obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)
+    obj_control.tooltipLength += 1     
 }
