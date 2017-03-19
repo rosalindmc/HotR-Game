@@ -42,12 +42,13 @@ with(i)
         }
     }
 
-    triggerOnAttack(true)
     dge = target.dodge-(max(0,(skill-target.mSkill)*3))
     
     //Armour
     a = target.arm
     
+    triggerOnAttack(true)
+
     triggerOnHit(true)
     
     if mle = true

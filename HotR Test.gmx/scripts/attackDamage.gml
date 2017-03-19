@@ -18,6 +18,10 @@ if target.dead = false
     }
     
     dge = target.dodge-(max(0,(skill-target.mSkill)*3))
+    
+    //Armour
+    a = target.arm
+    
     triggerOnAttack(false)
     
     //Facing
@@ -56,9 +60,6 @@ if target.dead = false
     //Suppress
     suppress(target,2.0)
      
-    //Armour
-    a = target.arm
-    
     triggerOnHit(false)
     
     //Check Block

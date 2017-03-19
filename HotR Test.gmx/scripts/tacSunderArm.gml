@@ -24,14 +24,14 @@ if mle = true
     if argument5 = false    //On Proc
     {
         target.blocks = max(0,target.blocks-3)
-        pMult = .75
+        pMult *= .75
         
         spendStamina(id,1)
         abilityCD[global.actionNum] = 30/spellCD
     }
     else
     {
-        obj_control.pMult = .75
+        pMult *= .75
         obj_control.tooltipColour[obj_control.tooltipLength] = ltBlue
         obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)
         obj_control.tooltipLength += 1     
@@ -67,8 +67,8 @@ else
     obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)+' '+string_format(argument1+min(a/4,(argument1)),0,1)
     obj_control.tooltipLength += 1     
     
-    obj_control.a = max(0,obj_control.a-(argument1*4))
-    obj_control.p += argument1
+    a = max(0,obj_control.a-(argument1*4))
+    p += argument1
 }
 
 #define tacExploitWeakness
@@ -86,7 +86,7 @@ if target.mark = true
         obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)+' '+string_format(argument1+min(a/4,(argument1)),0,1)
         obj_control.tooltipLength += 1     
         
-        obj_control.p += argument1
+        p += argument1
     }
 }
 
