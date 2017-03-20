@@ -83,3 +83,36 @@ favColour = make_colour_rgb(139,69,19)
 eyeTrinket = -4
 neckTrinket = -4
 overBodyItem = -4
+#define cultChampion
+//Rules for a commonwealth adventurer
+initializeHumanoid()
+fashionInitialize()
+raceGen(cwRaceList())
+detailGen(cwName)
+attributeGen()
+classGen(class_cultist)
+
+experience += 5+irandom(10)
+checkLevelUp(id)
+
+#define cultWarrior
+//Rules for a commonwealth adventurer
+initializeHumanoid()
+fashionInitialize()
+raceGen(cwRaceList())
+detailGen(cwName)
+attributeGen()
+classGen(class_cultist)
+
+
+#define cultThrall
+//Rules for a commonwealth adventurer
+initializeHumanoid()
+fashionInitialize()
+raceGen(cwRaceList())
+detailGen(cwName)
+attributeGen()
+classGen(class_thrall)
+
+headScarfTrinket = spr_hood
+favColour = choose(make_colour_rgb(69,19,9),make_colour_rgb(39,19,39),make_colour_rgb(19,19,49), make_colour_rgb(19,49,19),make_colour_rgb(49,19,19), make_colour_rgb(29,29,29))

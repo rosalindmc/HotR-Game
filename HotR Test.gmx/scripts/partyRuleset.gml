@@ -60,3 +60,22 @@ createCharacterSheet(id,raiderCaptain)
 /*
 mooks[0,0] = emptySlot
 mookTypes = 0
+#define cultParty
+//Create Party
+repeat(choose(0,1,2))
+{
+    createCharacterSheet(id,cultChampion)
+}
+
+repeat(choose(1,2,3,4))
+{
+    createCharacterSheet(id,cultWarrior)
+}
+
+repeat(choose(5,6,7,8,9,10))
+{
+    createCharacterSheet(id,cultThrall)
+}
+/*
+mooks[0,0] = emptySlot
+mookTypes = 0

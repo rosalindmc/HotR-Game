@@ -15,7 +15,7 @@ switch(irandom(11))
     case 11: return class_wizard break
 }
 /*
-    case 12:
+    case 12: return class_cultist break
     case 13: 
     case 14: return race_orc break
     case 15: return race_tiefling break
@@ -224,3 +224,35 @@ will += 1
 //Talent
 talent[0,0] = treeStrength
 talent[0,5] = 2
+#define class_cultist
+className = 'Cultist'
+
+//Inventory
+invSlot[1,0] = dagger
+invSlot[2,0] = choose(dagger,knife,roundShield,emptySlot)
+invSlot[3,0] = choose(shortBow,crossbow,emptySlot,emptySlot,emptySlot)
+invSlot[4,0] = robe
+
+life = 3
+classLife = .14
+stamina = 6
+classStamina = .19
+
+mSkill = 1
+rSkill = 1
+cSkill = 2
+classMSkill = .15
+classRSkill = .15
+classCSkill = .20
+
+will += 2
+fellowship += 1
+
+//Talent
+talent[0,0] = choose(treeValour,treeSubterfuge,treeInsight)
+talent[0,5] = 1
+talent[1,0] = choose(treeKnowledge,treeAlchemy)
+talent[1,5] = 2
+
+headScarfTrinket = spr_hood
+favColour = choose(make_colour_rgb(69,19,9),make_colour_rgb(39,19,39),make_colour_rgb(19,19,49), make_colour_rgb(19,49,19),make_colour_rgb(49,19,19), make_colour_rgb(29,29,29))
