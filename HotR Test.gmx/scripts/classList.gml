@@ -255,4 +255,3 @@ talent[1,0] = choose(treeKnowledge,treeAlchemy)
 talent[1,5] = 2
 
 headScarfTrinket = spr_hood
-favColour = choose(make_colour_rgb(69,19,9),make_colour_rgb(39,19,39),make_colour_rgb(19,19,49), make_colour_rgb(19,49,19),make_colour_rgb(49,19,19), make_colour_rgb(29,29,29))

@@ -115,4 +115,8 @@ attributeGen()
 classGen(class_thrall)
 
 headScarfTrinket = spr_hood
-favColour = choose(make_colour_rgb(69,19,9),make_colour_rgb(39,19,39),make_colour_rgb(19,19,49), make_colour_rgb(19,49,19),make_colour_rgb(49,19,19), make_colour_rgb(29,29,29))
+favColour = choose(make_colour_rgb(49,19,9),make_colour_rgb(39,19,39),make_colour_rgb(19,19,39), make_colour_rgb(9,29,9),make_colour_rgb(39,19,19), make_colour_rgb(19,19,19))
+
+invSlot[4,0] = robe
+invSlot[1,0] = dagger
+invSlot[2,0] = choose(dagger,knife,roundShield,emptySlot)
