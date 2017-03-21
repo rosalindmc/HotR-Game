@@ -134,7 +134,9 @@ dmgType = iType
 rat = iSpd
 pen = iPen
 
-itemProf[0] = heavyWeaponProficiency  
+greatWeapon = true
+
+itemProf[0] = polearmProficiency  
 break
 
 case 1:     //Called when owned
@@ -158,7 +160,7 @@ weaponSprite[i] = iSpr
 
 greatWeapon = true
 greatWeaponSize = 4
-reach = 3
+reach = 3.5
 threat = true
 
 //Skill
@@ -193,7 +195,9 @@ dmgType = iType
 rat = iSpd
 pen = iPen
 
-itemProf[0] = heavyWeaponProficiency  
+greatWeapon = true
+
+itemProf[0] = polearmProficiency  
 break
 
 case 1:     //Called when owned
@@ -215,7 +219,7 @@ wepRange[i] = 1
 //Weapon Sprites
 weaponSprite[i] = iSpr
 
-reach = 2.5
+reach = 3
 greatWeapon = true
 greatWeaponSize = 4
 threat = true
@@ -228,5 +232,13 @@ onWound[onWoundSize,3] = 4
 onWound[onWoundSize,4] = i
 onWound[onWoundSize,5] = 15
 onWoundSize += 1
+
+onHit[onHitSize,0] = wepSlashPierce
+onHit[onHitSize,1] = 'Thrust'
+onHit[onHitSize,2] = i
+onHit[onHitSize,3] = false
+onHit[onHitSize,4] = false
+onHit[onHitSize,5] = false
+onHitSize += 1
 break
 }

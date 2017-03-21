@@ -245,6 +245,11 @@ script_execute(o.invSlot[4,0],2)
 script_execute(o.invSlot[4,2],2)
 script_execute(o.invSlot[4,3],2)
 script_execute(o.invSlot[4,4],2)
+
+script_execute(o.invSlot[8,0],2)
+script_execute(o.invSlot[8,2],2)
+script_execute(o.invSlot[8,3],2)
+script_execute(o.invSlot[8,4],2)
 postArmourCustom()
 
 #define iCTraits

@@ -2,7 +2,7 @@
 <sprite>
   <type>0</type>
   <xorig>2</xorig>
-  <yorigin>2</yorigin>
+  <yorigin>3</yorigin>
   <colkind>1</colkind>
   <coltolerance>0</coltolerance>
   <sepmasks>0</sepmasks>
@@ -20,6 +20,6 @@
   <width>28</width>
   <height>5</height>
   <frames>
-    <frame index="0">images\spr_sabre_0.png</frame>
+    <frame index="0">images\spr_rapier_0.png</frame>
   </frames>
 </sprite>

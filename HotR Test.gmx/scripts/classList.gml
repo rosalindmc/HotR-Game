@@ -147,7 +147,7 @@ className = 'Warrior'
 invSlot[1,0] = choose(battleAxe,spear,armingSword,mace)
 invSlot[2,0] = choose(shortSword,handAxe,roundShield,squareShield,heaterShield)
 invSlot[3,0] = choose(shortBow,crossbow,longBow,emptySlot,emptySlot,emptySlot)
-invSlot[4,0] = choose(chainMail,chainMail,breastPlate)
+invSlot[4,0] = choose(chainMail)
 
 life = 6
 classLife = .19
@@ -171,88 +171,3 @@ talent[0,5] = 2
 talent[0,1] = choose(branchGuardBreak)
 talent[0,2] = choose(branchSuperiority)
 talent[0,3] = choose(branchSecondWind)
-
-#define class_thrall
-className = 'Thrall'
-
-//Inventory
-invSlot[1,0] = choose(battleAxe,spear,armingSword)
-invSlot[2,0] = choose(shortSword,handAxe,roundShield,squareShield,heaterShield)
-invSlot[3,0] = choose(shortBow,emptySlot,emptySlot,emptySlot)
-invSlot[4,0] = chainShirt
-
-life = 0
-classLife = .10
-stamina = 0
-classStamina = .10
-
-mSkill = 0
-rSkill = 1
-cSkill = 0
-classMSkill = .20
-classRSkill = .20
-classCSkill = .15
-
-cunning -= 2
-fellowship -= 2
-mook = true
-
-#define class_thane
-className = 'Thane'
-
-//Inventory
-invSlot[1,0] = choose(greatAxe,greatSword,warhammer,maul)
-invSlot[2,0] = emptySlot
-invSlot[3,0] = emptySlot
-invSlot[4,0] = choose(chainMail,chainMail,breastPlate)
-
-life = 8
-classLife = .22
-stamina = 8
-classStamina = .22
-
-mSkill = 3
-rSkill = 3
-cSkill = 1
-classMSkill = .25
-classRSkill = .25
-classCSkill = .15
-
-might += 2
-will += 1
-
-//Talent
-talent[0,0] = treeStrength
-talent[0,5] = 2
-#define class_cultist
-className = 'Cultist'
-
-//Inventory
-invSlot[1,0] = dagger
-invSlot[2,0] = choose(dagger,knife,roundShield,emptySlot)
-invSlot[3,0] = choose(shortBow,crossbow,emptySlot,emptySlot,emptySlot)
-invSlot[4,0] = robe
-
-life = 3
-classLife = .14
-stamina = 6
-classStamina = .19
-
-mSkill = 1
-rSkill = 1
-cSkill = 2
-classMSkill = .15
-classRSkill = .15
-classCSkill = .20
-
-will += 2
-fellowship += 1
-
-//Talent
-talent[0,0] = choose(treeValour,treeSubterfuge,treeInsight)
-talent[0,5] = 1
-talent[1,0] = choose(treeKnowledge,treeAlchemy)
-talent[1,5] = 2
-
-headScarfTrinket = spr_hood
-favColour = choose(make_colour_rgb(49,19,9),make_colour_rgb(39,19,39),make_colour_rgb(19,19,39), make_colour_rgb(9,29,9),make_colour_rgb(39,19,19), make_colour_rgb(19,19,19))

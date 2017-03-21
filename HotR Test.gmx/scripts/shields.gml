@@ -1,5 +1,6 @@
 #define shields
 
+
 #define heaterShield
 iSpr = spr_heaterShield
 iDmg = 3.0
@@ -10,7 +11,7 @@ iPen = 1
 iSpd = 1
 iBlockGen = .3
 iBlockStr = 8
-iEnc = 10
+iEnc = 20
 
 switch(argument0)
 {
@@ -22,6 +23,8 @@ tooltip = "A metal shield."
 blockGen = iBlockGen
 blockStr = iBlockStr
 enc = iEnc
+
+shield = true
 
 itemProf[0] = shieldProficiency  
 break
@@ -61,9 +64,9 @@ iType = typeImpact
 iStrMult = 1
 iPen = 1
 iSpd = 1.1
-iBlockGen = .33
+iBlockGen = .35
 iBlockStr = 4
-iEnc = 0
+iEnc = 10
 
 switch(argument0)
 {
@@ -75,6 +78,8 @@ tooltip = "A round dueling shield."
 blockGen = iBlockGen
 blockStr = iBlockStr
 enc = iEnc
+
+shield = true
 
 itemProf[0] = shieldProficiency  
 break
@@ -122,9 +127,9 @@ iType = typeImpact
 iStrMult = 1.2
 iPen = 1
 iSpd = 0.5
-iBlockGen = .27
+iBlockGen = .25
 iBlockStr = 12
-iEnc = 20
+iEnc = 30
 
 switch(argument0)
 {
@@ -137,7 +142,9 @@ blockGen = iBlockGen
 blockStr = iBlockStr
 enc = iEnc
 
-itemProf[0] = shieldProficiency  
+shield = true
+
+itemProf[0] = largeShieldProficiency  
 break
 
 case 1:     //Called when owned

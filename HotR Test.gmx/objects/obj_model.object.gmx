@@ -319,15 +319,15 @@ if global.charTab = tab
    
     //Weapon Stats
     draw_set_halign(fa_left)
-    draw_text(x+20,y+20,"POW")
+    draw_text(x+20,y+20,"DAMAGE")
     draw_text(x+20,y+32,"PEN")
-    draw_text(x+20,y+44,"RAT")
+    draw_text(x+20,y+44,"SPEED")
     
     if dualWield = true
     {
-        draw_text(x+20,y+68,"POW")
+        draw_text(x+20,y+68,"DAMAGE")
         draw_text(x+20,y+80,"PEN")
-        draw_text(x+20,y+92,"RAT")
+        draw_text(x+20,y+92,"SPEED")
     }
     else if hasShield = true
     {

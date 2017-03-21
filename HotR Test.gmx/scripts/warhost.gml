@@ -66,3 +66,111 @@ switch(min(irandom(24),irandom(50)))
 }
 break
 }
+#define raidingParty
+//Create Party
+createCharacterSheet(id,raiderCaptain)
+
+/*
+mooks[0,0] = emptySlot
+mookTypes = 0
+
+#define cultParty
+//Create Party
+repeat(choose(0,1,2))
+{
+    createCharacterSheet(id,cultChampion)
+}
+
+repeat(choose(1,2,3,4))
+{
+    createCharacterSheet(id,cultWarrior)
+}
+
+repeat(choose(5,6,7,8,9,10))
+{
+    createCharacterSheet(id,cultThrall)
+}
+/*
+mooks[0,0] = emptySlot
+mookTypes = 0
+
+#define raiderCaptain
+//Rules for a Raider Captain
+initializeHumanoid()
+fashionInitialize()
+raceGen(race_northerner)
+detailGen(cwName)
+attributeGen()
+classGen(class_warrior)
+
+
+#define cultChampion
+//Rules for a commonwealth adventurer
+initializeHumanoid()
+fashionInitialize()
+raceGen(race_northerner)
+detailGen(cwName)
+attributeGen()
+classGen(class_cultist)
+
+experience += 5+irandom(10)
+checkLevelUp(id)
+
+#define cultWarrior
+//Rules for a commonwealth adventurer
+initializeHumanoid()
+fashionInitialize()
+raceGen(race_northerner)
+detailGen(cwName)
+attributeGen()
+classGen(class_cultist)
+
+
+#define cultThrall
+//Rules for a commonwealth adventurer
+initializeHumanoid()
+fashionInitialize()
+raceGen(race_northerner)
+detailGen(cwName)
+attributeGen()
+classGen(class_thrall)
+
+headScarfTrinket = spr_hood
+favColour = choose(make_colour_rgb(49,19,9),make_colour_rgb(39,19,39),make_colour_rgb(19,19,39), make_colour_rgb(9,29,9),make_colour_rgb(39,19,19), make_colour_rgb(19,19,19))
+
+invSlot[4,0] = robe
+invSlot[1,0] = dagger
+invSlot[2,0] = choose(dagger,knife,roundShield,emptySlot)
+
+#define class_cultist
+className = 'Cultist'
+
+//Inventory
+invSlot[1,0] = dagger
+invSlot[2,0] = choose(dagger,knife,roundShield,emptySlot)
+invSlot[3,0] = choose(shortBow,crossbow,emptySlot,emptySlot,emptySlot)
+invSlot[4,0] = robe
+
+life = 3
+classLife = .14
+stamina = 6
+classStamina = .19
+
+mSkill = 1
+rSkill = 1
+cSkill = 2
+classMSkill = .15
+classRSkill = .15
+classCSkill = .20
+
+will += 2
+fellowship += 1
+
+//Talent
+talent[0,0] = choose(treeValour,treeSubterfuge,treeInsight)
+talent[0,5] = 1
+talent[1,0] = choose(treeKnowledge,treeAlchemy)
+talent[1,5] = 2
+
+headScarfTrinket = spr_hood
+favColour = choose(make_colour_rgb(49,19,9),make_colour_rgb(39,19,39),make_colour_rgb(19,19,39), make_colour_rgb(9,29,9),make_colour_rgb(39,19,19), make_colour_rgb(19,19,19))

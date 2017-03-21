@@ -134,6 +134,8 @@ dmgType = iType
 rat = iSpd
 pen = iPen
 
+greatWeapon = true
+
 itemProf[0] = heavyWeaponProficiency  
 break
 
@@ -256,6 +258,8 @@ dmgType = iType
 rat = iSpd
 pen = iPen
 
+greatWeapon = true
+
 itemProf[0] = heavyWeaponProficiency  
 break
 
@@ -322,6 +326,8 @@ dmgType = iType
 rat = iSpd
 pen = iPen
 
+greatWeapon = true
+
 itemProf[0] = lightWeaponProficiency  
 break
 
@@ -347,7 +353,7 @@ weaponSprite[i] = iSpr
 greatWeapon = true
 greatWeaponSize = 3
 threat = true
-reach = 2
+reach = 2.5
 
 //Skill
 onHit[onHitSize,0] = wepsklGuard

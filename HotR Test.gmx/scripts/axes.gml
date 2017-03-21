@@ -134,6 +134,8 @@ dmgType = iType
 rat = iSpd
 pen = iPen
 
+greatWeapon = true
+
 itemProf[0] = heavyWeaponProficiency  
 break
 

@@ -16,8 +16,11 @@
           <sprite>sprites\ico_warhammer</sprite>
           <sprite>sprites\ico_armSword</sprite>
           <sprite>sprites\ico_sabre</sprite>
+          <sprite>sprites\ico_rapier</sprite>
           <sprite>sprites\ico_grtSword</sprite>
+          <sprite>sprites\ico_longSword</sprite>
           <sprite>sprites\ico_shtSword</sprite>
+          <sprite>sprites\ico_epee</sprite>
           <sprite>sprites\ico_bstSword</sprite>
           <sprite>sprites\ico_handAxe</sprite>
           <sprite>sprites\ico_battleAxe</sprite>
@@ -255,12 +258,15 @@
         <sprite>sprites\spr_shortSpear</sprite>
         <sprite>sprites\spr_greatAxe</sprite>
         <sprite>sprites\spr_greatSword</sprite>
+        <sprite>sprites\spr_longSword</sprite>
         <sprite>sprites\spr_armSword</sprite>
         <sprite>sprites\spr_bstdSword</sprite>
         <sprite>sprites\spr_sabre</sprite>
+        <sprite>sprites\spr_rapier</sprite>
         <sprite>sprites\spr_dagger</sprite>
         <sprite>sprites\spr_knife</sprite>
         <sprite>sprites\spr_shortSword</sprite>
+        <sprite>sprites\spr_epee</sprite>
       </sprites>
       <sprites name="Light Armour">
         <sprite>sprites\spr_chainLeather</sprite>
@@ -361,6 +367,7 @@
       <sprite>sprites\spr_textBox</sprite>
       <sprite>sprites\spr_notification</sprite>
       <sprite>sprites\ico_invSlot</sprite>
+      <sprite>sprites\ico_invBorder</sprite>
       <sprite>sprites\spr_menuSheet</sprite>
       <sprite>sprites\spr_levelSheet</sprite>
       <sprite>sprites\spr_dualStrike</sprite>
@@ -439,49 +446,26 @@
           <script>scripts\characterInitialize.gml</script>
           <script>scripts\scr_charactergenerator.gml</script>
           <script>scripts\createCharacter.gml</script>
-          <script>scripts\characterRuleset.gml</script>
           <script>scripts\mookAdd.gml</script>
         </scripts>
-        <scripts name="Cultures">
-          <script>scripts\commonwealth.gml</script>
-          <script>scripts\coldfist.gml</script>
-          <script>scripts\empire.gml</script>
-          <script>scripts\federation.gml</script>
-          <script>scripts\warhost.gml</script>
-          <script>scripts\irun.gml</script>
-        </scripts>
-      </scripts>
-      <scripts name="Outdated">
-        <scripts name="World Generation">
-          <script>scripts\scr_worldGen.gml</script>
-          <script>scripts\scr_worldCreatorStep.gml</script>
-          <scripts name="Biomes">
-            <script>scripts\scr_hearthgrove.gml</script>
-            <script>scripts\scr_highmount.gml</script>
-            <script>scripts\scr_avangard.gml</script>
-            <script>scripts\scr_elderSwamp.gml</script>
-            <script>scripts\scr_queensField.gml</script>
-            <script>scripts\scr_coldfistTaiga.gml</script>
-            <script>scripts\scr_savageTundra.gml</script>
-          </scripts>
-          <script>scripts\scr_nodeGen.gml</script>
-        </scripts>
-        <scripts name="Draw Environment">
-          <script>scripts\scr_initializeWorldTile.gml</script>
-          <script>scripts\scr_initializeSeaTile.gml</script>
-          <script>scripts\scr_detectCliffs.gml</script>
-          <script>scripts\scr_detectCliffsWater.gml</script>
-          <script>scripts\scr_drawTile.gml</script>
-          <script>scripts\scr_drawWater.gml</script>
-          <script>scripts\scr_updateMapVis.gml</script>
-        </scripts>
-      </scripts>
-      <scripts name="HUD">
-        <script>scripts\owHudButton.gml</script>
       </scripts>
       <scripts name="World Generation">
         <script>scripts\worldGen.gml</script>
         <script>scripts\worldScrollVis.gml</script>
+      </scripts>
+      <scripts name="Cultures">
+        <script>scripts\empire.gml</script>
+        <script>scripts\federation.gml</script>
+        <script>scripts\irun.gml</script>
+        <scripts name="Commonwealth">
+          <script>scripts\commonwealth.gml</script>
+        </scripts>
+        <scripts name="Coldfist">
+          <script>scripts\coldfist.gml</script>
+        </scripts>
+        <scripts name="Warhost">
+          <script>scripts\warhost.gml</script>
+        </scripts>
       </scripts>
     </scripts>
     <scripts name="Combat">
@@ -752,14 +736,6 @@
         <object>objects\obj_party</object>
         <object>objects\obj_characterSheet</object>
       </objects>
-      <objects name="Outdated">
-        <object>objects\obj_parentTile</object>
-        <object>objects\obj_hexTest</object>
-        <object>objects\obj_seaTile</object>
-        <object>objects\obj_gridTile</object>
-        <object>objects\obj_cloud</object>
-        <object>objects\obj_shimmerSpark</object>
-      </objects>
       <objects name="HUD">
         <object>objects\obj_item</object>
         <object>objects\obj_invHud</object>
@@ -839,7 +815,7 @@
     <room>rooms\rom_charSprite</room>
     <room>rooms\rom_battle</room>
   </rooms>
-  <constants number="52">
+  <constants number="53">
     <constant name="femme">0</constant>
     <constant name="masc">1</constant>
     <constant name="beige">make_color_rgb(205,165,117)</constant>
@@ -869,8 +845,9 @@
     <constant name="ltGrey">make_color_rgb(200,200,200)</constant>
     <constant name="km">20</constant>
     <constant name="metre">20</constant>
-    <constant name="shieldProficiency">9</constant>
-    <constant name="helmetProficiency">8</constant>
+    <constant name="polearmProficiency">10</constant>
+    <constant name="largeShieldProficiency">9</constant>
+    <constant name="shieldProficiency">8</constant>
     <constant name="throwingProficiency">7</constant>
     <constant name="heavyRangedProficiency">6</constant>
     <constant name="pistolProficiency">5</constant>
