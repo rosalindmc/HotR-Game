@@ -18,7 +18,7 @@ if slotViable(slot,id)
             slot.occupant.x = lockSlot.x-view_xview[]
             slot.occupant.y = lockSlot.y-view_yview[]
             lockSlot.occupant = slot.occupant
-            success = 2
+            success = 1
             
             if lockSlot.equipSlot != 0
             {
@@ -73,9 +73,11 @@ if slotViable(slot,id)
             inInventory = true
         }
         
-        resetModels()
     }
 }
+
+resetModels()
+
 
 #define resetModels
 with(obj_model)
