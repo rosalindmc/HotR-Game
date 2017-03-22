@@ -472,12 +472,11 @@ if mapTimeOn = true and global.nextChar != noone and global.timeDelay = 0
             adjacentCharacters()
             iC()
             
-            //TEMP player turns
             if readiedAction = false
             {
                 script_execute(controlScript)
             }
-            else    //TEMP AI turns
+            else
             {
                 script_execute(readiedAction)
             }

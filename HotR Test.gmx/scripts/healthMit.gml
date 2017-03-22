@@ -8,10 +8,12 @@ if argument5 = false    //On Proc
     if (life/lifeMax)*100 >= argument1 and argument3 = false
     {
         other.pMult *= (100-argument2)/100
+        popup(argument0,id)
     }
     if (life/lifeMax)*100 <= argument1 and argument3 = true
     {
         other.pMult *= (100-argument2)/100
+        popup(argument0,id)
     }
 }
 else                    //On Tooltip
@@ -45,6 +47,7 @@ if argument5 = false    //On Proc
         {
             gainStamina(id,argument2)
             healLife(id,argument2)
+            popup(argument0,id)
         }
     }
     else
@@ -53,6 +56,7 @@ if argument5 = false    //On Proc
         {
             gainStamina(id,argument2)
             healLife(id,argument2)
+            popup(argument0,id)
         }
     }
 }
@@ -82,6 +86,7 @@ if bold = 1
     if argument5 = false    //On Proc
     {
         other.dge += argument1
+        popup(argument0,id)
     }
     else                    //On Tooltip
     {
@@ -104,6 +109,7 @@ if argument5 = false    //On Proc
     if 1+irandom(99) <= argument2
     {
         applyStatusEffect(argument1,id,argument3,argument4*spellDur)
+        popup(argument0,id)
     }
 }
 else                    //On Tooltip
@@ -123,6 +129,7 @@ if argument5 = false    //On Proc
     if 1+irandom(99) <= argument2
     {
         applyStatusEffect(argument1,target,argument3,argument4*spellDur)
+        popup(argument0,id)
     }
 }
 else                    //On Tooltip
@@ -156,9 +163,7 @@ if argument5 = false    //On Proc
         
         if iii = true
         {
-            ii = instance_create(x,y-h-height,obj_descriptor)
-            ii.text = argument0
-            ii.font = fnt_tinyText
+            popup(argument0,id)
         }
     }
 }
@@ -168,6 +173,7 @@ else                    //On Tooltip
     obj_control.tooltipText[obj_control.tooltipLength] = string(floor(argument1))+'% '+string(argument0)
     obj_control.tooltipLength += 1
 }
+
 #define fastAttack
 if target.mle = true
 {
@@ -177,9 +183,7 @@ if target.mle = true
         {
             initSlot.delay = max(initSlot.delay-argument2,0)
             
-            ii = instance_create(x,y-h-height,obj_descriptor)
-            ii.text = argument0
-            ii.font = fnt_tinyText
+            popup(argument0,id)
         }
     }
     else               //On Tooltip
@@ -197,6 +201,7 @@ if argument5 = false    //On Proc
     if 1+irandom(99) <= argument1
     {
         other.pen = 0
+        popup(argument0,id)
     }
 }
 else                    //On Tooltip
@@ -230,6 +235,7 @@ if target.mle = true
             if 1+irandom(99) <= argument2
             {
                 applyStatusEffect(argument1,target,argument3,argument4*spellDur)
+                popup(argument0,id)
             }
         }
     }

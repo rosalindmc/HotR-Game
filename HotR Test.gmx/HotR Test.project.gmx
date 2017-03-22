@@ -535,6 +535,7 @@
             <script>scripts\weaponSwitch.gml</script>
             <script>scripts\createActionBar.gml</script>
             <script>scripts\abilityTooltip.gml</script>
+            <script>scripts\popup.gml</script>
           </scripts>
           <scripts name="Abilities">
             <scripts name="Spells">

@@ -33,15 +33,14 @@ if target.dead = false
     //Check Miss/Dodge
     if irandom(99)+1 < missChance
     {
-        ii = instance_create(x,y-h-height,obj_descriptor)
-        ii.text = 'Miss'
-        ii.font = fnt_tiny
+        ii = popup('Miss',id)
+        ii.font = fnt_damage
     }
     else if irandom(99)+1 < dge and backstab = false
     {
-        ii = instance_create(target.x,target.y-target.h-target.height,obj_descriptor)
-        ii.text = 'Dodge'
+        ii = popup('Dodge',target)
         ii.font = fnt_damage
+
         loseStamina(target,1)
         
         with(target)
@@ -69,6 +68,9 @@ if target.dead = false
         {
             a += p+target.blockStr
             spendStamina(target,p*.05)
+            
+            ii = popup('Block',target)
+            ii.font = fnt_damage
             
             with(target)
             {
@@ -125,21 +127,21 @@ if target.dead = false
             part_emitter_burst(ps2,em2,p2,25)
         }
         
+        //Stamina
+        loseStamina(target,p*.15)    
+    
+        //Damage
+        woundLife(target,id,p,type)
+    
         //Armour Descriptor
         if ia > 0
         {
-            ii = instance_create(target.x,target.y-target.h-target.height+20,obj_descriptor)
-            ii.text = string(ia)+' Mitigated'
+            popup(string(ia)+' Mitigated',target)
             ii.font = fnt_damage
-            ii.alarm[0] = global.fspd*.50
         }
     }
 
-    //Stamina
-    loseStamina(target,p*.15)    
-    
-    //Damage
-    woundLife(target,id,p,type)
+
     }
 }
 

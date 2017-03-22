@@ -42,9 +42,12 @@ switch(argument0)
     
     //Run 3 for ai use 
     case 3:
+    weaponSwitch(0)
+    global.aiDone = true
     break
     
-    //Run 4 for hotbar check 
-    case 4:
+    //Run 5 for ai priority
+    case 5:
+    return(random(100))
     break
 }

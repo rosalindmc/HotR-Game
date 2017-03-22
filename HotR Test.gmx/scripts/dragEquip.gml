@@ -1,6 +1,6 @@
 #define dragEquip
 //Check equipment proficencies to see if you can equip the item.
-//dragEquip(slot,character) 
+//dragEquip() 
 //Script is run by the dragged item
 
 //Success
@@ -87,8 +87,7 @@ with(obj_model)
 }
 #define weaponSlotFill
 //When you remove slot 1 while slot 2 is filled, slot 2 should move to slot 1.  
-
-if lockSlot.equipSlot = 1
+if global.equipSlot[1].occupant = emptySlot
 {
     if instance_exists(global.equipSlot[2].occupant)
     {
@@ -98,47 +97,20 @@ if lockSlot.equipSlot = 1
             {
                 slot = global.equipSlot[1]
                 lockSlot = slot
-                dragEquip(global.equipSlot[1],global.charTab)
+                dragEquip()
                 global.equipSlot[2].occupant = emptySlot
             }
         }
     }
 }
+
 #define dragRelease
 slot = instance_nearest(mouse_x,mouse_y,obj_inventorySlot)
 
 if distance_to_object(slot) < 25
 {
-    dragEquip(slot,global.charTab)
-    /*
-    if slot.equipSlot = false
-    {
-        if slot.occupant = emptySlot
-        {    
-            lockSlot.occupant = emptySlot
-            lockx = slot.x-view_xview[]
-            locky = slot.y-view_yview[]
-            slot.occupant = id
-            inInventory = true
-            global.charSelect.invSlot[equipped,0] = emptySlot
-            equipped = 0
-            
-            weaponSlotFill()
-            
-            if global.charSelect.invSlot[3,0] = emptySlot
-            {
-                global.charSelect.range = false
-            }
-            
-            resetModels()
-        }
-        else
-        {
-            x = lockx
-            y = locky
-        }
-    }
-    */
+    dragEquip()
+    weaponSlotFill()
 }
 
 defaultBorders()

@@ -201,7 +201,7 @@ areHit[areHitSize,1] = 'Superiority'
 areHit[areHitSize,2] = regenerateBuff
 areHit[areHitSize,3] = 100
 areHit[areHitSize,4] = 5
-areHit[areHitSize,5] = false
+areHit[areHitSize,5] = 5
 areHitSize += 1
 break
 

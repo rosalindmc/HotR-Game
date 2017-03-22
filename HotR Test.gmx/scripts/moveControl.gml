@@ -141,10 +141,13 @@ switch(argument0)
     
     //Run 3 for ai use 
     case 3:
+    attackRandom()
+    global.aiDone = true
     break
     
-    //Run 4 for hotbar check 
-    case 4:
+    //Run 5 for ai priority
+    case 5:
+    return(random(100))
     break
 }
 
@@ -219,3 +222,29 @@ var d = argument0
     
     //Start the Action
     with(i){actMove(1)}
+#define moveControlAI
+var i = global.control
+
+moveControl(0)
+
+global.target = -4
+global.attackFromTile = -4
+global.aggro = 0
+
+with(obj_tile)
+{
+//Check Shooting
+    if rangeAttack = true
+    {
+        rangedAggro()
+    }
+    
+//Check Attack Moving
+    if meleeAttack = true
+    {
+        meleeAggro()        
+    }
+}
+
+//Check Movement
+

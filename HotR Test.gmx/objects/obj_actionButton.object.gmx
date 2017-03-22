@@ -105,8 +105,8 @@ else
 
     with(obj_control)
     {
-    wipeTiles()
-    script_execute(global.action, 0)
+        wipeTiles()
+        script_execute(global.action, 0)
     }
 }
 </string>

@@ -22,10 +22,12 @@ switch(argument0)
     if cHover.move and cHover.vis != false
     {
         moveTo(cHover)
+
+        i.abilityCD[global.actionNum] = 10/i.spellCD
+        spendStamina(i,2)
+        actionBarReset()
+        popup('Tumble',i)
     }
-    i.abilityCD[global.actionNum] = 10/i.spellCD
-    spendStamina(i,2)
-    actionBarReset()
     break
     
     //Run 2 to draw
@@ -38,6 +40,7 @@ switch(argument0)
     
     //Run 3 for ai use 
     case 3:
+    //Tumble AI Use
     break
     
     //Run 4 for hotbar check 
@@ -51,6 +54,11 @@ switch(argument0)
         iv.selectable = false
     }
     iv.sprite_index = ico_tumble
+    break
+    
+    //Run 5 for ai priority
+    case 5:
+    return(random(100))
     break
 }
 
@@ -74,8 +82,9 @@ switch(argument0)
     {
         moveTo(cHover)
         endTurn(3.0/(i.haste+i.movHaste))
+        i.abilityCD[global.actionNum] = 10/i.spellCD
+        popup('Burst of Speed',i)
     }
-    i.abilityCD[global.actionNum] = 10/i.spellCD
     break
     
     //Run 2 to draw
@@ -100,14 +109,7 @@ switch(argument0)
     
     //Run 3 for ai use 
     case 3:
-    //Movement Tooltip
-        if cHover.move and cHover.vis != false
-        {
-            //Move
-            suppressionPreview(false)
-            global.testSlot.delayAdd = (3.0/(i.haste+i.movHaste))
-            initiativeSlotAnticipate()
-        }
+    //Burst Of Speed AI USE
     break
     
     //Run 4 for hotbar check 
@@ -121,5 +123,10 @@ switch(argument0)
     {
         iv.selectable = true
     }
+    break
+    
+    //Run 5 for ai priority
+    case 5:
+    return(random(100))
     break
 }

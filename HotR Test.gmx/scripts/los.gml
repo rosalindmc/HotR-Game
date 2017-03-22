@@ -7,8 +7,6 @@ var zDif = argument2.isoZ-argument1.isoZ
 var zCur = argument1.isoZ
 var i, ix, iy, tx, ty, isX, isY, isZ
 
-sight = true
-
 if point_distance(0,0,argument2.x-argument1.x,(argument2.y-argument1.y)*2) < argument0*metre*1.5
 {
     i = 0   
@@ -27,13 +25,13 @@ if point_distance(0,0,argument2.x-argument1.x,(argument2.y-argument1.y)*2) < arg
             
             if obj_control.map[isX+(isZ*obj_control.mapWidth),isY].ground = true
             {
-                sight = false
+                return false
             }
         }
         
         if collision_line(ix,iy,tx,ty,losHeight(zCur),true,false)
         {
-            sight = false
+            return false
         }
           
         i += 1
@@ -42,9 +40,9 @@ if point_distance(0,0,argument2.x-argument1.x,(argument2.y-argument1.y)*2) < arg
 }
 else
 {
-    sight = false
+    return false
 }
-return(sight)
+return true
 
 
 #define losCheck

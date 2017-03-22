@@ -31,6 +31,7 @@ colour2 = c_white
 font = fnt_small
 alpha = 4
 delay = true
+owner = -4
 
 fric = 10/global.fspd
 spd = 220/global.fspd

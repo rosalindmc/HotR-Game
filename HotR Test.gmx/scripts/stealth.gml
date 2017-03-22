@@ -10,6 +10,8 @@ tooltip = 'Hidden'
 
 if potency = 1 and owner.sneakIncognito = true
 {
+    popup('Incognito',id)
+    
     with(obj_character)
     {
         if los(1.5,sightTile,other.owner.sightTile) and id != other.owner.id and team = other.owner.team

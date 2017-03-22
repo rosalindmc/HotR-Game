@@ -97,14 +97,7 @@ underBodyItem = choose(-4,-4,-4,-4,-4,-4,spr_underClothes)  //Bra, Undershirt, B
 underLegsItem = choose(-4,-4,-4,spr_fashion1,spr_fashion2) 
 likesGloves = -4    //wears gloves?
 
-if hipsImage = 0
-{
-    bodyVariant = choose(1,2)     //Default, Exposed Midriff
-}
-else
-{
-    bodyVariant = 1
-}
+bodyVariant = choose(1,2,3)     //Default, Exposed Midriff
 
 legsVariant = choose(1,2)     //Pants, Tights, High Boots, Leg Straps, None
 sleeveVariant = choose(1,2,3)   //No sleeves, Short sleeves, Long Sleeves

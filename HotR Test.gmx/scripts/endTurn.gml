@@ -25,6 +25,7 @@ with(obj_control)
     global.timeDelay = 1.25
     global.nextChar.delay += argument0
     global.attackFromTile = noone
+    global.attackMode = -4
     
     initiativeSlotReset()
     mapTimeOn = true

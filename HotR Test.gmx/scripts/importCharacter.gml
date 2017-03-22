@@ -161,7 +161,7 @@ blockStr = might
 
 //Vitals
 lifeMax = max(floor(8+(will-8)+((might-8)/2)+o.life),4)
-lifeRegen = 2+((will-8)*.3)
+lifeRegen = 4+((will-8)*.5)
 
 stmMax = max(floor(8+(will-8)+((grace-8)/2)+o.stamina),4)
 stmRegen = 5+(stmMax*.2)

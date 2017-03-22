@@ -5,8 +5,8 @@ room_height = 1200
 room_width = 2200
 
 //Tile Creation
-mapHeight = 30
-mapWidth = 30
+mapHeight = 25
+mapWidth = 25
 mapDepth = 8
 
 if global.timeOfDay = 3

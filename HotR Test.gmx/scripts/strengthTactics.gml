@@ -15,6 +15,7 @@ switch(argument0)
     applyStatusEffect(strengthBuff,i,4,5*i.spellDur)
     i.abilityCD[global.actionNum] = 30/i.spellCD
     spendStamina(i,1)
+    popup('Feat of Strength',i)
     actionBarReset()
     break
     
@@ -32,6 +33,7 @@ switch(argument0)
     
     //Run 3 for ai use 
     case 3:
+    actFeatOfStrength(0)
     break
     
     //Run 4 for hotbar check 
@@ -45,6 +47,11 @@ switch(argument0)
         iv.selectable = false
     }
     iv.sprite_index = ico_featOfStrength
+    break
+    
+    //Run 5 for ai priority
+    case 5:
+    return(random(100))
     break
 }
 
@@ -72,6 +79,7 @@ switch(argument0)
         applyStatusEffect(immobilize,i.target,100,5*i.spellDur)
         i.abilityCD[global.actionNum] = 10/i.spellCD
         endTurn(1.0/i.haste)
+        popup('Grapple',i)
     }
     break
     
@@ -86,6 +94,7 @@ switch(argument0)
     
     //Run 3 for ai use 
     case 3:
+    //Grapple AI
     break
     
     //Run 4 for hotbar check 
@@ -99,6 +108,11 @@ switch(argument0)
     {
         iv.selectable = false
     }
+    break
+    
+    //Run 5 for ai priority
+    case 5:
+    return(random(100))
     break
 }
 
@@ -127,6 +141,10 @@ switch(argument0)
     
     //Run 3 for ai use 
     case 3:
+    if global.attackMode = -4
+    {
+        actSunderArmour(0)
+    }
     break
     
     //Run 4 for hotbar check 
@@ -140,5 +158,10 @@ switch(argument0)
         iv.selectable = false
     }
     iv.sprite_index = ico_sunderArmour
+    break
+
+    //Run 5 for ai priority
+    case 5:
+    return(random(100))
     break
 }

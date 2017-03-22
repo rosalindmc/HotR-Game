@@ -11,9 +11,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
         {
             initSlot.delay = max(initSlot.delay-argument2,0)
             
-            ii = instance_create(x,y-h-height,obj_descriptor)
-            ii.text = argument0
-            ii.font = fnt_tinyText
+            popup(argument0,id)
         }
     }
     else if min(100,floor(argument1+((skill-target.mSkill)*5))) > 0                    //On Tooltip
@@ -38,9 +36,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
             applyStatusEffect(bleed,target,argument2,argument4*spellDur)
             ss.creator = id
             
-            ii = instance_create(x,y-h-height,obj_descriptor)
-            ii.text = argument0
-            ii.font = fnt_tinyText
+            popup(argument0,id)
         }
     }
     else if min(100,floor(argument1+((skill-target.mSkill)*5))) > 0                  //On Tooltip
@@ -64,9 +60,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
         {
             blocks += 1        
                 
-            ii = instance_create(x,y-h-height,obj_descriptor)
-            ii.text = argument0
-            ii.font = fnt_tinyText
+            popup(argument0,id)
         }
     }
     else if min(100,floor(argument1+((skill-target.mSkill)*5))) > 0                  //On Tooltip
@@ -92,9 +86,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
         {
             p += argument2*s  
                        
-            ii = instance_create(x,y-h-height,obj_descriptor)
-            ii.text = argument0
-            ii.font = fnt_tinyText
+            popup(argument0,id)
         }
     }
     else if min(100,floor(argument1+((skill-target.mSkill)*5))) > 0                    //On Tooltip
@@ -119,9 +111,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
         {
             applyStatusEffect(daze,target,50,argument2*spellDur)
                         
-            ii = instance_create(x,y-h-height,obj_descriptor)
-            ii.text = argument0
-            ii.font = fnt_tinyText
+            popup(argument0,id)
         }
     }
     else if min(100,floor(argument1+((skill-target.mSkill)*5))) > 0                    //On Tooltip
@@ -148,9 +138,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
                 applyStatusEffect(stun,target,50,argument2*spellDur)
             }   
                     
-            ii = instance_create(x,y-h-height,obj_descriptor)
-            ii.text = argument0
-            ii.font = fnt_tinyText
+            popup(argument0,id)
         }
     }
     else if min(100,floor(argument1+((skill-target.mSkill)*5))) > 0                        //On Tooltip
@@ -174,9 +162,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
         {
             applyStatusEffect(cripple,target,argument2,argument4*spellDur)
                         
-            ii = instance_create(x,y-h-height,obj_descriptor)
-            ii.text = argument0
-            ii.font = fnt_tinyText
+            popup(argument0,id)
         }
     }
     else if min(100,floor(argument1+((skill-target.mSkill)*5))) > 0                        //On Tooltip
@@ -200,9 +186,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
         {
             applyStatusEffect(immobilize,target,argument2,argument4*spellDur)
                         
-            ii = instance_create(x,y-h-height,obj_descriptor)
-            ii.text = argument0
-            ii.font = fnt_tinyText
+            popup(argument0,id)
         }
     }
     else if min(100,floor(argument1+((skill-target.mSkill)*5))) > 0                        //On Tooltip
@@ -226,9 +210,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
         {
             target.arm = max(0,arm-argument2)
                         
-            ii = instance_create(x,y-h-height,obj_descriptor)
-            ii.text = argument0
-            ii.font = fnt_tinyText
+            popup(argument0,id)
         }
     }
     else if min(100,floor(argument1+((skill-target.mSkill)*5))) > 0                        //On Tooltip
@@ -238,6 +220,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
         obj_control.tooltipLength += 1    
     }
 }
+
 #define wepSlashImpact
 //Additional Conditioners
 if atkHand = argument1
@@ -248,9 +231,7 @@ if target.immune[type] = true or (target.immune[typeImpact] = false and target.r
     {
         type = typeImpact        
             
-        ii = instance_create(x,y-h-height,obj_descriptor)
-        ii.text = argument0
-        ii.font = fnt_tinyText
+        popup(argument0,id)
     }
     else
     {
@@ -273,9 +254,7 @@ if target.immune[type] = true or (target.immune[typeImpact] = false and target.r
     {
         type = typePierce        
             
-        ii = instance_create(x,y-h-height,obj_descriptor)
-        ii.text = argument0
-        ii.font = fnt_tinyText
+        popup(argument0,id)
     }
     else
     {

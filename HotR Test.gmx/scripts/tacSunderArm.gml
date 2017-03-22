@@ -8,6 +8,8 @@ if wepStrMult[atkHand] != 0
         
         spendStamina(id,1)
         abilityCD[global.actionNum] = 30/spellCD
+        
+        popup(argument0,id)
     }
     else
     {
@@ -28,6 +30,8 @@ if mle = true
         
         spendStamina(id,1)
         abilityCD[global.actionNum] = 30/spellCD
+        
+        popup(argument0,id)
     }
     else
     {
@@ -46,6 +50,8 @@ if argument5 = false    //On Proc
     
     spendStamina(id,1)
     abilityCD[global.actionNum] = 30/spellCD
+    
+    popup(argument0,id)
 }
 else
 {
@@ -53,6 +59,7 @@ else
     obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)
     obj_control.tooltipLength += 1     
 }
+
 #define tacPreciseStrike
 if argument5 = false    //On Proc
 {
@@ -60,6 +67,8 @@ if argument5 = false    //On Proc
     abilityCD[global.actionNum] = 30/spellCD
     a = max(0,a-(argument1*4))
     p += argument1
+    
+    popup(argument0,id)
 }
 else
 {    
@@ -79,6 +88,8 @@ if target.mark = true
         spendStamina(id,1)
         abilityCD[global.actionNum] = 60/spellCD
         p += argument1
+        
+        popup(argument0,id)
     }
     else
     {    
@@ -96,6 +107,8 @@ if argument5 = false    //On Proc
     spendStamina(id,1)
     abilityCD[global.actionNum] = 5/spellCD
     applyStatusEffect(blockBuff,id,1,10*spellDur)
+    
+    popup(argument0,id)
 }
 else
 {    
@@ -117,6 +130,8 @@ if argument5 = false    //On Proc
     }
     spendStamina(id,1)
     abilityCD[global.actionNum] = 30/spellCD   
+    
+    popup(argument0,id)
 }
 else
 {    
@@ -147,6 +162,8 @@ if argument5 = false    //On Proc
             applyStatusEffect(daze,id,50,5*spellDur)
         }
     }
+    
+    popup(argument0,id)
 }
 else
 {    
@@ -160,6 +177,8 @@ if argument5 = false    //On Proc
 {
     spendStamina(id,1)
     abilityCD[global.actionNum] = 30/spellCD
+    
+    popup(argument0,id)
 }
 else
 {    

@@ -13,6 +13,7 @@ switch(argument0)
     applyStatusEffect(battleRush,i,4,10*i.spellDur)
     i.abilityCD[global.actionNum] = 30/i.spellCD
     actionBarReset()
+    popup('Battle Rush',i)
     break
     
     //Run 1 to execute
@@ -29,12 +30,18 @@ switch(argument0)
     
     //Run 3 for ai use 
     case 3:
+    actBattleRush(0)
     break
     
     //Run 4 for hotbar check 
     case 4:
     iv.selectable = true
     iv.sprite_index = ico_battleRush
+    break
+    
+    //Run 5 for ai priority
+    case 5:
+    return(random(100))
     break
 }
 
@@ -51,6 +58,7 @@ switch(argument0)
     healLife(i,.3*i.lifeMax)
     i.abilityCD[global.actionNum] = 90/i.spellCD
     actionBarReset()
+    popup('Second Wind',i)
     break
     
     //Run 1 to execute
@@ -67,6 +75,7 @@ switch(argument0)
     
     //Run 3 for ai use 
     case 3:
+    actSecondWind(0)
     break
     
     //Run 4 for hotbar check 
@@ -80,5 +89,10 @@ switch(argument0)
         iv.selectable = false
     }
     iv.sprite_index = ico_secondWind
+    break
+    
+    //Run 5 for ai priority
+    case 5:
+    return(random(100))
     break
 }

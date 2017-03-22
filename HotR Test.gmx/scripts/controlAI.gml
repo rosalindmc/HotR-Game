@@ -1,21 +1,38 @@
 #define controlAI
 with(global.controlObject)
 {
-    moveControl(0)
+    zoneOfControl()
+    createActionBar()
     
-    //Temp AI
-    attackRandom()
+    aiList = ds_priority_create()
+    global.aiDone = false
+    
+    with(obj_actionButton)
+    {
+        if selectable = true and cooldown = 0
+        {
+            ds_priority_add(other.aiList,action,script_execute(action,5))
+        }
+    }
+    
+    while(!ds_priority_empty(aiList) and global.aiDone = false)
+    {
+        script_execute(ds_priority_delete_max(aiList),3)   
+    }
+    ds_priority_destroy(aiList)
 }
 
 
 
 #define attackRandom
-//Script for AI self control, manages the AI array
+//Script for AI use of Attack Move
 //controlAI()
 
 //Temporary (Attack a random foe )
 
 var i = global.control
+
+moveControl(0)
 
 global.target = -4
 
@@ -100,6 +117,8 @@ else
 
 
 #define march
+//OBSOLETE
+
 //March forewards to a tile within walking range
 
 var i = global.control
@@ -148,6 +167,8 @@ wait(0)
 
 
 #define rangedAttackAI
+//OBSOLETE
+
 //check all enemys for in range
 //check for units that might be hit
 //fire a projectile
@@ -216,3 +237,109 @@ else
 }
 
 wipeTiles()
+
+#define rangedAggro
+i = global.control
+
+aggro = 0
+
+//Prioritize Low Dodge
+aggro = 3
+
+//Randomize
+aggro += choose(1,-1)*random(1)
+
+//Prioritize Bold
+aggro += occupant.bold
+if occupant.bold = 1
+{
+    aggro += 1
+}
+
+//Prioritize Suppression
+if occupant.suppression <= 1
+{
+    aggro += 1
+}
+
+if occupant.suppression = 0
+{
+    aggro += 1
+}
+
+//Prioritize Low Life
+if occupant.life < 4
+{
+    aggro += 3
+}
+
+//Prioritize Downed Foes
+if occupant.active = false
+{
+    aggro += 5*i.aiDownMult
+}
+
+//Prioritize Fatigued Foes
+if occupant.stm < occupant.stmMax*.60
+{
+    aggro += (5-(occupant.stm/occupant.stmMax))*i.aiFatigueMult
+}
+
+//Prioritize Wounded Foes
+if occupant.wounds > 0
+{
+    aggro += occupant.wounds*i.aiWoundMult
+}
+
+#define meleeAggro
+i = global.control
+
+aggro = 0
+
+//Prioritize Low Dodge
+aggro = 3
+
+//Randomize
+aggro += choose(1,-1)*random(1)
+
+//Prioritize Bold
+aggro += occupant.bold
+if occupant.bold = 1
+{
+    aggro += 1
+}
+
+//Prioritize Suppression
+if occupant.suppression <= 1
+{
+    aggro += 1
+}
+
+if occupant.suppression = 0
+{
+    aggro += 1
+}
+
+//Prioritize Low Life
+if occupant.life < 4
+{
+    aggro += 3
+}
+
+//Prioritize Downed Foes
+if occupant.active = false
+{
+    aggro += 5*i.aiDownMult
+}
+
+//Prioritize Fatigued Foes
+if occupant.stm < occupant.stmMax*.60
+{
+    aggro += (5-(occupant.stm/occupant.stmMax))*i.aiFatigueMult
+}
+
+//Prioritize Wounded Foes
+if occupant.wounds > 0
+{
+    aggro += occupant.wounds*i.aiWoundMult
+}

@@ -108,5 +108,10 @@ startAnimation(0,animHumanoidWalk)
 
 actionString = "Charging"
 action = actCharge
+
+with(obj_actionButton)
+{
+    instance_destroy()
+}
 break
 }

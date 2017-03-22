@@ -133,6 +133,7 @@ invSlot[4,0] = chainShirt
 
 //Names
 lastName = ''
+mook = true
 
 favColour = ltBlue
 eyeTrinket = -4

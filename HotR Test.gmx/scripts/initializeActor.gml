@@ -252,6 +252,15 @@ immune[typeSpirit] = 0
 immune[typeProfane] = 0
 immune[typeRadiant] = 0
 
+//AI
+aiAdjPref = 1
+aiDownMult = -1
+aiFatigueMult = -0.1
+aiWoundMult = -0.1
+aiDisableMult = 0
+aiRandom = 1
+
+
 
 #define initializeWeapon
 //Initialize basic weapon variables to prevent errors

@@ -14,6 +14,7 @@ switch(argument0)
     applyStatusEffect(stealth,i,1,15*i.spellDur)
     i.abilityCD[global.actionNum] = 15/i.spellCD
     endTurn(1.0)
+    popup('Hide',i)
     break
     
     //Run 1 to execute
@@ -32,12 +33,19 @@ switch(argument0)
     
     //Run 3 for ai use 
     case 3:
+    actHide(0)
+    global.aiDone = true
     break
     
     //Run 4 for hotbar check 
     case 4:
     iv.selectable = canHide()
     iv.sprite_index = ico_actHide
+    break
+    
+    //Run 5 for ai priority
+    case 5:
+    return(random(100))
     break
 }
 
@@ -53,6 +61,7 @@ switch(argument0)
     applyStatusEffect(stealth,i,1,15*i.spellDur)
     i.abilityCD[global.actionNum] = 60/i.spellCD
     actionBarReset()
+    popup('Vanish',i)
     break
     
     //Run 1 to execute
@@ -70,12 +79,18 @@ switch(argument0)
     
     //Run 3 for ai use 
     case 3:
+    actVanish(0)
     break
     
     //Run 4 for hotbar check 
     case 4:
     iv.selectable = true
     iv.sprite_index = ico_vanish
+    break
+    
+    //Run 5 for ai priority
+    case 5:
+    return(random(100))
     break
 }
 
@@ -103,6 +118,7 @@ switch(argument0)
         applyStatusEffect(blind,i.target,100,5*i.spellDur)
         i.abilityCD[global.actionNum] = 30/i.spellCD
         endTurn(1.0/i.haste)
+        popup('Fight Dirty',i)
     }
     break
     
@@ -117,6 +133,7 @@ switch(argument0)
     
     //Run 3 for ai use 
     case 3:
+    //Use Script
     break
     
     //Run 4 for hotbar check 
@@ -130,6 +147,11 @@ switch(argument0)
     {
         iv.selectable = false
     }
+    break
+    
+    //Run 5 for ai priority
+    case 5:
+    return(random(100))
     break
 }
 
@@ -158,6 +180,10 @@ switch(argument0)
     
     //Run 3 for ai use 
     case 3:
+    if global.attackMode = -4
+    {
+        actDebilitate(0)
+    }
     break
     
     //Run 4 for hotbar check 
@@ -171,6 +197,11 @@ switch(argument0)
         iv.selectable = false
     }
     iv.sprite_index = ico_debilitate
+    break
+    
+    //Run 5 for ai priority
+    case 5:
+    return(random(100))
     break
 }
 

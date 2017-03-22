@@ -12,9 +12,7 @@ if wepStrMult[atkHand] != 0
             
             applyStatusEffect(daze,target,50,5*spellDur)
                         
-            ii = instance_create(x,y-h-height,obj_descriptor)
-            ii.text = argument0
-            ii.font = fnt_tinyText
+            popup(argument0,id)
             
             if breaker = true
             {
@@ -70,6 +68,8 @@ if (target.life/target.lifeMax)*100 >= argument1 and argument3 = false
     if argument5 = false    //On Proc
     {
         p += argument2*s
+        
+        popup(argument0,id)
     }
     else
     {
@@ -85,6 +85,8 @@ if (target.life/target.lifeMax)*100 <= argument1 and argument3 = true
     if argument5 = false    //On Proc
     {
         p += argument2*s
+        
+        popup(argument0,id)
     }
     else       
     {
@@ -105,6 +107,8 @@ if target.missChance != 0 or target.movement = 0
     if argument5 = false    //On Proc
     {
         p += argument1*s   
+        
+        popup(argument0,id)
     }
     else                    //On Tooltip
     {
@@ -124,6 +128,8 @@ if dodge > dge and mle = true
     if argument5 = false    //On Proc
     {
         p += ((dodge-dge)*argument1)*s
+        
+        popup(argument0,id)
     }
     else                    //On Tooltip
     {
@@ -146,6 +152,8 @@ if bold = 1 and mle = true
     if argument5 = false    //On Proc
     {
         p += argument1*s
+        
+        popup(argument0,id)
     }
     else                    //On Tooltip
     {
@@ -167,7 +175,9 @@ if target.missChance != 0 or backstab = true or target.movement = 0
 {
     if argument5 = false    //On Proc
     {
-        p += argument1*s    
+        p += argument1*s   
+         
+        popup(argument0,id)
     }
     else                    //On Tooltip
     {
@@ -193,9 +203,7 @@ if target.missChance != 0 or backstab = true
         {
             a *= 1-argument2
                         
-            ii = instance_create(x,y-h-height,obj_descriptor)
-            ii.text = argument0
-            ii.font = fnt_tinyText
+            popup(argument0,id)
         }
     }
     else                    //On Tooltip
@@ -205,6 +213,7 @@ if target.missChance != 0 or backstab = true
         obj_control.tooltipLength += 1    
     }
 }
+
 #define heightFel
 //advantageFel(name,bonus,false,false,false,tooltip)
 //Bonus Damage to helpless foes
@@ -222,6 +231,7 @@ if target.h < iii.h
     if argument5 = false    //On Proc
     {
         p += argument1*s    
+        popup(argument0,id)
     }
     else                    //On Tooltip
     {
@@ -279,6 +289,7 @@ if skill > target.mSkill and mle = true
         
     }
 }
+
 #define sneakAttack
 if argument5 = false    //On Proc
 {
@@ -288,6 +299,7 @@ if argument5 = false    //On Proc
     if sneakAmbush = true
     {
         applyStatusEffect(celerity,id,1,10)
+        popup('Ambush',id)
     }
 }
 else                    //On Tooltip

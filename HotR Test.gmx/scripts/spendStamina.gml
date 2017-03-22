@@ -32,8 +32,7 @@ if floor(stm/5) != floor((stm-iii)/5) and dead = false
 var iii = min(argument0.lifeMax-argument0.life,floor(argument1+random(.99)))
 if iii != 0
 {
-    ii = instance_create(argument0.x,argument0.y-argument0.h-argument0.height,obj_descriptor)
-    ii.text = iii
+    popup(iii,argument0)
     ii.font = fnt_damage
     ii.colour1 = ltBlue
     ii.colour2 = iceBlue
@@ -45,7 +44,7 @@ if iii != 0
 //victim, cause, amount, type
 var ii, iii;
 
-ii = instance_create(argument0.x,argument0.y-argument0.h-argument0.height,obj_descriptor)
+ii = popup('Temp',argument0)
 ii.font = fnt_damage
 
 iii = (argument2/(1+argument0.dmgMitigation))

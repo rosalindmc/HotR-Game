@@ -25,6 +25,10 @@ switch(argument0)
     
     //Run 3 for ai use 
     case 3:
+    if global.attackMode = -4
+    {
+        actGuardedAttack(0)
+    }
     break
     
     //Run 4 for hotbar check 
@@ -38,6 +42,11 @@ switch(argument0)
         iv.selectable = false
     }
     iv.sprite_index = ico_guardedAttack
+    break
+    
+    //Run 5 for ai priority
+    case 5:
+    return(random(100))
     break
 }
 
@@ -71,6 +80,8 @@ switch(argument0)
     
     //Run 3 for ai use 
     case 3:
+    actHoldTheLine(0)
+    global.aiDone = true
     break
     
     //Run 4 for hotbar check 
@@ -84,5 +95,10 @@ switch(argument0)
         iv.selectable = false
     }
     iv.sprite_index = ico_holdTheLine
+    break
+    
+    //Run 5 for ai priority
+    case 5:
+    return(random(100))
     break
 }

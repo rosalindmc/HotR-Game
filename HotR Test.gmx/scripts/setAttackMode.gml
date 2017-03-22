@@ -15,6 +15,15 @@ if global.attackMode = argument0
 else
 {
     global.attackMode = argument0
+    
+    with(obj_actionButton)
+    {
+        if action = argument0
+        {
+            global.actionNum = actionNum
+        }
+    }
+    
     global.attackModeNum = global.actionNum
     
     applyStatusEffect(argument1,global.control,argument2,0.1)

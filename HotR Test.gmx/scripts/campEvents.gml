@@ -62,7 +62,7 @@ if argument1 = 0
     
     case 41:
     choice('[1 Money]', 42, checkMoney(1))
-    choice('[10 Money] Ill selll you this thing', 42, checkMoney(10))
+    choice('[10 Money] Ill sell you this thing', 42, checkMoney(10))
     choice('[100 Money]', 42, checkMoney(100))
     choice('[1000 Money]', 42, checkMoney(1000))
     choice('Return', 1, true)

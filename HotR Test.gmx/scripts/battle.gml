@@ -97,10 +97,12 @@ switch(argument0)
     
     //Run 3 for ai use 
     case 3:
+    attackRandom()
+    global.aiDone = true
     break
     
-    //Run 4 for hotbar check 
-    case 4:
-    break
-    
+    //Run 5 for ai priority
+    case 5:
+    return(random(100))
+    break  
 }

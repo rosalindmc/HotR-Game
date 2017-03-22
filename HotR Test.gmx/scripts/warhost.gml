@@ -70,13 +70,18 @@ break
 //Create Party
 createCharacterSheet(id,raiderCaptain)
 
+repeat(choose(4,5,6,7))
+{
+    createCharacterSheet(id,raider)
+}
+
 /*
 mooks[0,0] = emptySlot
 mookTypes = 0
 
 #define cultParty
 //Create Party
-repeat(choose(0,1,2))
+repeat(choose(1))
 {
     createCharacterSheet(id,cultChampion)
 }
@@ -103,6 +108,25 @@ detailGen(cwName)
 attributeGen()
 classGen(class_warrior)
 
+invSlot[1,0] = choose(maul,greatAxe,longSword)
+invSlot[2,0] = emptySlot
+invSlot[8,0] = breastPlate
+
+experience += 25+irandom(10)
+checkLevelUp(id)
+
+#define raider
+//Rules for a Raider Captain
+initializeHumanoid()
+fashionInitialize()
+raceGen(race_northerner)
+detailGen(cwName)
+attributeGen()
+classGen(class_warrior)
+
+mook = true
+experience += 5+irandom(10)
+checkLevelUp(id)
 
 #define cultChampion
 //Rules for a commonwealth adventurer
@@ -113,7 +137,7 @@ detailGen(cwName)
 attributeGen()
 classGen(class_cultist)
 
-experience += 5+irandom(10)
+experience += 50+irandom(1000)
 checkLevelUp(id)
 
 #define cultWarrior
@@ -172,5 +196,6 @@ talent[0,5] = 1
 talent[1,0] = choose(treeKnowledge,treeAlchemy)
 talent[1,5] = 2
 
+mook = true
 headScarfTrinket = spr_hood
 favColour = choose(make_colour_rgb(49,19,9),make_colour_rgb(39,19,39),make_colour_rgb(19,19,39), make_colour_rgb(9,29,9),make_colour_rgb(39,19,19), make_colour_rgb(19,19,19))

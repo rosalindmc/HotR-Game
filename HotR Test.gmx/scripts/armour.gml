@@ -56,7 +56,6 @@ prot += iProt
 enc += iEnc
 spellCD += .2
 
-
 armourApplyVis(favColour)
 
 legsItems[1] += 1
@@ -67,7 +66,7 @@ legsItems[2] += 1
 legsItem[legsItems[2],2] = spr_witchDress
 legsColour[legsItems[2],2] = c_white
 
-underHipsNum -= 1
+//underHipsNum -= 1
 break
 }
 
@@ -246,7 +245,7 @@ areHitSize += 1
 
 armourApplyVis(c_white)
 
-underHipsNum -= 1
+//underHipsNum -= 1
 break
 }
 

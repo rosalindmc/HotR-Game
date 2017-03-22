@@ -27,6 +27,10 @@ switch(argument0)
     
     //Run 3 for ai use 
     case 3:
+    if global.attackMode = -4
+    {
+        actFlourish(0)
+    }
     break
     
     //Run 4 for hotbar check 
@@ -40,6 +44,11 @@ switch(argument0)
         iv.selectable = false
     }
     iv.sprite_index = ico_flourish
+    break
+    
+    //Run 5 for ai priority
+    case 5:
+    return(random(100))
     break
 }
 
@@ -68,6 +77,10 @@ switch(argument0)
     
     //Run 3 for ai use 
     case 3:
+    if global.attackMode = -4
+    {
+        actHeroicStrike(0)
+    }
     break
     
     //Run 4 for hotbar check 
@@ -81,6 +94,11 @@ switch(argument0)
         iv.selectable = false
     }
     iv.sprite_index = ico_heroicStrike
+    break
+    
+    //Run 5 for ai priority
+    case 5:
+    return(random(100))
     break
 }
 
@@ -104,11 +122,11 @@ switch(argument0)
     if cHover.move and cHover.vis != false
     {
         moveTo(cHover)
+        popup('Footwork',i)
+        i.abilityCD[global.actionNum] = 5/i.spellCD
+        actionBarReset()
+        applyStatusEffect(flatFooted,i,100,.01)    
     }
-    
-    i.abilityCD[global.actionNum] = 5/i.spellCD
-    actionBarReset()
-    applyStatusEffect(flatFooted,i,100,.01)
     break
     
     //Run 2 to draw
@@ -121,12 +139,18 @@ switch(argument0)
     
     //Run 3 for ai use 
     case 3:
+    //ai use
     break
     
     //Run 4 for hotbar check 
     case 4:
     iv.selectable = true
     iv.sprite_index = ico_footwork
+    break
+    
+    //Run 5 for ai priority
+    case 5:
+    return(random(100))
     break
 }
 
@@ -156,6 +180,7 @@ switch(argument0)
         target.readiedAction = dualStrike
         i.abilityCD[global.actionNum] = 30/i.spellCD
         endTurn(1.0/i.haste)
+        popup('Challenge',i)
     }
     break
     
@@ -170,6 +195,7 @@ switch(argument0)
     
     //Run 3 for ai use 
     case 3:
+    //ai use
     break
     
     //Run 4 for hotbar check 
@@ -183,5 +209,10 @@ switch(argument0)
     {
         iv.selectable = false
     }
+    break
+    
+    //Run 5 for ai priority
+    case 5:
+    return(random(100))
     break
 }

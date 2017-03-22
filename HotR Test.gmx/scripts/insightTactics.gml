@@ -13,6 +13,7 @@ switch(argument0)
     applyStatusEffect(detectionBuff,i,4,10*i.spellDur)
     i.abilityCD[global.actionNum] = 10/i.spellCD
     endTurn(1.0)
+    popup('Assess Situation',i)
     break
     
     //Run 1 to execute
@@ -31,12 +32,19 @@ switch(argument0)
     
     //Run 3 for ai use 
     case 3:
+    actAssessSituation(0)
+    global.aiDone = true
     break
     
     //Run 4 for hotbar check 
     case 4:
     iv.selectable = true
     iv.sprite_index = ico_assessSituation
+    break
+    
+    //Run 5 for ai priority
+    case 5:
+    return(random(100))
     break
 }
 
@@ -63,6 +71,10 @@ switch(argument0)
     
     //Run 3 for ai use 
     case 3:
+    if global.attackMode = -4
+    {
+        actPreciseStrike(0)
+    }
     break
     
     //Run 4 for hotbar check 
@@ -77,6 +89,11 @@ switch(argument0)
     }
     iv.sprite_index = ico_preciseStrike
     break
+    
+    //Run 5 for ai priority
+    case 5:
+    return(random(100))
+    break
 }
 
 #define actSpotWeakness
@@ -90,6 +107,7 @@ switch(argument0)
     action = actSpotWeakness
     global.castMouse = 2
     rangeAbilityRange(i,10,true)
+    popup('Spot Weakness',i)
     break
     
     //Run 1 to execute
@@ -118,6 +136,7 @@ switch(argument0)
     
     //Run 3 for ai use 
     case 3:
+    //Use Spot Weakness
     break
     
     //Run 4 for hotbar check 
@@ -131,6 +150,11 @@ switch(argument0)
     {
         iv.selectable = false
     }
+    break
+    
+    //Run 5 for ai priority
+    case 5:
+    return(random(100))
     break
 }
 
@@ -157,6 +181,10 @@ switch(argument0)
     
     //Run 3 for ai use 
     case 3:
+    if global.attackMode = -4
+    {
+        actExploitWeakness(0)
+    }
     break
     
     //Run 4 for hotbar check 
@@ -174,6 +202,11 @@ switch(argument0)
     }
     iv.sprite_index = ico_exploitWeakness
     break
+    
+    //Run 5 for ai priority
+    case 5:
+    return(random(100))
+    break
 }
 
 #define actSap
@@ -187,6 +220,7 @@ switch(argument0)
     action = actSap
     global.castMouse = 2
     meleeAbilityRange(i)
+    popup('Sap',i)
     break
     
     //Run 1 to execute
@@ -214,6 +248,7 @@ switch(argument0)
     
     //Run 3 for ai use 
     case 3:
+    //ai use
     break
     
     //Run 4 for hotbar check 
@@ -227,5 +262,10 @@ switch(argument0)
     {
         iv.selectable = false
     }
+    break
+    
+    //Run 5 for ai priority
+    case 5:
+    return(random(100))
     break
 }
