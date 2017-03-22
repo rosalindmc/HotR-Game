@@ -63,11 +63,11 @@ switch(argument0)
     
     if global.pow1 < global.pow2
     {
-    return random(50)*global.pow2/global.pow1
+    return random(10)/(global.pow1/global.pow2)
     }
     else
     {
-    return random(50)*i.wounds
+    return random(30)*i.wounds
     }
     break
 }
