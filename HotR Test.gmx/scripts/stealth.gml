@@ -10,7 +10,7 @@ tooltip = 'Hidden'
 
 if potency = 1 and owner.sneakIncognito = true
 {
-    popup('Incognito',id)
+    popup('Incognito',owner)
     
     with(obj_character)
     {

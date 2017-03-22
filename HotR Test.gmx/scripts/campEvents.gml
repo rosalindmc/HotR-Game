@@ -135,3 +135,69 @@ if argument1 = 0{
             break     
     }
 }
+#define retreatConfirm
+if argument1 = 0
+{
+    switch(argument0)
+    {
+    case 0: speak('Are you sure you want to retreat from battle?') break
+    
+    case 1: 
+    choice('Mass Retreat', 2, true) 
+    choice('Personal Retreat', 3, true) 
+    choice('Surrender', 4, true)
+    choice('Cancel', 9, true) 
+    break
+    
+    case 2: //Mass Retreat
+    with(obj_character)
+    {
+        if team = global.control.team
+        {
+            readiedAction = retreating
+        }
+    }
+    retreating()
+    eventEnd()
+    break
+    
+    case 3: //Personal Retreat
+    global.control.readiedAction = retreating
+    retreating()
+    eventEnd()
+    break
+    
+    case 4: //Surrender
+    if 1+irandom(19) <= global.control.fellowship
+    {
+    skipTo(5)
+    }
+    else
+    {
+    skipTo(7)
+    }
+    break
+    
+    case 5:
+    speak('Your enemies accept your surrender')  
+    break
+    
+    case 6:
+    eventEnd()
+    battleTeardown()
+    break
+
+    case 7:
+    speak('Your enemies refuse your surrender')  
+    break
+  
+    case 8: 
+    endTurn(3.0)
+    eventEnd()
+    break
+    
+    case 9: //Cancel
+    eventEnd()
+    break
+    }
+}

@@ -45,7 +45,7 @@ else
 
         //Continue path
         moveStep ++
-        moveDur = (global.fspd*(point_distance(pathArray[moveStep].x,pathArray[moveStep].y,x,y)))/(movement*metre*1.5)
+        moveDur = (global.fspd*(point_distance(pathArray[moveStep].x,pathArray[moveStep].y,x,y)))/((movement+1)*metre*1.5)
     }
     else if moveStep = pathLength-2
     {
@@ -69,7 +69,7 @@ else
         
         //Continue path
         moveStep ++
-        moveDur = (global.fspd*(point_distance(pathArray[moveStep].x,pathArray[moveStep].y,x,y)))/(movement*metre*1.5)
+        moveDur = (global.fspd*(point_distance(pathArray[moveStep].x,pathArray[moveStep].y,x,y)))/((movement+1)*metre*1.5)
     }
     else
     {
@@ -91,7 +91,7 @@ break
 case 1:
 //Move along path
 moveStep = 1
-moveDur = (global.fspd*(point_distance(pathArray[moveStep].x,pathArray[moveStep].y,x,y)))/(movement*metre*1.5)
+moveDur = (global.fspd*(point_distance(pathArray[moveStep].x,pathArray[moveStep].y,x,y)))/((movement+1)*metre*1.5)
 
 //Facing
 moveX = pathArray[moveStep].x

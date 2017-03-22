@@ -118,7 +118,7 @@ switch(argument0)
             suppressionPreview(true)
             attackPreview(true)
             
-            if global.attackFromTile.occupant != i
+            if global.attackFromTile.occupant = i
             {
                 global.testSlot.delayAdd = i.s/(i.haste+i.atkHaste)
             }
@@ -248,3 +248,53 @@ with(obj_tile)
 
 //Check Movement
 
+#define retreating
+var i = global.control
+var closest = 10000
+global.target = i.isoTile
+
+with(obj_control)
+{
+    global.moveTile = ds_list_create()
+    ignoreZoC = true
+    movementRange(i.isoTile, i.movement+1, i.movementBonus+1)
+    
+    with(obj_tile)
+    {
+        if retreatTile = true and (overlay = 1 or overlay = 2)
+        {
+            if g < closest
+            {
+                global.target = id
+                closest = g
+            }
+        }
+    }
+    
+    closest = 10000
+    
+    if global.target = i.isoTile
+    {
+        with(obj_tile)
+        {
+            if (overlay = 1 or overlay = 2)
+            {
+                if min(isoX,isoY,obj_control.mapWidth-isoX,obj_control.mapWidth-isoY) < closest
+                {
+                    global.target = id
+                    closest = min(isoX,isoY,obj_control.mapWidth-isoX,obj_control.mapWidth-isoY)
+                }
+            }
+        }
+    }   
+    
+    if global.target != i.isoTile
+    {
+        moveTo(global.target)
+        endTurn(1.5/(i.haste+i.movHaste))
+    }
+    else
+    {
+        wait(0)
+    }
+}

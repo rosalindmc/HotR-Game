@@ -17,6 +17,14 @@ with(global.controlObject)
     
     while(!ds_priority_empty(aiList) and global.aiDone = false)
     {
+        with(obj_actionButton)
+        {
+            if ds_priority_find_max(other.aiList) = action
+            {
+                global.actionNum = actionNum
+            }
+        }
+        
         script_execute(ds_priority_delete_max(aiList),3)   
     }
     ds_priority_destroy(aiList)
@@ -131,7 +139,7 @@ if i.movement >= 1
 
 with (obj_tile)
 {
-    if (overlay = 2)
+    if (overlay = 1)
     {
         with(obj_character)
         {

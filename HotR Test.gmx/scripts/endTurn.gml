@@ -29,9 +29,10 @@ with(obj_control)
     
     initiativeSlotReset()
     mapTimeOn = true
+    
+    tooltipTitle = -4
 }
 
-tooltipTitle = -4
 areaSuppression()
 
 #define areaSuppression

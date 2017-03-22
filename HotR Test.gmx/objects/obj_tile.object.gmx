@@ -50,6 +50,7 @@ meleeAttack = false
 pathParent = noone
 zoneControl = false
 threatened = false
+retreatTile = false
 
 //Coordinates
 isoX = 0
@@ -75,9 +76,6 @@ image_index = random(16)
 image_speed = 0
 vis = false
 scrollVis = false
-
-//Temp
-alarm[0] = 2
 </string>
           </argument>
         </arguments>
@@ -207,7 +205,7 @@ if ground = true
             }
             else 
             {
-                draw_sprite(spr_tilePathing,overlay+6,x,y-h+(global.zLevel*15))
+                draw_sprite(spr_tilePathing,overlay+5,x,y-h+(global.zLevel*15))
             }
         }
         //if zoneControl = true 
@@ -220,6 +218,7 @@ if ground = true
         draw_sprite_ext(sprite_index,image_index,x,y-h+(global.zLevel*15),1,1,0,c_black,1)
     }
 }
+
 /*
 if id = obj_control.cHover
 {  

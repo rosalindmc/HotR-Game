@@ -40,7 +40,7 @@ with(obj_tile)
 {
     if h = 0
     {
-    heightMap = min(floor(heightMap/15),7)
+    heightMap = min(floor(heightMap/15),obj_control.mapDepth-2)
     
         if heightMap >= 1
         {

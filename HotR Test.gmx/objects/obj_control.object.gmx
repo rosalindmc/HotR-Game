@@ -120,6 +120,11 @@ repeat(mapWidth)
             map[ix+(mapWidth*iz),iy].isoZ = iz
             map[ix+(mapWidth*iz),iy].h = iz*15
             
+            if ix = 0 or ix = mapWidth-1 or iy = 0 or iy = mapHeight-1
+            {
+                map[ix+(mapWidth*iz),iy].retreatTile = true
+            }
+            
             if iz != 0
             {
                 map[ix+(mapWidth*iz),iy].ground = false 
@@ -497,8 +502,7 @@ cIsoX = floor(((x-100)/40)+((y-100)/20))-25
 cIsoY = floor(((y-100)/20)-((x-100)/40))+25
 cIsoZ = global.zLevel
 
-
-if cIsoX &gt;= 0 and cIsoX &lt; mapWidth and cIsoY &gt;= 0 and cIsoY &lt; mapHeight
+if cIsoX &gt;= 0 and cIsoX &lt; mapWidth and cIsoY &gt;= 0 and cIsoY &lt; mapHeight and global.eventActive = false
 {
     cHover = map[cIsoX+(cIsoZ*mapWidth),cIsoY]
     depth = cHover.depth-500
@@ -653,14 +657,19 @@ if global.control != noone
             
             if i.move or (i.occupant = global.control and global.mouseSprite = 1)
             {
-                i.onPath = 5+cHover.meleeAttack
+                i.onPath = 10+cHover.meleeAttack
+                if i.retreatTile = true
+                {
+                    i.onPath = 12
+                }
+                
                 if i.pathParent != noone
                 {
                     i = i.pathParent
                     
                     while(i.pathParent != noone)
                     {
-                        i.onPath = 4
+                        i.onPath = 5
                         i = i.pathParent
                     }
                 }
@@ -708,7 +717,7 @@ if obj_camera.x != obj_camera.xprevious or obj_camera.y != obj_camera.yprevious
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.loading = false
+            <string>if global.loading = false and global.eventActive = false
 {
     draw_set_font(fnt_small)
     draw_set_halign(fa_right)
@@ -742,7 +751,7 @@ if obj_camera.x != obj_camera.xprevious or obj_camera.y != obj_camera.yprevious
         draw_set_alpha(1)
     }
 }
-else
+else if global.eventActive = false
 {
     dx = view_xview+(view_wview/2)
     dy = view_yview+(view_hview/2)

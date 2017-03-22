@@ -64,6 +64,11 @@ with(obj_control)
         iv.charges = global.control.abilityCharges[iii]
         script_execute(global.control.ability[iii],4)
     }
+    
+    i = instance_create(view_wview-15,100, obj_sideButton)
+    i.action = retreat
+    i.number = 0
+    i.sprite_index = ico_retreat
 }
 
 #define actionBarReset

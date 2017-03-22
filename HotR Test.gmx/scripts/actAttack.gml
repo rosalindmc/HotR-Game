@@ -40,11 +40,14 @@ target = readiedTarget
 i = 0
 global.ii = false     
 
-if los(reach,target.sightTile,sightTile)
+if instance_exists(target)
 {
-    if target.active = true
+    if los(reach,target.sightTile,sightTile)
     {
-        global.ii = true
+        if target.active = true
+        {
+            global.ii = true
+        }
     }
 }
 

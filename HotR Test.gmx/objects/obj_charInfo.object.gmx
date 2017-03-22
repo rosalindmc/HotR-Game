@@ -28,7 +28,7 @@
             <string>x = xstart+view_xview
 y = ystart+view_yview
 
-if global.timeDelay = 0 and global.nextChar.owner.player = true
+if global.timeDelay = 0 and global.nextChar.owner.player = true and global.eventActive = false
 {   
     iy = y
     

@@ -58,7 +58,7 @@ testSlot = false
           <argument>
             <kind>1</kind>
             <string>//Select by hover
-if point_in_rectangle(mouse_x,mouse_y,ix-(size*6),iy-(size*6),ix+(size*6),iy+(size*6))
+if point_in_rectangle(mouse_x,mouse_y,ix-(size*6),iy-(size*6),ix+(size*6),iy+(size*6)) and global.eventActive = false
 {
     if owner != -4
     {
@@ -122,6 +122,10 @@ if vis != 0
             if owner.readiedAction = dualStrike
             {
                 draw_sprite(spr_dualStrike,0,ix+(size*4),iy+(size*4))
+            }
+            if owner.readiedAction = retreating
+            {
+                draw_sprite(spr_retreating,0,ix+(size*4),iy+(size*4))
             }
         }
         else

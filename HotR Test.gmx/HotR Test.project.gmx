@@ -100,6 +100,7 @@
         <sprite>sprites\spr_iconBorder</sprite>
         <sprite>sprites\ico_attributes</sprite>
         <sprite>sprites\ico_move</sprite>
+        <sprite>sprites\ico_retreat</sprite>
         <sprite>sprites\ico_attackMove</sprite>
         <sprite>sprites\ico_attack</sprite>
         <sprite>sprites\ico_wait</sprite>
@@ -371,6 +372,7 @@
       <sprite>sprites\spr_menuSheet</sprite>
       <sprite>sprites\spr_levelSheet</sprite>
       <sprite>sprites\spr_dualStrike</sprite>
+      <sprite>sprites\spr_retreating</sprite>
     </sprites>
     <sprites name="Overworld">
       <sprites name="Outdated">
@@ -532,6 +534,7 @@
             <script>scripts\battle.gml</script>
             <script>scripts\disengage.gml</script>
             <script>scripts\wait.gml</script>
+            <script>scripts\retreat.gml</script>
             <script>scripts\weaponSwitch.gml</script>
             <script>scripts\createActionBar.gml</script>
             <script>scripts\abilityTooltip.gml</script>
@@ -799,6 +802,7 @@
         <object>objects\obj_combatHUD</object>
         <object>objects\obj_initiativeSlot</object>
         <object>objects\obj_actionButton</object>
+        <object>objects\obj_sideButton</object>
       </objects>
       <objects name="Details">
         <object>objects\obj_carriedWeapon</object>

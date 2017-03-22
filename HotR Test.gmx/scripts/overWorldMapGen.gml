@@ -26,13 +26,18 @@ case 1:
 combatHillsGen()
 combatMudGen()
 
+with(obj_tile)
+{
+    alarm[0] = 2
+}
+
 //Deploy
 i = 0
 
 repeat(ds_list_size(global.attacker.party))
 {
     ii = instance_create(0,0,obj_character)
-    ii.isoX = i+12
+    ii.isoX = i+12-floor(ds_list_size(global.attacker.party)/2)
     ii.isoY = obj_control.mapWidth-2
     ii.isoZ = obj_control.map[ii.isoX,ii.isoY].heightMap
     ii.isoTile = obj_control.map[ii.isoX+((ii.isoZ)*obj_control.mapWidth),ii.isoY]
@@ -68,8 +73,8 @@ i = 0
 repeat(ds_list_size(global.defender.party))
 {
     ii = instance_create(0,0,obj_character)
-    ii.isoX = i+12
-    ii.isoY = 15
+    ii.isoX = i+12-floor(ds_list_size(global.defender.party)/2)
+    ii.isoY = 12
     ii.isoZ = obj_control.map[ii.isoX,ii.isoY].heightMap
     ii.cFacing = 180
     ii.facing = 180

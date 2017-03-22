@@ -1,8 +1,8 @@
+#define battleTeardown
 //Tear Down after Battle 
 //battleTeardown()     Will feature variables later
 
 instance_activate_all()
-instance_deactivate_object(obj_characterSheet)
 
 with(obj_control)
 {
@@ -40,6 +40,8 @@ with(obj_character)
     instance_destroy()
 }
 
+instance_deactivate_object(obj_characterSheet)
+
 with(obj_terrain)
 {
     instance_destroy()
@@ -63,3 +65,50 @@ with(obj_overworldControl)
     worldScrollVis()
 }
 
+
+#define retreatUnit
+with(argument0)
+{
+    instance_activate_object(owner)
+    
+    isoTile.occupant = noone
+    
+    if important = true    //Demake Tool for non-mooks
+    {
+        owner.experience += global.expTotal*(1-((cunning-8)*.03))
+        owner.wounds = wounds
+        checkLevelUp(owner)
+    }
+    else                    //Demake Tool for mooks
+    {
+        with(owner)
+        {
+            instance_destroy()
+        }
+    }   
+    instance_deactivate_object(owner)
+    
+    with(initSlot)
+    {
+        instance_destroy()
+    }
+    
+    instance_destroy()
+
+
+    //Temporary Battle End
+    global.battleEnd = true
+
+    with(obj_character)
+    {
+        if team = other.team and active = true
+        {
+            global.battleEnd = false
+        }
+    }
+        
+    if global.battleEnd = true
+    {
+        battleTeardown()
+    }
+}

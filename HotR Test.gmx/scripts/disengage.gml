@@ -29,7 +29,7 @@ switch(argument0)
     global.pathDraw = true
     tooltipTitle = 'Disengage'
     abilityTT = 'Action#Move ignoring Zone of Control'
-    abilityTTLength = 1
+    abilityTTLength = 2
     
     if instance_exists(cHover)
     {
