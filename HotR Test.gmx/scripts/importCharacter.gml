@@ -29,8 +29,13 @@ skinTone = o.skinTone
 headSprite = o.headSprite
 faceImage = o.faceImage
 earSprite = o.earSprite
+chstSprite = o.chstSprite
+armsSprite = o.armsSprite
 hipsSprite = o.hipsSprite
 bodySprite = o.bodySprite
+armsLength = o.armsLength
+handSprite = o.handSprite
+portraitAdj = o.portraitAdj
 eyeColour = o.eyeColour
 eyeVis = o.eyeVis
 hairColour = o.hairColour
@@ -364,11 +369,11 @@ if underLegsItem != -4 and o.invSlot[4,0] != emptySlot
 {
     legsItems[1] += 1
     legsItem[legsItems[1],1] = underLegsItem
-    legsColour[legsItems[1],1] = favColour
+    legsColour[legsItems[1],1] = c_white
     
     legsItems[2] += 1
     legsItem[legsItems[2],2] = underLegsItem
-    legsColour[legsItems[2],2] = favColour
+    legsColour[legsItems[2],2] = c_white
     
     if underLegsItem = spr_fashion2
     {
@@ -434,7 +439,7 @@ if headScarfTrinket != -4
 }
 
 //Min Clothing
-if gender = femme and o.invSlot[4,0] = emptySlot
+if gender = femme and o.invSlot[4,0] = emptySlot and bodySprite = spr_body
 {
     chstItems += 1
     chstItem[chstItems] = spr_underClothes
@@ -445,11 +450,15 @@ if gender = femme and o.invSlot[4,0] = emptySlot
     bodyColour[bodyItems] = c_white
 }
 
-if o.invSlot[4,0] = emptySlot
+if o.invSlot[4,0] = emptySlot and bodySprite = spr_body
 {
     hipsItems += 1
     hipsItem[hipsItems] = spr_underClothes
     hipsColour[hipsItems] = c_white
+}
+else
+{
+    underHipsNum -= 1
 }
 
 #define staminaCheck

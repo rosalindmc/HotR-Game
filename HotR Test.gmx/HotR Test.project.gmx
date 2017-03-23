@@ -344,6 +344,16 @@
             <sprite>sprites\spr_wretchHips</sprite>
             <sprite>sprites\spr_wretchLegs</sprite>
           </sprites>
+          <sprites name="Warrior">
+            <sprite>sprites\spr_warriorBase</sprite>
+            <sprite>sprites\spr_warriorHead</sprite>
+            <sprite>sprites\spr_warriorHand</sprite>
+            <sprite>sprites\spr_warriorBody</sprite>
+            <sprite>sprites\spr_warriorHips</sprite>
+            <sprite>sprites\spr_warriorChst</sprite>
+            <sprite>sprites\spr_warriorLegs</sprite>
+            <sprite>sprites\spr_warriorArms</sprite>
+          </sprites>
         </sprites>
       </sprites>
       <sprites name="Beard">
@@ -493,9 +503,9 @@
         <script>scripts\los.gml</script>
         <script>scripts\initializeActor.gml</script>
         <script>scripts\upkeep.gml</script>
-        <script>scripts\drawActor.gml</script>
         <script>scripts\drawHealthbar.gml</script>
         <script>scripts\actorDie.gml</script>
+        <script>scripts\drawActor.gml</script>
         <script>scripts\spendStamina.gml</script>
         <script>scripts\tempArmourRandomize.gml</script>
         <scripts name="Animation Types">

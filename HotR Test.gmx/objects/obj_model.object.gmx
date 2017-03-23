@@ -3,7 +3,7 @@
   <spriteName>spr_selection</spriteName>
   <solid>0</solid>
   <visible>-1</visible>
-  <depth>-102</depth>
+  <depth>-151</depth>
   <persistent>0</persistent>
   <parentName>obj_hudParent</parentName>
   <maskName>spr_largemask</maskName>
@@ -217,6 +217,160 @@ if keyboard_check_pressed(ord('5'))
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if keyboard_check(vk_alt) and global.charTab = tab
+{
+    //Facing
+    moveX = mouse_x
+    moveY = mouse_y
+    moveZ = 0
+    
+    //Horizontal Facing
+    if moveX &gt; x
+        hFacing = 1
+    if moveX &lt; x
+        hFacing = -1
+        
+    //Vertical Facing
+    if moveY &gt; y
+        vFacing = 0
+    if moveY &lt; y
+        vFacing = 1
+        
+    //Facing
+    facing = round(point_direction(x,y,moveX,moveY)/45)*45
+    
+    //Mode
+    if keyboard_check_pressed(ord('1'))
+    {mode = 1}
+    if keyboard_check_pressed(ord('2'))
+    {mode = 2}
+    if keyboard_check_pressed(ord('3'))
+    {mode = 3}
+    if keyboard_check_pressed(ord('4'))
+    {mode = 4}
+    if keyboard_check_pressed(ord('5'))
+    {mode = 5}
+    
+    //Adjustments
+    if keyboard_check_pressed(vk_left)
+    {
+        switch(mode)
+        {
+        case 1: headAdjust -= 1 break
+        case 2: chstAdjust -= 1 break
+        case 3: bodyAdjust -= 1 break
+        }
+    }
+    
+    if keyboard_check_pressed(vk_right)
+    {
+        switch(mode)
+        {
+        case 1: headAdjust += 1 break
+        case 2: chstAdjust += 1 break
+        case 3: bodyAdjust += 1 break
+        }
+    }
+    
+    if keyboard_check_pressed(vk_up)
+    {
+        switch(mode)
+        {
+        case 1: headOffset += 1 break
+        case 3: bodyOffset += 1 break
+        case 4: hipsOffset += 1 legAdjust[1] += 1 legAdjust[2] += 1  break
+        }
+    }
+    
+    if keyboard_check_pressed(vk_down)
+    {
+        switch(mode)
+        {
+        case 1: headOffset -= 1 break
+        case 3: bodyOffset -= 1 break
+        case 4: hipsOffset -= 1 legAdjust[1] -= 1 legAdjust[2] -= 1 break
+        }
+    }
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="73">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if keyboard_check(vk_alt) and global.charTab = tab
+{
+//Draw UI
+draw_set_font(fnt_dev)
+draw_set_halign(fa_left)
+draw_set_valign(fa_middle)
+draw_set_colour(c_white)
+draw_text(x+18,y-8,"R: "+string(race))
+draw_text(x+18,y-16,"GW: "+string(greatWeapon))
+draw_text(x+18,y-24,"H: "+string(height)+"px - "+string(height*6)+"cm")
+switch(mode)
+{
+    case 1:
+    draw_text(x+18,y-32,"Head Off: "+string(headOffset))
+    draw_text(x+18,y-40,"Head Adj: "+string(headAdjust))
+    draw_text(x+18,y-48,"Body: "+string(bodyImage))
+    break
+    
+    case 2:
+    draw_text(x+18,y-32,"Chest Adj: "+string(chstAdjust))
+    draw_text(x+18,y-40,"Chest: "+string(chstImage))
+    break
+    
+    case 3:
+    draw_text(x+18,y-32,"Body Off: "+string(bodyOffset))
+    draw_text(x+18,y-40,"Body Adj: "+string(bodyAdjust))
+    draw_text(x+18,y-48,"Body: "+string(bodyImage))
+    draw_text(x+18,y-56,"Hips: "+string(hipsImage))
+    draw_text(x+18,y-64,"Chest: "+string(chstImage))
+    break
+    
+    case 4:
+    draw_text(x+18,y-32,"Leg Adj: "+string(legAdjust[1]))
+    draw_text(x+18,y-40,"Hips: "+string(hipsImage))
+    draw_text(x+18,y-48,"Leg %: "+string(legMult))
+}
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
     </event>
     <event eventtype="8" enumb="0">
       <action>
@@ -240,7 +394,16 @@ if global.charTab = tab
 {
     x = xstart+view_xview[]
     y = ystart+view_yview[]
+    
     script_execute(animType,1)
+    
+    if keyboard_check(vk_alt)
+    {
+        draw_line(x+14,y,x+15,y-height*sX)
+        draw_line(x+10,y-height*sX,x+15,y+1-(height*sX))
+        draw_line(x+10,y,x+15,y+1)
+    }
+    
     draw_set_valign(fa_middle)
     draw_set_halign(fa_center)
     draw_set_font(fnt_main)

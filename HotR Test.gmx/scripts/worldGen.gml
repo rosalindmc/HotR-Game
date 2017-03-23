@@ -285,6 +285,7 @@ repeat(floor(mapWidth/4))
                 {
                 iii.ruleSet = choose(cwParty)
                 iiii += 1
+                iii.playerControl = true
                 }
                 else
                 {

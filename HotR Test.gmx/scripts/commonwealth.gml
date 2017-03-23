@@ -149,9 +149,6 @@ repeat(7)
     createCharacterSheet(id,cwAdventurer)
 }
 
-playerControl = true
-
-
 #define cwAdventurer
 //Rules for a commonwealth adventurer
 initializeHumanoid()

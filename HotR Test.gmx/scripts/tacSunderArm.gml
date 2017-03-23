@@ -102,19 +102,22 @@ if target.mark = true
 }
 
 #define tacGuardedAttack
-if argument5 = false    //On Proc
+if mle = true
 {
-    spendStamina(id,1)
-    abilityCD[global.actionNum] = 5/spellCD
-    applyStatusEffect(blockBuff,id,1,10*spellDur)
-    
-    popup(argument0,id)
-}
-else
-{    
-    obj_control.tooltipColour[obj_control.tooltipLength] = ltBlue
-    obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)
-    obj_control.tooltipLength += 1     
+    if argument5 = false    //On Proc
+    {
+        spendStamina(id,1)
+        abilityCD[global.actionNum] = 5/spellCD
+        applyStatusEffect(blockBuff,id,1,10*spellDur)
+        
+        popup(argument0,id)
+    }
+    else
+    {    
+        obj_control.tooltipColour[obj_control.tooltipLength] = ltBlue
+        obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)
+        obj_control.tooltipLength += 1     
+    }
 }
 
 #define tacDebilitate
