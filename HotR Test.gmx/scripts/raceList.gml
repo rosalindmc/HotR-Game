@@ -204,6 +204,7 @@ case 0:
 race = race_dwarf
 raceName = 'Dwarf'
 gender = choose(femme,masc)
+faceImage = 2
 
 if 1+irandom(99) < 90
 {
@@ -340,6 +341,7 @@ case 0:
 race = race_orc
 raceName = 'Orc'
 gender = choose(femme,masc,masc,masc,masc,masc)
+faceImage = 2
 
 if 1+irandom(99) < 50
 {

@@ -30,6 +30,7 @@ headSprite = spr_skull
 bodySprite = spr_ribCage
 hipsSprite = spr_pelvis
 hairStyle = spr_none
+beardStyle = spr_none
 earSprite = spr_none
 chstImage = 0
 

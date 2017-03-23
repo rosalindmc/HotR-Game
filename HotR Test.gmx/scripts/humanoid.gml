@@ -24,6 +24,7 @@ headSprite = spr_baseHead
 earSprite = spr_none
 bodySprite = spr_body
 hipsSprite = spr_hips
+eyeVis = true
 skinTone = fair
 eyeColour = choose(eyeBlue,eyeGreen,c_dkgray,eyeViolet,c_olive,eyeBrown)
 hairStyle = spr_shortHair
@@ -315,7 +316,7 @@ i = 0 repeat(legsItems[2-vFacing]){i++ draw_sprite_ext(legsItem[i,2-vFacing],20+
 
 //Hips
 draw_sprite_ext(hipsSprite,hipsImage+vFacing,hipsX,hipsY,hFacing*sX,sX,hipsRot,skinTone,1)
-draw_sprite_ext(spr_downHair,hipsImage+vFacing,hipsX,hipsY,hFacing*sX,sX,hipsRot,hairColour,1)
+//draw_sprite_ext(spr_downHair,hipsImage+vFacing,hipsX,hipsY,hFacing*sX,sX,hipsRot,hairColour,1)
 i = 0 repeat(underHipsNum){i++ draw_sprite_ext(hipsItem[i],12+hipsImage+vFacing,hipsX,hipsY,hFacing*sX,sX,hipsRot,hipsColour[i],1)}
 
 //Skirt
@@ -347,7 +348,7 @@ if bodyVFacing = 0
 //Head and Hair
 if bodyVFacing = 1{draw_sprite_ext(beardStyle,bounce,headX,headY,headFacing*hFacing*sX,sX,headRot,hairColour,1)}
 draw_sprite_ext(headSprite,faceImage+vFacing,headX,headY,headFacing*hFacing*sX,sX,headRot,skinTone,1)
-draw_sprite_ext(spr_eyes,faceImage+vFacing,headX,headY,headFacing*hFacing*sX,sX,headRot,eyeColour,1)
+draw_sprite_ext(spr_eyes,faceImage+vFacing,headX,headY,headFacing*hFacing*sX,sX,headRot,eyeColour,eyeVis)
 draw_sprite_ext(hairStyle,bounce+(vFacing*2),headX,headY,headFacing*hFacing*sX,sX,headRot,hairColour,hairVisible)
 draw_sprite_ext(earSprite,vFacing,headX,headY,headFacing*hFacing*sX,sX,headRot,skinTone,1)
 if bodyVFacing = 0{draw_sprite_ext(beardStyle,bounce,headX,headY,headFacing*hFacing*sX,sX,headRot,hairColour,1)}
@@ -599,7 +600,7 @@ with(argument0)
 
     //Head and Hair
     draw_sprite_ext(headSprite,faceImage,argument1,argument2,argument3,argument3,0,skinTone,1)
-    draw_sprite_ext(spr_eyes,faceImage,argument1,argument2,argument3,argument3,0,eyeColour,1)
+    draw_sprite_ext(spr_eyes,faceImage,argument1,argument2,argument3,argument3,0,eyeColour,eyeVis)
     draw_sprite_ext(hairStyle,0,argument1,argument2,argument3,argument3,0,hairColour,hairVisible)
     draw_sprite_ext(earSprite,0,argument1,argument2,argument3,argument3,0,skinTone,1)
     draw_sprite_general(beardStyle,0,0,0,7,9,argument1-(3*argument3),argument2-(4*argument3),argument3,argument3,0,hairColour,hairColour,hairColour,hairColour,1)

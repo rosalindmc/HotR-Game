@@ -27,10 +27,12 @@ race = o.raceName
 class = o.className
 skinTone = o.skinTone
 headSprite = o.headSprite
+faceImage = o.faceImage
 earSprite = o.earSprite
 hipsSprite = o.hipsSprite
 bodySprite = o.bodySprite
 eyeColour = o.eyeColour
+eyeVis = o.eyeVis
 hairColour = o.hairColour
 hairStyle = o.hairStyle
 beardStyle = o.beardStyle
@@ -351,22 +353,22 @@ if underBodyItem != -4 and o.invSlot[4,0] != emptySlot
 {
     bodyItems += 1
     bodyItem[bodyItems] = underBodyItem
-    bodyColour[bodyItems] = c_white
+    bodyColour[bodyItems] = favColour
     
     chstItems += 1
     chstItem[chstItems] = underBodyItem
-    chstColour[chstItems] = c_white
+    chstColour[chstItems] = favColour
 }
 
 if underLegsItem != -4 and o.invSlot[4,0] != emptySlot
 {
     legsItems[1] += 1
     legsItem[legsItems[1],1] = underLegsItem
-    legsColour[legsItems[1],1] = c_white
+    legsColour[legsItems[1],1] = favColour
     
     legsItems[2] += 1
     legsItem[legsItems[2],2] = underLegsItem
-    legsColour[legsItems[2],2] = c_white
+    legsColour[legsItems[2],2] = favColour
     
     if underLegsItem = spr_fashion2
     {

@@ -332,9 +332,18 @@
         <sprite>sprites\spr_shortLeg</sprite>
         <sprite>sprites\spr_hand</sprite>
         <sprites name="Humanoids">
-          <sprite>sprites\spr_skull</sprite>
-          <sprite>sprites\spr_pelvis</sprite>
-          <sprite>sprites\spr_ribCage</sprite>
+          <sprites name="Skeleton">
+            <sprite>sprites\spr_skull</sprite>
+            <sprite>sprites\spr_ribCage</sprite>
+            <sprite>sprites\spr_pelvis</sprite>
+          </sprites>
+          <sprites name="Wretch">
+            <sprite>sprites\spr_wretchBase</sprite>
+            <sprite>sprites\spr_wretchHead</sprite>
+            <sprite>sprites\spr_wretchBody</sprite>
+            <sprite>sprites\spr_wretchHips</sprite>
+            <sprite>sprites\spr_wretchLegs</sprite>
+          </sprites>
         </sprites>
       </sprites>
       <sprites name="Beard">

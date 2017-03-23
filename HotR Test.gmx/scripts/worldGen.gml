@@ -288,7 +288,7 @@ repeat(floor(mapWidth/4))
                 }
                 else
                 {
-                    iii.ruleSet = choose(undeadBand, cfViking, cfViking, cultParty, raidingParty)
+                    iii.ruleSet = choose(wretchParty, undeadBand, cfViking, cfViking, cultParty, raidingParty)
                 }
                 
                 with(iii)

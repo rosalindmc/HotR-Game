@@ -99,12 +99,19 @@ repeat(choose(5,6,7,8,9,10))
 mooks[0,0] = emptySlot
 mookTypes = 0
 
+#define wretchParty
+repeat(choose(9,10,12,14))
+{
+    createCharacterSheet(id,wretchSlave)
+}
+
+
 #define raiderCaptain
 //Rules for a Raider Captain
 initializeHumanoid()
 fashionInitialize()
 raceGen(race_northerner)
-detailGen(cwName)
+detailGen(whName)
 attributeGen()
 classGen(class_warrior)
 
@@ -120,7 +127,7 @@ checkLevelUp(id)
 initializeHumanoid()
 fashionInitialize()
 raceGen(race_northerner)
-detailGen(cwName)
+detailGen(whName)
 attributeGen()
 classGen(class_warrior)
 
@@ -133,7 +140,7 @@ checkLevelUp(id)
 initializeHumanoid()
 fashionInitialize()
 raceGen(race_northerner)
-detailGen(cwName)
+detailGen(whName)
 attributeGen()
 classGen(class_cultist)
 
@@ -145,17 +152,85 @@ checkLevelUp(id)
 initializeHumanoid()
 fashionInitialize()
 raceGen(race_northerner)
-detailGen(cwName)
+detailGen(whName)
 attributeGen()
 classGen(class_cultist)
 
+
+#define wretchSlave
+//Rules for a commonwealth adventurer
+initializeHumanoid()
+fashionInitialize()
+raceGen(race_wretch)
+detailGen(whName)
+attributeGen()
+classGen(class_cultist)
+
+invSlot[4,0] = emptySlot
+
+//SPECIAL WRETCH SUB SKELETON
+switch(size)
+{
+    //Small characters
+    case 1:
+    hipsImage = 0
+    bodyImage = 0
+    bodyAdjust = choose(0,-1)
+    chstAdjust = 0
+    break
+    
+    //Medium characters
+    case 2:
+    hipsImage = 2
+    bodyImage = choose(0,2)
+    bodyAdjust = -1
+    if bodyImage = 0 {bodyAdjust = 0}
+    break
+    
+    //Medium characters
+    case 3:
+    hipsImage = 4
+    bodyImage = choose(0,2)
+    bodyAdjust = -1
+    break
+}
+
+switch(bodyImage)
+{
+    case 0: //Small Body
+    shldrOffset[1] = 3
+    shldrOffset[2] = 2
+    shldrAdjust = 0
+    headOffset -= 2
+    height -= 2
+    headAdjust = 1
+    break
+    
+    case 2: //Medium Body
+    shldrOffset[1] = 4
+    shldrOffset[2] = 3
+    shldrAdjust = 1
+    headOffset -= 2 
+    height -= 2
+    headAdjust = 1   
+    break
+}
+
+eyeTrinket = -4
+backTrinket = -4
+neckTrinket = -4
+headTrinket = -4
+headScarfTrinket = -4
+
+underBodyItem = -4
+underLegsItem = -4
 
 #define cultThrall
 //Rules for a commonwealth adventurer
 initializeHumanoid()
 fashionInitialize()
 raceGen(race_northerner)
-detailGen(cwName)
+detailGen(whName)
 attributeGen()
 classGen(class_thrall)
 
@@ -199,3 +274,56 @@ talent[1,5] = 2
 mook = true
 headScarfTrinket = spr_hood
 favColour = choose(make_colour_rgb(49,19,9),make_colour_rgb(39,19,39),make_colour_rgb(19,19,39), make_colour_rgb(9,29,9),make_colour_rgb(39,19,19), make_colour_rgb(19,19,19))
+#define race_wretch
+//0 Vis Generation
+//1 Name Generation
+//2 Attribute Generation
+
+switch(argument0)
+{
+case 0:
+race = race_wretch
+raceName = 'Wretch'
+gender = masc
+
+faceImage = choose(0,0,0,0,2)
+headSprite = spr_wretchHead
+bodySprite = spr_wretchBody
+hipsSprite = spr_wretchHips
+eyeVis = false
+earSprite = spr_none
+hairStyle = spr_none    //Replace later with some wretch exclusive hairstyles
+hairColour = black
+skinTone = c_white
+bodyImage = 0
+size = choose(1,1,1,2,3)
+
+    legSprite = spr_wretchLegs
+    legSpriteMod = 0
+    hipsOffset = 6+bodyImage
+    height = 22+bodyImage
+    raceMove = -1
+        
+bodyOffset -= 1  
+
+legAdjust[1] = 1
+legAdjust[2] = 1
+break
+
+case 1:
+return ''
+break
+
+
+case 2:
+grace -= 1
+will -= 1
+might -= 2
+
+mgtCap = 8
+grcCap = 9
+wilCap = 9
+
+raceMove = -1
+break
+}

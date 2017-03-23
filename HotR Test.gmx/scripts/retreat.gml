@@ -63,7 +63,7 @@ switch(argument0)
     
     if global.pow1 < global.pow2
     {
-    return random(10)/(global.pow1/global.pow2)
+    return random(5)/(global.pow1/global.pow2)
     }
     else
     {
