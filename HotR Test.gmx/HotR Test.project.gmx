@@ -331,6 +331,11 @@
         <sprite>sprites\spr_leg</sprite>
         <sprite>sprites\spr_shortLeg</sprite>
         <sprite>sprites\spr_hand</sprite>
+        <sprites name="Humanoids">
+          <sprite>sprites\spr_skull</sprite>
+          <sprite>sprites\spr_pelvis</sprite>
+          <sprite>sprites\spr_ribCage</sprite>
+        </sprites>
       </sprites>
       <sprites name="Beard">
         <sprite>sprites\spr_bigMoustache</sprite>
@@ -467,6 +472,9 @@
         </scripts>
         <scripts name="Warhost">
           <script>scripts\warhost.gml</script>
+        </scripts>
+        <scripts name="Legion">
+          <script>scripts\legion.gml</script>
         </scripts>
       </scripts>
     </scripts>
@@ -820,7 +828,7 @@
     <room>rooms\rom_charSprite</room>
     <room>rooms\rom_battle</room>
   </rooms>
-  <constants number="53">
+  <constants number="54">
     <constant name="femme">0</constant>
     <constant name="masc">1</constant>
     <constant name="beige">make_color_rgb(205,165,117)</constant>
@@ -838,6 +846,7 @@
     <constant name="eyeBrown">make_color_rgb(161,116,55)</constant>
     <constant name="eyeGreen">make_color_rgb(41,89,11)</constant>
     <constant name="clothBlue">make_color_rgb(97,107,176)</constant>
+    <constant name="clothTeal">make_color_rgb(105,176,177)</constant>
     <constant name="clothGreen">make_color_rgb(105,176,97)</constant>
     <constant name="clothRed">make_color_rgb(176,97,97)</constant>
     <constant name="green">make_color_rgb(0,204,0)</constant>

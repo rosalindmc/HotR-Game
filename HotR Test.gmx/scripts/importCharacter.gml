@@ -28,6 +28,8 @@ class = o.className
 skinTone = o.skinTone
 headSprite = o.headSprite
 earSprite = o.earSprite
+hipsSprite = o.hipsSprite
+bodySprite = o.bodySprite
 eyeColour = o.eyeColour
 hairColour = o.hairColour
 hairStyle = o.hairStyle
@@ -297,7 +299,7 @@ iCWear()
 iCEquip(invSwitch)
 iCTraits()
 
-if bold = 1
+if bold = 1 and noMorale = false
 {
     haste += .5*(1+((fellowship-8)*.05))
     mSkill += 2*(1+((fellowship-8)*.05))
@@ -449,7 +451,7 @@ if o.invSlot[4,0] = emptySlot
 }
 
 #define staminaCheck
-if stm >= stmMax*.60
+if stm >= stmMax*.60 or tireless = true
 {
     //Fresh
     applyStatusEffect(fatigue,id,0,120)
@@ -471,7 +473,14 @@ else
     applyStatusEffect(fatigue,id,3,120)
 }
 
-applyStatusEffect(wounded,id,wounds,120)
+if woundProof = false
+{
+    applyStatusEffect(wounded,id,wounds,120)
+}
+else
+{
+    applyStatusEffect(wounded,id,0,120)
+}
 
 #define adjacentCharacters
 foeAdj = 0

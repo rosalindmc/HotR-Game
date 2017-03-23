@@ -222,6 +222,12 @@ missChance = 0
 dmgMitigation = 0
 mark = false
 
+//Supernatural
+canBleed = true
+tireless = false
+noMorale = false
+woundProof = false
+
 //Resistances
 resist[typeImpact] = 0
 resist[typePierce] = 0

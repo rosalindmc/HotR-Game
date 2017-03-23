@@ -22,6 +22,8 @@ gender = 0
 height = 28
 headSprite = spr_baseHead
 earSprite = spr_none
+bodySprite = spr_body
+hipsSprite = spr_hips
 skinTone = fair
 eyeColour = choose(eyeBlue,eyeGreen,c_dkgray,eyeViolet,c_olive,eyeBrown)
 hairStyle = spr_shortHair
@@ -312,7 +314,7 @@ draw_sprite_ext(legSprite,legAnim[2]+vFacing,legX[2],legY[2],hFacing*sX,sX,legRo
 i = 0 repeat(legsItems[2-vFacing]){i++ draw_sprite_ext(legsItem[i,2-vFacing],20+vFacing+(legSpriteMod*20)+legAnim[2],legX[2],legY[2],hFacing*sX,sX,legRot[2],legsColour[i,2-vFacing],1)}
 
 //Hips
-draw_sprite_ext(spr_hips,hipsImage+vFacing,hipsX,hipsY,hFacing*sX,sX,hipsRot,skinTone,1)
+draw_sprite_ext(hipsSprite,hipsImage+vFacing,hipsX,hipsY,hFacing*sX,sX,hipsRot,skinTone,1)
 draw_sprite_ext(spr_downHair,hipsImage+vFacing,hipsX,hipsY,hFacing*sX,sX,hipsRot,hairColour,1)
 i = 0 repeat(underHipsNum){i++ draw_sprite_ext(hipsItem[i],12+hipsImage+vFacing,hipsX,hipsY,hFacing*sX,sX,hipsRot,hipsColour[i],1)}
 
@@ -334,7 +336,7 @@ if vFacing = 0
 if bodyVFacing = 0
 {        
     //Upper Body
-    draw_sprite_ext(spr_body,bodyImage+vFacing,bodyX,bodyY,bodyHFacing*sX,sX,bodyRot,skinTone,1)
+    draw_sprite_ext(bodySprite,bodyImage+vFacing,bodyX,bodyY,bodyHFacing*sX,sX,bodyRot,skinTone,1)
     i = 0 repeat(bodyItems){i++ draw_sprite_ext(bodyItem[i],2+bodyImage+bodyVFacing,bodyX,bodyY,bodyHFacing*sX,sX,bodyRot,bodyColour[i],1)}
 
     //Chest
@@ -358,7 +360,7 @@ if bodyVFacing = 1
     i = 0 repeat(chstItems){i++ draw_sprite_ext(chstItem[i],8+chstImage,chstX,chstY,bodyHFacing*sX,sX,bodyRot,chstColour[i],1)}
     
     //Upper Body
-    draw_sprite_ext(spr_body,bodyImage+vFacing,bodyX,bodyY,bodyHFacing*sX,sX,bodyRot,skinTone,1)
+    draw_sprite_ext(bodySprite,bodyImage+vFacing,bodyX,bodyY,bodyHFacing*sX,sX,bodyRot,skinTone,1)
     i = 0 repeat(bodyItems){i++ draw_sprite_ext(bodyItem[i],2+bodyImage+bodyVFacing,bodyX,bodyY,bodyHFacing*sX,sX,bodyRot,bodyColour[i],1)}
 }
 
@@ -592,7 +594,7 @@ with(argument0)
     draw_sprite_ext(hairStyle,4,argument1,argument2,argument3,argument3,0,hairColour,hairVisible)
 
     //Upper Body
-    draw_sprite_general(spr_body,bodyImage,0,0,12,12-headOffset,argument1-(6*argument3)+(headAdjust*-argument3),argument2-(6*argument3)+(headOffset*argument3),argument3,argument3,0,skinTone,skinTone,skinTone,skinTone,1)
+    draw_sprite_general(bodySprite,bodyImage,0,0,12,12-headOffset,argument1-(6*argument3)+(headAdjust*-argument3),argument2-(6*argument3)+(headOffset*argument3),argument3,argument3,0,skinTone,skinTone,skinTone,skinTone,1)
     i = 0 repeat(bodyItems){i++ draw_sprite_general(bodyItem[i],2+bodyImage,0,0,12,12-headOffset,argument1-(6*argument3)+(headAdjust*-argument3),argument2-(6*argument3)+(headOffset*argument3),argument3,argument3,0,bodyColour[i],bodyColour[i],bodyColour[i],bodyColour[i],1)}
 
     //Head and Hair

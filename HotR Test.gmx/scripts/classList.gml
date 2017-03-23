@@ -147,7 +147,7 @@ className = 'Warrior'
 invSlot[1,0] = choose(battleAxe,spear,armingSword,mace)
 invSlot[2,0] = choose(shortSword,handAxe,roundShield,squareShield,heaterShield)
 invSlot[3,0] = choose(shortBow,crossbow,longBow,emptySlot,emptySlot,emptySlot)
-invSlot[4,0] = choose(chainMail)
+invSlot[4,0] = choose(chainMail,chainShirt)
 
 life = 6
 classLife = .19

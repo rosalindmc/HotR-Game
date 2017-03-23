@@ -73,6 +73,9 @@ if global.timeDelay = 0 and global.nextChar.owner.player = true and global.event
     iy = y+5
     draw_text(x+55,iy,h.name)
     iy += 12
+    
+    if h.tireless = false
+    {
     draw_text(x+55,iy,'Stamina')
     iy += 12
     
@@ -81,7 +84,10 @@ if global.timeDelay = 0 and global.nextChar.owner.player = true and global.event
     draw_set_colour(c_black)
     draw_rectangle(x+5,iy,x+105,iy+6,true)
     iy += 12
+    }
     
+    if h.noMorale = false
+    {
     draw_text(x+55,iy,'Morale')
     iy += 12
     
@@ -90,6 +96,7 @@ if global.timeDelay = 0 and global.nextChar.owner.player = true and global.event
     draw_set_colour(c_black)
     draw_rectangle(x+5,iy,x+105,iy+6,true)
     iy += 12
+    }
     
 }
 else

@@ -7,6 +7,11 @@ name = 'Bleed'
 type = 'Wound'
 buff = false
 tooltip = 'Suffering '+string(potency)+' damage and fatigue loss every 5 seconds.'
+
+if owner.canBleed = false
+{
+    duration = 0
+}
 break
 
 case 1:     //Stats
