@@ -208,7 +208,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
     {
         if 1+irandom(99) <= argument1+((skill-target.mSkill)*5)
         {
-            target.arm = max(0,arm-argument2)
+            target.arm = max(0,target.arm-argument2)
                         
             popup(argument0,id)
         }

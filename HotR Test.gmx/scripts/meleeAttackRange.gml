@@ -48,12 +48,18 @@ return false
 
 var actor = argument0
 var current = global.control.sightTile
+var d = global.control.reach
+
+if global.control.dualWield = true
+{
+    d = 1.5
+}
 
 with(obj_character)
 {
     if team != actor.team and dead = false and hidden = false
     {
-        if los(global.control.reach,current,sightTile)
+        if los(d,current,sightTile)
         {
             isoTile.overlay = 3
             isoTile.meleeAttack = true

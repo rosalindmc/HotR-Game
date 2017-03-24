@@ -127,16 +127,16 @@ if dodge > dge and mle = true
 {
     if argument5 = false    //On Proc
     {
-        p += ((dodge-dge)*argument1)*s
+        p += ((max(dodge,0)-dge)*argument1)*s
         
         popup(argument0,id)
     }
     else                    //On Tooltip
     {
-        p += ((dodge-dge)*argument1)*s
+        p += ((max(dodge,0)-dge)*argument1)*s
          
         obj_control.tooltipColour[obj_control.tooltipLength] = green
-        obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)+' '+string_format(((dodge-dge)*argument1)*s,2,1)
+        obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)+' '+string_format(((max(dodge,0)-dge)*argument1)*s,2,1)
         obj_control.tooltipLength += 1   
         
     }
@@ -277,14 +277,14 @@ if skill > target.mSkill and mle = true
 {
     if argument5 = false    //On Proc
     {
-        p += ((mSkill-target.mSkill)*argument1)*s
+        p += ((mSkill-max(target.mSkill,0))*argument1)*s
     }
     else                    //On Tooltip
     {
-        p += ((mSkill-target.mSkill)*argument1)*s
+        p += ((mSkill-max(target.mSkill,0))*argument1)*s
          
         obj_control.tooltipColour[obj_control.tooltipLength] = green
-        obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)+' '+string_format(((mSkill-target.mSkill)*argument1)*s,2,1)
+        obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)+' '+string_format(((mSkill-max(target.mSkill,0))*argument1)*s,2,1)
         obj_control.tooltipLength += 1   
         
     }

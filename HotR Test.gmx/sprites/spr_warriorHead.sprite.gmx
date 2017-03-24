@@ -10,7 +10,7 @@
   <bbox_left>9</bbox_left>
   <bbox_right>15</bbox_right>
   <bbox_top>2</bbox_top>
-  <bbox_bottom>9</bbox_bottom>
+  <bbox_bottom>10</bbox_bottom>
   <HTile>0</HTile>
   <VTile>0</VTile>
   <TextureGroups>
@@ -22,5 +22,7 @@
   <frames>
     <frame index="0">images\spr_warriorHead_0.png</frame>
     <frame index="1">images\spr_warriorHead_1.png</frame>
+    <frame index="2">images\spr_warriorHead_2.png</frame>
+    <frame index="3">images\spr_warriorHead_3.png</frame>
   </frames>
 </sprite>

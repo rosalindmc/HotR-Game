@@ -157,3 +157,10 @@ raceGen(cwRaceList())
 detailGen(cwName)
 attributeGen()
 classGen(classList())
+
+repeat(choose(0,0,0,1,1,2))
+{
+    level += 1
+    levelPending += 1
+    levelControl(id,false)
+}

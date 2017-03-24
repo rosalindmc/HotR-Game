@@ -29,6 +29,7 @@
 lockx = x
 locky = y
 lockSlot = -4
+iSize = 2
 inInventory = true
 equipped = 0
 tt = 0

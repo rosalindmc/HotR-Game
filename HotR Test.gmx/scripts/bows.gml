@@ -3,12 +3,13 @@
 
 #define longBow
 iSpr = spr_longBow
-iDmg = 5.0
+iDmg = 4.0
 iDmgRng = .3
 iType = typePierce
 iStrMult = .8
 iPen = 3
 iSpd = 0.60
+iSize = 2
 
 switch(argument0)
 {
@@ -59,12 +60,13 @@ break
 
 #define shortBow
 iSpr = spr_shortBow
-iDmg = 4.0
+iDmg = 3.0
 iDmgRng = .3
 iType = typePierce
 iStrMult = .8
 iPen = 2
 iSpd = 0.80
+iSize = 1
 
 switch(argument0)
 {
@@ -115,12 +117,13 @@ break
 
 #define crossbow
 iSpr = spr_crossbow
-iDmg = 10.0
+iDmg = 8.0
 iDmgRng = .3
 iType = typePierce
 iStrMult = 0
 iPen = 8
 iSpd = 0.40
+iSize = 2
 
 switch(argument0)
 {

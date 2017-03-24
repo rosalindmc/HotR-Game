@@ -9,6 +9,7 @@ iType = typeRend
 iStrMult = 1
 iPen = 1
 iSpd = 2.00
+iSize = 0
 
 switch(argument0)
 {
@@ -22,7 +23,7 @@ dmgType = iType
 rat = iSpd
 pen = iPen
 
-itemProf[0] = lightWeaponProficiency  
+autoProf(heavyWeaponProficiency)
 break
 
 case 1:     //Called when owned
@@ -44,6 +45,7 @@ wepRange[i] = 1
 //Weapon Sprites
 weaponSprite[i] = iSpr
 
+autoHandedness()
 threat = true
 
 //Skill
@@ -65,6 +67,7 @@ iType = typePierce
 iStrMult = 1
 iPen = 8
 iSpd = 1.85
+iSize = 0
 
 switch(argument0)
 {
@@ -78,7 +81,7 @@ dmgType = iType
 rat = iSpd
 pen = iPen
 
-itemProf[0] = lightWeaponProficiency  
+autoProf(heavyWeaponProficiency)
 break
 
 case 1:     //Called when owned
@@ -100,6 +103,7 @@ wepRange[i] = 1
 //Weapon Sprites
 weaponSprite[i] = iSpr
 
+autoHandedness()
 threat = true
 
 //Skill
@@ -121,6 +125,7 @@ iType = typePierce
 iStrMult = .8
 iPen = 6
 iSpd = 1.4
+iSize = 1
 
 switch(argument0)
 {
@@ -134,7 +139,7 @@ dmgType = iType
 rat = iSpd
 pen = iPen
 
-itemProf[0] = lightWeaponProficiency  
+autoProf(heavyWeaponProficiency)
 break
 
 case 1:     //Called when owned
@@ -156,6 +161,7 @@ wepRange[i] = 1
 //Weapon Sprites
 weaponSprite[i] = iSpr
 
+autoHandedness()
 threat = true
 
 //Skill
@@ -177,6 +183,7 @@ iType = typeRend
 iStrMult = 1
 iPen = 1
 iSpd = 1.50
+iSize = 1
 
 switch(argument0)
 {
@@ -190,7 +197,7 @@ dmgType = iType
 rat = iSpd
 pen = iPen
 
-itemProf[0] = lightWeaponProficiency  
+autoProf(heavyWeaponProficiency)
 break
 
 case 1:     //Called when owned
@@ -212,6 +219,7 @@ wepRange[i] = 1
 //Weapon Sprites
 weaponSprite[i] = iSpr
 
+autoHandedness()
 threat = true
 
 //Skill
@@ -241,6 +249,7 @@ iType = typeRend
 iStrMult = 1
 iPen = 1
 iSpd = 1.30
+iSize = 2
 
 switch(argument0)
 {
@@ -254,7 +263,7 @@ dmgType = iType
 rat = iSpd
 pen = iPen
 
-itemProf[0] = mediumWeaponProficiency  
+autoProf(heavyWeaponProficiency)
 break
 
 case 1:     //Called when owned
@@ -276,6 +285,7 @@ wepRange[i] = 1
 //Weapon Sprites
 weaponSprite[i] = iSpr
 
+autoHandedness()
 threat = true
 
 //Skill
@@ -305,6 +315,7 @@ iType = typeRend
 iStrMult = 1
 iPen = 1
 iSpd = 1.35
+iSize = 2
 
 switch(argument0)
 {
@@ -318,7 +329,7 @@ dmgType = iType
 rat = iSpd
 pen = iPen
 
-itemProf[0] = mediumWeaponProficiency  
+autoProf(heavyWeaponProficiency)
 break
 
 case 1:     //Called when owned
@@ -340,6 +351,7 @@ wepRange[i] = 1
 //Weapon Sprites
 weaponSprite[i] = iSpr
 
+autoHandedness()
 threat = true
 
 //Skill
@@ -361,6 +373,7 @@ iType = typePierce
 iStrMult = 1
 iPen = 4
 iSpd = 1.1
+iSize = 2
 
 switch(argument0)
 {
@@ -374,7 +387,7 @@ dmgType = iType
 rat = iSpd
 pen = iPen
 
-itemProf[0] = mediumWeaponProficiency  
+autoProf(heavyWeaponProficiency)
 break
 
 case 1:     //Called when owned
@@ -396,6 +409,7 @@ wepRange[i] = 1
 //Weapon Sprites
 weaponSprite[i] = iSpr
 
+autoHandedness()
 threat = true
 
 //Skill
@@ -417,6 +431,7 @@ iType = typeRend
 iStrMult = 1.2
 iPen = 1
 iSpd = 1.10
+iSize = 2
 
 switch(argument0)
 {
@@ -430,7 +445,7 @@ dmgType = iType
 rat = iSpd
 pen = iPen
 
-itemProf[0] = mediumWeaponProficiency  
+autoProf(heavyWeaponProficiency)
 break
 
 case 1:     //Called when owned
@@ -452,6 +467,7 @@ wepRange[i] = 1
 //Weapon Sprites
 weaponSprite[i] = iSpr
 
+autoHandedness()
 threat = true
 
 //Skill
@@ -467,12 +483,13 @@ break
 
 #define longSword
 iSpr = spr_longSword
-iDmg = 6.5
+iDmg = 5.5
 iDmgRng = .2
 iType = typeRend
 iStrMult = 1
 iPen = 2
 iSpd = 1.00
+iSize = 3
 
 switch(argument0)
 {
@@ -486,9 +503,7 @@ dmgType = iType
 rat = iSpd
 pen = iPen
 
-greatWeapon = true
-
-itemProf[0] = heavyWeaponProficiency  
+autoProf(heavyWeaponProficiency)
 break
 
 case 1:     //Called when owned
@@ -510,7 +525,7 @@ wepRange[i] = 1
 //Weapon Sprites
 weaponSprite[i] = iSpr
 
-greatWeapon = true
+autoHandedness()
 greatWeaponSize = 1
 threat = true
 
@@ -535,12 +550,13 @@ break
 
 #define greatSword
 iSpr = spr_greatSword
-iDmg = 8.0
+iDmg = 7.0
 iDmgRng = .2
 iType = typeRend
 iStrMult = 1.2
 iPen = 3
 iSpd = 0.70
+iSize = 3
 
 switch(argument0)
 {
@@ -554,9 +570,7 @@ dmgType = iType
 rat = iSpd
 pen = iPen
 
-greatWeapon = true
-
-itemProf[0] = heavyWeaponProficiency  
+autoProf(heavyWeaponProficiency)
 break
 
 case 1:     //Called when owned
@@ -578,7 +592,7 @@ wepRange[i] = 1
 //Weapon Sprites
 weaponSprite[i] = iSpr
 
-greatWeapon = true
+autoHandedness()
 greatWeaponSize = 2
 reach = 2.5
 threat = true

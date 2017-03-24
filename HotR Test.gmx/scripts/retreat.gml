@@ -53,17 +53,17 @@ switch(argument0)
     {
         if team = global.control.team
         {
-            global.pow1 += expOnKill/(1+(wounds*.5))
+            global.pow1 += (10+expOnKill)/(1+(wounds*.5))
         }
         if team != global.control.team
         {
-            global.pow2 += expOnKill/(1+(wounds*.5))
+            global.pow2 += (10+expOnKill)/(1+(wounds*.5))
         }
     }
     
     if global.pow1 < global.pow2
     {
-    return random(5)/(global.pow1/global.pow2)
+    return random(3)/(global.pow1/global.pow2)
     }
     else
     {

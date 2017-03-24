@@ -223,6 +223,7 @@
     </sprites>
     <sprites name="Equipment">
       <sprites name="Clothing">
+        <sprite>sprites\spr_leatherPants</sprite>
         <sprite>sprites\spr_robe1</sprite>
         <sprite>sprites\spr_robe2</sprite>
         <sprite>sprites\spr_robe3</sprite>
@@ -291,7 +292,24 @@
       <sprites name="Shields">
         <sprite>sprites\spr_heaterShield</sprite>
         <sprite>sprites\spr_squareShield</sprite>
+        <sprite>sprites\spr_blackTowerShield</sprite>
         <sprite>sprites\spr_roundShield</sprite>
+      </sprites>
+      <sprites name="LargeCharEquipment">
+        <sprites name="Heavy Armour">
+          <sprite>sprites\spr_warriorBlackPlateBelt</sprite>
+          <sprite>sprites\spr_warriorChainShirt</sprite>
+          <sprite>sprites\spr_warriorChainPants</sprite>
+          <sprite>sprites\spr_warriorChainTabard</sprite>
+          <sprite>sprites\spr_blackKnightArmour</sprite>
+          <sprite>sprites\spr_blackKnightArmour2</sprite>
+        </sprites>
+      </sprites>
+      <sprites name="SmallCharEquipment">
+        <sprite>sprites\spr_wretchArmour</sprite>
+        <sprite>sprites\spr_goblinChainTabard</sprite>
+        <sprite>sprites\spr_wretchChainLoin</sprite>
+        <sprite>sprites\spr_wretchClothLoin</sprite>
       </sprites>
     </sprites>
     <sprites name="Environment">
@@ -340,6 +358,9 @@
           <sprites name="Wretch">
             <sprite>sprites\spr_wretchBase</sprite>
             <sprite>sprites\spr_wretchHead</sprite>
+            <sprite>sprites\spr_wretchHair</sprite>
+            <sprite>sprites\spr_wretchHair2</sprite>
+            <sprite>sprites\spr_wretchTwoHead</sprite>
             <sprite>sprites\spr_wretchBody</sprite>
             <sprite>sprites\spr_wretchHips</sprite>
             <sprite>sprites\spr_wretchLegs</sprite>
@@ -633,6 +654,12 @@
         <script>scripts\polearms.gml</script>
         <script>scripts\bows.gml</script>
         <script>scripts\armour.gml</script>
+        <scripts name="largeChar">
+          <script>scripts\largeArmour.gml</script>
+        </scripts>
+        <scripts name="smallChar">
+          <script>scripts\smallArmour.gml</script>
+        </scripts>
       </scripts>
       <scripts name="Mutators">
         <script>scripts\mutators.gml</script>

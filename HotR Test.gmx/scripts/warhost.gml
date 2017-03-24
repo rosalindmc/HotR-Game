@@ -100,7 +100,48 @@ mooks[0,0] = emptySlot
 mookTypes = 0
 
 #define wretchParty
-createCharacterSheet(id,warhostWarrior)
+if 1+irandom(99) < 10
+{
+    createCharacterSheet(id,warhostChampion)
+}
+
+repeat(choose(9,10,12,14))
+{
+    createCharacterSheet(id,wretchSlave)
+}
+
+
+//Tempfun
+money = 0.00
+
+//Inventory
+ii = 0
+repeat(choose(60))
+{
+    inventory[ii,0] = choose(
+    choose(knife,dagger,epee,armingSword,greatSword,longSword,shortSword,sabre,bastardSword),
+    choose(handAxe,battleAxe,greatAxe),
+    choose(halberd,shortSpear,spear,pike),
+    choose(maul,lightMace,mace,hammer,warhammer,staff),
+    choose(chainMail,chainShirt,breastPlate,robe,dress),
+    choose(heaterShield,squareShield,roundShield),
+    choose(shortBow,crossbow,longBow))
+    inventory[ii,1] = choose(0,0,0,1,1,1,1,1,1,1,1,1)
+    inventory[ii,2] = emptyMutator
+    inventory[ii,3] = emptyMutator
+    inventory[ii,4] = emptyMutator
+    ii += 1
+    inventorySize = ii
+}
+
+
+#define warhostParty
+createCharacterSheet(id,warhostChampion)
+
+repeat(choose(2,3,4))
+{
+    createCharacterSheet(id,warhostWarrior)
+}
 
 repeat(choose(9,10,12,14))
 {
@@ -161,6 +202,34 @@ mook = true
 experience += 5+irandom(10)
 checkLevelUp(id)
 
+#define warhostChampion
+//Rules for a commonwealth adventurer
+initializeHumanoid()
+fashionInitialize()
+raceGen(race_warriorsBlood)
+detailGen(whName)
+attributeGen()
+classGen(class_warrior)
+
+invSlot[1,0] = choose(greatSword,maul)
+invSlot[2,0] = choose(blackTowerShield)
+invSlot[3,0] = emptySlot
+invSlot[4,0] = choose(warriorChainmail)
+invSlot[8,0] = choose(blackKnightPlate)
+
+sleeveVariant = 2
+backTrinket = -4
+neckTrinket = -4
+hipTrinket = -4
+eyeTrinket = -4
+headScarfTrinket = -4
+overBodyItem = -4
+underBodyItem = -4
+underLegsItem = -4
+
+experience += 20+irandom(100)
+checkLevelUp(id)
+
 #define warhostWarrior
 //Rules for a commonwealth adventurer
 initializeHumanoid()
@@ -170,75 +239,24 @@ detailGen(whName)
 attributeGen()
 classGen(class_warrior)
 
-//SPECIAL WRETCH SUB SKELETON
-switch(size)
-{
-    //Small characters
-    case 1:
-    hipsImage = 0
-    bodyImage = 0
-    bodyAdjust = 1
-    hipsOffset = 16
-    bodyOffset = 10
-    legOffset[1] = 3
-    legOffset[2] = 4
-    chstAdjust = 0
-    break
-    
-    //Medium characters
-    case 2:
-    hipsImage = 2
-    bodyImage = choose(0,2)
-    bodyAdjust = 1
-    hipsOffset = 16
-    legOffset[1] = 4
-    legOffset[2] = 5
-    bodyOffset = 10
+invSlot[1,0] = choose(greatSword,maul)
+invSlot[2,0] = choose(blackTowerShield)
+invSlot[3,0] = emptySlot
+invSlot[4,0] = choose(warriorChainmail)
+invSlot[8,0] = choose(blackKnightPlate)
 
-    if bodyImage = 0 {bodyAdjust = 0}
-    break
-    
-    //Large characters
-    case 3:
-    hipsImage = 4
-    bodyImage = choose(0,2)
-    bodyAdjust = 1
-    hipsOffset = 16
-    legOffset[1] = 4
-    legOffset[2] = 5
-    bodyOffset = 10
-    break
-}
-
-switch(bodyImage)
-{
-    case 0: //Small Body
-    shldrOffset[1] = 6
-    shldrOffset[2] = 8
-    shldrAdjust = 0
-    headAdjust = -1
-    headOffset = choose(6,7)    
-    headOffset = 10
-    break
-    
-    case 2: //Medium Body
-    shldrOffset[1] = 7
-    shldrOffset[2] = 9
-    shldrAdjust = 1
-    headOffset = choose(6,7)
-    headAdjust = -1   
-    break
-}
-
-
-invSlot[4,0] = emptySlot
+sleeveVariant = 2
 backTrinket = -4
 neckTrinket = -4
+hipTrinket = -4
+eyeTrinket = -4
 headScarfTrinket = -4
+overBodyItem = -4
 underBodyItem = -4
 underLegsItem = -4
+mook = true
 
-experience += 150+irandom(1000)
+experience += 20
 checkLevelUp(id)
 
 #define cultChampion
@@ -272,62 +290,18 @@ detailGen(whName)
 attributeGen()
 classGen(class_cultist)
 
-invSlot[4,0] = emptySlot
-
-//SPECIAL WRETCH SUB SKELETON
-switch(size)
-{
-    //Small characters
-    case 1:
-    hipsImage = 0
-    bodyImage = 0
-    bodyAdjust = choose(0,-1)
-    chstAdjust = 0
-    break
-    
-    //Medium characters
-    case 2:
-    hipsImage = 2
-    bodyImage = choose(0,2)
-    bodyAdjust = -1
-    if bodyImage = 0 {bodyAdjust = 0}
-    break
-    
-    //Medium characters
-    case 3:
-    hipsImage = 4
-    bodyImage = choose(0,2)
-    bodyAdjust = -1
-    break
-}
-
-switch(bodyImage)
-{
-    case 0: //Small Body
-    shldrOffset[1] = 3
-    shldrOffset[2] = 2
-    shldrAdjust = 0
-    headOffset -= 2
-    height -= 2
-    headAdjust = 1
-    break
-    
-    case 2: //Medium Body
-    shldrOffset[1] = 4
-    shldrOffset[2] = 3
-    shldrAdjust = 1
-    headOffset -= 2 
-    height -= 2
-    headAdjust = 1   
-    break
-}
+invSlot[1,0] = choose(shortSpear)
+invSlot[3,0] = choose(emptySlot,emptySlot,shortBow)
+invSlot[4,0] = choose(wretchRags,wretchArmour)
 
 eyeTrinket = -4
 backTrinket = -4
 neckTrinket = -4
+hipTrinket = -4
 headTrinket = -4
 headScarfTrinket = -4
 
+overBodyItem = -4
 underBodyItem = -4
 underLegsItem = -4
 
@@ -392,28 +366,29 @@ race = race_wretch
 raceName = 'Wretch'
 gender = masc
 
-faceImage = choose(0,0,0,0,2)
-headSprite = spr_wretchHead
+headSprite = choose(spr_wretchHead,spr_wretchTwoHead)
 bodySprite = spr_wretchBody
 hipsSprite = spr_wretchHips
 eyeVis = false
 earSprite = spr_none
-hairStyle = spr_none    //Replace later with some wretch exclusive hairstyles
+hairStyle = choose(spr_none,spr_wretchHair,spr_wretchHair2)    //Replace later with some wretch exclusive hairstyles
+if headSprite = spr_wretchTwoHead
+{hairStyle = spr_none}
 hairColour = black
 skinTone = c_white
-bodyImage = 0
 size = choose(1,1,1,2,3)
 
     legSprite = spr_wretchLegs
     legSpriteMod = 0
-    hipsOffset = 6+bodyImage
-    height = 22+bodyImage
-    raceMove = -1
-        
-bodyOffset -= 1  
 
-legAdjust[1] = 1
-legAdjust[2] = 1
+itemSize = 1
+
+ii = choose(-1,0,1,2)
+legAdjust[1] = ii
+legAdjust[2] = ii
+hipsOffset = 7+ii
+
+smallRaceDetails()
 break
 
 case 1:
@@ -464,20 +439,25 @@ hipsSprite = spr_warriorHips
 chstSprite = spr_warriorChst
 armsSprite = spr_warriorArms
 handSprite = spr_warriorHand
-armsLength = 1.4
+armsLength = 1.3
 hairStyle = choose(spr_longHair,spr_bunHair,spr_shortHair)
 hairColour = choose(black,dkBrown)
 skinTone = choose(pale,pale,pale,pale,fair,beige)
-bodyImage = choose(0,0,1,2,2)
-size = choose(1,1,1,2,2,3)
+size = choose(1,1,1,1,1+gender,2,2+gender,3)
 
     legSprite = spr_warriorLegs
     legSpriteMod = 0 
-    hipsOffset = 11+bodyImage
-    height = 28+bodyImage
+    handHeightAdj[1] = 4
+    handHeightAdj[2] = 4
     
-legAdjust[1] = 1
-legAdjust[2] = 1
+ii = choose(-1,-2)
+legAdjust[1] = ii
+legAdjust[2] = ii
+hipsOffset = 17+ii
+
+itemSize = 3
+
+largeRaceDetails()
 break
 
 case 1:
@@ -487,11 +467,12 @@ break
 
 
 case 2:
-might += 6
+level = 3
+might += 4
 will += 2
-grace -= 1
 
-mgtCap = 16
+mgtCap = 14
+wilCap = 12
 break
 
 case 3:

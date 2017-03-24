@@ -124,3 +124,62 @@ legsColour[legsItems[1],1] = argument0
 legsItems[2] += 1
 legsItem[legsItems[2],2] = iSpr[legsVariant]
 legsColour[legsItems[2],2] = argument0
+#define armourApplyNoArms
+bodyItems += 1
+bodyItem[bodyItems] = iSpr[cutVariant]
+bodyColour[bodyItems] = argument0
+
+chstItems += 1
+chstItem[chstItems] = iSpr[max(cleaveVariant,cutVariant)]
+chstColour[chstItems] = argument0
+
+hipsItems += 1
+hipsItem[hipsItems] = iSpr[bodyVariant]
+hipsColour[hipsItems] = argument0
+
+if iSkrt[skirtVariant] != spr_none
+{
+skrtItems += 1
+skrtItem[skrtItems] = iSkrt[skirtVariant]
+skrtColour[skrtItems] = argument0
+}
+
+legsItems[1] += 1
+legsItem[legsItems[1],1] = iSpr[legsVariant]
+legsColour[legsItems[1],1] = argument0
+
+legsItems[2] += 1
+legsItem[legsItems[2],2] = iSpr[legsVariant]
+legsColour[legsItems[2],2] = argument0
+
+#define autoProf
+if iSize > global.charSelect.itemSize
+{
+    itemProf[0] = argument0  
+    greatWeapon = true
+}
+else if iSize = global.charSelect.itemSize
+{
+    itemProf[0] = mediumWeaponProficiency  
+    greatWeapon = false
+}
+else
+{
+    itemProf[0] = lightWeaponProficiency  
+    greatWeapon = false
+}
+
+#define autoHandedness
+if iSize > itemSize
+{
+    greatWeapon = true
+}
+else if iSize = itemSize
+{
+    greatWeapon = false
+}
+else
+{
+    greatWeapon = false
+    mSkill += .5
+}

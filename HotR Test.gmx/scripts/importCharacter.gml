@@ -35,12 +35,14 @@ hipsSprite = o.hipsSprite
 bodySprite = o.bodySprite
 armsLength = o.armsLength
 handSprite = o.handSprite
+chstOffset = o.chstOffset
 portraitAdj = o.portraitAdj
 eyeColour = o.eyeColour
 eyeVis = o.eyeVis
 hairColour = o.hairColour
 hairStyle = o.hairStyle
 beardStyle = o.beardStyle
+skrtSize = o.skrtSize
 name = string(o.firstName)+' '+string(o.lastName)
 
 legSprite = o.legSprite
@@ -70,8 +72,8 @@ legAdjust[2] = o.legAdjust[2]
 legOffset[1] = o.legOffset[1]
 legOffset[2] = o.legOffset[2]
 
-handHeight[1] = o.handHeight[1]
-handHeight[2] = o.handHeight[2]
+handHeightAdj[1] = o.handHeightAdj[1]
+handHeightAdj[2] = o.handHeightAdj[2]
 
 gender = o.gender
 
@@ -98,6 +100,8 @@ skirtVariant = o.skirtVariant
 
 cutVariant = o.cutVariant
 cleaveVariant = o.cleaveVariant
+
+itemSize = o.itemSize
 
 #define iCStats
 //Import Character attributes, skills, abilities, etc.
@@ -332,6 +336,7 @@ hipsItems = 0
 skrtItems = 0
 beltItems = 0
 headItems = 0
+girdleItems = 0
 underHipsNum = 1
 
 legsItems[1] = 0
@@ -340,6 +345,29 @@ armsItems[1] = 0
 armsItems[2] = 0
 
 #define preArmourCustom
+//Min Clothing
+if gender = femme and o.invSlot[4,0] = emptySlot and bodySprite = spr_body
+{
+    chstItems += 1
+    chstItem[chstItems] = spr_underClothes
+    chstColour[chstItems] = c_white
+    
+    bodyItems += 1
+    bodyItem[bodyItems] = spr_underClothes
+    bodyColour[bodyItems] = c_white
+}
+
+if o.invSlot[4,0] = emptySlot and bodySprite = spr_body
+{
+    hipsItems += 1
+    hipsItem[hipsItems] = spr_underClothes
+    hipsColour[hipsItems] = c_white
+}
+else
+{
+    underHipsNum -= 1
+}
+
 if race = "Tiefling"
 {
     headItems += 1
@@ -384,6 +412,8 @@ if underLegsItem != -4 and o.invSlot[4,0] != emptySlot
 }
 
 
+
+
 #define postArmourCustom
 if neckTrinket != -4 and o.invSlot[4,0] != emptySlot
 {
@@ -418,7 +448,7 @@ if hipTrinket != -4 and o.invSlot[4,0] != emptySlot and rigid = false
     beltColour[beltItems] = c_white
 }
 
-if headTrinket != -4
+if headTrinket != -4 and hairVisible = true
 {
     headItems += 1
     headItem[headItems] = headTrinket
@@ -436,29 +466,6 @@ if headScarfTrinket != -4
     bodyItems += 1
     bodyItem[bodyItems] = headScarfTrinket
     bodyColour[bodyItems] = favColour
-}
-
-//Min Clothing
-if gender = femme and o.invSlot[4,0] = emptySlot and bodySprite = spr_body
-{
-    chstItems += 1
-    chstItem[chstItems] = spr_underClothes
-    chstColour[chstItems] = c_white
-    
-    bodyItems += 1
-    bodyItem[bodyItems] = spr_underClothes
-    bodyColour[bodyItems] = c_white
-}
-
-if o.invSlot[4,0] = emptySlot and bodySprite = spr_body
-{
-    hipsItems += 1
-    hipsItem[hipsItems] = spr_underClothes
-    hipsColour[hipsItems] = c_white
-}
-else
-{
-    underHipsNum -= 1
 }
 
 #define staminaCheck

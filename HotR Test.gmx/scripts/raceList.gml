@@ -40,16 +40,17 @@ if skinTone = fair or skinTone = pale
 else
 {hairColour = choose(black,dkBrown)}
 
-bodyImage = choose(0,0,0,1,1,1,2)
 size = min(choose(1,1,1,2,2,3,3,4)+gender,4)
 
     legSprite = spr_leg
     legSpriteMod = 0 
-    hipsOffset = 11+bodyImage
-    height = 28+bodyImage
-    
-legAdjust[1] = 1
-legAdjust[2] = 1
+
+ii = choose(0,1,gender)
+legAdjust[1] = ii
+legAdjust[2] = ii
+hipsOffset = 12+ii
+
+mediumRaceDetails()
 break
 
 case 1:
@@ -97,16 +98,17 @@ headSprite = choose(spr_baseHead,spr_youngHead,spr_oldHead)
 hairStyle = choose(spr_longHair,spr_bunHair,spr_shortHair)
 hairColour = choose(black,dkBrown)
 skinTone = choose(dark,dark,beige,beige,beige)
-bodyImage = choose(0,0,1,2)
 size = min(choose(1,1,2,2,3,3,4)+gender,4)
 
     legSprite = spr_leg
     legSpriteMod = 0 
-    hipsOffset = 11+bodyImage
-    height = 28+bodyImage
+    
+ii = choose(0,1,gender)
+legAdjust[1] = ii
+legAdjust[2] = ii
+hipsOffset = 12+ii
 
-legAdjust[1] = 1
-legAdjust[2] = 1
+mediumRaceDetails()
 break
 
 case 1:
@@ -158,16 +160,17 @@ headSprite = choose(spr_baseHead,spr_youngHead,spr_oldHead,spr_oldHead)
 hairStyle = choose(spr_longHair,spr_bunHair,spr_shortHair)
 hairColour = choose(black,dkBrown,dkRed,c_yellow)
 skinTone = choose(pale,pale,fair)
-bodyImage = choose(0,0,1,2,2)
 size = min(choose(1,2,2,3,3,4)+gender,4)
 
     legSprite = spr_leg
     legSpriteMod = 0 
-    hipsOffset = 11+bodyImage
-    height = 28+bodyImage
-    
-legAdjust[1] = 1
-legAdjust[2] = 1
+     
+ii = choose(0,1,2,1+gender)
+legAdjust[1] = ii
+legAdjust[2] = ii
+hipsOffset = 12+ii
+
+mediumRaceDetails()
 break
 
 case 1:
@@ -204,7 +207,6 @@ case 0:
 race = race_dwarf
 raceName = 'Dwarf'
 gender = choose(femme,masc)
-faceImage = 2
 
 if 1+irandom(99) < 90
 {
@@ -217,26 +219,25 @@ if irandom(9)+gender >= 9
 }
 
 headSprite = choose(spr_oldHead,spr_oldHead,spr_oldHead,spr_baseHead)
-hairStyle = choose(spr_longHair,spr_bunHair,spr_shortHair)
+hairStyle = choose(spr_shortHair)
 hairColour = choose(black,dkBrown,dkRed,c_yellow)
 skinTone = choose(beige,fair,pale)
-bodyImage = choose(0,0,0,1,1)
-size = 4   //min(choose(3,3,4)+gender,4)
+size = 4
 
     legSprite = spr_shortLeg
     legSpriteMod = 1
-    hipsOffset = 8+bodyImage
-    height = 25+bodyImage
-    raceMove = -1
-    //headOffset -= 1
 
-legAdjust[1] = 1
-legAdjust[2] = 1
+ii = 0
+legAdjust[1] = ii
+legAdjust[2] = ii
+hipsOffset = 9+ii
+
+mediumRaceDetails()
 break
 
 case 1:
 return choose("Hard","Stone","Iron","Stout","Law","Wise","Gold","Copper","Noble","Strong")
-+choose("","mountain","beard","man","vein","crown","hilt","hammer","axe","dwarf")
++choose("","mount","beard","man","vein","crown","hilt","hammer","axe","dwarf")
 break
 
 
@@ -282,19 +283,17 @@ if skinTone = fair or skinTone = pale
 {hairColour = choose(black,dkBrown,dkRed,c_yellow)}
 else
 {hairColour = choose(black,dkBrown)}
-bodyImage = 0
 size = choose(1,1,1,2,3)
 
     legSprite = spr_shortLeg
     legSpriteMod = 1
-    hipsOffset = 8+bodyImage
-    height = 24+bodyImage
-    raceMove = -1
-        
-bodyOffset -= 1  
 
-legAdjust[1] = 1
-legAdjust[2] = 1
+ii = 0
+legAdjust[1] = ii
+legAdjust[2] = ii
+hipsOffset = 9+ii
+
+mediumRaceDetails()
 break
 
 case 1:
@@ -341,7 +340,6 @@ case 0:
 race = race_orc
 raceName = 'Orc'
 gender = choose(femme,masc,masc,masc,masc,masc)
-faceImage = 2
 
 if 1+irandom(99) < 50
 {
@@ -357,18 +355,17 @@ headSprite = choose(spr_oldHead,spr_baseHead,spr_baseHead)
 hairStyle = choose(spr_longHair,spr_bunHair,spr_shortHair)
 hairColour = black
 skinTone = choose(orcBrown,orcGreen)
-bodyImage = choose(0,1,1,1,2,2)
 size = min(choose(2,2,3,3,4)+gender,4)
 
     legSprite = spr_leg
     legSpriteMod = 0 
-    hipsOffset = 11+bodyImage
-    height = 28+(2*bodyImage)
 
-bodyOffset += bodyImage   
+ii = choose(0,1)+gender
+legAdjust[1] = ii
+legAdjust[2] = ii
+hipsOffset = 12+ii
 
-legAdjust[1] = 1
-legAdjust[2] = 1
+mediumRaceDetails()
 break
 
 case 1:
@@ -414,16 +411,17 @@ earSprite = choose(spr_elfEar,spr_none)
 hairStyle = choose(spr_longHair,spr_bunHair,spr_shortHair)
 hairColour = black
 skinTone = choose(fair, beige, dark, pale, demonRed, demonPurp, demonTan)
-bodyImage = choose(0,1,1,2)
 size = min(choose(1,1,1,2,2,3,3)+(gender*2),4)
 
     legSprite = spr_leg
     legSpriteMod = 0 
-    hipsOffset = 11+bodyImage
-    height = 28+bodyImage
     
-legAdjust[1] = 1
-legAdjust[2] = 1
+ii = choose(0,1)+gender
+legAdjust[1] = ii
+legAdjust[2] = ii
+hipsOffset = 12+ii
+
+mediumRaceDetails()
 break
 
 case 1:
@@ -463,19 +461,17 @@ earSprite = spr_elfEar
 hairStyle = choose(spr_longHair,spr_bunHair,spr_shortHair)
 hairColour = black
 skinTone = choose(orcBrown,orcGreen)
-bodyImage = 0
 size = choose(1,1,1,2,3)
 
     legSprite = spr_shortLeg
     legSpriteMod = 1
-    hipsOffset = 8+bodyImage
-    height = 24+bodyImage
-    raceMove = -1
-        
-bodyOffset -= 1  
 
-legAdjust[1] = 1
-legAdjust[2] = 1
+ii = 0
+legAdjust[1] = ii
+legAdjust[2] = ii
+hipsOffset = 9+ii
+
+mediumRaceDetails()
 break
 
 case 1:

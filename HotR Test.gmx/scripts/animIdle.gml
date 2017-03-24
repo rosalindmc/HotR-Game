@@ -11,6 +11,7 @@ hipsBounce = 0
 
 skrtAnim = 0
 headThrust = 0
+faceImage = 0
 
 headFacing = 1
 headRot = 0
@@ -95,6 +96,7 @@ switch(argument0)
     bounce = 0
     hipsBounce = 0
     hipsAdjust = 1
+    faceImage = 2
     
     hipsRot = 10*hFacing
     skrtAnim = 4
@@ -107,6 +109,7 @@ switch(argument0)
     hipsThrust = 3
     hipsBounce = 0
     hipsAdjust = 0
+    faceImage = 0
     
     skrtAnim = 4
     break
@@ -180,6 +183,7 @@ switch(argument0)
     hipsBounce = 0
     hipsAdjust = 0
     skrtAnim = 4
+    faceImage = 2
     
     headRot = 30*hFacing
     bodyRot = 45*hFacing
@@ -195,6 +199,7 @@ switch(argument0)
     hipsBounce = 0
     hipsAdjust = 0
     skrtAnim = 4
+    faceImage = 0
     
     headRot = 15*hFacing
     bodyRot = 30*hFacing
@@ -263,6 +268,7 @@ switch(argument0)
     bounce = 0
     hipsBounce = 0
     hipsAdjust = 1
+    faceImage = 2
     
     headRot = 15*hFacing
     bodyRot = 15*hFacing
@@ -277,6 +283,7 @@ switch(argument0)
     hipsThrust = 4
     hipsBounce = 0
     hipsAdjust = 0
+    faceImage = 0
     
     skrtAnim = 4
     break

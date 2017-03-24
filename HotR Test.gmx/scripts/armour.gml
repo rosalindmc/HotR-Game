@@ -148,11 +148,31 @@ armMax += iArm
 prot += iProt
 enc += iEnc
 
+if skirtVariant = 1
+{
+    hipsItems += 1
+    hipsItem[hipsItems] = spr_leatherPants
+    hipsColour[hipsItems] = c_white
+    underHipsNum += 1
+    
+    legsItems[1] += 1
+    legsItem[legsItems[1],1] = spr_leatherPants
+    legsColour[legsItems[1],1] = c_white
+    
+    legsItems[2] += 1
+    legsItem[legsItems[2],2] = spr_leatherPants
+    legsColour[legsItems[2],2] = c_white
+}
+else
+{
+    skrtItems += 1
+    skrtItem[skrtItems] = spr_robeSkirt1
+    skrtColour[skrtItems] = favColour
+}
+
+underHipsNum += 1
 armourApplyVis(c_white)
 
-skrtItems += 1
-skrtItem[skrtItems] = spr_robeSkirt1
-skrtColour[skrtItems] = favColour
 break
 }
 
@@ -161,7 +181,7 @@ iSpr[1] = spr_chainMail
 iSpr[2] = spr_chainMail
 iSpr[3] = spr_chainMail
 iSpr[4] = spr_chainMail
-iSkrt[1] = spr_chainTabard
+iSkrt[1] = spr_none
 iSkrt[2] = spr_chainTabard
 iSkrt[3] = spr_chainTabard
 iDodge = 0
@@ -192,6 +212,7 @@ armMax += iArm
 prot += iProt
 enc += iEnc
 
+underHipsNum += 1
 armourApplyVis(c_white)
 break
 }

@@ -9,6 +9,7 @@ iType = typePierce
 iStrMult = .8
 iPen = 2
 iSpd = 1.50
+iSize = 1
 
 switch(argument0)
 {
@@ -22,7 +23,7 @@ dmgType = iType
 rat = iSpd
 pen = iPen
 
-itemProf[0] = lightWeaponProficiency  
+autoProf(polearmProficiency) 
 break
 
 case 1:     //Called when owned
@@ -44,6 +45,8 @@ wepRange[i] = 1
 //Weapon Sprites
 weaponSprite[i] = iSpr
 
+autoHandedness()
+greatWeaponSize = 3
 threat = true
 
 //Skill
@@ -65,6 +68,7 @@ iType = typePierce
 iStrMult = .8
 iPen = 2
 iSpd = 1.30
+iSize = 2
 
 switch(argument0)
 {
@@ -78,7 +82,7 @@ dmgType = iType
 rat = iSpd
 pen = iPen
 
-itemProf[0] = mediumWeaponProficiency  
+autoProf(polearmProficiency) 
 break
 
 case 1:     //Called when owned
@@ -100,6 +104,9 @@ wepRange[i] = 1
 //Weapon Sprites
 weaponSprite[i] = iSpr
 
+autoHandedness()
+greatWeaponSize = 3
+reach = 2.5
 threat = true
 
 //Skill
@@ -115,12 +122,13 @@ break
 
 #define pike
 iSpr = spr_pike
-iDmg = 6.00
+iDmg = 5.00
 iDmgRng = .3
 iType = typePierce
 iStrMult = .8
 iPen = 3
 iSpd = 0.85
+iSize = 3
 
 switch(argument0)
 {
@@ -134,9 +142,7 @@ dmgType = iType
 rat = iSpd
 pen = iPen
 
-greatWeapon = true
-
-itemProf[0] = polearmProficiency  
+autoProf(polearmProficiency) 
 break
 
 case 1:     //Called when owned
@@ -158,7 +164,7 @@ wepRange[i] = 1
 //Weapon Sprites
 weaponSprite[i] = iSpr
 
-greatWeapon = true
+autoHandedness()
 greatWeaponSize = 4
 reach = 3.5
 threat = true
@@ -176,12 +182,13 @@ break
 
 #define halberd
 iSpr = spr_halberd
-iDmg = 6.50
+iDmg = 5.50
 iDmgRng = .2
 iType = typeRend
 iStrMult = 1
 iPen = 2
 iSpd = 0.90
+iSize = 3
 
 switch(argument0)
 {
@@ -195,9 +202,7 @@ dmgType = iType
 rat = iSpd
 pen = iPen
 
-greatWeapon = true
-
-itemProf[0] = polearmProficiency  
+autoProf(polearmProficiency) 
 break
 
 case 1:     //Called when owned
@@ -220,7 +225,7 @@ wepRange[i] = 1
 weaponSprite[i] = iSpr
 
 reach = 3
-greatWeapon = true
+autoHandedness()
 greatWeaponSize = 4
 threat = true
 

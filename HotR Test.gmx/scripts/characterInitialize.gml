@@ -106,12 +106,6 @@ skirtVariant = choose(1,2,3)    //Short Skirt, Long Skirt, Loin Cloth
 cutVariant = choose(1,2,3,4)      //Default Cut, Choke cut, Wide cut, Tank cut
 cleaveVariant = choose(1,2)   //Default Cut, Deep cut
 
-if gender = masc
-{
-    bodyVariant = 1
-    cutVariant = choose(1,2)
-}
-
 #define createCharacterSheet
 //createCharacterSheet(party,ruleset)
 

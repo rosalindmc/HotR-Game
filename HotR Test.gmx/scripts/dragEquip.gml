@@ -128,6 +128,7 @@ with(obj_inventorySlot)
 #define slotViable
 var success = false
 var slot = argument0
+var i = global.charSelect
 
 //First Check if the slot can take the given item
 with(argument1)
@@ -137,12 +138,12 @@ switch(argument0.equipSlot)
 case 0: success = true break
 
 case 1: 
-if ttType = itemTypeWeapon and (global.equipSlot[2].occupant = emptySlot or greatWeapon = false)
+if (ttType = itemTypeWeapon and (i.itemSize-2 <= iSize and i.itemSize+1 >= iSize)) and (global.equipSlot[2].occupant = emptySlot or greatWeapon = false)
 {success = true} 
 break
 
 case 2: 
-if (ttType = itemTypeWeapon or shield = true)and greatWeapon = false
+if ((ttType = itemTypeWeapon and (i.itemSize-2 <= iSize and i.itemSize+1 >= iSize)) or (shield = true and (i.itemSize-1 = iSize or i.itemSize = iSize))) and greatWeapon = false
 {
     if global.equipSlot[1].occupant != emptySlot
     {
@@ -154,13 +155,13 @@ if (ttType = itemTypeWeapon or shield = true)and greatWeapon = false
 }
 break
 
-case 3: if ttType = itemTypeRanged {success = true} break
+case 3: if ttType = itemTypeRanged and (i.itemSize-1 = iSize or i.itemSize = iSize) {success = true} break
 
-case 4: if ttType = itemTypeArmour {success = true} break
+case 4: if ttType = itemTypeArmour and iSize = i.itemSize {success = true} break
 
 case 5: case 6: case 7: if ttType = itemTypeTrinket {success = true} break
 
-case 8: if ttType = itemTypePlating or ttType = itemTypeTrinket {success = true} break
+case 8: if (ttType = itemTypePlating and iSize = i.itemSize) or ttType = itemTypeTrinket {success = true} break
 }
 }
 

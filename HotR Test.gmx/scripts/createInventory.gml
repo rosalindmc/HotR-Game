@@ -94,8 +94,7 @@ repeat(8)
         ii.itemTrait[3] = global.charSelect.invSlot[i,4]
         ii.inInventory = false
         ii.equipped = i
-        
-        
+         
         global.equipSlot[i].occupant = ii
         
         with(ii)

@@ -106,27 +106,30 @@ if target.dead = false
     ia = floor(p)-floor(p-a)
     p = max(p-a,0)
     
-    if p > 0 and target.immune[type] = false
+    if target.immune[type] = false
     {
-        triggerOnWound(false)
-        
-        with(target)
+        if p > 0
         {
-            if active = true
-            {
-                if (hFacing = 1 and x > other.x) or (hFacing = -1 and x < other.x)
-                {startAnimation(0,animFlinchForward)}
-                else
-                {startAnimation(0,animFlinch)}
-            }
+            triggerOnWound(false)
             
-            if owner.canBleed = true
+            with(target)
             {
-                part_system_depth(ps2,depth-1)
-                iii = point_direction(x,y,other.x,other.y)
-                part_type_direction(p2,iii-30,iii+30,0,10)
-                part_emitter_region(ps2,em2,bodyX,bodyX,bodyY,bodyY,ps_shape_rectangle,1)
-                part_emitter_burst(ps2,em2,p2,25)
+                if active = true
+                {
+                    if (hFacing = 1 and x > other.x) or (hFacing = -1 and x < other.x)
+                    {startAnimation(0,animFlinchForward)}
+                    else
+                    {startAnimation(0,animFlinch)}
+                }
+                
+                if owner.canBleed = true
+                {
+                    part_system_depth(ps2,depth-1)
+                    iii = point_direction(x,y,other.x,other.y)
+                    part_type_direction(p2,iii-30,iii+30,0,10)
+                    part_emitter_region(ps2,em2,bodyX,bodyX,bodyY,bodyY,ps_shape_rectangle,1)
+                    part_emitter_burst(ps2,em2,p2,25)
+                }
             }
         }
         

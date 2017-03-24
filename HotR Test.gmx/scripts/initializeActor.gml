@@ -153,6 +153,9 @@ wounds = 0
 foeAdj = 0
 allyAdj = 0
 
+//Character Size
+itemSize = 2
+
 //Other
 rigid = false
 

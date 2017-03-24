@@ -22,9 +22,8 @@ detailGen(cwName)
 attributeGen()
 classGen(class_warrior)
 
-raceName = 'Skeleton'
 lastName = ''
-race = race_undead
+race = race_skeleton
 skinTone = c_white
 headSprite = spr_skull
 bodySprite = spr_ribCage
@@ -58,9 +57,8 @@ classGen(class_thrall)
 
 invSlot[4,0] = choose(chainShirt,robe)
 
-raceName = 'Zombie'
 lastName = ''
-race = race_undead
+race = race_zombie
 skinTone = make_colour_rgb(190,240,215)
 headSprite = spr_oldHead
 hairColour = c_black
@@ -80,11 +78,26 @@ grace -= 4
 mook = true
 checkLevelUp(id)
 
-#define race_undead
+#define race_zombie
 switch(argument0)
 {
 case 3:     //Race Trait
+raceName = 'Zombie'
 sResist += 1
+tireless = true
+noMorale = true
+woundProof = true
+break
+}
+
+#define race_skeleton
+switch(argument0)
+{
+case 3:     //Race Trait
+raceName = 'Skeleton'
+sResist += 1
+resist[typeRend] = 2
+resist[typePierce] = 8
 canBleed = false
 tireless = true
 noMorale = true
