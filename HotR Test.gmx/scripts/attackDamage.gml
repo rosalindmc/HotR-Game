@@ -15,6 +15,10 @@ if target.dead = false
     else
     {
         rDamage()
+        if dualWield = true
+        {
+            atkHand += 1
+        }
     }
     
     dge = target.dodge-(max(0,(skill-target.mSkill)*3))
@@ -147,7 +151,10 @@ if target.dead = false
         }
     }
 
-
+    if dualWield = true and mle = false
+    {
+        atkHand -= 1
+    }
     }
 }
 
@@ -245,3 +252,147 @@ if bold = 1 and dead = false
 }
 
 bold = max(bold-argument0,0)
+#define indirectAttackDamage
+if target.dead = false
+{
+    //Damage script
+    backstab = false
+    mle = argument0
+    pMult = 1
+    
+    global.attackFromTile = isoTile
+    
+    if mle = true
+    {
+        mDamage()
+    }
+    else
+    {
+        rDamage()
+    }
+    
+    dge = target.dodge-(max(0,(skill-target.mSkill)*3))
+    
+    //Armour
+    a = target.arm
+    
+    //Facing
+    if abs(angle_difference(target.cFacing,point_direction(isoTile.x,0,target.isoTile.x,(target.isoTile.y-isoTile.y)*2))) < 180-target.arc
+    {
+        backstab = true    
+    }
+    
+    //Check Miss/Dodge
+    if irandom(99)+1 < missChance
+    {
+        ii = popup('Miss',id)
+        ii.font = fnt_damage
+    }
+    else if irandom(99)+1 < dge and backstab = false
+    {
+        ii = popup('Dodge',target)
+        ii.font = fnt_damage
+
+        loseStamina(target,1)
+        
+        with(target)
+        {
+            startAnimation(0,animDodge)
+        }
+        
+        //Suppress
+        if target.evasion != true
+        {
+            suppress(target,2.0)
+        }
+    }
+    else
+    {
+    //Suppress
+    suppress(target,2.0)
+        
+    //Check Block
+    if target.blocks >= 1 and backstab = false and (mle = true or target.hasShield = true)
+    {
+        if irandom(99)+1 < 100-(max(0,(skill-target.mSkill)*3)) 
+        {
+            a += p+target.blockStr
+            spendStamina(target,p*.05)
+            
+            ii = popup('Block',target)
+            ii.font = fnt_damage
+            
+            with(target)
+            {
+                startAnimation(1+other.hasShield,animBlock)
+                triggerOnBlock(false)
+            }
+            
+            if mle = true
+            {  
+                loseStamina(id,p*.05)  
+            }
+            else
+            {
+                a += p*2
+            }
+        }
+        
+        if mle = true
+        {
+            target.blocks -= 1
+        }
+    }
+    
+    //Mult Pow
+    p *= pMult
+    
+    //Armour and Penetration
+    a = max(0,(a*.25*(.25+random(.75)))-pen)
+    
+    //Calculate how much damage has been mitigated by armour
+    ia = floor(p)-floor(p-a)
+    p = max(p-a,0)
+    
+    if target.immune[type] = false
+    {
+        if p > 0
+        {   
+            with(target)
+            {
+                if active = true
+                {
+                    if (hFacing = 1 and x > other.x) or (hFacing = -1 and x < other.x)
+                    {startAnimation(0,animFlinchForward)}
+                    else
+                    {startAnimation(0,animFlinch)}
+                }
+                
+                if owner.canBleed = true
+                {
+                    part_system_depth(ps2,depth-1)
+                    iii = point_direction(x,y,other.x,other.y)
+                    part_type_direction(p2,iii-30,iii+30,0,10)
+                    part_emitter_region(ps2,em2,bodyX,bodyX,bodyY,bodyY,ps_shape_rectangle,1)
+                    part_emitter_burst(ps2,em2,p2,25)
+                }
+            }
+        }
+        
+        //Stamina
+        loseStamina(target,p*.15)    
+    
+        //Damage
+        woundLife(target,id,p,type)
+    
+        //Armour Descriptor
+        if ia > 0 and global.battleEnd = false
+        {
+            popup(string(ia)+' Mitigated',target)
+            ii.font = fnt_damage
+        }
+    }
+
+
+    }
+}

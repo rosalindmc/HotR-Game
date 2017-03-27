@@ -64,7 +64,14 @@ if instance_exists(collision)
     
     with(owner)
     {
-        attackDamage(false)
+        if other.mainAttack = true
+        {
+            attackDamage(false)
+        }
+        else
+        {
+            indirectAttackDamage(false)
+        }
     }
 }
 

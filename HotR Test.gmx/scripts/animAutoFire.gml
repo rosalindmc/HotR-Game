@@ -40,7 +40,17 @@ break
 //Shoot
 case 2:
 if instance_exists(target)
-{fireProjectile(wepRProjectile[atkHand+dualWield],wepRProjSpeed[atkHand+dualWield],wepRProjSprite[atkHand+dualWield],true)}
+{
+    if autoActive = autoFire
+    {
+        fireProjectile(wepRProjectile[atkHand],wepRProjSpeed[atkHand],wepRProjSprite[atkHand],true)
+    }
+    else
+    {
+        fireProjectile(wepRProjectile[atkHand],wepRProjSpeed[atkHand],wepRProjSprite[atkHand],false)
+    }
+}
+
 handHeight[argument0] = 8
 handRot[argument0] = facing
 handDist[argument0] = 8
@@ -65,7 +75,15 @@ handRot[3-argument0] = facing+(bodyHFacing*(2*(argument0-1.5))*45)
 handDist[3-argument0] = 5
 handDir[3-argument0] = facing+(bodyHFacing*(2*(argument0-1.5))*-30)
 
-alarm[5+argument0] = global.fspd*.3
+if autoActive > 0 and shots[3] > 0
+{
+    animStep[argument0] -= 2
+    autoActive -= 1
+    aim *= .75
+    shots[3] -= 1
+}
+
+alarm[5+argument0] = global.fspd*.1
 break
 
 case 4:

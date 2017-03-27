@@ -10,6 +10,7 @@ ii.owner = id
 ii.image_angle = ii.dir
 ii.z = h+(height*.75)
 ii.sprite_index = argument2
+ii.mainAttack = argument3
         
 //Vertical Distance to Cover
 vDist = target.h+(target.height*.75)-ii.z
@@ -20,6 +21,9 @@ iSpd = (argument1*metre)*max(1,5-(point_distance(target.x,target.y,x,y)/(10*metr
 
 ii.spd = iSpd/global.fspd
 ii.zspd = (vDist/(dDist/iSpd))/global.fspd+((dDist/iSpd)*(grav*metre/2))
-ii.zspd *= (1+((max(random(.1-(rSkill*aim*.01)),0))*choose(-1,1)))
+ii.zspd *= (1+((max(random(.1-(rSkill*aim*.01)),0))*choose(-1,1,2)))
 
-global.follow = ii
+if argument3 = true
+{
+    global.follow = ii
+}

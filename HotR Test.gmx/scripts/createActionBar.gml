@@ -25,6 +25,15 @@ with(obj_control)
         
         //Run Move Control
         moveControl(0)
+        
+        if global.control.autoFire != false
+        {
+            actNum += 1
+            i = instance_create(120+(actNum*20), view_hview-30, obj_actionButton)
+            i.action = autoBurst
+            i.number = actNum
+            i.sprite_index = ico_autoBurst
+        }
     }
     else
     {

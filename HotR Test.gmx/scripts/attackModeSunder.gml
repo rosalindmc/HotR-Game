@@ -281,3 +281,27 @@ break
 case 3:     //Stacking
 break
 }
+#define attackModeBurst
+switch(argument0)
+{
+case 0:     //Stats
+icon = ico_autoBurst
+upkp = 60.0
+name = 'Auto Burst'
+type = 'Attack'
+buff = true
+showDuration = false
+tooltip = ''
+break
+
+case 1:     //Stats
+owner.autoActive = owner.autoFire
+break
+
+case 2:     //Upkeep
+
+break
+
+case 3:     //Stacking
+break
+}

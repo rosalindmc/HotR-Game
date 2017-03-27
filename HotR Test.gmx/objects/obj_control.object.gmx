@@ -45,6 +45,7 @@ global.expTotal = 0
 global.losCheckFrom = noone
 global.follow = noone
 global.castMouse = 0
+global.battleEnd = false
 
 global.attackMode = -4
 global.attackModeNum = 0

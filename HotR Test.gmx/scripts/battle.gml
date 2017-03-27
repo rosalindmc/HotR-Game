@@ -10,7 +10,7 @@ switch(argument0)
     action = battle
     global.castMouse = 0
     //Check Line of Sight to all enemies
-    if i.rangeAttack = true and i.shots[i.atkHand+((i.invSwitch-1)*2)] > 0
+    if i.rangeAttack = true and i.shots[i.atkHand+i.dualWield+((i.invSwitch-1)*2)] > 0
     {
         with(obj_character)
         {
@@ -70,7 +70,9 @@ switch(argument0)
             target = cHover.occupant
             
             timeReset()
+            i.atkHand += i.dualWield
             attackPreview(false)
+            i.atkHand -= i.dualWield
             global.testSlot.delayAdd = i.s/(i.haste+i.atkHaste)                
             initiativeSlotAnticipate()
         }

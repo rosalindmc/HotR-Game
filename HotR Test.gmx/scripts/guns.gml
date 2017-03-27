@@ -91,7 +91,7 @@ iSpd = 1.2
 iSize = 1
 iShots = 20
 iReloads = 3
-iName = 'Repeater Carbine'
+iName = 'Auto Carbine'
 
 switch(argument0)
 {
@@ -133,6 +133,7 @@ wepRProjSpeed[i] = 30
 
 rangeAttack = true
 greatWeapon = true
+autoFire = 5
 
 //Weapon Sprites
 weaponSprite[i] = iSpr
@@ -156,7 +157,7 @@ iType = typePierce
 iStrMult = 0
 iPen = 6
 iSpd = 1.4
-iSize = 2
+iSize = 1
 iShots = 7
 iReloads = 3
 iName = 'Automatic'
@@ -203,7 +204,6 @@ rangeAttack = true
 
 //Weapon Sprites
 weaponSprite[i] = iSpr
-autoHandedness()
 
 //Skill
 onWound[onWoundSize,0] = wepsklCripple
@@ -224,7 +224,7 @@ iType = typePierce
 iStrMult = 0
 iPen = 12
 iSpd = 1.4
-iSize = 2
+iSize = 1
 iShots = 1
 iReloads = 10
 iName = 'Hand Cannon'
@@ -268,7 +268,6 @@ wepRProjSprite[i] = spr_bullet
 wepRProjSpeed[i] = 30
 
 rangeAttack = true
-autoHandedness()
 
 //Weapon Sprites
 weaponSprite[i] = iSpr
@@ -292,7 +291,7 @@ iType = typePierce
 iStrMult = 0
 iPen = 6
 iSpd = 1.4
-iSize = 2
+iSize = 1
 iShots = 6
 iReloads = 3
 iName = 'Revolver'
@@ -336,7 +335,6 @@ wepRProjSprite[i] = spr_bullet
 wepRProjSpeed[i] = 30
 
 rangeAttack = true
-autoHandedness()
 
 //Weapon Sprites
 weaponSprite[i] = iSpr
@@ -426,7 +424,7 @@ iDmg = 18.0
 iDmgRng = .3
 iType = typePierce
 iStrMult = 0
-iPen = 20
+iPen = 36
 iSpd = .5
 iSize = 2
 iShots = 1
@@ -439,7 +437,7 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_recoiless
 name = iName
 ttType = itemTypeRanged
-tooltip = "An heavy rifle for fighting monsters and heavy armour."
+tooltip = "A heavy rifle for fighting heavy armour."
 dmg = iDmg
 dmgType = iType
 rat = iSpd

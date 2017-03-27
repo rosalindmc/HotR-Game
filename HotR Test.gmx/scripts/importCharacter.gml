@@ -203,6 +203,8 @@ enc = 0
 reach = 1.5
 rigid = false
 autoLoad = false
+autoFire = false
+autoActive = false
 
 initializeTraits()
 initializeTriggers()

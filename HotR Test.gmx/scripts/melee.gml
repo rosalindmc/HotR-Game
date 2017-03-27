@@ -20,16 +20,20 @@ if abs(angle_difference(facing,0)) < 90
 else
 {hFacing = -1}
 
-shots[atkHand+((invSwitch-1)*2)] -= 1
-
-if autoLoad = true and reloads[atkHand+((invSwitch-1)*2)] > 0
+if autoActive != false
 {
-    shots[atkHand+((invSwitch-1)*2)] = maxShots[atkHand+((invSwitch-1)*2)]
-    reloads[atkHand+((invSwitch-1)*2)] -= 1
+    startAnimation(atkHand,animAutoFire)   
 }
-
-startAnimation(atkHand,script_execute(wepAnimType[atkHand],2))
-
+else
+{
+    shots[atkHand+dualWield+((invSwitch-1)*2)] -= 1
+    if autoLoad = true and reloads[atkHand+dualWield+((invSwitch-1)*2)] > 0
+    {
+        shots[atkHand+dualWield+((invSwitch-1)*2)] = maxShots[atkHand+dualWield+((invSwitch-1)*2)]
+        reloads[atkHand+dualWield+((invSwitch-1)*2)] -= 1
+    }
+    startAnimation(atkHand+dualWield,script_execute(wepAnimType[atkHand+dualWield],2))
+}
 //Stamina Cost
-s = 3/((wepRSpeed[atkHand]))
-spendStamina(id,s*wepRStamina[atkHand]*atkStaminaMult*.5)
+s = 3/((wepRSpeed[atkHand+dualWield]))
+spendStamina(id,s*wepRStamina[atkHand+dualWield]*atkStaminaMult*.25)
