@@ -10,12 +10,13 @@ iStrMult = .8
 iPen = 2
 iSpd = 1.50
 iSize = 1
+iName = 'Short Spear'
 
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_shortSpear
-name = 'Short Spear'
+name = iName
 ttType = itemTypeWeapon
 tooltip = "A short spear."
 dmg = iDmg
@@ -27,6 +28,7 @@ autoProf(polearmProficiency)
 break
 
 case 1:     //Called when owned
+wepName[i] = iName
 break
 
 case 2:     //Called when equipped
@@ -62,19 +64,20 @@ break
 
 #define spear
 iSpr = spr_spear
-iDmg = 3.4
+iDmg = 3.6
 iDmgRng = .3
 iType = typePierce
 iStrMult = .8
 iPen = 2
 iSpd = 1.30
 iSize = 2
+iName = 'Spear'
 
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_spear
-name = 'Spear'
+name = iName
 ttType = itemTypeWeapon
 tooltip = "A common spear."
 dmg = iDmg
@@ -86,6 +89,7 @@ autoProf(polearmProficiency)
 break
 
 case 1:     //Called when owned
+wepName[i] = iName
 break
 
 case 2:     //Called when equipped
@@ -122,19 +126,20 @@ break
 
 #define pike
 iSpr = spr_pike
-iDmg = 5.00
+iDmg = 4.4
 iDmgRng = .3
 iType = typePierce
 iStrMult = .8
 iPen = 3
-iSpd = 0.85
+iSpd = 0.90
 iSize = 3
+iName = 'Pike'
 
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_pike
-name = 'Pike'
+name = iName
 ttType = itemTypeWeapon
 tooltip = "A hefty pike."
 dmg = iDmg
@@ -146,6 +151,7 @@ autoProf(polearmProficiency)
 break
 
 case 1:     //Called when owned
+wepName[i] = iName
 break
 
 case 2:     //Called when equipped
@@ -182,19 +188,20 @@ break
 
 #define halberd
 iSpr = spr_halberd
-iDmg = 5.50
+iDmg = 5.6
 iDmgRng = .2
 iType = typeRend
 iStrMult = 1
 iPen = 2
 iSpd = 0.90
 iSize = 3
+iName = 'Halberd'
 
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_halberd
-name = 'Halberd'
+name = iName
 ttType = itemTypeWeapon
 tooltip = "A powerful halberd."
 dmg = iDmg
@@ -206,6 +213,7 @@ autoProf(polearmProficiency)
 break
 
 case 1:     //Called when owned
+wepName[i] = iName
 break
 
 case 2:     //Called when equipped

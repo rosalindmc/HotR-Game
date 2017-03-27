@@ -3,19 +3,20 @@
 
 #define lightMace
 iSpr = spr_lightMace
-iDmg = 3.6
+iDmg = 3.4
 iDmgRng = .2
 iType = typeImpact
 iStrMult = 1.2
 iPen = 1
 iSpd = 1.40
 iSize = 1
+iName = 'Light Mace'
 
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_lgtMace
-name = 'Light Mace'
+name = iName
 ttType = itemTypeWeapon
 tooltip = "A small dense mace."
 dmg = iDmg
@@ -27,6 +28,7 @@ autoProf(heavyWeaponProficiency)
 break
 
 case 1:     //Called when owned
+wepName[i] = iName
 break
 
 case 2:     //Called when equipped
@@ -61,19 +63,20 @@ break
 
 #define mace
 iSpr = spr_mace
-iDmg = 5.0
+iDmg = 4.6
 iDmgRng = .2
 iType = typeImpact
 iStrMult = 1.2
 iPen = 1
 iSpd = 1.15
 iSize = 2
+iName = 'Mace'
 
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_mace
-name = 'Mace'
+name = iName
 ttType = itemTypeWeapon
 tooltip = "A heavy mace."
 dmg = iDmg
@@ -85,6 +88,7 @@ autoProf(heavyWeaponProficiency)
 break
 
 case 1:     //Called when owned
+wepName[i] = iName
 break
 
 case 2:     //Called when equipped
@@ -120,19 +124,20 @@ break
 
 #define maul
 iSpr = spr_maul
-iDmg = 6.5
+iDmg = 5.8
 iDmgRng = .2
 iType = typeImpact
 iStrMult = 1.2
-iPen = 1
+iPen = 2
 iSpd = 0.85
 iSize = 3
+iName = 'Maul'
 
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_maul
-name = 'Maul'
+name = iName
 ttType = itemTypeWeapon
 tooltip = "A powerful maul."
 dmg = iDmg
@@ -144,6 +149,7 @@ autoProf(heavyWeaponProficiency)
 break
 
 case 1:     //Called when owned
+wepName[i] = iName
 break
 
 case 2:     //Called when equipped
@@ -163,6 +169,7 @@ wepRange[i] = 1
 weaponSprite[i] = iSpr
 
 autoHandedness()
+reach = 2
 greatWeaponSize = 3
 threat = true
 
@@ -179,19 +186,20 @@ break
 
 #define hammer
 iSpr = spr_hammer
-iDmg = 4.0
+iDmg = 3.6
 iDmgRng = .2
 iType = typePierce
 iStrMult = 1.2
 iPen = 10
 iSpd = 1.20
 iSize = 2
+iName = 'Hammer'
 
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_hammer
-name = 'Hammer'
+name = iName
 ttType = itemTypeWeapon
 tooltip = "A strong hammer"
 dmg = iDmg
@@ -203,6 +211,7 @@ autoProf(heavyWeaponProficiency)
 break
 
 case 1:     //Called when owned
+wepName[i] = iName
 break
 
 case 2:     //Called when equipped
@@ -246,19 +255,20 @@ break
 
 #define warhammer
 iSpr = spr_warhammer
-iDmg = 5.5
+iDmg = 4.6
 iDmgRng = .2
 iType = typePierce
 iStrMult = 1.2
 iPen = 14
 iSpd = 0.80
 iSize = 3
+iName = 'Warhammer'
 
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_warhammer
-name = 'Warhammer'
+name = iName
 ttType = itemTypeWeapon
 tooltip = "A mighty warhammer."
 dmg = iDmg
@@ -270,6 +280,7 @@ autoProf(heavyWeaponProficiency)
 break
 
 case 1:     //Called when owned
+wepName[i] = iName
 break
 
 case 2:     //Called when equipped
@@ -320,12 +331,13 @@ iStrMult = 1
 iPen = 1
 iSpd = 1.4
 iSize = 1
+iName = 'Staff'
 
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_staff
-name = 'Staff'
+name = iName
 ttType = itemTypeWeapon
 tooltip = "A traveller's staff."
 dmg = iDmg
@@ -338,6 +350,7 @@ greatWeapon = true
 break
 
 case 1:     //Called when owned
+wepName[i] = iName
 break
 
 case 2:     //Called when equipped

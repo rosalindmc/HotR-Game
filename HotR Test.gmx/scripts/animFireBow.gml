@@ -40,7 +40,7 @@ break
 //Shoot
 case 2:
 if instance_exists(target)
-{fireProjectile(wepRProjectile[atkHand],wepRProjSpeed[atkHand])}
+{fireProjectile(wepRProjectile[atkHand],wepRProjSpeed[atkHand],wepRProjSprite[atkHand])}
 handHeight[argument0] = 8
 handRot[argument0] = facing
 handDist[argument0] = 8

@@ -10,12 +10,15 @@ iStrMult = .8
 iPen = 3
 iSpd = 0.60
 iSize = 2
+iShots = 1
+iReloads = 32
+iName = 'Long Bow'
 
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_longBow
-name = 'Long Bow'
+name = iName
 ttType = itemTypeRanged
 tooltip = "A long bow."
 dmg = iDmg
@@ -27,6 +30,9 @@ itemProf[0] = basicRangedProficiency
 break
 
 case 1:     //Called when owned
+wepName[i] = iName
+maxShots[i] = iShots
+maxReloads[i] = iReloads
 break
 
 case 2:     //Called when equipped
@@ -40,9 +46,10 @@ wepRStrMult[i] = iStrMult
 wepRStamina[i] = iStrMult*2
 wepRPen[i] = iPen
 wepRSpeed[i] = iSpd
-wepRRange[i] = 1
+wepRRange[i] = 32
 
 rangeAttack = true
+autoLoad = true
 
 //Weapon Sprites
 weaponSprite[i] = iSpr
@@ -67,12 +74,15 @@ iStrMult = .8
 iPen = 2
 iSpd = 0.80
 iSize = 1
+iShots = 1
+iReloads = 20
+iName = 'Short Bow'
 
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_shortBow
-name = 'Short Bow'
+name = iName
 ttType = itemTypeRanged
 tooltip = "A short bow for hunting."
 dmg = iDmg
@@ -84,6 +94,9 @@ itemProf[0] = basicRangedProficiency
 break
 
 case 1:     //Called when owned
+wepName[i] = iName
+maxShots[i] = iShots
+maxReloads[i] = iReloads
 break
 
 case 2:     //Called when equipped
@@ -97,9 +110,10 @@ wepRStrMult[i] = iStrMult
 wepRStamina[i] = iStrMult*1.5
 wepRPen[i] = iPen
 wepRSpeed[i] = iSpd
-wepRRange[i] = 1
+wepRRange[i] = 24
 
 rangeAttack = true
+autoLoad = true
 
 //Weapon Sprites
 weaponSprite[i] = iSpr
@@ -108,28 +122,31 @@ weaponSprite[i] = iSpr
 onWound[onWoundSize,0] = wepsklCripple
 onWound[onWoundSize,1] = 'Cripple'
 onWound[onWoundSize,2] = 10
-onWound[onWoundSize,3] = 2
+onWound[onWoundSize,3] = 3
 onWound[onWoundSize,4] = i
-onWound[onWoundSize,5] = 15
+onWound[onWoundSize,5] = 10
 onWoundSize += 1
 break
 }
 
 #define crossbow
 iSpr = spr_crossbow
-iDmg = 8.0
+iDmg = 7.0
 iDmgRng = .3
 iType = typePierce
 iStrMult = 0
-iPen = 8
-iSpd = 0.40
+iPen = 4
+iSpd = 1
 iSize = 2
+iShots = 1
+iReloads = 20
+iName = 'Crossbow'
 
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_crossbow
-name = 'Crossbow'
+name = iName
 ttType = itemTypeRanged
 tooltip = "A powerful crossbow."
 dmg = iDmg
@@ -141,6 +158,9 @@ itemProf[0] = basicRangedProficiency
 break
 
 case 1:     //Called when owned
+wepName[i] = iName
+maxShots[i] = iShots
+maxReloads[i] = iReloads
 break
 
 case 2:     //Called when equipped
@@ -151,10 +171,12 @@ wepRPow[i] = iDmg
 wepRType[i] = iType
 wepRPowRng[i] = .3
 wepRStrMult[i] = iStrMult
-wepRStamina[i] = 2
+wepRStamina[i] = .1
 wepRPen[i] = iPen
 wepRSpeed[i] = iSpd
-wepRRange[i] = 1
+wepRRange[i] = 28
+wepReload[i] = 5.0
+wepReloadStamina[i] = 2.0
 
 rangeAttack = true
 
@@ -165,6 +187,71 @@ weaponSprite[i] = iSpr
 onHit[onHitSize,0] = wepsklStagger
 onHit[onHitSize,1] = 'Stagger'
 onHit[onHitSize,2] = 20
+onHit[onHitSize,3] = 10
+onHit[onHitSize,4] = i
+onHit[onHitSize,5] = false
+onHitSize += 1
+break
+}
+
+#define lightCrossbow
+iSpr = spr_lightCrossbow
+iDmg = 5.0
+iDmgRng = .3
+iType = typePierce
+iStrMult = 0
+iPen = 4
+iSpd = 1
+iSize = 2
+iShots = 1
+iReloads = 20
+iName = 'Light Crossbow'
+
+switch(argument0)
+{
+case 0:     //Called when the item creates an icon and tooltip
+sprite_index = ico_crossbow
+name = iName
+ttType = itemTypeRanged
+tooltip = "A lighter crossbow."
+dmg = iDmg
+dmgType = iType
+rat = iSpd
+pen = iPen
+
+itemProf[0] = basicRangedProficiency  
+break
+
+case 1:     //Called when owned
+wepName[i] = iName
+maxShots[i] = iShots
+maxReloads[i] = iReloads
+break
+
+case 2:     //Called when equipped
+wepClass[i] = ranged
+wepAnimType[i] = typeCrossbow
+
+wepRPow[i] = iDmg
+wepRType[i] = iType
+wepRPowRng[i] = .3
+wepRStrMult[i] = iStrMult
+wepRStamina[i] = .1
+wepRPen[i] = iPen
+wepRSpeed[i] = iSpd
+wepRRange[i] = 20
+wepReload[i] = 3.0
+wepReloadStamina[i] = 1.0
+
+rangeAttack = true
+
+//Weapon Sprites
+weaponSprite[i] = iSpr
+
+//Skill
+onHit[onHitSize,0] = wepsklStagger
+onHit[onHitSize,1] = 'Stagger'
+onHit[onHitSize,2] = 10
 onHit[onHitSize,3] = 10
 onHit[onHitSize,4] = i
 onHit[onHitSize,5] = false

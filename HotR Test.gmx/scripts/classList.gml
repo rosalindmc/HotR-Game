@@ -29,6 +29,12 @@ invSlot[1,0] = choose(greatSword,armingSword,staff)
 invSlot[3,0] = choose(shortBow,longBow,emptySlot,emptySlot,emptySlot)
 invSlot[4,0] = robe
 
+if wepSize = 1
+{
+    invSlot[1,0] = choose(armingSword,staff)
+    invSlot[3,0] = choose(shortBow,emptySlot,emptySlot,emptySlot)
+}
+
 //Class Stats and Progression
 life = 2
 classLife = .13
@@ -54,9 +60,15 @@ talent[1,5] = 1
 
 #define class_duelist
 className = 'Duelist'
-invSlot[1,0] = sabre
-invSlot[2,0] = choose(dagger,roundShield,emptySlot,emptySlot,emptySlot)
+invSlot[1,0] = choose(sabre,rapier)
+invSlot[2,0] = choose(dagger,epee,roundShield,emptySlot,emptySlot,emptySlot)
 invSlot[4,0] = choose(robe,dress,chainShirt)
+
+if wepSize = 1
+{
+    invSlot[1,0] = epee
+}
+
 
 life = 4
 classLife = .16
@@ -85,9 +97,16 @@ talent[1,5] = 1
 className = 'Adventurer'
 
 //Inventory
-invSlot[1,0] = choose(greatSword,maul,greatAxe)
+invSlot[1,0] = choose(longSword,maul,greatAxe,warhammer)
 invSlot[3,0] = choose(shortBow,crossbow,longBow,emptySlot,emptySlot,emptySlot)
 invSlot[4,0] = choose(robe,chainShirt)
+
+if wepSize = 1
+{
+    invSlot[1,0] = choose(bastardSword,mace,battleAxe,hammer)
+    invSlot[3,0] = choose(shortBow,emptySlot,emptySlot)
+}
+
 
 life = 4
 classLife = .16
@@ -119,6 +138,11 @@ invSlot[2,0] = choose(shortSword,dagger,knife,roundShield,emptySlot)
 invSlot[3,0] = choose(shortBow,crossbow,emptySlot,emptySlot,emptySlot)
 invSlot[4,0] = robe
 
+if wepSize = 1
+{
+    invSlot[3,0] = choose(shortBow,emptySlot,emptySlot)
+}
+
 life = 2
 classLife = .13
 stamina = 6
@@ -148,6 +172,13 @@ invSlot[1,0] = choose(battleAxe,spear,armingSword,mace)
 invSlot[2,0] = choose(shortSword,handAxe,roundShield,squareShield,heaterShield)
 invSlot[3,0] = choose(shortBow,crossbow,longBow,emptySlot,emptySlot,emptySlot)
 invSlot[4,0] = choose(chainMail,chainShirt)
+
+if wepSize = 1
+{
+    invSlot[1,0] = choose(handAxe,shortSpear,shortSword,lightMace,epee)
+    invSlot[2,0] = choose(knife,handAxe,dagger,roundShield,heaterShield)
+    invSlot[3,0] = choose(shortBow,emptySlot,emptySlot)
+}
 
 life = 6
 classLife = .19

@@ -32,11 +32,15 @@ switch(argument0)
     case 2:
     global.testSlot.delayAdd = (1.0/i.haste)
     tooltipTitle = 'Switch Weapons'
-    if i.invSwitch = 0
-    {abilityTT = 'Action#Switch to Ranged Set'}
+    if i.invSwitch = 1
+    {abilityTT = 'Action#Switch to '+i.wepName[3]
+    abilityTTLength = 1}
+    else if i.wepName[2] = ''
+    {abilityTT = 'Action#Switch to '+i.wepName[1]
+    abilityTTLength = 1}
     else
-    {abilityTT = 'Action#Switch to Melee Set'}
-    abilityTTLength = 1
+    {abilityTT = 'Action#Switch to '+i.wepName[1]+' and '+i.wepName[2]
+    abilityTTLength = 2}  
     initiativeSlotAnticipate()
     break
     

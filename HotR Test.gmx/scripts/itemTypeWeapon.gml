@@ -270,3 +270,50 @@ iy += 28
 draw_text_ext(ix,iy,tooltip,12,100)
 
 draw_set_alpha(1)
+#define itemTypePistol
+draw_set_alpha(tt)
+
+draw_set_colour(c_dkgray)
+draw_rectangle(x+10,y-10,x+120,y+60+38,false)
+draw_set_colour(c_ltgray)
+draw_rectangle(x+10,y-10,x+120,y+60+38,true)
+
+draw_set_colour(global.itemColour[itemQuality])
+draw_set_halign(fa_middle)
+draw_set_valign(fa_top)
+draw_set_font(fnt_tooltip)
+
+ix = x+15
+iy = y-6
+
+draw_text(ix+50,iy,name)
+draw_set_colour(c_white)
+draw_set_halign(fa_left)
+draw_set_font(fnt_tooltip)
+iy += 20
+draw_text(ix,iy,string_format(dmg,2,1)+' '+string(damageType(dmgType)))
+draw_set_font(fnt_tinyText)
+iy += 14
+draw_text(ix,iy,'RAT: '+string_format(rat,2,1))
+iy += 14
+draw_text(ix,iy,'PEN: ')
+
+i = 0
+ax = ix+25
+repeat(floor(pen/4))
+{
+    draw_sprite(spr_bigArmIcon,0,ax,iy+7)
+    draw_sprite(spr_bigArmIcon,4,ax,iy+7)
+    ax += 7
+    i += 4
+}
+if pen > i
+{
+    draw_sprite(spr_bigArmIcon,pen-i,ax,iy+7)
+    draw_sprite(spr_bigArmIcon,4+pen-i,ax,iy+7)
+}
+
+iy += 28
+draw_text_ext(ix,iy,tooltip,12,100)
+
+draw_set_alpha(1)

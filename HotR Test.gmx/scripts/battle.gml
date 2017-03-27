@@ -10,7 +10,7 @@ switch(argument0)
     action = battle
     global.castMouse = 0
     //Check Line of Sight to all enemies
-    if i.rangeAttack = true
+    if i.rangeAttack = true and i.shots[i.atkHand+((i.invSwitch-1)*2)] > 0
     {
         with(obj_character)
         {
@@ -38,7 +38,7 @@ switch(argument0)
         //Ranged Attack
         with(i){ranged()}
         //End Turn
-        endTurn(3.0/i.haste)
+        endTurn(i.s/(i.haste+i.atkHaste))
     }
     //Melee Attack
     if cHover.meleeAttack = true and (key_meleeToggle = true or cHover.rangedAttack = false) and global.attackFromTile != noone

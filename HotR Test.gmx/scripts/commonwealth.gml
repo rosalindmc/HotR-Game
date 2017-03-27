@@ -128,13 +128,14 @@ ii = 0
 repeat(choose(60))
 {
     inventory[ii,0] = choose(
-    choose(knife,dagger,epee,armingSword,greatSword,longSword,shortSword,sabre,bastardSword),
+    choose(knife,dagger,epee,armingSword,greatSword,longSword,shortSword,sabre,rapier,bastardSword),
     choose(handAxe,battleAxe,greatAxe),
     choose(halberd,shortSpear,spear,pike),
     choose(maul,lightMace,mace,hammer,warhammer,staff),
     choose(chainMail,chainShirt,breastPlate,robe,dress),
     choose(heaterShield,squareShield,roundShield),
-    choose(shortBow,crossbow,longBow))
+    choose(shortBow,lightCrossbow,crossbow,longBow),
+    choose(automatic,revolver,handCannon,repeaterCarbine,carbine,longRifle,recoilessRifle))
     inventory[ii,1] = choose(0,0,0,1,1,1,1,1,1,1,1,1)
     inventory[ii,2] = emptyMutator
     inventory[ii,3] = emptyMutator

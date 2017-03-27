@@ -140,7 +140,7 @@ if target.dead = false
         woundLife(target,id,p,type)
     
         //Armour Descriptor
-        if ia > 0
+        if ia > 0 and global.battleEnd = false
         {
             popup(string(ia)+' Mitigated',target)
             ii.font = fnt_damage

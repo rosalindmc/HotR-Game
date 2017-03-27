@@ -38,6 +38,36 @@ with(obj_control)
         battle(0)
     }
     
+    if global.control.shots[1] < global.control.maxShots[1] and global.control.invSwitch = 1
+    {
+        actNum += 1
+        iv = instance_create(120+(actNum*20), view_hview-30, obj_actionButton)
+        iv.action = reload1
+        iv.number = actNum
+        iv.sprite_index = ico_reload
+        script_execute(reload1,4)
+    }
+    
+    if global.control.shots[2] < global.control.maxShots[2] and global.control.invSwitch = 1
+    {
+        actNum += 1
+        iv = instance_create(120+(actNum*20), view_hview-30, obj_actionButton)
+        iv.action = reload2
+        iv.number = actNum
+        iv.sprite_index = ico_reload
+        script_execute(reload2,4)
+    }
+
+    if global.control.shots[3] < global.control.maxShots[3] and global.control.invSwitch = 2
+    {
+        actNum += 1
+        iv = instance_create(120+(actNum*20), view_hview-30, obj_actionButton)
+        iv.action = reload3
+        iv.number = actNum
+        iv.sprite_index = ico_reload
+        script_execute(reload3,4)
+    }
+    
     if global.control.owner.invSlot[3,0] != emptySlot
     {
         actNum += 1

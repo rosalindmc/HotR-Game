@@ -13,6 +13,13 @@ life = lifeMax
 stm = stmMax
 arm = armMax
 
+shots[1] = maxShots[1]
+shots[2] = maxShots[2]
+shots[3] = maxShots[3]
+reloads[1] = maxReloads[1]
+reloads[2] = maxReloads[2]
+reloads[3] = maxReloads[3]
+
 expEarned = false
 expOnKill = floor(o.level*(1+(o.level*.1)))
 
@@ -101,7 +108,8 @@ skirtVariant = o.skirtVariant
 cutVariant = o.cutVariant
 cleaveVariant = o.cleaveVariant
 
-itemSize = o.itemSize
+wepSize = o.wepSize
+armSize = o.armSize
 
 #define iCStats
 //Import Character attributes, skills, abilities, etc.
@@ -194,6 +202,7 @@ prot = 0
 enc = 0
 reach = 1.5
 rigid = false
+autoLoad = false
 
 initializeTraits()
 initializeTriggers()

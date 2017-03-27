@@ -381,7 +381,8 @@ size = choose(1,1,1,2,3)
     legSprite = spr_wretchLegs
     legSpriteMod = 0
 
-itemSize = 1
+wepSize = 1
+armSize = 1
 
 ii = choose(-1,0,1,2)
 legAdjust[1] = ii
@@ -455,7 +456,8 @@ legAdjust[1] = ii
 legAdjust[2] = ii
 hipsOffset = 17+ii
 
-itemSize = 3
+wepSize = 3
+armSize = 3
 
 largeRaceDetails()
 break

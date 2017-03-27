@@ -3,19 +3,20 @@
 
 #define knife
 iSpr = spr_knife
-iDmg = 2.0
+iDmg = 2.4
 iDmgRng = .2
 iType = typeRend
 iStrMult = 1
 iPen = 1
 iSpd = 2.00
 iSize = 0
+iName = 'Knife'
 
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_knife
-name = 'Knife'
+name = iName
 ttType = itemTypeWeapon
 tooltip = "A small knife."
 dmg = iDmg
@@ -27,6 +28,7 @@ autoProf(heavyWeaponProficiency)
 break
 
 case 1:     //Called when owned
+wepName[i] = iName
 break
 
 case 2:     //Called when equipped
@@ -61,19 +63,20 @@ break
 
 #define dagger
 iSpr = spr_dagger
-iDmg = 2.0
+iDmg = 2.4
 iDmgRng = .3
 iType = typePierce
 iStrMult = 1
 iPen = 8
 iSpd = 1.85
 iSize = 0
+iName = 'Dagger'
 
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_dagger
-name = 'Dagger'
+name = iName
 ttType = itemTypeWeapon
 tooltip = "A sharp dagger."
 dmg = iDmg
@@ -85,6 +88,7 @@ autoProf(heavyWeaponProficiency)
 break
 
 case 1:     //Called when owned
+wepName[i] = iName
 break
 
 case 2:     //Called when equipped
@@ -126,12 +130,13 @@ iStrMult = .8
 iPen = 6
 iSpd = 1.4
 iSize = 1
+iName = 'Epee'
 
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_epee
-name = 'Epee'
+name = iName
 ttType = itemTypeWeapon
 tooltip = "A small light thrusting sword."
 dmg = iDmg
@@ -143,6 +148,7 @@ autoProf(heavyWeaponProficiency)
 break
 
 case 1:     //Called when owned
+wepName[i] = iName
 break
 
 case 2:     //Called when equipped
@@ -184,12 +190,13 @@ iStrMult = 1
 iPen = 1
 iSpd = 1.50
 iSize = 1
+iName = 'Short Sword'
 
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_shtSword
-name = 'Short Sword'
+name = iName
 ttType = itemTypeWeapon
 tooltip = "A short sword."
 dmg = iDmg
@@ -201,6 +208,7 @@ autoProf(heavyWeaponProficiency)
 break
 
 case 1:     //Called when owned
+wepName[i] = iName
 break
 
 case 2:     //Called when equipped
@@ -250,12 +258,13 @@ iStrMult = 1
 iPen = 1
 iSpd = 1.30
 iSize = 2
+iName = 'Arming Sword'
 
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_armSword
-name = 'Arming Sword'
+name = iName
 ttType = itemTypeWeapon
 tooltip = "An arming sword."
 dmg = iDmg
@@ -267,6 +276,7 @@ autoProf(heavyWeaponProficiency)
 break
 
 case 1:     //Called when owned
+wepName[i] = iName
 break
 
 case 2:     //Called when equipped
@@ -316,12 +326,13 @@ iStrMult = 1
 iPen = 1
 iSpd = 1.35
 iSize = 2
+iName = 'Sabre'
 
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_sabre
-name = 'Sabre'
+name = iName
 ttType = itemTypeWeapon
 tooltip = "An elegant sabre"
 dmg = iDmg
@@ -333,6 +344,7 @@ autoProf(heavyWeaponProficiency)
 break
 
 case 1:     //Called when owned
+wepName[i] = iName
 break
 
 case 2:     //Called when equipped
@@ -374,12 +386,13 @@ iStrMult = 1
 iPen = 4
 iSpd = 1.1
 iSize = 2
+iName = 'Rapier'
 
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_rapier
-name = 'Rapier'
+name = iName
 ttType = itemTypeWeapon
 tooltip = "A thrusting rapier"
 dmg = iDmg
@@ -391,6 +404,7 @@ autoProf(heavyWeaponProficiency)
 break
 
 case 1:     //Called when owned
+wepName[i] = iName
 break
 
 case 2:     //Called when equipped
@@ -432,12 +446,13 @@ iStrMult = 1.2
 iPen = 1
 iSpd = 1.10
 iSize = 2
+iName = 'Bastard Sword'
 
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_bstSword
-name = 'Bastard Sword'
+name = iName
 ttType = itemTypeWeapon
 tooltip = "An oversized one handed sword."
 dmg = iDmg
@@ -449,6 +464,7 @@ autoProf(heavyWeaponProficiency)
 break
 
 case 1:     //Called when owned
+wepName[i] = iName
 break
 
 case 2:     //Called when equipped
@@ -483,19 +499,20 @@ break
 
 #define longSword
 iSpr = spr_longSword
-iDmg = 5.5
+iDmg = 5.0
 iDmgRng = .2
 iType = typeRend
 iStrMult = 1
 iPen = 2
 iSpd = 1.00
 iSize = 3
+iName = 'Long Sword'
 
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_longSword
-name = 'Long Sword'
+name = iName
 ttType = itemTypeWeapon
 tooltip = "A long sword."
 dmg = iDmg
@@ -507,6 +524,7 @@ autoProf(heavyWeaponProficiency)
 break
 
 case 1:     //Called when owned
+wepName[i] = iName
 break
 
 case 2:     //Called when equipped
@@ -526,6 +544,7 @@ wepRange[i] = 1
 weaponSprite[i] = iSpr
 
 autoHandedness()
+reach = 2
 greatWeaponSize = 1
 threat = true
 
@@ -550,19 +569,20 @@ break
 
 #define greatSword
 iSpr = spr_greatSword
-iDmg = 7.0
+iDmg = 6.0
 iDmgRng = .2
 iType = typeRend
 iStrMult = 1.2
 iPen = 3
 iSpd = 0.70
 iSize = 3
+iName = 'Great Sword'
 
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_grtSword
-name = 'Great Sword'
+name = iName
 ttType = itemTypeWeapon
 tooltip = "A sword so long its practically a polearm."
 dmg = iDmg
@@ -574,6 +594,7 @@ autoProf(heavyWeaponProficiency)
 break
 
 case 1:     //Called when owned
+wepName[i] = iName
 break
 
 case 2:     //Called when equipped

@@ -140,12 +140,12 @@ switch(argument0.equipSlot)
 case 0: success = true break
 
 case 1: 
-if (ttType = itemTypeWeapon and (i.itemSize-2 <= iSize and i.itemSize+1 >= iSize)) and (global.equipSlot[2].occupant = emptySlot or greatWeapon = false)
+if ((ttType = itemTypeWeapon or ttType = itemTypePistol) and (i.wepSize-2 <= iSize and i.wepSize+1 >= iSize)) and (global.equipSlot[2].occupant = emptySlot or greatWeapon = false)
 {success = true} 
 break
 
 case 2: 
-if ((ttType = itemTypeWeapon and (i.itemSize-2 <= iSize and i.itemSize+1 >= iSize)) or (shield = true and (i.itemSize-1 = iSize or i.itemSize = iSize))) and greatWeapon = false
+if ((ttType = itemTypeWeapon and (i.wepSize-2 <= iSize and i.wepSize+1 >= iSize)) or (shield = true and (i.wepSize-1 = iSize or i.wepSize = iSize))) and greatWeapon = false
 {
     if global.equipSlot[1].occupant != emptySlot
     {
@@ -157,13 +157,13 @@ if ((ttType = itemTypeWeapon and (i.itemSize-2 <= iSize and i.itemSize+1 >= iSiz
 }
 break
 
-case 3: if ttType = itemTypeRanged and (i.itemSize-1 = iSize or i.itemSize = iSize) {success = true} break
+case 3: if (ttType = itemTypeRanged or ttType = itemTypePistol) and (i.wepSize-1 = iSize or i.wepSize = iSize) {success = true} break
 
-case 4: if ttType = itemTypeArmour and iSize = i.itemSize {success = true} break
+case 4: if ttType = itemTypeArmour and iSize = i.armSize {success = true} break
 
 case 5: case 6: case 7: if ttType = itemTypeTrinket {success = true} break
 
-case 8: if (ttType = itemTypePlating and iSize = i.itemSize) or ttType = itemTypeTrinket {success = true} break
+case 8: if (ttType = itemTypePlating and iSize = i.armSize) or ttType = itemTypeTrinket {success = true} break
 }
 }
 

@@ -98,6 +98,21 @@ if global.timeDelay = 0 and global.nextChar.owner.player = true and global.event
     iy += 12
     }
     
+    with(global.nextChar.owner)
+    {
+        draw_set_halign(fa_right)
+        for(ii = 1; ii &lt;= 3; ii++)
+        {
+            if maxShots[ii] = 0
+            {
+                drawText(c_black,c_white,view_xview+view_wview-20,view_yview+view_hview-50+(10*ii),wepName[ii])
+            }
+            else
+            {
+                drawText(c_black,c_white,view_xview+view_wview-20,view_yview+view_hview-50+(10*ii),string(wepName[ii])+' '+string(shots[ii])+' / '+string(reloads[ii]))
+            }
+        }
+    }
 }
 else
 {
@@ -107,6 +122,7 @@ else
         vis = false
     }
 }
+
 
 </string>
           </argument>

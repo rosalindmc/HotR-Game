@@ -153,12 +153,12 @@ legsItem[legsItems[2],2] = iSpr[legsVariant]
 legsColour[legsItems[2],2] = argument0
 
 #define autoProf
-if iSize > global.charSelect.itemSize
+if iSize > global.charSelect.wepSize
 {
     itemProf[0] = argument0  
     greatWeapon = true
 }
-else if iSize = global.charSelect.itemSize
+else if iSize = global.charSelect.wepSize
 {
     itemProf[0] = mediumWeaponProficiency  
     greatWeapon = false
@@ -170,11 +170,11 @@ else
 }
 
 #define autoHandedness
-if iSize > itemSize
+if iSize > wepSize
 {
     greatWeapon = true
 }
-else if iSize = itemSize
+else if iSize = wepSize
 {
     greatWeapon = false
 }

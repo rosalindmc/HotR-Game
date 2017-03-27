@@ -10,12 +10,13 @@ iStrMult = 1
 iPen = 5
 iSpd = 1.50
 iSize = 1
+iName = 'Hand Axe'
 
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_handAxe
-name = 'Hand Axe'
+name = iName
 ttType = itemTypeWeapon
 tooltip = "A light hatchet."
 dmg = iDmg
@@ -27,6 +28,7 @@ autoProf(heavyWeaponProficiency)
 break
 
 case 1:     //Called when owned
+wepName[i] = iName
 break
 
 case 2:     //Called when equipped
@@ -68,12 +70,13 @@ iStrMult = 1
 iPen = 6
 iSpd = 1.25
 iSize = 2
+iName = 'Battle Axe'
 
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_battleAxe
-name = 'Battle Axe'
+name = iName
 ttType = itemTypeWeapon
 tooltip = "A one handed axe."
 dmg = iDmg
@@ -85,6 +88,7 @@ autoProf(heavyWeaponProficiency)
 break
 
 case 1:     //Called when owned
+wepName[i] = iName
 break
 
 case 2:     //Called when equipped
@@ -120,19 +124,20 @@ break
 
 #define greatAxe
 iSpr = spr_greatAxe
-iDmg = 5.5
+iDmg = 5.0
 iDmgRng = .2
 iType = typeRend
 iStrMult = 1
 iPen = 7
 iSpd = 1.00
 iSize = 3
+iName = 'Great Axe'
 
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_greatAxe
-name = 'Great Axe'
+name = iName
 ttType = itemTypeWeapon
 tooltip = "A two handed axe."
 dmg = iDmg
@@ -144,6 +149,7 @@ autoProf(heavyWeaponProficiency)
 break
 
 case 1:     //Called when owned
+wepName[i] = iName
 break
 
 case 2:     //Called when equipped

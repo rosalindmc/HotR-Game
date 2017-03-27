@@ -16,7 +16,7 @@ switch(argument0)
     movementRange(i.isoTile, i.movement, i.movementBonus)
     
     //Check Line of Sight to all enemies
-    if i.rangeAttack = true
+    if i.rangeAttack = true and i.shots[i.atkHand+((i.invSwitch-1)*2)] > 0
     {
         with(obj_character)
         {

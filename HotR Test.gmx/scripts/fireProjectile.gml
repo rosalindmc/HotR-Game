@@ -9,9 +9,10 @@ ii.dir = point_direction(x,y,target.x,target.y)+((max(random(5/(max(rSkill,0.5)*
 ii.owner = id
 ii.image_angle = ii.dir
 ii.z = h+(height*.75)
+ii.sprite_index = argument2
         
 //Vertical Distance to Cover
-vDist = target.h+(target.height*.5)-ii.z
+vDist = target.h+(target.height*.75)-ii.z
 //Directional Distance to Cover
 dDist = point_distance(target.x,target.y,x,y)
 //Speed

@@ -320,7 +320,7 @@ switch(size)
     hipsImage = 0
     bodyImage = 0
     bodyAdjust = choose(0,-1)
-    bodyOffset = 5
+    bodyOffset = choose(4,5)
     chstAdjust = 0
     break
     
@@ -328,7 +328,7 @@ switch(size)
     case 2:
     hipsImage = 2
     bodyImage = choose(0,2)
-    bodyOffset = 5
+    bodyOffset = choose(4,5)
     bodyAdjust = 0
     if bodyImage = 0 {bodyAdjust = 0}
     chstAdjust = 1
@@ -339,7 +339,7 @@ switch(size)
     hipsImage = 4
     bodyImage = choose(2,4)
     bodyAdjust = choose(0,-1)
-    bodyOffset = 5
+    bodyOffset = choose(4,5)
     break
 }
 

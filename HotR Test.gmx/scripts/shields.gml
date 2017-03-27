@@ -13,12 +13,13 @@ iBlockGen = .3
 iBlockStr = 8
 iEnc = 20
 iSize = 1
+iName = 'Heater Shield'
 
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_heaterShield
-name = 'Heater Shield'
+name = iName
 ttType = itemTypeShield
 tooltip = "A metal shield."
 blockGen = iBlockGen
@@ -27,13 +28,14 @@ enc = iEnc
 
 shield = true
 
-if iSize = global.charSelect.itemSize
+if iSize = global.charSelect.wepSize
 {itemProf[0] = largeShieldProficiency}
 else
 {itemProf[0] = shieldProficiency}
 break
 
 case 1:     //Called when owned
+wepName[i] = iName
 break
 
 case 2:     //Called when equipped
@@ -72,12 +74,13 @@ iBlockGen = .35
 iBlockStr = 4
 iEnc = 10
 iSize = 1
+iName = 'Round Shield'
 
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_roundShield
-name = 'Round Shield'
+name = iName
 ttType = itemTypeShield
 tooltip = "A round dueling shield."
 blockGen = iBlockGen
@@ -86,13 +89,14 @@ enc = iEnc
 
 shield = true
 
-if iSize = global.charSelect.itemSize
+if iSize = global.charSelect.wepSize
 {itemProf[0] = largeShieldProficiency}
 else
 {itemProf[0] = shieldProficiency}
 break
 
 case 1:     //Called when owned
+wepName[i] = iName
 break
 
 case 2:     //Called when equipped
@@ -139,12 +143,13 @@ iBlockGen = .25
 iBlockStr = 12
 iEnc = 30
 iSize = 2
+iName = 'Square Shield'
 
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_squareShield
-name = 'Square Shield'
+name = iName
 ttType = itemTypeShield
 tooltip = "A large shield."
 blockGen = iBlockGen
@@ -153,13 +158,14 @@ enc = iEnc
 
 shield = true
 
-if iSize = global.charSelect.itemSize
+if iSize = global.charSelect.wepSize
 {itemProf[0] = largeShieldProficiency}
 else
 {itemProf[0] = shieldProficiency}
 break
 
 case 1:     //Called when owned
+wepName[i] = iName
 break
 
 case 2:     //Called when equipped
@@ -196,7 +202,7 @@ break
 
 #define blackTowerShield
 iSpr = spr_blackTowerShield
-iDmg = 4.0
+iDmg = 5.0
 iDmgRng = .2
 iType = typeImpact
 iStrMult = 1.2
@@ -206,12 +212,13 @@ iBlockGen = .2
 iBlockStr = 16
 iEnc = 50
 iSize = 3
+iName = 'Tower Shield'
 
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_squareShield
-name = 'Tower Shield'
+name = iName
 ttType = itemTypeShield
 tooltip = "A black tower shield."
 blockGen = iBlockGen
@@ -220,13 +227,14 @@ enc = iEnc
 
 shield = true
 
-if iSize = global.charSelect.itemSize
+if iSize = global.charSelect.wepSize
 {itemProf[0] = largeShieldProficiency}
 else
 {itemProf[0] = shieldProficiency}
 break
 
 case 1:     //Called when owned
+wepName[i] = iName
 break
 
 case 2:     //Called when equipped

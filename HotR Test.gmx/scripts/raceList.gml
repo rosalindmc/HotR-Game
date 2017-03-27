@@ -45,7 +45,7 @@ size = min(choose(1,1,1,2,2,3,3,4)+gender,4)
     legSprite = spr_leg
     legSpriteMod = 0 
 
-ii = choose(0,1,gender)
+ii = 1
 legAdjust[1] = ii
 legAdjust[2] = ii
 hipsOffset = 12+ii
@@ -103,7 +103,7 @@ size = min(choose(1,1,2,2,3,3,4)+gender,4)
     legSprite = spr_leg
     legSpriteMod = 0 
     
-ii = choose(0,1,gender)
+ii = 1
 legAdjust[1] = ii
 legAdjust[2] = ii
 hipsOffset = 12+ii
@@ -165,7 +165,7 @@ size = min(choose(1,2,2,3,3,4)+gender,4)
     legSprite = spr_leg
     legSpriteMod = 0 
      
-ii = choose(0,1,2,1+gender)
+ii = choose(1,2,1+gender)
 legAdjust[1] = ii
 legAdjust[2] = ii
 hipsOffset = 12+ii
@@ -227,7 +227,7 @@ size = 4
     legSprite = spr_shortLeg
     legSpriteMod = 1
 
-ii = 0
+ii = 1
 legAdjust[1] = ii
 legAdjust[2] = ii
 hipsOffset = 9+ii
@@ -287,13 +287,15 @@ size = choose(1,1,1,2,3)
 
     legSprite = spr_shortLeg
     legSpriteMod = 1
-
-ii = 0
+    
+ii = 1
 legAdjust[1] = ii
 legAdjust[2] = ii
 hipsOffset = 9+ii
 
-mediumRaceDetails()
+wepSize = 1
+
+halflingRaceDetails()
 break
 
 case 1:
@@ -326,6 +328,8 @@ onDown[onDownSize,3] = false
 onDown[onDownSize,4] = false
 onDown[onDownSize,5] = false
 onDownSize += 1
+
+dodge += 5
 break
 }
 
@@ -360,7 +364,7 @@ size = min(choose(2,2,3,3,4)+gender,4)
     legSprite = spr_leg
     legSpriteMod = 0 
 
-ii = choose(0,1)+gender
+ii = choose(1,1+gender)
 legAdjust[1] = ii
 legAdjust[2] = ii
 hipsOffset = 12+ii
@@ -416,7 +420,7 @@ size = min(choose(1,1,1,2,2,3,3)+(gender*2),4)
     legSprite = spr_leg
     legSpriteMod = 0 
     
-ii = choose(0,1)+gender
+ii = choose(1,1+gender)
 legAdjust[1] = ii
 legAdjust[2] = ii
 hipsOffset = 12+ii
@@ -466,7 +470,7 @@ size = choose(1,1,1,2,3)
     legSprite = spr_shortLeg
     legSpriteMod = 1
 
-ii = 0
+ii = 1
 legAdjust[1] = ii
 legAdjust[2] = ii
 hipsOffset = 9+ii

@@ -24,5 +24,4 @@ break
 case 3:     //Stacking
 potency = max(potency,ipot)
 duration = max(duration,idur)
-tooltip = string(potency)+'% Miss chance'break
 }

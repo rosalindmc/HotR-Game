@@ -105,6 +105,7 @@
         <sprite>sprites\ico_attack</sprite>
         <sprite>sprites\ico_wait</sprite>
         <sprite>sprites\ico_switch</sprite>
+        <sprite>sprites\ico_reload</sprite>
         <sprite>sprites\ico_money</sprite>
         <sprite>sprites\ico_bold</sprite>
         <sprite>sprites\ico_death</sprite>
@@ -246,6 +247,14 @@
         <sprite>sprites\spr_longBow</sprite>
         <sprite>sprites\spr_shortBow</sprite>
         <sprite>sprites\spr_crossbow</sprite>
+        <sprite>sprites\spr_carbine</sprite>
+        <sprite>sprites\spr_longRifle</sprite>
+        <sprite>sprites\spr_repeaterCarbine</sprite>
+        <sprite>sprites\spr_recoiless</sprite>
+        <sprite>sprites\spr_handCannon</sprite>
+        <sprite>sprites\spr_revolver</sprite>
+        <sprite>sprites\spr_automatic</sprite>
+        <sprite>sprites\spr_lightCrossbow</sprite>
         <sprite>sprites\spr_handAxe</sprite>
         <sprite>sprites\spr_battleAxe</sprite>
         <sprite>sprites\spr_hammer</sprite>
@@ -277,6 +286,8 @@
       </sprites>
       <sprites name="Projectiles">
         <sprite>sprites\spr_arrow</sprite>
+        <sprite>sprites\spr_bullet</sprite>
+        <sprite>sprites\spr_rocket</sprite>
       </sprites>
       <sprites name="Details">
         <sprite>sprites\spr_belt</sprite>
@@ -582,6 +593,7 @@
             <script>scripts\battle.gml</script>
             <script>scripts\disengage.gml</script>
             <script>scripts\wait.gml</script>
+            <script>scripts\reload1.gml</script>
             <script>scripts\retreat.gml</script>
             <script>scripts\weaponSwitch.gml</script>
             <script>scripts\createActionBar.gml</script>
@@ -652,6 +664,7 @@
         <script>scripts\swords.gml</script>
         <script>scripts\bludgeons.gml</script>
         <script>scripts\polearms.gml</script>
+        <script>scripts\guns.gml</script>
         <script>scripts\bows.gml</script>
         <script>scripts\armour.gml</script>
         <scripts name="largeChar">
@@ -713,7 +726,6 @@
         <script>scripts\slow.gml</script>
         <script>scripts\immobilize.gml</script>
         <script>scripts\bleed.gml</script>
-        <script>scripts\blind.gml</script>
       </scripts>
       <scripts name="Mechanics">
         <script>scripts\fatigue.gml</script>
@@ -738,6 +750,9 @@
         <script>scripts\daze.gml</script>
         <script>scripts\stun.gml</script>
         <script>scripts\sleep.gml</script>
+      </scripts>
+      <scripts name="Trick">
+        <script>scripts\blind.gml</script>
       </scripts>
     </scripts>
   </scripts>

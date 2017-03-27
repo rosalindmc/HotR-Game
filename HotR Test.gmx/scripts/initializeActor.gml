@@ -154,7 +154,25 @@ foeAdj = 0
 allyAdj = 0
 
 //Character Size
-itemSize = 2
+wepSize = 2
+armSize = 2
+
+//Ammunition
+shots[1] = 0
+shots[2] = 0
+shots[3] = 0
+maxShots[1] = 0
+maxShots[2] = 0
+maxShots[3] = 0
+reloads[1] = 0
+reloads[2] = 0
+reloads[3] = 0
+maxReloads[1] = 0
+maxReloads[2] = 0
+maxReloads[3] = 0
+wepName[1] = 'Unarmed'
+wepName[2] = ''
+wepName[3] = ''
 
 //Other
 rigid = false
@@ -298,7 +316,10 @@ wepRSpeed[argument0] = 1
 wepRRange[argument0] = 0
 wepRStamina[argument0] = .25
 wepRProjectile[argument0] = obj_projectile
+wepRProjSprite[argument0] = spr_arrow
 wepRProjSpeed[argument0] = 10
+wepReload[argument0] = 2.0
+wepReloadStamina[argument0] = .1
 
 //Weapon Sprites
 weaponSprite[argument0] = spr_none
