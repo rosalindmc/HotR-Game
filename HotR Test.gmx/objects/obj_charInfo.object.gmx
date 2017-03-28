@@ -105,11 +105,11 @@ if global.timeDelay = 0 and global.nextChar.owner.player = true and global.event
         {
             if maxShots[ii] = 0
             {
-                drawText(c_black,c_white,view_xview+view_wview-20,view_yview+view_hview-50+(10*ii),wepName[ii])
+                drawText(c_black,c_white,view_xview+view_wview-120,view_yview+view_hview-50+(10*ii),wepName[ii])
             }
             else
             {
-                drawText(c_black,c_white,view_xview+view_wview-20,view_yview+view_hview-50+(10*ii),string(wepName[ii])+' '+string(shots[ii])+' / '+string(reloads[ii]))
+                drawText(c_black,c_white,view_xview+view_wview-120,view_yview+view_hview-50+(10*ii),string(wepName[ii])+' '+string(shots[ii])+' / '+string(reloads[ii]))
             }
         }
     }

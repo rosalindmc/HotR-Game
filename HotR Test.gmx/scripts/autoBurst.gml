@@ -17,7 +17,7 @@ switch(argument0)
     case 2:
     tooltipTitle = 'Auto Burst'
     abilityTT = 'Special Attack##Fire '+string(i.autoFire)+' shots'
-    abilityTTLength = 4
+    abilityTTLength = 2
     break
     
     //Run 3 for ai use 

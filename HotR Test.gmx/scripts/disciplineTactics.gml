@@ -60,6 +60,7 @@ switch(argument0)
     //Run 0 when a player selects the command
     case 0:
     applyStatusEffect(blockBuff,i,i.foeAdj,10*i.spellDur)
+    i.abilityCD[global.actionNum] = 30/i.spellCD
     spendStamina(i,1)
     endTurn(1.0)
     break
