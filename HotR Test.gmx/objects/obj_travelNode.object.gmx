@@ -91,15 +91,18 @@ if global.eventActive = false
             global.activeActor.y = y
             global.activeActor.node = id
     
+            
             with(obj_party)
             {
                 if node = other.id and id != global.activeActor
                 {
-                    battleSetup(global.activeActor,id,node,overWorldMapGen)
+                    global.targetActor = id
+                    global.node = node
+                    eventStart(preBattle,0)
                 }
-            }    
+            }   
             
-            nextTurn()       
+            global.turnOver = true   
         }
     }
 }

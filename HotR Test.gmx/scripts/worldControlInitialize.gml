@@ -19,6 +19,7 @@ global.itemColour[4] = make_colour_rgb(245,164,230)
 
 
 #define nextTurn
+global.turnOver = false
 global.activeActorNum += 1
 
 with(obj_notification)

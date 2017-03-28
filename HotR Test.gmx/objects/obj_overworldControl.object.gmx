@@ -36,6 +36,7 @@ global.eventActive = false
 global.eventActor = -4
 global.sightBase = 30
 global.accuracyBase = 1
+global.turnOver = false  
 
 i = instance_create(40,-10,obj_topButton)
 i.image_index = 0
@@ -130,6 +131,10 @@ if global.eventActive = false
         scr_inGameMenu()
     }
 
+    if global.turnOver = true
+    {
+        nextTurn()
+    }
 }
 else
 {
