@@ -159,9 +159,10 @@ detailGen(cwName)
 attributeGen()
 classGen(classList())
 
-repeat(choose(0,0,0,1,1,2))
+repeat(choose(0,0,0,0,0,0,0,1,1,1,2,2,3,4))
 {
     level += 1
     levelPending += 1
     levelControl(id,false)
+    xpToLevel(id)
 }

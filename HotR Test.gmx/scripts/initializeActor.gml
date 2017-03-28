@@ -297,14 +297,14 @@ aiRandom = 1
 wepClass[argument0] = melee
 wepAnimType[argument0] = typeAxe
 
-wepPow[argument0] = 1
+wepPow[argument0] = 2.0
 wepType[argument0] = typeImpact
-wepPowRng[argument0] = .3
-wepStrMult[argument0] = .25
+wepPowRng[argument0] = .2
+wepStrMult[argument0] = 1
 wepPen[argument0] = 0
 wepSpeed[argument0] = 2
 wepRange[argument0] = 1
-wepStamina[argument0] = .25
+wepStamina[argument0] = 1
 
 //Ranged Attributez
 wepRPow[argument0] = 0

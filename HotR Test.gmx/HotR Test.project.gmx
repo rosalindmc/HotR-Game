@@ -231,6 +231,7 @@
         <sprite>sprites\spr_robe3</sprite>
         <sprite>sprites\spr_robe4</sprite>
         <sprite>sprites\spr_robeSkirt1</sprite>
+        <sprite>sprites\spr_fedSkirt</sprite>
         <sprite>sprites\spr_sorcererDress</sprite>
         <sprite>sprites\spr_pinkSlitSkirt</sprite>
         <sprite>sprites\spr_witchDress</sprite>
@@ -238,6 +239,7 @@
         <sprite>sprites\spr_royalSkirt</sprite>
         <sprite>sprites\spr_royalDress</sprite>
         <sprite>sprites\spr_underClothes</sprite>
+        <sprite>sprites\spr_fedUniform</sprite>
       </sprites>
       <sprites name="Heavy Armour">
         <sprite>sprites\spr_chainMail</sprite>
@@ -514,7 +516,6 @@
       </scripts>
       <scripts name="Cultures">
         <script>scripts\empire.gml</script>
-        <script>scripts\federation.gml</script>
         <script>scripts\irun.gml</script>
         <scripts name="Commonwealth">
           <script>scripts\commonwealth.gml</script>
@@ -527,6 +528,9 @@
         </scripts>
         <scripts name="Legion">
           <script>scripts\legion.gml</script>
+        </scripts>
+        <scripts name="Federation">
+          <script>scripts\federation.gml</script>
         </scripts>
       </scripts>
     </scripts>

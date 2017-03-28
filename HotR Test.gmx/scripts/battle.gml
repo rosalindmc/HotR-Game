@@ -10,7 +10,7 @@ switch(argument0)
     action = battle
     global.castMouse = 0
     //Check Line of Sight to all enemies
-    if i.rangeAttack = true and i.shots[i.atkHand+i.dualWield+((i.invSwitch-1)*2)] > 0
+    if i.rangeAttack = true and i.shots[1+i.dualWield+((i.invSwitch-1)*2)] > 0
     {
         with(obj_character)
         {

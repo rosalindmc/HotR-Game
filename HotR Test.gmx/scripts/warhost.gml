@@ -149,29 +149,6 @@ repeat(choose(9,10,12,14))
 }
 
 
-//Tempfun
-money = 0.00
-
-//Inventory
-ii = 0
-repeat(choose(60))
-{
-    inventory[ii,0] = choose(
-    choose(knife,dagger,epee,armingSword,greatSword,longSword,shortSword,sabre,bastardSword),
-    choose(handAxe,battleAxe,greatAxe),
-    choose(halberd,shortSpear,spear,pike),
-    choose(maul,lightMace,mace,hammer,warhammer,staff),
-    choose(chainMail,chainShirt,breastPlate,robe,dress),
-    choose(heaterShield,squareShield,roundShield),
-    choose(shortBow,crossbow,longBow))
-    inventory[ii,1] = choose(0,0,0,1,1,1,1,1,1,1,1,1)
-    inventory[ii,2] = emptyMutator
-    inventory[ii,3] = emptyMutator
-    inventory[ii,4] = emptyMutator
-    ii += 1
-    inventorySize = ii
-}
-
 
 #define raiderCaptain
 //Rules for a Raider Captain
@@ -330,10 +307,10 @@ invSlot[2,0] = choose(dagger,knife,roundShield,emptySlot)
 invSlot[3,0] = choose(shortBow,crossbow,emptySlot,emptySlot,emptySlot)
 invSlot[4,0] = robe
 
-life = 3
-classLife = .14
-stamina = 6
-classStamina = .19
+life += 0
+classLife = .10
+stamina += 2
+classStamina = .15
 
 mSkill = 1
 rSkill = 1
@@ -346,7 +323,7 @@ will += 2
 fellowship += 1
 
 //Talent
-talent[0,0] = choose(treeValour,treeSubterfuge,treeInsight)
+talent[0,0] = choose(treeSubterfuge,treeInsight)
 talent[0,5] = 1
 talent[1,0] = choose(treeKnowledge,treeAlchemy)
 talent[1,5] = 2
@@ -354,6 +331,7 @@ talent[1,5] = 2
 mook = true
 headScarfTrinket = spr_hood
 favColour = choose(make_colour_rgb(49,19,9),make_colour_rgb(39,19,39),make_colour_rgb(19,19,39), make_colour_rgb(9,29,9),make_colour_rgb(39,19,19), make_colour_rgb(19,19,19))
+
 #define race_wretch
 //0 Vis Generation
 //1 Name Generation
@@ -469,11 +447,12 @@ break
 
 
 case 2:
-level = 3
-might += 4
+levelAdj = 4
+xpToLevel(id)
+might += 5
 will += 2
 
-mgtCap = 14
+mgtCap = 15
 wilCap = 12
 break
 

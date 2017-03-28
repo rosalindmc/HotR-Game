@@ -89,9 +89,12 @@ if global.target != -4
     for(ii = 0; ii < ds_list_size(global.moveTile); ii ++)
     {
         current = ds_list_find_value(global.moveTile, ii)
-        if los(global.control.reach,current.sightTile,global.target.sightTile)
+        if current.occupant = i or ds_list_find_index(global.target.adjacent,current) != -1
         {
-            global.attackFromTile = current
+            if los(global.control.reach,current.sightTile,global.target.sightTile)
+            {
+                global.attackFromTile = current
+            }
         }
     }
     

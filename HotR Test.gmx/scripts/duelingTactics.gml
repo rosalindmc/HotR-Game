@@ -124,8 +124,8 @@ switch(argument0)
         moveTo(cHover)
         popup('Footwork',i)
         i.abilityCD[global.actionNum] = 5/i.spellCD
-        actionBarReset()
         applyStatusEffect(flatFooted,i,100,.01)    
+        actionBarReset()
     }
     break
     

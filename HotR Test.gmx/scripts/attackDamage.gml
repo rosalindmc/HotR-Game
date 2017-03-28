@@ -14,11 +14,8 @@ if target.dead = false
     }
     else
     {
-        rDamage()
-        if dualWield = true
-        {
-            atkHand += 1
-        }
+        atkHand += dualWield
+        rDamage()    
     }
     
     dge = target.dodge-(max(0,(skill-target.mSkill)*3))
@@ -150,10 +147,10 @@ if target.dead = false
             ii.font = fnt_damage
         }
     }
-
-    if dualWield = true and mle = false
+    
+    if mle = false
     {
-        atkHand -= 1
+        atkHand -= dualWield
     }
     }
 }

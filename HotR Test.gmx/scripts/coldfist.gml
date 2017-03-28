@@ -184,9 +184,9 @@ invSlot[2,0] = choose(handAxe,roundShield,emptySlot)
 invSlot[3,0] = choose(shortBow,emptySlot,emptySlot,emptySlot)
 invSlot[4,0] = chainShirt
 
-life = 0
+life += 0
 classLife = .10
-stamina = 0
+stamina += 0
 classStamina = .10
 
 mSkill = 0
@@ -209,10 +209,10 @@ invSlot[2,0] = emptySlot
 invSlot[3,0] = emptySlot
 invSlot[4,0] = choose(chainMail,chainMail)
 
-life = 8
-classLife = .22
-stamina = 8
-classStamina = .22
+life += 4
+classLife = .20
+stamina += 4
+classStamina = .20
 
 mSkill = 3
 rSkill = 3

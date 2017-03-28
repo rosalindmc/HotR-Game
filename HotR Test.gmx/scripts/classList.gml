@@ -36,10 +36,10 @@ if wepSize = 1
 }
 
 //Class Stats and Progression
-life = 2
-classLife = .13
-stamina = 6
-classStamina = .19
+life += 0
+classLife = .10
+stamina += 4
+classStamina = .20
 
 mSkill = 1
 rSkill = 1
@@ -70,10 +70,10 @@ if wepSize = 1
 }
 
 
-life = 4
-classLife = .16
-stamina = 4
-classStamina = .16
+life += 2
+classLife = .15
+stamina += 2
+classStamina = .15
 
 mSkill = 3
 rSkill = 2
@@ -108,10 +108,10 @@ if wepSize = 1
 }
 
 
-life = 4
-classLife = .16
-stamina = 8
-classStamina = .22
+life += 2
+classLife = .15
+stamina += 4
+classStamina = .20
 
 mSkill = 2
 rSkill = 2
@@ -143,10 +143,10 @@ if wepSize = 1
     invSlot[3,0] = choose(shortBow,emptySlot,emptySlot)
 }
 
-life = 2
-classLife = .13
-stamina = 6
-classStamina = .19
+life += 0
+classLife = .10
+stamina += 4
+classStamina = .20
 
 mSkill = 1
 rSkill = 1
@@ -180,10 +180,10 @@ if wepSize = 1
     invSlot[3,0] = choose(shortBow,emptySlot,emptySlot)
 }
 
-life = 6
-classLife = .19
-stamina = 4
-classStamina = .16
+life += 4
+classLife = .20
+stamina += 2
+classStamina = .15
 
 mSkill = 3
 rSkill = 3

@@ -22,6 +22,7 @@ fellowship = -4
 
 //Experience
 level = 1
+levelAdj = 0
 levelPending = 0
 experience = 0
 expToLevel = 5

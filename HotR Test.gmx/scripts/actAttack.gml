@@ -19,18 +19,6 @@ action = actAttack
 //End Turn
 s = (3-(dualWield*.5))/((wepSpeed[atkHand]))
 endTurn(s/(haste+atkHaste))
-
-if atkHand = 1 and dualWield = true
-{
-    atkHand = 2
-    readiedAction = dualStrike
-    readiedTarget = target
-}
-else
-{
-    atkHand = 1
-}
-
 break
 }
 
@@ -61,4 +49,15 @@ else
     atkHand = 1
     script_execute(controlScript)
     readiedAction = false
+}
+#define handSwitch
+if atkHand = 1 and dualWield = true
+{
+    atkHand = 2
+    readiedAction = dualStrike
+    readiedTarget = target
+}
+else
+{
+    atkHand = 1
 }

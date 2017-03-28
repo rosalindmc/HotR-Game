@@ -59,6 +59,7 @@ break
 
 case 4:
 //End Animation
+handSwitch()
 startAnimation(argument0,script_execute(wepAnimType[argument0],0))
 break
 }

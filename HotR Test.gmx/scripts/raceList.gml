@@ -67,6 +67,57 @@ sResist += .25
 break
 }
 
+#define race_darkelf
+//0 Details Generation
+//1 Name Generation
+//2 Attribute Generation
+
+switch(argument0)
+{
+case 0:
+race = race_highelf
+raceName = 'Elf'
+gender = choose(femme,femme,femme,masc)
+
+if irandom(4)+gender >= 5
+{
+    beardStyle = choose(spr_bigMoustache, spr_sadStache, spr_longStache, spr_chaplinStache, spr_goatee)
+}
+
+skinTone = choose(pale)
+headSprite = choose(spr_youngHead,spr_youngHead,spr_baseHead,spr_youngHead,spr_freckleHead)
+earSprite = spr_elfEar
+hairStyle = choose(spr_longHair,spr_bunHair,spr_shortHair)
+hairColour = choose(black)
+
+size = min(choose(1,1,1,2,2,3,3,4)+gender,4)
+
+    legSprite = spr_leg
+    legSpriteMod = 0 
+
+ii = 1
+legAdjust[1] = ii
+legAdjust[2] = ii
+hipsOffset = 12+ii
+
+mediumRaceDetails()
+break
+
+case 1:
+return choose("Fey","Shadow","Dark","Wind","Wild","Strong","Love","Willow","Oak","Elm")
++choose("wood","leaf","tree","blade","heart","man","maiden","arrow","grace","hunt")
+break
+
+case 2:
+randDice += 2
+break
+
+case 3:     //Race Trait
+//Replace with Dark Elf race traits
+sResist += .25
+break
+}
+
 #define race_irunian
 //0 Vis Generation
 //1 Name Generation
@@ -242,6 +293,10 @@ break
 
 
 case 2:
+levelAdj = 1
+xpToLevel(id)
+life += 2
+stamina += 2
 might += 3
 will += 3
 grace -= 2
@@ -305,17 +360,20 @@ break
 
 
 case 2:
+levelAdj = -1
+xpToLevel(id)
+life -= 2
+stamina += 2
+
 grace += 2
 cunning += 1
-will += 1
-fellowship += 1
+fellowship += 2
 might -= 2
 
 mgtCap = 8
 grcCap = 12
 cunCap = 11
-wilCap = 11
-felCap = 11
+felCap = 12
 
 raceMove = -.5
 break

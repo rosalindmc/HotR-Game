@@ -328,3 +328,43 @@ iSkrt[3] = spr_none
 armourApplyVis(c_white)
 break
 }
+#define fedUniform
+iSpr[1] = spr_fedUniform
+iSpr[2] = spr_fedUniform
+iSpr[3] = spr_fedUniform
+iSpr[4] = spr_fedUniform
+iSkrt[1] = spr_fedSkirt
+iSkrt[2] = spr_fedSkirt
+iSkrt[3] = spr_fedSkirt
+iDodge = 20
+iArm = 4
+iProt = 0
+iEnc = 0
+
+switch(argument0)
+{
+case 0:     //Called when the item creates an icon and tooltip
+sprite_index = ico_cloth
+ttType = itemTypeArmour
+name = 'Uniform'
+tooltip = 'A federation uniform'
+arm = iArm
+dodge = iDodge
+prot = iProt
+enc = iEnc
+ 
+break
+
+case 1:     //Called when the item is equipped by a model.
+break
+
+case 2:     //Called when ?
+dodge = iDodge
+armMax += iArm
+prot += iProt
+enc += iEnc
+
+underHipsNum += 1
+armourApplyVis(c_white)
+break
+}
