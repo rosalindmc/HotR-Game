@@ -90,8 +90,6 @@ if global.eventActive = false
             global.activeActor.x = x
             global.activeActor.y = y
             global.activeActor.node = id
-            
-            nextTurn()
     
             with(obj_party)
             {
@@ -99,7 +97,9 @@ if global.eventActive = false
                 {
                     battleSetup(global.activeActor,id,node,overWorldMapGen)
                 }
-            }           
+            }    
+            
+            nextTurn()       
         }
     }
 }

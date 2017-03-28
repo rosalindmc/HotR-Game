@@ -3,7 +3,7 @@
 
 #define handAxe
 iSpr = spr_handAxe
-iDmg = 3.0
+iDmg = 4.0
 iDmgRng = .2
 iType = typeRend
 iStrMult = 1
@@ -63,7 +63,7 @@ break
 
 #define battleAxe
 iSpr = spr_battleAxe
-iDmg = 4.0
+iDmg = 5.0
 iDmgRng = .2
 iType = typeRend
 iStrMult = 1
@@ -124,7 +124,7 @@ break
 
 #define greatAxe
 iSpr = spr_greatAxe
-iDmg = 5.0
+iDmg = 6.0
 iDmgRng = .2
 iType = typeRend
 iStrMult = 1

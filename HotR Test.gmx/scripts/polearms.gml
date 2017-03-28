@@ -3,7 +3,7 @@
 
 #define shortSpear
 iSpr = spr_shortSpear
-iDmg = 2.8
+iDmg = 3.8
 iDmgRng = .3
 iType = typePierce
 iStrMult = .8
@@ -64,7 +64,7 @@ break
 
 #define spear
 iSpr = spr_spear
-iDmg = 3.6
+iDmg = 4.6
 iDmgRng = .3
 iType = typePierce
 iStrMult = .8
@@ -126,7 +126,7 @@ break
 
 #define pike
 iSpr = spr_pike
-iDmg = 4.4
+iDmg = 5.4
 iDmgRng = .3
 iType = typePierce
 iStrMult = .8
@@ -188,7 +188,7 @@ break
 
 #define halberd
 iSpr = spr_halberd
-iDmg = 5.6
+iDmg = 6.6
 iDmgRng = .2
 iType = typeRend
 iStrMult = 1

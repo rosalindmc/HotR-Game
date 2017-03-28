@@ -2,7 +2,7 @@
 
 #define carbine
 iSpr = spr_carbine
-iDmg = 7.0
+iDmg = 8.0
 iDmgRng = .3
 iType = typePierce
 iStrMult = 0
@@ -82,7 +82,7 @@ break
 
 #define repeaterCarbine
 iSpr = spr_repeaterCarbine
-iDmg = 4.0
+iDmg = 5.0
 iDmgRng = .3
 iType = typePierce
 iStrMult = 0
@@ -151,7 +151,7 @@ break
 
 #define automatic
 iSpr = spr_automatic
-iDmg = 4.0
+iDmg = 5.0
 iDmgRng = .3
 iType = typePierce
 iStrMult = 0
@@ -218,7 +218,7 @@ break
 
 #define handCannon
 iSpr = spr_handCannon
-iDmg = 10.0
+iDmg = 12.0
 iDmgRng = .3
 iType = typePierce
 iStrMult = 0
@@ -285,7 +285,7 @@ break
 
 #define revolver
 iSpr = spr_revolver
-iDmg = 4.0
+iDmg = 5.0
 iDmgRng = .3
 iType = typePierce
 iStrMult = 0
@@ -352,7 +352,7 @@ break
 
 #define longRifle
 iSpr = spr_longRifle
-iDmg = 9.0
+iDmg = 10.0
 iDmgRng = .3
 iType = typePierce
 iStrMult = 0
@@ -420,7 +420,7 @@ break
 
 #define recoilessRifle
 iSpr = spr_recoiless
-iDmg = 18.0
+iDmg = 20.0
 iDmgRng = .3
 iType = typePierce
 iStrMult = 0

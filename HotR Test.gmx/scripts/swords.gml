@@ -3,7 +3,7 @@
 
 #define knife
 iSpr = spr_knife
-iDmg = 2.4
+iDmg = 3.4
 iDmgRng = .2
 iType = typeRend
 iStrMult = 1
@@ -63,7 +63,7 @@ break
 
 #define dagger
 iSpr = spr_dagger
-iDmg = 2.4
+iDmg = 3.4
 iDmgRng = .3
 iType = typePierce
 iStrMult = 1
@@ -123,7 +123,7 @@ break
 
 #define epee
 iSpr = spr_epee
-iDmg = 3.0
+iDmg = 4.0
 iDmgRng = .3
 iType = typePierce
 iStrMult = .8
@@ -183,7 +183,7 @@ break
 
 #define shortSword
 iSpr = spr_shortSword
-iDmg = 3.0
+iDmg = 4.0
 iDmgRng = .2
 iType = typeRend
 iStrMult = 1
@@ -251,7 +251,7 @@ break
 
 #define armingSword
 iSpr = spr_armSword
-iDmg = 4.0
+iDmg = 5.0
 iDmgRng = .2
 iType = typeRend
 iStrMult = 1
@@ -319,7 +319,7 @@ break
 
 #define sabre
 iSpr = spr_sabre
-iDmg = 4.0
+iDmg = 5.0
 iDmgRng = .2
 iType = typeRend
 iStrMult = 1
@@ -379,7 +379,7 @@ break
 
 #define rapier
 iSpr = spr_rapier
-iDmg = 4.0
+iDmg = 5.0
 iDmgRng = .3
 iType = typePierce
 iStrMult = 1
@@ -439,7 +439,7 @@ break
 
 #define bastardSword
 iSpr = spr_bstdSword
-iDmg = 4.4
+iDmg = 5.4
 iDmgRng = .2
 iType = typeRend
 iStrMult = 1.2
@@ -499,7 +499,7 @@ break
 
 #define longSword
 iSpr = spr_longSword
-iDmg = 5.0
+iDmg = 6.0
 iDmgRng = .2
 iType = typeRend
 iStrMult = 1
@@ -569,7 +569,7 @@ break
 
 #define greatSword
 iSpr = spr_greatSword
-iDmg = 6.0
+iDmg = 7.0
 iDmgRng = .2
 iType = typeRend
 iStrMult = 1.2
