@@ -81,9 +81,7 @@ if target.dead = false
             
             if mle = true
             {  
-                loseStamina(id,p*.05)
-                 
-                
+                loseStamina(id,p*.05)  
             }
             else
             {
@@ -104,7 +102,7 @@ if target.dead = false
     a = max(0,(a*.25*(.25+random(.75)))-pen)
     
     //Calculate how much damage has been mitigated by armour
-    ia = floor(p)-floor(p-a)
+    ia = min(floor(p)-floor(p-a),floor(p))
     p = max(p-a,0)
     
     if target.immune[type] = false
@@ -348,8 +346,9 @@ if target.dead = false
     a = max(0,(a*.25*(.25+random(.75)))-pen)
     
     //Calculate how much damage has been mitigated by armour
-    ia = floor(p)-floor(p-a)
+    ia = max(floor(p)-floor(p-a),floor(p))
     p = max(p-a,0)
+    p *= .5
     
     if target.immune[type] = false
     {

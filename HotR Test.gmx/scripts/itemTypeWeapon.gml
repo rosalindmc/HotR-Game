@@ -76,19 +76,28 @@ draw_text(ix,iy,'RAT: '+string_format(rat,2,1))
 iy += 14
 draw_text(ix,iy,'PEN: ')
 
-i = 0
-ax = ix+25
-repeat(floor(pen/4))
+if pen/4 < 5
 {
-    draw_sprite(spr_bigArmIcon,0,ax,iy+7)
-    draw_sprite(spr_bigArmIcon,4,ax,iy+7)
-    ax += 7
-    i += 4
+    i = 0
+    ax = ix+25
+    repeat(floor(pen/4))
+    {
+        draw_sprite(spr_bigArmIcon,0,ax,iy+7)
+        draw_sprite(spr_bigArmIcon,4,ax,iy+7)
+        ax += 7
+        i += 4
+    }
+    if pen > i
+    {
+        draw_sprite(spr_bigArmIcon,pen-i,ax,iy+7)
+        draw_sprite(spr_bigArmIcon,4+pen-i,ax,iy+7)
+    }
 }
-if pen > i
+else
 {
-    draw_sprite(spr_bigArmIcon,pen-i,ax,iy+7)
-    draw_sprite(spr_bigArmIcon,4+pen-i,ax,iy+7)
+    draw_text(ix+20,iy,string(floor(pen/4)))
+    draw_sprite(spr_bigArmIcon,0,ix+40,iy+7) 
+    draw_sprite(spr_bigArmIcon,4,ix+40,iy+7) 
 }
 
 iy += 28

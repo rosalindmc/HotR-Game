@@ -420,15 +420,15 @@ break
 
 #define recoilessRifle
 iSpr = spr_recoiless
-iDmg = 20.0
+iDmg = 15.0
 iDmgRng = .3
 iType = typePierce
 iStrMult = 0
-iPen = 36
+iPen = 60
 iSpd = .5
 iSize = 2
 iShots = 1
-iReloads = 3
+iReloads = 2
 iName = 'Recoiless Rifle'
 
 switch(argument0)
