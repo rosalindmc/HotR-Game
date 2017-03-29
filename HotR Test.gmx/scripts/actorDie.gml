@@ -75,13 +75,16 @@ with(argument0)
         
         if global.battleEnd = true
         {
-            if global.team = 1
+            if instance_exists(global.targetActor.partyLeader)
             {
-                global.targetActor.partyLeader.memories = 3
-            }
-            else
-            {
-                global.targetActor.partyLeader.memories = 1
+                if global.team = 1
+                {
+                    global.targetActor.partyLeader.memories = 3
+                }
+                else
+                {
+                    global.targetActor.partyLeader.memories = 1
+                }
             }
             
             battleTeardown()
