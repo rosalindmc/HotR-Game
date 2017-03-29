@@ -55,6 +55,25 @@ for(var i = 0; i < 8; i++)
     talent[i,5] = 0
 }
 
+//Personality
+personality = orcHonour
+
+//Injury
+injury[0] = -4
+injuries = 0
+
+//Memory TEMPORARY EXPAND VASTLY
+memory[0,0] = -4        //Memory With
+memory[0,1] = -4        //Memory Type
+memory[0,2] = -4        //Memory Strength
+memories = 0
+
+//Relationships
+relationship[0,0] = -4  //Relationship With
+relationship[0,1] = -4  //Relationship Type
+relationship[0,2] = -4  //Bond Strength
+relationships = 0
+
 //Role
 range = false
 

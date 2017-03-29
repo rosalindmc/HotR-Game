@@ -109,6 +109,15 @@ with(argument0)
         
     if global.battleEnd = true
     {
+        if other.team = 1
+        {
+            global.targetActor.partyLeader.memories = 3
+        }
+        else
+        {
+            global.targetActor.partyLeader.memories = 1
+        }
+    
         battleTeardown()
     }
 }

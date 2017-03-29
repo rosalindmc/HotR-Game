@@ -75,7 +75,7 @@ alarm[1] = 2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>owner = ds_list_find_value(party,0)
+            <string>partyLeader = ds_list_find_value(party,0)
 
 humanoid(0)
 
@@ -83,7 +83,7 @@ humanoid(0)
 status = ds_list_create()
 
 initializeCharStats()
-importCharacter(owner)
+importCharacter(partyLeader)
 vis = true
 </string>
           </argument>

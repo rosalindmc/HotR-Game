@@ -100,10 +100,7 @@ mooks[0,0] = emptySlot
 mookTypes = 0
 
 #define wretchParty
-if 1+irandom(99) < 10
-{
-    createCharacterSheet(id,warhostChampion)
-}
+createCharacterSheet(id,warhostChampion)
 
 repeat(choose(9,10,12,14))
 {
@@ -163,6 +160,8 @@ invSlot[1,0] = choose(maul,greatAxe,longSword)
 invSlot[2,0] = emptySlot
 invSlot[8,0] = breastPlate
 
+personality = whMighty
+
 experience += 25+irandom(10)
 checkLevelUp(id)
 
@@ -193,6 +192,8 @@ invSlot[2,0] = choose(blackTowerShield)
 invSlot[3,0] = emptySlot
 invSlot[4,0] = choose(warriorChainmail)
 invSlot[8,0] = choose(blackKnightPlate)
+
+personality = whMighty
 
 sleeveVariant = 2
 backTrinket = -4
@@ -244,6 +245,8 @@ raceGen(race_northerner)
 detailGen(whName)
 attributeGen()
 classGen(class_cultist)
+
+personality = whMighty
 
 experience += 50+irandom(1000)
 checkLevelUp(id)

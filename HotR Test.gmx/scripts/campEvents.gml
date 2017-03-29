@@ -206,7 +206,7 @@ if argument1 = 0
 {
     switch(argument0)
     {
-    case 0: speak('We are gonna fight!?') break
-    case 1: battleSetup(global.activeActor,global.targetActor,global.node,overWorldMapGen) eventEnd() break
+        case 0: script_execute(global.targetActor.partyLeader.personality,global.targetActor.partyLeader.memories) break
+        case 1: battleSetup(global.activeActor,global.targetActor,global.node,overWorldMapGen) eventEnd() break
     }
 }

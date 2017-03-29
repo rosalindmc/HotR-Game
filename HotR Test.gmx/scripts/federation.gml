@@ -85,6 +85,8 @@ detailGen(efName)
 attributeGen()
 classGen(class_officer)
 
+personality = efCraven
+
 #define sepSoldier
 //Rules for a Separatist Soldier
 initializeHumanoid()

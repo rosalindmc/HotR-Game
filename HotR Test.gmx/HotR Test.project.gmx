@@ -762,6 +762,9 @@
         <script>scripts\blind.gml</script>
       </scripts>
     </scripts>
+    <scripts name="Dialogue">
+      <script>scripts\dialogue.gml</script>
+    </scripts>
   </scripts>
   <shaders name="shaders">
     <shaders name="Combat">
