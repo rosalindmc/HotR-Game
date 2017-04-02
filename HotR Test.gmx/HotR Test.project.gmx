@@ -463,6 +463,7 @@
       <sprite>sprites\spr_forest</sprite>
       <sprite>sprites\spr_mountain</sprite>
       <sprite>sprites\spr_hgGrass</sprite>
+      <sprite>sprites\spr_brightGrass</sprite>
       <sprite>sprites\spr_swamp</sprite>
       <sprite>sprites\spr_water</sprite>
       <sprite>sprites\spr_desert</sprite>

@@ -1,5 +1,6 @@
 #define largeArmour
 
+
 #define warriorChainmail
 iSpr[1] = spr_warriorChainPants
 iSpr[2] = spr_warriorChainPants

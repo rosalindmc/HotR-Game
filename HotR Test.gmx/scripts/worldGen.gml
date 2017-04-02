@@ -188,7 +188,7 @@ with(obj_worldTile)
         {
             if temprature > 0
             {
-            sprite_index = spr_hgGrass
+            sprite_index = spr_brightGrass
             overlay = spr_forest
             trimColour = green
             }
@@ -203,7 +203,7 @@ with(obj_worldTile)
         {
             if temprature > 0
             {
-            sprite_index = spr_hgGrass
+            sprite_index = spr_brightGrass
             trimColour = green
             }
             else
