@@ -103,8 +103,8 @@ else
 {costMod = 1}
 
 //Height Check      h0 tile h10 stairs h15 step h20 stairs+
-if adjacent.h > current.h+5
-{costMod *= 1+((adjacent.h-current.h-5)*.1)}
+if adjacent.h > current.h+5+current.hAdj
+{costMod *= 1+((adjacent.h-current.h-5-current.hAdj)*.1)}
 
 return(costMod)
 

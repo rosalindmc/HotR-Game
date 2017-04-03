@@ -70,13 +70,21 @@ with(obj_tile)
             {
                 for(iZ = isoZ; iZ < isoZ+w; iZ ++)
                 {
-                        i = instance_create(x+10,y-7,obj_thinwall)
-                        i.owner = obj_control.map[isoX+((iZ)*obj_control.mapWidth),isoY]
-                        i.h = i.owner.h
-                        i.facing = 1
-                        i.owner.wall[0] = i
-                        obj_control.map[isoX+((iZ)*obj_control.mapWidth),isoY-1].wall[2] = i
-                        instance_activate_object(i.owner)
+                    i = instance_create(x+9,y-5,obj_thinwall)
+                    i.owner = obj_control.map[isoX+((iZ)*obj_control.mapWidth),isoY]
+                    i.h = i.owner.h
+                    i.facing = 1
+                    i.owner.wall[0] = i
+                    i.image_index = choose(0,1,2)
+                    obj_control.map[isoX+((iZ)*obj_control.mapWidth),isoY-1].wall[2] = i
+                    instance_activate_object(i.owner)
+                    
+                    if w = 100
+                    {
+                        i.sprite_index = spr_dirtSlopeWall
+                        i.image_index = 1
+                        i.owner.hAdj = 7.5
+                    }
                 }
             }
             
@@ -94,13 +102,21 @@ with(obj_tile)
             {
                 for(iZ = isoZ; iZ < isoZ+w; iZ ++)
                 {
-                        i = instance_create(x-10,y-7,obj_thinwall)
-                        i.owner = obj_control.map[isoX+((iZ)*obj_control.mapWidth),isoY]
-                        i.h = i.owner.h
-                        i.facing = -1
-                        i.owner.wall[3] = i
-                        obj_control.map[isoX-1+((iZ)*obj_control.mapWidth),isoY].wall[1] = i
-                        instance_activate_object(i.owner)
+                    i = instance_create(x-9,y-5,obj_thinwall)
+                    i.owner = obj_control.map[isoX+((iZ)*obj_control.mapWidth),isoY]
+                    i.h = i.owner.h
+                    i.facing = -1
+                    i.owner.wall[3] = i
+                    i.image_index = choose(3,4,5)
+                    obj_control.map[isoX-1+((iZ)*obj_control.mapWidth),isoY].wall[1] = i
+                    instance_activate_object(i.owner)
+                    
+                    if w = 100
+                    {
+                        i.sprite_index = spr_dirtSlopeWall
+                        i.image_index = 1
+                        i.owner.hAdj = 7.5
+                    }
                 }
             }
             
@@ -118,13 +134,21 @@ with(obj_tile)
             {
                 for(iZ = isoZ; iZ < isoZ+w; iZ ++)
                 {
-                    i = instance_create(x-10,y+4,obj_thinwall)
+                    i = instance_create(x-11,y+6,obj_thinwall)
                     i.owner = obj_control.map[isoX+((iZ)*obj_control.mapWidth),isoY+1]
                     i.h = i.owner.h
                     i.facing = 1
+                    i.image_index = choose(3,4,5)
                     wall[2] = i
                     obj_control.map[isoX+((iZ)*obj_control.mapWidth),isoY+1].wall[0] = i
                     instance_activate_object(i.owner)
+                    
+                    if w = 100
+                    {
+                        i.sprite_index = spr_dirtSlopeWall
+                        i.image_index = 0
+                        i.owner.hAdj = 7.5
+                    }
                 }
             }
             
@@ -143,13 +167,21 @@ with(obj_tile)
             {
                 for(iZ = isoZ; iZ < isoZ+w; iZ ++)
                 {
-                    i = instance_create(x+10,y+4,obj_thinwall)
+                    i = instance_create(x+11,y+6,obj_thinwall)
                     i.owner = obj_control.map[isoX+1+((iZ)*obj_control.mapWidth),isoY]
                     i.h = i.owner.h
                     i.facing = -1
                     i.owner.wall[1] = i
+                    i.image_index = choose(0,1,2)
                     obj_control.map[isoX+1+((iZ)*obj_control.mapWidth),isoY].wall[3] = i
                     instance_activate_object(i.owner)
+                    
+                    if w = 100
+                    {
+                        i.sprite_index = spr_dirtSlopeWall
+                        i.image_index = 0
+                        i.owner.hAdj = 7.5
+                    }
                 }
             }
             
@@ -169,6 +201,8 @@ with(obj_tile)
                 level[4] = spr_tileBorder
             }
         }
+        
+        //slopeGen()
         
         trimColour = global.battlefield.tile.trimColour
     }
@@ -199,3 +233,89 @@ repeat(2)
         }
     }
 }
+#define slopeGen
+var N = 0
+var E = 0
+var S = 0
+var W = 0
+var NE = 0
+var NW = 0
+var SE = 0
+var SW = 0
+
+
+if isoY > 0
+{
+    w = obj_control.map[isoX,isoY-1].heightMap-obj_control.map[isoX,isoY].heightMap        
+    N = w
+    
+    if isoX > 0
+    {
+        w = obj_control.map[isoX-1,isoY-1].heightMap-obj_control.map[isoX,isoY].heightMap
+        NW = w
+    }
+    
+    if isoX < obj_control.mapWidth-1
+    {
+        w = obj_control.map[isoX+1,isoY-1].heightMap-obj_control.map[isoX,isoY].heightMap
+        NE = w
+    }
+}
+
+if isoY < obj_control.mapHeight-1
+{
+    w = obj_control.map[isoX,isoY+1].heightMap-obj_control.map[isoX,isoY].heightMap        
+    S = w
+    
+    if isoX > 0
+    {
+        w = obj_control.map[isoX-1,isoY+1].heightMap-obj_control.map[isoX,isoY].heightMap        
+        SW = w
+    }
+    
+    if isoX < obj_control.mapWidth-1
+    {
+        w = obj_control.map[isoX+1,isoY+1].heightMap-obj_control.map[isoX,isoY].heightMap        
+        SE = w
+    }
+}
+
+if isoX > 0
+{
+    w = obj_control.map[isoX-1,isoY].heightMap-obj_control.map[isoX,isoY].heightMap        
+    W = w
+}
+
+if isoX < obj_control.mapWidth-1
+{
+    w = obj_control.map[isoX+1,isoY].heightMap-obj_control.map[isoX,isoY].heightMap        
+    E = w
+}
+
+
+if NW = 1
+{sprite_index = spr_dirtSlopeTile image_index = 11 hAdj = 7.5}
+else if SE = 1
+{sprite_index = spr_dirtSlopeTile image_index = 9 hAdj = 7.5}
+else if NE = 1
+{sprite_index = spr_dirtSlopeTile image_index = 8 hAdj = 7.5}
+else if SW = 1
+{sprite_index = spr_dirtSlopeTile image_index = 10 hAdj = 7.5}
+
+/*
+if NE = true
+{image_index = 10}
+if SE = true
+{image_index = 11}
+if SW = true
+{image_index = 12}
+
+if N = true
+{image_index = 1}
+if E = true
+{image_index = 2}
+if S = true
+{image_index = 3}
+if W = true
+{image_index = 4}
+

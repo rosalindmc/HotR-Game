@@ -8,7 +8,7 @@ case 0:
 //Facing
 moveX = pathArray[moveStep].x
 moveY = pathArray[moveStep].y
-moveZ = pathArray[moveStep].h
+moveZ = pathArray[moveStep].h+pathArray[moveStep].hAdj
 
 //Horizontal Facing
 if moveX > x
@@ -74,7 +74,7 @@ moveDur = (global.fspd*(point_distance(pathArray[moveStep].x,pathArray[moveStep]
 //Facing
 moveX = pathArray[moveStep].x
 moveY = pathArray[moveStep].y
-moveZ = pathArray[moveStep].h
+moveZ = pathArray[moveStep].h+pathArray[moveStep].hAdj
 
 if pathLength > 3
 {cFacing =  round(point_direction(pathArray[pathLength-3].x,pathArray[pathLength-3].y,pathArray[pathLength-2].x,pathArray[pathLength-2].y)/45)*45}

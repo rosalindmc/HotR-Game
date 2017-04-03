@@ -67,10 +67,12 @@ alarm[0] = 2
     isoZ = owner.isoZ
     
     i = sprite_index
+    ii = image_index
     m = mask_index
     instance_change(losHeight(isoZ),false)
     sprite_index = i
     mask_index = m
+    image_index = ii
     image_xscale = facing
     
     

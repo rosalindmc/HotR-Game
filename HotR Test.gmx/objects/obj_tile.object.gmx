@@ -44,6 +44,7 @@ overlay = 0
 onPath = false
 g = 0
 h = 0
+hAdj = 0
 move = false
 rangedAttack = false
 meleeAttack = false

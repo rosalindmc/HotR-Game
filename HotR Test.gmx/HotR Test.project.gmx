@@ -329,6 +329,8 @@
     <sprites name="Environment">
       <sprite>sprites\spr_thinwall</sprite>
       <sprite>sprites\spr_stairs</sprite>
+      <sprite>sprites\spr_dirtSlopeTile</sprite>
+      <sprite>sprites\spr_dirtSlopeWall</sprite>
       <sprite>sprites\spr_wall</sprite>
       <sprite>sprites\spr_step</sprite>
       <sprite>sprites\spr_tile</sprite>
