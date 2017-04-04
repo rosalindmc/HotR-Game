@@ -24,5 +24,7 @@
     <frame index="1">images\spr_youngHead_1.png</frame>
     <frame index="2">images\spr_youngHead_2.png</frame>
     <frame index="3">images\spr_youngHead_3.png</frame>
+    <frame index="4">images\spr_youngHead_4.png</frame>
+    <frame index="5">images\spr_youngHead_5.png</frame>
   </frames>
 </sprite>

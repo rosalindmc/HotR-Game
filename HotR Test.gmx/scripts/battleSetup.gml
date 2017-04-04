@@ -11,7 +11,7 @@ instance_deactivate_object(obj_overworldParent)
 global.controlObject = instance_create(0,0,obj_control)
 
 #define combatHillsGen
-repeat(3)
+repeat(6)
 {
     with(obj_tile)
     {
@@ -318,4 +318,3 @@ if S = true
 {image_index = 3}
 if W = true
 {image_index = 4}
-

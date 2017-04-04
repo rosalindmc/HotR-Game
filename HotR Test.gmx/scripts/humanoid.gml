@@ -357,12 +357,12 @@ if bodyVFacing = 0
 i = 0 repeat(girdleItems){i++ draw_sprite_ext(girdleItem[i],hipsImage+vFacing,hipsX,hipsY,hFacing*sX,sX,hipsRot,girdleColour[i],1)}
 
 //Head and Hair
-if bodyVFacing = 1{draw_sprite_ext(beardStyle,bounce,headX,headY,headFacing*hFacing*sX,sX,headRot,hairColour,1)}
+if bodyVFacing = 1{draw_sprite_ext(beardStyle,faceImage+bounce,headX,headY,headFacing*hFacing*sX,sX,headRot,hairColour,1)}
 draw_sprite_ext(headSprite,faceImage+vFacing,headX,headY,headFacing*hFacing*sX,sX,headRot,skinTone,1)
 draw_sprite_ext(spr_eyes,faceImage+vFacing,headX,headY,headFacing*hFacing*sX,sX,headRot,eyeColour,eyeVis)
 draw_sprite_ext(hairStyle,bounce+(vFacing*2),headX,headY,headFacing*hFacing*sX,sX,headRot,hairColour,hairVisible)
 draw_sprite_ext(earSprite,vFacing,headX,headY,headFacing*hFacing*sX,sX,headRot,skinTone,1)
-if bodyVFacing = 0{draw_sprite_ext(beardStyle,bounce,headX,headY,headFacing*hFacing*sX,sX,headRot,hairColour,1)}
+if bodyVFacing = 0{draw_sprite_ext(beardStyle,faceImage+bounce,headX,headY,headFacing*hFacing*sX,sX,headRot,hairColour,1)}
 
 if bodyVFacing = 1
 {
@@ -448,155 +448,6 @@ draw_set_colour(c_red)
 //draw_arrow(shldrX[2-shldrSwap]+50,shldrY[2-shldrSwap],handX[2]+50,handY[2],5)
 draw_arrow(x,y,x+lengthdir_x(handDist[2]*sX, handDir[2]),y+lengthdir_y(handDist[2]*sX, handDir[2]),5)
 
-#define randomizeHumanoid
-//TEMP
-
-//Gender and Size
-raceMove = 0
-gender = choose(femme,femme,masc)
-var s = min(choose(1,1,2,2,3,3,4)+gender,4)
-var i
-var r = choose(1,1,1,1,1,2,2,2,3,3,4,4,5,6,7)
-
-switch(r)
-{
-    case 1: //High Elf
-    raceHead = spr_elfHead
-    race = "High Elf"
-    skinTone = choose(fair,fair,fair,dark,beige,beige,pale,pale)
-    i = choose(0,0,0,1,1,1,2)
-    s = min(choose(1,1,1,2,2,3,3,4)+gender,4)
-    
-        legSprite = spr_leg
-        legSpriteMod = 0 
-        hipsOffset = 11+i
-        height = 28+i
-    
-    break
-    
-    case 2: //Human
-    raceHead = spr_humanHead
-    race = "Irunian Human"
-    skinTone = choose(dark,dark,beige,beige,beige)
-    i = choose(0,0,1,2)
-    s = min(choose(1,1,2,2,3,3,4)+gender,4)
-    
-        legSprite = spr_leg
-        legSpriteMod = 0 
-        hipsOffset = 11+i
-        height = 28+i
-    break
-    
-    case 3: //Dwarf
-    raceHead = spr_humanHead
-    skinTone = choose(fair,pale)
-    race = "Dwarf"
-    i = choose(0,0,0,1,1)
-    s = 4   //min(choose(3,3,4)+gender,4)
-    
-        legSprite = spr_shortLeg
-        legSpriteMod = 1
-        hipsOffset = 8+i
-        height = 25+i
-        raceMove = -1
-        //headOffset -= 1
-    
-    break
-    
-    case 4: //Halfling
-    raceHead = choose(spr_humanHead,spr_elfHead)
-    skinTone = choose(fair,fair,fair,dark,beige,beige,pale,pale)
-    race = "Halfling"
-    i = 0
-    s = choose(1,1,1,2,3)
-    
-        legSprite = spr_shortLeg
-        legSpriteMod = 1
-        hipsOffset = 8+i
-        height = 24+i
-        raceMove = -1
-        
-    bodyOffset -= 1    
-    break
-    
-    case 5: //Orc
-    raceHead = spr_humanHead
-    skinTone = choose(orcBrown,orcGreen)
-    race = "Orc"
-    i = choose(0,1,1,1,2,2)
-    s = min(choose(2,2,3,3,4)+gender,4)
-    
-        legSprite = spr_leg
-        legSpriteMod = 0 
-        hipsOffset = 11+i
-        height = 28+i+i
-    
-    bodyOffset += i            
-    break
-    
-    case 6: //Tiefling
-    raceHead = spr_elfHead
-    skinTone = choose(fair,demonRed)
-    race = "Tiefling"
-    i = choose(0,1,1,2)
-    s = min(choose(1,1,1,2,2,3,3)+(gender*2),4)
-    
-        legSprite = spr_leg
-        legSpriteMod = 0 
-        hipsOffset = 11+i
-        height = 28+i  
-    break
-        
-    case 7: //Northern Human
-    raceHead = spr_humanHead
-    race = "Northern Human"
-    skinTone = choose(pale,pale,fair)
-    i = choose(0,0,1,2,2)
-    s = min(choose(1,2,2,3,3,4)+gender,4)
-    
-        legSprite = spr_leg
-        legSpriteMod = 0 
-        hipsOffset = 11+i
-        height = 28+i
-    
-    break
-}
-
-if skinTone = fair or skinTone = pale
-{
-    hairColour = choose(black,dkBrown,dkRed,c_yellow)
-}
-
-if skinTone = beige
-{
-    hairColour = choose(black,dkBrown)
-}
-
-legAdjust[1] = i
-legAdjust[2] = i
-
-//Faces
-if gender = masc
-{
-    faceImage = choose(0,2)
-}
-
-/*Randomizing heights
-if bodyOffset > 4
-{
-    i = choose(-1,0,0,0,1)
-    bodyOffset -= i
-    height -= i
-}
-*/
-
-//size test
-//s = 1
-
-
-//Old Characters headOff -1, headAdj +1
-//Upright Characters headAdj -1
-
 #define humanoidPortrait
 with(argument0)
 {
@@ -614,7 +465,7 @@ with(argument0)
     draw_sprite_ext(spr_eyes,faceImage,argument1,argument2,argument3,argument3,0,eyeColour,eyeVis)
     draw_sprite_ext(hairStyle,0,argument1,argument2,argument3,argument3,0,hairColour,hairVisible)
     draw_sprite_ext(earSprite,0,argument1,argument2,argument3,argument3,0,skinTone,1)
-    draw_sprite_general(beardStyle,0,0,0,7,9,argument1-(3*argument3),argument2-(4*argument3),argument3,argument3,0,hairColour,hairColour,hairColour,hairColour,1)
+    draw_sprite_general(beardStyle,faceImage,0,0,7,9,argument1-(3*argument3),argument2-(4*argument3),argument3,argument3,0,hairColour,hairColour,hairColour,hairColour,1)
     i = 0 repeat(headItems){i++ draw_sprite_ext(headItem[i],0,argument1,argument2,argument3,argument3,0,headColour[i],1)}
     
     shader_reset()

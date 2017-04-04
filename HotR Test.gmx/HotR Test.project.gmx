@@ -182,6 +182,7 @@
             <sprite>sprites\ico_guardedAttack</sprite>
             <sprite>sprites\ico_holdTheLine</sprite>
             <sprite>sprites\ico_shakeItOff</sprite>
+            <sprite>sprites\ico_bravery</sprite>
           </sprites>
           <sprites name="fellowship">
             <sprite>sprites\ico_dueling</sprite>
@@ -636,10 +637,13 @@
     </scripts>
     <scripts name="Events">
       <script>scripts\eventStart.gml</script>
-      <script>scripts\campEvents.gml</script>
+      <script>scripts\coreEvents.gml</script>
       <script>scripts\createNotification.gml</script>
       <script>scripts\eventActions.gml</script>
       <script>scripts\eventChecks.gml</script>
+      <scripts name="Dialogue">
+        <script>scripts\dialogue.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Menu">
       <scripts name="Landing Menu">
@@ -764,9 +768,6 @@
       <scripts name="Trick">
         <script>scripts\blind.gml</script>
       </scripts>
-    </scripts>
-    <scripts name="Dialogue">
-      <script>scripts\dialogue.gml</script>
     </scripts>
   </scripts>
   <shaders name="shaders">

@@ -6,7 +6,7 @@ if argument1 = 0
 {
     switch(argument0)
     {
-    case 0: speak('GM tools') break
+    case 0: speak('GM tools') portraitSet(global.eventActor) break
     
     case 1: 
     choice('Misc Scripts 1', 2, true) 
@@ -206,7 +206,12 @@ if argument1 = 0
 {
     switch(argument0)
     {
-        case 0: script_execute(global.targetActor.partyLeader.personality,global.targetActor.partyLeader.memories) break
-        case 1: battleSetup(global.activeActor,global.targetActor,global.node,overWorldMapGen) eventEnd() break
+    case 0: 
+    script_execute(global.targetActor.partyLeader.personality,global.targetActor.partyLeader.memories) 
+    portraitSet(global.targetActor)
+    talk(1)
+    break
+    case 1: //battleSetup(global.activeActor,global.targetActor,global.node,overWorldMapGen) 
+    eventEnd() break
     }
 }

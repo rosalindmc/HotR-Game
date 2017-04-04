@@ -24,5 +24,7 @@
     <frame index="1">images\spr_baseHead_1.png</frame>
     <frame index="2">images\spr_baseHead_2.png</frame>
     <frame index="3">images\spr_baseHead_3.png</frame>
+    <frame index="4">images\spr_baseHead_4.png</frame>
+    <frame index="5">images\spr_baseHead_5.png</frame>
   </frames>
 </sprite>

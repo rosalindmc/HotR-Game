@@ -39,7 +39,7 @@ case 0:     //Run when the unit is initialized in battle
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_bravery
+sprite_index = ico_leadership
 image_index = 1
 name = 'Lead By Example'
 tooltip = 'Attacking restores allies life and stamina'
@@ -60,7 +60,7 @@ case 0:     //Run when the unit is initialized in battle
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_bravery
+sprite_index = ico_leadership
 image_index = 1
 name = 'Rally'
 tooltip = 'Gain the Rally Ability'
@@ -81,7 +81,7 @@ case 0:     //Run when the unit is initialized in battle
 break
 
 case 1:     //Tooltip and icon
-sprite_index = ico_bravery
+sprite_index = ico_leadership
 image_index = 1
 name = 'Unity'
 tooltip = 'Nearby allies gain resistance for each nearby ally'

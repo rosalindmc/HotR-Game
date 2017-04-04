@@ -21,7 +21,7 @@ reloads[2] = maxReloads[2]
 reloads[3] = maxReloads[3]
 
 expEarned = false
-expOnKill = floor(o.level*(1+(o.level*.1)))
+expOnKill = floor((o.level+o.levelAdj)*(1+((o.level+o.levelAdj)*.1)))
 
 if hasShield = true
 {

@@ -36,9 +36,13 @@ script_execute(event,eventStep,0)
 clickStep = false
 text = ''
 i = 0
+talking = false
 
 eventStep += 1
 script_execute(event,eventStep,0)
+
+#define portraitSet
+portraitOf = argument0
 
 #define speak
 //Draws the text of argument0 in a text box
@@ -64,3 +68,5 @@ if argument2 = false
 
 
 i += 1
+#define talk
+talking = argument0
