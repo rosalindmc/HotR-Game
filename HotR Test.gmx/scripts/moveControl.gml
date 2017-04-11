@@ -106,9 +106,7 @@ switch(argument0)
             target = cHover.occupant
             
             timeReset()
-            i.atkHand += i.dualWield
             attackPreview(false)
-            i.atkHand -= i.dualWield
             global.testSlot.delayAdd = i.s/(i.haste+i.atkHaste)
             initiativeSlotAnticipate()
         }

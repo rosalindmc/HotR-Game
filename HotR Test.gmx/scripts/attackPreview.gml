@@ -34,6 +34,7 @@ with(i)
         atkHand += dualWield
         rDamage()
         p = wepRPow[atkHand]+(wepRStrMult[atkHand]*atkDPS*s)
+        p/= max(rangeDropoff(id,target)/(wepRRange[atkHand]*metre*1.5),1)
         pMin = p*(1-wepPowRng[atkHand])
         pMax = p*(1+wepPowRng[atkHand])
         
@@ -109,17 +110,13 @@ with(i)
         target.initSlot.delayAdd += max(0,((2.0/target.sResist))-(target.fSuppression+target.suppression))    
         target.fSuppression += max(0,((2.0/target.sResist))-(target.fSuppression+target.suppression))    
     }
-    
-    if mle = false
-    {
-        atkHand -= dualWield
-    }
 }
 
 
 if i.missChance >= 1{extraTT += 1}
 if i.dge > 0 and i.backstab = false{extraTT += 1}
 if target.blocks >= 1 and i.backstab = false and floor(100-((i.skill-target.mSkill)*3)) > 0 and (i.mle = true or target.hasShield = true){extraTT += 1}
+if i.mle = false{if max(rangeDropoff(i,target)/(i.wepRRange[i.atkHand]*metre*1.5),1) > 1{extraTT += 1}}
 
 draw_set_colour(c_dkgray)
 draw_rectangle(ix,iy,ix+120,iy+20+((extraTT+tooltipLength)*14),false)
@@ -152,6 +149,15 @@ if target.blocks >= 1 and i.backstab = false and floor(100-((i.skill-target.mSki
     draw_text(ix+5,iy,string(floor(100-(max(0,(i.skill-target.mSkill)*3))))+' % Block '+string(floor((i.p+target.blockStr)/4)))
     iy += 14  
 }
+if i.mle = false
+{
+    if max(rangeDropoff(i,target)/(i.wepRRange[i.atkHand]*metre*1.5),1) > 1
+    {
+        draw_set_colour(c_red)
+        draw_text(ix+5,iy,string_format(100-(100/(rangeDropoff(i,target)/(i.wepRRange[i.atkHand]*metre*1.5))),0,0)+' % Range Dropoff')
+        iy += 14  
+    }
+}
 if tooltipLength != 0
 {
     for(ii = 0; ii < tooltipLength; ii++)
@@ -160,6 +166,11 @@ if tooltipLength != 0
         draw_text(ix+5,iy,tooltipText[ii])
         iy += 14  
     }
+}
+
+if i.mle = false
+{
+    i.atkHand -= i.dualWield
 }
 
 #define suppressionPreview

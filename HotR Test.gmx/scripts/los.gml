@@ -173,3 +173,6 @@ while (ret = 0){
 }
 
 return(ret)
+#define rangeDropoff
+return point_distance(0,0,argument0.x-argument1.x,(argument0.y-argument1.y)*2)+max(0,argument1.h-argument0.h)
+

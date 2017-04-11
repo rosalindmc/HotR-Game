@@ -207,6 +207,9 @@ s = (1+(3-(dualWield*.5))/((wepRSpeed[atkHand])))/5
 //Find Base Attack Strength
 p = wepRPow[atkHand]+(wepRStrMult[atkHand]*atkDPS*s)
 
+//Damage Dropoff from range
+p/= max(rangeDropoff(id,target)/(wepRRange[atkHand]*metre*1.5),1)
+
 //Roll Attack Strength
 p *= (1-wepRPowRng[atkHand]+random(wepRPowRng[atkHand]*2))
 

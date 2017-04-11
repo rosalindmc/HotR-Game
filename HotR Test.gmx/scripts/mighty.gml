@@ -127,16 +127,16 @@ if dodge > dge and mle = true
 {
     if argument5 = false    //On Proc
     {
-        p += ((max(dodge,0)-dge)*argument1)*s
+        p += (min(max(dodge,0)-dge,35)*argument1)*s
         
         popup(argument0,id)
     }
     else                    //On Tooltip
     {
-        p += ((max(dodge,0)-dge)*argument1)*s
+        p += (min(max(dodge,0)-dge,35)*argument1)*s
          
         obj_control.tooltipColour[obj_control.tooltipLength] = green
-        obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)+' '+string_format(((max(dodge,0)-dge)*argument1)*s,2,1)
+        obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)+' '+string_format((min(max(dodge,0)-dge,35)*argument1)*s,2,1)
         obj_control.tooltipLength += 1   
         
     }
