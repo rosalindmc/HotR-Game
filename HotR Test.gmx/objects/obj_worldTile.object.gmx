@@ -123,13 +123,11 @@ else if height &gt; -10
             <kind>1</kind>
             <string>if vis = true
 {
-    shader_set(global.shader)
     draw_self()
     if overlay != -4
     {
         draw_sprite(overlay,overlayImg,x,y)
     }
-    shader_reset()
 }
 </string>
           </argument>

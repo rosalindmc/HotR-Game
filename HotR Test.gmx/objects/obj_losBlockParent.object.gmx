@@ -29,12 +29,12 @@
 {
     if owner.vis != false and scrollVis != false
     {
-        if owner.vis = 2
-        {
-            shader_set(shd_greyscale)
-        }
+        //if owner.vis = 2
+        //{
+            //find new solution for memory
+            //shader_set(shd_greyscale)
+        //}
         draw_sprite_ext(sprite_index,image_index,x,y-h+(global.zLevel*15),facing,1,0,c_white,1)
-        shader_reset()
     }
     else
     {

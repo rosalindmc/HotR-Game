@@ -340,6 +340,9 @@
       <sprite>sprites\spr_dirtStep</sprite>
       <sprite>sprites\spr_dirtWall</sprite>
       <sprite>sprites\spr_dirtWallTall</sprite>
+      <sprites name="Details">
+        <sprite>sprites\spr_grassTuft</sprite>
+      </sprites>
     </sprites>
     <sprites name="Masks">
       <sprite>sprites\spr_mask</sprite>
@@ -412,6 +415,7 @@
     <sprites name="UI">
       <sprite>sprites\spr_armIcon</sprite>
       <sprite>sprites\spr_blockIcon</sprite>
+      <sprite>sprites\spr_rankIcon</sprite>
       <sprite>sprites\spr_bigArmIcon</sprite>
       <sprite>sprites\spr_vitIcon</sprite>
       <sprite>sprites\spr_stmIcon</sprite>
@@ -435,6 +439,7 @@
       <sprite>sprites\spr_levelSheet</sprite>
       <sprite>sprites\spr_dualStrike</sprite>
       <sprite>sprites\spr_retreating</sprite>
+      <sprite>sprites\spr_nameBanner</sprite>
     </sprites>
     <sprites name="Overworld">
       <sprites name="Outdated">
@@ -475,18 +480,23 @@
       <sprite>sprites\spr_orangeGrass</sprite>
       <sprite>sprites\spr_TEMP</sprite>
     </sprites>
+    <sprites name="Effect">
+      <sprite>sprites\spr_sunBeam</sprite>
+    </sprites>
   </sprites>
   <backgrounds name="background">
     <background>background\bck_frostdungeon</background>
     <background>background\bg_test</background>
     <background>background\bg_grass</background>
+    <background>background\bg_clouds</background>
+    <background>background\bg_darkClouds</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
     <scripts name="Setup and Teardown">
+      <script>scripts\importCharacter.gml</script>
       <script>scripts\battleSetup.gml</script>
       <script>scripts\battleTeardown.gml</script>
-      <script>scripts\importCharacter.gml</script>
       <script>scripts\setupMap.gml</script>
       <script>scripts\overWorldMapGen.gml</script>
     </scripts>
@@ -504,14 +514,6 @@
         </scripts>
         <scripts name="Movement and Control">
           <script>scripts\owMovementRange.gml</script>
-        </scripts>
-        <scripts name="Character Creation">
-          <script>scripts\classList.gml</script>
-          <script>scripts\raceList.gml</script>
-          <script>scripts\characterInitialize.gml</script>
-          <script>scripts\scr_charactergenerator.gml</script>
-          <script>scripts\createCharacter.gml</script>
-          <script>scripts\mookAdd.gml</script>
         </scripts>
       </scripts>
       <scripts name="World Generation">
@@ -536,6 +538,14 @@
         <scripts name="Federation">
           <script>scripts\federation.gml</script>
         </scripts>
+      </scripts>
+      <scripts name="Character Creation">
+        <script>scripts\classList.gml</script>
+        <script>scripts\raceList.gml</script>
+        <script>scripts\characterInitialize.gml</script>
+        <script>scripts\scr_charactergenerator.gml</script>
+        <script>scripts\createCharacter.gml</script>
+        <script>scripts\mookAdd.gml</script>
       </scripts>
     </scripts>
     <scripts name="Combat">
@@ -793,6 +803,7 @@
       <font>fonts\fnt_lrgMenu</font>
       <font>fonts\fnt_smlMenu</font>
       <font>fonts\fnt_tinyText</font>
+      <font>fonts\fnt_miniText</font>
       <font>fonts\fnt_smallText</font>
       <font>fonts\fnt_charSheet</font>
       <font>fonts\fnt_textbox</font>
@@ -817,6 +828,7 @@
     </objects>
     <objects name="Overworld">
       <object>objects\obj_overworldParent</object>
+      <object>objects\obj_colourCorrection</object>
       <object>objects\obj_overworldControl</object>
       <object>objects\obj_overworldVital</object>
       <objects name="Actors">
@@ -895,6 +907,9 @@
         <object>objects\obj_status</object>
       </objects>
       <object>objects\obj_control</object>
+      <objects name="Doodads">
+        <object>objects\obj_doodad</object>
+      </objects>
     </objects>
   </objects>
   <rooms name="rooms">

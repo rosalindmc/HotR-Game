@@ -23,6 +23,11 @@ reloads[3] = maxReloads[3]
 expEarned = false
 expOnKill = floor((o.level+o.levelAdj)*(1+((o.level+o.levelAdj)*.1)))
 
+if o.mook = true
+{
+    expOnKill /= 2
+}
+
 if hasShield = true
 {
     blocks = blockMax
@@ -170,7 +175,7 @@ else
 spellCD = 1/(1+((cunning-8)*.05))}
 
 //Morale
-sResist = 1
+sResist = 1+((fellowship-8)*.05)
 bravery = 0
 stubborn = false
 threatResist = 0
@@ -181,7 +186,7 @@ blockGen = 0
 blockStr = might
 
 //Vitals
-lifeMax = max(floor(8+(will-8)+((might-8)/2)+o.life),4)
+lifeMax = max(floor(8+((will-8)/2)+((might-8)/4)+o.life),4)
 lifeRegen = 4+((will-8)*.5)
 
 stmMax = max(floor(8+(will-8)+((grace-8)/2)+o.stamina),4)
@@ -335,7 +340,7 @@ if o.mook = true
     wepPow[2] *= .75
     wepRPow[1] *= .75
     wepRPow[2] *= .75
-    atkHaste *= .7
+    haste *= .7
     dodge -= 20
     blockStr *= .5
 }

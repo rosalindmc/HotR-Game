@@ -75,7 +75,7 @@ switch(argument0)
     //Run 2 to draw
     case 2:
     tooltipTitle = 'Reload '+i.wepName[2]
-    abilityTT = 'Action#Reload your offhand weapon'
+    abilityTT = 'Action#Reload your pistol'
     abilityTTLength = 1
     global.testSlot.delayAdd = i.wepReload[2]/i.haste
     initiativeSlotAnticipate()

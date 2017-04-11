@@ -334,71 +334,6 @@ facing = round(point_direction(x,y,mouse_x,mouse_y)/45)*45
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check(vk_alt) and global.charTab = tab
-{
-//Draw UI
-draw_set_font(fnt_dev)
-draw_set_halign(fa_left)
-draw_set_valign(fa_middle)
-draw_set_colour(c_white)
-draw_text(x+18,y-8,"R: "+string(race))
-draw_text(x+18,y-16,"GW: "+string(greatWeapon))
-draw_text(x+18,y-24,"H: "+string(height)+"px - "+string(height*6)+"cm")
-
-switch(mode)
-{
-    case 1:
-    draw_text(x+18,y-32,"Head Off: "+string(headOffset))
-    draw_text(x+18,y-40,"Head Adj: "+string(headAdjust))
-    draw_text(x+18,y-48,"Body: "+string(bodyImage))
-    break
-    
-    case 2:
-    draw_text(x+18,y-32,"Chest Adj: "+string(chstAdjust))
-    draw_text(x+18,y-40,"Chest: "+string(chstImage))
-    break
-    
-    case 3:
-    draw_text(x+18,y-32,"Body Off: "+string(bodyOffset))
-    draw_text(x+18,y-40,"Body Adj: "+string(bodyAdjust))
-    draw_text(x+18,y-48,"Body: "+string(bodyImage))
-    draw_text(x+18,y-56,"Hips: "+string(hipsImage))
-    draw_text(x+18,y-64,"Chest: "+string(chstImage))
-    break
-    
-    case 4:
-    draw_text(x+18,y-32,"Leg Adj: "+string(legAdjust[1]))
-    draw_text(x+18,y-40,"Hips: "+string(hipsImage))
-    draw_text(x+18,y-48,"Skirt: "+string(skrtSize))
-    break
-    
-    case 5:
-    draw_text(x+18,y-32,"Hips Off: "+string(hipsOffset))
-    break
-}
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
-    <event eventtype="8" enumb="0">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
             <string>//Draw Self
 if global.charTab = tab
 {
@@ -417,6 +352,7 @@ if global.charTab = tab
     draw_set_valign(fa_middle)
     draw_set_halign(fa_center)
     draw_set_font(fnt_main)
+    draw_set_colour(c_black)
     draw_text(x,y-150,string(global.charSelect.firstName)+' '+string(global.charSelect.lastName))
     draw_set_font(fnt_small)
     draw_text(x,y-130,'Level '+string(global.charSelect.level)+' '+string(global.charSelect.raceName)+' '+string(global.charSelect.className))
@@ -595,6 +531,92 @@ if global.charTab = tab
         draw_text(x+80,y+80,string_format(1/blockGen,2,1)+' s')   
     }
 }
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if keyboard_check(vk_alt) and global.charTab = tab
+{
+//Draw UI
+draw_set_font(fnt_dev)
+draw_set_halign(fa_left)
+draw_set_valign(fa_middle)
+draw_set_colour(c_white)
+draw_text(x+18,y-8,"R: "+string(race))
+draw_text(x+18,y-16,"GW: "+string(greatWeapon))
+draw_text(x+18,y-24,"H: "+string(height)+"px - "+string(height*6)+"cm")
+
+switch(mode)
+{
+    case 1:
+    draw_text(x+18,y-32,"Head Off: "+string(headOffset))
+    draw_text(x+18,y-40,"Head Adj: "+string(headAdjust))
+    draw_text(x+18,y-48,"Body: "+string(bodyImage))
+    break
+    
+    case 2:
+    draw_text(x+18,y-32,"Chest Adj: "+string(chstAdjust))
+    draw_text(x+18,y-40,"Chest: "+string(chstImage))
+    break
+    
+    case 3:
+    draw_text(x+18,y-32,"Body Off: "+string(bodyOffset))
+    draw_text(x+18,y-40,"Body Adj: "+string(bodyAdjust))
+    draw_text(x+18,y-48,"Body: "+string(bodyImage))
+    draw_text(x+18,y-56,"Hips: "+string(hipsImage))
+    draw_text(x+18,y-64,"Chest: "+string(chstImage))
+    break
+    
+    case 4:
+    draw_text(x+18,y-32,"Leg Adj: "+string(legAdjust[1]))
+    draw_text(x+18,y-40,"Hips: "+string(hipsImage))
+    draw_text(x+18,y-48,"Skirt: "+string(skrtSize))
+    break
+    
+    case 5:
+    draw_text(x+18,y-32,"Hips Off: "+string(hipsOffset))
+    break
+}
+}
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Do Nothing
 </string>
           </argument>
         </arguments>

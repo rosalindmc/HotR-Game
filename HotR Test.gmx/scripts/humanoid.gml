@@ -186,14 +186,11 @@ legAngleX = 1 //Multiplier of leg movement
 //Draw a humanoid
 
 //Shader
-if hidden = false
-{
-    shader_set(global.shader)
-}
-else
-{
-    shader_set(shd_stealth)
-}
+//if hidden = true
+//{
+    //Find new solution for stealth
+    //shader_set(shd_stealth)
+//}
 
     //Adjust Bones
     
@@ -437,9 +434,6 @@ if greatWeapon = true
     }
 }
 
-//Shader
-shader_reset()
-
 /*TEMP TEST
 draw_set_colour(c_green)
 //draw_arrow(shldrX[1+shldrSwap]+50,shldrY[1+shldrSwap],handX[1]+50,handY[1],5)
@@ -449,24 +443,20 @@ draw_set_colour(c_red)
 draw_arrow(x,y,x+lengthdir_x(handDist[2]*sX, handDir[2]),y+lengthdir_y(handDist[2]*sX, handDir[2]),5)
 
 #define humanoidPortrait
-with(argument0)
-{
-    shader_set(global.shader)
-    
-    //Hair
-    draw_sprite_ext(hairStyle,4,argument1,argument2,argument3,argument3,0,hairColour,hairVisible)
+var c = argument0
 
-    //Upper Body
-    draw_sprite_general(bodySprite,bodyImage,portraitAdj+headAdjust,0,12,12-headOffset,argument1-(6*argument3),argument2-(6*argument3)+(headOffset*argument3),argument3,argument3,0,skinTone,skinTone,skinTone,skinTone,1)
-    i = 0 repeat(bodyItems){i++ draw_sprite_general(bodyItem[i],2+bodyImage,portraitAdj+headAdjust,0,12,12-headOffset,argument1-(6*argument3),argument2-(6*argument3)+(headOffset*argument3),argument3,argument3,0,bodyColour[i],bodyColour[i],bodyColour[i],bodyColour[i],1)}
+//Hair
+draw_sprite_ext(c.hairStyle,4,argument1,argument2,argument3,argument3,0,c.hairColour,c.hairVisible)
 
-    //Head and Hair
-    draw_sprite_ext(headSprite,faceImage,argument1,argument2,argument3,argument3,0,skinTone,1)
-    draw_sprite_ext(spr_eyes,faceImage,argument1,argument2,argument3,argument3,0,eyeColour,eyeVis)
-    draw_sprite_ext(hairStyle,0,argument1,argument2,argument3,argument3,0,hairColour,hairVisible)
-    draw_sprite_ext(earSprite,0,argument1,argument2,argument3,argument3,0,skinTone,1)
-    draw_sprite_general(beardStyle,faceImage,0,0,7,9,argument1-(3*argument3),argument2-(4*argument3),argument3,argument3,0,hairColour,hairColour,hairColour,hairColour,1)
-    i = 0 repeat(headItems){i++ draw_sprite_ext(headItem[i],0,argument1,argument2,argument3,argument3,0,headColour[i],1)}
-    
-    shader_reset()
-}
+//Upper Body
+draw_sprite_general(c.bodySprite,c.bodyImage,c.portraitAdj+c.headAdjust,0,12,12-c.headOffset,argument1-(6*argument3),argument2-(6*argument3)+(c.headOffset*argument3),argument3,argument3,0,c.skinTone,c.skinTone,c.skinTone,c.skinTone,1)
+i = 0 repeat(c.bodyItems){i++ draw_sprite_general(c.bodyItem[i],2+c.bodyImage,c.portraitAdj+c.headAdjust,0,12,12-c.headOffset,argument1-(6*argument3),argument2-(6*argument3)+(c.headOffset*argument3),argument3,argument3,0,c.bodyColour[i],c.bodyColour[i],c.bodyColour[i],c.bodyColour[i],1)}
+
+//Head and Hair
+draw_sprite_ext(c.headSprite,c.faceImage,argument1,argument2,argument3,argument3,0,c.skinTone,1)
+draw_sprite_ext(spr_eyes,c.faceImage,argument1,argument2,argument3,argument3,0,c.eyeColour,c.eyeVis)
+draw_sprite_ext(c.hairStyle,0,argument1,argument2,argument3,argument3,0,c.hairColour,c.hairVisible)
+draw_sprite_ext(c.earSprite,0,argument1,argument2,argument3,argument3,0,c.skinTone,1)
+draw_sprite_general(c.beardStyle,c.faceImage,0,0,7,9,argument1-(3*argument3),argument2-(4*argument3),argument3,argument3,0,c.hairColour,c.hairColour,c.hairColour,c.hairColour,1)
+i = 0 repeat(c.headItems){i++ draw_sprite_ext(c.headItem[i],0,argument1,argument2,argument3,argument3,0,c.headColour[i],1)}
+

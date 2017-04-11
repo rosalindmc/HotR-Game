@@ -322,9 +322,6 @@ classMSkill = .15
 classRSkill = .15
 classCSkill = .20
 
-will += 2
-fellowship += 1
-
 //Talent
 talent[0,0] = choose(treeSubterfuge,treeInsight)
 talent[0,5] = 1

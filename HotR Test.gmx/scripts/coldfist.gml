@@ -196,8 +196,6 @@ classMSkill = .20
 classRSkill = .20
 classCSkill = .15
 
-cunning -= 2
-fellowship -= 2
 mook = true
 
 #define class_thane

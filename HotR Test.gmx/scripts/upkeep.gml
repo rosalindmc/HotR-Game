@@ -8,8 +8,8 @@ if dead = false
 if obj_control.mapTimeOn = true and global.timeDelay = 0
 {
     //Life and Stamina Regeneration
-    regenTime += lifeRegen*(.25+(active*.75))/(global.fspd*10)
-    gainStamina(id,stmRegen/(global.fspd*30))
+    regenTime += lifeRegen*(.25+(active*.75))/(global.fspd*15)
+    gainStamina(id,stmRegen/(global.fspd*15))
     
     for(i = 0; i < abilityNumber; i++)
     {

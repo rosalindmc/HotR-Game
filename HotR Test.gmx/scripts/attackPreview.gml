@@ -31,9 +31,11 @@ with(i)
     }
     else
     {
+        atkHand += dualWield
         rDamage()
         p = wepRPow[atkHand]+(wepRStrMult[atkHand]*atkDPS*s)
-
+        pMin = p*(1-wepPowRng[atkHand])
+        pMax = p*(1+wepPowRng[atkHand])
         
         //Facing
         if abs(angle_difference(target.cFacing,point_direction(x,0,target.x,(target.y-y)*2))) < 180-target.arc
@@ -106,6 +108,11 @@ with(i)
         //Suppress
         target.initSlot.delayAdd += max(0,((2.0/target.sResist))-(target.fSuppression+target.suppression))    
         target.fSuppression += max(0,((2.0/target.sResist))-(target.fSuppression+target.suppression))    
+    }
+    
+    if mle = false
+    {
+        atkHand -= dualWield
     }
 }
 

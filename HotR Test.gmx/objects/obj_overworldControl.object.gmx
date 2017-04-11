@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>//Create Mouse
 instance_create(x,y,obj_camera)
+instance_create(x,y,obj_colourCorrection)
 
 //Create HUD Buttons
 global.inMenu = false

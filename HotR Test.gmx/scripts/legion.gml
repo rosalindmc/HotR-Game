@@ -23,6 +23,7 @@ attributeGen()
 classGen(class_warrior)
 
 lastName = ''
+raceName = 'Skeleton'
 race = race_skeleton
 skinTone = c_white
 headSprite = spr_skull
@@ -58,6 +59,7 @@ classGen(class_thrall)
 invSlot[4,0] = choose(chainShirt,robe)
 
 lastName = ''
+raceName = 'Zombie'
 race = race_zombie
 skinTone = make_colour_rgb(190,240,215)
 headSprite = spr_oldHead
@@ -94,7 +96,7 @@ break
 switch(argument0)
 {
 case 3:     //Race Trait
-raceName = 'Skeleton'
+race = 'Skeleton'
 sResist += 1
 resist[typeRend] = 2
 resist[typePierce] = 8

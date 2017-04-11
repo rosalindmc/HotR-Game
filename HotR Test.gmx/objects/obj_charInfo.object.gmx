@@ -71,35 +71,63 @@ if global.timeDelay = 0 and global.nextChar.owner.player = true and global.event
     draw_set_font(fnt_tinyText)
     
     iy = y+5
-    draw_text(x+55,iy,h.name)
+    draw_text(x+55,iy,string(h.name))
     iy += 12
+    
+    draw_text(x+55,iy,string(h.race)+" "+string(h.class))
+    draw_sprite(spr_rankIcon,1,x+10,iy+6)
+    drawText(c_black,c_white,x+9,iy-1,h.o.level+h.o.levelAdj-h.o.mook)
+    draw_set_colour(c_black)
+    iy += 12
+    
+    draw_set_halign(fa_center)
+    draw_set_font(fnt_tinyText)
+    draw_text(x+55,iy,'Life (+'+string_format(h.lifeRegen*(.25+(h.active*.75)),0,1)+'/15s)')
+    iy += 12
+    
+    draw_set_colour(green)
+    draw_rectangle(x+5,iy,x+5+(100*(h.life/h.lifeMax)),iy+9,false)
+    draw_set_halign(fa_left)
+    draw_set_colour(c_black)
+    draw_text(x+10,iy-2,string(floor(h.life)))
+    draw_rectangle(x+5,iy,x+105,iy+9,true)
+    iy += 10
     
     if h.tireless = false
     {
-    draw_text(x+55,iy,'Stamina')
+    draw_set_halign(fa_center)
+    draw_set_font(fnt_tinyText)
+    draw_text(x+55,iy,'Stamina (+'+string_format(h.stmRegen,0,1)+'/15s)')
     iy += 12
     
     draw_set_colour(c_orange)
-    draw_rectangle(x+5,iy,x+5+(100*(h.stm/h.stmMax)),iy+6,false)
+    draw_rectangle(x+5,iy,x+5+(100*(h.stm/h.stmMax)),iy+9,false)
+    draw_set_halign(fa_left)
     draw_set_colour(c_black)
-    draw_rectangle(x+5,iy,x+105,iy+6,true)
-    iy += 12
+    draw_text(x+10,iy-2,string(floor(h.stm)))
+    draw_rectangle(x+5,iy,x+105,iy+9,true)
+    iy += 10
     }
     
     if h.noMorale = false
     {
+    draw_set_halign(fa_center)
+    draw_set_font(fnt_tinyText)
     draw_text(x+55,iy,'Morale')
     iy += 12
     
     draw_set_colour(make_colour_rgb(155,0,0))
-    draw_rectangle(x+5,iy,x+5+(100*h.bold),iy+6,false)
+    draw_rectangle(x+5,iy,x+5+(100*h.bold),iy+9,false)
+    draw_set_halign(fa_left)
     draw_set_colour(c_black)
-    draw_rectangle(x+5,iy,x+105,iy+6,true)
-    iy += 12
+    draw_text(x+10,iy-2,string(floor(h.bold*100))+" %")
+    draw_rectangle(x+5,iy,x+105,iy+9,true)
+    iy += 10
     }
     
     with(global.nextChar.owner)
     {
+        draw_set_font(fnt_tinyText)
         draw_set_halign(fa_right)
         for(ii = 1; ii &lt;= 3; ii++)
         {

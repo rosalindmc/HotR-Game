@@ -48,10 +48,6 @@ classMSkill = .15
 classRSkill = .15
 classCSkill = .25
 
-cunning += 1
-will += 1
-fellowship += 1
-
 //Talent
 talent[0,0] = choose(treeInsight,treeDiscipline)
 talent[0,5] = 1
@@ -81,10 +77,6 @@ cSkill = 1
 classMSkill = .25
 classRSkill = .20
 classCSkill = .15
-
-cunning += 1
-grace += 1
-fellowship += 1
 
 //Talent
 talent[0,0] = choose(treeMartial,treeDueling,treeMobility,treeInsight)
@@ -120,9 +112,6 @@ classMSkill = .20
 classRSkill = .20
 classCSkill = .15
 
-cunning += 1
-grace += 2
-
 //Talent
 talent[0,0] = choose(treeInsight,treeMobility,treeDueling,treeSubterfuge)
 talent[0,5] = 2
@@ -154,9 +143,6 @@ cSkill = 1
 classMSkill = .15
 classRSkill = .15
 classCSkill = .15
-
-cunning += 2
-grace += 1
 
 //Talent
 talent[0,0] = choose(treeMobility,treeSubterfuge,treeInsight)
@@ -192,13 +178,6 @@ classMSkill = .25
 classRSkill = .25
 classCSkill = .15
 
-might += 2
-will += 1
 //Talent
 talent[0,0] = choose(treeStrength,treeDiscipline,treeToughness,treeMartial)
 talent[0,5] = 2
-
-/*Temp
-talent[0,1] = choose(branchGuardBreak)
-talent[0,2] = choose(branchSuperiority)
-talent[0,3] = choose(branchSecondWind)
