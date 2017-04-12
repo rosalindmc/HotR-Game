@@ -235,7 +235,6 @@ sneakIncognito = false
 sneakAmbush = false
 
 //Other
-atkHaste = 0
 movHaste = 0
 atkStaminaMult = 1
 movStaminaMult = 1

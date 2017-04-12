@@ -422,6 +422,7 @@
       <sprite>sprites\spr_morIcon</sprite>
       <sprite>sprites\spr_mouse</sprite>
       <sprite>sprites\spr_buttonMask</sprite>
+      <sprite>sprites\spr_smallButton</sprite>
       <sprite>sprites\spr_slider</sprite>
       <sprite>sprites\spr_selectionDiamond</sprite>
       <sprite>sprites\spr_enemyDiamond</sprite>
@@ -701,6 +702,7 @@
       <scripts name="Mutators">
         <script>scripts\mutators.gml</script>
       </scripts>
+      <script>scripts\charInfoAttributes.gml</script>
     </scripts>
     <scripts name="Talents">
       <scripts name="Combat Talents">
@@ -848,6 +850,8 @@
         <object>objects\obj_charTab</object>
         <object>objects\obj_model</object>
         <object>objects\obj_menuSheet</object>
+        <object>objects\obj_optionSelector</object>
+        <object>objects\obj_option</object>
         <object>objects\obj_menuSubTab</object>
         <objects name="Leveling">
           <object>objects\obj_levelUpButton</object>

@@ -38,6 +38,11 @@ global.eventActor = -4
 global.sightBase = 30
 global.accuracyBase = 1
 global.turnOver = false  
+global.optionSelect = 'charInfo1'
+global.optionName1 = 'Attributes'
+global.optionName2 = 'Melee'
+global.charInfo1 = charInfoAttributes
+global.charInfo2 = charInfoMelee
 
 i = instance_create(40,-10,obj_topButton)
 i.image_index = 0

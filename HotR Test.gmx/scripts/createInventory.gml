@@ -24,8 +24,6 @@ global.equipSlot[i] = ii
 i += 1
 }
 
-instance_create(210,158,obj_backDrop)
-
 ii = instance_create(170,169,obj_designateRanged)
 ii.image_index = global.charSelect.range+1
 

@@ -97,7 +97,7 @@ if global.timeDelay = 0 and global.nextChar.owner.player = true and global.event
     {
     draw_set_halign(fa_center)
     draw_set_font(fnt_tinyText)
-    draw_text(x+55,iy,'Stamina (+'+string_format(h.stmRegen,0,1)+'/15s)')
+    draw_text(x+55,iy,'Stamina (+'+string_format(h.stmRegen/(1+h.enc*.01),0,1)+'/15s)')
     iy += 12
     
     draw_set_colour(c_orange)

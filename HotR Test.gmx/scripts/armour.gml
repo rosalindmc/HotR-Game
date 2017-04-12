@@ -248,7 +248,7 @@ case 1:     //Called when the item is equipped by a model.
 break
 
 case 2:     //Called when ?
-dodge = iDodge
+dodge += iDodge
 armMax += iArm
 prot += iProt
 enc += iEnc
@@ -301,7 +301,7 @@ case 1:     //Called when the item is equipped by a model.
 break
 
 case 2:     //Called when ?
-dodge = iDodge
+dodge += iDodge
 armMax += iArm
 prot += iProt
 enc += iEnc
@@ -328,6 +328,7 @@ iSkrt[3] = spr_none
 armourApplyVis(c_white)
 break
 }
+
 #define fedUniform
 iSpr[1] = spr_fedUniform
 iSpr[2] = spr_fedUniform

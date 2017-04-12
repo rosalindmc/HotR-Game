@@ -341,14 +341,7 @@ if global.charTab = tab
     y = ystart+view_yview[]
     
     script_execute(animType,1)
-    
-    if keyboard_check(vk_alt)
-    {
-        draw_line(x+14,y,x+15,y-height*sX)
-        draw_line(x+10,y-height*sX,x+15,y+1-(height*sX))
-        draw_line(x+10,y,x+15,y+1)
-    }
-    
+        
     draw_set_valign(fa_middle)
     draw_set_halign(fa_center)
     draw_set_font(fnt_main)
@@ -367,169 +360,14 @@ if global.charTab = tab
     if global.charSelect.levelPending != 0{draw_text(x+55,y-117,'+')}
     
     draw_text(x,y-105,string_format(global.charSelect.experience,2,1)+' / '+string(global.charSelect.expToLevel))
-
-        
-    draw_set_halign(fa_left)
-    draw_text(x-80,y+20,"Might")
-    draw_text(x-80,y+32,"Grace")
-    draw_text(x-80,y+44,"Cunning")    
-    draw_text(x-80,y+56,"Will")
-    draw_text(x-80,y+68,"Fellowship")
     
-    draw_text(x-80,y+92,"Life")
-    draw_text(x-80,y+104,"Stamina")    
-    draw_text(x-80,y+116,"Skill")
+    ix = 120+view_xview[]
+    iy = 210+view_yview[]
+    script_execute(global.charInfo1)
     
-    draw_set_halign(fa_center)
-    draw_text(x-20,y+20,might)
-    draw_text(x-20,y+32,grace)
-    draw_text(x-20,y+44,cunning)   
-    draw_text(x-20,y+56,will)
-    draw_text(x-20,y+68,fellowship)
-    
-    draw_text(x-20,y+92,lifeMax)
-    draw_text(x-20,y+104,stmMax)    
-    draw_text(x-20,y+116,string_format(mSkill,2,1)+" / "+string_format(rSkill,2,1)+" / "+string_format(cSkill,2,1))
-
-    //Weapons
-    if wepClass[1] = ranged
-    {
-    s1 = (3-(dualWield*.5))/((wepRSpeed[1]))
-    p1 = wepRPow[1]+(wepRStrMult[1]*atkDPS*(s1+1)/5)
-    pen1 = wepRPen[1]
-    p1min = floor(p1*(1-wepRPowRng[1]))
-    p1max = ceil(p1*(1+wepRPowRng[1]))
-    }
-    else
-    {
-    s1 = (3-(dualWield*.5))/((wepSpeed[1]))
-    p1 = wepPow[1]+(wepStrMult[1]*atkDPS*(s1+1)/5)
-    pen1 = wepPen[1]
-    p1min = floor(p1*(1-wepPowRng[1]))
-    p1max = ceil(p1*(1+wepPowRng[1]))
-    }
-    
-    if wepClass[2] = ranged
-    {
-    s2 = (3-(dualWield*.5))/((wepRSpeed[2]))
-    p2 = wepRPow[2]+(wepRStrMult[2]*atkDPS*(s2+1)/5)
-    pen2 = wepRPen[2]
-    p2min = floor(p2*(1-wepRPowRng[2]))
-    p2max = ceil(p2*(1+wepRPowRng[2]))
-    }
-    else
-    {
-    s2 = (3-(dualWield*.5))/((wepSpeed[2]))
-    p2 = wepPow[2]+(wepStrMult[2]*atkDPS*(s2+1)/5)    
-    pen2 = wepPen[2]
-    p2min = floor(p2*(1-wepPowRng[2]))
-    p2max = ceil(p2*(1+wepPowRng[2]))
-    }
-   
-    //Weapon Stats
-    draw_set_halign(fa_left)
-    draw_text(x+20,y+20,"DAMAGE")
-    draw_text(x+20,y+32,"PEN")
-    draw_text(x+20,y+44,"SPEED")
-    
-    if dualWield = true
-    {
-        draw_text(x+20,y+68,"DAMAGE")
-        draw_text(x+20,y+80,"PEN")
-        draw_text(x+20,y+92,"SPEED")
-    }
-    else if hasShield = true
-    {
-        draw_text(x+20,y+68,"BLOCK")
-        draw_text(x+20,y+80,"SPEED")    
-    }
-    
-    draw_set_halign(fa_center)
-    draw_text(x+80,y+20,string(p1min)+' - '+string(p1max))
-    
-   if pen1/4 &lt; 5
-   {
-        i = 0
-        ax = x+78-(3*(floor(pen1/4)-1))
-        repeat(floor(pen1/4))
-        {
-            draw_sprite(spr_bigArmIcon,0,ax,y+33)
-            draw_sprite(spr_bigArmIcon,4,ax,y+33)
-            ax += 7
-            i += 4
-        }
-        if pen1 &gt; i
-        {
-            draw_sprite(spr_bigArmIcon,pen1-i,ax,y+33)
-            draw_sprite(spr_bigArmIcon,4+pen1-i,ax,y+33)
-        }
-    }
-    else
-    {
-        draw_text(x+80,y+32,string(floor(pen1/4)))
-        draw_sprite(spr_bigArmIcon,0,x+90,y+33) 
-        draw_sprite(spr_bigArmIcon,4,x+90,y+33) 
-    }
-    
-    draw_text(x+80,y+44,string_format(s1/(haste+atkHaste),2,2))  
-    
-    if dualWield = true
-    {
-        draw_text(x+80,y+68,string(p2min)+' - '+string(p2max))
-        
-        if pen2/4 &lt; 5
-        {
-            i = 0
-            ax = x+78-(3*(floor(pen2/4)-1))
-            repeat(floor(pen2/4))
-            {
-                draw_sprite(spr_bigArmIcon,0,ax,y+81)
-                draw_sprite(spr_bigArmIcon,4,ax,y+81)
-                ax += 7
-                i += 4
-            }
-            if pen2 &gt; i
-            {
-                draw_sprite(spr_bigArmIcon,pen2-i,ax,y+81)
-                draw_sprite(spr_bigArmIcon,4+pen2-i,ax,y+81)
-            }
-        }
-        else
-        {
-            draw_text(x+80,y+68,string(floor(pen2/4)))
-            draw_sprite(spr_bigArmIcon,0,x+90,y+69) 
-            draw_sprite(spr_bigArmIcon,4,x+90,y+69) 
-        }
-        
-        draw_text(x+80,y+92,string_format(s2/(haste+atkHaste),2,2))    
-    }
-    else if hasShield = true
-    {
-        if blockStr/4 &lt; 5
-        {
-            i = 0
-            ax = x+78-(3*(floor(blockStr/4)-1))
-            repeat(floor(blockStr/4))
-            {
-                draw_sprite(spr_bigArmIcon,0,ax,y+69)
-                draw_sprite(spr_bigArmIcon,4,ax,y+69)
-                ax += 7
-                i += 4
-            }
-            if blockStr &gt; i
-            {
-                draw_sprite(spr_bigArmIcon,blockStr-i,ax,y+69)
-                draw_sprite(spr_bigArmIcon,4+blockStr-i,ax,y+69)
-            }
-        }
-        else
-        {
-            draw_text(x+80,y+68,string(floor(blockStr/4)))
-            draw_sprite(spr_bigArmIcon,0,x+90,y+69) 
-            draw_sprite(spr_bigArmIcon,4,x+90,y+69) 
-        }
-        draw_text(x+80,y+80,string_format(1/blockGen,2,1)+' s')   
-    }
+    ix = 220+view_xview[]
+    iy = 210+view_yview[]
+    script_execute(global.charInfo2)
 }
 </string>
           </argument>
@@ -553,6 +391,10 @@ if global.charTab = tab
             <kind>1</kind>
             <string>if keyboard_check(vk_alt) and global.charTab = tab
 {
+draw_line(x+14,y,x+15,y-height*sX)
+draw_line(x+10,y-height*sX,x+15,y+1-(height*sX))
+draw_line(x+10,y,x+15,y+1)
+
 //Draw UI
 draw_set_font(fnt_dev)
 draw_set_halign(fa_left)
