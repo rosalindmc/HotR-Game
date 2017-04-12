@@ -32,7 +32,7 @@ case 1:     //Called when the item is equipped by a model.
 break
 
 case 2:     //Called when Equipped
-dodge = iDodge
+dodge += iDodge
 armMax += iArm
 prot += iProt
 enc += iEnc
@@ -72,7 +72,7 @@ case 1:     //Called when the item is equipped by a model.
 break
 
 case 2:     //Called when Equipped
-dodge = iDodge
+dodge += iDodge
 armMax += iArm
 prot += iProt
 enc += iEnc

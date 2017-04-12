@@ -6,10 +6,10 @@ case 3:     //Run when the unit is initialized in battle
 addAbility(actHide,2)
 switch(argument1)
 {
-case 1: sneakDamage = 2 break
-case 2: sneakDamage = 3 break
-case 3: sneakDamage = 4 break
-case 4: sneakDamage = 5 break
+case 1: sneakDamage += 2 break
+case 2: sneakDamage += 3 break
+case 3: sneakDamage += 4 break
+case 4: sneakDamage += 5 break
 }
 break
 

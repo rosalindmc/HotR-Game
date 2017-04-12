@@ -272,7 +272,7 @@ draw_text(ix,iy+56,"Weight")
 
 draw_set_halign(fa_center)
 draw_text(ix+60,iy+20,string_format(movement,0,1)+" / "+string_format(movement+movementBonus,0,1))
-draw_text(ix+60,iy+32,string((haste*100)-100)+" %")
+draw_text(ix+60,iy+32,string(floor(haste*100)-100)+" %")
 draw_text(ix+60,iy+44,string_format(stmRegen/(1+enc*.01),0,1)+" /15s")
 draw_text(ix+60,iy+56,string(floor(enc))+" %")
 

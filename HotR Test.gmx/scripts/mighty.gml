@@ -307,6 +307,6 @@ else                    //On Tooltip
     p += sneakDamage
     
     obj_control.tooltipColour[obj_control.tooltipLength] = green
-    obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)+' '+string_format(argument1,2,1)
+    obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)+' '+string_format(sneakDamage,2,1)
     obj_control.tooltipLength += 1       
 }

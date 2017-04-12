@@ -201,7 +201,7 @@ dualWield = false
 hasShield = false
 threat = false
 rangeAttack = false
-dodge = 25
+dodge = 0
 armMax = 0
 prot = 0
 enc = 0
@@ -280,6 +280,12 @@ script_execute(o.invSlot[8,2],2)
 script_execute(o.invSlot[8,3],2)
 script_execute(o.invSlot[8,4],2)
 postArmourCustom()
+
+if o.invSlot[4,0] = emptySlot
+{
+    dodge += 25
+}
+
 
 #define iCTraits
 //Talents
