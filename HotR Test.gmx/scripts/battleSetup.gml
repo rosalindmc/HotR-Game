@@ -171,9 +171,9 @@ with(obj_tile)
                     i.owner = obj_control.map[isoX+1+((iZ)*obj_control.mapWidth),isoY]
                     i.h = i.owner.h
                     i.facing = -1
-                    i.owner.wall[1] = i
+                    i.owner.wall[3] = i
                     i.image_index = choose(0,1,2)
-                    obj_control.map[isoX+1+((iZ)*obj_control.mapWidth),isoY].wall[3] = i
+                    obj_control.map[isoX+((iZ)*obj_control.mapWidth),isoY].wall[1] = i
                     instance_activate_object(i.owner)
                     
                     if w = 100

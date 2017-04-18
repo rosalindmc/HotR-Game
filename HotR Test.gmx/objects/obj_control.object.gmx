@@ -168,9 +168,14 @@ alarm[0] = 2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>    updateVision()
-    updateScrollVis()
-    global.loading = false
+            <string>with(obj_tile)
+{
+    checkSpace()
+}
+
+updateVision()
+updateScrollVis()
+global.loading = false
 </string>
           </argument>
         </arguments>

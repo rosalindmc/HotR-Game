@@ -125,7 +125,7 @@ money = 0.00
 
 //Inventory
 ii = 0
-repeat(choose(60))
+repeat(choose(120))
 {
     inventory[ii,0] = choose(
     choose(knife,dagger,epee,armingSword,greatSword,longSword,shortSword,sabre,rapier,bastardSword),

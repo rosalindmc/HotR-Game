@@ -92,7 +92,7 @@ alarm[0] = 1
           <argument>
             <kind>1</kind>
             <string>x = xstart+view_xview
-y = ystart+view_yview
+y = ystart+view_yview-(global.hudY*22)
 
 if global.charSelect.levelPending &gt;= 1
 {

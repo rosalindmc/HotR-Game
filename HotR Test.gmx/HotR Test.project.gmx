@@ -223,6 +223,10 @@
         <sprite>sprites\ico_rushBuff</sprite>
         <sprite>sprites\ico_dodgeBuff</sprite>
       </sprites>
+      <sprites name="Travel Icons">
+        <sprite>sprites\ico_camp</sprite>
+        <sprite>sprites\ico_visitCity</sprite>
+      </sprites>
     </sprites>
     <sprites name="Equipment">
       <sprites name="Clothing">
@@ -437,6 +441,7 @@
       <sprite>sprites\ico_invSlot</sprite>
       <sprite>sprites\ico_invBorder</sprite>
       <sprite>sprites\spr_menuSheet</sprite>
+      <sprite>sprites\spr_halfSheet</sprite>
       <sprite>sprites\spr_levelSheet</sprite>
       <sprite>sprites\spr_dualStrike</sprite>
       <sprite>sprites\spr_retreating</sprite>
@@ -480,6 +485,7 @@
       <sprite>sprites\spr_deeps</sprite>
       <sprite>sprites\spr_orangeGrass</sprite>
       <sprite>sprites\spr_TEMP</sprite>
+      <sprite>sprites\spr_castle</sprite>
     </sprites>
     <sprites name="Effect">
       <sprite>sprites\spr_sunBeam</sprite>
@@ -507,6 +513,7 @@
         <script>scripts\scr_tempActorListDraw.gml</script>
         <script>scripts\worldControlInitialize.gml</script>
         <script>scripts\addActor.gml</script>
+        <script>scripts\owActCamp.gml</script>
         <script>scripts\removeActor.gml</script>
         <script>scripts\checkLevelUp.gml</script>
         <scripts name="Party Scripts">
@@ -848,6 +855,7 @@
         <object>objects\obj_hudParent</object>
         <object>objects\obj_topButton</object>
         <object>objects\obj_charTab</object>
+        <object>objects\obj_menuDivider</object>
         <object>objects\obj_model</object>
         <object>objects\obj_menuSheet</object>
         <object>objects\obj_optionSelector</object>
@@ -869,6 +877,12 @@
         <object>objects\obj_event</object>
         <object>objects\obj_eventChoice</object>
         <object>objects\obj_notification</object>
+      </objects>
+      <objects name="Party Actions">
+        <object>objects\obj_partySlot</object>
+        <object>objects\obj_partyActor</object>
+        <object>objects\obj_partyActionButton</object>
+        <object>objects\obj_partyActionSheet</object>
       </objects>
     </objects>
     <objects name="Combat">

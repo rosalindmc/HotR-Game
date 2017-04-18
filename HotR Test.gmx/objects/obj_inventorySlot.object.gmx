@@ -27,9 +27,12 @@
             <kind>1</kind>
             <string>occupant = emptySlot
 equipSlot = false
+sortSlot1 = itemTypeWeapon
+sortSlot2 = itemTypeShield
 image_speed = 0
 
 border = 0
+hudY = 0
 </string>
           </argument>
         </arguments>
@@ -55,8 +58,16 @@ border = 0
             <string>x = xstart+view_xview[]
 y = ystart+view_yview[]
 
-draw_self()
-draw_sprite(ico_invBorder,border,x,y)
+if equipSlot = false
+{
+    y -= (global.hudY*22)
+}
+
+if (hudY &gt;= global.hudY and hudY &lt;= global.hudY+10) or equipSlot != false
+{
+    draw_self()
+    draw_sprite(ico_invBorder,border,x,y)
+}
 </string>
           </argument>
         </arguments>

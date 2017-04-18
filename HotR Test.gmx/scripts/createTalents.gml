@@ -4,14 +4,27 @@ var iy = 0
 var t = 0
 var tt = 0
 
-instance_create(427,80,obj_talHud)
-instance_create(477,80,obj_levelUpButton)
+with(obj_menuDivider)
+{
+    instance_destroy()
+}
 
+global.hudY = 0
+
+i = instance_create(430,72+(iy*22),obj_menuDivider)
+i.text = 'Talents'
+i.hudY = iy
+i = instance_create(477,72+(iy*22),obj_levelUpButton)
+i.hudY = iy
+iy += 1
+
+//Talents
 repeat(4)
 {
     repeat(8)
     {
-        i = instance_create(350+(ix*22),102+(iy*22),obj_talentSlot)
+        i = instance_create(352+(ix*22),72+(iy*22),obj_talentSlot)
+        i.hudY = iy
         
         if !(global.charSelect.talent[t,tt] = emptyTalent or global.charSelect.talent[t,tt] = emptyBranch)
         {
@@ -44,6 +57,11 @@ repeat(4)
     }
     iy += 1
 }
+
+//Injuries
+
+global.hudYMax = iy
+
 
 #define destroyTalents
 with(obj_talHud)

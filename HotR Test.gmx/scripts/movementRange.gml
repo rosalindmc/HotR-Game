@@ -96,7 +96,7 @@ var costMod
 
 //Diagonal Check
 if adjacent.isoZ != current.isoZ && adjacent.isoX != current.isoX && adjacent.isoY != current.isoY
-{costMod = 3}
+{costMod = 3.5}
 else if adjacent.isoX != current.isoX && adjacent.isoY != current.isoY
 {costMod = 1.5}
 else
@@ -139,6 +139,101 @@ for(ii = 0; ii < ds_list_size(adjacent); ii++)
         }
     }
 }
+
+
+
+#define checkSpace
+//Check Space
+var tx = isoX;
+var ty = isoY;
+var tz = isoZ;
+
+//North
+space[0] = 0
+repeat(min(4,ty+1))
+{
+    if obj_control.map[tx+(obj_control.mapWidth*isoZ),ty].wall[0] = noone
+    {
+        space[0] += 1
+        ty -= 1
+    }
+    else
+    {
+        break
+    }
+}
+tx = isoX
+ty = isoY
+
+//East
+space[1] = 0
+repeat(min(4,obj_control.mapWidth-tx-1))
+{
+    if obj_control.map[tx+(obj_control.mapWidth*isoZ),ty].wall[1] = noone
+    {
+        space[1] += 1
+        tx += 1
+    }
+    else
+    {
+        break
+    }
+}
+tx = isoX
+ty = isoY
+
+//South
+space[2] = 0
+repeat(min(4,obj_control.mapHeight-ty-1))
+{
+    if obj_control.map[tx+(obj_control.mapWidth*isoZ),ty].wall[2] = noone
+    {
+        space[2] += 1
+        ty += 1
+    }
+    else
+    {
+        break
+    }
+}
+tx = isoX
+ty = isoY
+
+//West
+space[3] = 0
+repeat(min(4,tx+1))
+{
+    if obj_control.map[tx+(obj_control.mapWidth*isoZ),ty].wall[3] = noone
+    {
+        space[3] += 1
+        tx -= 1
+    }
+    else
+    {
+        break
+    }
+}
+
+tx = isoX
+ty = isoY
+tz = isoZ+1
+
+//Up
+space[4] = 1
+repeat(min(4,obj_control.mapDepth-tz-1))
+{
+    if obj_control.map[tx+(obj_control.mapWidth*tz),ty].ground = false
+    {
+        space[4] += 1
+        tz += 1
+    }
+    else
+    {
+        break
+    }
+}
+
+
 
 #define zoneOfControl
 //zoneOfControl()

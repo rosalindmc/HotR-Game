@@ -86,7 +86,7 @@ else
           <argument>
             <kind>1</kind>
             <string>x = xstart+view_xview
-y = ystart+view_yview
+y = ystart+view_yview-(global.hudY*22)
 
 draw_self()
 

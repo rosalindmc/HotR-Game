@@ -35,6 +35,7 @@ equipped = 0
 tt = 0
 shield = false
 greatWeapon = false
+hudY = 0
 
 itemScript(0)
 </string>
@@ -128,6 +129,11 @@ if mouse_check_button_released(mb_left)
 {
     x = lockx+view_xview[]
     y = locky+view_yview[]
+     
+    if equipped = 0
+    {
+        y -= (global.hudY*22)
+    }
 }
 else
 {
@@ -135,7 +141,10 @@ else
     y = mouse_y+10
 }
 
-draw_sprite(sprite_index,itemQuality,x,y)
+if (hudY &gt;= global.hudY and hudY &lt;= global.hudY+10) or dragged = true or inInventory = false 
+{
+    draw_sprite(sprite_index,itemQuality,x,y)
+}
 
 if tt != 0 and dragged = false
 {

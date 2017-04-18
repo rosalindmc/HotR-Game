@@ -43,11 +43,13 @@ global.optionName1 = 'Attributes'
 global.optionName2 = 'Melee'
 global.charInfo1 = charInfoAttributes
 global.charInfo2 = charInfoMelee
+global.hudY = 0
+global.hudYMax = 0
 
 i = instance_create(40,-10,obj_topButton)
 i.image_index = 0
-//i = instance_create(80,-10,obj_topButton)
-//i.image_index = 1
+i = instance_create(80,-10,obj_topButton)
+i.image_index = 1
 //i = instance_create(120,-10,obj_topButton)
 //i.image_index = 2
 

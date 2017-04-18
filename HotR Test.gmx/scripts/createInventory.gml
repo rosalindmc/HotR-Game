@@ -1,12 +1,13 @@
+#define createInventory
 //Run this script with the party making the inventory icons.
 //createInventory()
-
 with(global.activeActor)
 {
 ix = 0
 iy = 0
+global.hudY = 0
 
-//Create Slots
+//Create Equip Slots
 i = 1
 repeat(4)
 {
@@ -26,49 +27,6 @@ i += 1
 
 ii = instance_create(170,169,obj_designateRanged)
 ii.image_index = global.charSelect.range+1
-
-repeat(10)
-{
-    repeat(8)
-    {
-        instance_create(350+(ix*22),80+(iy*22),obj_inventorySlot)
-        ix += 1
-        
-        if ix > 7
-        {
-            ix = 0
-        }
-    }
-    iy += 1
-}
-
-//Add Items from Inventory
-i = inventorySize-1
-ix = 350
-iy = 80
-
-repeat(inventorySize)
-{
-    ii = instance_create(ix,iy,obj_item)
-    ii.itemType = inventory[i,0]
-    ii.itemQuality = inventory[i,1]
-    ii.itemTrait[1] = inventory[i,2]
-    ii.itemTrait[2] = inventory[i,3]
-    ii.itemTrait[3] = inventory[i,4]
-    
-    with(ii)
-    {
-        script_execute(itemType,0)
-    }
-    i -= 1
-    ix += 22
-    if ix >= 350+(8*22)
-    {
-        ix -= 8*22
-        iy += 22
-    }
-}
-}
 
 //Add Items from Equipment
 i = 1
@@ -102,3 +60,94 @@ repeat(8)
     }
     i += 1
 }
+
+//Add Items from Inventory
+i = inventorySize-1
+
+repeat(inventorySize)
+{
+    ii = instance_create(0,0,obj_item)
+    ii.itemType = inventory[i,0]
+    ii.itemQuality = inventory[i,1]
+    ii.itemTrait[1] = inventory[i,2]
+    ii.itemTrait[2] = inventory[i,3]
+    ii.itemTrait[3] = inventory[i,4]
+    
+    with(ii)
+    {
+        script_execute(itemType,0)
+    }
+    i -= 1
+}
+
+//Create Inventory Slots for Each Category
+sortInventory()
+}
+
+
+#define inventoryRow
+var count = 0
+var list = ds_priority_create()
+
+with(obj_item)
+{
+    if (ttType = argument0 or ttType = argument1) and inInventory = true
+    {
+        ds_priority_add(list,id,sprite_index+(itemQuality*1000))
+        count += 1
+    }
+}
+
+//Title
+i = instance_create(430,72+(iy*22),obj_menuDivider)
+i.text = argument2
+i.hudY = iy
+iy += 1
+
+//Slots
+count = ceil((count+1)/8)
+repeat(count)
+{
+    repeat(8)
+    {
+        i = instance_create(352+(ix*22),72+(iy*22),obj_inventorySlot)
+        i.sortSlot1 = argument0
+        i.sortSlot2 = argument1
+        i.hudY = iy
+        ix += 1
+        
+        if !ds_priority_empty(list)
+        {
+            ii = ds_priority_delete_max(list)
+            ii.lockx = i.x
+            ii.locky = i.y
+            ii.hudY = iy
+            i.occupant = ii
+        }
+    }
+    ix = 0
+    iy += 1
+}
+
+#define sortInventory
+with(obj_menuDivider)
+{
+    instance_destroy()
+}
+
+with(obj_inventorySlot)
+{
+    if equipSlot = false
+    {
+        instance_destroy()
+    }
+}
+
+ix = 0
+iy = 0
+
+inventoryRow(itemTypeWeapon,itemTypeShield,'Melee Weapon')
+inventoryRow(itemTypeRanged,itemTypePistol,'Ranged Weapon')
+inventoryRow(itemTypePlating,itemTypeArmour,'Armour')
+inventoryRow(itemTypeTrinket,itemTypeTrinket,'Trinket')
+global.hudYMax = iy

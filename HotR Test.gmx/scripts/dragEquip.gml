@@ -109,13 +109,14 @@ if global.equipSlot[1].occupant = emptySlot
 #define dragRelease
 slot = instance_nearest(mouse_x,mouse_y,obj_inventorySlot)
 
-if distance_to_object(slot) < 25
+if point_distance(slot.x,slot.y,mouse_x,mouse_y) < 35
 {
     dragEquip()
     weaponSlotFill()
 }
 
 defaultBorders()
+sortInventory()
 
 #define defaultBorders
 

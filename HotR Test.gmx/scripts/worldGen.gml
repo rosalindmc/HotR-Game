@@ -259,7 +259,7 @@ repeat(floor(mapWidth/4))
         {      
             ii = instance_create(i.x,i.y,obj_travelNode)
             ii.tile = i
-            
+
             switch(i.sprite_index)
             {
                 case spr_deeps: 
@@ -272,6 +272,14 @@ repeat(floor(mapWidth/4))
                 //else {
                 with(ii){instance_destroy()}//} 
                 break
+            }
+            
+            //Temp Create Cities
+            if random(100) < 5 and instance_exists(ii)
+            {
+                i.overlay = spr_castle
+                ii.settlement = true
+                ii.name = settlementNameGen()
             }
             
             //Temp Create Parties
@@ -321,3 +329,6 @@ with(obj_travelNode)
         }
     }
 }
+
+#define settlementNameGen
+return choose("Wolf","North","East","River","Wood","High","Mountain")+choose("watch","burg","shire","border","mount")

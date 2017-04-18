@@ -50,30 +50,33 @@ dropDown = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if collision_point(mouse_x,mouse_y,id,false,false) and global.eventActive = false and global.inMenu = false
+            <string>if (collision_point(mouse_x,mouse_y,id,false,false) or global.menuSheet = image_index) and global.eventActive = false
 {
     dropDown = min(dropDown+(50/global.fspd),10)   
     
-    if mouse_check_button_pressed(mb_left)
+    if collision_point(mouse_x,mouse_y,id,false,false) and global.inMenu != 2
     {
-        if global.subTab = 0 and global.menuSheet = 0
+        if mouse_check_button_pressed(mb_left) and global.menuSheet != image_index 
         {
-            destroyInventory()
-        }
+            if global.subTab = 0 and global.menuSheet = 0
+            {
+                destroyInventory()
+            }
+            
+            with(obj_hudParent)
+            {
+                instance_destroy()
+            }
         
-        with(obj_hudParent)
-        {
-            instance_destroy()
-        }
-    
-        //Create Menu
-        global.menuSheet = image_index 
-        instance_create(320,180,obj_menuSheet)
-        global.inMenu = 1
-        
-        if global.menuSheet = 0
-        {
-            createInventory()
+            //Create Menu
+            global.menuSheet = image_index 
+            instance_create(320,180,obj_menuSheet)
+            global.inMenu = 1
+            
+            if global.menuSheet = 0
+            {
+                createInventory()
+            }
         }
     }
 }

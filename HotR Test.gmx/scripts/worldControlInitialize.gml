@@ -27,6 +27,11 @@ with(obj_notification)
     instance_destroy()
 }
 
+with(obj_partyActionButton)
+{
+    instance_destroy()
+}
+
 if global.activeActorNum > global.actorCount
 {
     //Time Passes
@@ -48,10 +53,33 @@ if global.activeActor.playerControl = true
         worldScrollVis()
     }
     owMovePath() 
+    owActionsCreate()
 }
 else
 {
     //Replace with AI script later, until then just pass
+    owMovePath()
+    
+    global.i = 0
+    global.move = -4
+    
+    with(obj_travelNode)
+    {
+        if image_index = 0
+        {
+            i = random(100)
+            if i > global.i
+            {
+                global.i = i
+                global.move = id    
+            }
+        }
+    }
+    
+    global.activeActor.x = global.move.x
+    global.activeActor.y = global.move.y
+    global.activeActor.node = global.move.id
+    
     nextTurn()
 }
 
@@ -99,4 +127,19 @@ with(global.activeActor.node)
         ii.image_index = 0
         i += 1
     }
+}
+#define owActionsCreate
+i = global.activeActor
+
+if i.node.settlement = false
+{
+ii = instance_create(i.x,i.y+30,obj_partyActionButton)
+ii.action = owActCamp
+ii.sprite_index = ico_camp
+}
+else
+{
+ii = instance_create(i.x,i.y+30,obj_partyActionButton)
+ii.action = owActVisitCity
+ii.sprite_index = ico_visitCity
 }
