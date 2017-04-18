@@ -85,8 +85,10 @@ with(obj_model)
     if owner = global.charSelect
     {
         importCharacter(owner)
+        equipOwner(owner)
     }
 }
+
 #define weaponSlotFill
 //When you remove slot 1 while slot 2 is filled, slot 2 should move to slot 1.  
 if global.equipSlot[1].occupant = emptySlot

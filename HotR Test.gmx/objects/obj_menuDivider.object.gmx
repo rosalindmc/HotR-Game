@@ -52,7 +52,7 @@ hudY = 0
             <string>x = xstart+view_xview[]
 y = ystart+view_yview[]-(global.hudY*22)
 
-if (hudY &gt;= global.hudY and hudY &lt;= global.hudY+10)
+if (hudY &gt;= global.hudY and hudY &lt;= global.hudY+9)
 {
     draw_set_halign(fa_center)
     draw_set_valign(fa_middle)

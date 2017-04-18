@@ -446,6 +446,7 @@
       <sprite>sprites\spr_dualStrike</sprite>
       <sprite>sprites\spr_retreating</sprite>
       <sprite>sprites\spr_nameBanner</sprite>
+      <sprite>sprites\spr_leaveMenu</sprite>
     </sprites>
     <sprites name="Overworld">
       <sprites name="Outdated">
@@ -513,7 +514,6 @@
         <script>scripts\scr_tempActorListDraw.gml</script>
         <script>scripts\worldControlInitialize.gml</script>
         <script>scripts\addActor.gml</script>
-        <script>scripts\owActCamp.gml</script>
         <script>scripts\removeActor.gml</script>
         <script>scripts\checkLevelUp.gml</script>
         <scripts name="Party Scripts">
@@ -554,6 +554,9 @@
         <script>scripts\scr_charactergenerator.gml</script>
         <script>scripts\createCharacter.gml</script>
         <script>scripts\mookAdd.gml</script>
+      </scripts>
+      <scripts name="Party Actions">
+        <script>scripts\owActCamp.gml</script>
       </scripts>
     </scripts>
     <scripts name="Combat">
@@ -883,6 +886,8 @@
         <object>objects\obj_partyActor</object>
         <object>objects\obj_partyActionButton</object>
         <object>objects\obj_partyActionSheet</object>
+        <object>objects\obj_partyActionHudParent</object>
+        <object>objects\obj_leaveSheet</object>
       </objects>
     </objects>
     <objects name="Combat">

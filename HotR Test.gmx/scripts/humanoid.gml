@@ -444,18 +444,25 @@ draw_arrow(x,y,x+lengthdir_x(handDist[2]*sX, handDir[2]),y+lengthdir_y(handDist[
 
 #define humanoidPortrait
 var c = argument0
+var adj = argument4
 
 //Hair
 draw_sprite_ext(c.hairStyle,4,argument1,argument2,argument3,argument3,0,c.hairColour,c.hairVisible)
 
 //Upper Body
-draw_sprite_general(c.bodySprite,c.bodyImage,c.portraitAdj+c.headAdjust,0,12,12-c.headOffset,argument1-(6*argument3),argument2-(6*argument3)+(c.headOffset*argument3),argument3,argument3,0,c.skinTone,c.skinTone,c.skinTone,c.skinTone,1)
-i = 0 repeat(c.bodyItems){i++ draw_sprite_general(c.bodyItem[i],2+c.bodyImage,c.portraitAdj+c.headAdjust,0,12,12-c.headOffset,argument1-(6*argument3),argument2-(6*argument3)+(c.headOffset*argument3),argument3,argument3,0,c.bodyColour[i],c.bodyColour[i],c.bodyColour[i],c.bodyColour[i],1)}
+draw_sprite_general(c.bodySprite,c.bodyImage,c.portraitAdj+c.headAdjust,0,12,12+adj-c.headOffset,argument1-(6*argument3),argument2-(6*argument3)+(c.headOffset*argument3),argument3,argument3,0,c.skinTone,c.skinTone,c.skinTone,c.skinTone,1)
+i = 0 repeat(c.bodyItems){i++ draw_sprite_general(c.bodyItem[i],2+c.bodyImage,c.portraitAdj+c.headAdjust,0,12,12+adj-c.headOffset,argument1-(6*argument3),argument2-(6*argument3)+(c.headOffset*argument3),argument3,argument3,0,c.bodyColour[i],c.bodyColour[i],c.bodyColour[i],c.bodyColour[i],1)}
 
+//Chest
+draw_sprite_general(c.chstSprite,c.chstImage,0,0,11-c.chstAdjust,11+adj-c.headOffset+c.chstOffset,argument1-((6-c.chstAdjust)*argument3),argument2-((5+c.chstOffset-c.headOffset)*argument3),argument3,argument3,0,c.skinTone,c.skinTone,c.skinTone,c.skinTone,1)
+i = 0 repeat(c.chstItems){i++ draw_sprite_general(c.chstItem[i],8+c.chstImage,0,0,12-c.chstAdjust,12+adj-c.headOffset+c.chstOffset,argument1-((7-c.chstAdjust)*argument3),argument2-((6+c.chstOffset-c.headOffset)*argument3),argument3,argument3,0,c.chstColour[i],c.chstColour[i],c.chstColour[i],c.chstColour[i],1)}
+//c.portraitAdj+c.headAdjust
+//-c.headOffset
 //Head and Hair
 draw_sprite_ext(c.headSprite,c.faceImage,argument1,argument2,argument3,argument3,0,c.skinTone,1)
 draw_sprite_ext(spr_eyes,c.faceImage,argument1,argument2,argument3,argument3,0,c.eyeColour,c.eyeVis)
 draw_sprite_ext(c.hairStyle,0,argument1,argument2,argument3,argument3,0,c.hairColour,c.hairVisible)
 draw_sprite_ext(c.earSprite,0,argument1,argument2,argument3,argument3,0,c.skinTone,1)
-draw_sprite_general(c.beardStyle,c.faceImage,0,0,7,9,argument1-(3*argument3),argument2-(4*argument3),argument3,argument3,0,c.hairColour,c.hairColour,c.hairColour,c.hairColour,1)
+draw_sprite_general(c.beardStyle,c.faceImage,0,0,7,9+adj,argument1-(3*argument3),argument2-(4*argument3),argument3,argument3,0,c.hairColour,c.hairColour,c.hairColour,c.hairColour,1)
 i = 0 repeat(c.headItems){i++ draw_sprite_ext(c.headItem[i],0,argument1,argument2,argument3,argument3,0,c.headColour[i],1)}
+

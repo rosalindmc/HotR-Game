@@ -2,6 +2,7 @@
 //Set Up Battle 
 //battleSetup()     Will feature variables later
 
+background_visible[0] = false
 global.attacker = argument0
 global.defender = argument1
 global.battlefield = argument2

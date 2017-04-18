@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-51</depth>
   <persistent>0</persistent>
-  <parentName>obj_partyActionSheet</parentName>
+  <parentName>obj_partyActionHudParent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -53,9 +53,12 @@ border = 0
           <argument>
             <kind>1</kind>
             <string>x = xstart+view_xview[]
-y = ystart+view_yview[]
+y = ystart+view_yview[]-(global.hudY*22)
 
-draw_self()
+if (hudY &gt;= global.hudY and hudY &lt;= global.hudY+10)
+{
+    draw_self()
+}
 </string>
           </argument>
         </arguments>

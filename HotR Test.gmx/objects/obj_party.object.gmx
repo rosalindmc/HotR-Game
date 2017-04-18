@@ -136,7 +136,7 @@ vis = true
             <string>if vis = true and node.vis = true
 {
     //draw_sprite(spr_location,0,x,y)
-    humanoidPortrait(id,x,y-6,1)
+    humanoidPortrait(id,x,y-6,1,0)
 }
 </string>
           </argument>

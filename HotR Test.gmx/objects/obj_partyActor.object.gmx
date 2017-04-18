@@ -5,7 +5,7 @@
   <visible>-1</visible>
   <depth>-52</depth>
   <persistent>0</persistent>
-  <parentName>obj_partyActionSheet</parentName>
+  <parentName>obj_partyActionHudParent</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
     <event eventtype="0" enumb="0">
@@ -28,6 +28,68 @@
             <string>image_speed = 0
 o = -4
 inSlot = -4
+dragged = false
+lockSlot = -4
+scrollover = false
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if point_in_rectangle(mouse_x,mouse_y,x-10,y-10,x+10,y+10)
+{
+    scrollover = true
+    if mouse_check_button_pressed(mb_left)
+    {         
+        dragged = true
+        lockSlot = inSlot
+        depth = -153
+    }
+    
+    //with(partySlot) figure out which slots are unavailable and which are preffered
+}
+else
+{
+    scrollover = false 
+}
+
+if mouse_check_button_released(mb_left)
+{
+    if dragged = true
+    {
+        dragged = false
+        depth = -52
+        slot = instance_nearest(mouse_x,mouse_y,obj_partySlot)
+
+        if point_distance(slot.x,slot.y,mouse_x,mouse_y) &lt; 35 and slot.occupant = -4
+        {
+            inSlot.occupant = -4
+            inSlot = slot
+            inSlot.occupant = id
+        }
+        else
+        {
+            inSlot = lockSlot
+        }
+    }
+}
 </string>
           </argument>
         </arguments>
@@ -50,11 +112,28 @@ inSlot = -4
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = inSlot.x
-y = inSlot.y
+            <string>if dragged = true
+{
+    x = mouse_x+10
+    y = mouse_y+10
+}
+else
+{
+    x = inSlot.x
+    y = inSlot.y
+}
 
-draw_self()
-humanoidPortrait(o,x,y,1)
+if (hudY &gt;= global.hudY and hudY &lt;= global.hudY+10)
+{
+    if scrollover = true and dragged = false
+    {
+        draw_sprite(spr_vitIcon,max(0,3-o.wounds),x-8,y-14)
+        draw_sprite(spr_stmIcon,max(0,3-floor(o.fat/2)),x,y-14)
+        draw_sprite(spr_morIcon,floor((o.resolve+10)/5),x+8,y-14)
+    }
+    draw_self()
+    humanoidPortrait(o,x,y,1,3)
+}
 </string>
           </argument>
         </arguments>

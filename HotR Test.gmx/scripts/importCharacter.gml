@@ -189,7 +189,7 @@ blockStr = might
 lifeMax = max(floor(8+((will-8)/2)+((might-8)/4)+o.life),4)
 lifeRegen = 4+((will-8)*.5)
 
-stmMax = max(floor(8+(will-8)+((grace-8)/2)+o.stamina),4)
+stmMax = max(floor((8+(will-8)+((grace-8)/2)+o.stamina)/((4+o.fat)/5)),4)
 stmRegen = 2.5+(stmMax*.1)
 
 #define iCEquip
@@ -540,3 +540,41 @@ for(var j = 0; j < ds_list_size(isoTile.adjacent); j++)
         }
     }    
 }
+#define equipOwner
+//add Items that would appear on a portrait
+argument0.bodyItems = bodyItems
+for(i=1;i<=bodyItems;i++)
+{
+    argument0.bodyItem[i] = bodyItem[i]
+    argument0.bodyColour[i] = bodyColour[i]
+}
+
+argument0.headItems = headItems
+for(i=1;i<=headItems;i++)
+{
+    argument0.headItem[i] = headItem[i]
+    argument0.headColour[i] = headColour[i]
+}
+
+argument0.chstItems = chstItems
+for(i=1;i<=chstItems;i++)
+{
+    argument0.chstItem[i] = chstItem[i]
+    argument0.chstColour[i] = chstColour[i]
+}
+
+argument0.hairVisible = hairVisible
+
+//add later maybe if neccesary
+/*
+argument0.chstItems = 0
+argument0.hipsItems = 0
+argument0.skrtItems = 0
+argument0.beltItems = 0
+argument0.girdleItems = 0
+argument0.underHipsNum = 1
+
+argument0.legsItems[1] = 0
+argument0.legsItems[2] = 0
+argument0.armsItems[1] = 0
+argument0.armsItems[2] = 0

@@ -55,24 +55,36 @@ for(var i = 0; i < 8; i++)
     talent[i,5] = 0
 }
 
-//Personality
+//Temp Personality
 personality = orcHonour
 
-//Injury
-injury[0] = -4
-injuries = 0
+//traits[0] = tr_whatever
+//Characters will have a bunch of traits that can be called in combat,
+//events, adjust action preferences and the combat and world ai
+
+//aspect = ds_priority_create()
+//Create a bunch of aspects, 
+//characters will pick one of their aspects when prompted to speak
+//aspects with nothing to say will pass to next aspect
+
+//Wounds
+critWound[0] = -4
+critWounds = 0
+wounds = 0
+
+//Fatigue
+fat = 0
+
+//Resolve
+resolve = 5
 
 //Memory TEMPORARY EXPAND VASTLY
-memory[0,0] = -4        //Memory With
-memory[0,1] = -4        //Memory Type
-memory[0,2] = -4        //Memory Strength
+//memories may end up being objects that are instantly deactivated and stored
 memories = 0
+//Replace with memories = ds_priority_create() with priority = strength
 
 //Relationships
-relationship[0,0] = -4  //Relationship With
-relationship[0,1] = -4  //Relationship Type
-relationship[0,2] = -4  //Bond Strength
-relationships = 0
+relationships = ds_priority_create()
 
 //Role
 range = false

@@ -117,7 +117,7 @@ if vis != 0
         
         if owner.vis = true
         {
-            humanoidPortrait(owner,ix,iy,size)
+            humanoidPortrait(owner,ix,iy,size,0)
             
             if owner.readiedAction = dualStrike
             {
@@ -151,7 +151,7 @@ if vis != 0
     {
         draw_set_colour(ltBlue)
         draw_rectangle(ix-(size*6),iy-(size*6),ix+(size*6),iy+(size*6),false)
-        humanoidPortrait(global.nextChar.owner,ix,iy,size)
+        humanoidPortrait(global.nextChar.owner,ix,iy,size,0)
         draw_set_colour(c_black)
         draw_rectangle(ix-(size*6),iy-(size*6),ix+(size*6),iy+(size*6),true)
         delay = 0

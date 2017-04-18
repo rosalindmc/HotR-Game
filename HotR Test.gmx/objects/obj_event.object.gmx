@@ -157,7 +157,7 @@ if portraitOf != -4
 {
     draw_set_font(fnt_menu)
     drawText(c_black,c_white,x+10,y-30,string(portraitOf.partyLeader.firstName)+' '+string(portraitOf.partyLeader.lastName))
-    humanoidPortrait(portraitOf,x+50,y+50,8)
+    humanoidPortrait(portraitOf,x+50,y+50,8,0)
 }
 
 draw_set_font(fnt_textbox)

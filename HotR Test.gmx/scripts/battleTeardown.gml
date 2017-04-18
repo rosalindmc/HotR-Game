@@ -2,6 +2,7 @@
 //Tear Down after Battle 
 //battleTeardown()     Will feature variables later
 
+background_visible[0] = true
 instance_activate_all()
 
 with(obj_control)
@@ -27,6 +28,7 @@ with(obj_character)
         {
             owner.experience += global.expTotal*(1-((cunning-8)*.03))
             owner.wounds = wounds
+            owner.fat += 1+wounds
             checkLevelUp(owner)
         }
         else                    //Demake Tool for mooks

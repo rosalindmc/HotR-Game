@@ -2,6 +2,15 @@
 //Character Creator Script
 script_execute(ruleSet)
 
+ii = instance_create(x,y,obj_model)
+ii.owner = id
+with(ii)
+{
+    importCharacter(owner)
+    equipOwner(owner)
+    instance_destroy()
+}
+
 #define raceGen
 script_execute(argument0,0)
 
@@ -211,6 +220,7 @@ switch(bodyImage)
     shldrOffset[2] = 4
     shldrAdjust = 1
     chstImage = 3
+    chstOffset = 1
     chstAdjust = 1
     headOffset = 7
     headAdjust = 1   

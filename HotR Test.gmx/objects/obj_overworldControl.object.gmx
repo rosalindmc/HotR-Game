@@ -28,6 +28,8 @@
             <string>//Create Mouse
 instance_create(x,y,obj_camera)
 instance_create(x,y,obj_colourCorrection)
+background_visible[0] = true
+background_hspeed[0] = 15/global.fspd
 
 //Create HUD Buttons
 global.inMenu = false
@@ -148,6 +150,11 @@ else
 {
     hover = noone
 }
+
+
+
+
+
 </string>
           </argument>
         </arguments>

@@ -25,7 +25,9 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.menuSheet = 0
+            <string>lockClick = false
+
+if global.menuSheet = 0
 {
     global.charTab = 0
     
@@ -69,6 +71,8 @@
     iv.tabNum = 2
     iv.text = 'Relations'
 }
+
+instance_create(x-215,y-145,obj_leaveSheet)
 </string>
           </argument>
         </arguments>
@@ -107,14 +111,23 @@ if mouse_wheel_down()
     }
 }
 
-if mouse_check_button(mb_left)
+if mouse_check_button_pressed(mb_left)
 {
-    if point_in_rectangle(mouse_x,mouse_y,x+210,y-120,x+216,y+140)
+    if point_in_rectangle(mouse_x,mouse_y,x+208,y-120,x+216,y+140)
     {
-        global.hudY = round((mouse_y-(y-120))/(260/(global.hudYMax-11)))
+        lockClick = true        
     }
 }
 
+if lockClick = true
+{
+    global.hudY = median(0,round((mouse_y-(y-120))/(260/(global.hudYMax-11))),global.hudYMax-11)
+}
+
+if mouse_check_button_released(mb_left)
+{
+    lockClick = false
+}
 </string>
           </argument>
         </arguments>
@@ -150,10 +163,10 @@ draw_self()
 if global.hudYMax &gt; 11
 {
     draw_set_colour(make_colour_rgb(191,172,140))
-    draw_rectangle(x+210,y-120,x+216,y+140,false)
+    draw_rectangle(x+209,y-120,x+215,y+140,false)
     draw_set_colour(c_black)
-    draw_rectangle(x+210,y-120,x+216,y+140,true)
-    draw_rectangle(x+210,y-120+(260*(global.hudY/global.hudYMax)),x+216,y-120+(260*(global.hudY/global.hudYMax))+(260/(global.hudYMax/11)),false)
+    draw_rectangle(x+209,y-120,x+215,y+140,true)
+    draw_rectangle(x+209,y-120+(260*(global.hudY/global.hudYMax)),x+215,y-120+(260*(global.hudY/global.hudYMax))+(260/(global.hudYMax/11)),false)
 }
 
 if global.menuSheet = 0 and global.subTab = 0

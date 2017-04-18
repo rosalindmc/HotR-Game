@@ -4,8 +4,9 @@ switch(argument0)
 case 0: //Create Camp Menu
 global.inMenu = 1
 global.menuSheet = 10
+global.hudY = 0
 
-ii = instance_create(500,180,obj_partyActionSheet)
+ii = instance_create(530,180,obj_partyActionSheet)
 ii.text = 'Camp Actions'
 
 //Create all available activities
@@ -16,10 +17,10 @@ owAddButtons(3,'Hunt','Hunt')
 owAddButtons(3,'Heal','Heal')
 owAddButtons(3,'Perform','Perform')
 
-//Create Party
+//Create Party and Autoplace them
 owAddParty()
 
-//Autoplace Actor Icons and set preferences
+global.hudYMax = iy
 break
 
 case 1:
@@ -38,7 +39,7 @@ case 0: //Create Camp Menu
 global.inMenu = 1
 global.menuSheet = 10
 
-ii = instance_create(500,180,obj_partyActionSheet)
+ii = instance_create(530,180,obj_partyActionSheet)
 ii.text = 'City Actions'
 
 //Create all available activities
@@ -66,14 +67,16 @@ break
 #define owAddButtons
 ix = 0
 
-ii = instance_create(490,80+(iy*22),obj_menuDivider)
+ii = instance_create(520,75+(iy*22),obj_menuDivider)
 ii.text = argument1
+ii.hudY = iy
 iy += 1
 
 repeat(argument0)
 {
-    ii = instance_create(420+(ix*22),80+(iy*22),obj_partySlot)
+    ii = instance_create(450+(ix*22),75+(iy*22),obj_partySlot)
     ii.partyAction = argument2
+    ii.hudY = iy
     ix += 1
 }
 
@@ -91,14 +94,16 @@ repeat(ds_list_size(global.activeActor.party))
     r = 0
     with(obj_partySlot)
     {
-        r = random(100)
+        r = random(100)     //Replace with a smart weighting system
         if r > other.r and occupant = -4
         {
             other.r = r
-            occupant = other.ii
             other.ii.inSlot = id
-            other.ii.x = x
-            other.ii.y = y
         }
     }    
+    
+    ii.inSlot.occupant = ii
+    ii.x = ii.inSlot.x
+    ii.y = ii.inSlot.y
+    ii.hudY = ii.inSlot.hudY
 }
