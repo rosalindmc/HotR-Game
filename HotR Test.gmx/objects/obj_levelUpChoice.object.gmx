@@ -67,13 +67,13 @@ if owner.step = 1
     switch(image_index)
     {
     case 0: name = 'Might' 
-    tooltip = '+.5 POW#+1/4 Block Strength#+1/4 Life' break
+    tooltip = '+.50 POW#+.25 Block Strength#+.25 Life' break
     case 1: name = 'Grace' 
-    tooltip = '+Movement#+3% Action Speed#+.1 Skill#+1/2 Stamina' break
+    tooltip = '+Movement#+3% Haste#+3% Action Haste#+.1 Skill#+.50 Stamina' break
     case 2: name = 'Cunning' 
     tooltip = '+5% Cooldown Reduction#+5% Ability Duration#+3% Experience Gained#+.2 Skill' break
     case 3: name = 'Will' 
-    tooltip = '+1/2 Life#+1 Stamina#+.5 Life Regeneration' break
+    tooltip = '+.5 Life#+1 Stamina#+.5 Life Regeneration' break
     case 4: name = 'Fellowship'
     tooltip = '+5% Suppression Resist#+5% Bold Advantages' break
     }

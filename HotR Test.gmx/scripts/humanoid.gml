@@ -465,4 +465,3 @@ draw_sprite_ext(c.hairStyle,0,argument1,argument2,argument3,argument3,0,c.hairCo
 draw_sprite_ext(c.earSprite,0,argument1,argument2,argument3,argument3,0,c.skinTone,1)
 draw_sprite_general(c.beardStyle,c.faceImage,0,0,7,9+adj,argument1-(3*argument3),argument2-(4*argument3),argument3,argument3,0,c.hairColour,c.hairColour,c.hairColour,c.hairColour,1)
 i = 0 repeat(c.headItems){i++ draw_sprite_ext(c.headItem[i],0,argument1,argument2,argument3,argument3,0,c.headColour[i],1)}
-

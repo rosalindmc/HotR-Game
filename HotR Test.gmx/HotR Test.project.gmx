@@ -557,6 +557,9 @@
       </scripts>
       <scripts name="Party Actions">
         <script>scripts\owActCamp.gml</script>
+        <script>scripts\owPartyActionConfirm.gml</script>
+        <script>scripts\restActions.gml</script>
+        <script>scripts\cityActions.gml</script>
       </scripts>
     </scripts>
     <scripts name="Combat">
@@ -888,6 +891,7 @@
         <object>objects\obj_partyActionSheet</object>
         <object>objects\obj_partyActionHudParent</object>
         <object>objects\obj_leaveSheet</object>
+        <object>objects\obj_partyConfirm</object>
       </objects>
     </objects>
     <objects name="Combat">

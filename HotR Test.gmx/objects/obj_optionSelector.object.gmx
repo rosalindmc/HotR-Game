@@ -49,6 +49,7 @@
           <argument>
             <kind>1</kind>
             <string>global.optionSelect = optionSelect
+global.drag = 1
 
 ix = x-view_xview[]
 iy = y-view_yview[]+13

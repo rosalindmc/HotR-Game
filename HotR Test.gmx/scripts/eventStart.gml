@@ -60,7 +60,7 @@ ii.result = argument1
 ii.owner = id
 ii.num = i+1
 
-if argument2 = false
+if argument2 <= 0
 {
     ii.colour = c_gray
     ii.alarm[0] = -1
@@ -68,5 +68,6 @@ if argument2 = false
 
 
 i += 1
+
 #define talk
 talking = argument0

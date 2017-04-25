@@ -94,10 +94,10 @@ if argument1 = 0
     case 53: skipTo(1) break
     
     case 60: 
-    choice('[Strength 1]', 42, checkTalent(treeStrength,true,1))
-    choice('[Toughness 1]', 42, checkTalent(treeToughness,true,1))
-    choice('[Subterfuge 1]', 42, checkTalent(treeSubterfuge,true,1))
-    choice('[Insight 1]', 42, checkTalent(treeInsight,true,1))
+    choice('[Strength 1]', 42, checkTalent(treeStrength,true))
+    choice('[Toughness 1]', 42, checkTalent(treeToughness,true))
+    choice('[Subterfuge 1]', 42, checkTalent(treeSubterfuge,true))
+    choice('[Insight 1]', 42, checkTalent(treeInsight,true))
     break
     
     case 70:
@@ -213,5 +213,20 @@ if argument1 = 0
     break
     case 1: battleSetup(global.activeActor,global.targetActor,global.node,overWorldMapGen) 
     eventEnd() break
+    }
+}
+#define restTempScript
+if argument1 = 0
+{
+    switch(argument0)
+    {
+    case 0: 
+    speak('Temp Resolve all party actions') 
+    break
+    
+    case 1: 
+    global.turnOver = true 
+    eventEnd()
+    break
     }
 }

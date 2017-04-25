@@ -139,7 +139,8 @@ else
 return false
 
 #define checkTalent
-//checkTalent(talent, level, party?)
+//checkTalent(talent, party?) (returns t level)
+var t = 0
 if argument1 = true
 {
     for (var ii = 0; ii < ds_list_size(global.eventActor.party); ii++)
@@ -149,14 +150,15 @@ if argument1 = true
         {   
             if char.talent[iii,0] = argument0
             {
-                if char.talent[iii,5] >= argument2
+                if char.talent[iii,5] > t
                 {
+                    t = char.talent[iii,5]
                     global.eventCharacter = char
-                    return true
                 }
             }
         }
-    }
+    }    
+return t 
 }
 else
 {
@@ -164,10 +166,7 @@ else
     {   
         if global.eventCharacter.talent[iii,0] = argument0
         {
-            if global.eventCharacter.talent[iii,5] >= argument2
-            {
-                return true
-            }
+            return global.eventCharacter.talent[iii,5]
         }
     }
 }

@@ -42,7 +42,7 @@ pTalent[5] = false
 
 canClick = true
 
-button = instance_create(x+30,y+80,obj_continueButton)
+button = instance_create(x+30,y+78,obj_continueButton)
 button.owner = id
 
 </string>

@@ -92,6 +92,16 @@ legSprt = 0
 sX = 2
 target = -4
 
+for(i = 0; i &lt;= 7; i++)
+{
+    tt[i,0] = -1
+    ttText[i,0] = ''
+    ttLength[i,0] = 1
+    tt[i,1] = -1
+    ttText[i,1] = ''
+    ttLength[i,1] = 1
+}
+
 global.zLevel = 0
 </string>
           </argument>
@@ -189,6 +199,36 @@ script_execute(animIndex[0],animStep[0])
             <kind>1</kind>
             <string>//Facing
 facing = 0
+
+ix = 120+view_xview[]
+iy = 222+view_yview[]
+
+depth = -151
+
+for(i = 0; i &lt;= 7; i++)
+{
+    if point_in_rectangle(mouse_x,mouse_y,ix,iy+1,ix+100,iy+11) and global.drag = false
+    {
+        tt[i,0] = min(tt[i,0]+(4/global.fspd),1)
+        depth = -201
+    }
+    else
+    {
+        tt[i,0] = max(tt[i,0]-(8/global.fspd),-1)    
+    }
+    
+    if point_in_rectangle(mouse_x,mouse_y,ix+100,iy+1,ix+200,iy+11) and global.drag = false
+    {
+        tt[i,1] = min(tt[i,1]+(4/global.fspd),1)
+        depth = -201
+    }
+    else
+    {
+        tt[i,1] = max(tt[i,1]-(8/global.fspd),-1)    
+    }
+    iy += 12
+}
+
 /*
 facing = round(point_direction(x,y,mouse_x,mouse_y)/45)*45
 
@@ -358,16 +398,29 @@ if global.charTab = tab
     draw_rectangle(x-50,y-120,x+50,y-115,true)
     
     if global.charSelect.levelPending != 0{draw_text(x+55,y-117,'+')}
-    
     draw_text(x,y-105,string_format(global.charSelect.experience,2,1)+' / '+string(global.charSelect.expToLevel))
     
     ix = 120+view_xview[]
     iy = 210+view_yview[]
+    ii = 0
     script_execute(global.charInfo1)
     
     ix = 220+view_xview[]
     iy = 210+view_yview[]
+    ii = 1
     script_execute(global.charInfo2)
+    
+    for(i = 0; i &lt;= 7; i++)
+    {
+        if tt[i,0] &gt; 0 and ttText[i,0] != ''
+        {
+            charInfoTooltip(200,222+(i*12),ttText[i,0],ttLength[i,0],tt[i,0])
+        }
+        if tt[i,1] &gt; 0 and ttText[i,1] != ''
+        {
+            charInfoTooltip(300,222+(i*12),ttText[i,1],ttLength[i,1],tt[i,1])
+        }
+    }
 }
 </string>
           </argument>

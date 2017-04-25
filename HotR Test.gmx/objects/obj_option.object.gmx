@@ -76,6 +76,8 @@ alarm[0] = 2
             <kind>1</kind>
             <string>if canDestroy = true
 {
+    global.drag = false
+
     if collision_point(mouse_x,mouse_y,id,false,false)
     {
         if global.optionSelect = 'charInfo1'

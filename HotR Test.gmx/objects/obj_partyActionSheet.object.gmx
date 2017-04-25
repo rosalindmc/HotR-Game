@@ -28,6 +28,7 @@
             <string>text = -4
 lockClick = false
 instance_create(x-105,y-145,obj_leaveSheet)
+instance_create(x+75,y+138,obj_partyConfirm)
 </string>
           </argument>
         </arguments>

@@ -5,17 +5,27 @@ case 0: //Create Camp Menu
 global.inMenu = 1
 global.menuSheet = 10
 global.hudY = 0
+global.eventActor = global.activeActor
 
 ii = instance_create(530,180,obj_partyActionSheet)
 ii.text = 'Camp Actions'
 
 //Create all available activities
 iy = 0
-owAddButtons(7,'Rest','Rest')
-owAddButtons(3,'Train','Train')
-owAddButtons(3,'Hunt','Hunt')
-owAddButtons(3,'Heal','Heal')
-owAddButtons(3,'Perform','Perform')
+owAddButtons(7,'Rest',rRest)
+owAddButtons(3,'Train',rTrain)
+if checkTalent(treeSurvival,true) > 0
+{
+    owAddButtons(3,'Hunt',rHunt)
+}
+if checkTalent(treeMedicine,true) > 0
+{
+    owAddButtons(3,'Heal',rHeal)
+}
+if checkTalent(treePerform,true) > 0
+{
+    owAddButtons(3,'Perform',rPerform)
+}
 
 //Create Party and Autoplace them
 owAddParty()

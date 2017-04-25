@@ -169,10 +169,12 @@ atkHaste = ((grace-8)*.03)
 spellPow = (cunning-8)
 if cunning >= 8
 {spellDur = 1+((cunning-8)*.05)
-spellCD = 1+((cunning-8)*.05)}
+spellCD = 1+((cunning-8)*.05)
+xpMult = 1+((cunning-8)*.03)}
 else
 {spellDur = 1/(1+((cunning-8)*-.05))
-spellCD = 1/(1+((cunning-8)*.05))}
+spellCD = 1/(1+((cunning-8)*.05))
+xpMult = 1/1+((cunning-8)*.03)}
 
 //Morale
 sResist = 1+((fellowship-8)*.05)
@@ -283,7 +285,7 @@ postArmourCustom()
 
 if o.invSlot[4,0] = emptySlot
 {
-    dodge += 25
+    dodge += 20
 }
 
 
