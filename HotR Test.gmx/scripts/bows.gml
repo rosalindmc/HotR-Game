@@ -6,12 +6,13 @@ iSpr = spr_longBow
 iDmg = 5.0
 iDmgRng = .3
 iType = typePierce
-iStrMult = .8
+iStrMult = 1
 iPen = 3
 iSpd = 0.60
 iSize = 2
 iShots = 1
 iReloads = 32
+iRng = 24
 iName = 'Long Bow'
 
 switch(argument0)
@@ -20,11 +21,15 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_longBow
 name = iName
 ttType = itemTypeRanged
-tooltip = "A long bow."
+addItemTooltip('Skill - Cripple','Cripple#On Wound: 10% chance to CRIPPLE for 15 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
+addItemTooltip('Instant Load','Instant Load#This weapon reloads automatically after firing',3,green)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
 pen = iPen
+shots = iShots
+reloads = iReloads
+rng = iRng
 
 itemProf[0] = basicRangedProficiency  
 break
@@ -46,7 +51,7 @@ wepRStrMult[i] = iStrMult
 wepRStamina[i] = iStrMult*2
 wepRPen[i] = iPen
 wepRSpeed[i] = iSpd
-wepRRange[i] = 32
+wepRRange[i] = iRng
 
 rangeAttack = true
 autoLoad = true
@@ -76,6 +81,7 @@ iSpd = 0.80
 iSize = 1
 iShots = 1
 iReloads = 20
+iRng = 16
 iName = 'Short Bow'
 
 switch(argument0)
@@ -84,11 +90,16 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_shortBow
 name = iName
 ttType = itemTypeRanged
-tooltip = "A short bow for hunting."
+addItemTooltip('Skill - Cripple','Cripple#On Wound: 10% chance to CRIPPLE for 10 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
+addItemTooltip('Elegant','Elegant#This weapon is 20% less effected by Might and uses 20% less stamina to attack',4,green)
+addItemTooltip('Instant Load','Instant Load#This weapon reloads automatically after firing',3,green)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
 pen = iPen
+shots = iShots
+reloads = iReloads
+rng = iRng
 
 itemProf[0] = basicRangedProficiency  
 break
@@ -110,7 +121,7 @@ wepRStrMult[i] = iStrMult
 wepRStamina[i] = iStrMult*1.5
 wepRPen[i] = iPen
 wepRSpeed[i] = iSpd
-wepRRange[i] = 24
+wepRRange[i] = iRng
 
 rangeAttack = true
 autoLoad = true
@@ -140,6 +151,7 @@ iSpd = 1
 iSize = 2
 iShots = 1
 iReloads = 20
+iRng = 20
 iName = 'Crossbow'
 
 switch(argument0)
@@ -148,11 +160,15 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_crossbow
 name = iName
 ttType = itemTypeRanged
-tooltip = "A powerful crossbow."
+addItemTooltip('Skill - Stagger','Stagger#On Hit: 20% chance to DAZE for 5 seconds. DAZED characters have a 50% miss chance',5,c_yellow)
+addItemTooltip('Mechanical','Mechanical#Weapon damage is unaffected by Might',3,green)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
 pen = iPen
+shots = iShots
+reloads = iReloads
+rng = iRng
 
 itemProf[0] = basicRangedProficiency  
 break
@@ -174,7 +190,7 @@ wepRStrMult[i] = iStrMult
 wepRStamina[i] = .1
 wepRPen[i] = iPen
 wepRSpeed[i] = iSpd
-wepRRange[i] = 28
+wepRRange[i] = iRng
 wepReload[i] = 5.0
 wepReloadStamina[i] = 2.0
 
@@ -205,6 +221,7 @@ iSpd = 1
 iSize = 2
 iShots = 1
 iReloads = 20
+iRng = 12
 iName = 'Light Crossbow'
 
 switch(argument0)
@@ -213,11 +230,15 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_crossbow
 name = iName
 ttType = itemTypeRanged
-tooltip = "A lighter crossbow."
+addItemTooltip('Skill - Stagger','Stagger#On Hit: 10% chance to DAZE for 5 seconds. DAZED characters have a 50% miss chance',5,c_yellow)
+addItemTooltip('Mechanical','Mechanical#Weapon damage is unaffected by Might',3,green)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
 pen = iPen
+shots = iShots
+reloads = iReloads
+rng = iRng
 
 itemProf[0] = basicRangedProficiency  
 break
@@ -239,7 +260,7 @@ wepRStrMult[i] = iStrMult
 wepRStamina[i] = .1
 wepRPen[i] = iPen
 wepRSpeed[i] = iSpd
-wepRRange[i] = 20
+wepRRange[i] = iRng
 wepReload[i] = 3.0
 wepReloadStamina[i] = 1.0
 

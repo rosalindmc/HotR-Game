@@ -818,6 +818,7 @@
       <font>fonts\fnt_lrgMenu</font>
       <font>fonts\fnt_smlMenu</font>
       <font>fonts\fnt_tinyText</font>
+      <font>fonts\fnt_typeText</font>
       <font>fonts\fnt_miniText</font>
       <font>fonts\fnt_smallText</font>
       <font>fonts\fnt_charSheet</font>
@@ -945,7 +946,7 @@
     <room>rooms\rom_charSprite</room>
     <room>rooms\rom_battle</room>
   </rooms>
-  <constants number="54">
+  <constants number="58">
     <constant name="femme">0</constant>
     <constant name="masc">1</constant>
     <constant name="beige">make_color_rgb(205,165,117)</constant>
@@ -976,6 +977,10 @@
     <constant name="ltGrey">make_color_rgb(200,200,200)</constant>
     <constant name="km">20</constant>
     <constant name="metre">20</constant>
+    <constant name="firearmProficiency">14</constant>
+    <constant name="heavyArmourProficiency">13</constant>
+    <constant name="lightArmourProficiency">12</constant>
+    <constant name="clothingProficiency">11</constant>
     <constant name="polearmProficiency">10</constant>
     <constant name="largeShieldProficiency">9</constant>
     <constant name="shieldProficiency">8</constant>

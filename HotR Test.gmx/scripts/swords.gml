@@ -18,7 +18,7 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_knife
 name = iName
 ttType = itemTypeWeapon
-tooltip = "A small knife."
+addItemTooltip('Skill - Bleed','Bleed#On Wound: 10% chance to BLEED for 30 seconds. BLEED inflicts 1 Blood damage and 1 stamina loss every 5 seconds',5,c_yellow)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
@@ -51,8 +51,8 @@ autoHandedness()
 threat = true
 
 //Skill
-onWound[onWoundSize,0] = wepsklRend
-onWound[onWoundSize,1] = 'Rend'
+onWound[onWoundSize,0] = wepsklBleed
+onWound[onWoundSize,1] = 'Bleed'
 onWound[onWoundSize,2] = 10
 onWound[onWoundSize,3] = 1
 onWound[onWoundSize,4] = i
@@ -78,7 +78,7 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_dagger
 name = iName
 ttType = itemTypeWeapon
-tooltip = "A sharp dagger."
+addItemTooltip('Skill - Backstab','Backstab#On Flank Hit: 30% chance to inflict +2 POW',3,c_yellow)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
@@ -114,7 +114,7 @@ threat = true
 onHit[onHitSize,0] = wepsklBackstab
 onHit[onHitSize,1] = 'Backstab'
 onHit[onHitSize,2] = 30
-onHit[onHitSize,3] = 1
+onHit[onHitSize,3] = 2
 onHit[onHitSize,4] = i
 onHit[onHitSize,5] = false
 onHitSize += 1
@@ -138,7 +138,8 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_epee
 name = iName
 ttType = itemTypeWeapon
-tooltip = "A small light thrusting sword."
+addItemTooltip('Skill - Guard','Guard#On Hit: 10% chance to gain a Block Charge',3,c_yellow)
+addItemTooltip('Elegant','Elegant#This weapon is 20% less effected by Might and uses 20% less stamina to attack',4,green)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
@@ -198,7 +199,8 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_shtSword
 name = iName
 ttType = itemTypeWeapon
-tooltip = "A short sword."
+addItemTooltip('Skill - Flurry','Flurry#On Hit: 10% chance to make our next action come 0.5 seconds faster',4,c_yellow)
+addItemTooltip('Stabbing Point','Stabbing Point#This weapon inflicts Pierce damage if it is more advantageous',4,green)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
@@ -240,7 +242,7 @@ onHit[onHitSize,5] = false
 onHitSize += 1
 
 onHit[onHitSize,0] = wepSlashPierce
-onHit[onHitSize,1] = 'Thrust'
+onHit[onHitSize,1] = 'Stabbing Point'
 onHit[onHitSize,2] = i
 onHit[onHitSize,3] = false
 onHit[onHitSize,4] = false
@@ -266,7 +268,8 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_armSword
 name = iName
 ttType = itemTypeWeapon
-tooltip = "An arming sword."
+addItemTooltip('Skill - Guard','Guard#On Hit: 10% chance to gain a Block Charge',3,c_yellow)
+addItemTooltip('Stabbing Point','Stabbing Point#This weapon inflicts Pierce damage if it is more advantageous',4,green)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
@@ -308,7 +311,7 @@ onHit[onHitSize,5] = false
 onHitSize += 1
 
 onHit[onHitSize,0] = wepSlashPierce
-onHit[onHitSize,1] = 'Thrust'
+onHit[onHitSize,1] = 'Stabbing Point'
 onHit[onHitSize,2] = i
 onHit[onHitSize,3] = false
 onHit[onHitSize,4] = false
@@ -334,7 +337,7 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_sabre
 name = iName
 ttType = itemTypeWeapon
-tooltip = "An elegant sabre"
+addItemTooltip('Skill - Flurry','Flurry#On Hit: 10% chance to make our next action come 0.5 seconds faster',4,c_yellow)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
@@ -394,7 +397,7 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_rapier
 name = iName
 ttType = itemTypeWeapon
-tooltip = "A thrusting rapier"
+addItemTooltip('Skill - Guard','Guard#On Hit: 15% chance to gain a Block Charge',3,c_yellow)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
@@ -454,7 +457,8 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_bstSword
 name = iName
 ttType = itemTypeWeapon
-tooltip = "An oversized one handed sword."
+addItemTooltip('Skill - Guard','Guard#On Hit: 15% chance to gain a Block Charge',3,c_yellow)
+addItemTooltip('Hefty','Hefty#This weapon is 20% more effected by Might and uses 20% more stamina to attack',4,green)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
@@ -514,7 +518,8 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_longSword
 name = iName
 ttType = itemTypeWeapon
-tooltip = "A long sword."
+addItemTooltip('Skill - Guard','Guard#On Hit: 20% chance to gain a Block Charge',3,c_yellow)
+addItemTooltip('Stabbing Point','Stabbing Point#This weapon inflicts Pierce damage if it is more advantageous',4,green)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
@@ -558,7 +563,7 @@ onHit[onHitSize,5] = false
 onHitSize += 1
 
 onHit[onHitSize,0] = wepSlashPierce
-onHit[onHitSize,1] = 'Thrust'
+onHit[onHitSize,1] = 'Stabbing Point'
 onHit[onHitSize,2] = i
 onHit[onHitSize,3] = false
 onHit[onHitSize,4] = false
@@ -572,7 +577,7 @@ iSpr = spr_greatSword
 iDmg = 7.0
 iDmgRng = .2
 iType = typeRend
-iStrMult = 1.2
+iStrMult = 1
 iPen = 3
 iSpd = 0.70
 iSize = 3
@@ -584,7 +589,8 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_grtSword
 name = iName
 ttType = itemTypeWeapon
-tooltip = "A sword so long its practically a polearm."
+addItemTooltip('Skill - Guard','Guard#On Hit: 25% chance to gain a Block Charge',3,c_yellow)
+addItemTooltip('Stabbing Point','Stabbing Point#This weapon inflicts Pierce damage if it is more advantageous',4,green)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
@@ -628,7 +634,7 @@ onHit[onHitSize,5] = false
 onHitSize += 1
 
 onHit[onHitSize,0] = wepSlashPierce
-onHit[onHitSize,1] = 'Thrust'
+onHit[onHitSize,1] = 'Stabbing Point'
 onHit[onHitSize,2] = i
 onHit[onHitSize,3] = false
 onHit[onHitSize,4] = false

@@ -13,6 +13,7 @@ iDodge = 0
 iArm = 16
 iProt = 0
 iEnc = 40
+iSResist = .20
 
 switch(argument0)
 {
@@ -20,11 +21,12 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_chainMail
 ttType = itemTypeArmour
 name = 'Chain Mail'
-tooltip = 'A suit of chain for a large warrior'
 arm = iArm
 dodge = iDodge
 prot = iProt
 enc = iEnc
+sResist = iSResist
+itemProf[0] = heavyArmourProficiency
 iSize = 3
 break
 
@@ -36,6 +38,7 @@ dodge += iDodge
 armMax += iArm
 prot += iProt
 enc += iEnc
+sResist += iSResist
 
 armourApplyNoArms(c_white)
 
@@ -64,6 +67,7 @@ iDodge = -10
 iArm = 12
 iProt = 0
 iEnc = 50
+iSResist = .15
 
 switch(argument0)
 {
@@ -71,11 +75,13 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_platemail3
 ttType = itemTypePlating
 name = 'Black Plate'
-tooltip = 'The platemail of a black knight'
+addItemTooltip('Glancing','Glancing#Attacks against you have a 15% chance to lose all Penetration',3,green)
 arm = iArm
 dodge = iDodge
 prot = iProt
 enc = iEnc
+sResist = iSResist
+itemProf[0] = heavyArmourProficiency
 iSize = 3
 break
 
@@ -87,6 +93,7 @@ dodge += iDodge
 armMax += iArm
 prot += iProt
 enc += iEnc
+sResist += iSResist
 
 rigid = true
 

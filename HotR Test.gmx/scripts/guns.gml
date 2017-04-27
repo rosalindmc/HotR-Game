@@ -1,5 +1,6 @@
 #define guns
 
+
 #define carbine
 iSpr = spr_carbine
 iDmg = 8.0
@@ -11,6 +12,7 @@ iSpd = 1
 iSize = 2
 iShots = 1
 iReloads = 20
+iRng = 22
 iName = 'Carbine'
 
 switch(argument0)
@@ -19,13 +21,17 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_carbine
 name = iName
 ttType = itemTypeRanged
-tooltip = "The commonwealth infantry carbine."
+addItemTooltip('Skill - Cripple','Cripple#On Wound: 10% chance to CRIPPLE for 10 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
+addItemTooltip('Mechanical','Mechanical#Weapon damage is unaffected by Might',3,green)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
 pen = iPen
+shots = iShots
+reloads = iReloads
+rng = iRng
 
-itemProf[0] = basicRangedProficiency  
+itemProf[0] = firearmProficiency  
 break
 
 case 1:     //Called when owned
@@ -54,7 +60,7 @@ wepRStrMult[i] = iStrMult
 wepRStamina[i] = .1
 wepRPen[i] = iPen
 wepRSpeed[i] = iSpd
-wepRRange[i] = 28
+wepRRange[i] = iRng
 wepReload[i] = 1.0
 wepReloadStamina[i] = 0.1
 wepRProjSprite[i] = spr_bullet
@@ -91,6 +97,7 @@ iSpd = 1.2
 iSize = 1
 iShots = 20
 iReloads = 3
+iRng = 18
 iName = 'Auto Carbine'
 
 switch(argument0)
@@ -99,13 +106,17 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_repeater
 name = iName
 ttType = itemTypeRanged
-tooltip = "An experimental automatic firearm."
+addItemTooltip('Skill - Cripple','Cripple#On Wound: 10% chance to CRIPPLE for 10 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
+addItemTooltip('Mechanical','Mechanical#Weapon damage is unaffected by Might',3,green)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
 pen = iPen
+shots = iShots
+reloads = iReloads
+rng = iRng
 
-itemProf[0] = basicRangedProficiency  
+itemProf[0] = firearmProficiency  
 break
 
 case 1:     //Called when owned
@@ -125,7 +136,7 @@ wepRStrMult[i] = iStrMult
 wepRStamina[i] = .1
 wepRPen[i] = iPen
 wepRSpeed[i] = iSpd
-wepRRange[i] = 20
+wepRRange[i] = iRng
 wepReload[i] = 3.0
 wepReloadStamina[i] = 0.1
 wepRProjSprite[i] = spr_bullet
@@ -160,6 +171,7 @@ iSpd = 1.4
 iSize = 1
 iShots = 7
 iReloads = 3
+iRng = 10
 iName = 'Automatic'
 
 switch(argument0)
@@ -168,13 +180,17 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_automatic
 name = iName
 ttType = itemTypePistol
-tooltip = "A modern pistol."
+addItemTooltip('Skill - Cripple','Cripple#On Wound: 10% chance to CRIPPLE for 10 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
+addItemTooltip('Mechanical','Mechanical#Weapon damage is unaffected by Might',3,green)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
 pen = iPen
+shots = iShots
+reloads = iReloads
+rng = iRng
 
-itemProf[0] = basicRangedProficiency  
+itemProf[0] = pistolProficiency  
 break
 
 case 1:     //Called when owned
@@ -194,7 +210,7 @@ wepRStrMult[i] = iStrMult
 wepRStamina[i] = .1
 wepRPen[i] = iPen
 wepRSpeed[i] = iSpd
-wepRRange[i] = 12
+wepRRange[i] = iRng
 wepReload[i] = 2.0
 wepReloadStamina[i] = 0.1
 wepRProjSprite[i] = spr_bullet
@@ -227,6 +243,7 @@ iSpd = 1.4
 iSize = 1
 iShots = 1
 iReloads = 10
+iRng = 6
 iName = 'Hand Cannon'
 
 switch(argument0)
@@ -235,13 +252,17 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_handCannon
 name = iName
 ttType = itemTypePistol
-tooltip = "An officers pistol."
+addItemTooltip('Skill - Cripple','Cripple#On Wound: 10% chance to CRIPPLE for 10 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
+addItemTooltip('Mechanical','Mechanical#Weapon damage is unaffected by Might',3,green)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
 pen = iPen
+shots = iShots
+reloads = iReloads
+rng = iRng
 
-itemProf[0] = basicRangedProficiency  
+itemProf[0] = pistolProficiency  
 break
 
 case 1:     //Called when owned
@@ -261,7 +282,7 @@ wepRStrMult[i] = iStrMult
 wepRStamina[i] = .1
 wepRPen[i] = iPen
 wepRSpeed[i] = iSpd
-wepRRange[i] = 8
+wepRRange[i] = iRng
 wepReload[i] = 5.0
 wepReloadStamina[i] = 0.1
 wepRProjSprite[i] = spr_bullet
@@ -294,6 +315,7 @@ iSpd = 1.4
 iSize = 1
 iShots = 6
 iReloads = 3
+iRng = 12
 iName = 'Revolver'
 
 switch(argument0)
@@ -302,13 +324,17 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_revolver
 name = iName
 ttType = itemTypePistol
-tooltip = "A modern pistol."
+addItemTooltip('Skill - Cripple','Cripple#On Wound: 10% chance to CRIPPLE for 10 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
+addItemTooltip('Mechanical','Mechanical#Weapon damage is unaffected by Might',3,green)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
 pen = iPen
+shots = iShots
+reloads = iReloads
+rng = iRng
 
-itemProf[0] = basicRangedProficiency  
+itemProf[0] = pistolProficiency  
 break
 
 case 1:     //Called when owned
@@ -328,7 +354,7 @@ wepRStrMult[i] = iStrMult
 wepRStamina[i] = .1
 wepRPen[i] = iPen
 wepRSpeed[i] = iSpd
-wepRRange[i] = 16
+wepRRange[i] = iRng
 wepReload[i] = 3.0
 wepReloadStamina[i] = 0.1
 wepRProjSprite[i] = spr_bullet
@@ -361,6 +387,7 @@ iSpd = .6
 iSize = 2
 iShots = 1
 iReloads = 15
+iRng = 30
 iName = 'Long Rifle'
 
 switch(argument0)
@@ -369,13 +396,17 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_longRifle
 name = iName
 ttType = itemTypeRanged
-tooltip = "A markself rifle."
+addItemTooltip('Skill - Cripple','Cripple#On Wound: 10% chance to CRIPPLE for 10 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
+addItemTooltip('Mechanical','Mechanical#Weapon damage is unaffected by Might',3,green)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
 pen = iPen
+shots = iShots
+reloads = iReloads
+rng = iRng
 
-itemProf[0] = basicRangedProficiency  
+itemProf[0] = firearmProficiency  
 break
 
 case 1:     //Called when owned
@@ -395,7 +426,7 @@ wepRStrMult[i] = iStrMult
 wepRStamina[i] = .1
 wepRPen[i] = iPen
 wepRSpeed[i] = iSpd
-wepRRange[i] = 40
+wepRRange[i] = iRng
 wepReload[i] = 1.5
 wepReloadStamina[i] = 0.1
 wepRProjSprite[i] = spr_bullet
@@ -429,6 +460,7 @@ iSpd = .5
 iSize = 2
 iShots = 1
 iReloads = 2
+iRng = 26
 iName = 'Recoiless Rifle'
 
 switch(argument0)
@@ -437,13 +469,18 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_recoiless
 name = iName
 ttType = itemTypeRanged
-tooltip = "A heavy rifle for fighting heavy armour."
+addItemTooltip('Skill - Shatter','Shatter#On Hit: 10% chance to SUNDER 3',3,c_yellow)
+addItemTooltip('High Impact','High Impact#This weapon inflicts Impact damage if it is more advantageous',4,green)
+addItemTooltip('Mechanical','Mechanical#Weapon damage is unaffected by Might',3,green)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
 pen = iPen
+shots = iShots
+reloads = iReloads
+rng = iRng
 
-itemProf[0] = basicRangedProficiency  
+itemProf[0] = heavyRangedProficiency  
 break
 
 case 1:     //Called when owned
@@ -463,7 +500,7 @@ wepRStrMult[i] = iStrMult
 wepRStamina[i] = .1
 wepRPen[i] = iPen
 wepRSpeed[i] = iSpd
-wepRRange[i] = 36
+wepRRange[i] = iRng
 wepReload[i] = 3.0
 wepReloadStamina[i] = 0.1
 wepRProjSprite[i] = spr_rocket
@@ -476,12 +513,20 @@ greatWeapon = true
 weaponSprite[i] = iSpr
 
 //Skill
-onWound[onWoundSize,0] = wepsklCripple
-onWound[onWoundSize,1] = 'Cripple'
-onWound[onWoundSize,2] = 10
-onWound[onWoundSize,3] = 3
-onWound[onWoundSize,4] = i
-onWound[onWoundSize,5] = 10
-onWoundSize += 1
+onHit[onHitSize,0] = wepsklShatter
+onHit[onHitSize,1] = 'Shatter'
+onHit[onHitSize,2] = 10
+onHit[onHitSize,3] = 12
+onHit[onHitSize,4] = i
+onHit[onHitSize,5] = false
+onHitSize += 1
+
+onHit[onHitSize,0] = wepSlashImpact
+onHit[onHitSize,1] = 'High Impact'
+onHit[onHitSize,2] = i
+onHit[onHitSize,3] = false
+onHit[onHitSize,4] = false
+onHit[onHitSize,5] = false
+onHitSize += 1
 break
 }

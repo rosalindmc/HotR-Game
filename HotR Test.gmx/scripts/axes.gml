@@ -18,7 +18,7 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_handAxe
 name = iName
 ttType = itemTypeWeapon
-tooltip = "A light hatchet."
+addItemTooltip('Skill - Cripple','Cripple#On Wound: 10% chance to CRIPPLE for 10 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
@@ -54,9 +54,9 @@ threat = true
 onWound[onWoundSize,0] = wepsklCripple
 onWound[onWoundSize,1] = 'Cripple'
 onWound[onWoundSize,2] = 10
-onWound[onWoundSize,3] = 2
+onWound[onWoundSize,3] = 3
 onWound[onWoundSize,4] = i
-onWound[onWoundSize,5] = 15
+onWound[onWoundSize,5] = 10
 onWoundSize += 1
 break
 }
@@ -78,7 +78,7 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_battleAxe
 name = iName
 ttType = itemTypeWeapon
-tooltip = "A one handed axe."
+addItemTooltip('Skill - Cripple','Cripple#On Wound: 10% chance to CRIPPLE for 15 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
@@ -139,7 +139,7 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_greatAxe
 name = iName
 ttType = itemTypeWeapon
-tooltip = "A two handed axe."
+addItemTooltip('Skill - Cripple','Cripple#On Wound: 10% chance to CRIPPLE for 20 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
@@ -176,9 +176,9 @@ threat = true
 onWound[onWoundSize,0] = wepsklCripple
 onWound[onWoundSize,1] = 'Cripple'
 onWound[onWoundSize,2] = 10
-onWound[onWoundSize,3] = 4
+onWound[onWoundSize,3] = 3
 onWound[onWoundSize,4] = i
-onWound[onWoundSize,5] = 15
+onWound[onWoundSize,5] = 20
 onWoundSize += 1
 break
 }

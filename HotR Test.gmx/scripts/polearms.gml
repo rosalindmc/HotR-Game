@@ -18,7 +18,8 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_shortSpear
 name = iName
 ttType = itemTypeWeapon
-tooltip = "A short spear."
+addItemTooltip('Skill - Impale','Impale#On Wound: 10% chance to IMMOBILIZE for 10 seconds. IMMOBILIZED characters cannot move or dodge and have no zone of control',6,c_yellow)
+addItemTooltip('Elegant','Elegant#This weapon is 20% less effected by Might and uses 20% less stamina to attack',4,green)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
@@ -79,7 +80,8 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_spear
 name = iName
 ttType = itemTypeWeapon
-tooltip = "A common spear."
+addItemTooltip('Skill - Impale','Impale#On Wound: 15% chance to IMMOBILIZE for 10 seconds. IMMOBILIZED characters cannot move or dodge and have no zone of control',6,c_yellow)
+addItemTooltip('Elegant','Elegant#This weapon is 20% less effected by Might and uses 20% less stamina to attack',4,green)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
@@ -141,7 +143,8 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_pike
 name = iName
 ttType = itemTypeWeapon
-tooltip = "A hefty pike."
+addItemTooltip('Skill - Impale','Impale#On Wound: 20% chance to IMMOBILIZE for 10 seconds. IMMOBILIZED characters cannot move or dodge and have no zone of control',6,c_yellow)
+addItemTooltip('Elegant','Elegant#This weapon is 20% less effected by Might and uses 20% less stamina to attack',4,green)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
@@ -203,7 +206,8 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_halberd
 name = iName
 ttType = itemTypeWeapon
-tooltip = "A powerful halberd."
+addItemTooltip('Skill - Cripple','Cripple#On Wound: 10% chance to CRIPPLE for 15 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
+addItemTooltip('Stabbing Point','Stabbing Point#This weapon inflicts Pierce damage if it is more advantageous',4,c_green)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
@@ -241,13 +245,13 @@ threat = true
 onWound[onWoundSize,0] = wepsklCripple
 onWound[onWoundSize,1] = 'Cripple'
 onWound[onWoundSize,2] = 10
-onWound[onWoundSize,3] = 4
+onWound[onWoundSize,3] = 3
 onWound[onWoundSize,4] = i
 onWound[onWoundSize,5] = 15
 onWoundSize += 1
 
 onHit[onHitSize,0] = wepSlashPierce
-onHit[onHitSize,1] = 'Thrust'
+onHit[onHitSize,1] = 'Stabbing Point'
 onHit[onHitSize,2] = i
 onHit[onHitSize,3] = false
 onHit[onHitSize,4] = false

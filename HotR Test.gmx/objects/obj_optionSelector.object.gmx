@@ -62,7 +62,9 @@ if optionSelect = 'charInfo1' or optionSelect = 'charInfo2'
     newOption('Melee',charInfoMelee)
     newOption('Ranged',charInfoRanged)
     newOption('Casting',charInfoCasting)
-    newOption('Misc',charInfoMisc)
+    newOption('Movement',charInfoMovement)
+    newOption('P Resist',charInfoResist1)
+    newOption('M Resist',charInfoResist2)
 }
 </string>
           </argument>

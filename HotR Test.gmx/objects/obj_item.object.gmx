@@ -31,6 +31,7 @@ locky = y
 lockSlot = -4
 iSize = 2
 inInventory = true
+canEquip = true
 equipped = 0
 tt = 0
 shield = false
@@ -143,15 +144,24 @@ else
     y = mouse_y+10
 }
 
-if (hudY &gt;= global.hudY and hudY &lt;= global.hudY+10) or dragged = true or inInventory = false 
-{
-    draw_sprite(sprite_index,itemQuality,x,y)
-}
-
 if tt != 0 and dragged = false
 {
     script_execute(ttType)
 }
+
+if (hudY &gt;= global.hudY and hudY &lt;= global.hudY+10) or dragged = true or inInventory = false 
+{
+    draw_sprite(sprite_index,itemQuality,x,y)
+    
+    if canEquip = false
+    {
+        draw_set_colour(c_black)
+        draw_set_alpha(.4)
+        draw_rectangle(x-10,y-10,x+9,y+9,false)
+        draw_set_alpha(1)
+    }
+}
+
 </string>
           </argument>
         </arguments>

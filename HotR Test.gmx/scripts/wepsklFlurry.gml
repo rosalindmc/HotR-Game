@@ -22,7 +22,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
     }
 }
 
-#define wepsklRend
+#define wepsklBleed
 //wepsklRend(name,procChance,Bonus,hand,false,tooltip)
 //Weapn Skill for bleed
 

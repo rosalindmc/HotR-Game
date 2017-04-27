@@ -5,7 +5,6 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = choose(ico_robe,ico_platemail1,ico_chainShirt)
 ttType = itemTypeArmour
 name = 'Armour'
-tooltip = 'Armour.'
 dmg = 3.00
 rat = 2.00
 pen = 0.25
@@ -31,6 +30,7 @@ iDodge = 20
 iArm = 3
 iProt = 0
 iEnc = 0
+iSResist = 0
 
 switch(argument0)
 {
@@ -38,12 +38,13 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_robe
 ttType = itemTypeArmour
 name = 'Robe'
-tooltip = 'A comfortable robe'
+addItemTooltip('Comfort','Comfort#Reduce Cooldowns by 20%',2,green)
 arm = iArm
 dodge = iDodge
 prot = iProt
 enc = iEnc
- 
+itemProf[0] = clothingProficiency
+sResist = iSResist 
 break
 
 case 1:     //Called when the item is equipped by a model.
@@ -54,6 +55,7 @@ dodge += iDodge
 armMax += iArm
 prot += iProt
 enc += iEnc
+sResist += iSResist
 spellCD += .2
 
 armourApplyVis(favColour)
@@ -78,10 +80,11 @@ iSpr[4] = spr_royalDress
 iSkrt[1] = spr_royalSkirt
 iSkrt[2] = spr_royalSkirt
 iSkrt[3] = spr_royalSkirt
-iDodge = 25
+iDodge = 20
 iArm = 1
 iProt = 0
 iEnc = 0
+iSResist = 0
 
 switch(argument0)
 {
@@ -89,12 +92,13 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_cloth
 ttType = itemTypeArmour
 name = 'Dress'
-tooltip = 'A stylish dress'
+addItemTooltip('Outgoing','Outgoing#Increase Ability Durations by 20%',3,green)
 arm = iArm
 dodge = iDodge
 prot = iProt
 enc = iEnc
- 
+itemProf[0] = clothingProficiency
+sResist = iSResist 
 break
 
 case 1:     //Called when the item is equipped by a model.
@@ -105,11 +109,12 @@ dodge += iDodge
 armMax += iArm
 prot += iProt
 enc += iEnc
-lifeRegen += 2
+sResist += iSResist
+spellDur += .2
 
 armourApplyVis(c_white)
 
-underHipsNum -= 1
+underHipsNum += 1
 break
 }
 
@@ -125,6 +130,7 @@ iDodge = 10
 iArm = 6
 iProt = 0
 iEnc = 25
+iSResist = .05
 
 switch(argument0)
 {
@@ -132,11 +138,12 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_chainShirt
 ttType = itemTypeArmour
 name = 'Chain Shirt'
-tooltip = 'A light chain vest'
 arm = iArm
 dodge = iDodge
 prot = iProt
 enc = iEnc
+itemProf[0] = lightArmourProficiency
+sResist = iSResist
 break
 
 case 1:     //Called when the item is equipped by a model.
@@ -147,6 +154,7 @@ dodge += iDodge
 armMax += iArm
 prot += iProt
 enc += iEnc
+sResist += iSResist
 
 if skirtVariant = 1
 {
@@ -188,6 +196,7 @@ iDodge = 0
 iArm = 12
 iProt = 0
 iEnc = 40
+iSResist = .15
 
 switch(argument0)
 {
@@ -195,12 +204,12 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_chainMail
 ttType = itemTypeArmour
 name = 'Chain Mail'
-tooltip = 'A hefty suit of chain mail armour'
 arm = iArm
 dodge = iDodge
 prot = iProt
 enc = iEnc
- 
+itemProf[0] = heavyArmourProficiency
+sResist = iSResist
 break
 
 case 1:     //Called when the item is equipped by a model.
@@ -211,6 +220,7 @@ dodge += iDodge
 armMax += iArm
 prot += iProt
 enc += iEnc
+sResist += iSResist
 
 underHipsNum += 1
 armourApplyVis(c_white)
@@ -229,6 +239,7 @@ iDodge = -10
 iArm = 10
 iProt = 0
 iEnc = 50
+iSResist = .1
 
 switch(argument0)
 {
@@ -236,12 +247,13 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_breastPlate
 ttType = itemTypePlating
 name = 'Breastplate'
-tooltip = 'A rigid breastplate'
+addItemTooltip('Glancing','Glancing#Attacks against you have a 15% chance to lose all Penetration',3,green)
 arm = iArm
 dodge = iDodge
 prot = iProt
 enc = iEnc
- 
+itemProf[0] = lightArmourProficiency
+sResist = iSResist
 break
 
 case 1:     //Called when the item is equipped by a model.
@@ -252,6 +264,7 @@ dodge += iDodge
 armMax += iArm
 prot += iProt
 enc += iEnc
+sResist += iSResist
 
 rigid = true
 
@@ -282,6 +295,7 @@ iDodge = 0
 iArm = 24
 iProt = 0
 iEnc = 100
+iSResist = .30
 
 switch(argument0)
 {
@@ -289,12 +303,13 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_platemail1
 ttType = itemTypePlating
 name = 'Platemail'
-tooltip = 'Plate and chain full army'
+addItemTooltip('Glancing','Glancing# Attacks against you have a 15% chance to lose all Penetration',3,green)
 arm = iArm
 dodge = iDodge
 prot = iProt
 enc = iEnc
- 
+itemProf[0] = heavyArmourProficiency
+sResist = iSResist
 break
 
 case 1:     //Called when the item is equipped by a model.
@@ -305,6 +320,7 @@ dodge += iDodge
 armMax += iArm
 prot += iProt
 enc += iEnc
+sResist += iSResist
 
 rigid = true
 
@@ -341,6 +357,7 @@ iDodge = 20
 iArm = 4
 iProt = 0
 iEnc = 0
+iSResist = 0
 
 switch(argument0)
 {
@@ -348,12 +365,12 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_cloth
 ttType = itemTypeArmour
 name = 'Uniform'
-tooltip = 'A federation uniform'
 arm = iArm
 dodge = iDodge
 prot = iProt
 enc = iEnc
- 
+itemProf[0] = clothingProficiency
+sResist = iSResist
 break
 
 case 1:     //Called when the item is equipped by a model.
@@ -364,6 +381,7 @@ dodge += iDodge
 armMax += iArm
 prot += iProt
 enc += iEnc
+sResist += iSResist
 
 underHipsNum += 1
 armourApplyVis(c_white)

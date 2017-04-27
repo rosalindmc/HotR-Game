@@ -56,6 +56,7 @@ repeat(8)
         with(ii)
         {
             script_execute(itemType,0)
+            canEquipCheck()
         }
     }
     i += 1
@@ -76,6 +77,7 @@ repeat(inventorySize)
     with(ii)
     {
         script_execute(itemType,0)
+        canEquipCheck()
     }
     i -= 1
 }

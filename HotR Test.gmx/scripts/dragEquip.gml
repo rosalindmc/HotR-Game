@@ -143,12 +143,12 @@ switch(argument0.equipSlot)
 case 0: success = true break
 
 case 1: 
-if (ttType = itemTypeWeapon and (i.wepSize-2 <= iSize and i.wepSize+1 >= iSize)) and (global.equipSlot[2].occupant = emptySlot or greatWeapon = false)
+if (ttType = itemTypeWeapon and canEquip = true) and (global.equipSlot[2].occupant = emptySlot or greatWeapon = false)
 {success = true} 
 break
 
 case 2: 
-if (((ttType = itemTypeWeapon or ttType = itemTypePistol) and (i.wepSize-2 <= iSize and i.wepSize+1 >= iSize)) or (shield = true and (i.wepSize-1 = iSize or i.wepSize = iSize))) and greatWeapon = false
+if (ttType = itemTypeWeapon or ttType = itemTypePistol or ttType = itemTypeShield) and canEquip = true and greatWeapon = false
 {
     if global.equipSlot[1].occupant != emptySlot
     {
@@ -160,14 +160,65 @@ if (((ttType = itemTypeWeapon or ttType = itemTypePistol) and (i.wepSize-2 <= iS
 }
 break
 
-case 3: if (ttType = itemTypeRanged or ttType = itemTypePistol) and (i.wepSize-1 = iSize or i.wepSize = iSize) {success = true} break
+case 3: if (ttType = itemTypeRanged or ttType = itemTypePistol) and canEquip = true {success = true} break
 
-case 4: if ttType = itemTypeArmour and iSize = i.armSize {success = true} break
+case 4: if ttType = itemTypeArmour and canEquip = true {success = true} break
 
 case 5: case 6: case 7: if ttType = itemTypeTrinket {success = true} break
 
-case 8: if (ttType = itemTypePlating and iSize = i.armSize) or ttType = itemTypeTrinket {success = true} break
+case 8: if (ttType = itemTypePlating and canEquip = true) or ttType = itemTypeTrinket {success = true} break
 }
 }
 
 return success
+
+#define canEquipCheck
+var i = global.charSelect
+
+//Size Check
+wrongSize = false
+
+if ttType = itemTypeWeapon or ttType = itemTypePistol
+{
+     if i.wepSize-2 > iSize or i.wepSize+1 < iSize
+     {
+        wrongSize = true
+     }
+}
+else if ttType = itemTypeArmour or ttType = itemTypePlating
+{
+    if i.armSize != iSize    
+    {
+        wrongSize = true
+    }
+}
+else if ttType = itemTypeShield or ttType = itemTypePistol or ttType = itemTypeRanged
+{
+    if i.wepSize-1 > iSize or i.wepSize < iSize
+    {
+        wrongSize = true
+    }
+}
+
+//Proficiency
+wrongProf = array_length_1d(itemProf)
+
+for(ii = 0; ii < array_length_1d(itemProf); ii++)
+{
+    for(iii = 0; iii < array_length_1d(i.itemProf); iii++)
+    {
+         if itemProf[ii] = i.itemProf[iii]
+         {
+            wrongProf -= 1
+         }
+    }
+}
+
+if wrongProf != 0 or wrongSize = true
+{
+    canEquip = false
+}
+else
+{
+    canEquip = true
+}

@@ -10,11 +10,11 @@ tooltip = '-'+string(potency/2)+' POW, -'+string(potency)+' Skill and -'+string(
 break
 
 case 1:     //Stats
-owner.atkDPS -= potency/2
+owner.atkDPS -= potency
 owner.mSkill -= potency
 owner.rSkill -= potency
 owner.cSkill -= potency
-owner.blockStr -= potency
+owner.blockStr -= potency*4
 owner.missChance += .01
 break
 

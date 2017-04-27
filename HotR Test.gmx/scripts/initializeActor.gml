@@ -234,6 +234,7 @@ sneakAmbush = false
 
 //Other
 movHaste = 0
+castHaste = 0
 atkStaminaMult = 1
 movStaminaMult = 1
 missChance = 0

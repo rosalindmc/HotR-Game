@@ -21,7 +21,7 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_heaterShield
 name = iName
 ttType = itemTypeShield
-tooltip = "A metal shield."
+addItemTooltip('Ranged Deflection','Ranged Deflection#You can block projectiles and do not need to expend a Block Charge to do so',4,green)
 blockGen = iBlockGen
 blockStr = iBlockStr
 enc = iEnc
@@ -82,7 +82,7 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_roundShield
 name = iName
 ttType = itemTypeShield
-tooltip = "A round dueling shield."
+addItemTooltip('Lesser Deflection','Lesser Deflection#You can block projectiles',2,green)
 blockGen = iBlockGen
 blockStr = iBlockStr
 enc = iEnc
@@ -112,7 +112,7 @@ wepSpeed[i] = iSpd
 wepRange[i] = 1
 
 onBlock[onBlockSize,0] = smallShield
-onBlock[onBlockSize,1] = 'Small Shield'
+onBlock[onBlockSize,1] = 'Lesser Deflection'
 onBlock[onBlockSize,2] = false
 onBlock[onBlockSize,3] = false
 onBlock[onBlockSize,4] = false
@@ -151,7 +151,7 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_squareShield
 name = iName
 ttType = itemTypeShield
-tooltip = "A large shield."
+addItemTooltip('Greater Deflection','Greater Deflection#You can block projectiles and do not need to expend a Block Charge to do so. Blocking projectiles reduces their damage by an additional 25 to 100 %',7,green)
 blockGen = iBlockGen
 blockStr = iBlockStr
 enc = iEnc
@@ -181,7 +181,7 @@ wepSpeed[i] = iSpd
 wepRange[i] = 1
 
 onBlock[onBlockSize,0] = largeShield
-onBlock[onBlockSize,1] = 'Large Shield'
+onBlock[onBlockSize,1] = 'Greater Deflection'
 onBlock[onBlockSize,2] = false
 onBlock[onBlockSize,3] = false
 onBlock[onBlockSize,4] = false
@@ -220,7 +220,7 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_squareShield
 name = iName
 ttType = itemTypeShield
-tooltip = "A black tower shield."
+addItemTooltip('Greater Deflection','Greater Deflection#You can block projectiles and block an additional 25 % to 100 % of the attacks damage',4,green)
 blockGen = iBlockGen
 blockStr = iBlockStr
 enc = iEnc
@@ -250,7 +250,7 @@ wepSpeed[i] = iSpd
 wepRange[i] = 1
 
 onBlock[onBlockSize,0] = largeShield
-onBlock[onBlockSize,1] = 'Large Shield'
+onBlock[onBlockSize,1] = 'Greater Deflection'
 onBlock[onBlockSize,2] = false
 onBlock[onBlockSize,3] = false
 onBlock[onBlockSize,4] = false

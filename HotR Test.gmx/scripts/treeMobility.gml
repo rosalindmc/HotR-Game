@@ -5,10 +5,10 @@ switch(argument0)
 case 0:     //Run when the unit is initialized in battle
 switch(argument1)
 {
-case 1: movementBonus += 1.0 movStaminaMult *= .90 break
-case 2: movementBonus += 1.5 movStaminaMult *= .85 break
-case 3: movementBonus += 2.0 movStaminaMult *= .80 break
-case 4: movementBonus += 2.5 movStaminaMult *= .75 break
+case 1: movementBonus += 1.0 movStaminaMult *= .90 movHaste += .02 break
+case 2: movementBonus += 1.5 movStaminaMult *= .85 movHaste += .03 break
+case 3: movementBonus += 2.0 movStaminaMult *= .80 movHaste += .04 break
+case 4: movementBonus += 2.5 movStaminaMult *= .75 movHaste += .05 break
 }
 break
 

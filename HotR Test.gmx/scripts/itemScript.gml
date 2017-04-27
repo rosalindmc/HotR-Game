@@ -8,7 +8,11 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_lgtMace
 ttType = itemTypeWeapon
 name = 'An Item'
-tooltip = "A test item used as an example."
+tooltip[0] = 0
+tooltipText[0] = 0
+tooltipLength[0] = 0
+ttLength = 0
+ttTotalLength = 0
 dmg = 3.00
 rat = 2.00
 pen = 0.25
@@ -182,4 +186,41 @@ else
 {
     greatWeapon = false
     mSkill += .5
+}
+#define addItemTooltip
+tooltip[ttLength] = argument0
+tooltipText[ttLength] = argument1
+tooltipLength[ttLength] = argument2
+tooltipColour[ttLength] = argument3
+ttLength += 1
+ttTotalLength += argument2
+#define itemSizeText
+switch(argument0)
+{
+case 0: return('Very Small') break
+case 1: return('Small') break
+case 2: return('Medium') break
+case 3: return('Large') break
+case 4: return('Huge') break
+case 5: return('Massive') break
+}
+
+#define profTypeText
+switch(argument0)
+{
+case lightWeaponProficiency: return('Light Weapon') break
+case mediumWeaponProficiency: return('One handed Weapon') break
+case heavyWeaponProficiency: return('Great Weapon') break
+case polearmProficiency: return('Polearm') break
+
+case pistolProficiency: return('Pistol') break
+case basicRangedProficiency: return('Ranged Weapon') break
+case firearmProficiency: return('Firearm') break
+case heavyRangedProficiency: return('Support Weapon') break
+
+case shieldProficiency: return('Shield') break
+case largeShieldProficiency: return('Large Shield') break
+case clothingProficiency: return('Clothing') break
+case lightArmourProficiency: return('Light Armour') break
+case heavyArmourProficiency: return('Heavy Armour') break
 }
