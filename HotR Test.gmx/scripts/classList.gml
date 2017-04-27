@@ -54,6 +54,13 @@ talent[0,5] = 1
 talent[1,0] = choose(treeMedicine,treePerform,treeDiplomacy,treeAlchemy,treeKnowledge)
 talent[1,5] = 1
 
+//Proficiencies Temp
+itemProf[1] = mediumWeaponProficiency
+itemProf[2] = heavyWeaponProficiency
+itemProf[3] = clothingProficiency
+itemProf[4] = basicRangedProficiency
+
+
 #define class_duelist
 className = 'Duelist'
 invSlot[1,0] = choose(sabre,rapier)
@@ -84,6 +91,12 @@ talent[0,5] = 2
 talent[1,0] = choose(treeDiplomacy,treeStreetwise,treePerform)
 talent[1,5] = 1
 
+//Proficiencies Temp
+itemProf[1] = mediumWeaponProficiency
+itemProf[2] = clothingProficiency
+itemProf[3] = lightArmourProficiency
+itemProf[4] = pistolProficiency
+itemProf[5] = shieldProficiency
 
 #define class_adventurer
 className = 'Adventurer'
@@ -118,6 +131,18 @@ talent[0,5] = 2
 talent[1,0] = choose(treeDiplomacy,treeSurvival)
 talent[1,5] = 1
 
+//Proficiencies Temp
+itemProf[1] = mediumWeaponProficiency
+itemProf[2] = heavyWeaponProficiency
+itemProf[3] = clothingProficiency
+itemProf[4] = lightArmourProficiency
+itemProf[5] = pistolProficiency
+itemProf[6] = basicRangedProficiency
+itemProf[7] = firearmProficiency
+itemProf[8] = shieldProficiency
+
+
+
 #define class_thief
 className = 'Thief'
 
@@ -150,6 +175,12 @@ talent[0,5] = 1
 talent[1,0] = choose(treeThievery,treeStreetwise)
 talent[1,5] = 2
 
+itemProf[1] = mediumWeaponProficiency
+itemProf[2] = clothingProficiency
+itemProf[3] = pistolProficiency
+itemProf[4] = basicRangedProficiency
+itemProf[5] = shieldProficiency
+
 #define class_warrior
 className = 'Warrior'
 
@@ -181,3 +212,13 @@ classCSkill = .15
 //Talent
 talent[0,0] = choose(treeStrength,treeDiscipline,treeToughness,treeMartial)
 talent[0,5] = 2
+
+itemProf[1] = mediumWeaponProficiency
+itemProf[2] = heavyWeaponProficiency
+itemProf[3] = clothingProficiency
+itemProf[4] = lightArmourProficiency
+itemProf[5] = heavyArmourProficiency
+itemProf[6] = basicRangedProficiency
+itemProf[7] = polearmProficiency
+itemProf[8] = shieldProficiency
+itemProf[9] = largeShieldProficiency

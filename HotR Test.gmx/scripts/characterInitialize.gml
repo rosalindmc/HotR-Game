@@ -112,8 +112,7 @@ repeat(8)
 
 //Temp Equipment Proficiency
 itemProf[0] = lightWeaponProficiency
-itemProf[1] = mediumWeaponProficiency
-itemProf[2] = heavyWeaponProficiency
+
 
 #define fashionInitialize
 favColour = choose(clothBlue,clothRed,clothGreen)
