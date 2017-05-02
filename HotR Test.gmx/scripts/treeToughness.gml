@@ -30,6 +30,7 @@ tooltip = 'Gain +4 life and stamina' break
 case 4: name = 'Master Toughness'
 tooltip = 'Gain +5 life and stamina' break
 }
+ttLength = 1
 break
 
 case 2:
@@ -67,6 +68,7 @@ sprite_index = ico_vigour
 image_index = 1
 name = 'Vigour'
 tooltip = 'Small chance to heal 2 on attack.  Heal on downing a foe'
+ttLength = 3
 branch = treeToughness
 break
 
@@ -94,6 +96,7 @@ sprite_index = ico_mightyBlock
 image_index = 1
 name = 'Mighty Block'
 tooltip = 'Blocking DAZES the attacker 50% of the time'
+ttLength = 2
 branch = treeToughness
 break
 
@@ -122,6 +125,7 @@ image_index = 1
 name = 'Thick Skin'
 tooltip = 'Suffer 30% less damage while below half life'
 branch = treeToughness
+ttLength = 2
 break
 
 case 2:
@@ -134,14 +138,15 @@ break
 switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
-lifeRegen += .8+((will-8)*.12)
+lifeRegen += 2+((will-8)*.25)
 break
 
 case 1:     //Tooltip and icon
 sprite_index = ico_mightyHealth
 image_index = 1
 name = 'Mighty Health'
-tooltip = 'Increase life regeneration by 40%'
+tooltip = 'Increase base life regeneration by 50%'
+ttLength = 2
 branch = treeToughness
 break
 
@@ -149,6 +154,7 @@ case 2:
 return true
 break
 }
+
 #define branchBattleRush
 //tree(how to use, rank)
 switch(argument0)
@@ -162,6 +168,7 @@ sprite_index = ico_battleRush
 image_index = 1
 name = 'Battle Rush'
 tooltip = 'Active: Gain Maximum Life, Stamina and Regeneration'
+ttLength = 2
 branch = treeToughness
 break
 
@@ -183,6 +190,7 @@ sprite_index = ico_secondWind
 image_index = 1
 name = 'Second Wind'
 tooltip = 'Active: Regain all stamina and some Life'
+ttLength = 2
 branch = treeToughness
 break
 
@@ -210,6 +218,7 @@ sprite_index = ico_superiority
 image_index = 1
 name = 'Superiority'
 tooltip = 'Gain regeneration on being attacked'
+ttLength = 2
 branch = treeToughness
 break
 

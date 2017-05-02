@@ -48,22 +48,31 @@ switch(argument0)
 case 0: //Create Camp Menu
 global.inMenu = 1
 global.menuSheet = 10
+global.hudY = 0
+global.eventActor = global.activeActor
 
 ii = instance_create(530,180,obj_partyActionSheet)
 ii.text = 'City Actions'
 
 //Create all available activities
 iy = 0
-owAddButtons(7,'Inn','Inn')
-owAddButtons(3,'Library','Library')
-owAddButtons(1,'Market','Market')
-owAddButtons(1,'Armoury','Armoury')
-owAddButtons(1,'Town Hall','Town Hall')
+owAddButtons(7,'Inn',rInn)
+owAddButtons(3,'Library',rLibrary)
+if checkMoney(10)
+{
+    owAddButtons(1,'Market',rMarket)
+}
+if checkMoney(10) and ds_list_size(global.eventActor.party) < 7
+{
+    owAddButtons(1,'Town Hall',rTownhall)
+}
 
 //Create Party
 owAddParty()
 
 //Autoplace Actor Icons and set preferences
+
+global.hudYMax = iy
 break
 
 case 1:

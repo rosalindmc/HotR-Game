@@ -168,7 +168,8 @@ if argument1 = 0
     break
     
     case 4: //Surrender
-    if 1+irandom(19) <= global.control.fellowship
+    global.eventCharacter = global.control
+    if 1+irandom(19) <= global.control.fellowship+checkTalent(treeDiplomacy,false)
     {
     skipTo(5)
     }
@@ -201,6 +202,7 @@ if argument1 = 0
     break
     }
 }
+
 #define preBattle
 if argument1 = 0
 {
@@ -221,7 +223,7 @@ if argument1 = 0
     switch(argument0)
     {
     case 0: 
-    speak('Temp Resolve all party actions') 
+    speak('All party actions Resolved') 
     break
     
     case 1: 

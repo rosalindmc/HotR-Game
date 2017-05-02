@@ -143,7 +143,7 @@ cleaveVariant = choose(1,2)   //Default Cut, Deep cut
 i = instance_create(x,y,obj_characterSheet)
 i.party = argument0
 i.ruleSet = argument1
-ds_list_add(party,i)
+ds_list_add(argument0.party,i)
 
 with(i)
 {

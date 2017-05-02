@@ -19,7 +19,7 @@ break
 
 case 2:     //Upkeep
 loseStamina(owner,potency)
-woundLife(owner,creator,potency,typeBlood)
+woundLife(owner,creator,potency,typePhysical)
 upkp = 5.0
 break
 

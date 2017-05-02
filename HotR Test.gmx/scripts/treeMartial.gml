@@ -30,6 +30,7 @@ tooltip = 'Gain +2.0 Melee and Ranged Skill' break
 case 4: name = 'Master Martial'
 tooltip = 'Gain +2.5 Melee and Ranged Skill' break
 }
+ttLength = 2
 break
 
 case 2:
@@ -53,6 +54,7 @@ sprite_index = ico_accuracy
 image_index = 1
 name = 'Accuracy'
 tooltip = 'Increase range weapon accuracy sharply'
+ttLength = 2
 branch = treeMartial
 break
 
@@ -75,6 +77,7 @@ sprite_index = ico_combatDrill
 image_index = 1
 name = 'Combat Drill'
 tooltip = '10% Increased attack rate and 20% reduced stamina cost on all attacks'
+ttLength = 3
 branch = treeMartial
 break
 
@@ -102,6 +105,7 @@ sprite_index = ico_slayer
 image_index = 1
 name = 'Slayer'
 tooltip = '+1.5 POW against foes with less than 50% life'
+ttLength = 2
 branch = treeMartial
 break
 
@@ -128,7 +132,8 @@ case 1:     //Tooltip and icon
 sprite_index = ico_opportunist
 image_index = 1
 name = 'Opportunist'
-tooltip = '+1.0 POW against foes who are STUNNED, IMMOBILIZED, CRIPPLED, SLOWED, DAZED or BLINDED'
+tooltip = '+1.0 POW against foes who are STUNNED, CRIPPLED, IMMOBILIZED, SLOWED, DAZED or BLINDED'
+ttLength = 4
 branch = treeMartial
 break
 
@@ -156,6 +161,7 @@ sprite_index = ico_mastery
 image_index = 1
 name = 'Mastery'
 tooltip = '+POW against foes with lower Skill'
+ttLength = 2
 branch = treeMartial
 break
 
@@ -177,6 +183,7 @@ sprite_index = ico_guardBreak
 image_index = 1
 name = 'Guard Break'
 tooltip = 'Special Melee: Destroy all blocks but deal reduced damage'
+ttLength = 3
 branch = treeMartial
 break
 
@@ -198,6 +205,7 @@ sprite_index = ico_slow
 image_index = 1
 name = 'Slow'
 tooltip = 'Special Attack: Slow the target'
+ttLength = 2
 branch = treeMartial
 break
 

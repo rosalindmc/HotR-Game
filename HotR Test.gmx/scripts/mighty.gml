@@ -304,9 +304,12 @@ if argument5 = false    //On Proc
 }
 else                    //On Tooltip
 {
-    p += sneakDamage
+    if sneakDamage != 0
+    {
+        p += sneakDamage
     
-    obj_control.tooltipColour[obj_control.tooltipLength] = green
-    obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)+' '+string_format(sneakDamage,2,1)
-    obj_control.tooltipLength += 1       
+        obj_control.tooltipColour[obj_control.tooltipLength] = green
+        obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)+' '+string_format(sneakDamage,2,1)
+        obj_control.tooltipLength += 1
+    }
 }

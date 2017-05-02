@@ -54,7 +54,7 @@ iSkrt[2] = spr_wretchChainLoin
 iSkrt[3] = spr_wretchChainLoin
 iDodge = 10
 iArm = 4
-iProt = 0
+iProt = .1
 iEnc = 0
 iSResist = 0
 

@@ -20,6 +20,7 @@ tooltip = 'Futher Improve the Perform camp ability' break
 case 4: name = 'Master Perform'
 tooltip = 'Master the Perform camp ability' break
 }
+ttLength = 2
 break
 
 case 2:

@@ -36,6 +36,13 @@ alarm[0] = global.fspd*.2
 clickStep = false
 portraitOf = -4
 a = ""
+
+//Required to make giiving items derp
+tooltip[0] = 0
+tooltipText[0] = 0
+tooltipLength[0] = 0
+ttLength = 0
+ttTotalLength = 0
 </string>
           </argument>
         </arguments>

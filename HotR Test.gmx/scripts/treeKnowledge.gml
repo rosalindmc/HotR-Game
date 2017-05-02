@@ -20,6 +20,7 @@ tooltip = 'Research 80% faster' break
 case 4: name = 'Master Knowledge'
 tooltip = 'Research 100% faster' break
 }
+ttLength = 1
 break
 
 case 2:

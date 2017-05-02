@@ -121,7 +121,7 @@ else if height &gt; -10
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if vis = true
+            <string>if vis = true and global.inMenu != 2 
 {
     draw_self()
     if overlay != -4

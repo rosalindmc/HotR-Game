@@ -1,5 +1,5 @@
 #define charInfoAttributes
-setTooltip(0,"Your Might grants#"+string_format((might-8)/2,0,2)+" Weapon POW#"+string_format((might-8)/2,0,2)+" Life#+"+string_format(might/4,0,2)+" Block Strength",4)
+setTooltip(0,"Your Might grants#"+string_format((might-8)/2,0,2)+" Weapon POW#"+string_format((might-8)/2,0,2)+" Life#+"+string_format(might/4,0,2)+" Block Strength#"+string_format((might-8)*-5,0,0)+" % Encumberance",5)
 setTooltip(1,"Your Grace grants#"+string_format((grace-8)*.2,0,1)+" / "+string_format((grace-8)*.5,0,1)+" Movement#"+string((grace-8)*3)+" % Haste#"+string((grace-8)*3)+" % Action Haste#"+string_format((grace-8)*.1,0,1)+" Combat Skill#"+string_format((grace-8)/2,0,1)+" Stamina",6)
 setTooltip(2,"Your Cunning grants#"+string((cunning-8)*5)+" % Ability Duration#"+string((cunning-8)*5)+" % Ability Cooldown#"+string((cunning-8)*3)+" % Exp Multiplier#"+string_format((cunning-8)*.2,0,1)+" Combat Skill",5)
 setTooltip(3,"Your Will grants#"+string_format((will-8),0,1)+" Life#"+string_format((will-8),0,1)+" Stamina#"+string_format((will-8)/2,0,1)+" Regeneration",4)
@@ -34,8 +34,8 @@ setTooltip(0,string(life)+" Life Total#8.0 Base#"+string_format(((will-8))+((mig
 setTooltip(1,"Life Regeneration in combat over 15 seconds",2)
 setTooltip(2,"Reduces damage suffered by "+string_format(100-(100/(1+dmgMitigation)),0,0)+" %",2)
 setTooltip(3,"Chance of evading attacks originating from within your front arc",3)
-setTooltip(4,"Reduces damage suffered by "+string_format(armMax/16,0,1)+" - "+string_format(armMax/4,0,1),2)
-setTooltip(5,"Reduce Suppression effects by "+string(floor(100-(100/(sResist))))+"%",3)
+setTooltip(4,"Reduces damage suffered by "+string_format(armMax/16,0,1)+" - "+string_format(armMax/4,0,1)+"#Attacks that fail to penetrate all armour have their damage reduced by a further "+string_format(prot*100,0,0)+" %",6)
+setTooltip(5,"Reduce Suppression effects by "+string(floor(100-(100/(sResist))))+"%",2)
 setTooltip(6,'',1)
 setTooltip(7,'',1)
 
@@ -160,7 +160,7 @@ else
     draw_sprite(spr_bigArmIcon,4,ix+65,iy+33) 
 }
 
-draw_text(ix+60,iy+44,string_format(s1/(haste+atkHaste),2,2))  
+draw_text(ix+60,iy+44,string_format(s1/(haste+atkHaste),2,1)+' s')  
 
 if dualWield = true
 {
@@ -190,7 +190,7 @@ if dualWield = true
         draw_sprite(spr_bigArmIcon,4,ix+65,iy+69) 
     }
     
-    draw_text(ix+60,iy+92,string_format(s2/(haste+atkHaste),2,2))    
+    draw_text(ix+60,iy+92,string_format(s2/(haste+atkHaste),2,1)+' s')    
 }
 else if hasShield = true
 {
@@ -230,7 +230,10 @@ if wepRRange[1] > 0
     p1min = floor(p1*(1-wepRPowRng[1]))
     p1max = ceil(p1*(1+wepRPowRng[1]))
     r1 = wepRRange[1]
+    load1 = wepReload[1]
     type = wepRType[1]
+    shots1 = maxShots[3]
+    loads1 = maxReloads[3]
 }
 else if wepRRange[2] > 0
 {
@@ -240,7 +243,10 @@ else if wepRRange[2] > 0
     p1min = floor(p1*(1-wepRPowRng[2]))
     p1max = ceil(p1*(1+wepRPowRng[2]))
     r1 = wepRRange[2]
+    load1 = wepReload[2]
     type = wepRType[2]
+    shots1 = maxShots[2]
+    loads1 = maxReloads[2]
 }
 else
 {
@@ -273,7 +279,7 @@ if r1 > 0
      
     setTooltip(1,string(damageType(type)+" Damage#"+string_format(wepPow[1],0,1)+" Base Damage#"+string_format((wepStrMult[1]*atkDPS*(s1+1)/5),0,1)+" POW"),3)
     setTooltip(2,"Reduce armour by "+string_format(pen1/4,0,1),1)
-    setTooltip(3,"Attack Speed in seconds",1)
+    setTooltip(3,"Attack Speed in seconds#"+string_format(load1/(haste+atkHaste),0,1)+" Reload Time#"+string(shots1)+" Shot#"+string(loads1)+" Reloads",4)
     setTooltip(4,"Shots suffer damage dropoff beyond weapon range",3)
     
     draw_set_halign(fa_center)
@@ -303,8 +309,8 @@ if r1 > 0
         draw_sprite(spr_bigArmIcon,4,ix+65,iy+45) 
     }
     
-    draw_text(ix+60,iy+56,string_format(s1/(haste+atkHaste),2,2))
-    draw_text(ix+60,iy+68,string(r1)+"m")
+    draw_text(ix+60,iy+56,string_format(s1/(haste+atkHaste),2,1)+" s")
+    draw_text(ix+60,iy+68,string(r1)+" m")
 }
 
 
@@ -353,13 +359,12 @@ draw_text(ix+60,iy+44,string_format(stmRegen/(1+enc*.01),0,1))
 draw_text(ix+60,iy+56,string(floor(enc))+" %")
 
 #define charInfoResist1
-for(i = 0; i < 7; i++)
+for(i = 0; i < 8; i++)
 {
     if resist[i] > 0
-    {setTooltip(i,"Reduce damage suffered by "+string(floor(100-(100/(1+resist[i]/5))))+" %",2)}
-    else{setTooltip(i,"Increase damage suffered by "+string(floor((100*(1-resist[i]/5))-100))+" %",2)}
+    {setTooltip(i,"Reduce damage suffered and negative effect duration by "+string(floor(100-(100/(1+resist[i]/5))))+" %",3)}
+    else{setTooltip(i,"Increase damage suffered and negative effect duration by "+string(floor((100*(1-resist[i]/5))-100))+" %",3)}
 }
-setTooltip(7,'',1)
 
 draw_set_halign(fa_left)
 draw_text(ix,iy+20,"Impact")
@@ -369,6 +374,7 @@ draw_text(ix,iy+56,"Fire")
 draw_text(ix,iy+68,"Cold")
 draw_text(ix,iy+80,"Lightning")
 draw_text(ix,iy+92,"Corrosion")
+draw_text(ix,iy+104,"Poison")
 
 draw_set_halign(fa_center)
 draw_text(ix+60,iy+20,string_format(resist[0],0,1))
@@ -378,32 +384,32 @@ draw_text(ix+60,iy+56,string_format(resist[3],0,1))
 draw_text(ix+60,iy+68,string_format(resist[4],0,1))
 draw_text(ix+60,iy+80,string_format(resist[5],0,1))
 draw_text(ix+60,iy+92,string_format(resist[6],0,1))
+draw_text(ix+60,iy+104,string_format(resist[7],0,1))
 
 #define charInfoResist2
-for(i = 7; i < 13; i++)
+for(i = 8; i < 13; i++)
 {
     if resist[i] > 0
-    {setTooltip(i-7,"Reduce damage suffered by "+string(floor(100-(100/(1+resist[i]/5))))+" %",2)}
-    else{setTooltip(i-7,"Increase damage suffered by "+string(floor((100*(1-resist[i]/5))-100))+" %",2)}
+    {setTooltip(i-8,"Reduce damage suffered and negative effect duration by "+string(floor(100-(100/(1+resist[i]/5))))+" %",3)}
+    else{setTooltip(i-8,"Increase damage suffered and negative effect duration by "+string(floor((100*(1-resist[i]/5))-100))+" %",3)}
 }
+setTooltip(5,'',1)
 setTooltip(6,'',1)
 setTooltip(7,'',1)
 
 draw_set_halign(fa_left)
-draw_text(ix,iy+20,"Poison")
-draw_text(ix,iy+32,"Blood")
-draw_text(ix,iy+44,"Spirit")
-draw_text(ix,iy+56,"Mind")
-draw_text(ix,iy+68,"Profane")
-draw_text(ix,iy+80,"Radiant")
+draw_text(ix,iy+20,"Physical")
+draw_text(ix,iy+32,"Mental")
+draw_text(ix,iy+44,"Force")
+draw_text(ix,iy+56,"Profane")
+draw_text(ix,iy+68,"Radiant")
 
 draw_set_halign(fa_center)
-draw_text(ix+60,iy+20,string_format(resist[7],0,1))
-draw_text(ix+60,iy+32,string_format(resist[8],0,1))
-draw_text(ix+60,iy+44,string_format(resist[9],0,1))
-draw_text(ix+60,iy+56,string_format(resist[10],0,1))
-draw_text(ix+60,iy+68,string_format(resist[11],0,1))
-draw_text(ix+60,iy+80,string_format(resist[12],0,1))
+draw_text(ix+60,iy+20,string_format(resist[8],0,1))
+draw_text(ix+60,iy+32,string_format(resist[9],0,1))
+draw_text(ix+60,iy+44,string_format(resist[10],0,1))
+draw_text(ix+60,iy+56,string_format(resist[11],0,1))
+draw_text(ix+60,iy+68,string_format(resist[12],0,1))
 
 
 #define newOption

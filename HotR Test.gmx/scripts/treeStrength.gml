@@ -56,6 +56,7 @@ sprite_index = ico_breaker
 image_index = 1
 name = 'Breaker'
 tooltip = 'MIGHTY attacks SUNDER 1, slower weapons may SUNDER more'
+ttLength = 3
 branch = treeStrength
 break
 
@@ -104,6 +105,7 @@ sprite_index = ico_smash
 image_index = 1
 name = 'Smash'
 tooltip = 'Attacks inflict +1.2 POW to high health foes (70%+)'
+ttLength = 2
 branch = treeStrength
 break
 
@@ -131,6 +133,7 @@ sprite_index = ico_readyForMore
 image_index = 1
 name = 'Ready for More'
 tooltip = 'Gain STRENGTH 2 on downing a foe'
+ttLength = 2
 branch = treeStrength
 break
 
@@ -138,6 +141,7 @@ case 2:
 return true
 break
 }
+
 #define branchFeatOfStrength
 //tree(how to use, rank)
 switch(argument0)
@@ -151,6 +155,7 @@ sprite_index = ico_featOfStrength
 image_index = 1
 name = 'Feat of Strength'
 tooltip = 'Active: Gain EMPOWER 4 for 5 seconds'
+ttLength = 2
 branch = treeStrength
 break
 
@@ -214,6 +219,7 @@ sprite_index = ico_sunderArmour
 image_index = 1
 name = 'Sunder Armour'
 tooltip = 'Special Attack: Inflict SUNDER'
+ttLength = 2
 branch = treeStrength
 break
 

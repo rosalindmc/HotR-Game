@@ -29,6 +29,7 @@ tooltip = 'Gain +2.0 melee skill and +8 dodge when engaged with a single foe and
 case 4: name = 'Master Dueling'
 tooltip = 'Gain +2.5 melee skill and +10 dodge when engaged with a single foe and no allies' break
 }
+ttLength = 3
 break
 
 case 2:
@@ -55,6 +56,7 @@ sprite_index = ico_focus
 image_index = 1
 name = 'Focus'
 tooltip = 'Gain 25% attack speed when engaged with a single foe and no allies'
+ttLength = 3
 branch = treeDueling
 break
 
@@ -87,6 +89,7 @@ sprite_index = ico_parry
 image_index = 1
 name = 'Parry'
 tooltip = 'Add the parry skill to your mainhand weapon and add block strength equal to 1/4 fellowship while not wielding a shield'
+ttLength = 5
 branch = treeDueling
 break
 
@@ -114,6 +117,7 @@ sprite_index = ico_riposte
 image_index = 1
 name = 'Riposte'
 tooltip = 'Gain CELERITY when attacked'
+ttLength = 2
 branch = treeDueling
 break
 
@@ -135,6 +139,7 @@ sprite_index = ico_flourish
 image_index = 1
 name = 'Flourish'
 tooltip = 'Special Melee: Attack dazes all adjacent foes other than the target'
+ttLength = 3
 branch = treeDueling
 break
 
@@ -156,6 +161,7 @@ sprite_index = ico_heroicStrike
 image_index = 1
 name = 'Heroic Strike'
 tooltip = 'Special Melee: Attack gains a bonus to skill from fellowship'
+ttLength = 3
 branch = treeDueling
 break
 
@@ -177,6 +183,7 @@ sprite_index = ico_footwork
 image_index = 1
 name = 'Footwork'
 tooltip = 'Action: Move and gain Skill'
+ttLength = 1
 branch = treeDueling
 break
 
@@ -198,6 +205,7 @@ sprite_index = ico_challenge
 image_index = 1
 name = 'Challenge'
 tooltip = 'Action: Force an adjacent foe to melee attack you on their next turn'
+ttLength = 3
 branch = treeDueling
 break
 

@@ -126,11 +126,11 @@ iSpr[4] = spr_chainMail
 iSkrt[1] = spr_none
 iSkrt[2] = spr_none
 iSkrt[3] = spr_none
-iDodge = 10
+iDodge = 15
 iArm = 6
-iProt = 0
+iProt = .1
 iEnc = 25
-iSResist = .05
+iSResist = 0
 
 switch(argument0)
 {
@@ -138,6 +138,7 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_chainShirt
 ttType = itemTypeArmour
 name = 'Chain Shirt'
+addItemTooltip('Soak','Soak#Attacks that fail to penetrate all of your armour have their damage reduced by a further 10 %',5,green)
 arm = iArm
 dodge = iDodge
 prot = iProt
@@ -192,11 +193,11 @@ iSpr[4] = spr_chainMail
 iSkrt[1] = spr_none
 iSkrt[2] = spr_chainTabard
 iSkrt[3] = spr_chainTabard
-iDodge = 0
+iDodge = 10
 iArm = 12
-iProt = 0
+iProt = .1
 iEnc = 40
-iSResist = .15
+iSResist = .2
 
 switch(argument0)
 {
@@ -204,6 +205,8 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_chainMail
 ttType = itemTypeArmour
 name = 'Chain Mail'
+addItemTooltip('Soak','Soak#Attacks that fail to penetrate all of your armour have their damage reduced by a further 10 %',5,green)
+addItemTooltip('Protection','Protection#Suppression Resistance increased by 20 %',3,green)
 arm = iArm
 dodge = iDodge
 prot = iProt
@@ -235,11 +238,11 @@ iSpr[4] = spr_plateMail
 iSkrt[1] = spr_none
 iSkrt[2] = spr_none
 iSkrt[3] = spr_none
-iDodge = -10
+iDodge = -5
 iArm = 10
 iProt = 0
 iEnc = 50
-iSResist = .1
+iSResist = 0
 
 switch(argument0)
 {
@@ -247,7 +250,7 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_breastPlate
 ttType = itemTypePlating
 name = 'Breastplate'
-addItemTooltip('Glancing','Glancing#Attacks against you have a 15% chance to lose all Penetration',3,green)
+addItemTooltip('Glancing','Glancing#Attacks against you have a 15 % chance to lose all Penetration',3,green)
 arm = iArm
 dodge = iDodge
 prot = iProt
@@ -280,68 +283,6 @@ areHitSize += 1
 armourApplyVis(c_white)
 
 //underHipsNum -= 1
-break
-}
-
-#define plateMail
-iSpr[1] = spr_chainMail
-iSpr[2] = spr_chainMail
-iSpr[3] = spr_chainMail
-iSpr[4] = spr_chainMail
-iSkrt[1] = spr_chainTabard
-iSkrt[2] = spr_chainTabard
-iSkrt[3] = spr_chainTabard
-iDodge = 0
-iArm = 24
-iProt = 0
-iEnc = 100
-iSResist = .30
-
-switch(argument0)
-{
-case 0:     //Called when the item creates an icon and tooltip
-sprite_index = ico_platemail1
-ttType = itemTypePlating
-name = 'Platemail'
-addItemTooltip('Glancing','Glancing# Attacks against you have a 15% chance to lose all Penetration',3,green)
-arm = iArm
-dodge = iDodge
-prot = iProt
-enc = iEnc
-itemProf[0] = heavyArmourProficiency
-sResist = iSResist
-break
-
-case 1:     //Called when the item is equipped by a model.
-break
-
-case 2:     //Called when ?
-dodge += iDodge
-armMax += iArm
-prot += iProt
-enc += iEnc
-sResist += iSResist
-
-rigid = true
-
-//Skill
-areHit[areHitSize,0] = glancing
-areHit[areHitSize,1] = 'Glancing'
-areHit[areHitSize,2] = 15
-areHit[areHitSize,3] = false
-areHit[areHitSize,4] = false
-areHit[areHitSize,5] = false
-areHitSize += 1
-
-armourApplyVis(c_white)
-iSpr[1] = spr_plateMail
-iSpr[2] = spr_plateMail
-iSpr[3] = spr_plateMail
-iSpr[4] = spr_plateMail
-iSkrt[1] = spr_none
-iSkrt[2] = spr_none
-iSkrt[3] = spr_none
-armourApplyVis(c_white)
 break
 }
 

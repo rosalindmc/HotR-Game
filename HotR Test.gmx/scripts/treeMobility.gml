@@ -26,6 +26,7 @@ tooltip = 'Gain +2.0 sprint speed and sprinting costs less stamina' break
 case 4: name = 'Master Mobility'
 tooltip = 'Gain +2.5 sprint speed and sprinting costs less stamina' break
 }
+ttLength = 2
 break
 
 case 2:
@@ -54,6 +55,7 @@ sprite_index = ico_evasion
 image_index = 1
 name = 'Evasion'
 tooltip = 'Gain +15% dodge chance while BOLD.  Do not lose BOLD when you dodge.'
+ttLength = 3
 branch = treeMobility
 break
 
@@ -81,6 +83,7 @@ sprite_index = ico_lightningStrike
 image_index = 1
 name = 'Lightning Strike'
 tooltip = 'Inflict increased melee damage to foes with lower dodge chance'
+ttLength = 3
 branch = treeMobility
 break
 
@@ -103,6 +106,7 @@ sprite_index = ico_marathon
 image_index = 1
 name = 'Marathon'
 tooltip = '10% increased movement Rate. Reduce all stamina costs from moving by 80%'
+ttLength = 3
 branch = treeMobility
 break
 
@@ -130,6 +134,7 @@ sprite_index = ico_hardTarget
 image_index = 1
 name = 'Hard Target'
 tooltip = 'Gain +10% dodge chance when moving'
+ttLength = 2
 branch = treeMobility
 break
 
@@ -157,6 +162,7 @@ sprite_index = ico_momentum
 image_index = 1
 name = 'Momentum'
 tooltip = 'Gain +2.0 POW to melee attacks while BOLD'
+ttLength = 2
 branch = treeMobility
 break
 
@@ -164,6 +170,7 @@ case 2:
 return true
 break
 }
+
 #define branchBurstOfSpeed
 //tree(how to use, rank)
 switch(argument0)
@@ -177,6 +184,7 @@ sprite_index = ico_burstOfSpeed
 image_index = 1
 name = 'Burst of Speed'
 tooltip = 'Active: Move very quickly'
+ttLength = 1
 branch = treeMobility
 break
 
@@ -198,6 +206,7 @@ sprite_index = ico_tumble
 image_index = 1
 name = 'Tumble'
 tooltip = 'Active: Move and ignore ZoC'
+ttLength = 2
 branch = treeMobility
 break
 

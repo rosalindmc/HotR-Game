@@ -1,9 +1,13 @@
 //Temp Party Action Confirm
+eventStart(restTempScript,0)
 
 with(obj_partyActor)
 {
-    //Run Action Script
-    script_execute(inSlot.partyAction,1,o)
+    //Run Action Scripts
+    with(obj_event)
+    {
+        script_execute(other.inSlot.partyAction,1,other.o)
+    }
     //Later Replace with adding these things to some sort of que
 }
 
@@ -14,4 +18,3 @@ with(obj_partyActor)
 //Destroy the sheet and end turn
 scr_inGameMenu()
 
-eventStart(restTempScript,0)

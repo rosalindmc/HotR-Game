@@ -20,6 +20,7 @@ tooltip = 'Inspire is 20% stronger.' break
 case 4: name = 'Master Diplomacy'
 tooltip = 'Inspire is 30% stronger.' break
 }
+ttLength = 1
 break
 
 case 2:

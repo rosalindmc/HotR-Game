@@ -141,6 +141,7 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_maul
 name = iName
 ttType = itemTypeWeapon
+//Replace Skull Crack with Knock Prone Skill
 addItemTooltip('Skill - Skull Crack','Skull Crack#On Hit: 10% chance to STUN for 2 seconds. STUNNED characters have there action delayed for the duration, cannot dodge and removes zone of control',6,c_yellow)
 addItemTooltip('Hefty','Hefty#This weapon is 20% more effected by Might and uses 20% more stamina to attack',4,green)
 dmg = iDmg

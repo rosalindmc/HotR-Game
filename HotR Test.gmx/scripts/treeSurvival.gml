@@ -20,6 +20,7 @@ tooltip = 'Foraging and Hunting yield better results. +2.0 skill when fighting a
 case 4: name = 'Master Survival'
 tooltip = 'Foraging and Hunting yield better results. +2.5 skill when fighting animals' break
 }
+ttLength = 3
 break
 
 case 2:

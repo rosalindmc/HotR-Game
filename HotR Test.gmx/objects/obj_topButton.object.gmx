@@ -109,7 +109,10 @@ else
             <string>x = xstart+view_xview[]
 y = ystart+view_yview[]+dropDown
 
-draw_self()
+if global.inMenu != 2
+{
+    draw_self()
+}
 </string>
           </argument>
         </arguments>

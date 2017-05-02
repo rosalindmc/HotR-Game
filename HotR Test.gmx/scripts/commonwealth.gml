@@ -125,7 +125,7 @@ money = 0.00
 
 //Inventory
 ii = 0
-repeat(choose(120))
+repeat(choose(40))
 {
     inventory[ii,0] = choose(
     choose(knife,dagger,epee,armingSword,greatSword,longSword,shortSword,sabre,rapier,bastardSword),
@@ -145,7 +145,7 @@ repeat(choose(120))
 }
 
 //Create Party
-repeat(7)
+repeat(5)
 {
     createCharacterSheet(id,cwAdventurer)
 }

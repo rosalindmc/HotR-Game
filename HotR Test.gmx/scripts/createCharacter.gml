@@ -169,7 +169,7 @@ switch(size)
     case 1:
     hipsImage = 0
     bodyImage = 0
-    bodyAdjust = choose(0,-1)
+    bodyAdjust = -1
     bodyOffset = 6
     chstAdjust = 0
     break
@@ -187,7 +187,7 @@ switch(size)
     case 3:
     hipsImage = 4
     bodyImage = choose(2,4)
-    bodyAdjust = choose(0,-1,-1)
+    bodyAdjust = -1
     bodyOffset = choose(6,6,6,7)
     break
     

@@ -20,6 +20,7 @@ tooltip = 'Increase the party healing rate by 80%. Patch Up, Cure and Revive 100
 case 4: name = 'Master Medicine'
 tooltip = 'Increase the party healing rate by 100%. Patch Up, Cure and Revive 150% faster' break
 }
+ttLength = 3
 break
 
 case 2:

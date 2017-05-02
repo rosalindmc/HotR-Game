@@ -266,3 +266,22 @@ if target.immune[type] = true or (target.immune[typeImpact] = false and target.r
     }
 }
 }
+#define wepSunder
+//wepSunder(name,bonus,false,hand,false,tooltip)
+
+//Additional Conditioners
+if atkHand = argument3
+{
+    if argument5 = false    //On Proc
+    {
+        target.arm = max(0,target.arm-argument1)
+                    
+        popup(argument0,id)
+    }
+    else if min(100,floor(argument1+((skill-target.mSkill)*5))) > 0                        //On Tooltip
+    {
+        obj_control.tooltipColour[obj_control.tooltipLength] = green
+        obj_control.tooltipText[obj_control.tooltipLength] = string(argument0)
+        obj_control.tooltipLength += 1    
+    }
+}

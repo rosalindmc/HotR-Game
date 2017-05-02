@@ -76,7 +76,7 @@ switch(argument3)
     ii.colour2 = c_white
     ii.text = string(iii)+' Pierce'
     break
-    case typeBlood:
+    case typePhysical:
     ii.colour1 = dkRed
     ii.colour2 = c_red
     ii.text = string(iii)+' Blood'

@@ -20,6 +20,7 @@ tooltip = 'Craft and modify potions, poisons and bombs' break
 case 4: name = 'Master Alchemy'
 tooltip = 'Craft and modify potions, poisons and bombs' break
 }
+ttLength = 2
 break
 
 case 2:

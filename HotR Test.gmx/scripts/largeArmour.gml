@@ -9,11 +9,11 @@ iSpr[4] = spr_warriorChainPants
 iSkrt[1] = spr_none
 iSkrt[2] = spr_none
 iSkrt[3] = spr_none
-iDodge = 0
+iDodge = 10
 iArm = 16
-iProt = 0
+iProt = .1
 iEnc = 40
-iSResist = .20
+iSResist = .2
 
 switch(argument0)
 {
@@ -21,7 +21,9 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_chainMail
 ttType = itemTypeArmour
 name = 'Chain Mail'
-arm = iArm
+name = 'Chain Mail'
+addItemTooltip('Soak','Soak#Attacks that fail to penetrate all of your armour have their damage reduced by a further 10 %',5,green)
+addItemTooltip('Protection','Protection#Suppression Resistance increased by 20 %',3,green)arm = iArm
 dodge = iDodge
 prot = iProt
 enc = iEnc
@@ -67,7 +69,7 @@ iDodge = -10
 iArm = 12
 iProt = 0
 iEnc = 50
-iSResist = .15
+iSResist = .2
 
 switch(argument0)
 {
@@ -75,7 +77,8 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_platemail3
 ttType = itemTypePlating
 name = 'Black Plate'
-addItemTooltip('Glancing','Glancing#Attacks against you have a 15% chance to lose all Penetration',3,green)
+addItemTooltip('Protection','Protection#Suppression Resistance increased by 20 %',3,green)
+addItemTooltip('Glancing','Glancing#Attacks against you have a 15 % chance to lose all Penetration',3,green)
 arm = iArm
 dodge = iDodge
 prot = iProt

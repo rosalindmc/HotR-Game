@@ -205,7 +205,7 @@ threat = false
 rangeAttack = false
 dodge = 0
 armMax = 0
-prot = 0
+prot = .2
 enc = 0
 reach = 1.5
 rigid = false
@@ -283,11 +283,19 @@ script_execute(o.invSlot[8,3],2)
 script_execute(o.invSlot[8,4],2)
 postArmourCustom()
 
+//Post Equip
 if o.invSlot[4,0] = emptySlot
 {
     dodge += 20
 }
 
+//Resist
+resist[typePoison] += (might-8)/2
+resist[typePhysical] += (might-8)/2
+resist[typeMental] += (will-8)/2
+resist[typeForce] += (grace-8)/2
+
+enc /= 1+(.05*(might-8))
 
 #define iCTraits
 //Talents

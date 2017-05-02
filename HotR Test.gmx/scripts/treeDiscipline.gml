@@ -30,6 +30,7 @@ tooltip = 'Gain 20% damage mitigation and 40% suppression resistance' break
 case 4: name = 'Master Discipline'
 tooltip = 'Gain 25% damage mitigation and 50% suppression resistance' break
 }
+ttLength = 3
 break
 
 case 2:
@@ -55,6 +56,7 @@ sprite_index = ico_blockTraining
 image_index = 1
 name = 'Block Training'
 tooltip = '+1 Maximum Block, Block 50% more damage and 25% more frequently'
+ttLength = 3
 branch = treeDiscipline
 break
 
@@ -76,6 +78,7 @@ sprite_index = ico_confidence
 image_index = 1
 name = 'Confidence'
 tooltip = 'Gain life equal to your armour value (Max 3)'
+ttLength = 2
 branch = treeDiscipline
 break
 
@@ -103,6 +106,7 @@ sprite_index = ico_shakeItOff
 image_index = 1
 name = 'Shake it Off'
 tooltip = '20% chance each second to reduce duration of debuffs applied to you by 5 seconds'
+ttLength = 3
 branch = treeDiscipline
 break
 
@@ -110,6 +114,7 @@ case 2:
 return true
 break
 }
+
 #define branchArmourTraining
 //tree(how to use, rank)
 switch(argument0)
@@ -124,6 +129,7 @@ sprite_index = ico_armourTraining
 image_index = 1
 name = 'Armour Training'
 tooltip = 'Reduce armour encumberance by 33% and increase armour by 1/2'
+ttLength = 3
 branch = treeDiscipline
 break
 
@@ -151,6 +157,7 @@ sprite_index = ico_counterAttack
 image_index = 1
 name = 'Counter Attack'
 tooltip = 'Blocking has 20% chance to make your next turn come 3 seconds faster'
+ttLength = 3
 branch = treeDiscipline
 break
 
@@ -172,6 +179,7 @@ sprite_index = ico_holdTheLine
 image_index = 1
 name = 'Hold The Line'
 tooltip = 'Active: Gain a block for each adjacent foe'
+ttLength = 2
 branch = treeDiscipline
 break
 
@@ -193,6 +201,7 @@ sprite_index = ico_guardedAttack
 image_index = 1
 name = 'Guarded Attack'
 tooltip = 'Special Melee: Make a slow attack and gain a Block'
+ttLength = 2
 branch = treeDiscipline
 break
 

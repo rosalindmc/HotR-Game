@@ -52,6 +52,7 @@ wepRStamina[i] = iStrMult*2
 wepRPen[i] = iPen
 wepRSpeed[i] = iSpd
 wepRRange[i] = iRng
+wepReload[i] = 0
 
 rangeAttack = true
 autoLoad = true
@@ -122,6 +123,7 @@ wepRStamina[i] = iStrMult*1.5
 wepRPen[i] = iPen
 wepRSpeed[i] = iSpd
 wepRRange[i] = iRng
+wepReload[i] = 0
 
 rangeAttack = true
 autoLoad = true
@@ -227,7 +229,7 @@ iName = 'Light Crossbow'
 switch(argument0)
 {
 case 0:     //Called when the item creates an icon and tooltip
-sprite_index = ico_crossbow
+sprite_index = ico_lgtCrossbow
 name = iName
 ttType = itemTypeRanged
 addItemTooltip('Skill - Stagger','Stagger#On Hit: 10% chance to DAZE for 5 seconds. DAZED characters have a 50% miss chance',5,c_yellow)

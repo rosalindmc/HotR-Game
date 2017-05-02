@@ -11,9 +11,9 @@ case typeCold: return('Cold') break
 case typeLightning: return('Lightning') break
 case typeCorrosion: return('Corrosion') break
 case typePoison: return('Poison') break
-case typeBlood: return('Blood') break
-case typeSpirit: return('Spirit') break
-case typeMind: return('Mind') break
+case typePhysical: return('Blood') break
+case typeMental: return('Spirit') break
+case typeForce: return('Force') break
 case typeProfane: return('Profane') break
 case typeRadiant: return('Radiant') break
 }

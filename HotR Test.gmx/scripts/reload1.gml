@@ -64,7 +64,7 @@ switch(argument0)
     i.shots[2] = i.maxShots[2]
     i.reloads[2] -= 1
     i.stm -= i.wepReloadStamina[2]
-    endTurn(i.wepReload[2]/i.haste)
+    endTurn(i.wepReload[2]/(i.haste+i.atkHaste))
     break
     
     //Run 1 to execute
@@ -77,7 +77,7 @@ switch(argument0)
     tooltipTitle = 'Reload '+i.wepName[2]
     abilityTT = 'Action#Reload your pistol'
     abilityTTLength = 1
-    global.testSlot.delayAdd = i.wepReload[2]/i.haste
+    global.testSlot.delayAdd = i.wepReload[2]/(i.haste+i.atkHaste)
     initiativeSlotAnticipate()
     break
     
@@ -117,7 +117,7 @@ switch(argument0)
     i.shots[3] = i.maxShots[3]
     i.reloads[3] -= 1
     i.stm -= i.wepReloadStamina[1]
-    endTurn(i.wepReload[1]/i.haste)
+    endTurn(i.wepReload[1]/(i.haste+i.atkHaste))
     break
     
     //Run 1 to execute
@@ -130,7 +130,7 @@ switch(argument0)
     tooltipTitle = 'Reload '+i.wepName[3]
     abilityTT = 'Action#Reload your ranged weapon'
     abilityTTLength = 1
-    global.testSlot.delayAdd = i.wepReload[1]/i.haste
+    global.testSlot.delayAdd = i.wepReload[1]/(i.haste+i.atkHaste)
     initiativeSlotAnticipate()
     break
     

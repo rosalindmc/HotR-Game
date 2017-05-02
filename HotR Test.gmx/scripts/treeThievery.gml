@@ -20,6 +20,7 @@ tooltip = 'Pilfer, Picklock, and Disarm Traps 100% faster' break
 case 4: name = 'Master Thievery'
 tooltip = 'Pilfer, Picklock, and Disarm Traps 150% faster' break
 }
+ttLength = 2
 break
 
 case 2:

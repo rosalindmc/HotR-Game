@@ -15,6 +15,7 @@ global.eventActor.inventory[ii,3] = argument3
 global.eventActor.inventory[ii,4] = argument4
 global.eventActor.inventorySize += 1
 
+global.charSelect = global.eventCharacter 
 script_execute(argument0,0)
 
 createNotification(name,sprite_index,argument1)
@@ -42,3 +43,20 @@ createNotification('Lost $'+string_format(ii,2,2),ico_money,1)
 global.eventCharacter.experience += argument0
 createNotification(string(global.eventCharacter.firstName)+' +'+string_format(argument0,2,1)+'xp',ico_experience,0)
 checkLevelUp(global.eventCharacter)
+#define itemList
+return choose(
+    choose(knife,dagger,epee,armingSword,greatSword,longSword,shortSword,sabre,rapier,bastardSword),
+    choose(handAxe,battleAxe,greatAxe),
+    choose(halberd,shortSpear,spear,pike),
+    choose(maul,lightMace,mace,hammer,warhammer,staff),
+    choose(chainMail,chainShirt,breastPlate,robe,dress),
+    choose(heaterShield,squareShield,roundShield),
+    choose(shortBow,lightCrossbow,crossbow,longBow),
+    choose(automatic,revolver,handCannon,repeaterCarbine,carbine,longRifle,recoilessRifle))
+
+
+#define gainPartyMember
+//Culture
+createCharacterSheet(global.eventActor,argument0)
+
+createNotification(i.firstName,ico_bold,0)

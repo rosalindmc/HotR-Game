@@ -33,6 +33,7 @@ tooltip = 'Increased detection range and +2.0 POW on backstab and against helple
 case 4: name = 'Master Insight'
 tooltip = 'Increased detection range and +2.5 POW on backstab and against helpless foes' break
 }
+ttLength = 3
 break
 
 case 2:
@@ -56,6 +57,7 @@ sprite_index = ico_vigiliance
 image_index = 1
 name = 'Vigiliance'
 tooltip = 'Larger front arc'
+ttLength = 1
 branch = treeInsight
 break
 
@@ -83,6 +85,7 @@ sprite_index = ico_passArmour
 image_index = 1
 name = 'Pass Armour'
 tooltip = 'Flanking attacks have a chance to ignore armour'
+ttLength = 2
 branch = treeInsight
 break
 
@@ -110,6 +113,7 @@ sprite_index = ico_heightAdvantage
 image_index = 1
 name = 'Height Advantage'
 tooltip = '+1.0 POW against foes at a lower elevation'
+ttLength = 2
 branch = treeInsight
 break
 
@@ -117,6 +121,7 @@ case 2:
 return true
 break
 }
+
 #define branchAssessSituation
 //tree(how to use, rank)
 switch(argument0)
@@ -130,6 +135,7 @@ sprite_index = ico_assessSituation
 image_index = 1
 name = 'Assess Situation'
 tooltip = 'Active: Gain a Block and increased detection range and front arc'
+ttLength = 3
 branch = treeInsight
 break
 
@@ -151,6 +157,7 @@ sprite_index = ico_preciseStrike
 image_index = 1
 name = 'Precise Strike'
 tooltip = 'Special Attack: Make an attack with bonus POW and PEN based on cunning'
+ttLength = 3
 branch = treeInsight
 break
 
@@ -194,6 +201,7 @@ sprite_index = ico_sap
 image_index = 1
 name = 'Sap'
 tooltip = 'Active: Stun an adjacent foe, only usable while not in melee threat'
+ttLength = 3
 branch = treeInsight
 break
 

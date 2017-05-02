@@ -107,6 +107,7 @@ sprite_index = ico_repeater
 name = iName
 ttType = itemTypeRanged
 addItemTooltip('Skill - Cripple','Cripple#On Wound: 10% chance to CRIPPLE for 10 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
+addItemTooltip('Auto Burst 5','Auto Burst 5#Can fire a fully automatic burst of 5 shots',3,c_orange)
 addItemTooltip('Mechanical','Mechanical#Weapon damage is unaffected by Might',3,green)
 dmg = iDmg
 dmgType = iType
@@ -469,7 +470,8 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_recoiless
 name = iName
 ttType = itemTypeRanged
-addItemTooltip('Skill - Shatter','Shatter#On Hit: 10% chance to SUNDER 3',3,c_yellow)
+//Add Knock Prone Skill
+addItemTooltip('Sunder 2','Sunder 2#On Hit: Break 2 armour',3,green)
 addItemTooltip('High Impact','High Impact#This weapon inflicts Impact damage if it is more advantageous',4,green)
 addItemTooltip('Mechanical','Mechanical#Weapon damage is unaffected by Might',3,green)
 dmg = iDmg
@@ -513,10 +515,10 @@ greatWeapon = true
 weaponSprite[i] = iSpr
 
 //Skill
-onHit[onHitSize,0] = wepsklShatter
-onHit[onHitSize,1] = 'Shatter'
-onHit[onHitSize,2] = 10
-onHit[onHitSize,3] = 12
+onHit[onHitSize,0] = wepSunder
+onHit[onHitSize,1] = 'Sunder'
+onHit[onHitSize,2] = 8
+onHit[onHitSize,3] = false
 onHit[onHitSize,4] = i
 onHit[onHitSize,5] = false
 onHitSize += 1

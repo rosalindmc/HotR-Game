@@ -27,6 +27,7 @@ tooltip = 'Gain the Hide ability and inflict +4 sneak attack damage' break
 case 4: name = 'Master Subterfuge'
 tooltip = 'Gain the Hide ability and inflict +5 sneak attack damage' break
 }
+ttLength = 3
 break
 
 case 2:
@@ -50,6 +51,7 @@ sprite_index = ico_shadowStep
 image_index = 1
 name = 'Shadow Step'
 tooltip = 'Gain +25% Movement while STEALTHED'
+ttLength = 2
 branch = treeSubterfuge
 break
 
@@ -71,6 +73,7 @@ sprite_index = ico_incognito
 image_index = 1
 name = 'Incognito'
 tooltip = 'Whenever you gain STEALTH, aall adjacent unengaged allies also gains STEALTH'
+ttLength = 4
 branch = treeSubterfuge
 break
 
@@ -92,6 +95,7 @@ sprite_index = ico_ambush
 image_index = 1
 name = 'Ambush'
 tooltip = 'Attacking from STEALTH grants CELERITY'
+ttLength = 2
 branch = treeSubterfuge
 break
 
@@ -119,6 +123,7 @@ sprite_index = ico_shadowStrike
 image_index = 1
 name = 'Shadow Strike'
 tooltip = 'Gain STEALTH on downing a foe'
+ttLength = 2
 branch = treeSubterfuge
 break
 
@@ -140,6 +145,7 @@ sprite_index = ico_fightDirty
 image_index = 1
 name = 'Fight Dirty'
 tooltip = 'Action: BLIND an adjacent foe, must not be using a shield or dual wielding'
+ttLength = 3
 branch = treeSubterfuge
 break
 
@@ -161,6 +167,7 @@ sprite_index = ico_vanish
 image_index = 1
 name = 'Vanish'
 tooltip = 'Action: Gain Stealth, even while seen'
+ttLength = 2
 branch = treeSubterfuge
 break
 
@@ -182,6 +189,7 @@ sprite_index = ico_debilitate
 image_index = 1
 name = 'Debilitate'
 tooltip = 'Special Attack: Attack gains STUN'
+ttLength = 2
 branch = treeSubterfuge
 break
 

@@ -20,6 +20,7 @@ tooltip = 'City actions are safer. 20% better haggling' break
 case 4: name = 'Master Streetwise'
 tooltip = 'City actions are safer. 25% better haggling' break
 }
+ttLength = 2
 break
 
 case 2:

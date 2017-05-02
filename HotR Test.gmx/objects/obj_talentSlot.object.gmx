@@ -30,6 +30,7 @@ image_speed = 0
 hover = false
 name = -4
 tooltip = -4
+ttLength = 4
 tt = 0
 </string>
           </argument>
@@ -95,22 +96,22 @@ if tooltip != -4 and tt != 0
     draw_set_alpha(tt)
     
     draw_set_colour(c_dkgray)
-    draw_rectangle(x+10,y-10,x+130,y+90,false)
-    draw_set_colour(c_ltgray)
-    draw_rectangle(x+10,y-10,x+130,y+90,true)
+    draw_rectangle(x+10,y-10,x+130,y+14+(ttLength*12),false)
+    draw_set_colour(c_black)
+    draw_rectangle(x+10,y-10,x+130,y+14+(ttLength*12),true)
     
     draw_set_colour(c_white)
     draw_set_halign(fa_left)
     draw_set_valign(fa_top)
     
     ix = x+15
-    iy = y-8
+    iy = y-6
     
     draw_set_font(fnt_tiny)
     draw_text_ext(ix,iy,name,16,110)
     iy += 16
     draw_set_font(fnt_tinyText)
-    draw_text_ext(ix,iy,tooltip,16,110)
+    draw_text_ext(ix,iy,tooltip,12,110)
     draw_set_alpha(1)
 }
 </string>
