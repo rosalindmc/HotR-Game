@@ -31,7 +31,7 @@ with(i)
     }
     else
     {
-        atkHand += dualWield
+        atkHand = 1+dualWield
         rDamage()
         p = wepRPow[atkHand]+(wepRStrMult[atkHand]*atkDPS*s)
         p/= max(rangeDropoff(id,target)/(wepRRange[atkHand]*metre*1.5),1)
@@ -64,7 +64,25 @@ with(i)
         pMin = p*(1-wepRPowRng[atkHand])
         pMax = p*(1+wepRPowRng[atkHand])    
     }    
+             
+    //Block
+    if target.blocks >= 1 and backstab = false and floor(100-((skill-target.mSkill)*3)) > 0 and (mle = true or target.hasShield = true)
+    {
+        bMin = pMin+target.blockStr
+        bMax = pMax+target.blockStr
         
+        with(target)
+        {
+            triggerOnBlock(true)   
+        }
+        
+        if mle = false
+        {
+            bMin += pMin*2
+            bMax += pMax*2
+        }
+    }
+     
     //Mult Pow
     p *= pMult
     pMin *= pMult
@@ -72,6 +90,20 @@ with(i)
     
     //Armour and Penetration
     a = a*.25
+    
+    if (a*.25)-pen > 0  //Can Penetrate
+    {
+        pMin /= 1+target.prot
+    }
+    else if a-pen > 0   //Always Penetrates
+    {
+        //No Adjustment
+    }
+    else                //Can't Penetrate
+    {
+        pMin /= 1+target.prot
+        pMax /= 1+target.prot
+    }
     
     p = max(p-a,0)
     pMin = max(pMin-max(a-pen,0),0)
@@ -99,22 +131,26 @@ with(i)
     pMin = floor(pMin)
     pMax = ceil(pMax)
     
-    if target.immune[type] = false
+    if target.immune[type] = false and pMax > 0
     {
         triggerOnWound(true)
     }
     
     if target.active = true
     {
+        if pMax > target.life
+        {
+            triggerOnDown(true)
+        }
+        
         //Suppress
         target.initSlot.delayAdd += max(0,((2.0/target.sResist))-(target.fSuppression+target.suppression))    
         target.fSuppression += max(0,((2.0/target.sResist))-(target.fSuppression+target.suppression))    
     }
 }
 
-
 if i.missChance >= 1{extraTT += 1}
-if i.dge > 0 and i.backstab = false{extraTT += 1}
+if floor(i.dge) > 0 and i.backstab = false{extraTT += 1}
 if target.blocks >= 1 and i.backstab = false and floor(100-((i.skill-target.mSkill)*3)) > 0 and (i.mle = true or target.hasShield = true){extraTT += 1}
 if i.mle = false{if max(rangeDropoff(i,target)/(i.wepRRange[i.atkHand]*metre*1.5),1) > 1{extraTT += 1}}
 
@@ -139,14 +175,9 @@ if i.missChance >= 1
     draw_text(ix+5,iy,string(floor(i.missChance))+' % Miss')
     iy += 14  
 }
-if i.dge > 0 and i.backstab = false
+if floor(i.dge) > 0 and i.backstab = false
 {
     draw_text(ix+5,iy,string(floor(i.dge))+' % Dodge')
-    iy += 14  
-}
-if target.blocks >= 1 and i.backstab = false and floor(100-((i.skill-target.mSkill)*3)) > 0 and (i.mle = true or target.hasShield = true)
-{
-    draw_text(ix+5,iy,string(floor(100-(max(0,(i.skill-target.mSkill)*3))))+' % Block '+string(floor((i.p+target.blockStr)/4)))
     iy += 14  
 }
 if i.mle = false
@@ -157,6 +188,11 @@ if i.mle = false
         draw_text(ix+5,iy,string_format(100-(100/(rangeDropoff(i,target)/(i.wepRRange[i.atkHand]*metre*1.5))),0,0)+' % Range Dropoff')
         iy += 14  
     }
+}
+if target.blocks >= 1 and i.backstab = false and floor(100-((i.skill-target.mSkill)*3)) > 0 and (i.mle = true or target.hasShield = true)
+{
+    draw_text(ix+5,iy,string(floor(100-(max(0,(i.skill-target.mSkill)*3))))+' % Block '+string(floor((i.b)/4)))
+    iy += 14  
 }
 if tooltipLength != 0
 {

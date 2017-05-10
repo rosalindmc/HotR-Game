@@ -6,7 +6,8 @@ background_visible[0] = false
 global.attacker = argument0
 global.defender = argument1
 global.battlefield = argument2
-global.mapGen = argument3
+global.mapGen = argument3  
+global.inCombat = true
 
 instance_deactivate_object(obj_overworldParent)
 global.controlObject = instance_create(0,0,obj_control)

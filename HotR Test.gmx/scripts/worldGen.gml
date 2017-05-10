@@ -331,4 +331,8 @@ with(obj_travelNode)
 }
 
 #define settlementNameGen
-return choose("Wolf","North","East","River","Wood","High","Mountain")+choose("watch","burg","shire","border","mount")
+return choose("","","","","","","","","","","Middle ","North ","West ","East ","South ","Big ","Little ","Greater ",
+            "Lesser ","New ","Old ","High ","Upper ","Lower ")
++choose("Storm","Wolf","New","Wild","North","East","West","South","River","Snow","Ice","Sand","Wood","Moon","Noon",
+            "High","Badger","Mountain","Shore")
++choose("","gate","watch","burg","shire","border","mount","marsh","flower","cat","wood","sun","dusk","dawn","wolf","shore")

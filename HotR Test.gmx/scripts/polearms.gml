@@ -18,8 +18,8 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_shortSpear
 name = iName
 ttType = itemTypeWeapon
-addItemTooltip('Skill - Impale','Impale#On Wound: 10% chance to IMMOBILIZE for 10 seconds. IMMOBILIZED characters cannot move or dodge and have no zone of control',6,c_yellow)
-addItemTooltip('Elegant','Elegant#This weapon is 20% less effected by Might and uses 20% less stamina to attack',4,green)
+addItemTooltip('Skill - Impale','Impale#On Wound: 10 % chance to IMMOBILIZE for 10 seconds. IMMOBILIZED characters cannot move or dodge and have no zone of control',6,c_yellow)
+addItemTooltip('Elegant','Elegant#This weapon is 20 % less effected by Might and uses 20 % less stamina to attack',4,green)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
@@ -80,8 +80,8 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_spear
 name = iName
 ttType = itemTypeWeapon
-addItemTooltip('Skill - Impale','Impale#On Wound: 15% chance to IMMOBILIZE for 10 seconds. IMMOBILIZED characters cannot move or dodge and have no zone of control',6,c_yellow)
-addItemTooltip('Elegant','Elegant#This weapon is 20% less effected by Might and uses 20% less stamina to attack',4,green)
+addItemTooltip('Skill - Impale','Impale#On Wound: 15 % chance to IMMOBILIZE for 10 seconds. IMMOBILIZED characters cannot move or dodge and have no zone of control',6,c_yellow)
+addItemTooltip('Elegant','Elegant#This weapon is 20 % less effected by Might and uses 20 % less stamina to attack',4,green)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
@@ -143,8 +143,8 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_pike
 name = iName
 ttType = itemTypeWeapon
-addItemTooltip('Skill - Impale','Impale#On Wound: 20% chance to IMMOBILIZE for 10 seconds. IMMOBILIZED characters cannot move or dodge and have no zone of control',6,c_yellow)
-addItemTooltip('Elegant','Elegant#This weapon is 20% less effected by Might and uses 20% less stamina to attack',4,green)
+addItemTooltip('Skill - Impale','Impale#On Wound: 20 % chance to IMMOBILIZE for 10 seconds. IMMOBILIZED characters cannot move or dodge and have no zone of control',6,c_yellow)
+addItemTooltip('Elegant','Elegant#This weapon is 20 % less effected by Might and uses 20 % less stamina to attack',4,green)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
@@ -206,7 +206,7 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_halberd
 name = iName
 ttType = itemTypeWeapon
-addItemTooltip('Skill - Cripple','Cripple#On Wound: 10% chance to CRIPPLE for 15 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
+addItemTooltip('Skill - Cripple','Cripple#On Wound: 10 % chance to CRIPPLE for 15 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
 addItemTooltip('Stabbing Point','Stabbing Point#This weapon inflicts Pierce damage if it is more advantageous',4,c_green)
 dmg = iDmg
 dmgType = iType

@@ -11,7 +11,7 @@ switch(argument0)
 {
     //Run 0 when a player selects the command
     case 0:
-    applyStatusEffect(stealth,i,1,15*i.spellDur)
+    applyStatusEffect(stealth,i,1,15*i.spellDur,-1)
     i.abilityCD[global.actionNum] = 15/i.spellCD
     endTurn(1.0)
     popup('Hide',i)
@@ -58,7 +58,7 @@ switch(argument0)
 {
     //Run 0 when a player selects the command
     case 0:
-    applyStatusEffect(stealth,i,1,15*i.spellDur)
+    applyStatusEffect(stealth,i,1,15*i.spellDur,-1)
     i.abilityCD[global.actionNum] = 60/i.spellCD
     actionBarReset()
     popup('Vanish',i)
@@ -115,7 +115,7 @@ switch(argument0)
         i.target = cHover.occupant
         
         //Add grapple animation eventually
-        applyStatusEffect(blind,i.target,100,5*i.spellDur)
+        applyStatusEffect(blind,i.target,100,5*i.spellDur,-1)
         i.abilityCD[global.actionNum] = 30/i.spellCD
         endTurn(1.0/i.haste)
         popup('Fight Dirty',i)
@@ -210,7 +210,7 @@ var i = global.control
 
 with(obj_character)
 {
-    if team != i.team and bold != 0
+    if team != i.team and bold != 0 and active = true
     {
     if abs(angle_difference(point_direction(x,0,i.x,i.y*2),facing)) < arc
     {

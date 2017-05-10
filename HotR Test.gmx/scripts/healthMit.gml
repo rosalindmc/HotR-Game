@@ -108,7 +108,7 @@ if argument5 = false    //On Proc
 {
     if 1+irandom(99) <= argument2
     {
-        applyStatusEffect(argument1,id,argument3,argument4*spellDur)
+        applyStatusEffect(argument1,id,argument3,argument4*spellDur,-1)
         popup(argument0,id)
     }
 }
@@ -128,7 +128,7 @@ if argument5 = false    //On Proc
 {
     if 1+irandom(99) <= argument2
     {
-        applyStatusEffect(argument1,target,argument3,argument4*spellDur)
+        applyStatusEffect(argument1,target,argument3,argument4*spellDur,-1)
         popup(argument0,id)
     }
 }
@@ -234,7 +234,7 @@ if target.mle = true
         {
             if 1+irandom(99) <= argument2
             {
-                applyStatusEffect(argument1,target,argument3,argument4*spellDur)
+                applyStatusEffect(argument1,target,argument3,argument4*spellDur,typeForce)
                 popup(argument0,id)
             }
         }
@@ -261,7 +261,7 @@ if target.mle = false
     else                    //On Tooltip
     {
         obj_control.tooltipColour[obj_control.tooltipLength] = c_red
-        obj_control.tooltipText[obj_control.tooltipLength] = 'Small Shield'
+        obj_control.tooltipText[obj_control.tooltipLength] = '  Lesser Deflection'
         obj_control.tooltipLength += 1
     }
 }
@@ -279,8 +279,10 @@ if target.mle = false
     }
     else                    //On Tooltip
     {
+        target.bMin += pMin
+        target.bMax += pMax
         obj_control.tooltipColour[obj_control.tooltipLength] = c_red
-        obj_control.tooltipText[obj_control.tooltipLength] = 'Large Shield'
+        obj_control.tooltipText[obj_control.tooltipLength] = '  Greater Deflection'
         obj_control.tooltipLength += 1
     }
 }

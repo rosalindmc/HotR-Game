@@ -21,7 +21,7 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_longBow
 name = iName
 ttType = itemTypeRanged
-addItemTooltip('Skill - Cripple','Cripple#On Wound: 10% chance to CRIPPLE for 15 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
+addItemTooltip('Skill - Cripple','Cripple#On Wound: 10 % chance to CRIPPLE for 15 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
 addItemTooltip('Instant Load','Instant Load#This weapon reloads automatically after firing',3,green)
 dmg = iDmg
 dmgType = iType
@@ -91,8 +91,8 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_shortBow
 name = iName
 ttType = itemTypeRanged
-addItemTooltip('Skill - Cripple','Cripple#On Wound: 10% chance to CRIPPLE for 10 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
-addItemTooltip('Elegant','Elegant#This weapon is 20% less effected by Might and uses 20% less stamina to attack',4,green)
+addItemTooltip('Skill - Cripple','Cripple#On Wound: 10 % chance to CRIPPLE for 10 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
+addItemTooltip('Elegant','Elegant#This weapon is 20 % less effected by Might and uses 20 % less stamina to attack',4,green)
 addItemTooltip('Instant Load','Instant Load#This weapon reloads automatically after firing',3,green)
 dmg = iDmg
 dmgType = iType
@@ -162,7 +162,7 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_crossbow
 name = iName
 ttType = itemTypeRanged
-addItemTooltip('Skill - Stagger','Stagger#On Hit: 20% chance to DAZE for 5 seconds. DAZED characters have a 50% miss chance',5,c_yellow)
+addItemTooltip('Skill - Stagger','Stagger#On Hit: 20 % chance to DAZE for 5 seconds. DAZED characters have a 50% miss chance',5,c_yellow)
 addItemTooltip('Mechanical','Mechanical#Weapon damage is unaffected by Might',3,green)
 dmg = iDmg
 dmgType = iType
@@ -220,7 +220,7 @@ iType = typePierce
 iStrMult = 0
 iPen = 4
 iSpd = 1
-iSize = 2
+iSize = 1
 iShots = 1
 iReloads = 20
 iRng = 12
@@ -232,7 +232,7 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_lgtCrossbow
 name = iName
 ttType = itemTypeRanged
-addItemTooltip('Skill - Stagger','Stagger#On Hit: 10% chance to DAZE for 5 seconds. DAZED characters have a 50% miss chance',5,c_yellow)
+addItemTooltip('Skill - Stagger','Stagger#On Hit: 10 % chance to DAZE for 5 seconds. DAZED characters have a 50 % miss chance',5,c_yellow)
 addItemTooltip('Mechanical','Mechanical#Weapon damage is unaffected by Might',3,green)
 dmg = iDmg
 dmgType = iType

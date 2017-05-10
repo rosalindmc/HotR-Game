@@ -107,7 +107,7 @@ switch(argument0)
             
             timeReset()
             attackPreview(false)
-            global.testSlot.delayAdd = i.s/(i.haste+i.atkHaste)
+            global.testSlot.delayAdd = (i.s*5)/(i.haste+i.atkHaste)
             initiativeSlotAnticipate()
         }
         //Melee Attack Tooltip
@@ -120,11 +120,11 @@ switch(argument0)
             
             if global.attackFromTile.occupant = i
             {
-                global.testSlot.delayAdd = i.s/(i.haste+i.atkHaste)
+                global.testSlot.delayAdd = (i.s*5)/(i.haste+i.atkHaste)
             }
             else
             {
-                global.testSlot.delayAdd = (i.s/(i.haste+i.atkHaste))+(min(2.0,cHover.g)/(i.haste+i.movHaste))
+                global.testSlot.delayAdd = ((i.s*5)/(i.haste+i.atkHaste))+(min(2.0,cHover.g)/(i.haste+i.movHaste))
             }   
             initiativeSlotAnticipate()
         }

@@ -84,7 +84,7 @@ sprite_index = ico_roundShield
 name = iName
 ttType = itemTypeShield
 addItemTooltip('Lesser Deflection','Lesser Deflection#You can block projectiles',2,green)
-addItemTooltip('Greater Protection','Greater Protection#Suppression Resistance incresed by 50 %',3,green)
+addItemTooltip('Greater Protection','Greater Protection#Suppression Resistance increased by 50 %',3,green)
 blockGen = iBlockGen
 blockStr = iBlockStr
 enc = iEnc
@@ -154,7 +154,7 @@ sprite_index = ico_squareShield
 name = iName
 ttType = itemTypeShield
 addItemTooltip('Greater Deflection','Greater Deflection#You can block projectiles and do not need to expend a Block Charge to do so. Blocking projectiles reduces their damage by an additional 25 to 100 %',7,green)
-addItemTooltip('Greater Protection','Greater Protection#Suppression Resistance incresed by 50 %',3,green)
+addItemTooltip('Greater Protection','Greater Protection#Suppression Resistance increased by 50 %',3,green)
 blockGen = iBlockGen
 blockStr = iBlockStr
 enc = iEnc
@@ -225,7 +225,7 @@ sprite_index = ico_squareShield
 name = iName
 ttType = itemTypeShield
 addItemTooltip('Greater Deflection','Greater Deflection#You can block projectiles and block an additional 25 % to 100 % of the attacks damage',4,green)
-addItemTooltip('Greater Protection','Greater Protection#Suppression Resistance incresed by 50 %',3,green)
+addItemTooltip('Greater Protection','Greater Protection#Suppression Resistance increased by 50 %',3,green)
 blockGen = iBlockGen
 blockStr = iBlockStr
 enc = iEnc

@@ -124,7 +124,7 @@ switch(argument0)
         moveTo(cHover)
         popup('Footwork',i)
         i.abilityCD[global.actionNum] = 5/i.spellCD
-        applyStatusEffect(flatFooted,i,100,.01)    
+        applyStatusEffect(flatFooted,i,100,.01,-1)    
         actionBarReset()
     }
     break
@@ -175,7 +175,7 @@ switch(argument0)
         i.target = cHover.occupant
         
         //Add challenge animation eventually
-        applyStatusEffect(blockBuff,i,1,5*i.spellDur)
+        applyStatusEffect(blockBuff,i,1,5*i.spellDur,-1)
         target.readiedTarget = i
         target.readiedAction = dualStrike
         i.abilityCD[global.actionNum] = 30/i.spellCD

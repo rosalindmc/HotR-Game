@@ -16,7 +16,7 @@ if potency = 1 and owner.sneakIncognito = true
     {
         if los(1.5,sightTile,other.owner.sightTile) and id != other.owner.id and team = other.owner.team
         {
-            applyStatusEffect(stealth,id,2,5)
+            applyStatusEffect(stealth,id,2,5,-1)
         }
     }
 }

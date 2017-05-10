@@ -121,7 +121,7 @@ break
 #define cwFashion
 
 #define cwParty
-money = 0.00
+money = 100.00
 
 //Inventory
 ii = 0

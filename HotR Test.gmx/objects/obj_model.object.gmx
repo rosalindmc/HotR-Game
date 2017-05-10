@@ -287,6 +287,24 @@ facing = round(point_direction(x,y,mouse_x,mouse_y)/45)*45
     if keyboard_check_pressed(ord('T'))
     {mode = 5}
     
+    if keyboard_check_pressed(ord('K'))
+    {
+    hipsImage += 2
+        if hipsImage  &gt; 6
+        {
+            hipsImage = 0
+        }
+    }
+    
+    if keyboard_check_pressed(ord('L'))
+    {
+    bodyImage += 2
+        if bodyImage  &gt; 4
+        {
+            bodyImage = 0
+        }
+    }
+    
     //Adjustments
     if keyboard_check_pressed(vk_left)
     {
@@ -384,7 +402,14 @@ if global.charTab = tab
         
     draw_set_valign(fa_middle)
     draw_set_halign(fa_center)
+    if string_width(string(global.charSelect.firstName)+' '+string(global.charSelect.lastName)) &lt; 200
+    {
     draw_set_font(fnt_main)
+    }
+    else
+    {
+    draw_set_font(fnt_small)
+    }
     draw_set_colour(c_black)
     draw_text(x,y-150,string(global.charSelect.firstName)+' '+string(global.charSelect.lastName))
     draw_set_font(fnt_small)

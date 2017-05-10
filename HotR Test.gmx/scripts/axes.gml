@@ -18,7 +18,7 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_handAxe
 name = iName
 ttType = itemTypeWeapon
-addItemTooltip('Skill - Cripple','Cripple#On Wound: 10% chance to CRIPPLE for 10 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
+addItemTooltip('Skill - Cripple','Cripple#On Wound: 10 % chance to CRIPPLE for 10 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
@@ -78,7 +78,7 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_battleAxe
 name = iName
 ttType = itemTypeWeapon
-addItemTooltip('Skill - Cripple','Cripple#On Wound: 10% chance to CRIPPLE for 15 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
+addItemTooltip('Skill - Cripple','Cripple#On Wound: 10 % chance to CRIPPLE for 15 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
@@ -96,7 +96,7 @@ wepClass[i] = melee
 wepAnimType[i] = typeAxe
 
 wepPow[i] = iDmg
-wepDType[i] = iType
+wepType[i] = iType
 wepPowRng[i] = iDmgRng
 wepStrMult[i] = iStrMult
 wepStamina[i] = iStrMult
@@ -139,7 +139,7 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_greatAxe
 name = iName
 ttType = itemTypeWeapon
-addItemTooltip('Skill - Cripple','Cripple#On Wound: 10% chance to CRIPPLE for 20 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
+addItemTooltip('Skill - Cripple','Cripple#On Wound: 10 % chance to CRIPPLE for 20 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
 dmg = iDmg
 dmgType = iType
 rat = iSpd

@@ -38,7 +38,7 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_robe
 ttType = itemTypeArmour
 name = 'Robe'
-addItemTooltip('Comfort','Comfort#Reduce Cooldowns by 20%',2,green)
+addItemTooltip('Comfort','Comfort#Reduce Cooldowns by 20 %',2,green)
 arm = iArm
 dodge = iDodge
 prot = iProt
@@ -92,7 +92,7 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_cloth
 ttType = itemTypeArmour
 name = 'Dress'
-addItemTooltip('Outgoing','Outgoing#Increase Ability Durations by 20%',3,green)
+addItemTooltip('Outgoing','Outgoing#Increase Ability Durations by 20 %',3,green)
 arm = iArm
 dodge = iDodge
 prot = iProt

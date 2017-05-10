@@ -168,7 +168,7 @@ if argument1 = 0
     break
     
     case 4: //Surrender
-    global.eventCharacter = global.control
+    global.eventCharacter = global.control.o
     if 1+irandom(19) <= global.control.fellowship+checkTalent(treeDiplomacy,false)
     {
     skipTo(5)

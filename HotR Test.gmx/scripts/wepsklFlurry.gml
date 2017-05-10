@@ -33,7 +33,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
     {
         if 1+irandom(99) <= argument1+((skill-target.mSkill)*5)
         {
-            applyStatusEffect(bleed,target,argument2,argument4*spellDur)
+            applyStatusEffect(bleed,target,argument2,argument4*spellDur,typePhysical)
             ss.creator = id
             
             popup(argument0,id)
@@ -109,7 +109,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
     {
         if 1+irandom(99) <= argument1+((skill-target.mSkill)*5)
         {
-            applyStatusEffect(daze,target,50,argument2*spellDur)
+            applyStatusEffect(daze,target,50,argument2*spellDur,typeForce)
                         
             popup(argument0,id)
         }
@@ -135,7 +135,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
         {
             if target.active = true
             {
-                applyStatusEffect(stun,target,50,argument2*spellDur)
+                applyStatusEffect(stun,target,50,argument2*spellDur,typeForce)
             }   
                     
             popup(argument0,id)
@@ -160,7 +160,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
     {
         if 1+irandom(99) <= argument1+((skill-target.mSkill)*5)
         {
-            applyStatusEffect(cripple,target,argument2,argument4*spellDur)
+            applyStatusEffect(cripple,target,argument2,argument4*spellDur,typePhysical)
                         
             popup(argument0,id)
         }
@@ -184,7 +184,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
     {
         if 1+irandom(99) <= argument1+((skill-target.mSkill)*5)
         {
-            applyStatusEffect(immobilize,target,argument2,argument4*spellDur)
+            applyStatusEffect(immobilize,target,argument2,argument4*spellDur,typePhysical)
                         
             popup(argument0,id)
         }

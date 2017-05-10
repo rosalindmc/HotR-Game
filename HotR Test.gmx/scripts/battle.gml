@@ -38,7 +38,8 @@ switch(argument0)
         //Ranged Attack
         with(i){ranged()}
         //End Turn
-        endTurn(i.s/(i.haste+i.atkHaste))
+        s = 3.0/((i.wepRSpeed[i.atkHand]))
+        endTurn(s/(i.haste+i.atkHaste))
     }
     //Melee Attack
     if cHover.meleeAttack = true and (key_meleeToggle = true or cHover.rangedAttack = false) and global.attackFromTile != noone
@@ -71,7 +72,7 @@ switch(argument0)
             
             timeReset()
             attackPreview(false)
-            global.testSlot.delayAdd = i.s/(i.haste+i.atkHaste)                
+            global.testSlot.delayAdd = (i.s*5)/(i.haste+i.atkHaste)                
             initiativeSlotAnticipate()
         }
         //Melee Attack Tooltip
@@ -81,7 +82,7 @@ switch(argument0)
             target = cHover.occupant
             suppressionPreview(true)
             attackPreview(true)
-            global.testSlot.delayAdd = i.s/(i.haste+i.atkHaste)                
+            global.testSlot.delayAdd = (i.s*5)/(i.haste+i.atkHaste)                
             initiativeSlotAnticipate()
         }
         else

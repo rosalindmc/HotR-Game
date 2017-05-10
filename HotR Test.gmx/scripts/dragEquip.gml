@@ -18,7 +18,7 @@ if slotViable(slot,id)
             slot.occupant.x = lockSlot.x-view_xview[]
             slot.occupant.y = lockSlot.y-view_yview[]
             lockSlot.occupant = slot.occupant
-            success = 1
+            success = 2
             
             if lockSlot.equipSlot != 0
             {
@@ -26,16 +26,19 @@ if slotViable(slot,id)
                 
                 global.charSelect.invSlot[slot.occupant.equipped,0] = emptySlot
                 slot.occupant.equipped = lockSlot.equipSlot
+                lockSlot.occupant = slot.occupant
                 
-                global.charSelect.invSlot[slot.occupant.equipped,0] = itemType
-                global.charSelect.invSlot[slot.occupant.equipped,1] = itemQuality
-                global.charSelect.invSlot[slot.occupant.equipped,2] = itemTrait[1]
-                global.charSelect.invSlot[slot.occupant.equipped,3] = itemTrait[2]
-                global.charSelect.invSlot[slot.occupant.equipped,4] = itemTrait[3]                
+                global.charSelect.invSlot[slot.occupant.equipped,0] = slot.occupant.itemType
+                global.charSelect.invSlot[slot.occupant.equipped,1] = slot.occupant.itemQuality
+                global.charSelect.invSlot[slot.occupant.equipped,2] = slot.occupant.itemTrait[1]
+                global.charSelect.invSlot[slot.occupant.equipped,3] = slot.occupant.itemTrait[2]
+                global.charSelect.invSlot[slot.occupant.equipped,4] = slot.occupant.itemTrait[3]                
             }
             else
             {
                 slot.occupant.inInventory = true
+                slot.occupant.equipped = 0
+                slot.occupant.hudY = lockSlot.hudY
             }
         }
         else
@@ -43,6 +46,7 @@ if slotViable(slot,id)
             success = 0
         }
     }
+    
     
     if success != 0
     {

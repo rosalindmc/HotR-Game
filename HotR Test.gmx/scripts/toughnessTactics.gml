@@ -10,7 +10,7 @@ switch(argument0)
 {
     //Run 0 when a player selects the command
     case 0:
-    applyStatusEffect(battleRush,i,4,10*i.spellDur)
+    applyStatusEffect(battleRush,i,4,10*i.spellDur,-1)
     i.abilityCD[global.actionNum] = 30/i.spellCD
     actionBarReset()
     popup('Battle Rush',i)

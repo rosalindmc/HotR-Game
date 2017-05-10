@@ -3,7 +3,7 @@
 switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
-if foeAdj <= 1 and allyAdj = 0
+if foeAdj <= 1 and allyAdj = 0 and global.inCombat = false
 {
     switch(argument1)
     {
@@ -45,7 +45,7 @@ break
 switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
-if foeAdj <= 1 and allyAdj = 0
+if foeAdj <= 1 and allyAdj = 0 and global.inCombat = false
 {
     atkHaste += .25
 }

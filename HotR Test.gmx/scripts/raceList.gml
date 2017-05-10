@@ -59,7 +59,12 @@ return choose("Fey","Shadow","Light","Wind","Wild","Flame","Love","Willow","Oak"
 break
 
 case 2:
-randDice += 2
+randDice += 1
+grace += 1
+fellowship += 1
+
+grcCap = 11
+felCap = 11
 break
 
 case 3:     //Race Trait
@@ -109,7 +114,10 @@ return choose("Fey","Shadow","Dark","Wind","Wild","Strong","Love","Willow","Oak"
 break
 
 case 2:
-randDice += 2
+randDice += 1
+grace += 2
+
+grcCap = 12
 break
 
 case 3:     //Race Trait
@@ -170,9 +178,9 @@ break
 
 case 2:
 randDice += 1
-cunning += 1
+cunning += 2
     
-cunCap = 11
+cunCap = 12
 break
 
 case 3:     //Race Trait
@@ -232,6 +240,7 @@ break
 
 case 2:
 will += 2
+randDice += 1
     
 wilCap = 12
 break
@@ -297,6 +306,7 @@ levelAdj = 1
 xpToLevel(id)
 life += 2
 stamina += 2
+
 might += 3
 will += 3
 grace -= 2
@@ -338,7 +348,7 @@ if skinTone = fair or skinTone = pale
 {hairColour = choose(black,dkBrown,dkRed,c_yellow)}
 else
 {hairColour = choose(black,dkBrown)}
-size = choose(1,1,1,2,3)
+size = choose(1,1,1,2,3,4)
 
     legSprite = spr_shortLeg
     legSpriteMod = 1
@@ -365,13 +375,13 @@ xpToLevel(id)
 life -= 2
 stamina += 2
 
-grace += 2
+grace += 1
 cunning += 1
 fellowship += 2
 might -= 2
 
 mgtCap = 8
-grcCap = 12
+grcCap = 11
 cunCap = 11
 felCap = 12
 
@@ -438,9 +448,8 @@ break
 
 case 2:
 might += 4
+will += 1
 grace -= 1
-cunning -= 1
-will -= 1
 fellowship -= 1
 
 mgtCap = 14
@@ -493,7 +502,13 @@ break
 
 
 case 2:
-randDice += 2
+randDice += 3
+
+mgtCap = 15
+grcCap = 15
+wilCap = 15
+felCap = 15
+cunCap = 15
 break
 
 case 3:     //Race Trait
@@ -523,7 +538,7 @@ earSprite = spr_elfEar
 hairStyle = choose(spr_longHair,spr_bunHair,spr_shortHair)
 hairColour = black
 skinTone = choose(orcBrown,orcGreen)
-size = choose(1,1,1,2,3)
+size = choose(1,1,1,2,3,4)
 
     legSprite = spr_shortLeg
     legSpriteMod = 1
@@ -533,7 +548,7 @@ legAdjust[1] = ii
 legAdjust[2] = ii
 hipsOffset = 9+ii
 
-mediumRaceDetails()
+halflingRaceDetails()
 break
 
 case 1:
@@ -541,6 +556,9 @@ break
 
 
 case 2:
+levelAdj = -2
+xpToLevel(id)
+life -= 2
 grace += 1
 might -= 3
 

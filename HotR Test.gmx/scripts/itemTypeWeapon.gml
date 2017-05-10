@@ -342,7 +342,7 @@ for(i = 0; i < ttLength; i++)
 {
     draw_set_colour(c_dkgray)
     draw_rectangle(ix,iy,ix+120,iy+(tooltipLength[i]*12)+4,false)
-    draw_set_colour(c_ltgray)
+    draw_set_colour(c_black)
     draw_rectangle(ix,iy,ix+120,iy+(tooltipLength[i]*12)+4,true)
     draw_set_colour(c_white)
     draw_text_ext(ix+5,iy+2,tooltipText[i],12,110)

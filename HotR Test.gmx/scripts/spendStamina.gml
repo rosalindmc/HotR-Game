@@ -108,8 +108,7 @@ if argument0.life <= 0
             checkLevelUp(owner)
         }
         
-        gainMorale(.2)
-        
+        gainMorale(.2)  
         triggerOnDown(false)
         actorDie(argument0)
     }

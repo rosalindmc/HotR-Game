@@ -126,7 +126,7 @@ if target.dead = false
                     {startAnimation(0,animFlinch)}
                 }
                 
-                if owner.canBleed = true
+                if immune[typePhysical] = false
                 {
                     part_system_depth(ps2,depth-1)
                     iii = point_direction(x,y,other.x,other.y)

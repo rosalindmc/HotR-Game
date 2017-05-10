@@ -2,7 +2,8 @@
 //Tear Down after Battle 
 //battleTeardown()     Will feature variables later
 
-background_visible[0] = true
+background_visible[0] = true  
+global.inCombat = false
 instance_activate_all()
 
 with(obj_control)

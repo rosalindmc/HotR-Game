@@ -121,7 +121,7 @@ backTrinket = -4    //Capes, Cloaks, Furs
 neckTrinket = choose(-4,-4,spr_fashion1,spr_fashion2)     //Necklaces, Scarves, Shawls
 hipTrinket = choose(-4,spr_corset,spr_belt2,spr_belt)     //Belts, Sashes
 headTrinket = choose(-4,-4,-4,-4,-4,-4,spr_crown)    //Crown, Headscarf, Bandana, Hat, Hairband, Hair Flower, Bonnet, Hair Bow, Turban
-headScarfTrinket = -4  //Crown, Headscarf, Bandana, Hat, Hairband, Hair Flower, Bonnet, Hair Bow, Turban
+headScarfTrinket = -4  
 
 overBodyItem = choose(-4,-4,spr_vest,spr_coat)   //Vests, Coats, Tabards
 underBodyItem = choose(-4,-4,-4,-4,-4,-4,spr_underClothes)  //Bra, Undershirt, Bindings

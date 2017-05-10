@@ -18,8 +18,8 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_lgtMace
 name = iName
 ttType = itemTypeWeapon
-addItemTooltip('Skill - Stagger','Stagger#On Hit: 10% chance to DAZE for 5 seconds. DAZED characters have a 50% miss chance',5,c_yellow)
-addItemTooltip('Hefty','Hefty#This weapon is 20% more effected by Might and uses 20% more stamina to attack',4,green)
+addItemTooltip('Skill - Stagger','Stagger#On Hit: 10 % chance to DAZE for 5 seconds. DAZED characters have a 50 % miss chance',5,c_yellow)
+addItemTooltip('Hefty','Hefty#This weapon is 20 % more effected by Might and uses 20 % more stamina to attack',4,green)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
@@ -78,9 +78,9 @@ switch(argument0)
 case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_mace
 name = iName
-ttType = itemTypeWeapon
-addItemTooltip('Skill - Skull Crack','Skull Crack#On Hit: 10% chance to STUN for 1 second. STUNNED characters have there action delayed for the duration, cannot dodge and removes zone of control',6,c_yellow)
-addItemTooltip('Hefty','Hefty#This weapon is 20% more effected by Might and uses 20% more stamina to attack',4,green)
+ttType = itemTypeWeapon 
+addItemTooltip('Skill - Skull Crack','Skull Crack#On Hit: 10 % chance to STUN for 1 second. STUNNED characters have there action delayed for the duration, cannot dodge and removes zone of control',7,c_yellow)
+addItemTooltip('Hefty','Hefty#This weapon is 20 % more effected by Might and uses 20 % more stamina to attack',4,green)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
@@ -142,8 +142,8 @@ sprite_index = ico_maul
 name = iName
 ttType = itemTypeWeapon
 //Replace Skull Crack with Knock Prone Skill
-addItemTooltip('Skill - Skull Crack','Skull Crack#On Hit: 10% chance to STUN for 2 seconds. STUNNED characters have there action delayed for the duration, cannot dodge and removes zone of control',6,c_yellow)
-addItemTooltip('Hefty','Hefty#This weapon is 20% more effected by Might and uses 20% more stamina to attack',4,green)
+addItemTooltip('Skill - Skull Crack','Skull Crack#On Hit: 10 % chance to STUN for 2 seconds. STUNNED characters have there action delayed for the duration, cannot dodge and removes zone of control',7,c_yellow)
+addItemTooltip('Hefty','Hefty#This weapon is 20 % more effected by Might and uses 20 % more stamina to attack',4,green)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
@@ -205,9 +205,9 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_hammer
 name = iName
 ttType = itemTypeWeapon
-addItemTooltip('Skill - Shatter','Shatter#On Hit: 10% chance to SUNDER 1.',3,c_yellow)
+addItemTooltip('Skill - Shatter','Shatter#On Hit: 10 % chance to SUNDER 1.',3,c_yellow)
 addItemTooltip('High Impact','High Impact#This weapon inflicts Impact damage if it is more advantageous',4,green)
-addItemTooltip('Hefty','Hefty#This weapon is 20% more effected by Might and uses 20% more stamina to attack',4,green)
+addItemTooltip('Hefty','Hefty#This weapon is 20 % more effected by Might and uses 20 % more stamina to attack',4,green)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
@@ -276,9 +276,9 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_warhammer
 name = iName
 ttType = itemTypeWeapon
-addItemTooltip('Skill - Shatter','Shatter#On Hit: 10% chance to SUNDER 2',3,c_yellow)
+addItemTooltip('Skill - Shatter','Shatter#On Hit: 10 % chance to SUNDER 2',3,c_yellow)
 addItemTooltip('High Impact','High Impact#This weapon inflicts Impact damage if it is more advantageous',4,green)
-addItemTooltip('Hefty','Hefty#This weapon is 20% more effected by Might and uses 20% more stamina to attack',4,green)
+addItemTooltip('Hefty','Hefty#This weapon is 20 % more effected by Might and uses 20 % more stamina to attack',4,green)
 dmg = iDmg
 dmgType = iType
 rat = iSpd
@@ -347,7 +347,7 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_staff
 name = iName
 ttType = itemTypeWeapon
-addItemTooltip('Skill - Guard','Guard#On Hit: 10% chance to gain a Block Charge',3,c_yellow)
+addItemTooltip('Skill - Guard','Guard#On Hit: 10 % chance to gain a Block Charge',3,c_yellow)
 dmg = iDmg
 dmgType = iType
 rat = iSpd

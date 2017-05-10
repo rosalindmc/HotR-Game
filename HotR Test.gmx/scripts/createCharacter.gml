@@ -171,33 +171,82 @@ switch(size)
     bodyImage = 0
     bodyAdjust = -1
     bodyOffset = 6
+    
+    switch(choose(1,2)) 
+    {
+        case 1:     //Approved
+        bodyImage = 0 
+        bodyAdjust = 0
+        bodyOffset = choose(5,6)
+        break
+        case 2:     //Approved
+        bodyImage = 0
+        bodyAdjust = -1
+        bodyOffset = choose(5,6)
+        break
+    }
+    
     chstAdjust = 0
     break
     
     //Medium characters
     case 2:
     hipsImage = 2
-    bodyImage = choose(0,2)
-    bodyAdjust = 0
-    bodyOffset = choose(6,6,6,7)
+    switch(choose(1,2))
+    {
+        case 1:     //Approved
+        bodyImage = 0
+        bodyAdjust = 0
+        bodyOffset = choose(6,6,6,6,6,7)
+        break
+        case 2:     //Approved
+        bodyImage = 2 
+        bodyAdjust = choose(0,-1)
+        bodyOffset = choose(6,6,7)
+        break
+    }
+    
+    
     chstAdjust = 1
     break
     
     //Medium characters
     case 3:
-    hipsImage = 4
-    bodyImage = choose(2,4)
-    bodyAdjust = -1
-    bodyOffset = choose(6,6,6,7)
+    hipsImage = 4  
+    switch(choose(1,2))
+    {
+        case 1:     //Approved
+        bodyImage = 2 
+        bodyAdjust = -1
+        bodyOffset = choose(5,6,6,6,7)
+        break
+        case 2:     //Approved
+        bodyImage = 4 
+        bodyAdjust = choose(0,-1)
+        bodyOffset = choose(6,6,7,7)
+        break
+    }
     break
     
     //Large characters
     case 4:
     hipsImage = 6
-    bodyImage = choose(2,4)
+    
+    switch(choose(1,2))
+    {
+        case 1:     //Approved
+        bodyImage = 2 
+        bodyAdjust = -2
+        bodyOffset = choose(6,6,6,6,6,7)
+        break
+        case 2:     //Approved
+        bodyImage = 4 
+        bodyAdjust = choose(-1,-2)
+        bodyOffset = choose(6,6,7,7,7,7,8)
+        break
+    }
+    
     legOffset[2] = 4
-    bodyAdjust = -1
-    bodyOffset = choose(6,6,6,6,6,7)
     skrtSize = 1
     break
 }
@@ -328,28 +377,80 @@ switch(size)
     //Small characters
     case 1:
     hipsImage = 0
-    bodyImage = 0
-    bodyAdjust = choose(0,-1)
-    bodyOffset = choose(4,5)
+    
+    switch(choose(1,2))
+    {
+        case 1: 
+        bodyImage = 0 
+        bodyAdjust = 0
+        bodyOffset = choose(4,4,5)
+        break
+        case 2: 
+        bodyImage = 0
+        bodyAdjust = -1
+        bodyOffset = choose(3,4,4,4,5)
+        break
+    }
     chstAdjust = 0
     break
     
     //Medium characters
     case 2:
     hipsImage = 2
-    bodyImage = choose(0,2)
-    bodyOffset = choose(4,5)
-    bodyAdjust = 0
-    if bodyImage = 0 {bodyAdjust = 0}
+    switch(choose(1,2))
+    {
+        case 1: 
+        bodyImage = 0
+        bodyAdjust = 0
+        bodyOffset = 5
+        break
+        case 2: 
+        bodyImage = 2 
+        bodyAdjust = choose(0,-1)
+        bodyOffset = choose(4,5)
+        break
+    }
+    
     chstAdjust = 1
     break
     
     //Medium characters
     case 3:
-    hipsImage = 4
-    bodyImage = choose(2,4)
-    bodyAdjust = choose(0,-1)
-    bodyOffset = choose(4,5)
+    hipsImage = 4  
+    switch(choose(1,2))
+    {
+        case 1:
+        bodyImage = 2 
+        bodyAdjust = -1
+        bodyOffset = choose(4,5)
+        break
+        case 2:  
+        bodyImage = 4 
+        bodyAdjust = choose(0,-1)
+        bodyOffset = choose(4,5)
+        break
+    }
+    break
+    
+    case 4:
+    hipsImage = 6
+    
+    switch(choose(1,2))
+    {
+        case 1: 
+        bodyImage = 2 
+        bodyAdjust = -2
+        bodyOffset = 5
+        break
+        case 2:   
+        bodyImage = 4 
+        bodyAdjust = choose(-1,-1,-1,-1,-2)
+        bodyOffset = 5
+        break
+    }
+    
+    legOffset[2] = 4
+    skrtSize = 1
     break
 }
 

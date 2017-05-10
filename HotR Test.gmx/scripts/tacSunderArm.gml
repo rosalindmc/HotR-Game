@@ -46,7 +46,7 @@ if mle = true
 #define tacSlow
 if argument5 = false    //On Proc
 {
-    applyStatusEffect(slow,target,argument1,15*spellDur)
+    applyStatusEffect(slow,target,argument1,15*spellDur,typePhysical)
     
     spendStamina(id,1)
     abilityCD[global.actionNum] = 30/spellCD
@@ -108,7 +108,7 @@ if mle = true
     {
         spendStamina(id,1)
         abilityCD[global.actionNum] = 5/spellCD
-        applyStatusEffect(blockBuff,id,1,10*spellDur)
+        applyStatusEffect(blockBuff,id,1,10*spellDur,-1)
         
         popup(argument0,id)
     }
@@ -125,11 +125,11 @@ if argument5 = false    //On Proc
 {
     if backstab = true
     {
-    applyStatusEffect(stun,target,0,argument1*2*spellDur)
+    applyStatusEffect(stun,target,0,argument1*2*spellDur,typePhysical)
     }
     else
     {
-    applyStatusEffect(stun,target,0,argument1*spellDur)
+    applyStatusEffect(stun,target,0,argument1*spellDur,typePhysical)
     }
     spendStamina(id,1)
     abilityCD[global.actionNum] = 30/spellCD   
@@ -162,7 +162,7 @@ if argument5 = false    //On Proc
     {
         if los(1.5,other.sightTile,sightTile) and id != other.target and active = true
         {
-            applyStatusEffect(daze,id,50,5*spellDur)
+            applyStatusEffect(daze,id,50,5*spellDur,typeMental)
         }
     }
     

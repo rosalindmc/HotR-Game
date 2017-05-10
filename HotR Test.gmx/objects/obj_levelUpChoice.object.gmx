@@ -31,6 +31,7 @@ canClick = false
 colour = c_black
 
 tt = 0
+ttLength = 4
 tooltip = ''
 script = -4
 branch = false
@@ -67,15 +68,20 @@ if owner.step = 1
     switch(image_index)
     {
     case 0: name = 'Might' 
-    tooltip = '+.50 POW#+.25 Block Strength#+.50 Life' break
+    tooltip = '+.50 Weapon POW#+.25 Block Strength#+.50 Life' 
+    ttLength = 3 break
     case 1: name = 'Grace' 
-    tooltip = '+Movement#+3% Haste#+3% Action Haste#+.1 Skill#+.50 Stamina' break
+    tooltip = '+Movement#+3 % Haste#+3 % Action Haste#+.1 Skill#+.50 Stamina' 
+    ttLength = 5 break
     case 2: name = 'Cunning' 
-    tooltip = '+5% Cooldown Reduction#+5% Ability Duration#+3% Experience Gained#+.2 Skill' break
+    tooltip = '+5 % Cooldown Reduction#+5 % Ability Duration#+3 % Experience Gained#+.2 Skill' 
+    ttLength = 4 break
     case 3: name = 'Will' 
-    tooltip = '+1 Life#+1 Stamina#+.5 Life Regeneration' break
+    tooltip = '+1 Life#+1 Stamina#+.5 Life Regeneration' 
+    ttLength = 3 break
     case 4: name = 'Fellowship'
-    tooltip = '+5% Suppression Resist#+5% Bold Advantages' break
+    tooltip = '+5 % Suppression Resist#+5 % Bold Advantages' 
+    ttLength = 2 break
     }
 }
 
@@ -191,22 +197,23 @@ if tooltip != -4 and tt != 0
     draw_set_alpha(tt)
     
     draw_set_colour(c_dkgray)
-    draw_rectangle(x-130,y-10,x-10,y+90,false)
-    draw_set_colour(c_ltgray)
-    draw_rectangle(x-130,y-10,x-10,y+90,true)
+    draw_rectangle(x-10,y-10,x-130,y+14+(ttLength*12),false)
+    draw_set_colour(c_black)
+    draw_rectangle(x-10,y-10,x-130,y+14+(ttLength*12),true)
     
     draw_set_colour(c_white)
     draw_set_halign(fa_left)
     draw_set_valign(fa_top)
     
     ix = x-125
-    iy = y-8
+    iy = y-6
     
     draw_set_font(fnt_tiny)
     draw_text_ext(ix,iy,name,16,110)
     iy += 16
     draw_set_font(fnt_tinyText)
-    draw_text_ext(ix,iy,tooltip,16,110)
+    draw_text_ext(ix,iy,tooltip,12,110)
+    draw_set_alpha(1)
 }
 
 draw_set_alpha(1)

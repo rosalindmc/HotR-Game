@@ -10,7 +10,7 @@ switch(argument0)
     //Run 0 when a player selects the command
     case 0:
     i.blocks += 1
-    applyStatusEffect(detectionBuff,i,4,10*i.spellDur)
+    applyStatusEffect(detectionBuff,i,4,10*i.spellDur,-1)
     i.abilityCD[global.actionNum] = 10/i.spellCD
     endTurn(1.0)
     popup('Assess Situation',i)
@@ -107,7 +107,6 @@ switch(argument0)
     action = actSpotWeakness
     global.castMouse = 2
     rangeAbilityRange(i,10,true)
-    popup('Spot Weakness',i)
     break
     
     //Run 1 to execute
@@ -118,10 +117,11 @@ switch(argument0)
         i.target = cHover.occupant
         
         //Apply Status
-        applyStatusEffect(marked,i.target,1,15*i.spellDur)
+        applyStatusEffect(marked,i.target,1,15*i.spellDur,-1)
         i.abilityCD[global.actionNum] = 30/i.spellCD
         i.abilityCD[global.actionNum+1] = 10/i.spellCD
         endTurn(1.0)
+        popup('Spot Weakness',i)
     }
     break
     
@@ -231,7 +231,7 @@ switch(argument0)
         i.target = cHover.occupant
         
         //Add grapple animation eventually
-        applyStatusEffect(sleep,i.target,100,15*i.spellDur)
+        applyStatusEffect(sleep,i.target,100,15*i.spellDur,typeMental)
         i.abilityCD[global.actionNum] = 30/i.spellCD
         endTurn(1.0/i.haste)
     }

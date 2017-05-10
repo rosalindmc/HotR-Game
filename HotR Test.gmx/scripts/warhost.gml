@@ -379,10 +379,13 @@ case 2:
 grace -= 1
 will -= 1
 might -= 2
+fellowship -= 2
 
 mgtCap = 8
 grcCap = 9
 wilCap = 9
+felCap = 8
+
 
 raceMove = -1
 break
@@ -449,9 +452,11 @@ break
 case 2:
 levelAdj = 4
 xpToLevel(id)
-might += 5
+might += 6
 will += 2
+grace -= 1
 
+grcCap = 9
 mgtCap = 15
 wilCap = 12
 break

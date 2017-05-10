@@ -26,7 +26,7 @@ else
     
     global.attackModeNum = global.actionNum
     
-    applyStatusEffect(argument1,global.control,argument2,0.1)
+    applyStatusEffect(argument1,global.control,argument2,0.1,-1)
     global.attackModeBuff = ss
 }
 actionBarReset()

@@ -10,7 +10,7 @@ if wepStrMult[atkHand] != 0
         {
             p += argument2*s
             
-            applyStatusEffect(daze,target,50,5*spellDur)
+            applyStatusEffect(daze,target,50,5*spellDur,typeForce)
                         
             popup(argument0,id)
             
@@ -250,7 +250,7 @@ if target.h < iii.h
 
 if argument5 = false    //On Proc
 {
-    gainMorale(.05*(s+1+mle))
+    gainMorale(.1*(s+1+mle))
 }
 else                    //On Tooltip
 {
@@ -294,11 +294,11 @@ if skill > target.mSkill and mle = true
 if argument5 = false    //On Proc
 {
     p += sneakDamage   
-    applyStatusEffect(stealth,id,0,0)
+    applyStatusEffect(stealth,id,0,0,-1)
     
     if sneakAmbush = true
     {
-        applyStatusEffect(celerity,id,1,10)
+        applyStatusEffect(celerity,id,1,10,-1)
         popup('Ambush',id)
     }
 }

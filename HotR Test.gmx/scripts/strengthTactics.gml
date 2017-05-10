@@ -12,7 +12,7 @@ switch(argument0)
 {
     //Run 0 when a player selects the command
     case 0:
-    applyStatusEffect(strengthBuff,i,4,5*i.spellDur)
+    applyStatusEffect(strengthBuff,i,4,5*i.spellDur,-1)
     i.abilityCD[global.actionNum] = 30/i.spellCD
     spendStamina(i,1)
     popup('Feat of Strength',i)
@@ -76,7 +76,7 @@ switch(argument0)
         i.target = cHover.occupant
         
         //Add grapple animation eventually
-        applyStatusEffect(immobilize,i.target,100,5*i.spellDur)
+        applyStatusEffect(immobilize,i.target,100,5*i.spellDur,-1)
         i.abilityCD[global.actionNum] = 10/i.spellCD
         endTurn(1.0/i.haste)
         popup('Grapple',i)

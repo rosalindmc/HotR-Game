@@ -224,6 +224,7 @@ else if hasShield = true
 //Stats
 if wepRRange[1] > 0
 {
+    p2 = wepRPow[1]
     s1 = (3-(dualWield*.5))/((wepRSpeed[1]))
     p1 = wepRPow[1]+(wepRStrMult[1]*atkDPS*(s1+1)/5)
     pen1 = wepRPen[1]
@@ -237,8 +238,9 @@ if wepRRange[1] > 0
 }
 else if wepRRange[2] > 0
 {
+    p2 = wepRPow[2]
     s1 = (3-(dualWield*.5))/((wepRSpeed[2]))
-    p1 = wepRPow[2]+(wepRStrMult[2]*atkDPS*(s2+1)/5)
+    p1 = wepRPow[2]+(wepRStrMult[2]*atkDPS*(s1+1)/5)
     pen1 = wepRPen[2]
     p1min = floor(p1*(1-wepRPowRng[2]))
     p1max = ceil(p1*(1+wepRPowRng[2]))
@@ -277,7 +279,7 @@ if r1 > 0
     draw_text(ix,iy+56,"Speed")
     draw_text(ix,iy+68,"Range")
      
-    setTooltip(1,string(damageType(type)+" Damage#"+string_format(wepPow[1],0,1)+" Base Damage#"+string_format((wepStrMult[1]*atkDPS*(s1+1)/5),0,1)+" POW"),3)
+    setTooltip(1,string(damageType(type)+" Damage#"+string_format(p2,0,1)+" Base Damage#"+string_format((wepStrMult[1]*atkDPS*(s1+1)/5),0,1)+" POW"),3)
     setTooltip(2,"Reduce armour by "+string_format(pen1/4,0,1),1)
     setTooltip(3,"Attack Speed in seconds#"+string_format(load1/(haste+atkHaste),0,1)+" Reload Time#"+string(shots1)+" Shot#"+string(loads1)+" Reloads",4)
     setTooltip(4,"Shots suffer damage dropoff beyond weapon range",3)

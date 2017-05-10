@@ -504,32 +504,32 @@ if headScarfTrinket != -4
 if stm >= stmMax*.60 or tireless = true
 {
     //Fresh
-    applyStatusEffect(fatigue,id,0,120)
+    applyStatusEffect(fatigue,id,0,120,-1)
 }
 else if stm >= stmMax*.40
 {
     //Winded
-    applyStatusEffect(fatigue,id,1,120)
+    applyStatusEffect(fatigue,id,1,120,-1)
 }
 else if stm >= stmMax*.20
 {
     //Tired   
-    applyStatusEffect(fatigue,id,2,120)
+    applyStatusEffect(fatigue,id,2,120,-1)
 }
 else
 {
     stm = max(stm,0)
     //Exhausted   
-    applyStatusEffect(fatigue,id,3,120)
+    applyStatusEffect(fatigue,id,3,120,-1)
 }
 
 if woundProof = false
 {
-    applyStatusEffect(wounded,id,wounds,120)
+    applyStatusEffect(wounded,id,wounds,120,-1)
 }
 else
 {
-    applyStatusEffect(wounded,id,0,120)
+    applyStatusEffect(wounded,id,0,120,-1)
 }
 
 #define adjacentCharacters

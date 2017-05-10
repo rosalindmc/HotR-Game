@@ -21,7 +21,7 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_carbine
 name = iName
 ttType = itemTypeRanged
-addItemTooltip('Skill - Cripple','Cripple#On Wound: 10% chance to CRIPPLE for 10 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
+addItemTooltip('Skill - Cripple','Cripple#On Wound: 10 % chance to CRIPPLE for 10 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
 addItemTooltip('Mechanical','Mechanical#Weapon damage is unaffected by Might',3,green)
 dmg = iDmg
 dmgType = iType
@@ -106,7 +106,7 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_repeater
 name = iName
 ttType = itemTypeRanged
-addItemTooltip('Skill - Cripple','Cripple#On Wound: 10% chance to CRIPPLE for 10 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
+addItemTooltip('Skill - Cripple','Cripple#On Wound: 10 % chance to CRIPPLE for 10 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
 addItemTooltip('Auto Burst 5','Auto Burst 5#Can fire a fully automatic burst of 5 shots',3,c_orange)
 addItemTooltip('Mechanical','Mechanical#Weapon damage is unaffected by Might',3,green)
 dmg = iDmg
@@ -181,7 +181,7 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_automatic
 name = iName
 ttType = itemTypePistol
-addItemTooltip('Skill - Cripple','Cripple#On Wound: 10% chance to CRIPPLE for 10 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
+addItemTooltip('Skill - Cripple','Cripple#On Wound: 10 % chance to CRIPPLE for 10 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
 addItemTooltip('Mechanical','Mechanical#Weapon damage is unaffected by Might',3,green)
 dmg = iDmg
 dmgType = iType
@@ -253,7 +253,7 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_handCannon
 name = iName
 ttType = itemTypePistol
-addItemTooltip('Skill - Cripple','Cripple#On Wound: 10% chance to CRIPPLE for 10 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
+addItemTooltip('Skill - Cripple','Cripple#On Wound: 10 % chance to CRIPPLE for 10 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
 addItemTooltip('Mechanical','Mechanical#Weapon damage is unaffected by Might',3,green)
 dmg = iDmg
 dmgType = iType
@@ -325,7 +325,7 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_revolver
 name = iName
 ttType = itemTypePistol
-addItemTooltip('Skill - Cripple','Cripple#On Wound: 10% chance to CRIPPLE for 10 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
+addItemTooltip('Skill - Cripple','Cripple#On Wound: 10 % chance to CRIPPLE for 10 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
 addItemTooltip('Mechanical','Mechanical#Weapon damage is unaffected by Might',3,green)
 dmg = iDmg
 dmgType = iType
@@ -397,7 +397,7 @@ case 0:     //Called when the item creates an icon and tooltip
 sprite_index = ico_longRifle
 name = iName
 ttType = itemTypeRanged
-addItemTooltip('Skill - Cripple','Cripple#On Wound: 10% chance to CRIPPLE for 10 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
+addItemTooltip('Skill - Cripple','Cripple#On Wound: 10 % chance to CRIPPLE for 10 seconds. CRIPPLE reduces Block Strength, Weapon POW and Skill by 3',6,c_yellow)
 addItemTooltip('Mechanical','Mechanical#Weapon damage is unaffected by Might',3,green)
 dmg = iDmg
 dmgType = iType
