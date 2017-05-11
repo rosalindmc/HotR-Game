@@ -35,9 +35,9 @@ ground = true
 cost = 1
 
 //Light
-lRed = random(1)
-lGreen = random(1)
-lBlue = random(1)
+lR = random(1)
+lG = random(1)
+lB = random(1)
 alpha = 1
 
 //Details
@@ -201,11 +201,14 @@ repeat(min(irandom(5),irandom(8)))
 {
     if vis != false and scrollVis != false
     {
-        //if vis = 2
-        //{
-        //find new solution to memory
-        //    shader_set(shd_greyscale)
-        //}
+        if vis = 2
+        {
+            shader_set_uniform_f(global.shader_light, (lR+lG+lB)/3, (lR+lG+lB)/3, (lR+lG+lB)/3, alpha);
+        }
+        else
+        {
+            shader_set_uniform_f(global.shader_light, lR, lG, lB, alpha);
+        }
         
         if wall[0] != noone
         {

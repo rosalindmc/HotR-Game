@@ -801,10 +801,10 @@
     <shaders name="Combat">
       <shader type="GLSLES">shaders\shd_greyscale.shader</shader>
       <shader type="GLSLES">shaders\shd_stealth.shader</shader>
+      <shader type="GLSLES">shaders\shd_combat.shader</shader>
     </shaders>
     <shaders name="TimeofDay">
       <shader type="GLSLES">shaders\shd_evening.shader</shader>
-      <shader type="GLSLES">shaders\shd_combat.shader</shader>
       <shader type="GLSLES">shaders\shd_day.shader</shader>
       <shader type="GLSLES">shaders\shd_night.shader</shader>
     </shaders>

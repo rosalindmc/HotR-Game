@@ -8,6 +8,31 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
+    <event eventtype="0" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>//Shader Setup
+global.shader_light = shader_get_uniform(shd_combat, "light");
+shader_set_uniform_f(global.shader_light, 1, 1, 1, 1);
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="8" enumb="73">
       <action>
         <libid>1</libid>
@@ -48,7 +73,14 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>shader_set(global.shader)
+            <string>if global.inCombat = true
+{
+    shader_set(shd_combat)
+}
+else
+{
+    shader_set(global.shader)
+}
 </string>
           </argument>
         </arguments>

@@ -145,10 +145,6 @@ ix = 0
 
 alarm[0] = 2
 
-//Shader Setup
-global.shader_light = shader_get_uniform(shd_combat, "light");
-shader_set_uniform_f(global.shader_light, 1, 1, 1, 1);
-
 </string>
           </argument>
         </arguments>
