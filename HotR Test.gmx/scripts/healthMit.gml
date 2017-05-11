@@ -279,8 +279,8 @@ if target.mle = false
     }
     else                    //On Tooltip
     {
-        target.bMin += pMin
-        target.bMax += pMax
+        target.bMin += target.pMin
+        target.bMax += target.pMax
         obj_control.tooltipColour[obj_control.tooltipLength] = c_red
         obj_control.tooltipText[obj_control.tooltipLength] = '  Greater Deflection'
         obj_control.tooltipLength += 1

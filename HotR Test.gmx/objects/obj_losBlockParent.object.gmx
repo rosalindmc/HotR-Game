@@ -25,7 +25,8 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if isoZ &lt;= global.zLevel or global.zViewToggle = true
+            <string>/*
+if isoZ &lt;= global.zLevel or global.zViewToggle = true
 {
     if owner.vis != false and scrollVis != false
     {

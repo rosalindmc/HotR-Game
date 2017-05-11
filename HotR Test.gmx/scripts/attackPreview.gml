@@ -191,8 +191,8 @@ if i.mle = false
 }
 if target.blocks >= 1 and i.backstab = false and floor(100-((i.skill-target.mSkill)*3)) > 0 and (i.mle = true or target.hasShield = true)
 {
-    draw_text(ix+5,iy,string(floor(100-(max(0,(i.skill-target.mSkill)*3))))+' % Block '+string(floor((i.b)/4)))
-    iy += 14  
+    draw_text(ix+5,iy,string(floor(100-(max(0,(i.skill-target.mSkill)*3))))+' % Block '+string(floor((i.bMin)/4))+' - '+string(ceil((i.bMax)/4)))
+    iy += 14
 }
 if tooltipLength != 0
 {

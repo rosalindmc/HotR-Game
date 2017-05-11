@@ -75,8 +75,8 @@ if global.timeDelay = 0 and global.nextChar.owner.player = true and global.event
     iy += 12
     
     draw_text(x+55,iy,string(h.race)+" "+string(h.class))
-    draw_sprite(spr_rankIcon,1,x+10,iy+6)
-    drawText(c_black,c_white,x+9,iy-1,h.o.level+h.o.levelAdj-h.o.mook)
+    draw_sprite(spr_rankIcon,1,x+9,iy+9)
+    drawText(c_black,c_white,x+8,iy+2,h.o.level+h.o.levelAdj-h.o.mook)
     draw_set_colour(c_black)
     iy += 12
     

@@ -458,8 +458,8 @@ draw_sprite_general(c.bodySprite,c.bodyImage,c.portraitAdj+c.headAdjust,0,12,12+
 i = 0 repeat(c.bodyItems){i++ draw_sprite_general(c.bodyItem[i],2+c.bodyImage,c.portraitAdj+c.headAdjust,0,12,12+adj-c.headOffset,argument1-(6*argument3),argument2-(6*argument3)+(c.headOffset*argument3),argument3,argument3,0,c.bodyColour[i],c.bodyColour[i],c.bodyColour[i],c.bodyColour[i],1)}
 
 //Chest
-draw_sprite_general(c.chstSprite,c.chstImage,c.portraitAdj+c.headAdjust-1,0,12-c.chstAdjust,11+adj-c.headOffset+c.chstOffset,argument1-((6-c.chstAdjust)*argument3),argument2-((5+c.chstOffset-c.headOffset)*argument3),argument3,argument3,0,c.skinTone,c.skinTone,c.skinTone,c.skinTone,1)
-i = 0 repeat(c.chstItems){i++ draw_sprite_general(c.chstItem[i],8+c.chstImage,c.portraitAdj+c.headAdjust-1,0,13-c.chstAdjust,11+adj-c.headOffset+c.chstOffset,argument1-((7-c.chstAdjust)*argument3),argument2-((6+c.chstOffset-c.headOffset)*argument3),argument3,argument3,0,c.chstColour[i],c.chstColour[i],c.chstColour[i],c.chstColour[i],1)}
+draw_sprite_general(c.chstSprite,c.chstImage,c.portraitAdj+c.headAdjust-1,0,12-c.chstAdjust,11+adj-c.headOffset-c.chstOffset,argument1-((6-c.chstAdjust)*argument3),argument2-((5+c.chstOffset-c.headOffset)*argument3),argument3,argument3,0,c.skinTone,c.skinTone,c.skinTone,c.skinTone,1)
+i = 0 repeat(c.chstItems){i++ draw_sprite_general(c.chstItem[i],8+c.chstImage,c.portraitAdj+c.headAdjust-1,0,13-c.chstAdjust,12+adj-c.headOffset-c.chstOffset,argument1-((7-c.chstAdjust)*argument3),argument2-((6+c.chstOffset-c.headOffset)*argument3),argument3,argument3,0,c.chstColour[i],c.chstColour[i],c.chstColour[i],c.chstColour[i],1)}
 //c.portraitAdj+c.headAdjust
 //-c.headOffset
 //Head and Hair

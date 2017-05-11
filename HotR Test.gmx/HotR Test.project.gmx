@@ -601,6 +601,7 @@
         <script>scripts\controlAI.gml</script>
         <script>scripts\endTurn.gml</script>
         <script>scripts\controlPlayer.gml</script>
+        <script>scripts\drawControl.gml</script>
         <script>scripts\initiativeSlotReset.gml</script>
         <scripts name="Movement">
           <script>scripts\wipeTiles.gml</script>
@@ -803,6 +804,7 @@
     </shaders>
     <shaders name="TimeofDay">
       <shader type="GLSLES">shaders\shd_evening.shader</shader>
+      <shader type="GLSLES">shaders\shd_combat.shader</shader>
       <shader type="GLSLES">shaders\shd_day.shader</shader>
       <shader type="GLSLES">shaders\shd_night.shader</shader>
     </shaders>
@@ -936,9 +938,6 @@
         <object>objects\obj_status</object>
       </objects>
       <object>objects\obj_control</object>
-      <objects name="Doodads">
-        <object>objects\obj_doodad</object>
-      </objects>
     </objects>
   </objects>
   <rooms name="rooms">

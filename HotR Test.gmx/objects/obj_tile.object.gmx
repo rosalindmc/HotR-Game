@@ -34,6 +34,12 @@ pathable = true
 ground = true
 cost = 1
 
+//Light
+lRed = random(1)
+lGreen = random(1)
+lBlue = random(1)
+alpha = 1
+
 //Details
 occupant = noone
 heightMap = random(global.battlefield.tile.height*6)-(global.battlefield.tile.height*3)+30
@@ -84,6 +90,14 @@ image_index = random(16)
 image_speed = 0
 vis = false
 scrollVis = false
+doodads = 0
+doodadSprite[0] = spr_none
+doodadX[0] = x
+doodadY[0] = y
+doodadImage[0] = 0
+doodadAnim[0] = 0
+doodadFlip[0] = 0
+
 </string>
           </argument>
         </arguments>
@@ -149,6 +163,18 @@ if ground = true
         cost = 1.5
     }
 }
+
+doodads = 0
+repeat(min(irandom(5),irandom(8)))
+{
+    doodadSprite[doodads] = spr_grassTuft
+    doodadX[doodads] = x-15+random(30)
+    doodadY[doodads] = y-2+doodads
+    doodadImage[doodads] = irandom(7)
+    doodadAnim[doodads] = 0
+    doodadFlip[doodads] = choose(1,-1)
+    doodads += 1
+}
 </string>
           </argument>
         </arguments>
@@ -180,7 +206,18 @@ if ground = true
         //find new solution to memory
         //    shader_set(shd_greyscale)
         //}
+        
+        if wall[0] != noone
+        {
+            draw_sprite_ext(wall[0].sprite_index,wall[0].image_index,wall[0].x,wall[0].y-h+(global.zLevel*15),wall[0].facing,1,0,c_white,1)
+        }
+        if wall[3] != noone
+        {
+            draw_sprite_ext(wall[3].sprite_index,wall[3].image_index,wall[3].x,wall[3].y-h+(global.zLevel*15),wall[3].facing,1,0,c_white,1)
+        }
+        
         draw_sprite(sprite_index,image_index,x,y-h+(global.zLevel*15))
+
         for(i=0;i&lt;5;i++)
         {
             //if vis = 2
@@ -191,6 +228,11 @@ if ground = true
             //{
                 draw_sprite_ext(level[i],i,x,y-h+(global.zLevel*15),1,1,0,trimColour,1)
             //}
+        }
+        
+        for(i=0;i&lt;doodads;i++)
+        {
+            draw_sprite_ext(doodadSprite[i],doodadImage[i],doodadX[i],doodadY[i]-h+(global.zLevel*15),doodadFlip[i],1,0,c_white,1)
         }
         
         if  overlay != 0 || onPath &gt;= 4 //(global.zLevel = isoZ and overlay != 0)
@@ -211,6 +253,15 @@ if ground = true
     }
     else
     {
+        if wall[0] != noone
+        {
+            draw_sprite_ext(wall[0].sprite_index,wall[0].image_index,wall[0].x,wall[0].y-h+(global.zLevel*15),wall[0].facing,1,0,c_black,1)
+        }
+        if wall[3] != noone
+        {
+            draw_sprite_ext(wall[3].sprite_index,wall[3].image_index,wall[3].x,wall[3].y-h+(global.zLevel*15),wall[3].facing,1,0,c_black,1)
+        }
+    
         draw_sprite_ext(sprite_index,image_index,x,y-h+(global.zLevel*15),1,1,0,c_black,1)
     }
 }
