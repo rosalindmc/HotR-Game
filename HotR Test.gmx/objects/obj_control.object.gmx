@@ -35,6 +35,13 @@ mapTime = 0
 mapTimeOn = true
 global.timeDelay = 1
 
+//Light
+global.lR = 0
+global.lG = 0
+global.lB = 0
+global.alpha = 0
+
+
 //Other
 global.loading = true
 global.loadingI = 0
@@ -172,6 +179,7 @@ alarm[0] = 2
     checkSpace()
 }
 
+lightControl()
 updateVision()
 updateScrollVis()
 global.loading = false
@@ -700,6 +708,13 @@ if obj_camera.x != obj_camera.xprevious or obj_camera.y != obj_camera.yprevious
     updateScrollVis()
 }
 }
+
+/*TEST
+if instance_exists(cHover) and instance_exists(global.control) and mouse_check_button_pressed(mb_left)
+{
+    global.i = global.control
+    losLight(20,global.control,cHover)
+}
 </string>
           </argument>
         </arguments>
@@ -834,6 +849,12 @@ if global.loading = false
 {
     if cHover != noone
     {
+    shader_set_uniform_f(global.shader_light, 1, 1, 1, 1)
+    global.lR = 1
+    global.lG = 1 
+    global.lB = 1 
+    global.alpha = 1
+    
         if global.mouseSprite = 0
         {
             draw_sprite(spr_selection,image_index,cHover.x,cHover.y-cHover.h+(global.zLevel*15))

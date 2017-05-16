@@ -361,6 +361,11 @@ if o.mook = true
     blockStr *= .5
 }
 
+if hidden = true
+{
+    lightSource = false
+}
+
 #define clearArmour
 bodyItems = 0
 chstItems = 0

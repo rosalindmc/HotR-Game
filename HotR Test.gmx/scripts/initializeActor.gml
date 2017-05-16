@@ -7,6 +7,7 @@
 humanoid(0)
 
 //Game Attributes
+
 initializeCharStats()
 
 //Core
@@ -78,6 +79,13 @@ image_speed = 15/global.fspd
 vis = false
 scrollVis = false
 sX = 1
+
+//Lighting
+lightSource = true
+spreadRed = .2
+spreadGreen = .35
+spreadBlue = .5
+spreadStrength = 5
 
 //Effects
 status = ds_list_create()
@@ -174,6 +182,7 @@ wepName[3] = ''
 
 //Other
 rigid = false
+player = false
 
 //Initialize of weapons for weapon users
 initializeTriggers()
@@ -284,6 +293,13 @@ aiFatigueMult = -0.1
 aiWoundMult = -0.1
 aiDisableMult = 0
 aiRandom = 1
+
+//Light
+lightSource = player
+spreadRed = .9
+spreadGreen = .6
+spreadBlue = .4
+spreadStrength = 5
 
 
 

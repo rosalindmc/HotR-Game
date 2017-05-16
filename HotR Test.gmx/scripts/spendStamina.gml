@@ -104,7 +104,7 @@ if argument0.life <= 0
     {
         if argument0.expEarned = false
         {
-            owner.experience += (argument0.expOnKill)*(1-((cunning-8)*.03))
+            owner.experience += (argument0.expOnKill)*xpMult
             checkLevelUp(owner)
         }
         

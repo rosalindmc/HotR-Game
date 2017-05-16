@@ -110,11 +110,11 @@ switch(argument0)
 {
 case 0:     //Run when the unit is initialized in battle
 onDown[onDownSize,0] = statusGain
-onDown[onDownSize,1] = stealth
-onDown[onDownSize,2] = 100
-onDown[onDownSize,3] = 1
-onDown[onDownSize,4] = 5
-onDown[onDownSize,5] = false
+onDown[onDownSize,1] = 'Shadow Strike'
+onDown[onDownSize,2] = stealth
+onDown[onDownSize,3] = 100
+onDown[onDownSize,4] = 1
+onDown[onDownSize,5] = 5
 onDownSize += 1
 break
 

@@ -175,3 +175,222 @@ while (ret = 0){
 return(ret)
 #define rangeDropoff
 return point_distance(0,0,argument0.x-argument1.x,(argument0.y-argument1.y)*2)+max(0,argument1.h-argument0.h)
+#define losLight
+//losGrid(rng, origin, target)
+
+var iX, iY, iZ, sX, sY, sZ, dX, dY, dZ, xySlope, xzSlope, yPlus, zPlus, success, longAxis
+
+//figure out sX, sY and sZ
+sX = floor(((argument1.x-100)/40)+((argument1.y-100)/20))-25
+sY = floor(((argument1.y-100)/20)-((argument1.x-100)/40))+25
+sZ = floor((argument1.h+14)/15)
+
+//figure out dX, dY and dZ
+dX = floor(((argument2.x-100)/40)+((argument2.y-100)/20))-25
+dY = floor(((argument2.y-100)/20)-((argument2.x-100)/40))+25
+dZ = floor((argument2.h+14)/15)
+
+//start at the beggining
+iX = sX
+iY = sY
+iZ = sZ
+
+tX = sX
+tY = sY
+tZ = sZ
+
+xPlus = 0
+yPlus = 0
+zPlus = 0
+
+success = true
+
+    //Find long axis
+    if abs(sX-dX) >= abs(sY-dY) and abs(sX-dX) >= abs(sZ-dZ)      //x Long Axis
+    {
+        //find slope x/y
+        xySlope = (dY-sY)/(abs(sX-dX))
+    
+        //find slope x/z
+        xzSlope = (dZ-sZ)/(abs(sX-dX))
+        
+        longAxis = 0
+    }
+    else if abs(sY-dY) >= abs(sX-dX) and abs(sY-dY) >= abs(sZ-dZ) //y Long Axis
+    {
+        //find slope y/x
+        yxSlope = (dX-sX)/(abs(sY-dY))
+        
+        //find slope y/z
+        yzSlope = (dZ-sZ)/(abs(sY-dY))
+        
+        longAxis = 1
+    }
+    else                                                        //z Long Axis
+    {     
+        //find slope z/y
+        zySlope = (dY-sY)/(abs(sZ-dZ))
+        
+        //find slope z/x
+        zxSlope = (dX-sX)/(abs(sZ-dZ))
+        
+        longAxis = 2
+    }
+
+    
+    //a light source always lights itself      
+    obj_control.map[iX+(obj_control.mapWidth*iZ),iY].lR = max(global.i.spreadRed,obj_control.map[iX+(obj_control.mapWidth*iZ),iY].lR)
+    obj_control.map[iX+(obj_control.mapWidth*iZ),iY].lG = max(global.i.spreadGreen,obj_control.map[iX+(obj_control.mapWidth*iZ),iY].lG)
+    obj_control.map[iX+(obj_control.mapWidth*iZ),iY].lB = max(global.i.spreadBlue,obj_control.map[iX+(obj_control.mapWidth*iZ),iY].lB)
+    
+    //move one step towards dX, dY and dZ
+    repeat(max(abs(sX-dX),abs(sY-dY),abs(sZ-dZ)))
+    {
+        //Adjust Coordinates
+        switch(longAxis)
+        {
+        case 0:
+        yPlus += xySlope
+        zPlus += xzSlope
+        tX += sign(dX-sX)
+        break
+        case 1:
+        xPlus += yxSlope
+        zPlus += yzSlope
+        tY += sign(dY-sY)
+        break
+        case 2:
+        xPlus += zxSlope
+        yPlus += zySlope
+        tZ += sign(dZ-sZ)
+        break
+        }
+        
+        //Do lateral moves
+        if abs(yPlus) >= 1
+        {
+            tY += sign(yPlus)
+            yPlus -= sign(yPlus)
+        }
+        
+        if abs(zPlus) >= 1
+        {
+            tZ += sign(zPlus)
+            zPlus -= sign(zPlus)
+        }
+        
+        if abs(xPlus) >= 1
+        {
+            tX += sign(xPlus)
+            xPlus -= sign(xPlus)
+        }
+        
+        tX = median(0,tX,obj_control.mapWidth-1)
+        tY = median(0,tY,obj_control.mapHeight-1)
+        tZ = median(0,tZ,obj_control.mapDepth-1)
+        
+        /*
+        show_message("x"+string(iX)+" y"+string(iY)+" z"+string(iZ)+"
+        tX"+string(tX)+" tY"+string(tY)+" tZ"+string(tZ)+"
+        sx"+string(sX)+" sy"+string(sY)+" sz"+string(sZ)+"
+        dX"+string(dX)+" dY"+string(dY)+" dZ"+string(dZ)+" 
+        long Axis"+string(longAxis)+" success"+string(success)+" 
+        xPlus"+string(xPlus)+" yPlus"+string(yPlus)+" zPlus"+string(zPlus))
+        */
+        
+        //Check continued success?
+        if success = true
+        {
+            success = losAdjacent(iX,iY,iZ,tX,tY,tZ)
+            
+            //if success spread light
+            if success = true
+            {
+                lM = min(1,(global.i.spreadStrength*metre*.5)/point_distance(obj_control.map[iX+(obj_control.mapWidth*iZ),iY].x,0,global.i.x,(obj_control.map[iX+(obj_control.mapWidth*iZ),iY].y-global.i.y)*2))
+            
+                obj_control.map[tX+(obj_control.mapWidth*tZ),tY].lR = max(global.i.spreadRed*lM,obj_control.map[tX+(obj_control.mapWidth*tZ),tY].lR)
+                obj_control.map[tX+(obj_control.mapWidth*tZ),tY].lG = max(global.i.spreadGreen*lM,obj_control.map[tX+(obj_control.mapWidth*tZ),tY].lG)
+                obj_control.map[tX+(obj_control.mapWidth*tZ),tY].lB = max(global.i.spreadBlue*lM,obj_control.map[tX+(obj_control.mapWidth*tZ),tY].lB)
+            }
+        }
+        
+        //move checker to new tile
+        iX = tX
+        iY = tY
+        iZ = tZ
+        
+        //remove from the list
+        ds_priority_delete_value(global.tiles,obj_control.map[iX+(obj_control.mapWidth*iZ),iY])
+    }    
+
+#define losAdjacent
+var s = obj_control.map[argument0+(obj_control.mapWidth*argument2),argument1]
+var d = obj_control.map[argument3+(obj_control.mapWidth*argument5),argument4]
+var xy = false
+
+if d.isoX < s.isoX      //Space West
+{
+    if s.wall[3] = noone or d.wall[1] = noone
+    {
+    xy = true
+    }
+}
+else if d.isoX > s.isoX      //Space East
+{
+    if s.wall[1] = noone or d.wall[3] = noone
+    {
+    xy = true
+    }
+}
+
+if d.isoY < s.isoY      //Space North
+{
+    if s.wall[0] = noone or d.wall[2] = noone
+    {
+    xy = true
+    }
+}
+else if d.isoY > s.isoY      //Space South
+{
+    if s.wall[2] = noone or d.wall[0] = noone
+    {
+    xy = true
+    }
+}
+
+if d.isoX = s.isoX and d.isoY = s.isoY
+{
+    xy = true
+}
+
+if xy = false
+{
+    return false
+}
+
+if d.isoZ > s.isoZ      //Space Above
+{
+    if (d.ground = false or s.space[4] > 0)
+    {
+        return true
+    }
+    else
+    {
+        return false
+    }
+}
+else if d.isoZ < s.isoZ      //Space Below
+{
+    if (s.ground = false or d.space[4] > 0)
+    {
+        return true
+    }
+    else
+    {
+        return false
+    }
+}
+else
+{
+    return true
+}

@@ -35,10 +35,16 @@ ground = true
 cost = 1
 
 //Light
-lR = random(1)
-lG = random(1)
-lB = random(1)
+lR = 1
+lG = 1
+lB = 1
 alpha = 1
+
+lightSource = false
+spreadBlue = random(1)
+spreadGreen = random(1)
+spreadRed = random(1)
+spreadStrength = random(5)
 
 //Details
 occupant = noone
@@ -165,7 +171,7 @@ if ground = true
 }
 
 doodads = 0
-repeat(min(irandom(5),irandom(8)))
+repeat(min(irandom(5),irandom(5),irandom(5),irandom(8)))
 {
     doodadSprite[doodads] = spr_grassTuft
     doodadX[doodads] = x-15+random(30)
@@ -201,14 +207,28 @@ repeat(min(irandom(5),irandom(8)))
 {
     if vis != false and scrollVis != false
     {
-        if vis = 2
+        /*if vis = 2
         {
-            shader_set_uniform_f(global.shader_light, (lR+lG+lB)/3, (lR+lG+lB)/3, (lR+lG+lB)/3, alpha);
+            if global.lR != (lR+lG+lB)/3 or global.lG != (lR+lG+lB)/3 or global.lB != (lR+lG+lB)/3 or global.alpha != alpha
+            {
+                shader_set_uniform_f(global.shader_light, (lR+lG+lB)/3, (lR+lG+lB)/3, (lR+lG+lB)/3, alpha)
+                global.lR = (lR+lG+lB)/3
+                global.lG = (lR+lG+lB)/3 
+                global.lB = (lR+lG+lB)/3 
+                global.alpha = alpha
+            }
         }
         else
-        {
-            shader_set_uniform_f(global.shader_light, lR, lG, lB, alpha);
-        }
+        {*/
+            if global.lR != lR or global.lG != lG or global.lB != lB or global.alpha != alpha
+            {
+                shader_set_uniform_f(global.shader_light, lR, lG, lB, alpha)
+                global.lR = lR
+                global.lG = lG 
+                global.lB = lB 
+                global.alpha = alpha
+            }
+        //}
         
         if wall[0] != noone
         {
@@ -223,12 +243,12 @@ repeat(min(irandom(5),irandom(8)))
 
         for(i=0;i&lt;5;i++)
         {
-            //if vis = 2
-            //{
-            //    draw_sprite_ext(level[i],i,x,y-h+(global.zLevel*15),1,1,0,c_gray,1)
-            //}
-            //else
-            //{
+            /*if vis = 2
+            {
+                draw_sprite_ext(level[i],i,x,y-h+(global.zLevel*15),1,1,0,c_gray,1)
+            }
+            else
+            {*/
                 draw_sprite_ext(level[i],i,x,y-h+(global.zLevel*15),1,1,0,trimColour,1)
             //}
         }
@@ -238,8 +258,18 @@ repeat(min(irandom(5),irandom(8)))
             draw_sprite_ext(doodadSprite[i],doodadImage[i],doodadX[i],doodadY[i]-h+(global.zLevel*15),doodadFlip[i],1,0,c_white,1)
         }
         
-        if  overlay != 0 || onPath &gt;= 4 //(global.zLevel = isoZ and overlay != 0)
+        if  overlay != 0 || onPath &gt;= 4
         {
+        
+            if global.lR != (lR+1)/2 or global.lG != (lG+1)/2 or global.lB != (lB+1)/2 or global.alpha != 1
+            {
+                shader_set_uniform_f(global.shader_light, (lR+1)/2, (lG+1)/2, (lB+1)/2, 1)
+                global.lR = (lR+1)/2
+                global.lG = (lG+1)/2
+                global.lB = (lB+1)/2
+                global.alpha = 1
+            }
+        
             if isoZ = global.zLevel or onPath &gt;= 4
             {
                 draw_sprite(spr_tilePathing,max(overlay,onPath),x,y-h+(global.zLevel*15))

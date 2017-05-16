@@ -4,21 +4,35 @@ case 0:
 room_height = 1200
 room_width = 2200
 
+switch(global.timeOfDay)
+{
+    case 1:
+    global.ambientR = .9
+    global.ambientG = .9
+    global.ambientB = .9
+    global.sightBase = 30
+    global.accuracyBase = 1
+    break
+    case 2:
+    global.ambientR = .75
+    global.ambientG = .5
+    global.ambientB = .5
+    global.sightBase = 25
+    global.accuracyBase = .95
+    break
+    case 3:
+    global.ambientR = .1
+    global.ambientG = .1
+    global.ambientB = .3
+    global.sightBase = 10
+    global.accuracyBase = .9
+    break
+}
+
 //Tile Creation
 mapHeight = 40
 mapWidth = 40
 mapDepth = 6
-
-if global.timeOfDay = 3
-{
-    global.sightBase = 10
-    global.accuracyBase = .75
-}
-else
-{
-    global.sightBase = 30
-    global.accuracyBase = 1
-}
 break
 
 case 1:

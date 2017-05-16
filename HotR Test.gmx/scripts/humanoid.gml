@@ -333,7 +333,7 @@ i = 0 repeat(legsItems[2-vFacing]){i++ draw_sprite_ext(legsItem[i,2-vFacing],20+
 
 //Hips
 draw_sprite_ext(hipsSprite,hipsImage+vFacing,hipsX,hipsY,hFacing*sX,sX,hipsRot,skinTone,1)
-//draw_sprite_ext(spr_downHair,hipsImage+vFacing,hipsX,hipsY,hFacing*sX,sX,hipsRot,hairColour,1)
+draw_sprite_ext(spr_downHair,hipsImage+vFacing,hipsX,hipsY,hFacing*sX,sX,hipsRot,hairColour,1)
 i = 0 repeat(underHipsNum){i++ draw_sprite_ext(hipsItem[i],12+hipsImage+vFacing,hipsX,hipsY,hFacing*sX,sX,hipsRot,hipsColour[i],1)}
 
 //Skirt

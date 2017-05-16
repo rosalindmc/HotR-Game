@@ -50,6 +50,14 @@ else
         y = moveY
         h = moveZ
         
+        if lightSource = true
+        {
+        with(obj_control)
+        {
+            lightControl()
+        }
+        }
+        
         if isoTile.retreatTile
         {
             retreatUnit(id)
@@ -62,7 +70,17 @@ if instance_exists(obj_control)
     iX = floor(((x-100)/40)+((y-100)/20))-25
     iY = floor(((y-100)/20)-((x-100)/40))+25
     iZ = floor((h+14)/15)
-    currentTile = obj_control.map[iX+(obj_control.mapWidth*iZ),iY]
+    if currentTile != obj_control.map[iX+(obj_control.mapWidth*iZ),iY]
+    {
+        currentTile = obj_control.map[iX+(obj_control.mapWidth*iZ),iY]
+        if lightSource = true
+        {
+        with(obj_control)
+        {
+            lightControl()
+        }
+        }
+    }
 }
 break
 

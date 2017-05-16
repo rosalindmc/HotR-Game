@@ -602,6 +602,7 @@
         <script>scripts\endTurn.gml</script>
         <script>scripts\controlPlayer.gml</script>
         <script>scripts\drawControl.gml</script>
+        <script>scripts\lightControlMap.gml</script>
         <script>scripts\initiativeSlotReset.gml</script>
         <scripts name="Movement">
           <script>scripts\wipeTiles.gml</script>
