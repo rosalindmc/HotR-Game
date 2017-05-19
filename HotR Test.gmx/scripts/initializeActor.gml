@@ -295,12 +295,18 @@ aiDisableMult = 0
 aiRandom = 1
 
 //Light
+if global.timeOfDay = 3
+{
 lightSource = player
 spreadRed = .9
 spreadGreen = .6
 spreadBlue = .4
 spreadStrength = 5
-
+}
+else
+{
+lightSource = false
+}
 
 
 #define initializeWeapon

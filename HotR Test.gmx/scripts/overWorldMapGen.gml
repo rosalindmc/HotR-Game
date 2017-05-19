@@ -37,6 +37,7 @@ break
 
 case 1:
 //Map Gen
+global.waterLevel = 1
 combatHillsGen()
 combatMudGen()
 

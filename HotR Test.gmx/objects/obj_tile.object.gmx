@@ -32,7 +32,10 @@ walk = ds_list_create()
 //Movement
 pathable = true
 ground = true
+water = false   //1 = water surface, 2 = underwater
 cost = 1
+wH = 0
+wave = 0 
 
 //Light
 lR = 1
@@ -133,6 +136,35 @@ ds_list_destroy(walk)
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="1">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>wave += 1
+if wave &gt; 4
+{
+    wave = 0
+}
+
+alarm[1] = global.fspd/10
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
@@ -161,7 +193,7 @@ if isoZ &lt; obj_control.mapDepth-1
 }
 
 //Temp Random Mud
-if ground = true
+if ground = true and water = false
 {
     if humidity &gt; 10+random(2)
     {    
@@ -170,16 +202,24 @@ if ground = true
     }
 }
 
-doodads = 0
-repeat(min(irandom(5),irandom(5),irandom(5),irandom(8)))
+if water = false
 {
-    doodadSprite[doodads] = spr_grassTuft
-    doodadX[doodads] = x-15+random(30)
-    doodadY[doodads] = y-2+doodads
-    doodadImage[doodads] = irandom(7)
-    doodadAnim[doodads] = 0
-    doodadFlip[doodads] = choose(1,-1)
-    doodads += 1
+    doodads = 0
+    repeat(min(irandom(5),irandom(5),irandom(5),irandom(8)))
+    {
+        doodadSprite[doodads] = spr_grassTuft
+        doodadX[doodads] = x-15+random(30)
+        doodadY[doodads] = y-2+doodads
+        doodadImage[doodads] = irandom(7)
+        doodadAnim[doodads] = 0
+        doodadFlip[doodads] = choose(1,-1)
+        doodads += 1
+    }
+}
+else
+{
+    wave = irandom(4)
+    alarm[1] = global.fspd/5
 }
 </string>
           </argument>
@@ -207,28 +247,15 @@ repeat(min(irandom(5),irandom(5),irandom(5),irandom(8)))
 {
     if vis != false and scrollVis != false
     {
-        /*if vis = 2
+        if global.lR != lR or global.lG != lG or global.lB != lB or global.alpha != alpha
         {
-            if global.lR != (lR+lG+lB)/3 or global.lG != (lR+lG+lB)/3 or global.lB != (lR+lG+lB)/3 or global.alpha != alpha
-            {
-                shader_set_uniform_f(global.shader_light, (lR+lG+lB)/3, (lR+lG+lB)/3, (lR+lG+lB)/3, alpha)
-                global.lR = (lR+lG+lB)/3
-                global.lG = (lR+lG+lB)/3 
-                global.lB = (lR+lG+lB)/3 
-                global.alpha = alpha
-            }
+            shader_set_uniform_f(global.shader_light, lR, lG, lB, alpha)
+            global.lR = lR
+            global.lG = lG 
+            global.lB = lB 
+            global.alpha = alpha
         }
-        else
-        {*/
-            if global.lR != lR or global.lG != lG or global.lB != lB or global.alpha != alpha
-            {
-                shader_set_uniform_f(global.shader_light, lR, lG, lB, alpha)
-                global.lR = lR
-                global.lG = lG 
-                global.lB = lB 
-                global.alpha = alpha
-            }
-        //}
+
         
         if wall[0] != noone
         {
@@ -239,18 +266,11 @@ repeat(min(irandom(5),irandom(5),irandom(5),irandom(8)))
             draw_sprite_ext(wall[3].sprite_index,wall[3].image_index,wall[3].x,wall[3].y-h+(global.zLevel*15),wall[3].facing,1,0,c_white,1)
         }
         
-        draw_sprite(sprite_index,image_index,x,y-h+(global.zLevel*15))
+        draw_sprite(sprite_index,image_index,x,y-h-wH+(global.zLevel*15))
 
         for(i=0;i&lt;5;i++)
         {
-            /*if vis = 2
-            {
-                draw_sprite_ext(level[i],i,x,y-h+(global.zLevel*15),1,1,0,c_gray,1)
-            }
-            else
-            {*/
-                draw_sprite_ext(level[i],i,x,y-h+(global.zLevel*15),1,1,0,trimColour,1)
-            //}
+            draw_sprite_ext(level[i],i+(wave*5),x,y-floor(wave/4)-h-wH+(global.zLevel*15),1,1,0,trimColour,1)
         }
         
         for(i=0;i&lt;doodads;i++)
@@ -272,17 +292,31 @@ repeat(min(irandom(5),irandom(5),irandom(5),irandom(8)))
         
             if isoZ = global.zLevel or onPath &gt;= 4
             {
-                draw_sprite(spr_tilePathing,max(overlay,onPath),x,y-h+(global.zLevel*15))
+                draw_sprite(spr_tilePathing,max(overlay,onPath),x,y-h-wH+(global.zLevel*15))
             }
             else 
             {
-                draw_sprite(spr_tilePathing,overlay+5,x,y-h+(global.zLevel*15))
+                draw_sprite(spr_tilePathing,overlay+5,x,y-h-wH+(global.zLevel*15))
             }
         }
         //if zoneControl = true 
         //{
         //    draw_sprite(spr_enemyselect,0,x,y)
         //}
+        
+        /*
+        if water = 1
+        {
+            surface_set_target(global.blockSurf)
+            repeat(10)
+            {   
+                iX = x-15+random(30)
+                iY = y-8+random(16)-wH
+                draw_line(iX-1-global.surfX1,iY-global.surfY1,iX+1-global.surfX1,iY-global.surfY1)   
+            }
+            surface_reset_target()
+        }
+        */
     }
     else
     {
@@ -295,7 +329,7 @@ repeat(min(irandom(5),irandom(5),irandom(5),irandom(8)))
             draw_sprite_ext(wall[3].sprite_index,wall[3].image_index,wall[3].x,wall[3].y-h+(global.zLevel*15),wall[3].facing,1,0,c_black,1)
         }
     
-        draw_sprite_ext(sprite_index,image_index,x,y-h+(global.zLevel*15),1,1,0,c_black,1)
+        draw_sprite_ext(sprite_index,image_index,x,y-h-wH+(global.zLevel*15),1,1,0,c_black,1)
     }
 }
 

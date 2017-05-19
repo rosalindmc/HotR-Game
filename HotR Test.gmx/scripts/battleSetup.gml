@@ -9,6 +9,11 @@ global.battlefield = argument2
 global.mapGen = argument3  
 global.inCombat = true
 
+global.surfX1 = room_width
+global.surfY1 = room_height
+global.surfX2 = 0
+global.surfY2 = 0
+
 instance_deactivate_object(obj_overworldParent)
 global.controlObject = instance_create(0,0,obj_control)
 
@@ -204,9 +209,40 @@ with(obj_tile)
             }
         }
         
-        //slopeGen()
-        
         trimColour = global.battlefield.tile.trimColour
+    }
+}
+
+//Temp Water
+if global.waterLevel != 0
+{
+    with(obj_tile)
+    {
+        if obj_control.map[isoX,isoY].heightMap <= isoZ
+        {
+        if ground = false
+        {
+            if isoZ = global.waterLevel
+            {
+                water = 3  
+            }
+        }
+        if isoZ = global.waterLevel -1
+            {
+                water = 1  
+                sprite_index = spr_waterTactics
+                wH += 8
+                
+                global.surfX1 = min(global.surfX1,x-20)
+                global.surfY1 = min(global.surfY1,y-18)
+                global.surfX2 = max(global.surfX2,x+20)
+                global.surfY2 = max(global.surfY2,y+2)
+            }
+        else if isoZ < global.waterLevel
+        {
+            water = 2    
+        }
+        }
     }
 }
 

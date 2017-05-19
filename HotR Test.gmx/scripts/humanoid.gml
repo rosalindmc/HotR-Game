@@ -16,7 +16,6 @@ break
 
 #define initializeHumanoid
 //Initialize a humanoid
-
 animType = humanoid
 gender = 0
 height = 28
@@ -185,20 +184,13 @@ legAngleX = 1 //Multiplier of leg movement
 #define drawHumanoid
 //Draw a humanoid
 
-//Shader
-//if hidden = true
-//{
-    //Find new solution for stealth
-    //shader_set(shd_stealth)
-//}
-
     //Adjust Bones
     
 //Body Facing and Direction
 twist(bodyTwist)
 
-hipsX = round(x)+(hipsThrust*sX*hFacing)
-hipsY = round(y)-((hipsOffset+hipsAdjust+hipsBounce)*sX)-h+(global.zLevel*15)
+hipsX = round(50)+(hipsThrust*sX*hFacing)
+hipsY = round(75)-((hipsOffset+hipsAdjust+hipsBounce)*sX)
 
 legX[1] = round(hipsX+lengthdir_x(legOffset[1]*hFacing*sX, hipsRot)+lengthdir_x(legAdjust[1]*sX, hipsRot-90)+lengthdir_x(hipsBounce*sX, hipsRot-90))
 legY[1] = round(hipsY+lengthdir_y(legOffset[1]*hFacing*sX, hipsRot)+lengthdir_y(legAdjust[1]*sX, hipsRot-90)+lengthdir_y(hipsBounce*sX, hipsRot-90))
@@ -276,7 +268,12 @@ else
 {armHFacing[2] = bodyHFacing}
        
         //Char Draw
-                
+        
+if surface_exists(charSurf)  
+{        
+surface_set_target(charSurf)
+draw_clear_alpha(c_white,0)
+           
 //Arms Behind Body
 if greatWeapon = true and handFront[2-shldrSwap] = false 
 {
@@ -434,6 +431,32 @@ if greatWeapon = true and handFront[2-shldrSwap] = true
     draw_sprite_ext(handSprite,0,handX[2],handY[2],bodyHFacing*sX,sX,handRot[2],skinTone,1)
 }
 
+//Don't draw below waterline
+if instance_exists(currentTile)
+{
+    if currentTile.wH > 0
+    {
+        draw_set_blend_mode(bm_subtract)
+        draw_set_colour(c_black)
+        draw_rectangle(0,75-((currentTile.h+currentTile.wH)-h),100,100,false)
+        draw_set_blend_mode(bm_normal)
+        draw_set_colour_write_enable(true,true,true,false)
+        draw_set_colour(ltBlue)
+        draw_rectangle(0,75-((currentTile.h+currentTile.wH)-h),100,75-((currentTile.h+currentTile.wH)-h),true)
+        draw_set_colour_write_enable(true,true,true,true)
+        draw_set_colour(c_white)
+    }
+}
+
+surface_reset_target()
+//draw_surface_ext(charSurf,x-round(50),y-round(75)-h+(global.zLevel*15)+100,1,-.5,0,c_white,.5)
+}
+else
+{
+    charSurf = surface_create(100,100)
+}
+
+
 /*TEMP TEST
 draw_set_colour(c_green)
 draw_text(x+50,y,handY[1]-y+((handHeight[1]+handHeightAdj[1])*sX))
@@ -457,9 +480,9 @@ draw_sprite_ext(c.hairStyle,4,argument1,argument2,argument3,argument3,0,c.hairCo
 draw_sprite_general(c.bodySprite,c.bodyImage,c.portraitAdj+c.headAdjust,0,12,12+adj-c.headOffset,argument1-(6*argument3),argument2-(6*argument3)+(c.headOffset*argument3),argument3,argument3,0,c.skinTone,c.skinTone,c.skinTone,c.skinTone,1)
 i = 0 repeat(c.bodyItems){i++ draw_sprite_general(c.bodyItem[i],2+c.bodyImage,c.portraitAdj+c.headAdjust,0,12,12+adj-c.headOffset,argument1-(6*argument3),argument2-(6*argument3)+(c.headOffset*argument3),argument3,argument3,0,c.bodyColour[i],c.bodyColour[i],c.bodyColour[i],c.bodyColour[i],1)}
 
-//Chest
-draw_sprite_general(c.chstSprite,c.chstImage,c.portraitAdj+c.headAdjust-1,0,12-c.chstAdjust,11+adj-c.headOffset-c.chstOffset,argument1-((6-c.chstAdjust)*argument3),argument2-((5+c.chstOffset-c.headOffset)*argument3),argument3,argument3,0,c.skinTone,c.skinTone,c.skinTone,c.skinTone,1)
-i = 0 repeat(c.chstItems){i++ draw_sprite_general(c.chstItem[i],8+c.chstImage,c.portraitAdj+c.headAdjust-1,0,13-c.chstAdjust,12+adj-c.headOffset-c.chstOffset,argument1-((7-c.chstAdjust)*argument3),argument2-((6+c.chstOffset-c.headOffset)*argument3),argument3,argument3,0,c.chstColour[i],c.chstColour[i],c.chstColour[i],c.chstColour[i],1)}
+//Chest (NEEDFIX)
+//draw_sprite_general(c.chstSprite,c.chstImage,c.portraitAdj+c.headAdjust-1,0,12-c.chstAdjust,10+adj-c.headOffset-c.chstOffset,argument1-((6-c.chstAdjust)*argument3),argument2-((5-c.chstOffset-c.headOffset)*argument3),argument3,argument3,0,c.skinTone,c.skinTone,c.skinTone,c.skinTone,1)
+//i = 0 repeat(c.chstItems){i++ draw_sprite_general(c.chstItem[i],8+c.chstImage,c.portraitAdj+c.headAdjust-1,0,13-c.chstAdjust,12+adj-c.headOffset-c.chstOffset,argument1-((7-c.chstAdjust)*argument3),argument2-((6-c.chstOffset-c.headOffset)*argument3),argument3,argument3,0,c.chstColour[i],c.chstColour[i],c.chstColour[i],c.chstColour[i],1)}
 //c.portraitAdj+c.headAdjust
 //-c.headOffset
 //Head and Hair

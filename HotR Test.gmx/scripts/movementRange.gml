@@ -233,6 +233,18 @@ repeat(min(4,obj_control.mapDepth-tz-1))
     }
 }
 
+if water = 1
+{
+    for(i=0;i<4;i++)
+    {
+    if space[i] = 0
+    {
+        level[i] = spr_waveBorder
+        trimColour = ltBlue
+    }
+    }
+}
+
 
 
 #define zoneOfControl

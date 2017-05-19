@@ -12,7 +12,7 @@ with(obj_tile)
     onPath = 0
     zoneControl = false
     
-    if ground = false and wall[0] = noone and wall[1] = noone and wall[2] = noone and wall[3] = noone
+    if ground = false and water != 1 and wall[0] = noone and wall[1] = noone and wall[2] = noone and wall[3] = noone and occupant = noone
     {
         instance_deactivate_object(id)
     }

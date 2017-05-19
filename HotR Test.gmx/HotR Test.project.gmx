@@ -340,7 +340,10 @@
       <sprite>sprites\spr_wall</sprite>
       <sprite>sprites\spr_step</sprite>
       <sprite>sprites\spr_tile</sprite>
+      <sprite>sprites\spr_waterTactics</sprite>
       <sprite>sprites\spr_tileBorder</sprite>
+      <sprite>sprites\spr_waveBorder</sprite>
+      <sprite>sprites\spr_waveBorder_backup</sprite>
       <sprite>sprites\spr_mudTile</sprite>
       <sprite>sprites\spr_dirtStep</sprite>
       <sprite>sprites\spr_dirtWall</sprite>
@@ -348,6 +351,7 @@
       <sprites name="Details">
         <sprite>sprites\spr_grassTuft</sprite>
       </sprites>
+      <sprite>sprites\spr_clouds</sprite>
     </sprites>
     <sprites name="Masks">
       <sprite>sprites\spr_mask</sprite>
@@ -470,6 +474,7 @@
         <sprite>sprites\spr_cftGrassTrim</sprite>
         <sprite>sprites\spr_qfGrass</sprite>
         <sprite>sprites\spr_stSnowTrim</sprite>
+        <sprite>sprites\spr_sun</sprite>
         <sprite>sprites\spr_cloud</sprite>
         <sprite>sprites\spr_stSnow</sprite>
         <sprite>sprites\spr_cftGrass</sprite>
@@ -497,7 +502,6 @@
     <background>background\bck_frostdungeon</background>
     <background>background\bg_test</background>
     <background>background\bg_grass</background>
-    <background>background\bg_clouds</background>
     <background>background\bg_darkClouds</background>
   </backgrounds>
   <paths name="paths"/>
@@ -565,7 +569,6 @@
     </scripts>
     <scripts name="Combat">
       <scripts name="Actors">
-        <script>scripts\updateVision.gml</script>
         <script>scripts\los.gml</script>
         <script>scripts\initializeActor.gml</script>
         <script>scripts\upkeep.gml</script>
@@ -599,6 +602,7 @@
       </scripts>
       <scripts name="Control">
         <script>scripts\controlAI.gml</script>
+        <script>scripts\updateVision.gml</script>
         <script>scripts\endTurn.gml</script>
         <script>scripts\controlPlayer.gml</script>
         <script>scripts\drawControl.gml</script>

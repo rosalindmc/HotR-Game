@@ -28,6 +28,45 @@
             <string>//Shader Setup
 global.shader_light = shader_get_uniform(shd_combat, "light");
 shader_set_uniform_f(global.shader_light, 1, 1, 1, 1);
+
+global.reflectSurf = -4
+global.blockSurf = -4
+global.maskSurf = -4
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="7" enumb="3">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if surface_exists(global.reflectSurf)
+{
+    surface_free(global.reflectSurf)
+}
+if surface_exists(global.blockSurf)
+{
+    surface_free(global.blockSurf)
+}
+if surface_exists(global.maskSurf)
+{
+    surface_free(global.maskSurf)
+}
 </string>
           </argument>
         </arguments>
@@ -51,6 +90,34 @@ shader_set_uniform_f(global.shader_light, 1, 1, 1, 1);
           <argument>
             <kind>1</kind>
             <string>shader_reset()
+
+if global.inCombat = true and global.surfX2 != 0
+{
+    //Combine the surfaces    
+    if surface_exists(global.reflectSurf)
+    {
+        draw_set_colour_write_enable(false,false,false,true)
+        surface_set_target(global.reflectSurf)
+        draw_set_blend_mode(bm_subtract)
+        if surface_exists(global.maskSurf)
+        {
+            draw_surface(global.maskSurf,0,0)
+        }
+        
+        if surface_exists(global.blockSurf)
+        {
+            draw_surface(global.blockSurf,0,0)   
+        }
+        draw_set_blend_mode(bm_normal)
+        draw_set_colour_write_enable(true,true,true,true)
+        surface_reset_target()
+        
+        draw_set_alpha(.5)
+        draw_surface(global.reflectSurf,global.surfX1,global.surfY1+(global.zLevel*15))
+        draw_set_alpha(1)
+    }
+}
+
 </string>
           </argument>
         </arguments>
@@ -75,12 +142,100 @@ shader_set_uniform_f(global.shader_light, 1, 1, 1, 1);
             <kind>1</kind>
             <string>if global.inCombat = true
 {
+    if global.surfX2 != 0
+    {
+    //Reflect Surface
+    if surface_exists(global.reflectSurf)
+    {
+    surface_set_target(global.reflectSurf)
+    
+    if global.timeOfDay = 1 
+    {
+    draw_clear_alpha(make_colour_rgb(150,240,255),0)
+    }
+    if global.timeOfDay = 2 
+    {
+    draw_clear_alpha(make_colour_rgb(250,250,200),0)
+    }
+    if global.timeOfDay = 3 
+    {
+    draw_clear_alpha(make_colour_rgb(150,200,210),0)
+    }
+    
+    draw_sprite(spr_sun,global.timeOfDay-1,view_xview+(view_wview/2)-global.surfX1,view_yview+(view_hview*.75)-global.surfY1)
+    
+    //later do sky
+    draw_sprite_tiled(spr_clouds,0,view_xview+current_time/25+(view_wview/2)-global.surfX1,view_yview+(view_hview/2)-global.surfY1)
+    
+    surface_reset_target()
+    }
+    else
+    {
+    global.reflectSurf = surface_create(global.surfX2-global.surfX1,global.surfY2-global.surfY1)
+    }
+    
+    //Block Surface
+    if surface_exists(global.blockSurf)
+    {
+    surface_set_target(global.blockSurf)
+    draw_clear_alpha(c_white,0)
+    surface_reset_target()
+    }
+    else
+    {
+    global.blockSurf = surface_create(global.surfX2-global.surfX1,global.surfY2-global.surfY1)
+    }
+    
+    //Mask Surface
+    if !surface_exists(global.maskSurf)
+    {
+        global.maskSurf = surface_create(global.surfX2-global.surfX1,global.surfY2-global.surfY1)
+        
+        surface_set_target(global.maskSurf)
+        draw_clear_alpha(c_white,1)
+        draw_set_blend_mode(bm_subtract)
+        with(obj_tile)
+        {
+            if water = 1 and vis != false
+            {
+                draw_sprite(spr_tile,0,x-global.surfX1,y-h-wH-global.surfY1)
+            }
+        }
+        draw_set_blend_mode(bm_normal)
+        with(obj_tile)
+        {
+        if vis != false
+        {
+            if water != 1 and isoZ &gt;= global.waterLevel
+            {
+                draw_sprite(spr_tile,0,x-global.surfX1,y-h-wH-global.surfY1)
+            }
+            if water = 1
+            {
+                if level[0] != spr_none
+                {
+                    draw_sprite_ext(spr_wallmask,0,x+11-global.surfX1,y-7-wH-h-global.surfY1,1,1,0,c_white,1)
+                    draw_sprite_ext(spr_wallmask,0,x+11-global.surfX1,y-10-wH-h-global.surfY1,1,1,0,c_white,1)
+                }
+                if level[3] != spr_none
+                {
+                    draw_sprite_ext(spr_wallmask,0,x-11-global.surfX1,y-7-wH-h-global.surfY1,-1,1,0,c_white,1)
+                    draw_sprite_ext(spr_wallmask,0,x-11-global.surfX1,y-10-wH-h-global.surfY1,-1,1,0,c_white,1)
+                }
+            }
+        }
+        }
+        surface_reset_target()
+    }
+    }
+    
     shader_set(shd_combat)
 }
 else
 {
     shader_set(global.shader)
 }
+
 </string>
           </argument>
         </arguments>

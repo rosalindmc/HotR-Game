@@ -172,7 +172,10 @@ act.sightTile = obj_control.map[act.isoX+(obj_control.mapWidth*(act.isoZ+1)),act
 dest.occupant = act
 
 //Update Vision to new position (add player qualifier in a moment)
-updateVision()
+if act.player = true
+{
+    updateVision()
+}
 
 #define makeMovePath
 //Make the path a moving actor follows.

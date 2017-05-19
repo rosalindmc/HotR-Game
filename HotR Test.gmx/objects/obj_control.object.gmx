@@ -41,6 +41,10 @@ global.lG = 0
 global.lB = 0
 global.alpha = 0
 
+//Reflections
+global.reflectSurf = surface_create(room_width,room_height)
+global.maskSurf = -4
+global.blockSurf = surface_create(room_width,room_height)
 
 //Other
 global.loading = true
@@ -183,6 +187,7 @@ lightControl()
 updateVision()
 updateScrollVis()
 global.loading = false
+
 </string>
           </argument>
         </arguments>
@@ -219,12 +224,12 @@ repeat(min(5,global.loadingMax-global.loadingI))
                 adjacency()
                 
                 //Clear Up Grid
-                if ground = false
+                if ground = false and water != 1
                 {
                     sprite_index = spr_none
                 }
             
-                if ground = false and wall[0] = noone and wall[1] = noone and wall[2] = noone and wall[3] = noone
+                if ground = false and water = false and wall[0] = noone and wall[1] = noone and wall[2] = noone and wall[3] = noone
                 {
                     instance_deactivate_object(id)
                 }
@@ -857,12 +862,12 @@ if global.loading = false
     
         if global.mouseSprite = 0
         {
-            draw_sprite(spr_selection,image_index,cHover.x,cHover.y-cHover.h+(global.zLevel*15))
+            draw_sprite(spr_selection,image_index,cHover.x,cHover.y-cHover.h-cHover.wH+(global.zLevel*15))
             //draw_sprite_ext(spr_selection,image_index,cHover.x,cHover.y-30-cHover.h+(global.zLevel*30),1,-1,0,c_white,1)  
         }
         else
         {
-            draw_sprite(spr_enemyselect,image_index,cHover.x,cHover.y-cHover.h+(global.zLevel*15))  
+            draw_sprite(spr_enemyselect,image_index,cHover.x,cHover.y-cHover.h-cHover.wH+(global.zLevel*15))  
         }
     }
 }
