@@ -88,6 +88,10 @@ itemScript(0)
 else
 {
     depth = -200
+    if inInventory = true
+    {
+    depth = -150
+    }
     tt = max(tt-(8/global.fspd),-1)    
 }
 

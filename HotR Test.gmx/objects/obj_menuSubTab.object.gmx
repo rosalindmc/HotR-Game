@@ -73,6 +73,11 @@ tabNum = 0
         {
             createTalents()
         }
+        
+        if global.subTab = 2 and global.menuSheet = 0
+        {
+            visualizeRelations()
+        }
     }
 }
 </string>

@@ -71,6 +71,7 @@ personality = orcHonour
 critWound[0] = -4
 critWounds = 0
 wounds = 0
+dead = false
 
 //Fatigue
 fat = 0
@@ -84,7 +85,10 @@ memories = 0
 //Replace with memories = ds_priority_create() with priority = strength
 
 //Relationships
-relationships = ds_priority_create()
+relationship[0] = -4
+relationshipValue[0] = 0
+relationshipType[0] = 'No Type'
+relations = 0
 
 //Role
 range = false

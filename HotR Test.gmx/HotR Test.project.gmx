@@ -675,6 +675,9 @@
       <scripts name="Dialogue">
         <script>scripts\dialogue.gml</script>
       </scripts>
+      <scripts name="Relationships">
+        <script>scripts\relationChange.gml</script>
+      </scripts>
     </scripts>
     <scripts name="Menu">
       <scripts name="Landing Menu">
@@ -871,6 +874,7 @@
         <object>objects\obj_topButton</object>
         <object>objects\obj_charTab</object>
         <object>objects\obj_menuDivider</object>
+        <object>objects\obj_relation</object>
         <object>objects\obj_model</object>
         <object>objects\obj_menuSheet</object>
         <object>objects\obj_option</object>

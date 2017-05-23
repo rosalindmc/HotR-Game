@@ -58,6 +58,8 @@ repeat(4)
     iy += 1
 }
 
+//Race and Background Traits
+
 //Injuries
 
 global.hudYMax = iy

@@ -110,6 +110,7 @@ if ds_list_size(party.party) = 0
         instance_destroy()
     }
 }
+
 else
 {
     i = 1
@@ -129,7 +130,8 @@ else
 }
 
 instance_deactivate_object(party)            
-instance_destroy()
+dead = true
+
 #define actorRevive
 active = true
 startAnimation(0,animIdle)

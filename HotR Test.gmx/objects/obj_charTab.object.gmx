@@ -77,6 +77,10 @@ model = -4
         {
             createTalents()
         }
+        if global.subTab = 2
+        {
+            visualizeRelations()
+        }
     }
 }
 else if global.charTab = tab

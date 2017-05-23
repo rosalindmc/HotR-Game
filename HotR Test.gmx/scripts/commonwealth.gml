@@ -150,6 +150,18 @@ repeat(5)
     createCharacterSheet(id,cwAdventurer)
 }
 
+//Temp Randomize Relationships
+for(iii = 0; iii < ds_list_size(party); iii++)
+{
+    for(ii = 0; ii < ds_list_size(party); ii++)
+    {
+        if iii != ii
+        {
+        relationChange(ds_list_find_value(party,iii),ds_list_find_value(party,ii),irandom(4)+irandom(3)-3)
+        }
+    }
+}
+
 #define cwAdventurer
 //Rules for a commonwealth adventurer
 initializeHumanoid()

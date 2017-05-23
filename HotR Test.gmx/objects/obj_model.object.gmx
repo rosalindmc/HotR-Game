@@ -55,6 +55,7 @@ isMoving = false
 hFacing = 1
 vFacing = 0
 facing = 0
+atkHand = 1
 
 //Lifebar
 lifeVis = life
@@ -251,7 +252,7 @@ for(i = 0; i &lt;= 7; i++)
     
     if tt[i,1] != 0 or  tt[i,0] != 0
     {
-    depth = -201
+    depth = -151
     }
     else
     {
