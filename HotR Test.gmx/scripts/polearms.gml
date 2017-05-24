@@ -61,6 +61,20 @@ onWound[onWoundSize,4] = i
 onWound[onWoundSize,5] = 10
 onWoundSize += 1
 break
+
+//Main Material
+case 3:
+matNum = 1
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 1
+return matGrpWood
+break
 }
 
 #define spear
@@ -124,6 +138,20 @@ onWound[onWoundSize,4] = i
 onWound[onWoundSize,5] = 10
 onWoundSize += 1
 break
+
+//Main Material
+case 3:
+matNum = 1
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 2
+produce = 1
+return matGrpWood
+break
 }
 
 #define pike
@@ -186,6 +214,20 @@ onWound[onWoundSize,3] = 0
 onWound[onWoundSize,4] = i
 onWound[onWoundSize,5] = 10
 onWoundSize += 1
+break
+
+//Main Material
+case 3:
+matNum = 1
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 3
+produce = 1
+return matGrpWood
 break
 }
 
@@ -257,5 +299,19 @@ onHit[onHitSize,3] = false
 onHit[onHitSize,4] = false
 onHit[onHitSize,5] = false
 onHitSize += 1
+break
+
+//Main Material
+case 3:
+matNum = 2
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 3
+produce = 1
+return matGrpWood
 break
 }

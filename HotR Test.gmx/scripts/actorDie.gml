@@ -124,6 +124,8 @@ else
             party.inventory[party.inventorySize-1,2] = invSlot[i,2]
             party.inventory[party.inventorySize-1,3] = invSlot[i,3]
             party.inventory[party.inventorySize-1,4] = invSlot[i,4]
+            party.inventory[party.inventorySize-1,5] = invSlot[i,5]
+            party.inventory[party.inventorySize-1,6] = invSlot[i,6]
         }
         i += 1
     }

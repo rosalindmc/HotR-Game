@@ -106,6 +106,15 @@ while (i <= ii)
 #define classGen
 script_execute(argument0)
 
+for(i = 1; i < 9; i++)
+{
+    if invSlot[i,0] != emptySlot
+    {
+        invSlot[i,5] = script_execute(script_execute(invSlot[i,0],3),invSlot[i,1])
+        invSlot[i,6] = script_execute(script_execute(invSlot[i,0],4),invSlot[i,1])
+    }
+}
+
 #define detailGen
 if firstName = -4
 {

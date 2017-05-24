@@ -59,6 +59,20 @@ onWound[onWoundSize,4] = i
 onWound[onWoundSize,5] = 10
 onWoundSize += 1
 break
+
+//Main Material
+case 3:
+matNum = 1
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 1
+return matGrpWood
+break
 }
 
 #define battleAxe
@@ -120,6 +134,20 @@ onWound[onWoundSize,4] = i
 onWound[onWoundSize,5] = 15
 onWoundSize += 1
 break
+
+//Main Material
+case 3:
+matNum = 1
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 2
+produce = 1
+return matGrpWood
+break
 }
 
 #define greatAxe
@@ -180,5 +208,19 @@ onWound[onWoundSize,3] = 3
 onWound[onWoundSize,4] = i
 onWound[onWoundSize,5] = 20
 onWoundSize += 1
+break
+
+//Main Material
+case 3:
+matNum = 2
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 2
+produce = 1
+return matGrpWood
 break
 }

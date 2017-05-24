@@ -42,6 +42,20 @@ sResist += iSResist
 
 armourApplyVis(c_white)
 break
+
+
+//Main Material
+case 3:
+matNum = 1
+produce = 1
+return matGrpCloth
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 1
+return matGrpMetal
 }
 
 #define wretchArmour
@@ -95,4 +109,18 @@ if headSprite != spr_wretchTwoHead
 }
 
 break
+
+
+//Main Material
+case 3:
+matNum = 1
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 1
+return matGrpLeather
 }

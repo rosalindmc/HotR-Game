@@ -59,6 +59,20 @@ onWound[onWoundSize,4] = i
 onWound[onWoundSize,5] = 30
 onWoundSize += 1
 break
+
+//Main Material
+case 3:
+matNum = 1
+produce = 2
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 2
+return matGrpLeather
+break
 }
 
 #define dagger
@@ -118,6 +132,20 @@ onHit[onHitSize,3] = 2
 onHit[onHitSize,4] = i
 onHit[onHitSize,5] = false
 onHitSize += 1
+break
+
+//Main Material
+case 3:
+matNum = 2
+produce = 2
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 2
+return matGrpLeather
 break
 }
 
@@ -179,6 +207,20 @@ onHit[onHitSize,3] = false
 onHit[onHitSize,4] = i
 onHit[onHitSize,5] = false
 onHitSize += 1
+break
+
+//Main Material
+case 3:
+matNum = 1
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 1
+return matGrpLeather
 break
 }
 
@@ -249,6 +291,20 @@ onHit[onHitSize,4] = false
 onHit[onHitSize,5] = false
 onHitSize += 1
 break
+
+//Main Material
+case 3:
+matNum = 1
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 1
+return matGrpLeather
+break
 }
 
 #define armingSword
@@ -318,6 +374,20 @@ onHit[onHitSize,4] = false
 onHit[onHitSize,5] = false
 onHitSize += 1
 break
+
+//Main Material
+case 3:
+matNum = 2
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 1
+return matGrpLeather
+break
 }
 
 #define sabre
@@ -377,6 +447,20 @@ onHit[onHitSize,3] = .5
 onHit[onHitSize,4] = i
 onHit[onHitSize,5] = false
 onHitSize += 1
+break
+
+//Main Material
+case 3:
+matNum = 2
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 1
+return matGrpLeather
 break
 }
 
@@ -438,6 +522,20 @@ onHit[onHitSize,4] = i
 onHit[onHitSize,5] = false
 onHitSize += 1
 break
+
+//Main Material
+case 3:
+matNum = 2
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 1
+return matGrpLeather
+break
 }
 
 #define bastardSword
@@ -498,6 +596,20 @@ onHit[onHitSize,3] = false
 onHit[onHitSize,4] = i
 onHit[onHitSize,5] = false
 onHitSize += 1
+break
+
+//Main Material
+case 3:
+matNum = 3
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 1
+return matGrpLeather
 break
 }
 
@@ -570,6 +682,20 @@ onHit[onHitSize,4] = false
 onHit[onHitSize,5] = false
 onHitSize += 1
 break
+
+//Main Material
+case 3:
+matNum = 3
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 1
+return matGrpLeather
+break
 }
 
 #define greatSword
@@ -640,5 +766,19 @@ onHit[onHitSize,3] = false
 onHit[onHitSize,4] = false
 onHit[onHitSize,5] = false
 onHitSize += 1
+break
+
+//Main Material
+case 3:
+matNum = 4
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 1
+return matGrpLeather
 break
 }

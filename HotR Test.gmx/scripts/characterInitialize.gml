@@ -106,11 +106,13 @@ i = 1
 repeat(8)
 {
     invSlot[i,0] = emptySlot    //i,0 is the item type
-    invSlot[i,1] = 0            //i,1 is the item quality
+    invSlot[i,1] = 1            //i,1 is the item quality
     invSlot[i,2] = emptyMutator //i,2 is the first mutator
     invSlot[i,3] = emptyMutator //i,3 is the second mutator                
     invSlot[i,4] = emptyMutator //i,4 is the third mutator
-
+    invSlot[i,5] = emptyMutator //i,5 is the first material           
+    invSlot[i,6] = emptyMutator //i,6 is the second material
+    
     i += 1
 }
 

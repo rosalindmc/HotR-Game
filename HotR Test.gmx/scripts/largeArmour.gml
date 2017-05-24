@@ -55,6 +55,20 @@ iSkrt[3] = spr_warriorChainTabard
 underHipsNum += 1
 armourApplyVis(c_white)
 break
+
+//Main Material
+case 3:
+matNum = 4
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 1
+return matGrpLeather
+break
 }
 
 #define blackKnightPlate
@@ -121,4 +135,18 @@ hairVisible = false
 
 armourApplyNoArms(c_white)
 break
+
+
+//Main Material
+case 3:
+matNum = 5
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 1
+return matGrpLeather
 }

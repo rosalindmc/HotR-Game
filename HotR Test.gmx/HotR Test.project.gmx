@@ -725,6 +725,12 @@
       <scripts name="Mutators">
         <script>scripts\mutators.gml</script>
       </scripts>
+      <scripts name="Materials">
+        <script>scripts\matGrpMetal.gml</script>
+        <script>scripts\matGrpCloth.gml</script>
+        <script>scripts\matGrpWood.gml</script>
+        <script>scripts\matGrpLeather.gml</script>
+      </scripts>
       <script>scripts\charInfoAttributes.gml</script>
     </scripts>
     <scripts name="Talents">

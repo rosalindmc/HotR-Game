@@ -61,6 +61,20 @@ blockGen += iBlockGen
 //Weapon Sprites
 weaponSprite[i] = iSpr
 break
+
+//Main Material
+case 3:
+matNum = 2
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 1
+return matGrpLeather
+break
 }
 
 #define roundShield
@@ -130,6 +144,20 @@ blockGen += iBlockGen
 
 //Weapon Sprites
 weaponSprite[i] = iSpr
+break
+
+//Main Material
+case 3:
+matNum = 1
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 2
+produce = 1
+return matGrpWood
 break
 }
 
@@ -202,6 +230,20 @@ blockGen += iBlockGen
 //Weapon Sprites
 weaponSprite[i] = iSpr
 break
+
+//Main Material
+case 3:
+matNum = 1
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 3
+produce = 1
+return matGrpWood
+break
 }
 
 #define blackTowerShield
@@ -272,5 +314,19 @@ blockGen += iBlockGen
 
 //Weapon Sprites
 weaponSprite[i] = iSpr
+break
+
+//Main Material
+case 3:
+matNum = 4
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 1
+return matGrpLeather
 break
 }

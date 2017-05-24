@@ -16,6 +16,8 @@ break
 
 case 2:     //Called when ?
 break
+
+
 }
 
 #define robe
@@ -70,6 +72,20 @@ legsColour[legsItems[2],2] = c_white
 
 //underHipsNum -= 1
 break
+
+//Main Material
+case 3:
+matNum = 3
+produce = 1
+return matGrpCloth
+break
+
+//Secondary Material
+case 4:
+matNum = 0
+produce = 1
+return matGrpCloth
+break
 }
 
 #define dress
@@ -115,6 +131,20 @@ spellDur += .2
 armourApplyVis(c_white)
 
 underHipsNum += 1
+break
+
+//Main Material
+case 3:
+matNum = 3
+produce = 1
+return matGrpCloth
+break
+
+//Secondary Material
+case 4:
+matNum = 0
+produce = 1
+return matGrpCloth
 break
 }
 
@@ -181,7 +211,20 @@ else
 
 underHipsNum += 1
 armourApplyVis(c_white)
+break
 
+//Main Material
+case 3:
+matNum = 2
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 1
+return matGrpLeather
 break
 }
 
@@ -227,6 +270,20 @@ sResist += iSResist
 
 underHipsNum += 1
 armourApplyVis(c_white)
+break
+
+//Main Material
+case 3:
+matNum = 3
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 1
+return matGrpLeather
 break
 }
 
@@ -284,6 +341,20 @@ armourApplyVis(c_white)
 
 //underHipsNum -= 1
 break
+
+//Main Material
+case 3:
+matNum = 4
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 1
+return matGrpLeather
+break
 }
 
 #define fedUniform
@@ -326,5 +397,19 @@ sResist += iSResist
 
 underHipsNum += 1
 armourApplyVis(c_white)
+break
+
+//Main Material
+case 3:
+matNum = 3
+produce = 1
+return matGrpCloth
+break
+
+//Secondary Material
+case 4:
+matNum = 0
+produce = 1
+return matGrpCloth
 break
 }

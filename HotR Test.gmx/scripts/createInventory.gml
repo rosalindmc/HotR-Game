@@ -48,6 +48,8 @@ repeat(8)
         ii.itemTrait[1] = global.charSelect.invSlot[i,2]
         ii.itemTrait[2] = global.charSelect.invSlot[i,3]
         ii.itemTrait[3] = global.charSelect.invSlot[i,4]
+        ii.itemMat[1] = global.charSelect.invSlot[i,5]
+        ii.itemMat[2] = global.charSelect.invSlot[i,6]
         ii.inInventory = false
         ii.equipped = i
          
@@ -57,6 +59,52 @@ repeat(8)
         {
             script_execute(itemType,0)
             canEquipCheck()
+            script_execute(itemTrait[1],0)
+            script_execute(itemTrait[2],0)
+            script_execute(itemTrait[3],0)
+            //Material
+            mat1 = script_execute(itemMat[1],1,0)
+            mat2 = script_execute(itemMat[2],1,0)
+            
+            switch(ttType)
+            {
+            case itemTypeWeapon:
+            if dmgType = typeImpact
+            {
+                script_execute(itemType,3)
+                script_execute(itemMat[1],2,matNum)
+                script_execute(itemType,4)
+                script_execute(itemMat[2],4,matNum)
+            }
+            else
+            {
+                script_execute(itemType,3)
+                script_execute(itemMat[1],3,matNum)
+                script_execute(itemType,4)
+                script_execute(itemMat[2],4,matNum)
+            }
+            break
+            case itemTypeShield:
+            script_execute(itemType,3)
+            script_execute(itemMat[1],5,matNum)
+            script_execute(itemType,4)
+            script_execute(itemMat[2],5,matNum)
+            break
+            case itemTypeRanged:
+            case itemTypePistol:
+            script_execute(itemType,3)
+            script_execute(itemMat[1],8,matNum)
+            script_execute(itemType,4)
+            script_execute(itemMat[2],4,matNum)
+            break
+            case itemTypeArmour:
+            case itemTypePlating:
+            script_execute(itemType,3)
+            script_execute(itemMat[1],8,matNum)
+            script_execute(itemType,4)
+            script_execute(itemMat[2],4,matNum)        
+            break
+            }
         }
     }
     i += 1
@@ -73,11 +121,59 @@ repeat(inventorySize)
     ii.itemTrait[1] = inventory[i,2]
     ii.itemTrait[2] = inventory[i,3]
     ii.itemTrait[3] = inventory[i,4]
+    ii.itemMat[1] = inventory[i,5]
+    ii.itemMat[2] = inventory[i,6]
     
     with(ii)
     {
         script_execute(itemType,0)
         canEquipCheck()
+        script_execute(itemTrait[1],0)
+        script_execute(itemTrait[2],0)
+        script_execute(itemTrait[3],0)
+        //Material
+        mat1 = script_execute(itemMat[1],1,0)
+        mat2 = script_execute(itemMat[2],1,0)
+        
+        switch(ttType)
+        {
+        case itemTypeWeapon:
+        if dmgType = typeImpact
+        {
+            script_execute(itemType,3)
+            script_execute(itemMat[1],2,matNum)
+            script_execute(itemType,4)
+            script_execute(itemMat[2],4,matNum)
+        }
+        else
+        {
+            script_execute(itemType,3)
+            script_execute(itemMat[1],3,matNum)
+            script_execute(itemType,4)
+            script_execute(itemMat[2],4,matNum)
+        }
+        break
+        case itemTypeShield:
+        script_execute(itemType,3)
+        script_execute(itemMat[1],5,matNum)
+        script_execute(itemType,4)
+        script_execute(itemMat[2],5,matNum)
+        break
+        case itemTypeRanged:
+        case itemTypePistol:
+        script_execute(itemType,3)
+        script_execute(itemMat[1],8,matNum)
+        script_execute(itemType,4)
+        script_execute(itemMat[2],4,matNum)
+        break
+        case itemTypeArmour:
+        case itemTypePlating:
+        script_execute(itemType,3)
+        script_execute(itemMat[1],8,matNum)
+        script_execute(itemType,4)
+        script_execute(itemMat[2],4,matNum)        
+        break
+        }        
     }
     i -= 1
 }

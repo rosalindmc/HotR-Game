@@ -69,6 +69,20 @@ onWound[onWoundSize,4] = i
 onWound[onWoundSize,5] = 15
 onWoundSize += 1
 break
+
+//Main Material
+case 3:
+matNum = 3
+produce = 1
+return matGrpWood
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 1
+return matGrpLeather
+break
 }
 
 #define shortBow
@@ -140,6 +154,20 @@ onWound[onWoundSize,4] = i
 onWound[onWoundSize,5] = 10
 onWoundSize += 1
 break
+
+//Main Material
+case 3:
+matNum = 2
+produce = 1
+return matGrpWood
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 1
+return matGrpLeather
+break
 }
 
 #define crossbow
@@ -210,6 +238,20 @@ onHit[onHitSize,4] = i
 onHit[onHitSize,5] = false
 onHitSize += 1
 break
+
+//Main Material
+case 3:
+matNum = 2
+produce = 1
+return matGrpWood
+break
+
+//Secondary Material
+case 4:
+matNum = 2
+produce = 1
+return matGrpMetal
+break
 }
 
 #define lightCrossbow
@@ -279,5 +321,19 @@ onHit[onHitSize,3] = 10
 onHit[onHitSize,4] = i
 onHit[onHitSize,5] = false
 onHitSize += 1
+break
+
+//Main Material
+case 3:
+matNum = 1
+produce = 1
+return matGrpWood
+break
+
+//Secondary Material
+case 4:
+matNum = 2
+produce = 1
+return matGrpMetal
 break
 }

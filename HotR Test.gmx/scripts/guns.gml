@@ -84,6 +84,20 @@ onWound[onWoundSize,4] = i
 onWound[onWoundSize,5] = 10
 onWoundSize += 1
 break
+
+//Main Material
+case 3:
+matNum = 2
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 1
+return matGrpWood
+break
 }
 
 #define repeaterCarbine
@@ -159,6 +173,20 @@ onWound[onWoundSize,4] = i
 onWound[onWoundSize,5] = 10
 onWoundSize += 1
 break
+
+//Main Material
+case 3:
+matNum = 2
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 1
+return matGrpWood
+break
 }
 
 #define automatic
@@ -230,6 +258,20 @@ onWound[onWoundSize,3] = 3
 onWound[onWoundSize,4] = i
 onWound[onWoundSize,5] = 10
 onWoundSize += 1
+break
+
+//Main Material
+case 3:
+matNum = 1
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 1
+return matGrpWood
 break
 }
 
@@ -303,6 +345,20 @@ onWound[onWoundSize,4] = i
 onWound[onWoundSize,5] = 10
 onWoundSize += 1
 break
+
+//Main Material
+case 3:
+matNum = 1
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 1
+return matGrpWood
+break
 }
 
 #define revolver
@@ -374,6 +430,20 @@ onWound[onWoundSize,3] = 3
 onWound[onWoundSize,4] = i
 onWound[onWoundSize,5] = 10
 onWoundSize += 1
+break
+
+//Main Material
+case 3:
+matNum = 1
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 1
+return matGrpWood
 break
 }
 
@@ -447,6 +517,20 @@ onWound[onWoundSize,3] = 3
 onWound[onWoundSize,4] = i
 onWound[onWoundSize,5] = 10
 onWoundSize += 1
+break
+
+//Main Material
+case 3:
+matNum = 3
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 1
+return matGrpWood
 break
 }
 
@@ -530,5 +614,19 @@ onHit[onHitSize,3] = false
 onHit[onHitSize,4] = false
 onHit[onHitSize,5] = false
 onHitSize += 1
+break
+
+//Main Material
+case 3:
+matNum = 4
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 1
+return matGrpWood
 break
 }

@@ -60,6 +60,20 @@ onHit[onHitSize,4] = i
 onHit[onHitSize,5] = false
 onHitSize += 1
 break
+
+//Main Material
+case 3:
+matNum = 1
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 1
+return matGrpMetal
+break
 }
 
 #define mace
@@ -121,6 +135,20 @@ onHit[onHitSize,3] = 1
 onHit[onHitSize,4] = i
 onHit[onHitSize,5] = false
 onHitSize += 1
+break
+
+//Main Material
+case 3:
+matNum = 2
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 1
+return matGrpMetal
 break
 }
 
@@ -185,6 +213,20 @@ onHit[onHitSize,3] = 2
 onHit[onHitSize,4] = i
 onHit[onHitSize,5] = false
 onHitSize += 1
+break
+
+//Main Material
+case 3:
+matNum = 2
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 2
+produce = 1
+return matGrpMetal
 break
 }
 
@@ -257,6 +299,20 @@ onHit[onHitSize,4] = false
 onHit[onHitSize,5] = false
 onHitSize += 1
 break
+
+//Main Material
+case 3:
+matNum = 2
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 1
+produce = 1
+return matGrpMetal
+break
 }
 
 #define warhammer
@@ -328,6 +384,20 @@ onHit[onHitSize,4] = false
 onHit[onHitSize,5] = false
 onHitSize += 1
 break
+
+//Main Material
+case 3:
+matNum = 2
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 2
+produce = 1
+return matGrpMetal
+break
 }
 
 #define staff
@@ -390,5 +460,19 @@ onHit[onHitSize,3] = false
 onHit[onHitSize,4] = i
 onHit[onHitSize,5] = false
 onHitSize += 1
+break
+
+//Main Material
+case 3:
+matNum = 1
+produce = 1
+return matGrpMetal
+break
+
+//Secondary Material
+case 4:
+matNum = 2
+produce = 1
+return matGrpWood
 break
 }

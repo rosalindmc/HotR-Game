@@ -4,15 +4,15 @@ draw_set_alpha(tt)
 ix = x
 iy = y
 
-if iy+82+(ttLength*12) > view_hview[]+view_yview[]
+if iy+94+(ttLength*12) > view_hview[]+view_yview[]
 {
-    iy += (view_hview[]+view_yview[])-(iy+82+(ttLength*12))
+    iy += (view_hview[]+view_yview[])-(iy+94+(ttLength*12))
 }
 
 draw_set_colour(c_dkgray)
-draw_rectangle(ix+10,iy-10,ix+120,iy+80+(ttLength*12),false)
+draw_rectangle(ix+10,iy-10,ix+120,iy+92+(ttLength*12),false)
 draw_set_colour(c_black)
-draw_rectangle(ix+10,iy-10,ix+120,iy+80+(ttLength*12),true)
+draw_rectangle(ix+10,iy-10,ix+120,iy+92+(ttLength*12),true)
 
 draw_set_colour(global.itemColour[itemQuality])
 draw_set_halign(fa_middle)
@@ -30,6 +30,8 @@ iy += 18
 draw_text(ix,iy,string_format(dmg,2,1)+' '+string(damageType(dmgType)))
 draw_set_font(fnt_tinyText)
 iy += 14
+draw_text(ix,iy,string(mat1)+' - '+string(mat2))
+iy += 12
 if wrongProf != 0{draw_set_colour(c_red)}
 draw_text(ix,iy,string(profTypeText(itemProf[0])))
 iy += 12
@@ -89,15 +91,15 @@ draw_set_alpha(tt)
 ix = x
 iy = y
 
-if iy+106+(ttLength*12) > view_hview[]+view_yview[]
+if iy+118+(ttLength*12) > view_hview[]+view_yview[]
 {
-    iy += (view_hview[]+view_yview[])-(iy+106+(ttLength*12))
+    iy += (view_hview[]+view_yview[])-(iy+118+(ttLength*12))
 }
 
 draw_set_colour(c_dkgray)
-draw_rectangle(ix+10,iy-10,ix+120,iy+104+(ttLength*12),false)
+draw_rectangle(ix+10,iy-10,ix+120,iy+116+(ttLength*12),false)
 draw_set_colour(c_black)
-draw_rectangle(ix+10,iy-10,ix+120,iy+104+(ttLength*12),true)
+draw_rectangle(ix+10,iy-10,ix+120,iy+116+(ttLength*12),true)
 
 draw_set_colour(global.itemColour[itemQuality])
 draw_set_halign(fa_middle)
@@ -115,6 +117,8 @@ iy += 18
 draw_text(ix,iy,string_format(dmg,2,1)+' '+string(damageType(dmgType)))
 draw_set_font(fnt_tinyText)
 iy += 14
+draw_text(ix,iy,string(mat1)+' - '+string(mat2))
+iy += 12
 if wrongProf != 0{draw_set_colour(c_red)}
 draw_text(ix,iy,string(profTypeText(itemProf[0])))
 iy += 12
@@ -187,15 +191,15 @@ draw_set_alpha(tt)
 ix = x
 iy = y
 
-if iy+106+(ttLength*12) > view_hview[]+view_yview[]
+if iy+118+(ttLength*12) > view_hview[]+view_yview[]
 {
-    iy += (view_hview[]+view_yview[])-(iy+106+(ttLength*12))
+    iy += (view_hview[]+view_yview[])-(iy+118+(ttLength*12))
 }
 
 draw_set_colour(c_dkgray)
-draw_rectangle(ix+10,iy-10,ix+120,iy+104+(ttLength*12),false)
+draw_rectangle(ix+10,iy-10,ix+120,iy+116+(ttLength*12),false)
 draw_set_colour(c_black)
-draw_rectangle(ix+10,iy-10,ix+120,iy+104+(ttLength*12),true)
+draw_rectangle(ix+10,iy-10,ix+120,iy+116+(ttLength*12),true)
 
 draw_set_colour(global.itemColour[itemQuality])
 draw_set_halign(fa_middle)
@@ -213,6 +217,8 @@ iy += 18
 draw_text(ix,iy,string_format(dmg,2,1)+' '+string(damageType(dmgType)))
 draw_set_font(fnt_tinyText)
 iy += 14
+draw_text(ix,iy,string(mat1)+' - '+string(mat2))
+iy += 12
 if wrongProf != 0{draw_set_colour(c_red)}
 draw_text(ix,iy,string(profTypeText(itemProf[0])))
 iy += 12
@@ -274,15 +280,15 @@ draw_set_alpha(tt)
 
 iy = y
 
-if iy+80+(ttLength*12) > view_hview[]+view_yview[]
+if iy+92+(ttLength*12) > view_hview[]+view_yview[]
 {
-    iy += (view_hview[]+view_yview[])-(iy+80+(ttLength*12))
+    iy += (view_hview[]+view_yview[])-(iy+92+(ttLength*12))
 }
 
 draw_set_colour(c_dkgray)
-draw_rectangle(x+10,iy-10,x+120,iy+78+(ttLength*12),false)
+draw_rectangle(x+10,iy-10,x+120,iy+90+(ttLength*12),false)
 draw_set_colour(c_ltgray)
-draw_rectangle(x+10,iy-10,x+120,iy+78+(ttLength*12),true)
+draw_rectangle(x+10,iy-10,x+120,iy+90+(ttLength*12),true)
 
 draw_set_colour(global.itemColour[itemQuality])
 draw_set_halign(fa_middle)
@@ -297,6 +303,8 @@ draw_set_colour(c_white)
 draw_set_halign(fa_left)
 draw_set_font(fnt_tinyText)
 iy += 18
+draw_text(ix,iy,string(mat1)+' - '+string(mat2))
+iy += 12
 if wrongProf != 0{draw_set_colour(c_red)}
 draw_text(ix,iy,string(profTypeText(itemProf[0])))
 iy += 12
@@ -358,15 +366,15 @@ draw_set_alpha(tt)
 ix = x
 iy = y
 
-if iy+80+(ttLength*12) > view_hview[]+view_yview[]
+if iy+92+(ttLength*12) > view_hview[]+view_yview[]
 {
-    iy += (view_hview[]+view_yview[])-(iy+80+(ttLength*12))
+    iy += (view_hview[]+view_yview[])-(iy+92+(ttLength*12))
 }
 
 draw_set_colour(c_dkgray)
-draw_rectangle(ix+10,iy-10,ix+120,iy+78+(ttLength*12),false)
+draw_rectangle(ix+10,iy-10,ix+120,iy+90+(ttLength*12),false)
 draw_set_colour(c_black)
-draw_rectangle(ix+10,iy-10,ix+120,iy+78+(ttLength*12),true)
+draw_rectangle(ix+10,iy-10,ix+120,iy+90+(ttLength*12),true)
 
 draw_set_colour(global.itemColour[itemQuality])
 draw_set_halign(fa_middle)
@@ -381,6 +389,8 @@ draw_set_colour(c_white)
 draw_set_halign(fa_left)
 draw_set_font(fnt_tinyText)
 iy += 18
+draw_text(ix,iy,string(mat1))
+iy += 12
 if wrongProf != 0{draw_set_colour(c_red)}
 draw_text(ix,iy,string(profTypeText(itemProf[0])))
 iy += 12
@@ -442,15 +452,15 @@ draw_set_alpha(tt)
 ix = x
 iy = y
 
-if iy+80+(ttLength*12) > view_hview[]+view_yview[]
+if iy+92+(ttLength*12) > view_hview[]+view_yview[]
 {
-    iy += (view_hview[]+view_yview[])-(iy+80+(ttLength*12))
+    iy += (view_hview[]+view_yview[])-(iy+92+(ttLength*12))
 }
 
 draw_set_colour(c_dkgray)
-draw_rectangle(ix+10,iy-10,ix+120,iy+78+(ttLength*12),false)
+draw_rectangle(ix+10,iy-10,ix+120,iy+90+(ttLength*12),false)
 draw_set_colour(c_black)
-draw_rectangle(ix+10,iy-10,ix+120,iy+78+(ttLength*12),true)
+draw_rectangle(ix+10,iy-10,ix+120,iy+90+(ttLength*12),true)
 
 draw_set_colour(global.itemColour[itemQuality])
 draw_set_halign(fa_middle)
@@ -465,6 +475,8 @@ draw_set_colour(c_white)
 draw_set_halign(fa_left)
 draw_set_font(fnt_tinyText)
 iy += 18
+draw_text(ix,iy,string(mat1))
+iy += 12
 if wrongProf != 0{draw_set_colour(c_red)}
 draw_text(ix,iy,string(profTypeText(itemProf[0])))
 iy += 12

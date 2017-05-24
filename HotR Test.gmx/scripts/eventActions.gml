@@ -13,6 +13,8 @@ global.eventActor.inventory[ii,1] = argument1
 global.eventActor.inventory[ii,2] = argument2
 global.eventActor.inventory[ii,3] = argument3
 global.eventActor.inventory[ii,4] = argument4
+global.eventActor.inventory[ii,5] = argument4 
+global.eventActor.inventory[ii,6] = argument4
 global.eventActor.inventorySize += 1
 
 global.charSelect = global.eventCharacter 

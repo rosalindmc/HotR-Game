@@ -136,10 +136,12 @@ repeat(choose(40))
     choose(heaterShield,squareShield,roundShield),
     choose(shortBow,lightCrossbow,crossbow,longBow),
     choose(automatic,revolver,handCannon,repeaterCarbine,carbine,longRifle,recoilessRifle))
-    inventory[ii,1] = choose(0,0,0,1,1,1,1,1,1,1,1,1)
+    inventory[ii,1] = choose(0,0,0,1,1,1,1,1,1,1,1,2,2,2,3,3,4)
     inventory[ii,2] = emptyMutator
     inventory[ii,3] = emptyMutator
     inventory[ii,4] = emptyMutator
+    inventory[ii,5] = script_execute(script_execute(inventory[ii,0],3),inventory[ii,1])
+    inventory[ii,6] = script_execute(script_execute(inventory[ii,0],4),inventory[ii,1])
     ii += 1
     inventorySize = ii
 }
@@ -157,7 +159,7 @@ for(iii = 0; iii < ds_list_size(party); iii++)
     {
         if iii != ii
         {
-        relationChange(ds_list_find_value(party,iii),ds_list_find_value(party,ii),irandom(4)+irandom(3)-3)
+            relationChange(ds_list_find_value(party,iii),ds_list_find_value(party,ii),irandom(4)+irandom(3)-3)
         }
     }
 }
