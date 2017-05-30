@@ -234,7 +234,7 @@ break
 iSpr = spr_hammer
 iDmg = 4.6
 iDmgRng = .2
-iType = typePierce
+iType = typeImpact
 iStrMult = 1.2
 iPen = 10
 iSpd = 1.20
@@ -248,7 +248,7 @@ sprite_index = ico_hammer
 name = iName
 ttType = itemTypeWeapon
 addItemTooltip('Skill - Shatter','Shatter#On Hit: 10 % chance to SUNDER 1.',3,c_yellow)
-addItemTooltip('High Impact','High Impact#This weapon inflicts Impact damage if it is more advantageous',4,green)
+addItemTooltip('Impact Point','High Impact#This weapon inflicts Piercing damage if it is more advantageous',4,green)
 addItemTooltip('Hefty','Hefty#This weapon is 20 % more effected by Might and uses 20 % more stamina to attack',4,green)
 dmg = iDmg
 dmgType = iType
@@ -291,8 +291,8 @@ onHit[onHitSize,4] = i
 onHit[onHitSize,5] = false
 onHitSize += 1
 
-onHit[onHitSize,0] = wepSlashImpact
-onHit[onHitSize,1] = 'High Impact'
+onHit[onHitSize,0] = wepSlashPierce
+onHit[onHitSize,1] = 'Impact Point'
 onHit[onHitSize,2] = i
 onHit[onHitSize,3] = false
 onHit[onHitSize,4] = false
@@ -319,7 +319,7 @@ break
 iSpr = spr_warhammer
 iDmg = 5.6
 iDmgRng = .2
-iType = typePierce
+iType = typeImpact
 iStrMult = 1.2
 iPen = 14
 iSpd = 0.80
@@ -333,7 +333,7 @@ sprite_index = ico_warhammer
 name = iName
 ttType = itemTypeWeapon
 addItemTooltip('Skill - Shatter','Shatter#On Hit: 10 % chance to SUNDER 2',3,c_yellow)
-addItemTooltip('High Impact','High Impact#This weapon inflicts Impact damage if it is more advantageous',4,green)
+addItemTooltip('Impact Point','High Impact#This weapon inflicts Piercing damage if it is more advantageous',4,green)
 addItemTooltip('Hefty','Hefty#This weapon is 20 % more effected by Might and uses 20 % more stamina to attack',4,green)
 dmg = iDmg
 dmgType = iType
@@ -376,8 +376,8 @@ onHit[onHitSize,4] = i
 onHit[onHitSize,5] = false
 onHitSize += 1
 
-onHit[onHitSize,0] = wepSlashImpact
-onHit[onHitSize,1] = 'High Impact'
+onHit[onHitSize,0] = wepSlashPierce
+onHit[onHitSize,1] = 'Impact Point'
 onHit[onHitSize,2] = i
 onHit[onHitSize,3] = false
 onHit[onHitSize,4] = false

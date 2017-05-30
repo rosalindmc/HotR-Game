@@ -232,6 +232,23 @@ script_execute(o.invSlot[1,2],2)
 script_execute(o.invSlot[1,3],2)
 script_execute(o.invSlot[1,4],2)
 
+if wepType[1] = typeImpact
+{
+    //Material
+    script_execute(o.invSlot[1,0],3)
+    script_execute(o.invSlot[1,5],2,matNum,false)
+    script_execute(o.invSlot[1,0],4)
+    script_execute(o.invSlot[1,6],4,matNum,false)        
+}
+else
+{
+    //Material
+    script_execute(o.invSlot[1,0],3)
+    script_execute(o.invSlot[1,5],3,matNum,false)
+    script_execute(o.invSlot[1,0],4)
+    script_execute(o.invSlot[1,6],4,matNum,false)             
+}
+
 if o.invSlot[2,0] != emptySlot
 {
     i = 2
@@ -243,10 +260,39 @@ if o.invSlot[2,0] != emptySlot
     if wepAnimType[2] = typeShield
     {
         hasShield = true
+        //Material
+        script_execute(o.invSlot[2,0],3)
+        script_execute(o.invSlot[2,5],5,matNum,false)
+        script_execute(o.invSlot[2,0],4)
+        script_execute(o.invSlot[2,6],5,matNum,false)
     }
     else
     {
         dualWield = true
+        if rangeAttack = true
+        {
+            //Material
+            script_execute(o.invSlot[2,0],3)
+            script_execute(o.invSlot[2,5],8,matNum,false)
+            script_execute(o.invSlot[2,0],4)
+            script_execute(o.invSlot[2,6],9,matNum,false)
+        }
+        else if wepType[2] = typeImpact
+        {
+            //Material
+            script_execute(o.invSlot[2,0],3)
+            script_execute(o.invSlot[2,5],2,matNum,false)
+            script_execute(o.invSlot[2,0],4)
+            script_execute(o.invSlot[2,6],4,matNum,false)        
+        }
+        else
+        {
+            //Material
+            script_execute(o.invSlot[2,0],3)
+            script_execute(o.invSlot[2,5],3,matNum,false)
+            script_execute(o.invSlot[2,0],4)
+            script_execute(o.invSlot[2,6],4,matNum,false)             
+        }
     }
 }
 
@@ -268,6 +314,11 @@ script_execute(o.invSlot[3,0],2)
 script_execute(o.invSlot[3,2],2)
 script_execute(o.invSlot[3,3],2)
 script_execute(o.invSlot[3,4],2)
+//Material
+script_execute(o.invSlot[3,0],3)
+script_execute(o.invSlot[3,5],8,matNum,false)
+script_execute(o.invSlot[3,0],4)
+script_execute(o.invSlot[3,6],9,matNum,false)
 break
 }
 
@@ -276,11 +327,21 @@ script_execute(o.invSlot[4,0],2)
 script_execute(o.invSlot[4,2],2)
 script_execute(o.invSlot[4,3],2)
 script_execute(o.invSlot[4,4],2)
+//Material
+script_execute(o.invSlot[4,0],3)
+script_execute(o.invSlot[4,5],6,matNum,false)
+script_execute(o.invSlot[4,0],4)
+script_execute(o.invSlot[4,6],7,matNum,false)
 
 script_execute(o.invSlot[8,0],2)
 script_execute(o.invSlot[8,2],2)
 script_execute(o.invSlot[8,3],2)
 script_execute(o.invSlot[8,4],2)
+//Material
+script_execute(o.invSlot[8,0],3)
+script_execute(o.invSlot[8,5],6,matNum,false)
+script_execute(o.invSlot[8,0],4)
+script_execute(o.invSlot[8,6],7,matNum,false)
 postArmourCustom()
 
 //Post Equip

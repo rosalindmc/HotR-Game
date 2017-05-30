@@ -63,8 +63,8 @@ repeat(8)
             script_execute(itemTrait[2],0)
             script_execute(itemTrait[3],0)
             //Material
-            mat1 = script_execute(itemMat[1],1,0)
-            mat2 = script_execute(itemMat[2],1,0)
+            mat1 = script_execute(itemMat[1],1,0,true)
+            mat2 = script_execute(itemMat[2],1,0,true)
             
             switch(ttType)
             {
@@ -72,37 +72,37 @@ repeat(8)
             if dmgType = typeImpact
             {
                 script_execute(itemType,3)
-                script_execute(itemMat[1],2,matNum)
+                script_execute(itemMat[1],2,matNum,true)
                 script_execute(itemType,4)
-                script_execute(itemMat[2],4,matNum)
+                script_execute(itemMat[2],4,matNum,true)
             }
             else
             {
                 script_execute(itemType,3)
-                script_execute(itemMat[1],3,matNum)
+                script_execute(itemMat[1],3,matNum,true)
                 script_execute(itemType,4)
-                script_execute(itemMat[2],4,matNum)
+                script_execute(itemMat[2],4,matNum,true)
             }
             break
             case itemTypeShield:
             script_execute(itemType,3)
-            script_execute(itemMat[1],5,matNum)
+            script_execute(itemMat[1],5,matNum,true)
             script_execute(itemType,4)
-            script_execute(itemMat[2],5,matNum)
+            script_execute(itemMat[2],5,matNum,true)
             break
             case itemTypeRanged:
             case itemTypePistol:
             script_execute(itemType,3)
-            script_execute(itemMat[1],8,matNum)
+            script_execute(itemMat[1],8,matNum,true)
             script_execute(itemType,4)
-            script_execute(itemMat[2],4,matNum)
+            script_execute(itemMat[2],9,matNum,true)
             break
             case itemTypeArmour:
             case itemTypePlating:
             script_execute(itemType,3)
-            script_execute(itemMat[1],8,matNum)
+            script_execute(itemMat[1],6,matNum,true)
             script_execute(itemType,4)
-            script_execute(itemMat[2],4,matNum)        
+            script_execute(itemMat[2],7,matNum,true)        
             break
             }
         }
@@ -132,8 +132,8 @@ repeat(inventorySize)
         script_execute(itemTrait[2],0)
         script_execute(itemTrait[3],0)
         //Material
-        mat1 = script_execute(itemMat[1],1,0)
-        mat2 = script_execute(itemMat[2],1,0)
+        mat1 = script_execute(itemMat[1],1,0,true)
+        mat2 = script_execute(itemMat[2],1,0,true)
         
         switch(ttType)
         {
@@ -141,37 +141,37 @@ repeat(inventorySize)
         if dmgType = typeImpact
         {
             script_execute(itemType,3)
-            script_execute(itemMat[1],2,matNum)
+            script_execute(itemMat[1],2,matNum,true)
             script_execute(itemType,4)
-            script_execute(itemMat[2],4,matNum)
+            script_execute(itemMat[2],4,matNum,true)
         }
         else
         {
             script_execute(itemType,3)
-            script_execute(itemMat[1],3,matNum)
+            script_execute(itemMat[1],3,matNum,true)
             script_execute(itemType,4)
-            script_execute(itemMat[2],4,matNum)
+            script_execute(itemMat[2],4,matNum,true)
         }
         break
         case itemTypeShield:
         script_execute(itemType,3)
-        script_execute(itemMat[1],5,matNum)
+        script_execute(itemMat[1],5,matNum,true)
         script_execute(itemType,4)
-        script_execute(itemMat[2],5,matNum)
+        script_execute(itemMat[2],5,matNum,true)
         break
         case itemTypeRanged:
         case itemTypePistol:
         script_execute(itemType,3)
-        script_execute(itemMat[1],8,matNum)
+        script_execute(itemMat[1],8,matNum,true)
         script_execute(itemType,4)
-        script_execute(itemMat[2],4,matNum)
+        script_execute(itemMat[2],4,matNum,true)
         break
         case itemTypeArmour:
         case itemTypePlating:
         script_execute(itemType,3)
-        script_execute(itemMat[1],8,matNum)
+        script_execute(itemMat[1],6,matNum,true)
         script_execute(itemType,4)
-        script_execute(itemMat[2],4,matNum)        
+        script_execute(itemMat[2],7,matNum,true)        
         break
         }        
     }

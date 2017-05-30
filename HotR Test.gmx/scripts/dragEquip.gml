@@ -71,6 +71,8 @@ if slotViable(slot,id)
             global.charSelect.invSlot[equipped,2] = itemTrait[1]
             global.charSelect.invSlot[equipped,3] = itemTrait[2]
             global.charSelect.invSlot[equipped,4] = itemTrait[3]
+            global.charSelect.invSlot[equipped,5] = itemMat[1]
+            global.charSelect.invSlot[equipped,6] = itemMat[2]
         }
         else
         {

@@ -243,14 +243,14 @@ break
 case 3:
 matNum = 2
 produce = 1
-return matGrpWood
+return matGrpMetal
 break
 
 //Secondary Material
 case 4:
 matNum = 2
 produce = 1
-return matGrpMetal
+return matGrpWood
 break
 }
 
@@ -325,15 +325,15 @@ break
 
 //Main Material
 case 3:
-matNum = 1
+matNum = 2
 produce = 1
-return matGrpWood
+return matGrpMetal
 break
 
 //Secondary Material
 case 4:
-matNum = 2
+matNum = 1
 produce = 1
-return matGrpMetal
+return matGrpWood
 break
 }

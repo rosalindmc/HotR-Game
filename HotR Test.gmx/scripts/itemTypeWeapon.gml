@@ -30,7 +30,7 @@ iy += 18
 draw_text(ix,iy,string_format(dmg,2,1)+' '+string(damageType(dmgType)))
 draw_set_font(fnt_tinyText)
 iy += 14
-draw_text(ix,iy,string(mat1)+' - '+string(mat2))
+draw_text(ix,iy,string(mat1))
 iy += 12
 if wrongProf != 0{draw_set_colour(c_red)}
 draw_text(ix,iy,string(profTypeText(itemProf[0])))
@@ -117,7 +117,7 @@ iy += 18
 draw_text(ix,iy,string_format(dmg,2,1)+' '+string(damageType(dmgType)))
 draw_set_font(fnt_tinyText)
 iy += 14
-draw_text(ix,iy,string(mat1)+' - '+string(mat2))
+draw_text(ix,iy,string(mat1))
 iy += 12
 if wrongProf != 0{draw_set_colour(c_red)}
 draw_text(ix,iy,string(profTypeText(itemProf[0])))
@@ -217,7 +217,7 @@ iy += 18
 draw_text(ix,iy,string_format(dmg,2,1)+' '+string(damageType(dmgType)))
 draw_set_font(fnt_tinyText)
 iy += 14
-draw_text(ix,iy,string(mat1)+' - '+string(mat2))
+draw_text(ix,iy,string(mat1))
 iy += 12
 if wrongProf != 0{draw_set_colour(c_red)}
 draw_text(ix,iy,string(profTypeText(itemProf[0])))
@@ -303,7 +303,7 @@ draw_set_colour(c_white)
 draw_set_halign(fa_left)
 draw_set_font(fnt_tinyText)
 iy += 18
-draw_text(ix,iy,string(mat1)+' - '+string(mat2))
+draw_text(ix,iy,string(mat1))
 iy += 12
 if wrongProf != 0{draw_set_colour(c_red)}
 draw_text(ix,iy,string(profTypeText(itemProf[0])))

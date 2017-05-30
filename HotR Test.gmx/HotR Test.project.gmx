@@ -536,6 +536,9 @@
       <scripts name="Cultures">
         <script>scripts\empire.gml</script>
         <script>scripts\irun.gml</script>
+        <scripts name="Federation">
+          <script>scripts\federation.gml</script>
+        </scripts>
         <scripts name="Commonwealth">
           <script>scripts\commonwealth.gml</script>
         </scripts>
@@ -547,9 +550,6 @@
         </scripts>
         <scripts name="Legion">
           <script>scripts\legion.gml</script>
-        </scripts>
-        <scripts name="Federation">
-          <script>scripts\federation.gml</script>
         </scripts>
       </scripts>
       <scripts name="Character Creation">

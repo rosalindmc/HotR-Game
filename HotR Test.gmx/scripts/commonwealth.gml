@@ -125,7 +125,7 @@ money = 100.00
 
 //Inventory
 ii = 0
-repeat(choose(40))
+repeat(choose(100))
 {
     inventory[ii,0] = choose(
     choose(knife,dagger,epee,armingSword,greatSword,longSword,shortSword,sabre,rapier,bastardSword),
@@ -140,8 +140,10 @@ repeat(choose(40))
     inventory[ii,2] = emptyMutator
     inventory[ii,3] = emptyMutator
     inventory[ii,4] = emptyMutator
-    inventory[ii,5] = script_execute(script_execute(inventory[ii,0],3),inventory[ii,1])
-    inventory[ii,6] = script_execute(script_execute(inventory[ii,0],4),inventory[ii,1])
+    iType = typeRend
+    script_execute(inventory[ii,0],5)
+    inventory[ii,5] = script_execute(script_execute(inventory[ii,0],3),inventory[ii,1],iType)
+    inventory[ii,6] = script_execute(script_execute(inventory[ii,0],4),irandom(inventory[ii,1]),iType)
     ii += 1
     inventorySize = ii
 }
