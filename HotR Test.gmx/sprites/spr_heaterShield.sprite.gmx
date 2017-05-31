@@ -22,5 +22,7 @@
   <frames>
     <frame index="0">images\spr_heaterShield_0.png</frame>
     <frame index="1">images\spr_heaterShield_1.png</frame>
+    <frame index="2">images\spr_heaterShield_2.png</frame>
+    <frame index="3">images\spr_heaterShield_3.png</frame>
   </frames>
 </sprite>

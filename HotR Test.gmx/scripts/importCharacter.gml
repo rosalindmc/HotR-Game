@@ -236,17 +236,17 @@ if wepType[1] = typeImpact
 {
     //Material
     script_execute(o.invSlot[1,0],3)
-    script_execute(o.invSlot[1,5],2,matNum,false)
+    script_execute(o.invSlot[1,5],2,matNum,false,1)
     script_execute(o.invSlot[1,0],4)
-    script_execute(o.invSlot[1,6],4,matNum,false)        
+    script_execute(o.invSlot[1,6],4,matNum,false,2)        
 }
 else
 {
     //Material
     script_execute(o.invSlot[1,0],3)
-    script_execute(o.invSlot[1,5],3,matNum,false)
+    script_execute(o.invSlot[1,5],3,matNum,false,1)
     script_execute(o.invSlot[1,0],4)
-    script_execute(o.invSlot[1,6],4,matNum,false)             
+    script_execute(o.invSlot[1,6],4,matNum,false,2)             
 }
 
 if o.invSlot[2,0] != emptySlot
@@ -262,9 +262,9 @@ if o.invSlot[2,0] != emptySlot
         hasShield = true
         //Material
         script_execute(o.invSlot[2,0],3)
-        script_execute(o.invSlot[2,5],5,matNum,false)
+        script_execute(o.invSlot[2,5],5,matNum,false,1)
         script_execute(o.invSlot[2,0],4)
-        script_execute(o.invSlot[2,6],5,matNum,false)
+        script_execute(o.invSlot[2,6],5,matNum,false,2)
     }
     else
     {
@@ -273,25 +273,25 @@ if o.invSlot[2,0] != emptySlot
         {
             //Material
             script_execute(o.invSlot[2,0],3)
-            script_execute(o.invSlot[2,5],8,matNum,false)
+            script_execute(o.invSlot[2,5],8,matNum,false,1)
             script_execute(o.invSlot[2,0],4)
-            script_execute(o.invSlot[2,6],9,matNum,false)
+            script_execute(o.invSlot[2,6],9,matNum,false,2)
         }
         else if wepType[2] = typeImpact
         {
             //Material
             script_execute(o.invSlot[2,0],3)
-            script_execute(o.invSlot[2,5],2,matNum,false)
+            script_execute(o.invSlot[2,5],2,matNum,false,1)
             script_execute(o.invSlot[2,0],4)
-            script_execute(o.invSlot[2,6],4,matNum,false)        
+            script_execute(o.invSlot[2,6],4,matNum,false,2)        
         }
         else
         {
             //Material
             script_execute(o.invSlot[2,0],3)
-            script_execute(o.invSlot[2,5],3,matNum,false)
+            script_execute(o.invSlot[2,5],3,matNum,false,1)
             script_execute(o.invSlot[2,0],4)
-            script_execute(o.invSlot[2,6],4,matNum,false)             
+            script_execute(o.invSlot[2,6],4,matNum,false,2)             
         }
     }
 }
@@ -316,32 +316,34 @@ script_execute(o.invSlot[3,3],2)
 script_execute(o.invSlot[3,4],2)
 //Material
 script_execute(o.invSlot[3,0],3)
-script_execute(o.invSlot[3,5],8,matNum,false)
+script_execute(o.invSlot[3,5],8,matNum,false,1)
 script_execute(o.invSlot[3,0],4)
-script_execute(o.invSlot[3,6],9,matNum,false)
+script_execute(o.invSlot[3,6],9,matNum,false,2)
 break
 }
 
 preArmourCustom()
+//Material
+script_execute(o.invSlot[4,0],3)
+script_execute(o.invSlot[4,5],6,matNum,false,1)
+script_execute(o.invSlot[4,0],4)
+script_execute(o.invSlot[4,6],7,matNum,false,1)
+//Armour
 script_execute(o.invSlot[4,0],2)
 script_execute(o.invSlot[4,2],2)
 script_execute(o.invSlot[4,3],2)
 script_execute(o.invSlot[4,4],2)
-//Material
-script_execute(o.invSlot[4,0],3)
-script_execute(o.invSlot[4,5],6,matNum,false)
-script_execute(o.invSlot[4,0],4)
-script_execute(o.invSlot[4,6],7,matNum,false)
 
+//Material
+script_execute(o.invSlot[8,0],3)
+script_execute(o.invSlot[8,5],6,matNum,false,2)
+script_execute(o.invSlot[8,0],4)
+script_execute(o.invSlot[8,6],7,matNum,false,2)
+//Plate
 script_execute(o.invSlot[8,0],2)
 script_execute(o.invSlot[8,2],2)
 script_execute(o.invSlot[8,3],2)
 script_execute(o.invSlot[8,4],2)
-//Material
-script_execute(o.invSlot[8,0],3)
-script_execute(o.invSlot[8,5],6,matNum,false)
-script_execute(o.invSlot[8,0],4)
-script_execute(o.invSlot[8,6],7,matNum,false)
 postArmourCustom()
 
 //Post Equip
@@ -441,6 +443,11 @@ legsItems[1] = 0
 legsItems[2] = 0
 armsItems[1] = 0
 armsItems[2] = 0
+
+armColour[1,1] = c_white
+armColour[1,2] = c_white
+armColour[2,1] = c_white
+armColour[2,2] = c_white
 
 #define preArmourCustom
 //Min Clothing

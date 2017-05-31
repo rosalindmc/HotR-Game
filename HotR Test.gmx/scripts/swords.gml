@@ -556,7 +556,7 @@ sprite_index = ico_bstSword
 name = iName
 ttType = itemTypeWeapon
 addItemTooltip('Skill - Guard','Guard#On Hit: 15 % chance to gain a Block Charge',3,c_yellow)
-addItemTooltip('Hefty','Hefty#This weapon is 20 % more effected by Might and uses 20% more stamina to attack',4,green)
+addItemTooltip('Hefty','Hefty#This weapon is 20 % more effected by Might and uses 20 % more stamina to attack',5,green)
 dmg = iDmg
 dmgType = iType
 rat = iSpd

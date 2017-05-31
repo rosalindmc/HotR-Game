@@ -82,9 +82,9 @@ break
 
 //Secondary Material
 case 4:
-matNum = 0
+matNum = 1
 produce = 1
-return matGrpCloth
+return matGrpLeather
 break
 }
 
@@ -142,9 +142,9 @@ break
 
 //Secondary Material
 case 4:
-matNum = 0
+matNum = 1
 produce = 1
-return matGrpCloth
+return matGrpLeather
 break
 }
 
@@ -191,16 +191,16 @@ if skirtVariant = 1
 {
     hipsItems += 1
     hipsItem[hipsItems] = spr_leatherPants
-    hipsColour[hipsItems] = c_white
+    hipsColour[hipsItems] = armColour[1,2]
     underHipsNum += 1
     
     legsItems[1] += 1
     legsItem[legsItems[1],1] = spr_leatherPants
-    legsColour[legsItems[1],1] = c_white
+    legsColour[legsItems[1],1] = armColour[1,2]
     
     legsItems[2] += 1
     legsItem[legsItems[2],2] = spr_leatherPants
-    legsColour[legsItems[2],2] = c_white
+    legsColour[legsItems[2],2] = armColour[1,2]
 }
 else
 {
@@ -210,7 +210,7 @@ else
 }
 
 underHipsNum += 1
-armourApplyVis(c_white)
+armourApplyVis(armColour[1,1])
 break
 
 //Main Material
@@ -269,7 +269,7 @@ enc += iEnc
 sResist += iSResist
 
 underHipsNum += 1
-armourApplyVis(c_white)
+armourApplyVis(armColour[1,1])
 break
 
 //Main Material
@@ -337,7 +337,7 @@ areHit[areHitSize,4] = false
 areHit[areHitSize,5] = false
 areHitSize += 1
 
-armourApplyVis(c_white)
+armourApplyVis(armColour[2,1])
 
 //underHipsNum -= 1
 break

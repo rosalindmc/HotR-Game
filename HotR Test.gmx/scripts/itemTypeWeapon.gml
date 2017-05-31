@@ -287,7 +287,7 @@ if iy+92+(ttLength*12) > view_hview[]+view_yview[]
 
 draw_set_colour(c_dkgray)
 draw_rectangle(x+10,iy-10,x+120,iy+90+(ttLength*12),false)
-draw_set_colour(c_ltgray)
+draw_set_colour(c_black)
 draw_rectangle(x+10,iy-10,x+120,iy+90+(ttLength*12),true)
 
 draw_set_colour(global.itemColour[itemQuality])

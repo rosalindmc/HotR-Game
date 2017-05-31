@@ -21,5 +21,6 @@
   <height>7</height>
   <frames>
     <frame index="0">images\spr_longSword_0.png</frame>
+    <frame index="1">images\spr_longSword_1.png</frame>
   </frames>
 </sprite>

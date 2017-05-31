@@ -19,6 +19,9 @@ break
 }
 
 #define matCotton
+var m = argument1
+var c = make_colour_rgb(255,255,255)
+
 switch(argument0)
 {
     case 0: //Type
@@ -46,11 +49,23 @@ switch(argument0)
     break
     
     case 6: //Armour Modifier (Protection)
-    
+        if argument2 = true{
+            enc += m
+        }
+        else{
+            enc += m
+            armColour[argument3,1] = c
+        }
     break
     
     case 7: //Armour Modifier (Adjustment)
-    
+        if argument2 = true{
+            enc += m
+        }
+        else{
+            enc += m
+            armColour[argument3,2] = c
+        }
     break
         
     case 8: //Bow Modifier
@@ -59,6 +74,9 @@ switch(argument0)
 }
 
 #define matLinen
+var m = argument1
+var c = make_colour_rgb(235,235,235)
+
 switch(argument0)
 {
     case 0: //Type
@@ -86,11 +104,19 @@ switch(argument0)
     break
     
     case 6: //Armour Modifier (Protection)
-    
+        if argument2 = true{
+        }
+        else{
+            armColour[argument3,1] = c
+        }
     break
     
     case 7: //Armour Modifier (Adjustment)
-    
+        if argument2 = true{
+        }
+        else{
+            armColour[argument3,2] = c
+        }
     break
         
     case 8: //Bow Modifier
@@ -99,6 +125,9 @@ switch(argument0)
 }
 
 #define matWool
+var m = argument1
+var c = make_colour_rgb(255,255,255)
+
 switch(argument0)
 {
     case 0: //Type
@@ -126,11 +155,27 @@ switch(argument0)
     break
     
     case 6: //Armour Modifier (Protection)
-    
+        if argument2 = true{
+            enc += m
+            addItemTooltip('+'+string_format(m/2,0,1)+' Cold Resist','+'+string_format(m/2,0,1)+' Cold Resist',1,c_green)
+        }
+        else{
+            enc += m
+            resist[typeCold] += m/2
+            armColour[argument3,1] = c
+        }
     break
     
     case 7: //Armour Modifier (Adjustment)
-    
+        if argument2 = true{
+            enc += m
+            addItemTooltip('+'+string_format(m/2,0,1)+' Cold Resist','+'+string_format(m/2,0,1)+' Cold Resist',1,c_green)
+        }
+        else{
+            enc += m
+            resist[typeCold] += m/2
+            armColour[argument3,2] = c
+        }
     break
         
     case 8: //Bow Modifier
@@ -139,6 +184,9 @@ switch(argument0)
 }
 
 #define matSilk
+var m = argument1
+var c = make_colour_rgb(255,255,255)
+
 switch(argument0)
 {
     case 0: //Type
@@ -166,11 +214,23 @@ switch(argument0)
     break
     
     case 6: //Armour Modifier (Protection)
-    
+        if argument2 = true{
+            arm += m
+            }
+        else{
+            armMax += m
+            armColour[argument3,1] = c
+        }
     break
     
     case 7: //Armour Modifier (Adjustment)
-    
+        if argument2 = true{
+            arm += m
+        }
+        else{
+            arm += m
+            armColour[argument3,2] = c
+        }
     break
         
     case 8: //Bow Modifier
@@ -179,6 +239,9 @@ switch(argument0)
 }
 
 #define matSilkweb
+var m = argument1
+var c = make_colour_rgb(255,255,255)
+
 switch(argument0)
 {
     case 0: //Type
@@ -206,11 +269,26 @@ switch(argument0)
     break
     
     case 6: //Armour Modifier (Protection)
-    
+        if argument2 = true{
+            arm += m
+            dodge += m
+            }
+        else{
+            armMax += m
+            dodge += m
+            armColour[argument3,1] = c
+        }
     break
     
     case 7: //Armour Modifier (Adjustment)
-    
+        if argument2 = true{
+            arm += m
+        }
+        else{
+            armMax += m
+            dodge += m
+            armColour[argument3,2] = c
+        }
     break
         
     case 8: //Bow Modifier
@@ -219,6 +297,9 @@ switch(argument0)
 }
 
 #define matWinterthread
+var m = argument1
+var c = make_colour_rgb(255,255,255)
+
 switch(argument0)
 {
     case 0: //Type
@@ -246,11 +327,31 @@ switch(argument0)
     break
     
     case 6: //Armour Modifier (Protection)
-    
+        if argument2 = true{
+            dodge += m
+            addItemTooltip('+'+string(m)+' Fire Resist','+'+string(m)+' Fire Resist',1,c_green)
+            addItemTooltip('+'+string(m)+' Cold Resist','+'+string(m)+' Cold Resist',1,c_green)
+        }
+        else{
+            dodge += m
+            resist[typeCold] += m
+            resist[typeFire] += m
+            armColour[argument3,1] = c
+        }
     break
     
     case 7: //Armour Modifier (Adjustment)
-    
+        if argument2 = true{
+            dodge += m
+            addItemTooltip('+'+string(m)+' Fire Resist','+'+string(m)+' Fire Resist',1,c_green)
+            addItemTooltip('+'+string(m)+' Cold Resist','+'+string(m)+' Cold Resist',1,c_green)
+        }
+        else{
+            dodge += m
+            resist[typeCold] += m
+            resist[typeFire] += m
+            armColour[argument3,2] = c
+        }
     break
         
     case 8: //Bow Modifier

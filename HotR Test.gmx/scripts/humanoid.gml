@@ -277,7 +277,9 @@ draw_clear_alpha(c_white,0)
 //Arms Behind Body
 if greatWeapon = true and handFront[2-shldrSwap] = false 
 {
-    draw_sprite_ext(weaponSprite[1],0,handX[2-shldrSwap],handY[2-shldrSwap],sX,bodyHFacing*sX,handRot[2-shldrSwap],c_white,1)
+    //draw_sprite_ext(weaponSprite[1],0,handX[2-shldrSwap],handY[2-shldrSwap],sX,bodyHFacing*sX,handRot[2-shldrSwap],c_white,1)
+    draw_sprite_ext(weaponSprite[1],2,handX[2-shldrSwap],handY[2-shldrSwap],sX,bodyHFacing*sX,handRot[1],wepColour[1,1],1)
+    draw_sprite_ext(weaponSprite[1],3,handX[2-shldrSwap],handY[2-shldrSwap],sX,bodyHFacing*sX,handRot[1],wepColour[1,2],1)
     //Draw Arms
     draw_sprite_ext(handSprite,0,handX[1],handY[1],bodyHFacing*sX,sX,handRot[1],skinTone,1)
     draw_sprite_ext(handSprite,0,handX[2],handY[2],bodyHFacing*sX,sX,handRot[2],skinTone,1)
@@ -293,18 +295,21 @@ if handFront[1] = false and handY[1]+(handHeight[1]*sX) < handY[2]+(handHeight[2
     //Draw Hand1
     draw_sprite_ext(armsSprite,7-(7*max(armHFacing[1],0))+armLength[1],shldrX[1+shldrSwap],shldrY[1+shldrSwap],bodyHFacing*sX*armHFacing[1],armStretch[1],handPoint[1]+90,skinTone,1)
     i = 0 repeat(armsItems[1+vFacing]){i++ draw_sprite_ext(armsItem[i,1+vFacing],20-(20*max(armHFacing[2],0))+32+armLength[1],shldrX[1+shldrSwap],shldrY[1+shldrSwap],bodyHFacing*sX*armHFacing[1],armStretch[1],handPoint[1]+90,armsColour[i,1+vFacing],1)}
-    draw_sprite_ext(weaponSprite[1],1,handX[1],handY[1],sX,bodyHFacing*sX,handRot[1],c_white,1)
+    draw_sprite_ext(weaponSprite[1],2,handX[1],handY[1],sX,bodyHFacing*sX,handRot[1],wepColour[1,1],1)
+    draw_sprite_ext(weaponSprite[1],3,handX[1],handY[1],sX,bodyHFacing*sX,handRot[1],wepColour[1,2],1)
     draw_sprite_ext(handSprite,0,handX[1],handY[1],bodyHFacing*sX,sX,handRot[1],skinTone,1)
 }
 if handFront[2] = false
 {
     //Draw Hand2
     if hasShield = true
-    {draw_sprite_ext(weaponSprite[2],1,handX[2],handY[2],sX,bodyHFacing*sX,handRot[2],c_white,1)}
+    {draw_sprite_ext(weaponSprite[2],2,handX[2],handY[2],sX,bodyHFacing*sX,handRot[2],wepColour[2,1],1)
+    draw_sprite_ext(weaponSprite[2],3,handX[2],handY[2],sX,bodyHFacing*sX,handRot[2],wepColour[2,2],1)}
     draw_sprite_ext(armsSprite,(7*max(armHFacing[2],0))+armLength[2],shldrX[2-shldrSwap],shldrY[2-shldrSwap],bodyHFacing*sX*armHFacing[2],armStretch[2],handPoint[2]+90,skinTone,1)
     i = 0 repeat(armsItems[2-vFacing]){i++ draw_sprite_ext(armsItem[i,2-vFacing],20-(20*max(armHFacing[1],0))+32+armLength[2],shldrX[2-shldrSwap],shldrY[2-shldrSwap],bodyHFacing*sX*armHFacing[2],armStretch[2],handPoint[2]+90,armsColour[i,2-vFacing],1)}
     if hasShield = false
-    {draw_sprite_ext(weaponSprite[2],1,handX[2],handY[2],sX,bodyHFacing*sX,handRot[2],c_white,1)}
+    {draw_sprite_ext(weaponSprite[2],2,handX[2],handY[2],sX,bodyHFacing*sX,handRot[2],wepColour[2,1],1)
+    draw_sprite_ext(weaponSprite[2],3,handX[2],handY[2],sX,bodyHFacing*sX,handRot[2],wepColour[2,2],1)}
     draw_sprite_ext(handSprite,0,handX[2],handY[2],bodyHFacing*sX,sX,handRot[2],skinTone,1)
 }
 if handFront[1] = false and handY[1]+(handHeight[1]*sX) >= handY[2]+(handHeight[2]*sX)
@@ -312,7 +317,8 @@ if handFront[1] = false and handY[1]+(handHeight[1]*sX) >= handY[2]+(handHeight[
     //Draw Hand1
     draw_sprite_ext(armsSprite,7-(7*max(armHFacing[1],0))+armLength[1],shldrX[1+shldrSwap],shldrY[1+shldrSwap],bodyHFacing*sX*armHFacing[1],armStretch[1],handPoint[1]+90,skinTone,1)
     i = 0 repeat(armsItems[1+vFacing]){i++ draw_sprite_ext(armsItem[i,1+vFacing],20-(20*max(armHFacing[2],0))+32+armLength[1],shldrX[1+shldrSwap],shldrY[1+shldrSwap],bodyHFacing*sX*armHFacing[1],armStretch[1],handPoint[1]+90,armsColour[i,1+vFacing],1)}
-    draw_sprite_ext(weaponSprite[1],1,handX[1],handY[1],sX,bodyHFacing*sX,handRot[1],c_white,1)
+    draw_sprite_ext(weaponSprite[1],2,handX[1],handY[1],sX,bodyHFacing*sX,handRot[1],wepColour[1,1],1)
+    draw_sprite_ext(weaponSprite[1],3,handX[1],handY[1],sX,bodyHFacing*sX,handRot[1],wepColour[1,2],1)
     draw_sprite_ext(handSprite,0,handX[1],handY[1],bodyHFacing*sX,sX,handRot[1],skinTone,1)
 }
 }
@@ -397,7 +403,8 @@ if handFront[1] = true and handY[1]+(handHeight[1]*sX) < handY[2]+(handHeight[2]
     draw_sprite_ext(armsSprite,7-(7*max(armHFacing[1],0))+min(round(point_distance(handX[1],handY[1],shldrX[1+shldrSwap],shldrY[1+shldrSwap])),6),shldrX[1+shldrSwap],shldrY[1+shldrSwap],bodyHFacing*sX*armHFacing[1],armStretch[1],handPoint[1]+90,skinTone,1)
     i = 0 repeat(armsItems[1+vFacing]){i++ draw_sprite_ext(armsItem[i,1+vFacing],20-(20*max(armHFacing[2],0))+32+armLength[1],shldrX[1+shldrSwap],shldrY[1+shldrSwap],bodyHFacing*sX*armHFacing[1],armStretch[1],handPoint[1]+90,armsColour[i,1+vFacing],1)}
     if greatWeapon = false
-    {draw_sprite_ext(weaponSprite[1],0,handX[1],handY[1],sX,bodyHFacing*sX,handRot[1],c_white,1)
+    {draw_sprite_ext(weaponSprite[1],0,handX[1],handY[1],sX,bodyHFacing*sX,handRot[1],wepColour[1,1],1)
+    draw_sprite_ext(weaponSprite[1],1,handX[1],handY[1],sX,bodyHFacing*sX,handRot[1],wepColour[1,2],1)
     draw_sprite_ext(handSprite,0,handX[1],handY[1],bodyHFacing*sX,sX,handRot[1],skinTone,1)}
 }
 
@@ -407,7 +414,8 @@ if handFront[2] = true
     draw_sprite_ext(armsSprite,7-(7*max(armHFacing[1],0))+min(round(point_distance(handX[2],handY[2],shldrX[2-shldrSwap],shldrY[2-shldrSwap])),6),shldrX[2-shldrSwap],shldrY[2-shldrSwap],bodyHFacing*sX*armHFacing[2],armStretch[2],handPoint[2]+90,skinTone,1)
     i = 0 repeat(armsItems[2-vFacing]){i++ draw_sprite_ext(armsItem[i,2-vFacing],20+32+armLength[2],shldrX[2-shldrSwap],shldrY[2-shldrSwap],bodyHFacing*sX*armHFacing[2],armStretch[2],handPoint[2]+90,armsColour[i,2-vFacing],1)}
     if greatWeapon = false
-    {draw_sprite_ext(weaponSprite[2],0,handX[2],handY[2],sX,bodyHFacing*sX,handRot[2],c_white,1)
+    {draw_sprite_ext(weaponSprite[2],0,handX[2],handY[2],sX,bodyHFacing*sX,handRot[2],wepColour[2,1],1)
+    draw_sprite_ext(weaponSprite[2],1,handX[2],handY[2],sX,bodyHFacing*sX,handRot[2],wepColour[2,2],1)
     if hasShield = false
     {draw_sprite_ext(handSprite,0,handX[2],handY[2],bodyHFacing*sX,sX,handRot[2],skinTone,1)}}
 }
@@ -418,13 +426,15 @@ if handFront[1] = true and handY[1]+(handHeight[1]*sX) >= handY[2]+(handHeight[2
     draw_sprite_ext(armsSprite,7-(7*max(armHFacing[1],0))+min(round(point_distance(handX[1],handY[1],shldrX[1+shldrSwap],shldrY[1+shldrSwap])),6),shldrX[1+shldrSwap],shldrY[1+shldrSwap],bodyHFacing*sX*armHFacing[1],armStretch[1],handPoint[1]+90,skinTone,1)
     i = 0 repeat(armsItems[1+vFacing]){i++ draw_sprite_ext(armsItem[i,1+vFacing],20-(20*max(armHFacing[2],0))+32+armLength[1],shldrX[1+shldrSwap],shldrY[1+shldrSwap],bodyHFacing*sX*armHFacing[1],armStretch[1],handPoint[1]+90,armsColour[i,1+vFacing],1)}
     if greatWeapon = false
-    {draw_sprite_ext(weaponSprite[1],0,handX[1],handY[1],sX,bodyHFacing*sX,handRot[1],c_white,1)
+    {draw_sprite_ext(weaponSprite[1],0,handX[1],handY[1],sX,bodyHFacing*sX,handRot[1],wepColour[1,1],1)
+    draw_sprite_ext(weaponSprite[1],1,handX[1],handY[1],sX,bodyHFacing*sX,handRot[1],wepColour[1,2],1)
     draw_sprite_ext(handSprite,0,handX[1],handY[1],bodyHFacing*sX,sX,handRot[1],skinTone,1)}
 }
 
 if greatWeapon = true and handFront[2-shldrSwap] = true 
 {
-    draw_sprite_ext(weaponSprite[1],0,handX[2-shldrSwap],handY[2-shldrSwap],sX,bodyHFacing*sX,handRot[2-shldrSwap],c_white,1)
+    draw_sprite_ext(weaponSprite[1],0,handX[2-shldrSwap],handY[2-shldrSwap],sX,bodyHFacing*sX,handRot[1],wepColour[1,1],1)
+    draw_sprite_ext(weaponSprite[1],1,handX[2-shldrSwap],handY[2-shldrSwap],sX,bodyHFacing*sX,handRot[1],wepColour[1,2],1)
     //Draw Hand1
     draw_sprite_ext(handSprite,0,handX[1],handY[1],bodyHFacing*sX,sX,handRot[1],skinTone,1)
     //Draw Hand2  
@@ -456,18 +466,18 @@ else
     charSurf = surface_create(100,100)
 }
 
-
 /*TEMP TEST
 draw_set_colour(c_green)
-draw_text(x+50,y,handY[1]-y+((handHeight[1]+handHeightAdj[1])*sX))
-//draw_arrow(shldrX[1+shldrSwap]+50,shldrY[1+shldrSwap],handX[1]+50,handY[1],5)
+//draw_text(x+50,y,handY[1]-y+((handHeight[1]+handHeightAdj[1])*sX))
+draw_arrow(shldrX[1+shldrSwap],shldrY[1+shldrSwap],handX[1],handY[1],2)
 //draw_arrow(handX[1],handY[1],handX[1],y+lengthdir_y(handDist[1]*sX, handDir[1]),5)
 //draw_arrow(x,y,x+lengthdir_x(handDist[1]*sX, handDir[1]),y+lengthdir_y(handDist[1]*sX, handDir[1]),5)
 draw_set_colour(c_red)
-draw_text(x+50,y-10,handY[2]+(handHeight[2]*sX))
-//draw_arrow(shldrX[2-shldrSwap]+50,shldrY[2-shldrSwap],handX[2]+50,handY[2],5)
+//draw_text(x+50,y-10,handY[2]+(handHeight[2]*sX))
+draw_arrow(shldrX[2-shldrSwap],shldrY[2-shldrSwap],handX[2],handY[2],2)
 //draw_arrow(handX[2],handY[2],handX[2],y+lengthdir_y(handDist[2]*sX, handDir[2]),5)
 //draw_arrow(x,y,x+lengthdir_x(handDist[2]*sX, handDir[2]),y+lengthdir_y(handDist[2]*sX, handDir[2]),5)
+surface_reset_target()
 
 #define humanoidPortrait
 var c = argument0

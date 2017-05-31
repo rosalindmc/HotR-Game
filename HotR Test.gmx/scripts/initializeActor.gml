@@ -343,6 +343,8 @@ wepReloadStamina[argument0] = .1
 
 //Weapon Sprites
 weaponSprite[argument0] = spr_none
+wepColour[argument0,1] = c_white
+wepColour[argument0,2] = c_white
 greatWeaponSize = 2
 
 #define boldGlow

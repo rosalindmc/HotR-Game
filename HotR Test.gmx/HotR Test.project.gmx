@@ -256,6 +256,7 @@
         <sprite>sprites\spr_longBow</sprite>
         <sprite>sprites\spr_shortBow</sprite>
         <sprite>sprites\spr_crossbow</sprite>
+        <sprite>sprites\spr_lightCrossbow</sprite>
         <sprite>sprites\spr_carbine</sprite>
         <sprite>sprites\spr_longRifle</sprite>
         <sprite>sprites\spr_repeaterCarbine</sprite>
@@ -263,7 +264,6 @@
         <sprite>sprites\spr_handCannon</sprite>
         <sprite>sprites\spr_revolver</sprite>
         <sprite>sprites\spr_automatic</sprite>
-        <sprite>sprites\spr_lightCrossbow</sprite>
         <sprite>sprites\spr_handAxe</sprite>
         <sprite>sprites\spr_battleAxe</sprite>
         <sprite>sprites\spr_hammer</sprite>
