@@ -92,5 +92,5 @@ if bold = 1 and noMorale = false
 {
     part_system_depth(ps1,depth+1)
     part_emitter_region(ps1,em1,tx-barw,tx+barw,ty,ty,ps_shape_rectangle,1)
-    part_emitter_burst(ps1,em1,p1,5)
+    part_emitter_burst(ps1,em1,part1,300/global.fspd)
 }

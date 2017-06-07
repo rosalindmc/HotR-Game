@@ -50,6 +50,7 @@ repeat(8)
         ii.itemTrait[3] = global.charSelect.invSlot[i,4]
         ii.itemMat[1] = global.charSelect.invSlot[i,5]
         ii.itemMat[2] = global.charSelect.invSlot[i,6]
+        ii.itemName = global.charSelect.invSlot[i,7]
         ii.inInventory = false
         ii.equipped = i
          
@@ -58,10 +59,25 @@ repeat(8)
         with(ii)
         {
             script_execute(itemType,0)
+            if itemName != -4
+            {
+                name = itemName
+            }
+            
             canEquipCheck()
-            script_execute(itemTrait[1],0)
-            script_execute(itemTrait[2],0)
-            script_execute(itemTrait[3],0)
+            if ttType = itemTypeArmour or itemTypePlating
+            {
+                script_execute(itemTrait[1],1,0)
+                script_execute(itemTrait[2],1,0)
+                script_execute(itemTrait[3],1,0)
+            }
+            else
+            {
+                script_execute(itemTrait[1],0,0)
+                script_execute(itemTrait[2],0,0)
+                script_execute(itemTrait[3],0,0)
+            }
+            
             //Material
             mat1 = script_execute(itemMat[1],1,0,true)
             mat2 = script_execute(itemMat[2],1,0,true)
@@ -123,14 +139,29 @@ repeat(inventorySize)
     ii.itemTrait[3] = inventory[i,4]
     ii.itemMat[1] = inventory[i,5]
     ii.itemMat[2] = inventory[i,6]
+    ii.itemName = inventory[i,7]
     
     with(ii)
     {
         script_execute(itemType,0)
+        if itemName != -4
+        {
+            name = itemName
+        }
         canEquipCheck()
-        script_execute(itemTrait[1],0)
-        script_execute(itemTrait[2],0)
-        script_execute(itemTrait[3],0)
+        if ttType = itemTypeArmour or itemTypePlating
+        {
+            script_execute(itemTrait[1],1,0)
+            script_execute(itemTrait[2],1,0)
+            script_execute(itemTrait[3],1,0)
+        }
+        else
+        {
+            script_execute(itemTrait[1],0,0)
+            script_execute(itemTrait[2],0,0)
+            script_execute(itemTrait[3],0,0)
+        }
+        
         //Material
         mat1 = script_execute(itemMat[1],1,0,true)
         mat2 = script_execute(itemMat[2],1,0,true)
@@ -164,7 +195,7 @@ repeat(inventorySize)
         script_execute(itemType,3)
         script_execute(itemMat[1],8,matNum,true)
         script_execute(itemType,4)
-        script_execute(itemMat[2],4,matNum,true)
+        script_execute(itemMat[2],9,matNum,true)
         break
         case itemTypeArmour:
         case itemTypePlating:

@@ -46,6 +46,8 @@ wepRange[i] = 1
 
 //Weapon Sprites
 weaponSprite[i] = iSpr
+wepPartMin[i] = 2
+wepPartMax[i] = 7
 
 autoHandedness()
 threat = true
@@ -120,6 +122,8 @@ wepRange[i] = 1
 
 //Weapon Sprites
 weaponSprite[i] = iSpr
+wepPartMin[i] = 3
+wepPartMax[i] = 7
 
 autoHandedness()
 threat = true
@@ -195,6 +199,8 @@ wepRange[i] = 1
 
 //Weapon Sprites
 weaponSprite[i] = iSpr
+wepPartMin[i] = 3
+wepPartMax[i] = 18
 
 autoHandedness()
 threat = true
@@ -270,6 +276,8 @@ wepRange[i] = 1
 
 //Weapon Sprites
 weaponSprite[i] = iSpr
+wepPartMin[i] = 3
+wepPartMax[i] = 12
 
 autoHandedness()
 threat = true
@@ -353,6 +361,8 @@ wepRange[i] = 1
 
 //Weapon Sprites
 weaponSprite[i] = iSpr
+wepPartMin[i] = 4
+wepPartMax[i] = 24
 
 autoHandedness()
 threat = true
@@ -435,6 +445,8 @@ wepRange[i] = 1
 
 //Weapon Sprites
 weaponSprite[i] = iSpr
+wepPartMin[i] = 3
+wepPartMax[i] = 25
 
 autoHandedness()
 threat = true
@@ -509,6 +521,8 @@ wepRange[i] = 1
 
 //Weapon Sprites
 weaponSprite[i] = iSpr
+wepPartMin[i] = 3
+wepPartMax[i] = 25
 
 autoHandedness()
 threat = true
@@ -584,6 +598,8 @@ wepRange[i] = 1
 
 //Weapon Sprites
 weaponSprite[i] = iSpr
+wepPartMin[i] = 4
+wepPartMax[i] = 26
 
 autoHandedness()
 threat = true
@@ -659,6 +675,8 @@ wepRange[i] = 1
 
 //Weapon Sprites
 weaponSprite[i] = iSpr
+wepPartMin[i] = 4
+wepPartMax[i] = 29
 
 autoHandedness()
 reach = 2
@@ -744,6 +762,8 @@ wepRange[i] = 1
 
 //Weapon Sprites
 weaponSprite[i] = iSpr
+wepPartMin[i] = 9
+wepPartMax[i] = 33
 
 autoHandedness()
 greatWeaponSize = 2

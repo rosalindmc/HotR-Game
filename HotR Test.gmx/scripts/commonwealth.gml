@@ -144,6 +144,7 @@ repeat(choose(100))
     script_execute(inventory[ii,0],5)
     inventory[ii,5] = script_execute(script_execute(inventory[ii,0],3),inventory[ii,1],iType)
     inventory[ii,6] = script_execute(script_execute(inventory[ii,0],4),irandom(inventory[ii,1]),iType)
+    inventory[ii,7] = -4
     ii += 1
     inventorySize = ii
 }

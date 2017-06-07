@@ -59,8 +59,14 @@ switch(argument0)
     
     loseMoney(10)
     repeat(2+checkTalent(treeStreetwise,false))
-    {
-        gainItem(itemList(),irandom(4),emptyMutator,emptyMutator,emptyMutator)
+    {   
+        item = itemList()
+        iType = typeRend
+        script_execute(item,5)
+        tier = irandom(4)
+        mat1 = script_execute(script_execute(item,3),tier,iType)
+        mat2 = script_execute(script_execute(item,4),irandom(tier),iType)
+        gainItem(item,tier,emptyMutator,emptyMutator,emptyMutator,mat1,mat2,-4)
     }
     break
     

@@ -16,6 +16,7 @@ with(obj_item)
         other.inventory[other.inventorySize,4] = itemTrait[3]
         other.inventory[other.inventorySize,5] = itemMat[1]
         other.inventory[other.inventorySize,6] = itemMat[2]
+        other.inventory[other.inventorySize,7] = itemName
         other.inventorySize += 1
     }
     else
@@ -27,6 +28,7 @@ with(obj_item)
         global.charSelect.invSlot[equipped,4] = itemTrait[3]
         global.charSelect.invSlot[equipped,5] = itemMat[1]
         global.charSelect.invSlot[equipped,6] = itemMat[2]
+        global.charSelect.invSlot[equipped,7] = itemName
     }
 }
 }

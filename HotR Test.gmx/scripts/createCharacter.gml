@@ -114,6 +114,7 @@ for(i = 1; i < 9; i++)
         script_execute(invSlot[i,0],5)
         invSlot[i,5] = script_execute(script_execute(invSlot[i,0],3),invSlot[i,1],iType)
         invSlot[i,6] = script_execute(script_execute(invSlot[i,0],4),irandom(invSlot[i,1]),iType)
+        inventory[i,7] = -4
     }
 }
 

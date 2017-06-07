@@ -37,6 +37,7 @@ tt = 0
 shield = false
 greatWeapon = false
 hudY = 0
+cost = 0
 
 itemScript(0)
 </string>

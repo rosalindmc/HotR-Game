@@ -6,6 +6,11 @@ background_visible[0] = true
 global.inCombat = false
 instance_activate_all()
 
+with(obj_projectile)
+{
+    instance_destroy()
+}
+
 with(obj_control)
 {
     if runEvent = true

@@ -90,9 +90,6 @@ spreadStrength = 5
 //Effects
 status = ds_list_create()
 
-boldGlow()
-actorParticles()
-
 #define initializeCharStats
 //Initialize game stats for actors
 //initializeCharStats()
@@ -190,6 +187,10 @@ initializeTraits()
 initializeAbilities()
 initializeWeapon(1)
 initializeWeapon(2)
+
+//Particles
+boldGlow()
+actorParticles()
 
 #define initializeTriggers
 for(i = 0; i < 6; i++)
@@ -345,25 +346,42 @@ wepReloadStamina[argument0] = .1
 weaponSprite[argument0] = spr_none
 wepColour[argument0,1] = c_white
 wepColour[argument0,2] = c_white
+wepPart[argument0] = false
 greatWeaponSize = 2
+wepPartMin[argument0] = 0
+wepPartMax[argument0] = 0
 
 #define boldGlow
 ps1 = part_system_create()
 
-p1 = part_type_create()
-part_type_shape(p1,pt_shape_smoke)
-part_type_size(p1,0.05,0.15,0,0)
-part_type_scale(p1,1,1)
-part_type_color1(p1,c_teal)
-part_type_alpha2(p1,1,0)
-part_type_speed(p1,120/global.fspd,240/global.fspd,0,0)
-part_type_direction(p1,90,90,0,10)
-part_type_gravity(p1,0,270)
-part_type_orientation(p1,0,0,20,20,1)
-part_type_blend(p1,1)
-part_type_life(p1,global.fspd*.05,global.fspd*.15)
+part1 = part_type_create()
+part_type_shape(part1,pt_shape_smoke)
+part_type_size(part1,0.05,0.15,0,0)
+part_type_scale(part1,1,1)
+part_type_color1(part1,c_teal)
+part_type_alpha2(part1,1,0)
+part_type_speed(part1,120/global.fspd,240/global.fspd,0,0)
+part_type_direction(part1,90,90,0,10)
+part_type_gravity(part1,0,270)
+part_type_orientation(part1,0,0,20,20,1)
+part_type_blend(part1,1)
+part_type_life(part1,global.fspd*.05,global.fspd*.15)
 
 em1 = part_emitter_create(ps1)
+
+//Weapon Particles
+wepPart[1] = false
+wepPart[2] = false
+wepPs[1] = part_type_create()
+wepPs[2] = part_type_create()
+ps3 = part_system_create()
+ps4 = part_system_create()
+em3 = part_emitter_create(ps3)
+em4 = part_emitter_create(ps4)
+part_system_automatic_draw(ps3,false)
+part_system_automatic_draw(ps4,false)
+
+
 #define actorParticles
 ps2 = part_system_create()
 
@@ -382,11 +400,9 @@ part_type_blend(p2,false)
 part_type_life(p2,global.fspd*.25,global.fspd*.5)
 
 //Sparks
-
-
-
-
 em2 = part_emitter_create(ps2)
+
+
 #define initializeAbilities
 abilityNumber = 0
 ability[0] = -4

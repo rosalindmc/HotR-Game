@@ -266,6 +266,7 @@
         <sprite>sprites\spr_automatic</sprite>
         <sprite>sprites\spr_handAxe</sprite>
         <sprite>sprites\spr_battleAxe</sprite>
+        <sprite>sprites\spr_greatAxe</sprite>
         <sprite>sprites\spr_hammer</sprite>
         <sprite>sprites\spr_warhammer</sprite>
         <sprite>sprites\spr_lightMace</sprite>
@@ -276,7 +277,6 @@
         <sprite>sprites\spr_spear</sprite>
         <sprite>sprites\spr_staff</sprite>
         <sprite>sprites\spr_shortSpear</sprite>
-        <sprite>sprites\spr_greatAxe</sprite>
         <sprite>sprites\spr_greatSword</sprite>
         <sprite>sprites\spr_longSword</sprite>
         <sprite>sprites\spr_armSword</sprite>
@@ -454,33 +454,9 @@
       <sprite>sprites\spr_leaveMenu</sprite>
     </sprites>
     <sprites name="Overworld">
-      <sprites name="Outdated">
-        <sprite>sprites\spr_agStone</sprite>
-        <sprite>sprites\spr_cliffTrim</sprite>
-        <sprite>sprites\spr_coastTrim</sprite>
-        <sprite>sprites\spr_shimmer</sprite>
-        <sprite>sprites\spr_ocean</sprite>
-        <sprite>sprites\spr_iceCliff</sprite>
-        <sprite>sprites\spr_shallows</sprite>
-        <sprite>sprites\spr_dirtCliff</sprite>
-        <sprite>sprites\spr_coldStoneCliff</sprite>
-        <sprite>sprites\spr_stoneCliff</sprite>
-        <sprite>sprites\spr_agCliff</sprite>
-        <sprite>sprites\spr_qfGrassTrim</sprite>
-        <sprite>sprites\spr_agStoneTrim</sprite>
-        <sprite>sprites\spr_hexGrid</sprite>
-        <sprite>sprites\spr_hextest2</sprite>
-        <sprite>sprites\spr_shimmerSpark</sprite>
-        <sprite>sprites\spr_cftGrassTrim</sprite>
-        <sprite>sprites\spr_qfGrass</sprite>
-        <sprite>sprites\spr_stSnowTrim</sprite>
-        <sprite>sprites\spr_sun</sprite>
-        <sprite>sprites\spr_cloud</sprite>
-        <sprite>sprites\spr_stSnow</sprite>
-        <sprite>sprites\spr_cftGrass</sprite>
-        <sprite>sprites\spr_hgGrassTrim</sprite>
-      </sprites>
       <sprite>sprites\spr_location</sprite>
+      <sprite>sprites\spr_sun</sprite>
+      <sprite>sprites\spr_cloud</sprite>
       <sprite>sprites\spr_forest</sprite>
       <sprite>sprites\spr_mountain</sprite>
       <sprite>sprites\spr_hgGrass</sprite>
@@ -816,6 +792,7 @@
       <shader type="GLSLES">shaders\shd_greyscale.shader</shader>
       <shader type="GLSLES">shaders\shd_stealth.shader</shader>
       <shader type="GLSLES">shaders\shd_combat.shader</shader>
+      <shader type="GLSLES">shaders\shd_ripple.shader</shader>
     </shaders>
     <shaders name="TimeofDay">
       <shader type="GLSLES">shaders\shd_evening.shader</shader>

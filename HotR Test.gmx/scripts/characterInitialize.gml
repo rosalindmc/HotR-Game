@@ -112,6 +112,7 @@ repeat(8)
     invSlot[i,4] = emptyMutator //i,4 is the third mutator
     invSlot[i,5] = emptyMutator //i,5 is the first material           
     invSlot[i,6] = emptyMutator //i,6 is the second material
+    invSlot[i,7] = -4           //i,7 is the name
     
     i += 1
 }

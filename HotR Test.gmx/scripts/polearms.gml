@@ -47,6 +47,8 @@ wepRange[i] = 1
 
 //Weapon Sprites
 weaponSprite[i] = iSpr
+wepPartMin[i] = 9
+wepPartMax[i] = 15
 
 autoHandedness()
 greatWeaponSize = 3
@@ -123,6 +125,8 @@ wepRange[i] = 1
 
 //Weapon Sprites
 weaponSprite[i] = iSpr
+wepPartMin[i] = 18
+wepPartMax[i] = 24
 
 autoHandedness()
 greatWeaponSize = 3
@@ -200,6 +204,8 @@ wepRange[i] = 1
 
 //Weapon Sprites
 weaponSprite[i] = iSpr
+wepPartMin[i] = 23
+wepPartMax[i] = 31
 
 autoHandedness()
 greatWeaponSize = 4
@@ -277,6 +283,8 @@ wepRange[i] = 1
 
 //Weapon Sprites
 weaponSprite[i] = iSpr
+wepPartMin[i] = 19
+wepPartMax[i] = 26
 
 reach = 3
 autoHandedness()

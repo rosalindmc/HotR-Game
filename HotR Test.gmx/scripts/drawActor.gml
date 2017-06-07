@@ -11,7 +11,7 @@ if isoZ <= global.zLevel or global.zViewToggle = true
     //(This script will need to be altered when large creatures are implemented)       
     if controlled = true
     {
-        draw_sprite(spr_selection,image_index,currentTile.x,currentTile.y-currentTile.h+(global.zLevel*15))
+        draw_sprite(spr_selection,image_index,currentTile.x,currentTile.y-currentTile.wH-currentTile.h+(global.zLevel*15))
     }
     
     //Run Code to Draw Surface
@@ -41,7 +41,7 @@ if isoZ <= global.zLevel or global.zViewToggle = true
     }
     
     //Draw Self
-    draw_surface(charSurf,x-round(50),y-round(75)-h+(global.zLevel*15))
+    draw_surface(charSurf,x-50,y-75-h+(global.zLevel*15))
     
     if global.surfX2 != 0
     {
@@ -49,7 +49,7 @@ if isoZ <= global.zLevel or global.zViewToggle = true
         if surface_exists(global.blockSurf)
         {
             surface_set_target(global.blockSurf)
-            draw_surface(charSurf,x-round(50)-global.surfX1,y-round(75)-global.surfY1-h)        
+            draw_surface(charSurf,x-50-global.surfX1,y-75-global.surfY1-h)        
             surface_reset_target()
         }
         
@@ -57,7 +57,7 @@ if isoZ <= global.zLevel or global.zViewToggle = true
         if surface_exists(global.reflectSurf)
         {
             surface_set_target(global.reflectSurf)
-            draw_surface_ext(charSurf,x-round(50)-global.surfX1,y+81-global.surfY1-h+(h-((global.waterLevel*15)+7)),1,-1,0,c_white,1)
+            draw_surface_ext(charSurf,x-50-global.surfX1,y+81-global.surfY1-h+(h-((global.waterLevel*15)+7)),1,-1,0,c_white,1)
             surface_reset_target()
         }
     }

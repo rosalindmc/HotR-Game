@@ -228,9 +228,9 @@ i = 1
 invSwitch = 1
 
 script_execute(o.invSlot[1,0],2)
-script_execute(o.invSlot[1,2],2)
-script_execute(o.invSlot[1,3],2)
-script_execute(o.invSlot[1,4],2)
+script_execute(o.invSlot[1,2],0,1)
+script_execute(o.invSlot[1,3],0,1)
+script_execute(o.invSlot[1,4],0,1)
 
 if wepType[1] = typeImpact
 {
@@ -253,9 +253,9 @@ if o.invSlot[2,0] != emptySlot
 {
     i = 2
     script_execute(o.invSlot[2,0],2)
-    script_execute(o.invSlot[2,2],2)
-    script_execute(o.invSlot[2,3],2)
-    script_execute(o.invSlot[2,4],2)
+    script_execute(o.invSlot[2,2],0,1)
+    script_execute(o.invSlot[2,3],0,1)
+    script_execute(o.invSlot[2,4],0,1)
     
     if wepAnimType[2] = typeShield
     {
@@ -311,9 +311,9 @@ i = 1
 invSwitch = 2
 
 script_execute(o.invSlot[3,0],2)
-script_execute(o.invSlot[3,2],2)
-script_execute(o.invSlot[3,3],2)
-script_execute(o.invSlot[3,4],2)
+script_execute(o.invSlot[3,2],0,1)
+script_execute(o.invSlot[3,3],0,1)
+script_execute(o.invSlot[3,4],0,1)
 //Material
 script_execute(o.invSlot[3,0],3)
 script_execute(o.invSlot[3,5],8,matNum,false,1)
@@ -330,9 +330,9 @@ script_execute(o.invSlot[4,0],4)
 script_execute(o.invSlot[4,6],7,matNum,false,1)
 //Armour
 script_execute(o.invSlot[4,0],2)
-script_execute(o.invSlot[4,2],2)
-script_execute(o.invSlot[4,3],2)
-script_execute(o.invSlot[4,4],2)
+script_execute(o.invSlot[4,2],1,1)
+script_execute(o.invSlot[4,3],1,1)
+script_execute(o.invSlot[4,4],1,1)
 
 //Material
 script_execute(o.invSlot[8,0],3)
@@ -341,9 +341,9 @@ script_execute(o.invSlot[8,0],4)
 script_execute(o.invSlot[8,6],7,matNum,false,2)
 //Plate
 script_execute(o.invSlot[8,0],2)
-script_execute(o.invSlot[8,2],2)
-script_execute(o.invSlot[8,3],2)
-script_execute(o.invSlot[8,4],2)
+script_execute(o.invSlot[8,2],1,1)
+script_execute(o.invSlot[8,3],1,1)
+script_execute(o.invSlot[8,4],1,1)
 postArmourCustom()
 
 //Post Equip

@@ -311,7 +311,7 @@ switch(argument0)
     
     case 4: //Weapon Modifier (Grip)
         if argument2 = true{
-            addItemTooltip('+.5 Melee Skill','+.5 Melee Skill',1,c_red)
+            addItemTooltip('+.5 Melee Skill','+.5 Melee Skill',1,c_green)
         }
         else{
             mSkill += .5
@@ -353,7 +353,7 @@ switch(argument0)
     
     case 9: //Weapon Modifier (Ranged Grip)
         if argument2 = true{
-            addItemTooltip('+.5 Ballistic Skill','+.5 Ballistic Skill',1,c_red)
+            addItemTooltip('+.5 Ballistic Skill','+.5 Ballistic Skill',1,c_green)
         }
         else{
             rSkill += .5
@@ -583,7 +583,7 @@ switch(argument0)
     
     case 9: //Weapon Modifier (Ranged Grip)
         if argument2 = true{
-            addItemTooltip('+1 Ballistic Skill','+1 Ballistic Skill',1,c_red)
+            addItemTooltip('+1 Ballistic Skill','+1 Ballistic Skill',1,c_green)
         }
         else{
             rSkill += 1.0
@@ -664,7 +664,7 @@ switch(argument0)
     
     case 9: //Weapon Modifier (Ranged Grip)
         if argument2 = true{
-            addItemTooltip('+1.5 Ballistic Skill','+1.5 Ballistic Skill',1,c_red)
+            addItemTooltip('+1.5 Ballistic Skill','+1.5 Ballistic Skill',1,c_green)
         }
         else{
             rSkill += 1.5

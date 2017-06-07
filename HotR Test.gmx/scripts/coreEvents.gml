@@ -23,7 +23,15 @@ if argument1 = 0
     choice('Return', 1, true) 
     break
     
-    case 3: gainItem(choose(greatSword,maul),4,emptyMutator,emptyMutator,emptyMutator) skipTo(1) break
+    case 3: 
+    item = itemList()
+    iType = typeRend
+    script_execute(item,5)
+    tier = irandom(4)
+    mat1 = script_execute(script_execute(item,3),tier,iType)
+    mat2 = script_execute(script_execute(item,4),irandom(tier),iType)
+    gainItem(item,tier,runeLahab,emptyMutator,emptyMutator,mat1,mat2,'Flame Weapon')
+    skipTo(1) break
     case 4: gainMoney(100) skipTo(1) break
     case 5: loseMoney(100) skipTo(1) break
     case 6: eventEnd() break
