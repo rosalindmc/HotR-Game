@@ -270,13 +270,20 @@ else
 //Weapon Particles
 if wepPart[1] = true
 {
-    part_emitter_region(ps3,em3,handX[1]+lengthdir_x(wepPartMin[1],handRot[1]),handX[1]+lengthdir_x(wepPartMax[1],handRot[1]),handY[1]+lengthdir_y(wepPartMin[1],handRot[1]),handY[1]+lengthdir_y(wepPartMax[1],handRot[1]),ps_shape_line,1)
-    part_emitter_burst(ps3,em3,part1,(100+((wepPartMax[1]-wepPartMin[1])*10))/global.fspd)//wepPs[1],1)
+    if greatWeapon = true
+    {
+        part_emitter_region(ps3,em3,handX[2-shldrSwap]+lengthdir_x(wepPartMin[1],handRot[1]),handX[2-shldrSwap]+lengthdir_x(wepPartMax[1],handRot[1]),handY[1]+lengthdir_y(wepPartMin[1],handRot[1]),handY[2-shldrSwap]+lengthdir_y(wepPartMax[1],handRot[1]),ps_shape_line,1)
+    }
+    else
+    {
+        part_emitter_region(ps3,em3,handX[2-shldrSwap]+lengthdir_x(wepPartMin[1],handRot[1]),handX[2-shldrSwap]+lengthdir_x(wepPartMax[1],handRot[1]),handY[1]+lengthdir_y(wepPartMin[1],handRot[1]),handY[2-shldrSwap]+lengthdir_y(wepPartMax[1],handRot[1]),ps_shape_line,1)
+    }
+    part_emitter_burst(ps3,em3,wepPs[1],(100+((wepPartMax[1]-wepPartMin[1])*10))/global.fspd)
 }
 if wepPart[2] = true
 {
     part_emitter_region(ps4,em4,handX[2]+lengthdir_x(wepPartMin[2],handRot[2]),handX[2]+lengthdir_x(wepPartMax[2],handRot[2]),handY[2]+lengthdir_y(wepPartMin[2],handRot[2]),handY[2]+lengthdir_y(wepPartMax[2],handRot[2]),ps_shape_line,1)
-    part_emitter_burst(ps4,em4,part1,(100+((wepPartMax[2]+wepPartMin[2])*10))/global.fspd)//wepPs[2],1)
+    part_emitter_burst(ps4,em4,wepPs[2],(100+((wepPartMax[2]+wepPartMin[2])*10))/global.fspd)
 }
 
         //Char Draw
