@@ -125,7 +125,7 @@ money = 100.00
 
 //Inventory
 ii = 0
-repeat(choose(100))
+repeat(choose(20))
 {
     inventory[ii,0] = choose(
     choose(knife,dagger,epee,armingSword,greatSword,longSword,shortSword,sabre,rapier,bastardSword),
@@ -135,8 +135,8 @@ repeat(choose(100))
     choose(chainMail,chainShirt,breastPlate,robe,dress),
     choose(heaterShield,squareShield,roundShield),
     choose(shortBow,lightCrossbow,crossbow,longBow),
-    choose(automatic,revolver,handCannon,repeaterCarbine,carbine,longRifle,recoilessRifle))
-    inventory[ii,1] = choose(0,0,0,1,1,1,1,1,1,1,1,2,2,2,3,3,4)
+    choose(handCannon,carbine))
+    inventory[ii,1] = choose(0,0,0,1,1,1,1,1,1,1,1)
     inventory[ii,2] = emptyMutator
     inventory[ii,3] = emptyMutator
     inventory[ii,4] = emptyMutator

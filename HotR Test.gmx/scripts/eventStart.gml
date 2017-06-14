@@ -5,6 +5,7 @@ ii = instance_create(0,260,obj_event)
 
 ii.event = argument0
 ii.eventStep = argument1
+global.notificationVis = true
 global.eventActive = true
 global.eventActor = global.activeActor
 global.eventCharacter = ds_list_find_value(global.activeActor.party,0)
@@ -17,6 +18,10 @@ with(ii)
 #define eventEnd
 instance_destroy()
 global.eventActive = false
+global.notificationVis = true
+global.inMenu = 0
+global.subTab = -4
+global.menuSheet = -4
 
 #define skipTo
 with(obj_eventChoice)
@@ -34,6 +39,7 @@ script_execute(event,eventStep,0)
 
 #define nextStep
 clickStep = false
+eventVisible = true
 text = ''
 i = 0
 talking = false
@@ -71,3 +77,16 @@ i += 1
 
 #define talk
 talking = argument0
+
+
+
+#define nestedEvent
+global.pausedEventStep = eventStep+1
+
+event = argument0
+eventStep = 0
+script_execute(event,eventStep,0)
+
+#define returnToMain
+event = actionQueResolve
+skipTo(global.pausedEventStep)

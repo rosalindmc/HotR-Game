@@ -109,6 +109,8 @@
         <sprite>sprites\ico_reload</sprite>
         <sprite>sprites\ico_autoBurst</sprite>
         <sprite>sprites\ico_money</sprite>
+        <sprite>sprites\ico_purchaseConfirm</sprite>
+        <sprite>sprites\ico_partyConfirm</sprite>
         <sprite>sprites\ico_bold</sprite>
         <sprite>sprites\ico_death</sprite>
         <sprite>sprites\ico_experience</sprite>
@@ -227,6 +229,7 @@
       <sprites name="Travel Icons">
         <sprite>sprites\ico_camp</sprite>
         <sprite>sprites\ico_visitCity</sprite>
+        <sprite>sprites\ico_swapTeam</sprite>
       </sprites>
     </sprites>
     <sprites name="Equipment">
@@ -645,6 +648,7 @@
     <scripts name="Events">
       <script>scripts\eventStart.gml</script>
       <script>scripts\coreEvents.gml</script>
+      <script>scripts\randomEvent.gml</script>
       <script>scripts\createNotification.gml</script>
       <script>scripts\eventActions.gml</script>
       <script>scripts\eventChecks.gml</script>
@@ -859,6 +863,7 @@
         <object>objects\obj_menuDivider</object>
         <object>objects\obj_relation</object>
         <object>objects\obj_model</object>
+        <object>objects\obj_modelVersatile</object>
         <object>objects\obj_menuSheet</object>
         <object>objects\obj_option</object>
         <object>objects\obj_optionSelector</object>
@@ -881,13 +886,15 @@
         <object>objects\obj_notification</object>
       </objects>
       <objects name="Party Actions">
+        <object>objects\obj_characterResume</object>
+        <object>objects\obj_resumeSelect</object>
         <object>objects\obj_partySlot</object>
         <object>objects\obj_partyActor</object>
         <object>objects\obj_partyActionButton</object>
         <object>objects\obj_partyActionSheet</object>
         <object>objects\obj_partyActionHudParent</object>
         <object>objects\obj_leaveSheet</object>
-        <object>objects\obj_partyConfirm</object>
+        <object>objects\obj_menuConfirm</object>
       </objects>
     </objects>
     <objects name="Combat">

@@ -1,5 +1,6 @@
 #define restActions
 
+
 #define rRest
 var c = argument1
 
@@ -13,6 +14,7 @@ switch(argument0)
     c.fat = max(0,c.fat-4)
     c.wounds = max(0,c.wounds-1)
     createNotification(string(c.firstName)+' rests',ico_wait,0)
+    nextStep()
     break
     
     case 2: //Figure out if the character can even take this action
@@ -30,10 +32,11 @@ switch(argument0)
     break
     
     case 1: //Resolve the action
-    //Replace with ability to train classes, spells and basic skills
+    portraitSet(c)
+    speak(string(c.firstName)+' trains')
+    //Replace with the training screen
     c.experience += floor(random(c.cunning))/10
     checkLevelUp(c)
-    createNotification(string(c.firstName)+' trains',ico_experience,0)
     break
     
     case 2: //Figure out if the character can even take this action
@@ -51,11 +54,11 @@ switch(argument0)
     break
     
     case 1: //Resolve the action
-    //Replace with ability to train classes, spells and basic skills
+    portraitSet(c)
+    speak(string(c.firstName)+' hunts')
     global.eventCharacter = c
     c.fat = max(0,c.fat-checkTalent(treeSurvival,false))
     c.wounds = max(0,c.wounds-checkTalent(treeSurvival,false))
-    createNotification(string(c.firstName)+' hunts',ico_survival,checkTalent(treeSurvival,false))
     break
     
     case 2: //Figure out if the character can even take this action
@@ -73,10 +76,11 @@ switch(argument0)
     break
     
     case 1: //Resolve the action
-    //Replace with ability to train classes, spells and basic skills
+    portraitSet(c)
+    speak(string(c.firstName)+' heals')
+    //Replace with the healing screen
     c.fat = max(0,c.fat-2)
     c.wounds = max(0,c.wounds-checkTalent(treeMedicine,true))
-    createNotification(string(c.firstName)+' is healed',ico_medicine,checkTalent(treeMedicine,true))
     break
     
     case 2: //Figure out if the character can even take this action    
@@ -93,10 +97,10 @@ switch(argument0)
     break
     
     case 1: //Resolve the action
-    //Replace with ability to train classes, spells and basic skills
+    portraitSet(c)
+    speak(string(c.firstName)+' performs')
     c.fat = max(0,c.fat-checkTalent(treePerform,false))
     c.resolve = min(c.resolve+checkTalent(treePerform,false),10)
-    createNotification(string(c.firstName)+' performs',ico_perform,checkTalent(treePerform,false))
     break
     
     case 2: //Figure out if the character can even take this action    

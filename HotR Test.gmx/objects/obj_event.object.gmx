@@ -27,6 +27,7 @@
             <kind>1</kind>
             <string>event = -4
 eventStep = 0
+eventVisible = true
 text = ''
 iy = 0
 talking = false
@@ -154,22 +155,24 @@ if talking &gt; 0
 y = ystart+view_yview
 
 
-
-draw_sprite(spr_textBox,0,x,y)
-
-draw_set_halign(fa_left)
-draw_set_valign(fa_top)
-
-if portraitOf != -4
+if eventVisible = true
 {
-    draw_set_font(fnt_menu)
-    drawText(c_black,c_white,x+10,y-30,string(portraitOf.partyLeader.firstName)+' '+string(portraitOf.partyLeader.lastName))
-    humanoidPortrait(portraitOf,x+50,y+50,8,0)
+    draw_sprite(spr_textBox,0,x,y)
+    
+    draw_set_halign(fa_left)
+    draw_set_valign(fa_top)
+    
+    if portraitOf != -4
+    {
+        draw_set_font(fnt_menu)
+        drawText(c_black,c_white,x+10,y-30,string(portraitOf.firstName)+' '+string(portraitOf.lastName))
+        humanoidPortrait(portraitOf,x+50,y+50,8,0)
+    }
+    
+    draw_set_font(fnt_textbox)
+    draw_set_colour(c_black)
+    draw_text_ext(x+105,y+5,text,16,525)
 }
-
-draw_set_font(fnt_textbox)
-draw_set_colour(c_black)
-draw_text_ext(x+105,y+5,text,16,525)
 </string>
           </argument>
         </arguments>

@@ -68,7 +68,7 @@ for(i = 0; i < global.charSelect.relations; i++)
     ii = instance_create(330,72+(iy*22),obj_relation)
     ii.relation = global.charSelect.relationship[i]
     ii.relationValue = global.charSelect.relationshipValue[i]
-    ii.relationType =global.charSelect.relationshipType[i]
+    ii.relationType = global.charSelect.relationshipType[i]
     ii.hudY = iy
     iy += 1
 }

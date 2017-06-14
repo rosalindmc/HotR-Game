@@ -28,7 +28,33 @@
             <string>text = -4
 lockClick = false
 instance_create(x-105,y-145,obj_leaveSheet)
-instance_create(x+75,y+138,obj_partyConfirm)
+i = instance_create(x+75,y+138,obj_menuConfirm)
+i.confirm = owPartyActionConfirm
+
+global.notificationVis = false
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="1" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.notificationVis = false
 </string>
           </argument>
         </arguments>
@@ -78,7 +104,7 @@ if mouse_check_button_pressed(mb_left)
 
 if lockClick = true
 {
-    global.hudY = median(0,round((mouse_y-(y-120))/(260/(global.hudYMax-11))),global.hudYMax-11)
+    global.hudY = median(0,round((mouse_y-(y-120))/(260/(global.hudYMax-11))),max(0,global.hudYMax-11))
 }
 
 if mouse_check_button_released(mb_left)

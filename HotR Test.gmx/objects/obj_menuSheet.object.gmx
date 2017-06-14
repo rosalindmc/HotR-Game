@@ -121,7 +121,7 @@ if mouse_check_button_pressed(mb_left)
 
 if lockClick = true
 {
-    global.hudY = median(0,round((mouse_y-(y-120))/(260/(global.hudYMax-11))),global.hudYMax-11)
+    global.hudY = median(0,round((mouse_y-(y-120))/(260/(global.hudYMax-11))),max(0,global.hudYMax-11))
 }
 
 if mouse_check_button_released(mb_left)

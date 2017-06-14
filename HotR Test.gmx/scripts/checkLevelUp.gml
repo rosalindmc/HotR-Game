@@ -13,7 +13,6 @@ while(char.experience >= char.expToLevel)
     else
     {
         levelControl(char,false)
-        global.eventActive = true
     }
     
     char.experience -= char.expToLevel

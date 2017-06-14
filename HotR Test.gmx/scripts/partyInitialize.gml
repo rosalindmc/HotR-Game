@@ -7,6 +7,7 @@ node = noone
 
 active = false
 party = ds_list_create()
+reserve = ds_list_create()
 
 mooks[0,0] = emptySlot
 mookTypes = 0

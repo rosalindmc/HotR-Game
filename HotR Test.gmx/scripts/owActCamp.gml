@@ -58,14 +58,8 @@ ii.text = 'City Actions'
 iy = 0
 owAddButtons(7,'Inn',rInn)
 owAddButtons(3,'Library',rLibrary)
-if checkMoney(10)
-{
-    owAddButtons(1,'Market',rMarket)
-}
-if checkMoney(10) and ds_list_size(global.eventActor.party) < 7
-{
-    owAddButtons(1,'Town Hall',rTownhall)
-}
+owAddButtons(1,'Market',rMarket)    
+owAddButtons(1,'Tavern',rTavern)
 
 //Create Party
 owAddParty()
@@ -73,6 +67,56 @@ owAddParty()
 //Autoplace Actor Icons and set preferences
 
 global.hudYMax = iy
+break
+
+case 1:
+//Resolve Actions
+
+//End turn
+nextTurn()
+break
+}
+
+#define owActSwapTeam
+switch(argument0)
+{
+case 0: //Create Swap Team Menu
+global.hudYMax = 0 
+global.currentPurchase = 0
+
+for(iii = ds_list_size(global.activeActor.party)-1; iii >= 0; iii--)
+{
+    ii = instance_create(330,72+(iii*44),obj_resumeSelect)
+    ii.hudY = iii
+    ii.swap = true
+    ii.recruit = true
+    ii.character = ds_list_find_value(global.activeActor.party,iii) 
+    global.charSelect = ii.character
+    global.hudYMax += 1
+    global.currentPurchase += 1
+}
+
+for(iii = ds_list_size(global.activeActor.reserve)-1; iii >= 0; iii--)
+{
+    ii = instance_create(330,72+(global.hudYMax*44),obj_resumeSelect)
+    ii.hudY = global.hudYMax
+    ii.swap = true
+    ii.character = ds_list_find_value(global.activeActor.reserve,iii) 
+    global.charSelect = ii.character    
+    global.hudYMax += 1
+}
+
+iv = instance_create(320,180,obj_characterResume)
+iv.swap = true
+
+ii = instance_create(430,318,obj_menuConfirm)
+ii.confirm = swapConfirm
+
+with(obj_resumeSelect)
+{
+    resume = other.iv
+}
+
 break
 
 case 1:

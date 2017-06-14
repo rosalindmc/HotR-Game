@@ -139,7 +139,10 @@ ii.sprite_index = ico_camp
 }
 else
 {
-ii = instance_create(i.x,i.y+30,obj_partyActionButton)
+ii = instance_create(i.x-10,i.y+30,obj_partyActionButton)
 ii.action = owActVisitCity
 ii.sprite_index = ico_visitCity
+ii = instance_create(i.x+10,i.y+30,obj_partyActionButton)
+ii.action = owActSwapTeam
+ii.sprite_index = ico_swapTeam
 }

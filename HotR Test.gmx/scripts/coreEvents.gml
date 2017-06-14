@@ -6,7 +6,7 @@ if argument1 = 0
 {
     switch(argument0)
     {
-    case 0: speak('GM tools') portraitSet(global.eventActor) break
+    case 0: speak('GM tools') break
     
     case 1: 
     choice('Misc Scripts 1', 2, true) 
@@ -225,18 +225,20 @@ if argument1 = 0
     eventEnd() break
     }
 }
-#define restTempScript
+#define actionQueResolve
 if argument1 = 0
 {
-    switch(argument0)
+    if argument0 < global.partyActions
     {
-    case 0: 
-    speak('All party actions Resolved') 
-    break
-    
-    case 1: 
-    global.turnOver = true 
-    eventEnd()
-    break
+        script_execute(global.partyAct[argument0,1],1,global.partyAct[argument0,0])
+    }
+    else if argument0 = global.partyActions
+    {
+        speak('All actions resolved')
+    }
+    else
+    {
+        global.turnOver = true 
+        eventEnd()
     }
 }

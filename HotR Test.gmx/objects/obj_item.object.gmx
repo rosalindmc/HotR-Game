@@ -62,7 +62,9 @@ itemScript(0)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if point_in_rectangle(mouse_x,mouse_y,x-10,y-10,x+10,y+10) and global.eventActive = false
+            <string>if (hudY &gt;= global.hudY and hudY &lt;= global.hudY+10) or dragged = true or inInventory = false 
+{
+if global.eventActive = false and point_in_rectangle(mouse_x,mouse_y,x-10,y-10,x+10,y+10)
 {
     depth = -201
 
@@ -96,6 +98,8 @@ else
     tt = max(tt-(8/global.fspd),-1)    
 }
 
+
+
 if dragged = true
 {
     depth = -202
@@ -110,6 +114,7 @@ if mouse_check_button_released(mb_left)
         tt = 0
         dragRelease()
     }
+}
 }
 </string>
           </argument>

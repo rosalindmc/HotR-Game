@@ -524,7 +524,8 @@ if global.charTab = tab
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if keyboard_check(vk_alt) and global.charTab = tab
+            <string>/*
+if keyboard_check(vk_alt) and global.charTab = tab
 {
 draw_line(x+14,y,x+15,y-height*sX)
 draw_line(x+10,y-height*sX,x+15,y+1-(height*sX))

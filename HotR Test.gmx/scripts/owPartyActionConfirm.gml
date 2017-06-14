@@ -1,20 +1,29 @@
-//Temp Party Action Confirm
-eventStart(restTempScript,0)
+var i = 0
 
+//Create the Que
 with(obj_partyActor)
 {
-    //Run Action Scripts
-    with(obj_event)
-    {
-        script_execute(other.inSlot.partyAction,1,other.o)
-    }
-    //Later Replace with adding these things to some sort of que
+    //Add Action to que  
+    global.partyAct[i,0] = o
+    global.partyAct[i,1] = inSlot.partyAction
+    
+    i++
 }
 
-//Later Run the whole que
-//Perhaps clump like actions
-//Have an event resolve action that runs through all the qued events
+global.partyActions = i
 
-//Destroy the sheet and end turn
-scr_inGameMenu()
+//Destroy the party action sheet
+with(obj_hudParent)
+{
+    instance_destroy()
+}
+instance_destroy()
+
+global.inMenu = 0
+global.subTab = -4
+global.menuSheet = -4
+
+//Run the Que
+eventStart(actionQueResolve,0)
+
 

@@ -59,7 +59,6 @@ alarm[0] = 1
             if keyboard_check(vk_shift)
             {
                 levelControl(global.charSelect,false)
-                global.eventActive = true
             }
             else
             {

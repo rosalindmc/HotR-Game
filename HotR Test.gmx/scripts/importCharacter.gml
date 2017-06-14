@@ -438,6 +438,7 @@ beltItems = 0
 headItems = 0
 girdleItems = 0
 underHipsNum = 1
+hairVisible = true
 
 legsItems[1] = 0
 legsItems[2] = 0

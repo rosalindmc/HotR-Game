@@ -616,7 +616,7 @@ switch(argument0)
     
     case 4: //Weapon Modifier (Grip)
         if argument2 = true{
-            addItemTooltip('+1.5 Melee Skill','+1.5 Melee Skill',1,c_red)
+            addItemTooltip('+1.5 Melee Skill','+1.5 Melee Skill',1,c_green)
         }
         else{
             mSkill += 1.5

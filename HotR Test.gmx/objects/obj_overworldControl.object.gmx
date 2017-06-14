@@ -32,6 +32,7 @@ background_visible[0] = true
 background_hspeed[0] = 15/global.fspd
 
 //Create HUD Buttons
+global.notificationVis = true
 global.inMenu = false
 global.subTab = -4
 global.menuSheet = -4
