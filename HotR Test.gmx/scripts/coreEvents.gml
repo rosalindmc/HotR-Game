@@ -217,14 +217,15 @@ if argument1 = 0
     switch(argument0)
     {
     case 0: 
-    script_execute(global.targetActor.partyLeader.personality,global.targetActor.partyLeader.memories) 
+    script_execute(global.targetActor.personality,global.targetActor.memories) 
     portraitSet(global.targetActor)
     talk(1)
     break
-    case 1: battleSetup(global.activeActor,global.targetActor,global.node,overWorldMapGen) 
+    case 1: battleSetup(global.activeActor,global.targetActor.party,global.node,overWorldMapGen) 
     eventEnd() break
     }
 }
+
 #define actionQueResolve
 if argument1 = 0
 {

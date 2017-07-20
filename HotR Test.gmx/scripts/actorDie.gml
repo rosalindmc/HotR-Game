@@ -77,15 +77,15 @@ with(argument0)
         {//Temporary
             if instance_exists(global.targetActor)
             {
-                if instance_exists(global.targetActor.partyLeader)
+                if instance_exists(global.targetActor)
                 {
                     if global.team = 1
                     {
-                        global.targetActor.partyLeader.memories = 3
+                        global.targetActor.memories = 3
                     }
                     else
                     {
-                        global.targetActor.partyLeader.memories = 1
+                        global.targetActor.memories = 1
                     }
                 }
             }

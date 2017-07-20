@@ -117,15 +117,15 @@ with(argument0)
         
     if global.battleEnd = true
     {
-        if instance_exists(global.targetActor.partyLeader)
+        if instance_exists(global.targetActor)
         {
         if other.team = 1
         {
-            global.targetActor.partyLeader.memories = 3
+            global.targetActor.memories = 3
         }
         else
         {
-            global.targetActor.partyLeader.memories = 1
+            global.targetActor.memories = 1
         }
         }
     

@@ -104,7 +104,7 @@ if global.eventActive = false
             {
                 if node = other.id and id != global.activeActor and global.fight = false
                 {
-                    global.targetActor = id
+                    global.targetActor = ds_list_find_value(party,0)
                     global.node = node
                     global.fight = true
                     eventStart(preBattle,0)
