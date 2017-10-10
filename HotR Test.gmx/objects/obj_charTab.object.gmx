@@ -51,7 +51,7 @@ model = -4
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if point_in_rectangle(mouse_x,mouse_y,xstart+view_xview[]-12,y-12,x+12,y+12) and global.eventActive = false
+            <string>if point_in_rectangle(mouse_x,mouse_y,xstart+view_xview-12,y-12,x+12,y+12) and global.eventActive = false
 {
     dropDown = min(dropDown+(50/global.fspd),10)   
     
@@ -113,8 +113,8 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = xstart+view_xview[]+dropDown
-y = ystart+view_yview[]
+            <string>x = xstart+view_xview+dropDown
+y = ystart+view_yview
 
 ix = x
 iy = y

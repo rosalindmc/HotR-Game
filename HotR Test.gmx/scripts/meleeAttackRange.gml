@@ -68,11 +68,12 @@ with(obj_character)
 }
 
 #define ifAbilityRange
+//ifAbilityRange(origin,range)
 with(obj_character)
 {
     if team != argument0.team and dead = false and hidden = false
     {
-        if los(argument0.argument1,argument0.sightTile,sightTile)
+        if los(argument1,argument0.sightTile,sightTile)
         {
             return true
         }

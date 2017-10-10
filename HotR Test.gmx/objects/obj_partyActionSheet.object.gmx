@@ -133,8 +133,8 @@ if mouse_check_button_released(mb_left)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = xstart+view_xview[]
-y = ystart+view_yview[]
+            <string>x = xstart+view_xview
+y = ystart+view_yview
 
 draw_self()
 

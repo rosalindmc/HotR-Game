@@ -106,8 +106,8 @@ if point_in_rectangle(mouse_x,mouse_y,x+175,y-8,x+195,y+12)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = xstart+view_xview[]
-y = ystart+view_yview[]-(global.hudY*44)
+            <string>x = xstart+view_xview
+y = ystart+view_yview-(global.hudY*44)
 
 if (hudY &gt;= global.hudY and hudY &lt;= global.hudY+4)
 {

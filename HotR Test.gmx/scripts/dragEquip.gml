@@ -13,10 +13,10 @@ if slotViable(slot,id)
         if slotViable(lockSlot,slot.occupant)
         {
             slot.occupant.slot = lockSlot
-            slot.occupant.lockx = lockSlot.x-view_xview[]
-            slot.occupant.locky = lockSlot.y-view_yview[]
-            slot.occupant.x = lockSlot.x-view_xview[]
-            slot.occupant.y = lockSlot.y-view_yview[]
+            slot.occupant.lockx = lockSlot.x-view_xview
+            slot.occupant.locky = lockSlot.y-view_yview
+            slot.occupant.x = lockSlot.x-view_xview
+            slot.occupant.y = lockSlot.y-view_yview
             lockSlot.occupant = slot.occupant
             success = 2
             
@@ -56,8 +56,8 @@ if slotViable(slot,id)
             global.charSelect.invSlot[equipped,0] = emptySlot
         }
         
-        lockx = slot.x-view_xview[]
-        locky = slot.y-view_yview[]
+        lockx = slot.x-view_xview
+        locky = slot.y-view_yview
         
         slot.occupant = id
 

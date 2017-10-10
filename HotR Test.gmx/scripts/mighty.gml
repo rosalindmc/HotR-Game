@@ -1,5 +1,7 @@
 #define mighty
 //Mighty attacks from the Strength Tree
+temp = argument3
+temp = argument4
 
 //Additional Conditioners
 if wepStrMult[atkHand] != 0
@@ -61,6 +63,7 @@ if wepStrMult[atkHand] != 0
 #define healthFel
 //healthFel(name,%,bonus,high/low,false,tooltip)
 //Bonus Damage to High/Low Health foes
+temp = argument4
 
 //Additional Conditioners
 if (target.life/target.lifeMax)*100 >= argument1 and argument3 = false
@@ -100,6 +103,8 @@ if (target.life/target.lifeMax)*100 <= argument1 and argument3 = true
 #define disableFel
 //healthFel(name,bonus,false,false,false,tooltip)
 //Bonus Damage to debuffed foes
+temp = argument3
+temp = argument4
 
 //Additional Conditioners
 if target.missChance != 0 or target.movement = 0
@@ -122,6 +127,9 @@ if target.missChance != 0 or target.movement = 0
 
 #define lightningStrike
 //Additional Conditioners
+temp = argument2
+temp = argument3
+temp = argument4
 
 if dodge > dge and mle = true
 {
@@ -145,6 +153,9 @@ if dodge > dge and mle = true
 #define boldDamage
 //boldDamage(name,bonus,false,false,false,tooltip)
 //Bonus damage while bolded
+temp = argument2
+temp = argument3
+temp = argument4
 
 //Additional Conditioners
 if bold = 1 and mle = true
@@ -169,6 +180,9 @@ if bold = 1 and mle = true
 #define advantageFel
 //advantageFel(name,bonus,false,false,false,tooltip)
 //Bonus Damage to helpless foes
+temp = argument2
+temp = argument3
+temp = argument4
 
 //Additional Conditioners
 if target.missChance != 0 or backstab = true or target.movement = 0
@@ -193,6 +207,8 @@ if target.missChance != 0 or backstab = true or target.movement = 0
 #define advantageArmourPass
 //advantageFel(name,bonus,false,false,false,tooltip)
 //Chance to ignore armour on an advantaged attack
+temp = argument3
+temp = argument4
 
 //Additional Conditioners
 if target.missChance != 0 or backstab = true
@@ -215,8 +231,11 @@ if target.missChance != 0 or backstab = true
 }
 
 #define heightFel
-//advantageFel(name,bonus,false,false,false,tooltip)
-//Bonus Damage to helpless foes
+//hieghtFel(name,bonus,false,false,false,tooltip)
+//Bonus Damage to foes at lower elevation
+temp = argument2
+temp = argument3
+temp = argument4
 
 //Additional Conditioners
 var iii = global.attackFromTile
@@ -247,6 +266,11 @@ if target.h < iii.h
 #define northMoraleGain
 //northMoraleGain(name,bonus,false,false,false,tooltip)
 //Bonus morale on attack
+temp = argument0
+temp = argument1
+temp = argument2
+temp = argument3
+temp = argument4
 
 if argument5 = false    //On Proc
 {
@@ -261,6 +285,11 @@ else                    //On Tooltip
 #define halflingMoraleGain
 //halflingMoraleGain(name,bonus,false,false,false,tooltip)
 //Bonus morale on down
+temp = argument0
+temp = argument1
+temp = argument2
+temp = argument3
+temp = argument4
 
 if argument5 = false    //On Proc
 {
@@ -270,8 +299,12 @@ else                    //On Tooltip
 {
     //No Tooltip
 }
+
 #define masteryStrike
 //Additional Conditioners
+temp = argument2
+temp = argument3
+temp = argument4
 
 if skill > target.mSkill and mle = true
 {
@@ -291,6 +324,11 @@ if skill > target.mSkill and mle = true
 }
 
 #define sneakAttack
+temp = argument1
+temp = argument2
+temp = argument3
+temp = argument4
+
 if argument5 = false    //On Proc
 {
     p += sneakDamage   

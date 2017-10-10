@@ -1,4 +1,8 @@
 #define tacSunderArm
+temp = argument2
+temp = argument3
+temp = argument4
+
 if wepStrMult[atkHand] != 0
 {
     if argument5 = false    //On Proc
@@ -21,6 +25,11 @@ if wepStrMult[atkHand] != 0
    
 
 #define tacGuardBreak
+temp = argument1
+temp = argument2
+temp = argument3
+temp = argument4
+
 if mle = true
 {
     if argument5 = false    //On Proc
@@ -44,6 +53,10 @@ if mle = true
    
 
 #define tacSlow
+temp = argument2
+temp = argument3
+temp = argument4
+
 if argument5 = false    //On Proc
 {
     applyStatusEffect(slow,target,argument1,15*spellDur,typePhysical)
@@ -61,6 +74,10 @@ else
 }
 
 #define tacPreciseStrike
+temp = argument2
+temp = argument3
+temp = argument4
+
 if argument5 = false    //On Proc
 {
     spendStamina(id,1)
@@ -81,6 +98,10 @@ else
 }
 
 #define tacExploitWeakness
+temp = argument2
+temp = argument3
+temp = argument4
+
 if target.mark = true
 {
     if argument5 = false    //On Proc
@@ -102,6 +123,11 @@ if target.mark = true
 }
 
 #define tacGuardedAttack
+temp = argument1
+temp = argument2
+temp = argument3
+temp = argument4
+
 if mle = true
 {
     if argument5 = false    //On Proc
@@ -121,6 +147,10 @@ if mle = true
 }
 
 #define tacDebilitate
+temp = argument2
+temp = argument3
+temp = argument4
+
 if argument5 = false    //On Proc
 {
     if backstab = true
@@ -153,6 +183,11 @@ else
 }
 
 #define tacFlourish
+temp = argument1
+temp = argument2
+temp = argument3
+temp = argument4
+
 if argument5 = false    //On Proc
 {
     spendStamina(id,1)
@@ -176,6 +211,11 @@ else
 }
 
 #define tacHeroicStrike
+temp = argument1
+temp = argument2
+temp = argument3
+temp = argument4
+
 if argument5 = false    //On Proc
 {
     spendStamina(id,1)

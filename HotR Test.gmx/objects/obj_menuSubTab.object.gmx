@@ -102,8 +102,8 @@ tabNum = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = xstart+view_xview[]
-y = ystart+view_yview[]
+            <string>x = xstart+view_xview
+y = ystart+view_yview
 
 draw_set_font(fnt_small)
 draw_set_halign(fa_center)

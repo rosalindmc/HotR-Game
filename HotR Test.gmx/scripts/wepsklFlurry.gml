@@ -1,6 +1,7 @@
 #define wepsklFlurry
 //wepsklFlurry(name,procChance,Bonus,hand,false,tooltip)
 //Weapn Skill for bonus attack speed
+temp = argument4
 
 //Additional Conditioners
 if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
@@ -50,6 +51,8 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
 #define wepsklGuard
 //wepsklGuard(name,procChance,Bonus,hand,false,tooltip)
 //Weapon Skill for blocking
+temp = argument2
+temp = argument4
 
 //Additional Conditioners
 if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
@@ -74,6 +77,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
 #define wepsklBackstab
 //wepsklBackstab(name,procChance,Bonus,hand,false,tooltip)
 //Weapn Skill for bonus flank damage
+temp = argument4
 
 //Additional Conditioners
 if backstab = true
@@ -101,6 +105,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
 #define wepsklStagger
 //wepsklStagger(name,procChance,Bonus,hand,false,tooltip)
 //Weapn Skill for Daze
+temp = argument4
 
 //Additional Conditioners
 if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
@@ -125,6 +130,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
 #define wepsklSkullcrack
 //wepsklStagger(name,procChance,Bonus,hand,false,tooltip)
 //Weapn Skill for Stun
+temp = argument4
 
 //Additional Conditioners
 if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
@@ -200,6 +206,7 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
 #define wepsklShatter
 //wepsklShatter(name,procChance,Bonus,hand,false,tooltip)
 //Weapn Skill for bonus attack speed
+temp = argument4
 
 //Additional Conditioners
 if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
@@ -222,6 +229,10 @@ if atkHand = argument3 and argument1+((skill-target.mSkill)*5) >= 1
 }
 
 #define wepSlashImpact
+temp = argument2
+temp = argument3
+temp = argument4
+
 //Additional Conditioners
 if atkHand = argument1
 {
@@ -245,6 +256,10 @@ if target.immune[type] = true or (target.immune[typeImpact] = false and target.r
 }
 
 #define wepSlashPierce
+temp = argument2
+temp = argument3
+temp = argument4
+
 //Additional Conditioners
 if atkHand = argument1
 {
@@ -266,8 +281,11 @@ if target.immune[type] = true or (target.immune[typeImpact] = false and target.r
     }
 }
 }
+
 #define wepSunder
 //wepSunder(name,bonus,false,hand,false,tooltip)
+temp = argument2
+temp = argument4
 
 //Additional Conditioners
 if atkHand = argument3

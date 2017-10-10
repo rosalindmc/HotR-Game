@@ -4,9 +4,9 @@ draw_set_alpha(tt)
 ix = x
 iy = y
 
-if iy+94+(ttLength*12) > view_hview[]+view_yview[]
+if iy+94+(ttLength*12) > view_hview+view_yview
 {
-    iy += (view_hview[]+view_yview[])-(iy+94+(ttLength*12))
+    iy += (view_hview+view_yview)-(iy+94+(ttLength*12))
 }
 
 draw_set_colour(c_dkgray)
@@ -67,8 +67,8 @@ for(i = 0; i < ttLength; i++)
 }
 
 //Draw the Tooltip detail boxes
-ix = view_xview[]
-iy = view_yview[]+view_hview[]-(ttTotalLength*12)-(ttLength*4)-1
+ix = view_xview
+iy = view_yview+view_hview-(ttTotalLength*12)-(ttLength*4)-1
 
 for(i = 0; i < ttLength; i++)
 {
@@ -91,9 +91,9 @@ draw_set_alpha(tt)
 ix = x
 iy = y
 
-if iy+118+(ttLength*12) > view_hview[]+view_yview[]
+if iy+118+(ttLength*12) > view_hview+view_yview
 {
-    iy += (view_hview[]+view_yview[])-(iy+118+(ttLength*12))
+    iy += (view_hview+view_yview)-(iy+118+(ttLength*12))
 }
 
 draw_set_colour(c_dkgray)
@@ -168,8 +168,8 @@ for(i = 0; i < ttLength; i++)
 }
 
 //Draw the Tooltip detail boxes
-ix = view_xview[]
-iy = view_yview[]+view_hview[]-(ttTotalLength*12)-(ttLength*4)-1
+ix = view_xview
+iy = view_yview+view_hview-(ttTotalLength*12)-(ttLength*4)-1
 
 for(i = 0; i < ttLength; i++)
 {
@@ -191,9 +191,9 @@ draw_set_alpha(tt)
 ix = x
 iy = y
 
-if iy+118+(ttLength*12) > view_hview[]+view_yview[]
+if iy+118+(ttLength*12) > view_hview+view_yview
 {
-    iy += (view_hview[]+view_yview[])-(iy+118+(ttLength*12))
+    iy += (view_hview+view_yview)-(iy+118+(ttLength*12))
 }
 
 draw_set_colour(c_dkgray)
@@ -259,8 +259,8 @@ for(i = 0; i < ttLength; i++)
 }
 
 //Draw the Tooltip detail boxes
-ix = view_xview[]
-iy = view_yview[]+view_hview[]-(ttTotalLength*12)-(ttLength*4)-1
+ix = view_xview
+iy = view_yview+view_hview-(ttTotalLength*12)-(ttLength*4)-1
 
 for(i = 0; i < ttLength; i++)
 {
@@ -280,9 +280,9 @@ draw_set_alpha(tt)
 
 iy = y
 
-if iy+92+(ttLength*12) > view_hview[]+view_yview[]
+if iy+92+(ttLength*12) > view_hview+view_yview
 {
-    iy += (view_hview[]+view_yview[])-(iy+92+(ttLength*12))
+    iy += (view_hview+view_yview)-(iy+92+(ttLength*12))
 }
 
 draw_set_colour(c_dkgray)
@@ -343,8 +343,8 @@ for(i = 0; i < ttLength; i++)
 }
 
 //Draw the Tooltip detail boxes
-ix = view_xview[]
-iy = view_yview[]+view_hview[]-(ttTotalLength*12)-(ttLength*4)-1
+ix = view_xview
+iy = view_yview+view_hview-(ttTotalLength*12)-(ttLength*4)-1
 
 for(i = 0; i < ttLength; i++)
 {
@@ -366,9 +366,9 @@ draw_set_alpha(tt)
 ix = x
 iy = y
 
-if iy+92+(ttLength*12) > view_hview[]+view_yview[]
+if iy+92+(ttLength*12) > view_hview+view_yview
 {
-    iy += (view_hview[]+view_yview[])-(iy+92+(ttLength*12))
+    iy += (view_hview+view_yview)-(iy+92+(ttLength*12))
 }
 
 draw_set_colour(c_dkgray)
@@ -429,8 +429,8 @@ for(i = 0; i < ttLength; i++)
 }
 
 //Draw the Tooltip detail boxes
-ix = view_xview[]
-iy = view_yview[]+view_hview[]-(ttTotalLength*12)-(ttLength*4)-1
+ix = view_xview
+iy = view_yview+view_hview-(ttTotalLength*12)-(ttLength*4)-1
 
 for(i = 0; i < ttLength; i++)
 {
@@ -452,9 +452,9 @@ draw_set_alpha(tt)
 ix = x
 iy = y
 
-if iy+92+(ttLength*12) > view_hview[]+view_yview[]
+if iy+92+(ttLength*12) > view_hview+view_yview
 {
-    iy += (view_hview[]+view_yview[])-(iy+92+(ttLength*12))
+    iy += (view_hview+view_yview)-(iy+92+(ttLength*12))
 }
 
 draw_set_colour(c_dkgray)
@@ -515,8 +515,8 @@ for(i = 0; i < ttLength; i++)
 }
 
 //Draw the Tooltip detail boxes
-ix = view_xview[]
-iy = view_yview[]+view_hview[]-(ttTotalLength*12)-(ttLength*4)-1
+ix = view_xview
+iy = view_yview+view_hview-(ttTotalLength*12)-(ttLength*4)-1
 
 for(i = 0; i < ttLength; i++)
 {
@@ -562,8 +562,8 @@ for(i = 0; i < ttLength; i++)
 }
 
 //Draw the Tooltip detail boxes
-ix = view_xview[]
-iy = view_yview[]+view_hview[]-(ttTotalLength*12)-(ttLength*4)-1
+ix = view_xview
+iy = view_yview+view_hview-(ttTotalLength*12)-(ttLength*4)-1
 
 for(i = 0; i < ttLength; i++)
 {

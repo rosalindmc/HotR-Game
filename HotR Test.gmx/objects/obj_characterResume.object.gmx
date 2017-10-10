@@ -141,8 +141,8 @@ if mouse_check_button_released(mb_left)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = xstart+view_xview[]
-y = ystart+view_yview[]
+            <string>x = xstart+view_xview
+y = ystart+view_yview
 
 draw_self()
 
@@ -188,8 +188,8 @@ draw_text(x-110,y-110,'Level '+string(global.charSelect.level)+' '+string(global
 draw_set_font(fnt_tinyText)
 
 //Stats
-ix = 120+view_xview[]
-iy = 210+view_yview[]
+ix = 120+view_xview
+iy = 210+view_yview
 draw_set_halign(fa_left)
 draw_text(ix,iy+20,"Might")
 draw_text(ix,iy+32,"Grace")

@@ -72,8 +72,8 @@ if global.eventActive = false and point_in_rectangle(mouse_x,mouse_y,x-10,y-10,x
     {         
         dragged = true
         global.drag = id
-        lockx = x-view_xview[]
-        locky = y-view_yview[]
+        lockx = x-view_xview
+        locky = y-view_yview
         lockSlot = instance_nearest(mouse_x,mouse_y,obj_inventorySlot)
         
         
@@ -140,8 +140,8 @@ if mouse_check_button_released(mb_left)
             <kind>1</kind>
             <string>if dragged = false
 {
-    x = lockx+view_xview[]
-    y = locky+view_yview[]
+    x = lockx+view_xview
+    y = locky+view_yview
      
     if equipped = 0
     {

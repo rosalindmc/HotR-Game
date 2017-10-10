@@ -150,12 +150,12 @@ if mouse_check_button_released(mb_left)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = xstart+view_xview[]
-y = ystart+view_yview[]
+            <string>x = xstart+view_xview
+y = ystart+view_yview
 
 draw_set_colour(c_black)
 draw_set_alpha(.5)
-draw_rectangle(view_xview[],view_yview[],view_xview[]+view_wview[],view_yview[]+view_hview[],false)
+draw_rectangle(view_xview,view_yview,view_xview+view_wview,view_yview+view_hview,false)
 draw_set_alpha(1)
 
 draw_self()

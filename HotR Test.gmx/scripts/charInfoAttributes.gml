@@ -423,12 +423,12 @@ if argument0 != global.optionName1 and argument0 != global.optionName2
     iy += 13
 }
 #define charInfoTooltip
-var ix = argument0+view_xview[]
-var iy = argument1+view_yview[]
+var ix = argument0+view_xview
+var iy = argument1+view_yview
 var text = argument2
 var textLength = argument3
 
-if iy+10+(12*textLength) > view_yview[]+view_hview[]
+if iy+10+(12*textLength) > view_yview+view_hview
 {
     iy -= (12*textLength)
 }

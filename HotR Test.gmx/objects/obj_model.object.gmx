@@ -226,8 +226,8 @@ script_execute(animIndex[0],animStep[0])
             <string>//Facing
 facing = 0
 
-ix = 120+view_xview[]
-iy = 222+view_yview[]
+ix = 120+view_xview
+iy = 222+view_yview
 
 for(i = 0; i &lt;= 7; i++)
 {
@@ -451,8 +451,8 @@ facing = round(point_direction(x,y,mouse_x,mouse_y)/45)*45
             <string>//Draw Self
 if global.charTab = tab
 {
-    x = xstart+view_xview[]
-    y = ystart+view_yview[]
+    x = xstart+view_xview
+    y = ystart+view_yview
     
     script_execute(animType,1)
     draw_surface_ext(charSurf,x-round(100),y-round(150)-h+(global.zLevel*15),2,2,0,c_white,1)
@@ -482,13 +482,13 @@ if global.charTab = tab
     if global.charSelect.levelPending != 0{draw_text(x+55,y-117,'+')}
     draw_text(x,y-105,string_format(global.charSelect.experience,2,1)+' / '+string(global.charSelect.expToLevel))
     
-    ix = 120+view_xview[]
-    iy = 210+view_yview[]
+    ix = 120+view_xview
+    iy = 210+view_yview
     ii = 0
     script_execute(global.charInfo1)
     
-    ix = 220+view_xview[]
-    iy = 210+view_yview[]
+    ix = 220+view_xview
+    iy = 210+view_yview
     ii = 1
     script_execute(global.charInfo2)
     

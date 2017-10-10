@@ -52,8 +52,8 @@ border = 0
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = xstart+view_xview[]
-y = ystart+view_yview[]-(global.hudY*22)
+            <string>x = xstart+view_xview
+y = ystart+view_yview-(global.hudY*22)
 
 if (hudY &gt;= global.hudY and hudY &lt;= global.hudY+10)
 {

@@ -101,7 +101,7 @@ draw_sprite(spr_mouse,0,round(mouse_x),round(mouse_y))
             <kind>1</kind>
             <string>//Draw Backdrop
 draw_set_colour(c_black)
-draw_rectangle(0,0,view_wview[],view_hview[],false)
+draw_rectangle(0,0,view_wview,view_hview,false)
 
 //Draw Tooltip
 draw_set_colour(c_gray)

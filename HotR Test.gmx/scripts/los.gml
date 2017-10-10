@@ -180,6 +180,9 @@ return point_distance(0,0,argument0.x-argument1.x,(argument0.y-argument1.y)*2)+m
 
 var iX, iY, iZ, sX, sY, sZ, dX, dY, dZ, xySlope, xzSlope, yPlus, zPlus, success, longAxis
 
+//Later add check that dest is within argument0 spaces
+temp = argument0
+
 //figure out sX, sY and sZ
 sX = floor(((argument1.x-100)/40)+((argument1.y-100)/20))-25
 sY = floor(((argument1.y-100)/20)-((argument1.x-100)/40))+25
@@ -288,16 +291,7 @@ success = true
         tX = median(0,tX,obj_control.mapWidth-1)
         tY = median(0,tY,obj_control.mapHeight-1)
         tZ = median(0,tZ,obj_control.mapDepth-1)
-        
-        /*
-        show_message("x"+string(iX)+" y"+string(iY)+" z"+string(iZ)+"
-        tX"+string(tX)+" tY"+string(tY)+" tZ"+string(tZ)+"
-        sx"+string(sX)+" sy"+string(sY)+" sz"+string(sZ)+"
-        dX"+string(dX)+" dY"+string(dY)+" dZ"+string(dZ)+" 
-        long Axis"+string(longAxis)+" success"+string(success)+" 
-        xPlus"+string(xPlus)+" yPlus"+string(yPlus)+" zPlus"+string(zPlus))
-        */
-        
+                
         //Check continued success?
         if success = true
         {

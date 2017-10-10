@@ -2,6 +2,8 @@
 //healthMit(name,%,bonus,high/low,false,tooltip)
 //% damage reduction at low health
 
+temp = argument4
+
 //Additional Conditioners
 if argument5 = false    //On Proc
 {
@@ -37,6 +39,8 @@ else                    //On Tooltip
 #define lifeGain
 //lifeGain(name,procChance,life,multProcbyAS,false,tooltip)
 //Heal
+
+temp = argument4
 
 //Additional Conditioners
 if argument5 = false    //On Proc
@@ -79,6 +83,10 @@ else                    //On Tooltip
 #define boldDodge
 //boldDodge(name,dodge,false,false,false,tooltip)
 //Gain a bonus to dodge chance while bolded
+
+temp = argument2
+temp = argument3
+temp = argument4
 
 //Additional Conditioners
 if bold = 1
@@ -143,6 +151,9 @@ else                    //On Tooltip
 //cancelDebuff(name,procChance,potency,false,false,tooltip)
 //Reduce duration off all negative Status on the character
 
+temp = argument3
+temp = argument4
+
 if argument5 = false    //On Proc
 {
     if 1+irandom(99) <= argument1
@@ -175,6 +186,9 @@ else                    //On Tooltip
 }
 
 #define fastAttack
+temp = argument3
+temp = argument4
+
 if target.mle = true
 {
     if argument5 = false    //On Proc
@@ -195,6 +209,10 @@ if target.mle = true
 }
 
 #define glancing
+temp = argument2
+temp = argument3
+temp = argument4
+
 //Additional Conditioners
 if argument5 = false    //On Proc
 {
@@ -212,6 +230,12 @@ else                    //On Tooltip
 }
 
 #define penMult
+temp = argument0
+temp = argument1
+temp = argument2
+temp = argument3
+temp = argument4
+
 //Additional Conditioners
 if argument5 = false    //On Proc
 {
@@ -221,6 +245,7 @@ else                    //On Tooltip
 {
     other.pen *= 1.5
 }
+
 #define meleeBlockStatusGive
 //statusGive(name,statusEffect,procChance,potency,duration,tooltip)
 //Apply a Status to the target
@@ -251,6 +276,12 @@ if target.mle = true
 //statusGive(name,statusEffect,procChance,potency,duration,tooltip)
 //Apply a Status to the target
 
+temp = argument0
+temp = argument1
+temp = argument2
+temp = argument3
+temp = argument4
+
 //Additional Conditioners
 if target.mle = false
 {
@@ -269,6 +300,12 @@ if target.mle = false
 #define largeShield
 //statusGive(name,statusEffect,procChance,potency,duration,tooltip)
 //Apply a Status to the target
+
+temp = argument0
+temp = argument1
+temp = argument2
+temp = argument3
+temp = argument4
 
 //Additional Conditioners
 if target.mle = false

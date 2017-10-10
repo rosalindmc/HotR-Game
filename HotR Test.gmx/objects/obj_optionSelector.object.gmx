@@ -51,8 +51,8 @@
             <string>global.optionSelect = optionSelect
 global.drag = 1
 
-ix = x-view_xview[]
-iy = y-view_yview[]+13
+ix = x-view_xview
+iy = y-view_yview+13
 
 //Char Selector
 if optionSelect = 'charInfo1' or optionSelect = 'charInfo2'
@@ -88,8 +88,8 @@ if optionSelect = 'charInfo1' or optionSelect = 'charInfo2'
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = xstart+view_xview[]
-y = ystart+view_yview[]
+            <string>x = xstart+view_xview
+y = ystart+view_yview
 
 draw_self()
 draw_set_font(fnt_charSheet)    

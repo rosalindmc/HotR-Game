@@ -106,8 +106,8 @@ else
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>x = xstart+view_xview[]
-y = ystart+view_yview[]+dropDown
+            <string>x = xstart+view_xview
+y = ystart+view_yview+dropDown
 
 if global.inMenu != 2
 {
