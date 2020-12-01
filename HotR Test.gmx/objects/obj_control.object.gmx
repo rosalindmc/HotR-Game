@@ -106,9 +106,9 @@ action = moveControl
 actionScroll = action
 
 //Tile Creation
-mapHeight = 20
-mapWidth = 20
-mapDepth = 10
+mapHeight = 15
+mapWidth = 15
+mapDepth = 6
 
 runEvent = -4
 eventName = -4
@@ -161,6 +161,31 @@ alarm[0] = 2
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="4">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>surface_free(global.reflectSurf)
+surface_free(global.blockSurf)
+surface_free(global.maskSurf)
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="2" enumb="3">
       <action>
         <libid>1</libid>
@@ -188,6 +213,7 @@ updateVision()
 updateScrollVis()
 global.loading = false
 
+alarm[4] = 2
 </string>
           </argument>
         </arguments>

@@ -30,9 +30,9 @@ switch(global.timeOfDay)
 }
 
 //Tile Creation
-mapHeight = 40
-mapWidth = 40
-mapDepth = 6
+mapHeight = 26
+mapWidth = 26
+mapDepth = 4
 break
 
 case 1:
@@ -52,7 +52,7 @@ i = 0
 repeat(ds_list_size(global.attacker.party))
 {
     ii = instance_create(0,0,obj_character)
-    ii.isoX = i+20-floor(ds_list_size(global.attacker.party)/2)
+    ii.isoX = i+13-floor(ds_list_size(global.attacker.party)/2)
     ii.isoY = obj_control.mapWidth-2
     ii.isoZ = obj_control.map[ii.isoX,ii.isoY].heightMap
     ii.isoTile = obj_control.map[ii.isoX+((ii.isoZ)*obj_control.mapWidth),ii.isoY]
@@ -88,8 +88,8 @@ i = 0
 repeat(ds_list_size(global.defender.party))
 {
     ii = instance_create(0,0,obj_character)
-    ii.isoX = i+20-floor(ds_list_size(global.defender.party)/2)
-    ii.isoY = 20
+    ii.isoX = i+13-floor(ds_list_size(global.defender.party)/2)
+    ii.isoY = 13
     ii.isoZ = obj_control.map[ii.isoX,ii.isoY].heightMap
     ii.cFacing = 180
     ii.facing = 180
